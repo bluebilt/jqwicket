@@ -30,6 +30,12 @@
 			<version>${wicket.version}</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.jvnet.wagon-svn</groupId>
+			<artifactId>wagon-svn</artifactId>
+			<version>1.9</version>
+			<scope>provided</scope>
+		</dependency>
 		<!-- JUNIT DEPENDENCY FOR TESTING -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -75,8 +81,51 @@
 					<downloadSources>true</downloadSources>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<tagBase>https://jqwicket.googlecode.com/svn/tags</tagBase>
+					<remoteTagging>true</remoteTagging>
+					<preparationGoals>clean install</preparationGoals>
+					<autoVersionSubmodules>true</autoVersionSubmodules>
+				</configuration>
+			</plugin>
 		</plugins>
+		<extensions>
+			<extension>
+				<groupId>org.jvnet.wagon-svn</groupId>
+				<artifactId>wagon-svn</artifactId>
+				<version>1.9</version>
+			</extension>
+		</extensions>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>googlecode</id>
+			<url>svn:https://jqwicket.googlecode.com/svn/m2-repo/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>googlecode</id>
+			<url>svn:https://jqwicket.googlecode.com/svn/m2-repo/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<properties>
 		<wicket.version>1.4.13</wicket.version>
 	</properties>
