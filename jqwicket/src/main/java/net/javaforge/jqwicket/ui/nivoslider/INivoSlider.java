@@ -18,9 +18,6 @@ package net.javaforge.jqwicket.ui.nivoslider;
 
 import net.javaforge.jqwicket.JQWidget;
 
-import org.apache.wicket.ResourceReference;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 /**
  * Implementation of the Nivo-Slider plugin (see <a
  * href="http://nivo.dev7studios.com">http://nivo.dev7studios.com</a>)
@@ -30,13 +27,6 @@ import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
  */
 public interface INivoSlider extends JQWidget<NivoSliderOptions> {
 
-	static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			INivoSlider.class, "jquery.nivo.slider.js");
 
-	static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
-			INivoSlider.class, "jquery.nivo.slider.pack.js");
-
-	static final ResourceReference CSS_RESOURCE = new ResourceReference(
-			INivoSlider.class, "nivo-slider.css");
 
 }

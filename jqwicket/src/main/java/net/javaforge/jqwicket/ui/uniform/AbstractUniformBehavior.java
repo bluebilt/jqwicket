@@ -16,7 +16,6 @@
  */
 package net.javaforge.jqwicket.ui.uniform;
 
-import net.javaforge.jqwicket.Utils;
 import net.javaforge.jqwicket.ui.JQComponentBehaivor;
 
 /**
@@ -35,14 +34,7 @@ public abstract class AbstractUniformBehavior extends
 	}
 
 	public AbstractUniformBehavior(UniformOptions options) {
-
 		super(options);
-		if (Utils.isDevelopmentMode())
-			addJsResourceReferences(JS_RESOURCE);
-		else
-			addJsResourceReferences(JS_RESOURCE_MIN);
-
-		this.addCssResourceReferences(options.cssResourceReferences());
 	}
 
 	/**

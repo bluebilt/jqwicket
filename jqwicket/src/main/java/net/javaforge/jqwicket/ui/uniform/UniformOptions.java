@@ -19,6 +19,7 @@ package net.javaforge.jqwicket.ui.uniform;
 import net.javaforge.jqwicket.ui.AbstractJQOptions;
 
 import org.apache.wicket.ResourceReference;
+import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 /**
  * @author mkalina
@@ -28,15 +29,22 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 
 	private static final long serialVersionUID = 1L;
 
-	private ResourceReference[] cssResourceReferences = new ResourceReference[] { IUniform.CSS_RESOURCE_DEFAULT };
+	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
+			UniformOptions.class, "jquery.uniform.min.js");
 
-	public UniformOptions cssResourceReferences(ResourceReference... refs) {
-		this.cssResourceReferences = refs;
-		return this;
-	}
+	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
+			UniformOptions.class, "jquery.uniform.js");
 
-	public ResourceReference[] cssResourceReferences() {
-		return this.cssResourceReferences;
+	public static final ResourceReference CSS_RESOURCE_DEFAULT = new ResourceReference(
+			UniformOptions.class, "theme/uniform/css/uniform.default.css");
+
+	public static final ResourceReference CSS_RESOURCE_ARISTO = new ResourceReference(
+			UniformOptions.class, "theme/aristo/css/uniform.aristo.css");
+
+	public UniformOptions() {
+		this.jsResourceReferences(JS_RESOURCE);
+		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.cssResourceReferences(CSS_RESOURCE_DEFAULT);
 	}
 
 	/**

@@ -24,6 +24,7 @@ import net.javaforge.jqwicket.ui.AbstractJQOptions;
 import net.javaforge.jqwicket.ui.IJQOptions;
 
 import org.apache.wicket.ResourceReference;
+import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 /**
  * @author mkalina
@@ -33,7 +34,26 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 
 	private static final long serialVersionUID = 1L;
 
-	private ResourceReference[] cssResourceReferences = new ResourceReference[] { IUploadify.CSS_RESOURCE };
+	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
+			UploadifyOptions.class, "jquery.uploadify.v2.1.4.js");
+
+	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
+			UploadifyOptions.class, "jquery.uploadify.v2.1.4.min.js");
+
+	public static final JavascriptResourceReference JS_SWFOBJ_RESOURCE = new JavascriptResourceReference(
+			UploadifyOptions.class, "swfobject.js");
+
+	public static final ResourceReference CSS_RESOURCE = new ResourceReference(
+			UploadifyOptions.class, "uploadify.css");
+
+	public static final ResourceReference SWF_UPLOADIFY_RESOURCE = new ResourceReference(
+			UploadifyOptions.class, "uploadify.swf");
+
+	public static final ResourceReference SWF_EXPRESS_INSTALL_RESOURCE = new ResourceReference(
+			UploadifyOptions.class, "expressInstall.swf");
+
+	public static final ResourceReference PNG_CANCEL_RESOURCE = new ResourceReference(
+			UploadifyOptions.class, "cancel.png");
 
 	public enum DisplayDataType {
 		PERCENTAGE, SPEED;
@@ -43,13 +63,10 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 		OPAQUE, TRANSPARENT;
 	}
 
-	public UploadifyOptions cssResourceReferences(ResourceReference... refs) {
-		this.cssResourceReferences = refs;
-		return this;
-	}
-
-	public ResourceReference[] cssResourceReferences() {
-		return this.cssResourceReferences;
+	public UploadifyOptions() {
+		this.jsResourceReferences(JS_SWFOBJ_RESOURCE, JS_RESOURCE);
+		this.jsResourceReferencesMin(JS_SWFOBJ_RESOURCE, JS_RESOURCE_MIN);
+		this.cssResourceReferences(CSS_RESOURCE);
 	}
 
 	/**

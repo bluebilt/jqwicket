@@ -18,9 +18,6 @@ package net.javaforge.jqwicket.ui.uniform;
 
 import net.javaforge.jqwicket.JQWidget;
 
-import org.apache.wicket.ResourceReference;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 /**
  * see <a
  * href="http://pixelmatrixdesign.com/uniform/">http://pixelmatrixdesign.com
@@ -30,17 +27,5 @@ import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
  * 
  */
 public interface IUniform extends JQWidget<UniformOptions> {
-
-	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
-			IUniform.class, "jquery.uniform.min.js");
-
-	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			IUniform.class, "jquery.uniform.js");
-
-	public static final ResourceReference CSS_RESOURCE_DEFAULT = new ResourceReference(
-			IUniform.class, "theme/uniform/css/uniform.default.css");
-
-	public static final ResourceReference CSS_RESOURCE_ARISTO = new ResourceReference(
-			IUniform.class, "theme/aristo/css/uniform.aristo.css");
 
 }

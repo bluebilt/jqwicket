@@ -20,24 +20,13 @@ import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.JQUIWidget;
 import net.javaforge.jqwicket.ui.IJQOptions;
 
-import org.apache.wicket.ResourceReference;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public interface INotifier extends JQUIWidget<NotifierOptions> {
-
-	static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			INotifier.class, "jquery.notify.js");
-
-	static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
-			INotifier.class, "jquery.notify.min.js");
-
-	static final ResourceReference CSS_RESOURCE = new ResourceReference(
-			INotifier.class, "ui.notify.css");
 
 	JQFunction create(String title, String text);
 

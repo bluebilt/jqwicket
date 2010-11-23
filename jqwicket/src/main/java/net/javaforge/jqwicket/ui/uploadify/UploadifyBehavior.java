@@ -17,7 +17,6 @@
 package net.javaforge.jqwicket.ui.uploadify;
 
 import net.javaforge.jqwicket.JQFunction;
-import net.javaforge.jqwicket.Utils;
 import net.javaforge.jqwicket.ui.IJQOptions;
 import net.javaforge.jqwicket.ui.JQComponentBehaivor;
 
@@ -41,26 +40,23 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 
 	public UploadifyBehavior(UploadifyOptions options) {
 		super(options);
-
 		if (!options.containsKey("uploader"))
-			options.put("uploader",
-					RequestCycle.get().urlFor(SWF_UPLOADIFY_RESOURCE));
+			options.put(
+					"uploader",
+					RequestCycle.get().urlFor(
+							UploadifyOptions.SWF_UPLOADIFY_RESOURCE));
 
 		if (!options.containsKey("expressInstall"))
-			options.put("expressInstall",
-					RequestCycle.get().urlFor(SWF_EXPRESS_INSTALL_RESOURCE));
+			options.put(
+					"expressInstall",
+					RequestCycle.get().urlFor(
+							UploadifyOptions.SWF_EXPRESS_INSTALL_RESOURCE));
 
 		if (!options.containsKey("cancelImg"))
-			options.put("cancelImg",
-					RequestCycle.get().urlFor(PNG_CANCEL_RESOURCE));
-
-		addJsResourceReferences(JS_SWFOBJ_RESOURCE);
-		if (Utils.isDevelopmentMode())
-			addJsResourceReferences(JS_RESOURCE);
-		else
-			addJsResourceReferences(JS_RESOURCE_MIN);
-
-		this.addCssResourceReferences(options.cssResourceReferences());
+			options.put(
+					"cancelImg",
+					RequestCycle.get().urlFor(
+							UploadifyOptions.PNG_CANCEL_RESOURCE));
 	}
 
 	/**

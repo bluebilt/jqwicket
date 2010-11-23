@@ -16,7 +16,6 @@
  */
 package net.javaforge.jqwicket.ui.nivoslider;
 
-import net.javaforge.jqwicket.Utils;
 import net.javaforge.jqwicket.ui.JQComponentBehaivor;
 
 /**
@@ -36,12 +35,6 @@ public class NivoSliderBehavior extends JQComponentBehaivor<NivoSliderOptions>
 
 	public NivoSliderBehavior(NivoSliderOptions options) {
 		super(options);
-		if (Utils.isDevelopmentMode())
-			addJsResourceReferences(JS_RESOURCE);
-		else
-			addJsResourceReferences(JS_RESOURCE_MIN);
-
-		this.addCssResourceReferences(options.cssResourceReferences());
 	}
 
 	/**

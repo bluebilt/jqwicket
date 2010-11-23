@@ -26,6 +26,9 @@ import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.JQStatement;
 import net.javaforge.jqwicket.Utils;
 
+import org.apache.wicket.ResourceReference;
+import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
+
 /**
  * @author mkalina
  * 
@@ -40,7 +43,70 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<?>>
 
 	protected Map<CharSequence, Object> options = new LinkedHashMap<CharSequence, Object>();
 
+	private ResourceReference[] cssResourceReferences;
+
+	private JavascriptResourceReference[] jsResourceReferencesMin;
+
+	private JavascriptResourceReference[] jsResourceReferences;
+
 	public AbstractJQOptions() {
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#cssResourceReferences(org.apache.wicket.ResourceReference[])
+	 */
+	public T cssResourceReferences(ResourceReference... refs) {
+		this.cssResourceReferences = refs;
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#cssResourceReferences()
+	 */
+	public ResourceReference[] cssResourceReferences() {
+		return this.cssResourceReferences;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#jsResourceReferences()
+	 */
+	public JavascriptResourceReference[] jsResourceReferences() {
+		return this.jsResourceReferences;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#jsResourceReferences(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
+	 */
+	public T jsResourceReferences(JavascriptResourceReference... refs) {
+		this.jsResourceReferences = refs;
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#jsResourceReferencesMin()
+	 */
+	public JavascriptResourceReference[] jsResourceReferencesMin() {
+		return this.jsResourceReferencesMin;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#jsResourceReferencesMin(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
+	 */
+	public T jsResourceReferencesMin(JavascriptResourceReference... refs) {
+		this.jsResourceReferencesMin = refs;
+		return (T) this;
 	}
 
 	/**

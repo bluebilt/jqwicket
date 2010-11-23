@@ -24,6 +24,7 @@ import net.javaforge.jqwicket.Utils;
 import net.javaforge.jqwicket.ui.AbstractJQOptions;
 
 import org.apache.wicket.ResourceReference;
+import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 /**
  * @author mkalina
@@ -33,7 +34,14 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 
 	private static final long serialVersionUID = 1L;
 
-	private ResourceReference[] cssResourceReferences = new ResourceReference[] { INivoSlider.CSS_RESOURCE };
+	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
+			NivoSliderOptions.class, "jquery.nivo.slider.js");
+
+	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
+			NivoSliderOptions.class, "jquery.nivo.slider.pack.js");
+
+	public static final ResourceReference CSS_RESOURCE = new ResourceReference(
+			NivoSliderOptions.class, "nivo-slider.css");
 
 	public enum Effect {
 
@@ -53,13 +61,10 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 		}
 	}
 
-	public NivoSliderOptions cssResourceReferences(ResourceReference... refs) {
-		this.cssResourceReferences = refs;
-		return this;
-	}
-
-	public ResourceReference[] cssResourceReferences() {
-		return this.cssResourceReferences;
+	public NivoSliderOptions() {
+		this.jsResourceReferences(JS_RESOURCE);
+		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.cssResourceReferences(CSS_RESOURCE);
 	}
 
 	/**

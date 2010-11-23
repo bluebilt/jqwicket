@@ -18,9 +18,12 @@ package net.javaforge.jqwicket.ui;
 
 import java.io.Serializable;
 
+import net.javaforge.jqwicket.IJsonAware;
 import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.JQStatement;
-import net.javaforge.jqwicket.IJsonAware;
+
+import org.apache.wicket.ResourceReference;
+import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 /**
  * @author mkalina
@@ -30,6 +33,53 @@ import net.javaforge.jqwicket.IJsonAware;
  */
 public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 		IJsonAware {
+
+	/**
+	 * Sets css resource references necessary for component rendering.
+	 * 
+	 * @param refs
+	 * @return
+	 */
+	T cssResourceReferences(ResourceReference... refs);
+
+	/**
+	 * Returns css resource references necessary for component rendering.
+	 * 
+	 * @return
+	 */
+	ResourceReference[] cssResourceReferences();
+
+	/**
+	 * Sets minified javascript resource references necessary for component
+	 * rendering.
+	 * 
+	 * @param refs
+	 * @return
+	 */
+	T jsResourceReferencesMin(JavascriptResourceReference... refs);
+
+	/**
+	 * Returns minified javascript resource references necessary for component
+	 * rendering.
+	 * 
+	 * @return
+	 */
+	JavascriptResourceReference[] jsResourceReferencesMin();
+
+	/**
+	 * Sets javascript resource references necessary for component rendering.
+	 * 
+	 * @param refs
+	 * @return
+	 */
+	T jsResourceReferences(JavascriptResourceReference... refs);
+
+	/**
+	 * Returns javascript resource references necessary for component rendering.
+	 * 
+	 * @return
+	 */
+	JavascriptResourceReference[] jsResourceReferences();
 
 	boolean isEmpty();
 

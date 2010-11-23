@@ -23,6 +23,7 @@ import net.javaforge.jqwicket.JQStatement;
 import net.javaforge.jqwicket.ui.AbstractJQOptions;
 
 import org.apache.wicket.ResourceReference;
+import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 /**
  * @author mkalina
@@ -32,19 +33,23 @@ public class NotifierOptions extends AbstractJQOptions<NotifierOptions> {
 
 	private static final long serialVersionUID = 1L;
 
-	private ResourceReference[] cssResourceReferences = new ResourceReference[] { INotifier.CSS_RESOURCE };
+	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
+			NotifierOptions.class, "jquery.notify.js");
+
+	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
+			NotifierOptions.class, "jquery.notify.min.js");
+
+	public static final ResourceReference CSS_RESOURCE = new ResourceReference(
+			NotifierOptions.class, "ui.notify.css");
 
 	public enum Stack {
 		BELOW, ABOVE;
 	}
 
-	public NotifierOptions cssResourceReferences(ResourceReference... refs) {
-		this.cssResourceReferences = refs;
-		return this;
-	}
-
-	public ResourceReference[] cssResourceReferences() {
-		return this.cssResourceReferences;
+	public NotifierOptions() {
+		this.jsResourceReferences(JS_RESOURCE);
+		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.cssResourceReferences(CSS_RESOURCE);
 	}
 
 	/**

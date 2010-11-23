@@ -22,9 +22,11 @@ import net.javaforge.jqwicket.JQBehavior;
 import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.JQHeaderContributionTarget;
 import net.javaforge.jqwicket.JQWidget;
+import net.javaforge.jqwicket.Utils;
 
 import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 /**
  * Abstract component behavior for JQuery components.
@@ -42,6 +44,14 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 
 	public JQComponentBehaivor(T options) {
 		this.options = options;
+
+		JavascriptResourceReference[] jsRefs = options.jsResourceReferences();
+		if (Utils.isDevelopmentMode()
+				&& Utils.isNotEmpty(options.jsResourceReferencesMin()))
+			jsRefs = options.jsResourceReferencesMin();
+
+		this.addJsResourceReferences(jsRefs);
+		this.addCssResourceReferences(options.cssResourceReferences());
 	}
 
 	/**
@@ -61,10 +71,13 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 	@Override
 	public void contribute(JQHeaderContributionTarget target) {
 		super.contribute(target);
-
 		if (!Page.class.isAssignableFrom(this.component.getClass()))
-			target.addJsStatement($(this.component).chain(this.getName(),
-					this.options.toJson()));
+			this.initComponentJavascript(target);
+	}
+
+	protected void initComponentJavascript(JQHeaderContributionTarget target) {
+		target.addJsStatement($(this.component).chain(this.getName(),
+				this.options.toJson()));
 	}
 
 	protected JQFunction chain(CharSequence... methodArgs) {

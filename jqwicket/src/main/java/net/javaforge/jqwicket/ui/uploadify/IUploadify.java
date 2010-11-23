@@ -20,9 +20,7 @@ import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.JQWidget;
 import net.javaforge.jqwicket.ui.IJQOptions;
 
-import org.apache.wicket.ResourceReference;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 /**
  * Implementation of Uploadify jquery plugin: <a
@@ -32,27 +30,6 @@ import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
  * 
  */
 public interface IUploadify extends JQWidget<UploadifyOptions> {
-
-	static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			IUploadify.class, "jquery.uploadify.v2.1.4.js");
-
-	static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
-			IUploadify.class, "jquery.uploadify.v2.1.4.min.js");
-
-	static final JavascriptResourceReference JS_SWFOBJ_RESOURCE = new JavascriptResourceReference(
-			IUploadify.class, "swfobject.js");
-
-	static final ResourceReference CSS_RESOURCE = new ResourceReference(
-			IUploadify.class, "uploadify.css");
-
-	static final ResourceReference SWF_UPLOADIFY_RESOURCE = new ResourceReference(
-			IUploadify.class, "uploadify.swf");
-
-	static final ResourceReference SWF_EXPRESS_INSTALL_RESOURCE = new ResourceReference(
-			IUploadify.class, "expressInstall.swf");
-
-	static final ResourceReference PNG_CANCEL_RESOURCE = new ResourceReference(
-			IUploadify.class, "cancel.png");
 
 	/**
 	 * The .uploadify() function creates an instance of the Uploadify uploader

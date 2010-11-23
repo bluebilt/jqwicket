@@ -17,7 +17,6 @@
 package net.javaforge.jqwicket.ui.notifier;
 
 import net.javaforge.jqwicket.JQFunction;
-import net.javaforge.jqwicket.Utils;
 import net.javaforge.jqwicket.ui.DefaultJQOptions;
 import net.javaforge.jqwicket.ui.IJQOptions;
 import net.javaforge.jqwicket.ui.JQUIComponentBehaivor;
@@ -41,12 +40,6 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 
 	public NotifierBehavior(NotifierOptions options) {
 		super(options);
-		if (Utils.isDevelopmentMode())
-			addJsResourceReferences(JS_RESOURCE);
-		else
-			addJsResourceReferences(JS_RESOURCE_MIN);
-
-		this.addCssResourceReferences(options.cssResourceReferences());
 	}
 
 	/**
