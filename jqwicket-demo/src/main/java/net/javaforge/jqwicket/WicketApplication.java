@@ -12,6 +12,7 @@ public class WicketApplication extends WebApplication {
 
 	@Override
 	protected void init() {
+
 		addPreComponentOnBeforeRenderListener(new JQComponentOnBeforeRenderListener());
 
 		getMarkupSettings().setStripWicketTags(true);
@@ -29,6 +30,9 @@ public class WicketApplication extends WebApplication {
 		mountBookmarkablePage("uniform", UniformPage.class);
 		mountBookmarkablePage("uploadify", UploadifyPage.class);
 		mountBookmarkablePage("nivoslider", NivoSliderPage.class);
+		mountBookmarkablePage("maskedinput", MaskedInputPage.class);
+		mountBookmarkablePage("colorpicker", ColorPickerPage.class);
+		mountBookmarkablePage("jcarousel", JCarouselPage.class);
 	}
 
 	/**
