@@ -47,14 +47,12 @@ public class UploadifyServlet extends HttpServlet {
 				System.out.println("item-type: " + item.getContentType());
 				System.out.println("item-size: " + item.getSize());
 
-				item.write(new File("c:/temp/uploadr/" + item.getName()));
+				File targetFolder = new File(
+						System.getProperty("java.io.tmpdir"), "uploadify");
+				if (!targetFolder.exists())
+					targetFolder.mkdirs();
 
-				// Scanner scanner = new Scanner(item.getInputStream());
-				// scanner.useDelimiter("\\Z");
-				// while (scanner.hasNext()) {
-				// System.out.println(scanner.next());
-				// }
-
+				item.write(new File(targetFolder, item.getName()));
 			}
 
 			resp.getWriter().println("http://localhost:8080/uploadify");
