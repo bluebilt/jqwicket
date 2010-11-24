@@ -19,7 +19,6 @@ public class SparklinePage extends WebPage {
 				"green")));
 		add(new SparklineWebMarkupContainer("inlinebar", new SparklineOptions()
 				.type(Type.BAR).barColor("red")));
-
 	}
 
 }
