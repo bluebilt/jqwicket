@@ -17,7 +17,7 @@
 package net.javaforge.jqwicket.ui;
 
 import net.javaforge.jqwicket.JQHeaderContributionTarget;
-import net.javaforge.jqwicket.JQWidget;
+import net.javaforge.jqwicket.IJQWidget;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.model.IModel;
@@ -35,7 +35,7 @@ import org.apache.wicket.model.IModel;
  *            implementation.
  */
 public abstract class JQWebMarkupContainer<B extends JQComponentBehaivor<O>, O extends IJQOptions<O>>
-		extends WebMarkupContainer implements JQWidget<O> {
+		extends WebMarkupContainer implements IJQWidget<O> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -62,7 +62,7 @@ public abstract class JQWebMarkupContainer<B extends JQComponentBehaivor<O>, O e
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#getName()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
 	public String getName() {
 		return this.behavior.getName();
@@ -71,7 +71,7 @@ public abstract class JQWebMarkupContainer<B extends JQComponentBehaivor<O>, O e
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#getOptions()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#getOptions()
 	 */
 	public O getOptions() {
 		return this.behavior.getOptions();

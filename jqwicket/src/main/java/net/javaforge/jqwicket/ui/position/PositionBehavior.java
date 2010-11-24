@@ -40,7 +40,7 @@ public class PositionBehavior extends JQUIComponentBehaivor<PositionOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#getName()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
 	public String getName() {
 		return JQ_COMPONENT_NAME;

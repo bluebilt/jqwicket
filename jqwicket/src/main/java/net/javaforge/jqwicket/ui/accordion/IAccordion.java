@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.accordion;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 import net.javaforge.jqwicket.JQFunction;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -25,7 +25,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  * 
  */
-public interface IAccordion extends JQUIWidget<AccordionOptions> {
+public interface IAccordion extends IJQUIWidget<AccordionOptions> {
 
 	/**
 	 * Activate a content part of the Accordion programmatically. The index can

@@ -17,7 +17,7 @@
 package net.javaforge.jqwicket.ui.uploadify;
 
 import net.javaforge.jqwicket.JQFunction;
-import net.javaforge.jqwicket.JQWidget;
+import net.javaforge.jqwicket.IJQWidget;
 import net.javaforge.jqwicket.ui.IJQOptions;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -29,7 +29,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  * 
  */
-public interface IUploadify extends JQWidget<UploadifyOptions> {
+public interface IUploadify extends IJQWidget<UploadifyOptions> {
 
 	/**
 	 * The .uploadify() function creates an instance of the Uploadify uploader

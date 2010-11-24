@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.dialog;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 import net.javaforge.jqwicket.JQFunction;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -25,7 +25,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  *
  */
-public interface IDialog extends JQUIWidget<DialogOptions> {
+public interface IDialog extends IJQUIWidget<DialogOptions> {
 
 	/**
 	 * Method to open the dialog

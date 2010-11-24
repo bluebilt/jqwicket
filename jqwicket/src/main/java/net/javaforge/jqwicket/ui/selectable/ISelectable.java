@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.selectable;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 import net.javaforge.jqwicket.JQFunction;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -25,7 +25,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  *
  */
-public interface ISelectable extends JQUIWidget<SelectableOptions> {
+public interface ISelectable extends IJQUIWidget<SelectableOptions> {
 
 	/**
 	 * Refresh the position and size of each selectee element. This method can

@@ -21,7 +21,7 @@ import static net.javaforge.jqwicket.JQuery.$f;
 import net.javaforge.jqwicket.JQBehavior;
 import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.JQHeaderContributionTarget;
-import net.javaforge.jqwicket.JQWidget;
+import net.javaforge.jqwicket.IJQWidget;
 import net.javaforge.jqwicket.Utils;
 
 import org.apache.wicket.Page;
@@ -36,7 +36,7 @@ import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
  * @param <T>
  */
 public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
-		JQBehavior implements JQWidget<T> {
+		JQBehavior implements IJQWidget<T> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -57,7 +57,7 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#getOptions()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#getOptions()
 	 */
 	public T getOptions() {
 		return this.options;

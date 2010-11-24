@@ -43,7 +43,7 @@ public class SelectableBehavior extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#getName()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
 	public String getName() {
 		return JQ_COMPONENT_NAME;

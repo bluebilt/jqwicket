@@ -30,7 +30,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @param <T>
  *            is the type of {@link IJQOptions} associated with this widget.
  */
-public interface JQUIWidget<T extends IJQOptions<T>> extends JQWidget<T>,
+public interface IJQUIWidget<T extends IJQOptions<T>> extends IJQWidget<T>,
 		Serializable {
 
 	/**

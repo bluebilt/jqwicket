@@ -16,12 +16,12 @@
  */
 package net.javaforge.jqwicket.ui.resizable;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 
 /**
  * @author mkalina
  *
  */
-public interface IResizable extends JQUIWidget<ResizableOptions> {
+public interface IResizable extends IJQUIWidget<ResizableOptions> {
 
 }

@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.tabs;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 import net.javaforge.jqwicket.JQFunction;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -25,7 +25,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  *
  */
-public interface ITabs extends JQUIWidget<TabsOptions> {
+public interface ITabs extends IJQUIWidget<TabsOptions> {
 
 	/**
 	 * Add a new tab. The second argument is either a URL consisting of a

@@ -16,12 +16,12 @@
  */
 package net.javaforge.jqwicket.ui.droppable;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 
 /**
  * @author mkalina
  *
  */
-public interface IDroppable extends JQUIWidget<DroppableOptions> {
+public interface IDroppable extends IJQUIWidget<DroppableOptions> {
 
 }

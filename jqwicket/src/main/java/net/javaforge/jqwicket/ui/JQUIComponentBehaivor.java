@@ -17,7 +17,7 @@
 package net.javaforge.jqwicket.ui;
 
 import net.javaforge.jqwicket.JQFunction;
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
@@ -29,7 +29,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @param <T>
  */
 public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
-		JQComponentBehaivor<T> implements JQUIWidget<T> {
+		JQComponentBehaivor<T> implements IJQUIWidget<T> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -40,7 +40,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#destroy()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#destroy()
 	 */
 	public JQFunction destroy() {
 		return chain("'destroy'");
@@ -49,7 +49,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#destroy(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#destroy(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void destroy(AjaxRequestTarget ajaxRequestTarget) {
 		chain(ajaxRequestTarget, this.destroy());
@@ -58,7 +58,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#disable()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#disable()
 	 */
 	public JQFunction disable() {
 		return chain("'disable'");
@@ -67,7 +67,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#disable(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#disable(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void disable(AjaxRequestTarget ajaxRequestTarget) {
 		chain(ajaxRequestTarget, this.disable());
@@ -76,7 +76,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#enable()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#enable()
 	 */
 	public JQFunction enable() {
 		return chain("'enable'");
@@ -85,7 +85,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#enable(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#enable(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void enable(AjaxRequestTarget ajaxRequestTarget) {
 		chain(ajaxRequestTarget, this.enable());
@@ -94,7 +94,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#option(java.lang.String,
+	 * @see net.javaforge.jqwicket.IJQUIWidget#option(java.lang.String,
 	 *      java.lang.String)
 	 */
 	public JQFunction option(String optionName, String optionValue) {
@@ -104,7 +104,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#option(org.apache.wicket.ajax.AjaxRequestTarget,
+	 * @see net.javaforge.jqwicket.IJQUIWidget#option(org.apache.wicket.ajax.AjaxRequestTarget,
 	 *      java.lang.String, java.lang.String)
 	 */
 	public void option(AjaxRequestTarget ajaxRequestTarget, String optionName,
@@ -115,7 +115,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#options(net.javaforge.jqwicket.ui.IJQOptions)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#options(net.javaforge.jqwicket.ui.IJQOptions)
 	 */
 	public JQFunction options(IJQOptions<?> options) {
 		return chain("'option'", options.toJson());
@@ -124,7 +124,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#options(org.apache.wicket.ajax.AjaxRequestTarget,
+	 * @see net.javaforge.jqwicket.IJQUIWidget#options(org.apache.wicket.ajax.AjaxRequestTarget,
 	 *      net.javaforge.jqwicket.ui.IJQOptions)
 	 */
 	public void options(AjaxRequestTarget ajaxRequestTarget,
@@ -135,7 +135,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#widget()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#widget()
 	 */
 	public JQFunction widget() {
 		return chain("'widget'");
@@ -144,7 +144,7 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#widget(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#widget(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void widget(AjaxRequestTarget ajaxRequestTarget) {
 		chain(ajaxRequestTarget, this.widget());

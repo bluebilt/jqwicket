@@ -17,7 +17,7 @@
 package net.javaforge.jqwicket.ui.colorpicker;
 
 import net.javaforge.jqwicket.JQFunction;
-import net.javaforge.jqwicket.JQWidget;
+import net.javaforge.jqwicket.IJQWidget;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
@@ -25,7 +25,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  * 
  */
-public interface IColorPicker extends JQWidget<ColorPickerOptions> {
+public interface IColorPicker extends IJQWidget<ColorPickerOptions> {
 
 	/**
 	 * Method to show the color picker.

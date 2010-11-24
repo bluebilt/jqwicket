@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.uniform;
 
-import net.javaforge.jqwicket.JQWidget;
+import net.javaforge.jqwicket.IJQWidget;
 
 /**
  * see <a
@@ -26,6 +26,6 @@ import net.javaforge.jqwicket.JQWidget;
  * @author mkalina
  * 
  */
-public interface IUniform extends JQWidget<UniformOptions> {
+public interface IUniform extends IJQWidget<UniformOptions> {
 
 }

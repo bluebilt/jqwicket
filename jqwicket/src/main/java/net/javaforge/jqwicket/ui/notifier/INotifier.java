@@ -17,7 +17,7 @@
 package net.javaforge.jqwicket.ui.notifier;
 
 import net.javaforge.jqwicket.JQFunction;
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 import net.javaforge.jqwicket.ui.IJQOptions;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -26,7 +26,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  * 
  */
-public interface INotifier extends JQUIWidget<NotifierOptions> {
+public interface INotifier extends IJQUIWidget<NotifierOptions> {
 
 	JQFunction create(String title, String text);
 

@@ -62,7 +62,7 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQWidget#getName()
+	 * @see net.javaforge.jqwicket.IJQWidget#getName()
 	 */
 	public String getName() {
 		return JQ_COMPONENT_NAME;

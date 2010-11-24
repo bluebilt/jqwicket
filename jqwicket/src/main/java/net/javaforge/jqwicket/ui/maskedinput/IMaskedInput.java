@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.maskedinput;
 
-import net.javaforge.jqwicket.JQWidget;
+import net.javaforge.jqwicket.IJQWidget;
 
 /**
  * Implementation of the <a
@@ -26,6 +26,6 @@ import net.javaforge.jqwicket.JQWidget;
  * @author mkalina
  * 
  */
-public interface IMaskedInput extends JQWidget<MaskedInputOptions> {
+public interface IMaskedInput extends IJQWidget<MaskedInputOptions> {
 
 }

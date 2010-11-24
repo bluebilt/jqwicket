@@ -81,7 +81,7 @@ public class ColorPickerTextField<T> extends TextField<T> implements
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQWidget#getName()
+	 * @see net.javaforge.jqwicket.IJQWidget#getName()
 	 */
 	public String getName() {
 		return this.behavior.getName();
@@ -90,7 +90,7 @@ public class ColorPickerTextField<T> extends TextField<T> implements
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQWidget#getOptions()
+	 * @see net.javaforge.jqwicket.IJQWidget#getOptions()
 	 */
 	public ColorPickerOptions getOptions() {
 		return this.behavior.getOptions();

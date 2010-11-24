@@ -21,7 +21,7 @@ import static net.javaforge.jqwicket.Utils.join;
 
 import java.util.Collection;
 
-import net.javaforge.jqwicket.Utils.JoinCallback;
+import net.javaforge.jqwicket.Utils.IJoinCallback;
 
 import org.apache.wicket.Component;
 
@@ -132,7 +132,7 @@ public abstract class JQuery {
 	public static final JQFunction function(JQStatement[] statements,
 			CharSequence... args) {
 		return new JQFunction(join(statements, "\n",
-				new JoinCallback<JQStatement>() {
+				new IJoinCallback<JQStatement>() {
 					public CharSequence toCharSequence(JQStatement obj) {
 						return obj.toString();
 					}
@@ -201,7 +201,7 @@ public abstract class JQuery {
 			return null;
 
 		final CharSequence js = js( //
-				join(statements, ",", new Utils.JoinCallback<JQStatement>() {
+				join(statements, ",", new Utils.IJoinCallback<JQStatement>() {
 					public String toCharSequence(JQStatement obj) {
 						return function(obj).toString();
 					}

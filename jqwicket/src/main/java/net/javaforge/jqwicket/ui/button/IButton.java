@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.button;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 import net.javaforge.jqwicket.JQFunction;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -25,7 +25,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  * 
  */
-public interface IButton extends JQUIWidget<ButtonOptions> {
+public interface IButton extends IJQUIWidget<ButtonOptions> {
 
 	/**
 	 * Refreshes the visual state of the button. Useful for updating button

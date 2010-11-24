@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.nivoslider;
 
-import net.javaforge.jqwicket.JQWidget;
+import net.javaforge.jqwicket.IJQWidget;
 
 /**
  * Implementation of the Nivo-Slider plugin (see <a
@@ -25,7 +25,7 @@ import net.javaforge.jqwicket.JQWidget;
  * @author mkalina
  * 
  */
-public interface INivoSlider extends JQWidget<NivoSliderOptions> {
+public interface INivoSlider extends IJQWidget<NivoSliderOptions> {
 
 
 

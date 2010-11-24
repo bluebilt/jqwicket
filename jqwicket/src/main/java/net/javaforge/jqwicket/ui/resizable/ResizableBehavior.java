@@ -39,7 +39,7 @@ public class ResizableBehavior extends JQUIComponentBehaivor<ResizableOptions> {
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#getName()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
 	public String getName() {
 		return JQ_COMPONENT_NAME;

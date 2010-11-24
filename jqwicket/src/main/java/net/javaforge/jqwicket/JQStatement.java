@@ -25,7 +25,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import net.javaforge.jqwicket.Utils.JoinCallback;
+import net.javaforge.jqwicket.Utils.IJoinCallback;
 import net.javaforge.jqwicket.effect.Effect;
 import net.javaforge.jqwicket.effect.EffectEasing;
 import net.javaforge.jqwicket.effect.EffectSpeed;
@@ -235,7 +235,7 @@ public class JQStatement implements Serializable {
 		return this;
 	}
 
-	public <T> JQStatement chain(CharSequence label, ChainCallback<T> callback,
+	public <T> JQStatement chain(CharSequence label, IChainCallback<T> callback,
 			String separator, T... args) {
 		this.buf.append(".").append(label).append("(");
 		this.buf.append(join(args, separator, callback));
@@ -319,7 +319,7 @@ public class JQStatement implements Serializable {
 	 * 
 	 * @param <T>
 	 */
-	public static interface ChainCallback<T> extends JoinCallback<T> {
+	public static interface IChainCallback<T> extends IJoinCallback<T> {
 
 	}
 }

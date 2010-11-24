@@ -75,7 +75,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 */
 	public NivoSliderOptions effect(Effect... effects) {
 		super.put("effect",
-				Utils.join(effects, ",", new Utils.JoinCallback<Effect>() {
+				Utils.join(effects, ",", new Utils.IJoinCallback<Effect>() {
 					public CharSequence toCharSequence(Effect obj) {
 						return obj.getEffect();
 					}

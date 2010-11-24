@@ -17,7 +17,7 @@
 package net.javaforge.jqwicket.ui;
 
 import net.javaforge.jqwicket.JQFunction;
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
@@ -31,7 +31,7 @@ import org.apache.wicket.model.IModel;
  * @param <O>
  */
 public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>, O extends IJQOptions<O>>
-		extends JQWebMarkupContainer<B, O> implements JQUIWidget<O> {
+		extends JQWebMarkupContainer<B, O> implements IJQUIWidget<O> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -46,7 +46,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#destroy()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#destroy()
 	 */
 	public JQFunction destroy() {
 		return this.behavior.destroy();
@@ -55,7 +55,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#destroy(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#destroy(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void destroy(AjaxRequestTarget ajaxRequestTarget) {
 		this.behavior.destroy(ajaxRequestTarget);
@@ -64,7 +64,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#disable()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#disable()
 	 */
 	public JQFunction disable() {
 		return this.behavior.disable();
@@ -73,7 +73,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#disable(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#disable(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void disable(AjaxRequestTarget ajaxRequestTarget) {
 		this.behavior.disable(ajaxRequestTarget);
@@ -82,7 +82,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#enable()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#enable()
 	 */
 	public JQFunction enable() {
 		return this.behavior.enable();
@@ -91,7 +91,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#enable(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#enable(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void enable(AjaxRequestTarget ajaxRequestTarget) {
 		this.behavior.enable(ajaxRequestTarget);
@@ -100,7 +100,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#option(java.lang.String,
+	 * @see net.javaforge.jqwicket.IJQUIWidget#option(java.lang.String,
 	 *      java.lang.String)
 	 */
 	public JQFunction option(String optionName, String optionValue) {
@@ -110,7 +110,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#option(org.apache.wicket.ajax.AjaxRequestTarget,
+	 * @see net.javaforge.jqwicket.IJQUIWidget#option(org.apache.wicket.ajax.AjaxRequestTarget,
 	 *      java.lang.String, java.lang.String)
 	 */
 	public void option(AjaxRequestTarget ajaxRequestTarget, String optionName,
@@ -121,7 +121,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#options(net.javaforge.jqwicket.ui.IJQOptions)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#options(net.javaforge.jqwicket.ui.IJQOptions)
 	 */
 	public JQFunction options(IJQOptions<?> options) {
 		return this.behavior.options(options);
@@ -130,7 +130,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#options(org.apache.wicket.ajax.AjaxRequestTarget,
+	 * @see net.javaforge.jqwicket.IJQUIWidget#options(org.apache.wicket.ajax.AjaxRequestTarget,
 	 *      net.javaforge.jqwicket.ui.IJQOptions)
 	 */
 	public void options(AjaxRequestTarget ajaxRequestTarget,
@@ -141,7 +141,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#widget()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#widget()
 	 */
 	public JQFunction widget() {
 		return this.behavior.widget();
@@ -150,7 +150,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#widget(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#widget(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void widget(AjaxRequestTarget ajaxRequestTarget) {
 		this.behavior.widget(ajaxRequestTarget);

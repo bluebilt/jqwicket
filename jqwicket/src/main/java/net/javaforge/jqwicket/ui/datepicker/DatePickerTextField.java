@@ -79,7 +79,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#destroy()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#destroy()
 	 */
 	public JQFunction destroy() {
 		return behavior.destroy();
@@ -88,7 +88,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#destroy(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#destroy(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void destroy(AjaxRequestTarget ajaxRequestTarget) {
 		behavior.destroy(ajaxRequestTarget);
@@ -97,7 +97,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#disable()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#disable()
 	 */
 	public JQFunction disable() {
 		return behavior.disable();
@@ -106,7 +106,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#disable(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#disable(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void disable(AjaxRequestTarget ajaxRequestTarget) {
 		behavior.disable(ajaxRequestTarget);
@@ -115,7 +115,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#enable()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#enable()
 	 */
 	public JQFunction enable() {
 		return behavior.enable();
@@ -124,7 +124,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#enable(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#enable(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void enable(AjaxRequestTarget ajaxRequestTarget) {
 		behavior.enable(ajaxRequestTarget);
@@ -139,7 +139,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#option(java.lang.String,
+	 * @see net.javaforge.jqwicket.IJQUIWidget#option(java.lang.String,
 	 *      java.lang.String)
 	 */
 	public JQFunction option(String optionName, String optionValue) {
@@ -149,7 +149,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#option(org.apache.wicket.ajax.AjaxRequestTarget,
+	 * @see net.javaforge.jqwicket.IJQUIWidget#option(org.apache.wicket.ajax.AjaxRequestTarget,
 	 *      java.lang.String, java.lang.String)
 	 */
 	public void option(AjaxRequestTarget ajaxRequestTarget, String optionName,
@@ -278,7 +278,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#getName()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
 	public String getName() {
 		return this.behavior.getName();
@@ -287,7 +287,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#getOptions()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#getOptions()
 	 */
 	public DatePickerOptions getOptions() {
 		return this.behavior.getOptions();
@@ -296,7 +296,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#options(net.javaforge.jqwicket.ui.IJQOptions)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#options(net.javaforge.jqwicket.ui.IJQOptions)
 	 */
 	public JQFunction options(IJQOptions<?> options) {
 		return this.behavior.options(options);
@@ -305,7 +305,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#options(org.apache.wicket.ajax.AjaxRequestTarget,
+	 * @see net.javaforge.jqwicket.IJQUIWidget#options(org.apache.wicket.ajax.AjaxRequestTarget,
 	 *      net.javaforge.jqwicket.ui.IJQOptions)
 	 */
 	public void options(AjaxRequestTarget ajaxRequestTarget,
@@ -316,7 +316,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#widget()
+	 * @see net.javaforge.jqwicket.IJQUIWidget#widget()
 	 */
 	public JQFunction widget() {
 		return this.behavior.widget();
@@ -325,7 +325,7 @@ public class DatePickerTextField<T> extends TextField<T> implements IDatePicker 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQUIWidget#widget(org.apache.wicket.ajax.AjaxRequestTarget)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#widget(org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void widget(AjaxRequestTarget ajaxRequestTarget) {
 		this.behavior.widget(ajaxRequestTarget);

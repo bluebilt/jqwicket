@@ -16,12 +16,12 @@
  */
 package net.javaforge.jqwicket.ui.position;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 
 /**
  * @author mkalina
  *
  */
-public interface IPosition extends JQUIWidget<PositionOptions> {
+public interface IPosition extends IJQUIWidget<PositionOptions> {
 
 }

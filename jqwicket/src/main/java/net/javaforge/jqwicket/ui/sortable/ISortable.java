@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.sortable;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.ui.IJQOptions;
 
@@ -26,7 +26,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  *
  */
-public interface ISortable extends JQUIWidget<SortableOptions> {
+public interface ISortable extends IJQUIWidget<SortableOptions> {
 
 	/**
 	 * Serializes the sortable's item id's into a form/ajax submittable string.

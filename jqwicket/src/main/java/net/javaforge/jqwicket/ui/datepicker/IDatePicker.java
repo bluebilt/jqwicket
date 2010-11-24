@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.datepicker;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.ui.XYPosition;
 
@@ -26,7 +26,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  * 
  */
-public interface IDatePicker extends JQUIWidget<DatePickerOptions> {
+public interface IDatePicker extends IJQUIWidget<DatePickerOptions> {
 
 	/**
 	 * Open a datepicker in a "dialog" box.

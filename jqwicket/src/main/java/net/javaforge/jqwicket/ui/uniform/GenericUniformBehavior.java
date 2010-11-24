@@ -17,7 +17,7 @@
 package net.javaforge.jqwicket.ui.uniform;
 
 import static net.javaforge.jqwicket.JQuery.$;
-import net.javaforge.jqwicket.JQWidget;
+import net.javaforge.jqwicket.IJQWidget;
 
 /**
  * Generic, jquery selector based uniform behavior. This behavior can be added
@@ -28,7 +28,7 @@ import net.javaforge.jqwicket.JQWidget;
  * 
  */
 public class GenericUniformBehavior extends AbstractUniformBehavior implements
-		JQWidget<UniformOptions> {
+		IJQWidget<UniformOptions> {
 
 	private static final long serialVersionUID = 1L;
 

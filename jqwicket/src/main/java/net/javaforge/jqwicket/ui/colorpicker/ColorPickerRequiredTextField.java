@@ -81,7 +81,7 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T> implem
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQWidget#getName()
+	 * @see net.javaforge.jqwicket.IJQWidget#getName()
 	 */
 	public String getName() {
 		return this.behavior.getName();
@@ -90,7 +90,7 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T> implem
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQWidget#getOptions()
+	 * @see net.javaforge.jqwicket.IJQWidget#getOptions()
 	 */
 	public ColorPickerOptions getOptions() {
 		return this.behavior.getOptions();

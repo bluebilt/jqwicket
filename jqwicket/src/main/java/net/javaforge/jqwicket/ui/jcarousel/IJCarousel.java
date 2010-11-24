@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.jcarousel;
 
-import net.javaforge.jqwicket.JQWidget;
+import net.javaforge.jqwicket.IJQWidget;
 
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
@@ -27,7 +27,7 @@ import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
  * @author mkalina
  * 
  */
-public interface IJCarousel extends JQWidget<JCarouselOptions> {
+public interface IJCarousel extends IJQWidget<JCarouselOptions> {
 
 	static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
 			IJCarousel.class, "jquery.jcarousel.js");

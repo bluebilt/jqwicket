@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.slider;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 import net.javaforge.jqwicket.JQFunction;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -25,7 +25,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  *
  */
-public interface ISlider extends JQUIWidget<SliderOptions> {
+public interface ISlider extends IJQUIWidget<SliderOptions> {
 
 	/**
 	 * Method to value the slider

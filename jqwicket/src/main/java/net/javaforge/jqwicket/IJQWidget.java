@@ -28,7 +28,7 @@ import net.javaforge.jqwicket.ui.IJQOptions;
  * @param <T>
  *            is the type of {@link IJQOptions} associated with this widget.
  */
-public interface JQWidget<T extends IJQOptions<T>> extends
+public interface IJQWidget<T extends IJQOptions<T>> extends
 		IJQHeaderContributor, Serializable {
 
 	/**

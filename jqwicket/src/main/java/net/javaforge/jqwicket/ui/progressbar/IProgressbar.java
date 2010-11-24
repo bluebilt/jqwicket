@@ -16,7 +16,7 @@
  */
 package net.javaforge.jqwicket.ui.progressbar;
 
-import net.javaforge.jqwicket.JQUIWidget;
+import net.javaforge.jqwicket.IJQUIWidget;
 import net.javaforge.jqwicket.JQFunction;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -25,7 +25,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  * @author mkalina
  *
  */
-public interface IProgressbar extends JQUIWidget<ProgressbarOptions> {
+public interface IProgressbar extends IJQUIWidget<ProgressbarOptions> {
 
 	/**
 	 * Method to value the progressbar

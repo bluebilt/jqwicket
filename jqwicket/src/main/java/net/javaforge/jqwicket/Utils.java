@@ -97,7 +97,7 @@ public class Utils {
 
 	public static final <T> CharSequence join(T[] objects, String separator) {
 
-		return join(objects, separator, new JoinCallback<T>() {
+		return join(objects, separator, new IJoinCallback<T>() {
 			public CharSequence toCharSequence(T obj) {
 				return String.valueOf(obj);
 			}
@@ -137,7 +137,7 @@ public class Utils {
 	}
 
 	public static final <T> CharSequence join(T[] objects, String separator,
-			JoinCallback<T> callback) {
+			IJoinCallback<T> callback) {
 
 		if (isEmpty(objects))
 			return "";
@@ -223,14 +223,14 @@ public class Utils {
 
 	public static CharSequence toJson(IJsonAware[] args) {
 		return new StringBuilder().append("[")
-				.append(join(args, ",", new JoinCallback<IJsonAware>() {
+				.append(join(args, ",", new IJoinCallback<IJsonAware>() {
 					public CharSequence toCharSequence(IJsonAware obj) {
 						return obj.toJson();
 					}
 				})).append("]");
 	}
 
-	public static interface JoinCallback<T> {
+	public static interface IJoinCallback<T> {
 
 		CharSequence toCharSequence(T obj);
 	}
