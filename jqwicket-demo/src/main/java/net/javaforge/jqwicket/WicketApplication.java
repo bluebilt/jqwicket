@@ -18,6 +18,7 @@ public class WicketApplication extends WebApplication {
 		getMarkupSettings().setStripWicketTags(true);
 
 		mountBookmarkablePage("jquery", JQueryPage.class);
+		mountBookmarkablePage("genericjqbehavior", GenericJQBehaviorPage.class);
 		mountBookmarkablePage("resizable", ResizablePage.class);
 		mountBookmarkablePage("selectable", SelectablePage.class);
 		mountBookmarkablePage("sortable", SortablePage.class);
@@ -34,6 +35,7 @@ public class WicketApplication extends WebApplication {
 		mountBookmarkablePage("colorpicker", ColorPickerPage.class);
 		mountBookmarkablePage("jcarousel", JCarouselPage.class);
 		mountBookmarkablePage("tabs", TabsPage.class);
+		mountBookmarkablePage("sparkline", SparklinePage.class);
 	}
 
 	/**
