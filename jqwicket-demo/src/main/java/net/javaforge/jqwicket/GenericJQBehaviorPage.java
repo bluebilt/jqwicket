@@ -27,10 +27,11 @@ public class GenericJQBehaviorPage extends WebPage {
 	public GenericJQBehaviorPage() {
 		// add JQBehavior to the page itself
 		add(new JQBehavior("alert('say hello on load from page!')"));
-		
+
 		// add JQBehavior to the label
 		Label label = new Label("label", "Hello world!");
-		label.add(new JQBehavior("alert('say hello on load from label!')"));
+		label.add(JQBehaviors.mouseClick("alert('clicked!')"));
 		add(label);
+
 	}
 }
