@@ -16,7 +16,7 @@
                 </fileSet>
                 <fileSet>
                         <directory>${project.build.directory}</directory>
-                        <outputDirectory>bin</outputDirectory>
+                        <outputDirectory></outputDirectory>
                         <includes>
                                 <include>*.jar</include>
                         </includes>
@@ -24,7 +24,7 @@
 
                 <!-- demo -->
                 <fileSet>
-                        <directory>${project.basedir}/../jqwicket-demo</directory>
+                        <directory>${project.basedir}/../jqwicket-demo-${project.version}</directory>
                         <outputDirectory>jqwicket-demo</outputDirectory>
                         <includes>
                                 <include>pom.xml</include>
