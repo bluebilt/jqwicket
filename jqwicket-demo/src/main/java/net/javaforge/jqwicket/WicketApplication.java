@@ -33,6 +33,7 @@ public class WicketApplication extends WebApplication {
 		mountBookmarkablePage("maskedinput", MaskedInputPage.class);
 		mountBookmarkablePage("colorpicker", ColorPickerPage.class);
 		mountBookmarkablePage("jcarousel", JCarouselPage.class);
+		mountBookmarkablePage("tabs", TabsPage.class);
 	}
 
 	/**
