@@ -133,7 +133,7 @@ public class JQContributionRenderer implements IHeaderContributor {
 			}
 		}
 
-		String script = this.renderDocumentReadJavaScript(target);
+		String script = this.renderDocumentReadyJavaScript(target);
 		if (script != null)
 			response.renderJavascript(script, UUID.randomUUID().toString());
 
@@ -142,7 +142,7 @@ public class JQContributionRenderer implements IHeaderContributor {
 
 	}
 
-	private String renderDocumentReadJavaScript(
+	private String renderDocumentReadyJavaScript(
 			JQHeaderContributionTarget target) {
 
 		if (isEmpty(target.getJsStatements()))
