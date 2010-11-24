@@ -3,7 +3,7 @@
 	<groupId>net.javaforge.jqwicket</groupId>
 	<artifactId>jqwicket-demo</artifactId>
 	<packaging>war</packaging>
-	<version>0.1</version>
+	<version>0.2-SNAPSHOT</version>
 	<name>jqwicket-demo</name>
 	<description>jqwicket: wicket/jquery integration demo</description>
 	<url>http://code.google.com/p/${project.artifactId}/</url>
@@ -15,8 +15,8 @@
 		</license>
 	</licenses>
 	<scm>
-		<connection>scm:svn:https://jqwicket.googlecode.com/svn/tags/jqwicket-demo-0.1</connection>
-		<developerConnection>scm:svn:https://jqwicket.googlecode.com/svn/tags/jqwicket-demo-0.1</developerConnection>
+		<connection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket-demo</connection>
+		<developerConnection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket-demo</developerConnection>
 	</scm>
 	<issueManagement>
 		<system>Google Code</system>
