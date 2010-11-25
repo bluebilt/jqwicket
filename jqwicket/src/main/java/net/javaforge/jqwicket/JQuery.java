@@ -221,6 +221,23 @@ public abstract class JQuery {
 	}
 
 	/**
+	 * Creates JQStatement to invoke the respond method of the given
+	 * {@link AbstractAjaxBehavior} via ajax.
+	 * 
+	 * @param behave
+	 * @param params
+	 * @param successHandler
+	 * @param failureHandler
+	 * @return
+	 */
+	public static final JQStatement wicketAjaxGet(AbstractAjaxBehavior behave,
+			Map<String, Object> params, JQFunction successHandler,
+			JQFunction failureHandler) {
+		return wicketAjaxGet(behave.getCallbackUrl(), params, successHandler,
+				failureHandler);
+	}
+
+	/**
 	 * Creates JQStatement to invoke the respond method on
 	 * {@link AbstractAjaxBehavior} added to the wicket component.
 	 * 
@@ -243,6 +260,22 @@ public abstract class JQuery {
 	 */
 	public static final JQStatement wicketAjaxGet(CharSequence url,
 			Map<String, Object> params) {
+		return wicketAjaxGet(url, params, null, null);
+	}
+
+	/**
+	 * Creates JQStatement to invoke the respond method on
+	 * {@link AbstractAjaxBehavior} added to the wicket component.
+	 * 
+	 * @param url
+	 * @param params
+	 * @param successHandler
+	 * @param failureHandler
+	 * @return
+	 */
+	public static final JQStatement wicketAjaxGet(CharSequence url,
+			Map<String, Object> params, JQFunction successHandler,
+			JQFunction failureHandler) {
 
 		StringBuffer buf = new StringBuffer();
 		buf.append("wicketAjaxGet('").append(url);
@@ -257,14 +290,33 @@ public abstract class JQuery {
 					buf.append(String.valueOf(e.getValue()));
 				}
 			}
+		} 
+		
+		buf.append("',");
+		if (successHandler != null) {
+			buf.append(successHandler.render());
+		} else {
+			buf.append("function(){}");
 		}
-		if (buf.lastIndexOf("'") != buf.length())
-			buf.append("'");
+		buf.append(", ");
 
-		buf.append(", function(){}, function(){})");
+		if (failureHandler != null) {
+			buf.append(failureHandler.render());
+		} else {
+			buf.append("function(){}");
+		}
+
+		buf.append(")");
 		return js(buf);
 	}
 
+	/**
+	 * Converts given array of {@link JQStatement}s to comma-separated chain of
+	 * anonymous function calls.
+	 * 
+	 * @param statements
+	 * @return
+	 */
 	public static final JQFunction chainAsFunctions(
 			final JQStatement... statements) {
 
