@@ -20,10 +20,12 @@ import static net.javaforge.jqwicket.Utils.isEmpty;
 import static net.javaforge.jqwicket.Utils.join;
 
 import java.util.Collection;
+import java.util.Map;
 
 import net.javaforge.jqwicket.Utils.IJoinCallback;
 
 import org.apache.wicket.Component;
+import org.apache.wicket.behavior.AbstractAjaxBehavior;
 
 /**
  * 
@@ -192,6 +194,75 @@ public abstract class JQuery {
 
 	public static final JQStatement documentReady(JQStatement... statements) {
 		return $document().chain("ready", new JQFunction(statements).render());
+	}
+
+	/**
+	 * Creates JQStatement to invoke the respond method of the given
+	 * {@link AbstractAjaxBehavior} via ajax.
+	 * 
+	 * @param behave
+	 * @return
+	 */
+	public static final JQStatement wicketAjaxGet(AbstractAjaxBehavior behave) {
+		return wicketAjaxGet(behave, null);
+	}
+
+	/**
+	 * Creates JQStatement to invoke the respond method of the given
+	 * {@link AbstractAjaxBehavior} via ajax.
+	 * 
+	 * @param behave
+	 * @param params
+	 * @return
+	 */
+	public static final JQStatement wicketAjaxGet(AbstractAjaxBehavior behave,
+			Map<String, Object> params) {
+		return wicketAjaxGet(behave.getCallbackUrl(), params);
+	}
+
+	/**
+	 * Creates JQStatement to invoke the respond method on
+	 * {@link AbstractAjaxBehavior} added to the wicket component.
+	 * 
+	 * @param url
+	 *            is the wicket component's url
+	 * @return
+	 */
+	public static final JQStatement wicketAjaxGet(CharSequence url) {
+		return wicketAjaxGet(url, null);
+	}
+
+	/**
+	 * Creates JQStatement to invoke the respond method on
+	 * {@link AbstractAjaxBehavior} added to the wicket component.
+	 * 
+	 * @param url
+	 *            is the wicket component's url
+	 * @param params
+	 * @return
+	 */
+	public static final JQStatement wicketAjaxGet(CharSequence url,
+			Map<String, Object> params) {
+
+		StringBuffer buf = new StringBuffer();
+		buf.append("wicketAjaxGet('").append(url);
+		if (params != null && !params.isEmpty()) {
+			for (Map.Entry<String, Object> e : params.entrySet()) {
+				buf.append("&").append(e.getKey()).append("=");
+				if (e.getValue() instanceof JQStatement) {
+					buf.append("'+")
+							.append(((JQStatement) e.getValue()).render(false))
+							.append("+'");
+				} else {
+					buf.append(String.valueOf(e.getValue()));
+				}
+			}
+		}
+		if (buf.lastIndexOf("'") != buf.length())
+			buf.append("'");
+
+		buf.append(", function(){}, function(){})");
+		return js(buf);
 	}
 
 	public static final JQFunction chainAsFunctions(
