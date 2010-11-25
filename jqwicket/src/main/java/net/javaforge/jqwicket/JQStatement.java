@@ -235,8 +235,8 @@ public class JQStatement implements Serializable {
 		return this;
 	}
 
-	public <T> JQStatement chain(CharSequence label, IChainCallback<T> callback,
-			String separator, T... args) {
+	public <T> JQStatement chain(CharSequence label,
+			IChainCallback<T> callback, String separator, T... args) {
 		this.buf.append(".").append(label).append("(");
 		this.buf.append(join(args, separator, callback));
 		this.buf.append(")");
@@ -293,13 +293,68 @@ public class JQStatement implements Serializable {
 				.chain("effect", args.toArray(new CharSequence[args.size()]));
 	}
 
+	/**
+	 * Remove the set of matched elements from the DOM.
+	 * 
+	 * @return
+	 */
+	public JQStatement remove() {
+		return this.chain("remove");
+	}
+
+	/**
+	 * Remove the set of matched elements from the DOM.
+	 * 
+	 * @param selector
+	 * @return
+	 */
+	public JQStatement remove(CharSequence selector) {
+		return this.chain("remove", selector);
+	}
+
+	/**
+	 * Get the combined text contents of each element in the set of matched
+	 * elements, including their descendants.
+	 * 
+	 * @return
+	 */
+	public JQStatement text() {
+		return this.chain("text");
+	}
+
+	/**
+	 * Set the content of each element in the set of matched elements to the
+	 * specified text.
+	 * 
+	 * @param textString
+	 * @return
+	 */
+	public JQStatement text(String textString) {
+		return this.chain("text", textString);
+	}
+
+	/**
+	 * Insert every element in the set of matched elements to the end of the
+	 * target.
+	 * 
+	 * @param target
+	 * @return
+	 */
+	public JQStatement appendTo(String target) {
+		return this.chain("appendTo", target);
+	}
+
 	public String render() {
+		return this.render(true);
+	}
+
+	public String render(boolean trailingSemicolon) {
 		String s = this.buf.toString().trim();
 		if (isBlank(s))
 			return "";
 		if (s.endsWith("}"))
 			return s;
-		if (!s.endsWith(";"))
+		if (!s.endsWith(";") && trailingSemicolon)
 			return (s + ";");
 		return s;
 	}
