@@ -22,12 +22,20 @@
 		<system>Google Code</system>
 		<url>http://code.google.com/p/${project.artifactId}/issues/list</url>
 	</issueManagement>
+
+        <repositories>
+            <repository>
+                <id>googlecode-jqwicket</id>
+                <url>http://jqwicket.googlecode.com/svn/m2-repo/releases/</url>
+            </repository>
+        </repositories>
+
 	<dependencies>
 
 		<dependency>
 			<groupId>net.javaforge.jqwicket</groupId>
 			<artifactId>jqwicket</artifactId>
-			<version>0.1</version>
+			<version>${jqwicket.version}</version>
 		</dependency>
 
 		<!-- WICKET DEPENDENCIES -->
@@ -184,8 +192,9 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-	<properties>
+        <properties>
 		<wicket.version>1.4.13</wicket.version>
 		<jetty.version>6.1.4</jetty.version>
+                <jqwicket.version>0.1</jqwicket.version>
 	</properties>
 </project>
