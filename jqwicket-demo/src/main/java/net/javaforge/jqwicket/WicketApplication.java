@@ -37,6 +37,7 @@ public class WicketApplication extends WebApplication {
 		mountBookmarkablePage("tabs", TabsPage.class);
 		mountBookmarkablePage("sparkline", SparklinePage.class);
 		mountBookmarkablePage("dnd", DNDPage.class);
+		mountBookmarkablePage("tiptip", TipTipPage.class);
 
 	}
 
