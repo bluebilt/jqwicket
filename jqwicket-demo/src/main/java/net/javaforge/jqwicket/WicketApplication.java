@@ -38,6 +38,7 @@ public class WicketApplication extends WebApplication {
 		mountBookmarkablePage("sparkline", SparklinePage.class);
 		mountBookmarkablePage("dnd", DNDPage.class);
 		mountBookmarkablePage("tiptip", TipTipPage.class);
+		mountBookmarkablePage("cjimageflipbox", CJImageFlipboxPage.class);
 
 	}
 
