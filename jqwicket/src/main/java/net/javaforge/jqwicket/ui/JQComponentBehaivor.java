@@ -71,13 +71,13 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 	@Override
 	public void contribute(JQHeaderContributionTarget target) {
 		super.contribute(target);
-		if (!Page.class.isAssignableFrom(this.component.getClass()))
-			this.initComponentJavascript(target);
+		this.initComponentJavascript(target);
 	}
 
 	protected void initComponentJavascript(JQHeaderContributionTarget target) {
-		target.addJsStatement($(this.component).chain(this.getName(),
-				this.options.toJson()));
+		if (!Page.class.isAssignableFrom(this.component.getClass()))
+			target.addJsStatement($(this.component).chain(this.getName(),
+					this.options.toJson()));
 	}
 
 	protected JQFunction chain(CharSequence... methodArgs) {
