@@ -27,8 +27,6 @@ public class JCarouselBehavior extends JQUIComponentBehaivor<JCarouselOptions>
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "jcarousel";
-
 	public JCarouselBehavior() {
 		this(new JCarouselOptions());
 	}

@@ -27,8 +27,6 @@ public class DraggableBehavior extends JQUIComponentBehaivor<DraggableOptions>
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "draggable";
-
 	public DraggableBehavior() {
 		this(new DraggableOptions());
 	}

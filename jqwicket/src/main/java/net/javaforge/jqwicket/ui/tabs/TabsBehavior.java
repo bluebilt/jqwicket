@@ -30,8 +30,6 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "tabs";
-
 	public TabsBehavior() {
 		this(new TabsOptions());
 	}

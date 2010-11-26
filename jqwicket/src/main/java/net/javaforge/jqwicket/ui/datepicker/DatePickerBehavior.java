@@ -34,8 +34,6 @@ public class DatePickerBehavior extends JQUIComponentBehaivor<DatePickerOptions>
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "datepicker";
-
 	public DatePickerBehavior() {
 		this(new DatePickerOptions());
 	}

@@ -27,6 +27,8 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface IColorPicker extends IJQWidget<ColorPickerOptions> {
 
+	static final String JQ_COMPONENT_NAME = "ColorPicker";
+
 	/**
 	 * Method to show the color picker.
 	 * 

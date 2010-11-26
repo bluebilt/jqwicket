@@ -27,8 +27,6 @@ public class NivoSliderBehavior extends JQComponentBehaivor<NivoSliderOptions>
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "nivoSlider";
-
 	public NivoSliderBehavior() {
 		this(new NivoSliderOptions());
 	}

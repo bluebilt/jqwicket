@@ -27,6 +27,6 @@ import net.javaforge.jqwicket.IJQWidget;
  */
 public interface INivoSlider extends IJQWidget<NivoSliderOptions> {
 
-
+	static final String JQ_COMPONENT_NAME = "nivoSlider";
 
 }

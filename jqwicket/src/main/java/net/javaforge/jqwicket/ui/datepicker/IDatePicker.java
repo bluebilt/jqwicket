@@ -28,6 +28,8 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface IDatePicker extends IJQUIWidget<DatePickerOptions> {
 
+	static final String JQ_COMPONENT_NAME = "datepicker";
+
 	/**
 	 * Open a datepicker in a "dialog" box.
 	 */

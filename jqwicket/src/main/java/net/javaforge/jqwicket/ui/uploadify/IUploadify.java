@@ -31,6 +31,8 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface IUploadify extends IJQWidget<UploadifyOptions> {
 
+	static final String JQ_COMPONENT_NAME = "uploadify";
+
 	/**
 	 * The .uploadify() function creates an instance of the Uploadify uploader
 	 * to replace any DOM element on the page. Best practice is to apply the

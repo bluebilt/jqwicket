@@ -38,9 +38,19 @@ public class MaskedInputOptions extends AbstractJQOptions<MaskedInputOptions> {
 	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
 			MaskedInputOptions.class, "jquery.maskedinput-1.2.2.min.js");
 
-	public MaskedInputOptions() {
+	private String mask;
+
+	public MaskedInputOptions(String mask) {
 		this.jsResourceReferences(JS_RESOURCE);
 		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.mask = mask;
+	}
+
+	/**
+	 * @return the mask
+	 */
+	public String getMask() {
+		return mask;
 	}
 
 	/**

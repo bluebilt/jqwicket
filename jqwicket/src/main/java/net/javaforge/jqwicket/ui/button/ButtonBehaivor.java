@@ -30,8 +30,6 @@ public class ButtonBehaivor extends JQUIComponentBehaivor<ButtonOptions>
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "button";
-
 	public ButtonBehaivor() {
 		this(new ButtonOptions());
 	}

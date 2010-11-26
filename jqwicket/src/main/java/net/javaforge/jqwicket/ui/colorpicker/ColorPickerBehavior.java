@@ -35,8 +35,6 @@ public class ColorPickerBehavior extends
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "ColorPicker";
-
 	public ColorPickerBehavior() {
 		this(new ColorPickerOptions());
 	}

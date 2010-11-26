@@ -23,9 +23,11 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public interface ITabs extends IJQUIWidget<TabsOptions> {
+
+	static final String JQ_COMPONENT_NAME = "tabs";
 
 	/**
 	 * Add a new tab. The second argument is either a URL consisting of a

@@ -27,8 +27,6 @@ public class DroppableBehavior extends JQUIComponentBehaivor<DroppableOptions>
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "droppable";
-
 	public DroppableBehavior() {
 		this(new DroppableOptions());
 	}

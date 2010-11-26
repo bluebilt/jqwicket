@@ -23,9 +23,11 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public interface IProgressbar extends IJQUIWidget<ProgressbarOptions> {
+
+	static final String JQ_COMPONENT_NAME = "progressbar";
 
 	/**
 	 * Method to value the progressbar

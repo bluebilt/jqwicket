@@ -28,6 +28,8 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface INotifier extends IJQUIWidget<NotifierOptions> {
 
+	static final String JQ_COMPONENT_NAME = "notify";
+
 	JQFunction create(String title, String text);
 
 	void create(AjaxRequestTarget ajaxRequestTarget, String title, String text);

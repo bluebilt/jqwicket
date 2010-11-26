@@ -30,8 +30,6 @@ public class SparklineBehavior extends JQComponentBehaivor<SparklineOptions>
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "sparkline";
-
 	public SparklineBehavior() {
 		this(new SparklineOptions());
 	}

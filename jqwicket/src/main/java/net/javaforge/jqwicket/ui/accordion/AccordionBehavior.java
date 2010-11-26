@@ -30,8 +30,6 @@ public class AccordionBehavior extends JQUIComponentBehaivor<AccordionOptions>
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "accordion";
-
 	public AccordionBehavior() {
 		this(new AccordionOptions());
 	}

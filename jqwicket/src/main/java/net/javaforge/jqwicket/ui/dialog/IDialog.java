@@ -23,9 +23,11 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public interface IDialog extends IJQUIWidget<DialogOptions> {
+
+	static final String JQ_COMPONENT_NAME = "dialog";
 
 	/**
 	 * Method to open the dialog

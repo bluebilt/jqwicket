@@ -20,13 +20,12 @@ import net.javaforge.jqwicket.ui.JQUIComponentBehaivor;
 
 /**
  * @author mkalina
- *
+ * 
  */
-public class ResizableBehavior extends JQUIComponentBehaivor<ResizableOptions> {
+public class ResizableBehavior extends JQUIComponentBehaivor<ResizableOptions>
+		implements IResizable {
 
 	private static final long serialVersionUID = 1L;
-
-	private static final String JQ_COMPONENT_NAME = "resizable";
 
 	public ResizableBehavior() {
 		this(new ResizableOptions());

@@ -27,8 +27,6 @@ public class PositionBehavior extends JQUIComponentBehaivor<PositionOptions>
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "position";
-
 	public PositionBehavior() {
 		this(new PositionOptions());
 	}

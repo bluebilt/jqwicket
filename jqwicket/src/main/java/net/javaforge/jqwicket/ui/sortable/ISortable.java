@@ -24,9 +24,11 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public interface ISortable extends IJQUIWidget<SortableOptions> {
+
+	static final String JQ_COMPONENT_NAME = "sortable";
 
 	/**
 	 * Serializes the sortable's item id's into a form/ajax submittable string.

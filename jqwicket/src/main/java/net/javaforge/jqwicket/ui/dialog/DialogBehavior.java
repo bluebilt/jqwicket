@@ -31,8 +31,6 @@ public class DialogBehavior extends JQUIComponentBehaivor<DialogOptions>
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "dialog";
-
 	public DialogBehavior() {
 		this(new DialogOptions());
 	}

@@ -27,6 +27,8 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface IButton extends IJQUIWidget<ButtonOptions> {
 
+	static final String JQ_COMPONENT_NAME = "button";
+
 	/**
 	 * Refreshes the visual state of the button. Useful for updating button
 	 * state after the native element's checked or disabled state is changed

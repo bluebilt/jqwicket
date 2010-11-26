@@ -27,8 +27,6 @@ public abstract class AbstractUniformBehavior extends
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "uniform";
-
 	public AbstractUniformBehavior() {
 		this(new UniformOptions());
 	}

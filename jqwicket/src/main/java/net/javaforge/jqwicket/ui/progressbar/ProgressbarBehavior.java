@@ -30,8 +30,6 @@ public class ProgressbarBehavior extends
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "progressbar";
-
 	public ProgressbarBehavior() {
 		this(new ProgressbarOptions());
 	}

@@ -30,8 +30,6 @@ public class SelectableBehavior extends
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "selectable";
-
 	public SelectableBehavior() {
 		this(new SelectableOptions());
 	}

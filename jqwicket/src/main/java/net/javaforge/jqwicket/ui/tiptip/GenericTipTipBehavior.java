@@ -16,37 +16,32 @@
  */
 package net.javaforge.jqwicket.ui.tiptip;
 
-import static net.javaforge.jqwicket.JQuery.$;
-import net.javaforge.jqwicket.JQHeaderContributionTarget;
+import net.javaforge.jqwicket.ui.GenericJQComponentBehaivor;
 
 /**
  * @author mkalina
  * 
  */
-public class GenericTipTipBehavior extends TipTipBehavior {
+public class GenericTipTipBehavior extends
+		GenericJQComponentBehaivor<TipTipOptions> implements ITipTip {
 
 	private static final long serialVersionUID = 1L;
-
-	private String selector;
 
 	public GenericTipTipBehavior(String selector) {
 		this(selector, new TipTipOptions());
 	}
 
 	public GenericTipTipBehavior(String selector, TipTipOptions options) {
-		super(options);
-		this.selector = selector;
+		super(selector, options);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.JQComponentBehaivor#initComponentJavascript(net.javaforge.jqwicket.JQHeaderContributionTarget)
+	 * @see net.javaforge.jqwicket.IJQWidget#getName()
 	 */
-	@Override
-	protected void initComponentJavascript(JQHeaderContributionTarget target) {
-		target.addJsStatement($(this.selector).chain(this.getName(),
-				this.options.toJson()));
+	public String getName() {
+		return JQ_COMPONENT_NAME;
 	}
 
 }

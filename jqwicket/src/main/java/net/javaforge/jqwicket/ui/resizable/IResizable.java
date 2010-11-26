@@ -20,8 +20,10 @@ import net.javaforge.jqwicket.IJQUIWidget;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public interface IResizable extends IJQUIWidget<ResizableOptions> {
+
+	static final String JQ_COMPONENT_NAME = "resizable";
 
 }

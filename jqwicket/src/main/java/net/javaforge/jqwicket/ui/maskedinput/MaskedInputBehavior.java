@@ -30,17 +30,12 @@ public class MaskedInputBehavior extends
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "mask";
-
-	private String mask;
-
 	public MaskedInputBehavior(String mask) {
-		this(mask, new MaskedInputOptions());
+		this(new MaskedInputOptions(mask));
 	}
 
-	public MaskedInputBehavior(String mask, MaskedInputOptions options) {
+	public MaskedInputBehavior(MaskedInputOptions options) {
 		super(options);
-		this.mask = mask;
 	}
 
 	/**
@@ -60,7 +55,7 @@ public class MaskedInputBehavior extends
 	@Override
 	protected void initComponentJavascript(JQHeaderContributionTarget target) {
 		target.addJsStatement($(this.component).chain(this.getName(),
-				Utils.quote(this.mask), this.options.toJson()));
+				Utils.quote(this.options.getMask()), this.options.toJson()));
 	}
 
 }

@@ -32,8 +32,6 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 
 	private static final long serialVersionUID = 1L;
 
-	private static final String JQ_COMPONENT_NAME = "notify";
-
 	public NotifierBehavior() {
 		this(new NotifierOptions());
 	}

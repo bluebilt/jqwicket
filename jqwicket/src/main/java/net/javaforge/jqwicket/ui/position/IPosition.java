@@ -20,8 +20,10 @@ import net.javaforge.jqwicket.IJQUIWidget;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public interface IPosition extends IJQUIWidget<PositionOptions> {
+
+	static final String JQ_COMPONENT_NAME = "position";
 
 }

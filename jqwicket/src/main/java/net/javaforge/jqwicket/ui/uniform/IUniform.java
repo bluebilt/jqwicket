@@ -28,4 +28,6 @@ import net.javaforge.jqwicket.IJQWidget;
  */
 public interface IUniform extends IJQWidget<UniformOptions> {
 
+	static final String JQ_COMPONENT_NAME = "uniform";
+
 }

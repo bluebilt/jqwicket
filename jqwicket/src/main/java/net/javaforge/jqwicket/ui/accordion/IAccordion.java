@@ -27,6 +27,8 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface IAccordion extends IJQUIWidget<AccordionOptions> {
 
+	static final String JQ_COMPONENT_NAME = "accordion";
+
 	/**
 	 * Activate a content part of the Accordion programmatically. The index can
 	 * be a zero-indexed number to match the position of the header to close
