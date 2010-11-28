@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.javaforge.jqwicket</groupId>
 	<artifactId>jqwicket-demo</artifactId>
@@ -23,19 +24,19 @@
 		<url>http://code.google.com/p/${project.artifactId}/issues/list</url>
 	</issueManagement>
 
-        <repositories>
-            <repository>
-                <id>googlecode-jqwicket</id>
-                <url>http://jqwicket.googlecode.com/svn/m2-repo/releases/</url>
-            </repository>
-        </repositories>
+	<repositories>
+		<repository>
+			<id>googlecode-jqwicket</id>
+			<url>http://jqwicket.googlecode.com/svn/m2-repo/releases/</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 
 		<dependency>
 			<groupId>net.javaforge.jqwicket</groupId>
 			<artifactId>jqwicket</artifactId>
-			<version>${jqwicket.version}</version>
+			<version>${project.version}</version> <!-- jqwicket version should be the same as demo version -->
 		</dependency>
 
 		<!-- WICKET DEPENDENCIES -->
@@ -192,9 +193,8 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-        <properties>
+	<properties>
 		<wicket.version>1.4.13</wicket.version>
 		<jetty.version>6.1.4</jetty.version>
-                <jqwicket.version>0.1</jqwicket.version>
 	</properties>
 </project>
