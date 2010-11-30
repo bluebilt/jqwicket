@@ -24,6 +24,9 @@ import org.apache.wicket.Application;
 /**
  * @author mkalina
  * 
+ *         Parts of the source code are taken from Apache's commons-lang
+ *         project.
+ * 
  */
 public class Utils {
 
@@ -234,4 +237,86 @@ public class Utils {
 
 		CharSequence toCharSequence(T obj);
 	}
+
+	// Substring between
+	// -----------------------------------------------------------------------
+	/**
+	 * <p>
+	 * Gets the String that is nested in between two instances of the same
+	 * String.
+	 * </p>
+	 * 
+	 * <p>
+	 * A <code>null</code> input String returns <code>null</code>. A
+	 * <code>null</code> tag returns <code>null</code>.
+	 * </p>
+	 * 
+	 * <pre>
+	 * StringUtils.substringBetween(null, *)            = null
+	 * StringUtils.substringBetween("", "")             = ""
+	 * StringUtils.substringBetween("", "tag")          = null
+	 * StringUtils.substringBetween("tagabctag", null)  = null
+	 * StringUtils.substringBetween("tagabctag", "")    = ""
+	 * StringUtils.substringBetween("tagabctag", "tag") = "abc"
+	 * </pre>
+	 * 
+	 * @param str
+	 *            the String containing the substring, may be null
+	 * @param tag
+	 *            the String before and after the substring, may be null
+	 * @return the substring, <code>null</code> if no match
+	 * @since 2.0
+	 */
+	public static String substringBetween(String str, String tag) {
+		return substringBetween(str, tag, tag);
+	}
+
+	/**
+	 * <p>
+	 * Gets the String that is nested in between two Strings. Only the first
+	 * match is returned.
+	 * </p>
+	 * 
+	 * <p>
+	 * A <code>null</code> input String returns <code>null</code>. A
+	 * <code>null</code> open/close returns <code>null</code> (no match). An
+	 * empty ("") open and close returns an empty string.
+	 * </p>
+	 * 
+	 * <pre>
+	 * StringUtils.substringBetween("wx[b]yz", "[", "]") = "b"
+	 * StringUtils.substringBetween(null, *, *)          = null
+	 * StringUtils.substringBetween(*, null, *)          = null
+	 * StringUtils.substringBetween(*, *, null)          = null
+	 * StringUtils.substringBetween("", "", "")          = ""
+	 * StringUtils.substringBetween("", "", "]")         = null
+	 * StringUtils.substringBetween("", "[", "]")        = null
+	 * StringUtils.substringBetween("yabcz", "", "")     = ""
+	 * StringUtils.substringBetween("yabcz", "y", "z")   = "abc"
+	 * StringUtils.substringBetween("yabczyabcz", "y", "z")   = "abc"
+	 * </pre>
+	 * 
+	 * @param str
+	 *            the String containing the substring, may be null
+	 * @param open
+	 *            the String before the substring, may be null
+	 * @param close
+	 *            the String after the substring, may be null
+	 * @return the substring, <code>null</code> if no match
+	 * @since 2.0
+	 */
+	public static String substringBetween(String str, String open, String close) {
+		if (str == null || open == null || close == null) {
+			return null;
+		}
+		int start = str.indexOf(open);
+		if (start != -1) {
+			int end = str.indexOf(close, start + open.length());
+			if (end != -1) {
+				return str.substring(start + open.length(), end);
+			}
+		}
+		return null;
+	}
+
 }

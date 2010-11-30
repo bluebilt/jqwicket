@@ -14,18 +14,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.javaforge.jqwicket.ui.fancybox;
+package net.javaforge.jqwicket;
 
-import net.javaforge.jqwicket.IJQWidget;
+import net.javaforge.jqwicket.ui.cloudzoom.CloudZoomImage;
+import net.javaforge.jqwicket.ui.cloudzoom.CloudZoomImagePanel;
+import net.javaforge.jqwicket.ui.cloudzoom.CloudZoomOptions;
+
+import org.apache.wicket.markup.html.WebPage;
 
 /**
- * Implementation of <a href="http://fancybox.net/">Fancy Box jquery plugin</a>
- * 
  * @author mkalina
  * 
  */
-public interface IFancyBox extends IJQWidget<FancyBoxOptions> {
+public class CloudZoomPage extends WebPage {
 
-	static final String JQ_COMPONENT_NAME = "fancybox";
+	public CloudZoomPage() {
+
+		add(new CloudZoomImagePanel("cloudZoom", new CloudZoomOptions(
+				new CloudZoomImage("_images/cloudzoom/bigimage00.jpg",
+						"_images/cloudzoom/smallimage.jpg")).adjustX(10)
+				.adjustY(-4).softFocus(true).tint("#123").showTitle(true)));
+	}
 
 }

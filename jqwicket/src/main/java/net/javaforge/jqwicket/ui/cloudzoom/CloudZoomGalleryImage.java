@@ -14,18 +14,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.javaforge.jqwicket.ui.fancybox;
-
-import net.javaforge.jqwicket.IJQWidget;
+package net.javaforge.jqwicket.ui.cloudzoom;
 
 /**
- * Implementation of <a href="http://fancybox.net/">Fancy Box jquery plugin</a>
- * 
  * @author mkalina
  * 
  */
-public interface IFancyBox extends IJQWidget<FancyBoxOptions> {
+public class CloudZoomGalleryImage extends CloudZoomImage {
 
-	static final String JQ_COMPONENT_NAME = "fancybox";
+	private static final long serialVersionUID = 1L;
+
+	private String thumbnailUrl;
+
+	public CloudZoomGalleryImage(String bigImageUrl, String smallImageUrl,
+			String thumbnailUrl) {
+		super(bigImageUrl, smallImageUrl);
+		this.thumbnailUrl = thumbnailUrl;
+	}
+
+	public String getThumbnailUrl() {
+		return thumbnailUrl;
+	}
+
+	public boolean hasThumbnailUrl() {
+		return thumbnailUrl != null;
+	}
 
 }
