@@ -25,6 +25,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.wicket.Component;
+
 import net.javaforge.jqwicket.Utils.IJoinCallback;
 import net.javaforge.jqwicket.effect.Effect;
 import net.javaforge.jqwicket.effect.EffectEasing;
@@ -340,8 +342,21 @@ public class JQStatement implements Serializable {
 	 * @param target
 	 * @return
 	 */
-	public JQStatement appendTo(String target) {
+	public JQStatement appendTo(CharSequence target) {
 		return this.chain("appendTo", target);
+	}
+
+	/**
+	 * Insert every element in the set of matched elements to the end of the
+	 * target.
+	 * 
+	 * @param target
+	 * @return
+	 */	
+	public JQStatement appendTo(Component target) {
+		CharSequence _selector = target == null ? "" : new StringBuffer()
+				.append("#").append(target.getMarkupId());
+		return this.appendTo(_selector);
 	}
 
 	public String render() {
