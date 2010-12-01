@@ -16,13 +16,13 @@
  */
 package net.javaforge.jqwicket.ui.jcarousel;
 
-import net.javaforge.jqwicket.ui.JQUIComponentBehaivor;
+import net.javaforge.jqwicket.ui.JQComponentBehaivor;
 
 /**
  * @author mkalina
  * 
  */
-public class JCarouselBehavior extends JQUIComponentBehaivor<JCarouselOptions>
+public class JCarouselBehavior extends JQComponentBehaivor<JCarouselOptions>
 		implements IJCarousel {
 
 	private static final long serialVersionUID = 1L;

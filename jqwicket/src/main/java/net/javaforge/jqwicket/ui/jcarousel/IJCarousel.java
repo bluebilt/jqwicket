@@ -18,8 +18,6 @@ package net.javaforge.jqwicket.ui.jcarousel;
 
 import net.javaforge.jqwicket.IJQWidget;
 
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 /**
  * Implementation of <a
  * href="http://sorgalla.com/projects/jcarousel/>JCarousel</a> jquery plugin.
@@ -30,11 +28,5 @@ import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 public interface IJCarousel extends IJQWidget<JCarouselOptions> {
 
 	static final String JQ_COMPONENT_NAME = "jcarousel";
-
-	static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			IJCarousel.class, "jquery.jcarousel.js");
-
-	static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
-			IJCarousel.class, "jquery.jcarousel.min.js");
 
 }
