@@ -330,14 +330,32 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<?>>
 	 *      java.lang.Enum)
 	 */
 	public T put(CharSequence key, Enum<?> enumVal) {
+		return putEnumInternal(key, enumVal, true);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#putUnquoted(java.lang.CharSequence,
+	 *      java.lang.Enum)
+	 */
+	public T putUnquoted(CharSequence key, Enum<?> enumVal) {
+		return putEnumInternal(key, enumVal, false);
+	}
+
+	private T putEnumInternal(CharSequence key, Enum<?> enumVal, boolean quoted) {
 		if (enumVal == null)
 			return (T) this;
 
-		if (enumVal instanceof IJsonAware)
-			options.put(key, Utils.quote(((IJsonAware) enumVal).toJson()));
-		else
-			options.put(key, Utils.quote(enumVal.name().toLowerCase()));
+		CharSequence val = null;
 
+		if (enumVal instanceof IJsonAware)
+			val = ((IJsonAware) enumVal).toJson();
+		else
+			val = enumVal.name().toLowerCase();
+
+		val = quoted ? Utils.quote(val) : val;
+		options.put(key, val);
 		return (T) this;
 	}
 
@@ -460,6 +478,17 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<?>>
 	 *      boolean[])
 	 */
 	public T put(CharSequence key, boolean... values) {
+		options.put(key, values);
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 *      net.javaforge.jqwicket.IJsonAware[])
+	 */
+	public T put(CharSequence key, IJsonAware... values) {
 		options.put(key, values);
 		return (T) this;
 	}

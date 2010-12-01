@@ -122,6 +122,8 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	T put(CharSequence key, IJQOptions<?> options);
 
 	T put(CharSequence key, Enum<?> enumVal);
+	
+	T putUnquoted(CharSequence key, Enum<?> enumVal);
 
 	T put(CharSequence name, JQStatement value);
 
@@ -144,6 +146,8 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	T put(CharSequence key, boolean value);
 
 	T put(CharSequence key, boolean... values);
+
+	T put(CharSequence key, IJsonAware... values);
 
 	T put(CharSequence key, CharSequence... values);
 

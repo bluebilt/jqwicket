@@ -183,6 +183,8 @@ public class Utils {
 					jsonValue = toJson((boolean[]) value);
 				} else if (value instanceof String[]) {
 					jsonValue = toJson((String[]) value);
+				} else if (value instanceof IJsonAware[]) {
+					jsonValue = toJson((IJsonAware[]) value);
 				} else if (value instanceof Object[]) {
 					jsonValue = toJson((Object[]) value);
 				} else
