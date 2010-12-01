@@ -126,7 +126,7 @@ public class JQBehavior extends AbstractBehavior implements
 	 */
 	public void contribute(JQHeaderContributionTarget target) {
 		target.addJsStatement(this.statements);
-		target.addJavascriptResourceReference(this.jsResourceReferences);
-		target.addCssResourceReference(this.cssResourceReferences);
+		target.addJavascriptResourceReferences(this.jsResourceReferences);
+		target.addCssResourceReferences(this.cssResourceReferences);
 	}
 }

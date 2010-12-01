@@ -39,52 +39,95 @@ public class JQHeaderContributionTarget implements Serializable {
 
 	private Set<JavascriptResourceReference> jsResourceReferences;
 
+	private Set<String> jsResourceUrls;
+
 	private Set<ResourceReference> cssResourceReferences;
+
+	private Set<String> cssResourceUrls;
 
 	private Set<JQStatement> jsStatements;
 
-	public JQHeaderContributionTarget addJavascriptResourceReference(
-			Collection<JavascriptResourceReference> resources) {
+	public JQHeaderContributionTarget addJavascriptResourceReferences(
+			Collection<JavascriptResourceReference> refs) {
 
-		if (isEmpty(resources))
+		if (isEmpty(refs))
 			return this;
 
 		if (this.jsResourceReferences == null)
 			this.jsResourceReferences = new LinkedHashSet<JavascriptResourceReference>();
 
-		this.jsResourceReferences.addAll(resources);
+		this.jsResourceReferences.addAll(refs);
 		return this;
 	}
 
-	public JQHeaderContributionTarget addJavascriptResourceReference(
-			JavascriptResourceReference... resources) {
-
-		if (isEmpty(resources))
+	public JQHeaderContributionTarget addJavascriptResourceReferences(
+			JavascriptResourceReference... refs) {
+		if (isEmpty(refs))
 			return this;
 
-		return this.addJavascriptResourceReference(Arrays.asList(resources));
+		return this.addJavascriptResourceReferences(Arrays.asList(refs));
 	}
 
-	public JQHeaderContributionTarget addCssResourceReference(
-			Collection<ResourceReference> resources) {
+	public JQHeaderContributionTarget addJavascriptResourceUrls(
+			Collection<String> urls) {
 
-		if (isEmpty(resources))
+		if (isEmpty(urls))
+			return this;
+
+		if (this.jsResourceUrls == null)
+			this.jsResourceUrls = new LinkedHashSet<String>();
+
+		this.jsResourceUrls.addAll(urls);
+		return this;
+	}
+
+	public JQHeaderContributionTarget addJavascriptResourceUrls(String... urls) {
+		if (isEmpty(urls))
+			return this;
+
+		return this.addJavascriptResourceUrls(Arrays.asList(urls));
+	}
+
+	public JQHeaderContributionTarget addCssResourceReferences(
+			Collection<ResourceReference> refs) {
+
+		if (isEmpty(refs))
 			return this;
 
 		if (this.cssResourceReferences == null)
 			this.cssResourceReferences = new LinkedHashSet<ResourceReference>();
 
-		this.cssResourceReferences.addAll(resources);
+		this.cssResourceReferences.addAll(refs);
 		return this;
 	}
 
-	public JQHeaderContributionTarget addCssResourceReference(
-			ResourceReference... resources) {
+	public JQHeaderContributionTarget addCssResourceReferences(
+			ResourceReference... refs) {
 
-		if (isEmpty(resources))
+		if (isEmpty(refs))
 			return this;
 
-		return this.addCssResourceReference(Arrays.asList(resources));
+		return this.addCssResourceReferences(Arrays.asList(refs));
+	}
+
+	public JQHeaderContributionTarget addCssResourceUrls(Collection<String> urls) {
+
+		if (isEmpty(urls))
+			return this;
+
+		if (this.cssResourceUrls == null)
+			this.cssResourceUrls = new LinkedHashSet<String>();
+
+		this.cssResourceUrls.addAll(urls);
+		return this;
+	}
+
+	public JQHeaderContributionTarget addCssResourceUrls(String... urls) {
+
+		if (isEmpty(urls))
+			return this;
+
+		return this.addCssResourceUrls(Arrays.asList(urls));
 	}
 
 	public JQHeaderContributionTarget addJsStatement(
@@ -110,7 +153,9 @@ public class JQHeaderContributionTarget implements Serializable {
 
 	boolean hasResourcesToRender() {
 		return isNotEmpty(this.jsResourceReferences)
+				|| isNotEmpty(this.jsResourceUrls)
 				|| isNotEmpty(this.cssResourceReferences)
+				|| isNotEmpty(this.cssResourceUrls)
 				|| isNotEmpty(this.jsStatements);
 
 	}
@@ -123,10 +168,22 @@ public class JQHeaderContributionTarget implements Serializable {
 	}
 
 	@SuppressWarnings("unchecked")
+	public Collection<String> getJsResourceUrls() {
+		return this.jsResourceUrls != null ? Collections
+				.unmodifiableSet(this.jsResourceUrls) : Collections.EMPTY_SET;
+	}
+
+	@SuppressWarnings("unchecked")
 	public Collection<ResourceReference> getCssResourceReferences() {
 		return this.cssResourceReferences != null ? Collections
 				.unmodifiableSet(this.cssResourceReferences)
 				: Collections.EMPTY_SET;
+	}
+
+	@SuppressWarnings("unchecked")
+	public Collection<String> getCssResourceUrls() {
+		return this.cssResourceUrls != null ? Collections
+				.unmodifiableSet(this.cssResourceUrls) : Collections.EMPTY_SET;
 	}
 
 	@SuppressWarnings("unchecked")

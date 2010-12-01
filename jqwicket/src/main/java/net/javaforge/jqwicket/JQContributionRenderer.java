@@ -120,6 +120,12 @@ public class JQContributionRenderer implements IHeaderContributor {
 			response.renderCSSReference(config
 					.getJqueryUiCssResourceReference());
 
+		if (isNotEmpty(target.getJsResourceUrls())) {
+			for (String r : target.getJsResourceUrls()) {
+				response.renderJavascriptReference(r);
+			}
+		}
+
 		if (isNotEmpty(target.getJsResourceReferences())) {
 			for (JavascriptResourceReference r : target
 					.getJsResourceReferences()) {
@@ -129,6 +135,12 @@ public class JQContributionRenderer implements IHeaderContributor {
 
 		if (isNotEmpty(target.getCssResourceReferences())) {
 			for (ResourceReference r : target.getCssResourceReferences()) {
+				response.renderCSSReference(r);
+			}
+		}
+
+		if (isNotEmpty(target.getCssResourceUrls())) {
+			for (String r : target.getCssResourceUrls()) {
 				response.renderCSSReference(r);
 			}
 		}
