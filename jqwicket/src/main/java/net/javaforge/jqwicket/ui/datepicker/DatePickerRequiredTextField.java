@@ -134,16 +134,10 @@ public class DatePickerRequiredTextField<T> extends RequiredTextField<T>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQComponent#option(java.lang.String,
-	 *      java.lang.String)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#option(java.lang.CharSequence,
+	 *      java.lang.CharSequence)
 	 */
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.javaforge.jqwicket.IJQUIWidget#option(java.lang.String,
-	 *      java.lang.String)
-	 */
-	public JQFunction option(String optionName, String optionValue) {
+	public JQFunction option(CharSequence optionName, CharSequence optionValue) {
 		return behavior.option(optionName, optionValue);
 	}
 
@@ -151,22 +145,22 @@ public class DatePickerRequiredTextField<T> extends RequiredTextField<T>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#option(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, java.lang.String)
+	 *      java.lang.CharSequence, java.lang.CharSequence)
 	 */
-	public void option(AjaxRequestTarget ajaxRequestTarget, String optionName,
-			String optionValue) {
+	public void option(AjaxRequestTarget ajaxRequestTarget,
+			CharSequence optionName, CharSequence optionValue) {
 		behavior.option(ajaxRequestTarget, optionName, optionValue);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#dialog(java.lang.String,
+	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#dialog(java.lang.CharSequence,
 	 *      net.javaforge.jqwicket.JQFunction,
 	 *      net.javaforge.jqwicket.ui.datepicker.DatePickerOptions,
 	 *      net.javaforge.jqwicket.ui.XYPosition)
 	 */
-	public JQFunction dialog(String date, JQFunction onSelect,
+	public JQFunction dialog(CharSequence date, JQFunction onSelect,
 			DatePickerOptions options, XYPosition position) {
 		return behavior.dialog(date, onSelect, options, position);
 	}
@@ -175,11 +169,11 @@ public class DatePickerRequiredTextField<T> extends RequiredTextField<T>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#dialog(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, net.javaforge.jqwicket.JQFunction,
+	 *      java.lang.CharSequence, net.javaforge.jqwicket.JQFunction,
 	 *      net.javaforge.jqwicket.ui.datepicker.DatePickerOptions,
 	 *      net.javaforge.jqwicket.ui.XYPosition)
 	 */
-	public void dialog(AjaxRequestTarget ajaxRequestTarget, String date,
+	public void dialog(AjaxRequestTarget ajaxRequestTarget, CharSequence date,
 			JQFunction onSelect, DatePickerOptions options, XYPosition position) {
 		behavior.dialog(ajaxRequestTarget, date, onSelect, options, position);
 	}
@@ -241,9 +235,9 @@ public class DatePickerRequiredTextField<T> extends RequiredTextField<T>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#setDate(java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#setDate(java.lang.CharSequence)
 	 */
-	public JQFunction setDate(String date) {
+	public JQFunction setDate(CharSequence date) {
 		return behavior.setDate(date);
 	}
 
@@ -251,9 +245,9 @@ public class DatePickerRequiredTextField<T> extends RequiredTextField<T>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#setDate(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String)
+	 *      java.lang.CharSequence)
 	 */
-	public void setDate(AjaxRequestTarget ajaxRequestTarget, String date) {
+	public void setDate(AjaxRequestTarget ajaxRequestTarget, CharSequence date) {
 		behavior.setDate(ajaxRequestTarget, date);
 	}
 
@@ -281,7 +275,7 @@ public class DatePickerRequiredTextField<T> extends RequiredTextField<T>
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return this.behavior.getName();
 	}
 

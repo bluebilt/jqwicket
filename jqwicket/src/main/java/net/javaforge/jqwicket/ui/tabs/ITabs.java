@@ -27,7 +27,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface ITabs extends IJQUIWidget<TabsOptions> {
 
-	static final String JQ_COMPONENT_NAME = "tabs";
+	static final CharSequence JQ_COMPONENT_NAME = "tabs";
 
 	/**
 	 * Add a new tab. The second argument is either a URL consisting of a
@@ -36,7 +36,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	 * (remote) tab. The third is the zero-based position where to insert the
 	 * new tab. Optional, by default a new tab is appended at the end.
 	 */
-	JQFunction add(String url, String label);
+	JQFunction add(CharSequence url, CharSequence label);
 
 	/**
 	 * Add a new tab. The second argument is either a URL consisting of a
@@ -45,19 +45,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	 * (remote) tab. The third is the zero-based position where to insert the
 	 * new tab. Optional, by default a new tab is appended at the end.
 	 */
-	JQFunction add(String url, String label, Integer index);
-
-	/**
-	 * Add a new tab. The second argument is either a URL consisting of a
-	 * fragment identifier only to create an in-page tab or a full url (relative
-	 * or absolute, no cross-domain support) to turn the new tab into an Ajax
-	 * (remote) tab. The third is the zero-based position where to insert the
-	 * new tab. Optional, by default a new tab is appended at the end.
-	 * 
-	 * @param ajaxRequestTarget
-	 */
-	void add(AjaxRequestTarget ajaxRequestTarget, String url, String label,
-			Integer index);
+	JQFunction add(CharSequence url, CharSequence label, Integer index);
 
 	/**
 	 * Add a new tab. The second argument is either a URL consisting of a
@@ -68,7 +56,20 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	 * 
 	 * @param ajaxRequestTarget
 	 */
-	void add(AjaxRequestTarget ajaxRequestTarget, String url, String label);
+	void add(AjaxRequestTarget ajaxRequestTarget, CharSequence url,
+			CharSequence label, Integer index);
+
+	/**
+	 * Add a new tab. The second argument is either a URL consisting of a
+	 * fragment identifier only to create an in-page tab or a full url (relative
+	 * or absolute, no cross-domain support) to turn the new tab into an Ajax
+	 * (remote) tab. The third is the zero-based position where to insert the
+	 * new tab. Optional, by default a new tab is appended at the end.
+	 * 
+	 * @param ajaxRequestTarget
+	 */
+	void add(AjaxRequestTarget ajaxRequestTarget, CharSequence url,
+			CharSequence label);
 
 	/**
 	 * Remove a tab. The second argument is the zero-based index of the tab to
@@ -142,7 +143,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	 * only change the URL for an existing remote tab with this method, but also
 	 * turn an in-page tab into a remote tab.
 	 */
-	JQFunction url(int index, String url);
+	JQFunction url(int index, CharSequence url);
 
 	/**
 	 * Change the url from which an Ajax (remote) tab will be loaded. The
@@ -152,7 +153,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	 * 
 	 * @param ajaxRequestTarget
 	 */
-	void url(AjaxRequestTarget ajaxRequestTarget, int index, String url);
+	void url(AjaxRequestTarget ajaxRequestTarget, int index, CharSequence url);
 
 	/**
 	 * Retrieve the number of tabs of the first matched tab pane.

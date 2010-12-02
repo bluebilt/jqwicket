@@ -31,6 +31,6 @@ public interface IJQEvent extends IJsonAware {
 	 * 
 	 * @return
 	 */
-	String getName();
+	CharSequence getName();
 
 }

@@ -24,5 +24,5 @@ import net.javaforge.jqwicket.IJQUIWidget;
  */
 public interface IDroppable extends IJQUIWidget<DroppableOptions> {
 
-	 static final String JQ_COMPONENT_NAME = "droppable";
+	 static final CharSequence JQ_COMPONENT_NAME = "droppable";
 }

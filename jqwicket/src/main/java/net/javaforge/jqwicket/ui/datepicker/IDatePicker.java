@@ -28,12 +28,12 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface IDatePicker extends IJQUIWidget<DatePickerOptions> {
 
-	static final String JQ_COMPONENT_NAME = "datepicker";
+	static final CharSequence JQ_COMPONENT_NAME = "datepicker";
 
 	/**
 	 * Open a datepicker in a "dialog" box.
 	 */
-	JQFunction dialog(String date, JQFunction onSelect,
+	JQFunction dialog(CharSequence date, JQFunction onSelect,
 			DatePickerOptions options, XYPosition position);
 
 	/**
@@ -41,7 +41,7 @@ public interface IDatePicker extends IJQUIWidget<DatePickerOptions> {
 	 * 
 	 * @param ajaxRequestTarget
 	 */
-	void dialog(AjaxRequestTarget ajaxRequestTarget, String date,
+	void dialog(AjaxRequestTarget ajaxRequestTarget, CharSequence date,
 			JQFunction onSelect, DatePickerOptions options, XYPosition position);
 
 	/**
@@ -83,14 +83,14 @@ public interface IDatePicker extends IJQUIWidget<DatePickerOptions> {
 	/**
 	 * Sets the current date for the datepicker.
 	 */
-	JQFunction setDate(String date);
+	JQFunction setDate(CharSequence date);
 
 	/**
 	 * Sets the current date for the datepicker.
 	 * 
 	 * @param ajaxRequestTarget
 	 */
-	void setDate(AjaxRequestTarget ajaxRequestTarget, String date);
+	void setDate(AjaxRequestTarget ajaxRequestTarget, CharSequence date);
 
 	/**
 	 * Sets the current date for the datepicker.

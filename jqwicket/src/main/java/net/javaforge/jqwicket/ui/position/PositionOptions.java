@@ -21,7 +21,7 @@ import net.javaforge.jqwicket.ui.AbstractJQOptions;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class PositionOptions extends AbstractJQOptions<PositionOptions> {
 
@@ -38,7 +38,7 @@ public class PositionOptions extends AbstractJQOptions<PositionOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public PositionOptions my(String my) {
+	public PositionOptions my(CharSequence my) {
 		super.put("my", my);
 		return this;
 	}
@@ -54,7 +54,7 @@ public class PositionOptions extends AbstractJQOptions<PositionOptions> {
 	 * @param at
 	 * @return
 	 */
-	public PositionOptions at(String at) {
+	public PositionOptions at(CharSequence at) {
 		super.put("at", at);
 		return this;
 	}
@@ -68,7 +68,7 @@ public class PositionOptions extends AbstractJQOptions<PositionOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public PositionOptions of(String selector) {
+	public PositionOptions of(CharSequence selector) {
 		super.put("of", selector);
 		return this;
 	}
@@ -80,7 +80,7 @@ public class PositionOptions extends AbstractJQOptions<PositionOptions> {
 	 * @param offset
 	 * @return
 	 */
-	public PositionOptions offset(String offset) {
+	public PositionOptions offset(CharSequence offset) {
 		super.put("offset", offset);
 		return this;
 	}
@@ -97,11 +97,11 @@ public class PositionOptions extends AbstractJQOptions<PositionOptions> {
 	 * fit: so the element keeps in the desired direction, but is re-positioned
 	 * so it fits.<br>
 	 * none: not do collision detection.
-	 *  
+	 * 
 	 * @param collision
 	 * @return
 	 */
-	public PositionOptions collision(String collision) {
+	public PositionOptions collision(CharSequence collision) {
 		super.put("collision", collision);
 		return this;
 	}

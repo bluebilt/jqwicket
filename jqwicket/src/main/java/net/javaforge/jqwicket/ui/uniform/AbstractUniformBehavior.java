@@ -40,7 +40,7 @@ public abstract class AbstractUniformBehavior extends
 	 * 
 	 * @see net.javaforge.jqwicket.IJQWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 

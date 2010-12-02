@@ -39,7 +39,7 @@ import net.javaforge.jqwicket.ui.IJQOptions;
  * @author mkalina
  * 
  */
-public class JQStatement implements Serializable {
+public class JQStatement implements Serializable, IRenderable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -161,18 +161,19 @@ public class JQStatement implements Serializable {
 		return this.chain("removeClass", function.render());
 	}
 
-	public JQStatement switchClass(String removeClass, String addClass) {
+	public JQStatement switchClass(CharSequence removeClass,
+			CharSequence addClass) {
 		return this.chain("switchClass", quote(removeClass), quote(addClass));
 	}
 
-	public JQStatement switchClass(String removeClass, String addClass,
-			int duration) {
+	public JQStatement switchClass(CharSequence removeClass,
+			CharSequence addClass, int duration) {
 		return this.chain("switchClass", quote(removeClass), quote(addClass),
 				String.valueOf(duration));
 	}
 
-	public JQStatement switchClass(String removeClass, String addClass,
-			EffectSpeed duration) {
+	public JQStatement switchClass(CharSequence removeClass,
+			CharSequence addClass, EffectSpeed duration) {
 		return this.chain("switchClass", quote(removeClass), quote(addClass),
 				quote(duration.toJson()));
 	}
@@ -238,7 +239,7 @@ public class JQStatement implements Serializable {
 	}
 
 	public <T> JQStatement chain(CharSequence label,
-			IChainCallback<T> callback, String separator, T... args) {
+			IChainCallback<T> callback, CharSequence separator, T... args) {
 		this.buf.append(".").append(label).append("(");
 		this.buf.append(join(args, separator, callback));
 		this.buf.append(")");
@@ -331,7 +332,7 @@ public class JQStatement implements Serializable {
 	 * @param textString
 	 * @return
 	 */
-	public JQStatement text(String textString) {
+	public JQStatement text(CharSequence textString) {
 		return this.chain("text", textString);
 	}
 
@@ -352,18 +353,23 @@ public class JQStatement implements Serializable {
 	 * 
 	 * @param target
 	 * @return
-	 */	
+	 */
 	public JQStatement appendTo(Component target) {
 		CharSequence _selector = target == null ? "" : new StringBuffer()
 				.append("#").append(target.getMarkupId());
 		return this.appendTo(_selector);
 	}
 
-	public String render() {
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.IRenderable#render()
+	 */
+	public CharSequence render() {
 		return this.render(true);
 	}
 
-	public String render(boolean trailingSemicolon) {
+	public CharSequence render(boolean trailingSemicolon) {
 		String s = this.buf.toString().trim();
 		if (isBlank(s))
 			return "";
@@ -372,16 +378,6 @@ public class JQStatement implements Serializable {
 		if (!s.endsWith(";") && trailingSemicolon)
 			return (s + ";");
 		return s;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return this.render();
 	}
 
 	/**

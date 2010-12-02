@@ -41,7 +41,7 @@ public class CloudZoomBehavior extends JQComponentBehaivor<CloudZoomOptions> {
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return null;
 	}
 

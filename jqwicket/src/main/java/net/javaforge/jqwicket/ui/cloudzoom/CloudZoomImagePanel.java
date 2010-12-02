@@ -112,8 +112,8 @@ public class CloudZoomImagePanel extends Panel {
 		return link;
 	}
 
-	protected Image newCloudZoomImage(final String id, final String url,
-			final String alt, final String title) {
+	protected Image newCloudZoomImage(final String id, final CharSequence url,
+			final CharSequence alt, final CharSequence title) {
 		return new Image(id) {
 			private static final long serialVersionUID = 1L;
 
@@ -128,11 +128,11 @@ public class CloudZoomImagePanel extends Panel {
 		};
 	}
 
-	protected String getDefaultCssClass() {
+	protected CharSequence getDefaultCssClass() {
 		return "cloud-zoom";
 	}
 
-	protected String getGalleryCssClass() {
+	protected CharSequence getGalleryCssClass() {
 		return "cloud-zoom-gallery";
 	}
 }

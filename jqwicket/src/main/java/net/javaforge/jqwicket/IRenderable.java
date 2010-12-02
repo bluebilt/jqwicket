@@ -14,33 +14,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.javaforge.jqwicket.ui.fancybox;
-
-import net.javaforge.jqwicket.ui.JQComponentBehaivor;
+package net.javaforge.jqwicket;
 
 /**
  * @author mkalina
  * 
  */
-public class FancyBoxBehavior extends JQComponentBehaivor<FancyBoxOptions>
-		implements IFancyBox {
+public interface IRenderable {
 
-	private static final long serialVersionUID = 1L;
+	CharSequence render();
 
-	public FancyBoxBehavior() {
-		this(new FancyBoxOptions());
-	}
-
-	public FancyBoxBehavior(FancyBoxOptions options) {
-		super(options);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.javaforge.jqwicket.IJQWidget#getName()
-	 */
-	public CharSequence getName() {
-		return JQ_COMPONENT_NAME;
-	}
 }

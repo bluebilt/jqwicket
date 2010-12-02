@@ -32,16 +32,16 @@ public class GenericUniformBehavior extends AbstractUniformBehavior implements
 
 	private static final long serialVersionUID = 1L;
 
-	public GenericUniformBehavior(String selector) {
+	public GenericUniformBehavior(CharSequence selector) {
 		this(selector, new UniformOptions());
 	}
 
-	public GenericUniformBehavior(String selector, UniformOptions options) {
+	public GenericUniformBehavior(CharSequence selector, UniformOptions options) {
 		super(options);
 		this.contributeSelector(selector);
 	}
 
-	protected void contributeSelector(String selector) {
+	protected void contributeSelector(CharSequence selector) {
 		this.addJQStatements($(selector).chain(this.getName(),
 				this.options.toJson()));
 	}

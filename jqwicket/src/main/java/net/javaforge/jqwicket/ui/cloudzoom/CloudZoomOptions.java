@@ -71,7 +71,7 @@ public class CloudZoomOptions extends AbstractJQOptions<CloudZoomOptions> {
 	 * @param zoomWidth
 	 * @return
 	 */
-	public CloudZoomOptions zoomWidth(String zoomWidth) {
+	public CloudZoomOptions zoomWidth(CharSequence zoomWidth) {
 		return super.put("zoomWidth", zoomWidth);
 	}
 
@@ -83,7 +83,7 @@ public class CloudZoomOptions extends AbstractJQOptions<CloudZoomOptions> {
 	 * @param zoomHeight
 	 * @return
 	 */
-	public CloudZoomOptions zoomHeight(String zoomHeight) {
+	public CloudZoomOptions zoomHeight(CharSequence zoomHeight) {
 		return super.put("zoomHeight", zoomHeight);
 	}
 
@@ -97,7 +97,7 @@ public class CloudZoomOptions extends AbstractJQOptions<CloudZoomOptions> {
 	 * @param position
 	 * @return
 	 */
-	public CloudZoomOptions position(String position) {
+	public CloudZoomOptions position(CharSequence position) {
 		return super.put("position", position);
 	}
 
@@ -130,7 +130,7 @@ public class CloudZoomOptions extends AbstractJQOptions<CloudZoomOptions> {
 	 * @param tint
 	 * @return
 	 */
-	public CloudZoomOptions tint(String tint) {
+	public CloudZoomOptions tint(CharSequence tint) {
 		return super.put("tint", tint);
 	}
 

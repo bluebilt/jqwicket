@@ -30,7 +30,7 @@ public class MaskedInputBehavior extends
 
 	private static final long serialVersionUID = 1L;
 
-	public MaskedInputBehavior(String mask) {
+	public MaskedInputBehavior(CharSequence mask) {
 		this(new MaskedInputOptions(mask));
 	}
 
@@ -43,7 +43,7 @@ public class MaskedInputBehavior extends
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 

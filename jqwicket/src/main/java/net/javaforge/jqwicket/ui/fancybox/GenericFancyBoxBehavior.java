@@ -27,11 +27,12 @@ public class GenericFancyBoxBehavior extends
 
 	private static final long serialVersionUID = 1L;
 
-	public GenericFancyBoxBehavior(String selector) {
+	public GenericFancyBoxBehavior(CharSequence selector) {
 		this(selector, new FancyBoxOptions());
 	}
 
-	public GenericFancyBoxBehavior(String selector, FancyBoxOptions options) {
+	public GenericFancyBoxBehavior(CharSequence selector,
+			FancyBoxOptions options) {
 		super(selector, options);
 	}
 
@@ -40,7 +41,7 @@ public class GenericFancyBoxBehavior extends
 	 * 
 	 * @see net.javaforge.jqwicket.IJQWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 }

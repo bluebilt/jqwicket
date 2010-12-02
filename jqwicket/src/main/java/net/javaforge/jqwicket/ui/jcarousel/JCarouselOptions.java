@@ -194,7 +194,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param wrap
 	 * @return
 	 */
-	public JCarouselOptions wrap(String wrap) {
+	public JCarouselOptions wrap(CharSequence wrap) {
 		super.put("wrap", wrap);
 		return this;
 	}
@@ -206,7 +206,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param buttonNextHTML
 	 * @return
 	 */
-	public JCarouselOptions buttonNextHTML(String buttonNextHTML) {
+	public JCarouselOptions buttonNextHTML(CharSequence buttonNextHTML) {
 		super.put("buttonNextHTML", buttonNextHTML);
 		return this;
 	}
@@ -218,7 +218,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param buttonNextHTML
 	 * @return
 	 */
-	public JCarouselOptions buttonPrevHTML(String buttonPrevHTML) {
+	public JCarouselOptions buttonPrevHTML(CharSequence buttonPrevHTML) {
 		super.put("buttonPrevHTML", buttonPrevHTML);
 		return this;
 	}
@@ -229,7 +229,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param buttonNextEvent
 	 * @return
 	 */
-	public JCarouselOptions buttonNextEvent(String buttonNextEvent) {
+	public JCarouselOptions buttonNextEvent(CharSequence buttonNextEvent) {
 		super.put("buttonNextEvent", buttonNextEvent);
 		return this;
 	}
@@ -240,7 +240,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param buttonPrevEvent
 	 * @return
 	 */
-	public JCarouselOptions buttonPrevEvent(String buttonPrevEvent) {
+	public JCarouselOptions buttonPrevEvent(CharSequence buttonPrevEvent) {
 		super.put("buttonPrevEvent", buttonPrevEvent);
 		return this;
 	}

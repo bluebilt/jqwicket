@@ -27,7 +27,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface ISlider extends IJQUIWidget<SliderOptions> {
 
-	static final String JQ_COMPONENT_NAME = "slider";
+	static final CharSequence JQ_COMPONENT_NAME = "slider";
 
 	/**
 	 * Method to value the slider

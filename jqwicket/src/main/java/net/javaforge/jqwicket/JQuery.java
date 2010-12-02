@@ -37,6 +37,10 @@ public abstract class JQuery {
 	JQuery() {
 	}
 
+	public static final JQStatement $() {
+		return new JQStatement().append("$");
+	}
+
 	public static final JQStatement $(CharSequence selector) {
 		return new JQStatement().append("$('").append(selector).append("')");
 	}
@@ -133,12 +137,7 @@ public abstract class JQuery {
 
 	public static final JQFunction function(JQStatement[] statements,
 			CharSequence... args) {
-		return new JQFunction(join(statements, "\n",
-				new IJoinCallback<JQStatement>() {
-					public CharSequence toCharSequence(JQStatement obj) {
-						return obj.toString();
-					}
-				}), args);
+		return new JQFunction(join(statements, "\n"), args);
 	}
 
 	public static final JQFunction $f(CharSequence js) {
@@ -290,8 +289,8 @@ public abstract class JQuery {
 					buf.append(String.valueOf(e.getValue()));
 				}
 			}
-		} 
-		
+		}
+
 		buf.append("',");
 		if (successHandler != null) {
 			buf.append(successHandler.render());
@@ -311,8 +310,8 @@ public abstract class JQuery {
 	}
 
 	/**
-	 * Converts given array of {@link JQStatement}s to comma-separated chain of
-	 * anonymous function calls.
+	 * Converts given array of {@link JQStatement}s into the comma-separated
+	 * chain of anonymous function calls.
 	 * 
 	 * @param statements
 	 * @return
@@ -325,7 +324,7 @@ public abstract class JQuery {
 
 		final CharSequence js = js( //
 				join(statements, ",", new Utils.IJoinCallback<JQStatement>() {
-					public String toCharSequence(JQStatement obj) {
+					public CharSequence toCharSequence(JQStatement obj) {
 						return function(obj).toString();
 					}
 				})).render();

@@ -43,7 +43,7 @@ public class SparklineBehavior extends JQComponentBehaivor<SparklineOptions>
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 

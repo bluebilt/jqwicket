@@ -9,10 +9,10 @@ import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
  * 
  * @author cschaedel
  */
-public class LiScrollOptions extends AbstractJQOptions<LiScrollOptions>{
+public class LiScrollOptions extends AbstractJQOptions<LiScrollOptions> {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
 			LiScrollOptions.class, "jquery.li-scroller.1.0.js");
 
@@ -21,11 +21,10 @@ public class LiScrollOptions extends AbstractJQOptions<LiScrollOptions>{
 
 	public LiScrollOptions() {
 		this.setJsResourceReferences(JS_RESOURCE);
-		this.setCssResourceReferences(CSS_RESOURCE);		
+		this.setCssResourceReferences(CSS_RESOURCE);
 	}
 
 	public LiScrollOptions travelocity(float travelocity) {
-		super.put("travelocity", travelocity);
-		return this;
+		return super.put("travelocity", travelocity);
 	}
 }

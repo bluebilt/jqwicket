@@ -44,7 +44,7 @@ public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 		return this;
 	}
 
-	public SliderOptions animate(String animate) {
+	public SliderOptions animate(CharSequence animate) {
 		super.put("animate", animate);
 		return this;
 	}
@@ -74,7 +74,7 @@ public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 		return this;
 	}
 
-	public SliderOptions range(String range) {
+	public SliderOptions range(CharSequence range) {
 		super.put("range", range);
 		return this;
 	}

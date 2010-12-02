@@ -24,6 +24,6 @@ import net.javaforge.jqwicket.IJQUIWidget;
  */
 public interface IPosition extends IJQUIWidget<PositionOptions> {
 
-	static final String JQ_COMPONENT_NAME = "position";
+	static final CharSequence JQ_COMPONENT_NAME = "position";
 
 }

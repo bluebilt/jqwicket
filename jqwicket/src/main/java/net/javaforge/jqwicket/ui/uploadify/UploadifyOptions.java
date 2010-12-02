@@ -92,7 +92,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param buttonImg
 	 * @return
 	 */
-	public UploadifyOptions buttonImg(String buttonImg) {
+	public UploadifyOptions buttonImg(CharSequence buttonImg) {
 		super.put("buttonImg", buttonImg);
 		return this;
 	}
@@ -106,7 +106,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param buttonText
 	 * @return
 	 */
-	public UploadifyOptions buttonText(String buttonText) {
+	public UploadifyOptions buttonText(CharSequence buttonText) {
 		super.put("buttonText", buttonText);
 		return this;
 	}
@@ -122,7 +122,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param cancelImg
 	 * @return
 	 */
-	public UploadifyOptions cancelImg(String cancelImg) {
+	public UploadifyOptions cancelImg(CharSequence cancelImg) {
 		super.put("cancelImg", cancelImg);
 		return this;
 	}
@@ -138,7 +138,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param checkScript
 	 * @return
 	 */
-	public UploadifyOptions checkScript(String checkScript) {
+	public UploadifyOptions checkScript(CharSequence checkScript) {
 		super.put("checkScript", checkScript);
 		return this;
 	}
@@ -168,7 +168,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param expressInstall
 	 * @return
 	 */
-	public UploadifyOptions expressInstall(String expressInstall) {
+	public UploadifyOptions expressInstall(CharSequence expressInstall) {
 		super.put("expressInstall", expressInstall);
 		return this;
 	}
@@ -185,7 +185,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param fileDataName
 	 * @return
 	 */
-	public UploadifyOptions fileDataName(String fileDataName) {
+	public UploadifyOptions fileDataName(CharSequence fileDataName) {
 		super.put("fileDataName", fileDataName);
 		return this;
 	}
@@ -200,7 +200,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param fileDesc
 	 * @return
 	 */
-	public UploadifyOptions fileDesc(String fileDesc) {
+	public UploadifyOptions fileDesc(CharSequence fileDesc) {
 		super.put("fileDesc", fileDesc);
 		return this;
 	}
@@ -218,7 +218,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param fileExt
 	 * @return
 	 */
-	public UploadifyOptions fileExt(String fileExt) {
+	public UploadifyOptions fileExt(CharSequence fileExt) {
 		super.put("fileExt", fileExt);
 		return this;
 	}
@@ -262,7 +262,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param method
 	 * @return
 	 */
-	public UploadifyOptions method(String method) {
+	public UploadifyOptions method(CharSequence method) {
 		super.put("method", method);
 		return this;
 	}
@@ -291,7 +291,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param queueID
 	 * @return
 	 */
-	public UploadifyOptions queueID(String queueID) {
+	public UploadifyOptions queueID(CharSequence queueID) {
 		super.put("queueID", queueID);
 		return this;
 	}
@@ -353,7 +353,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param rollover
 	 * @return
 	 */
-	public UploadifyOptions script(String script) {
+	public UploadifyOptions script(CharSequence script) {
 		super.put("script", script);
 		return this;
 	}
@@ -371,7 +371,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param scriptAccess
 	 * @return
 	 */
-	public UploadifyOptions scriptAccess(String scriptAccess) {
+	public UploadifyOptions scriptAccess(CharSequence scriptAccess) {
 		super.put("scriptAccess", scriptAccess);
 		return this;
 	}
@@ -430,7 +430,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param uploader
 	 * @return
 	 */
-	public UploadifyOptions uploader(String uploader) {
+	public UploadifyOptions uploader(CharSequence uploader) {
 		super.put("uploader", uploader);
 		return this;
 	}

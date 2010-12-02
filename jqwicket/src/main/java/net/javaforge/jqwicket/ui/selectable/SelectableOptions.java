@@ -24,7 +24,7 @@ import net.javaforge.jqwicket.ui.AbstractJQOptions;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 
@@ -67,7 +67,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public SelectableOptions cancel(String selector) {
+	public SelectableOptions cancel(CharSequence selector) {
 		super.put("cancel", selector);
 		return this;
 	}
@@ -104,7 +104,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public SelectableOptions filter(String selector) {
+	public SelectableOptions filter(CharSequence selector) {
 		super.put("filter", selector);
 		return this;
 	}

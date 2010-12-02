@@ -28,24 +28,26 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface INotifier extends IJQUIWidget<NotifierOptions> {
 
-	static final String JQ_COMPONENT_NAME = "notify";
+	static final CharSequence JQ_COMPONENT_NAME = "notify";
 
-	JQFunction create(String title, String text);
+	JQFunction create(CharSequence title, CharSequence text);
 
-	void create(AjaxRequestTarget ajaxRequestTarget, String title, String text);
+	void create(AjaxRequestTarget ajaxRequestTarget, CharSequence title,
+			CharSequence text);
 
 	JQFunction create(IJQOptions<?> msg);
 
 	void create(AjaxRequestTarget ajaxRequestTarget, IJQOptions<?> msg);
 
-	JQFunction create(String template, IJQOptions<?> msg);
+	JQFunction create(CharSequence template, IJQOptions<?> msg);
 
-	void create(AjaxRequestTarget ajaxRequestTarget, String template,
+	void create(AjaxRequestTarget ajaxRequestTarget, CharSequence template,
 			IJQOptions<?> msg);
 
-	JQFunction create(String template, IJQOptions<?> msg, IJQOptions<?> options);
+	JQFunction create(CharSequence template, IJQOptions<?> msg,
+			IJQOptions<?> options);
 
-	void create(AjaxRequestTarget ajaxRequestTarget, String template,
+	void create(AjaxRequestTarget ajaxRequestTarget, CharSequence template,
 			IJQOptions<?> msg, IJQOptions<?> options);
 
 	JQFunction open();

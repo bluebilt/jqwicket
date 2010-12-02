@@ -58,7 +58,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param selectClass
 	 * @return
 	 */
-	public UniformOptions selectClass(String selectClass) {
+	public UniformOptions selectClass(CharSequence selectClass) {
 		super.put("selectClass", selectClass);
 		return this;
 	}
@@ -74,7 +74,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param radioClass
 	 * @return
 	 */
-	public UniformOptions radioClass(String radioClass) {
+	public UniformOptions radioClass(CharSequence radioClass) {
 		super.put("radioClass", radioClass);
 		return this;
 	}
@@ -90,7 +90,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param checkboxClass
 	 * @return
 	 */
-	public UniformOptions checkboxClass(String checkboxClass) {
+	public UniformOptions checkboxClass(CharSequence checkboxClass) {
 		super.put("checkboxClass", checkboxClass);
 		return this;
 	}
@@ -106,7 +106,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param fileClass
 	 * @return
 	 */
-	public UniformOptions fileClass(String fileClass) {
+	public UniformOptions fileClass(CharSequence fileClass) {
 		super.put("fileClass", fileClass);
 		return this;
 	}
@@ -123,7 +123,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param filenameClass
 	 * @return
 	 */
-	public UniformOptions filenameClass(String filenameClass) {
+	public UniformOptions filenameClass(CharSequence filenameClass) {
 		super.put("filenameClass", filenameClass);
 		return this;
 	}
@@ -140,7 +140,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param fileBtnClass
 	 * @return
 	 */
-	public UniformOptions fileBtnClass(String fileBtnClass) {
+	public UniformOptions fileBtnClass(CharSequence fileBtnClass) {
 		super.put("fileBtnClass", fileBtnClass);
 		return this;
 	}
@@ -157,7 +157,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param fileDefaultText
 	 * @return
 	 */
-	public UniformOptions fileDefaultText(String fileDefaultText) {
+	public UniformOptions fileDefaultText(CharSequence fileDefaultText) {
 		super.put("fileDefaultText", fileDefaultText);
 		return this;
 	}
@@ -173,7 +173,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param fileBtnText
 	 * @return
 	 */
-	public UniformOptions fileBtnText(String fileBtnText) {
+	public UniformOptions fileBtnText(CharSequence fileBtnText) {
 		super.put("fileBtnText", fileBtnText);
 		return this;
 	}
@@ -190,7 +190,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param checkedClass
 	 * @return
 	 */
-	public UniformOptions checkedClass(String checkedClass) {
+	public UniformOptions checkedClass(CharSequence checkedClass) {
 		super.put("checkedClass", checkedClass);
 		return this;
 	}
@@ -206,7 +206,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param focusClass
 	 * @return
 	 */
-	public UniformOptions focusClass(String focusClass) {
+	public UniformOptions focusClass(CharSequence focusClass) {
 		super.put("focusClass", focusClass);
 		return this;
 	}
@@ -222,7 +222,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param disabledClass
 	 * @return
 	 */
-	public UniformOptions disabledClass(String disabledClass) {
+	public UniformOptions disabledClass(CharSequence disabledClass) {
 		super.put("disabledClass", disabledClass);
 		return this;
 	}
@@ -238,7 +238,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param activeClass
 	 * @return
 	 */
-	public UniformOptions activeClass(String activeClass) {
+	public UniformOptions activeClass(CharSequence activeClass) {
 		super.put("activeClass", activeClass);
 		return this;
 	}
@@ -254,7 +254,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param hoverClass
 	 * @return
 	 */
-	public UniformOptions hoverClass(String hoverClass) {
+	public UniformOptions hoverClass(CharSequence hoverClass) {
 		super.put("hoverClass", hoverClass);
 		return this;
 	}
@@ -290,7 +290,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param idPrefix
 	 * @return
 	 */
-	public UniformOptions idPrefix(String idPrefix) {
+	public UniformOptions idPrefix(CharSequence idPrefix) {
 		super.put("idPrefix", idPrefix);
 		return this;
 	}
@@ -309,7 +309,7 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 	 * @param resetSelector
 	 * @return
 	 */
-	public UniformOptions resetSelector(String resetSelector) {
+	public UniformOptions resetSelector(CharSequence resetSelector) {
 		super.put("resetSelector", resetSelector);
 		return this;
 	}

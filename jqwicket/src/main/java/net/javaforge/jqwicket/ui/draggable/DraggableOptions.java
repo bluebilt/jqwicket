@@ -73,7 +73,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public DraggableOptions appendTo(String selector) {
+	public DraggableOptions appendTo(CharSequence selector) {
 		super.put("appendTo", selector);
 		return this;
 	}
@@ -97,7 +97,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public DraggableOptions cancel(String selector) {
+	public DraggableOptions cancel(CharSequence selector) {
 		super.put("cancel", selector);
 		return this;
 	}
@@ -111,7 +111,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public DraggableOptions connectToSortable(String selector) {
+	public DraggableOptions connectToSortable(CharSequence selector) {
 		super.put("connectToSortable", selector);
 		return this;
 	}
@@ -124,7 +124,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public DraggableOptions containment(String selector) {
+	public DraggableOptions containment(CharSequence selector) {
 		super.put("containment", selector);
 		return this;
 	}
@@ -148,7 +148,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param cursor
 	 * @return
 	 */
-	public DraggableOptions cursor(String cursor) {
+	public DraggableOptions cursor(CharSequence cursor) {
 		super.put("cursor", cursor);
 		return this;
 	}
@@ -211,7 +211,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param handle
 	 * @return
 	 */
-	public DraggableOptions handle(String handle) {
+	public DraggableOptions handle(CharSequence handle) {
 		super.put("handle", handle);
 		return this;
 	}
@@ -224,7 +224,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param helper
 	 * @return
 	 */
-	public DraggableOptions helper(String helper) {
+	public DraggableOptions helper(CharSequence helper) {
 		super.put("helper", helper);
 		return this;
 	}
@@ -252,7 +252,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public DraggableOptions iframeFix(String selector) {
+	public DraggableOptions iframeFix(CharSequence selector) {
 		super.put("iframeFix", selector);
 		return this;
 	}
@@ -319,7 +319,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param revert
 	 * @return
 	 */
-	public DraggableOptions revert(String revert) {
+	public DraggableOptions revert(CharSequence revert) {
 		super.put("revert", revert);
 		return this;
 	}
@@ -344,7 +344,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param scope
 	 * @return
 	 */
-	public DraggableOptions scope(String scope) {
+	public DraggableOptions scope(CharSequence scope) {
 		super.put("scope", scope);
 		return this;
 	}
@@ -393,7 +393,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public DraggableOptions snap(String selector) {
+	public DraggableOptions snap(CharSequence selector) {
 		super.put("snap", selector);
 		return this;
 	}
@@ -444,7 +444,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public DraggableOptions stack(String selector) {
+	public DraggableOptions stack(CharSequence selector) {
 		super.put("stack", selector);
 		return this;
 	}

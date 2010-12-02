@@ -31,6 +31,11 @@ public class LiScrollWebMarkupContainer extends
 		super(id, model, options);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.JQWebMarkupContainer#newJQComponentBehavior(net.javaforge.jqwicket.ui.IJQOptions)
+	 */
 	@Override
 	protected LiScrollBehavior newJQComponentBehavior(LiScrollOptions options) {
 		return new LiScrollBehavior(options);

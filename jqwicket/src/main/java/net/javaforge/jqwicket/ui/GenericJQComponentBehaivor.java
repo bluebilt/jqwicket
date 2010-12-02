@@ -31,9 +31,9 @@ public abstract class GenericJQComponentBehaivor<T extends IJQOptions<T>>
 
 	private static final long serialVersionUID = 1L;
 
-	private String selector;
+	private CharSequence selector;
 
-	public GenericJQComponentBehaivor(String selector, T options) {
+	public GenericJQComponentBehaivor(CharSequence selector, T options) {
 		super(options);
 		this.selector = selector;
 	}

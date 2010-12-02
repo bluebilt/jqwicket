@@ -42,7 +42,7 @@ public class ButtonOptions extends AbstractJQOptions<ButtonOptions> {
 		return this;
 	}
 
-	public ButtonOptions label(String label) {
+	public ButtonOptions label(CharSequence label) {
 		super.put("label", label);
 		return this;
 	}

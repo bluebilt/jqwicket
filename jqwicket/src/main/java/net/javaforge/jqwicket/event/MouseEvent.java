@@ -38,9 +38,9 @@ public enum MouseEvent implements IJQEvent {
 	UP("mouseup"), //
 	TOGGLE("toggle");
 
-	private String event;
+	private CharSequence event;
 
-	private MouseEvent(String event) {
+	private MouseEvent(CharSequence event) {
 		this.event = event;
 	}
 
@@ -49,7 +49,7 @@ public enum MouseEvent implements IJQEvent {
 	 * 
 	 * @see net.javaforge.jqwicket.event.IJQEvent#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return this.event;
 	}
 

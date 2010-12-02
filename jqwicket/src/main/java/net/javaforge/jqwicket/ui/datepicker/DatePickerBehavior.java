@@ -27,10 +27,10 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina
- *
+ * 
  */
-public class DatePickerBehavior extends JQUIComponentBehaivor<DatePickerOptions>
-		implements IDatePicker {
+public class DatePickerBehavior extends
+		JQUIComponentBehaivor<DatePickerOptions> implements IDatePicker {
 
 	private static final long serialVersionUID = 1L;
 
@@ -47,19 +47,19 @@ public class DatePickerBehavior extends JQUIComponentBehaivor<DatePickerOptions>
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#dialog(java.lang.String,
+	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#dialog(java.lang.CharSequence,
 	 *      net.javaforge.jqwicket.JQFunction,
 	 *      net.javaforge.jqwicket.ui.datepicker.DatePickerOptions,
 	 *      net.javaforge.jqwicket.ui.XYPosition)
 	 */
-	public JQFunction dialog(String date, JQFunction onSelect,
+	public JQFunction dialog(CharSequence date, JQFunction onSelect,
 			DatePickerOptions options, XYPosition position) {
 
 		List<CharSequence> args = new ArrayList<CharSequence>();
@@ -79,11 +79,11 @@ public class DatePickerBehavior extends JQUIComponentBehaivor<DatePickerOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#dialog(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, net.javaforge.jqwicket.JQFunction,
+	 *      java.lang.CharSequence, net.javaforge.jqwicket.JQFunction,
 	 *      net.javaforge.jqwicket.ui.datepicker.DatePickerOptions,
 	 *      net.javaforge.jqwicket.ui.XYPosition)
 	 */
-	public void dialog(AjaxRequestTarget ajaxRequestTarget, String date,
+	public void dialog(AjaxRequestTarget ajaxRequestTarget, CharSequence date,
 			JQFunction onSelect, DatePickerOptions options, XYPosition position) {
 		chain(ajaxRequestTarget, this.dialog(date, onSelect, options, position));
 	}
@@ -145,9 +145,9 @@ public class DatePickerBehavior extends JQUIComponentBehaivor<DatePickerOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#setDate(java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#setDate(java.lang.CharSequence)
 	 */
-	public JQFunction setDate(String date) {
+	public JQFunction setDate(CharSequence date) {
 		return chain("'setDate'", date);
 	}
 
@@ -155,9 +155,9 @@ public class DatePickerBehavior extends JQUIComponentBehaivor<DatePickerOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.datepicker.IDatePicker#setDate(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String)
+	 *      java.lang.CharSequence)
 	 */
-	public void setDate(AjaxRequestTarget ajaxRequestTarget, String date) {
+	public void setDate(AjaxRequestTarget ajaxRequestTarget, CharSequence date) {
 		chain(ajaxRequestTarget, this.setDate(date));
 	}
 

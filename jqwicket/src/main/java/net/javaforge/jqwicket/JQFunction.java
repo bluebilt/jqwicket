@@ -27,7 +27,7 @@ import java.io.Serializable;
  * @author mkalina
  * 
  */
-public class JQFunction implements Serializable {
+public class JQFunction implements Serializable, IRenderable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -54,6 +54,11 @@ public class JQFunction implements Serializable {
 		this.args = args;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.IRenderable#render()
+	 */
 	public CharSequence render() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("function(");
@@ -64,22 +69,12 @@ public class JQFunction implements Serializable {
 		return sb;
 	}
 
-	public String renderBodyOnly() {
-		return this.js.toString();
+	public CharSequence renderBodyOnly() {
+		return this.js;
 	}
 
 	public JQStatement renderBodyOnlyAsJQStatement() {
 		return JQuery.js(this.js);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return String.valueOf(this.render());
 	}
 
 }

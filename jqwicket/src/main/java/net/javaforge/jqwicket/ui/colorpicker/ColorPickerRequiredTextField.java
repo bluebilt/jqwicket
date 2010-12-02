@@ -32,8 +32,8 @@ import org.apache.wicket.model.IModel;
  * @param <T>
  *            the model object's type
  */
-public class ColorPickerRequiredTextField<T> extends RequiredTextField<T> implements
-		IColorPicker {
+public class ColorPickerRequiredTextField<T> extends RequiredTextField<T>
+		implements IColorPicker {
 
 	private static final long serialVersionUID = 1L;
 
@@ -68,12 +68,13 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T> implem
 		this.add(this.behavior = this.newColorPickerBehavior(options));
 	}
 
-	public ColorPickerRequiredTextField(String id, IModel<T> model, Class<T> type) {
+	public ColorPickerRequiredTextField(String id, IModel<T> model,
+			Class<T> type) {
 		this(id, model, type, new ColorPickerOptions());
 	}
 
-	public ColorPickerRequiredTextField(String id, IModel<T> model, Class<T> type,
-			ColorPickerOptions options) {
+	public ColorPickerRequiredTextField(String id, IModel<T> model,
+			Class<T> type, ColorPickerOptions options) {
 		super(id, model, type);
 		this.add(this.behavior = this.newColorPickerBehavior(options));
 	}
@@ -83,7 +84,7 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T> implem
 	 * 
 	 * @see net.javaforge.jqwicket.IJQWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return this.behavior.getName();
 	}
 
@@ -162,9 +163,9 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T> implem
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.colorpicker.IColorPicker#setColor(java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.colorpicker.IColorPicker#setColor(java.lang.CharSequence)
 	 */
-	public JQFunction setColor(String color) {
+	public JQFunction setColor(CharSequence color) {
 		return this.behavior.setColor(color);
 	}
 
@@ -172,9 +173,9 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T> implem
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.colorpicker.IColorPicker#setColor(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String)
+	 *      java.lang.CharSequence)
 	 */
-	public void setColor(AjaxRequestTarget ajaxRequestTarget, String color) {
+	public void setColor(AjaxRequestTarget ajaxRequestTarget, CharSequence color) {
 		this.behavior.setColor(ajaxRequestTarget, color);
 	}
 

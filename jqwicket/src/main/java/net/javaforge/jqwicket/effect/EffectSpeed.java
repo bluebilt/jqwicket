@@ -26,9 +26,9 @@ public enum EffectSpeed implements IJsonAware {
 
 	SLOW("slow"), NORMAL("normal"), FAST("fast");
 
-	private String speedName;
+	private CharSequence speedName;
 
-	private EffectSpeed(String name) {
+	private EffectSpeed(CharSequence name) {
 		this.speedName = name;
 	}
 

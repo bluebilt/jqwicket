@@ -27,6 +27,14 @@ import org.apache.wicket.model.IModel;
  * @author mkalina
  *
  */
+/**
+ * @author mkalina
+ *
+ */
+/**
+ * @author mkalina
+ * 
+ */
 public class NotifierWebMarkupContainer extends
 		JQUIWebMarkupContainer<NotifierBehavior, NotifierOptions> implements
 		INotifier {
@@ -63,10 +71,10 @@ public class NotifierWebMarkupContainer extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.String,
-	 *      java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
+	 *      java.lang.CharSequence)
 	 */
-	public JQFunction create(String title, String text) {
+	public JQFunction create(CharSequence title, CharSequence text) {
 		return this.behavior.create(title, text);
 	}
 
@@ -74,10 +82,10 @@ public class NotifierWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, java.lang.String)
+	 *      java.lang.CharSequence, java.lang.CharSequence)
 	 */
-	public void create(AjaxRequestTarget ajaxRequestTarget, String title,
-			String text) {
+	public void create(AjaxRequestTarget ajaxRequestTarget, CharSequence title,
+			CharSequence text) {
 		this.behavior.create(ajaxRequestTarget, title, text);
 	}
 
@@ -103,10 +111,10 @@ public class NotifierWebMarkupContainer extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.String,
+	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
 	 *      net.javaforge.jqwicket.ui.IJQOptions)
 	 */
-	public JQFunction create(String template, IJQOptions<?> msg) {
+	public JQFunction create(CharSequence template, IJQOptions<?> msg) {
 		return this.behavior.create(template, msg);
 	}
 
@@ -114,21 +122,21 @@ public class NotifierWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, net.javaforge.jqwicket.ui.IJQOptions)
+	 *      java.lang.CharSequence, net.javaforge.jqwicket.ui.IJQOptions)
 	 */
-	public void create(AjaxRequestTarget ajaxRequestTarget, String template,
-			IJQOptions<?> msg) {
+	public void create(AjaxRequestTarget ajaxRequestTarget,
+			CharSequence template, IJQOptions<?> msg) {
 		this.behavior.create(ajaxRequestTarget, template, msg);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.String,
+	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
 	 *      net.javaforge.jqwicket.ui.IJQOptions,
 	 *      net.javaforge.jqwicket.ui.IJQOptions)
 	 */
-	public JQFunction create(String template, IJQOptions<?> msg,
+	public JQFunction create(CharSequence template, IJQOptions<?> msg,
 			IJQOptions<?> options) {
 		return this.behavior.create(template, msg, options);
 	}
@@ -137,11 +145,11 @@ public class NotifierWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, net.javaforge.jqwicket.ui.IJQOptions,
+	 *      java.lang.CharSequence, net.javaforge.jqwicket.ui.IJQOptions,
 	 *      net.javaforge.jqwicket.ui.IJQOptions)
 	 */
-	public void create(AjaxRequestTarget ajaxRequestTarget, String template,
-			IJQOptions<?> msg, IJQOptions<?> options) {
+	public void create(AjaxRequestTarget ajaxRequestTarget,
+			CharSequence template, IJQOptions<?> msg, IJQOptions<?> options) {
 		this.behavior.create(ajaxRequestTarget, template, msg, options);
 	}
 

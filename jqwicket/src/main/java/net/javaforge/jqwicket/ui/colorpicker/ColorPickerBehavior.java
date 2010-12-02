@@ -48,7 +48,7 @@ public class ColorPickerBehavior extends
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 
@@ -93,7 +93,7 @@ public class ColorPickerBehavior extends
 	 * 
 	 * @see net.javaforge.jqwicket.ui.colorpicker.IColorPicker#setColor(java.lang.String)
 	 */
-	public JQFunction setColor(String color) {
+	public JQFunction setColor(CharSequence color) {
 		return $f($(this.component).chain("ColorPickerSetColor",
 				Utils.quote(color)));
 	}
@@ -104,7 +104,7 @@ public class ColorPickerBehavior extends
 	 * @see net.javaforge.jqwicket.ui.colorpicker.IColorPicker#setColor(org.apache.wicket.ajax.AjaxRequestTarget,
 	 *      java.lang.String)
 	 */
-	public void setColor(AjaxRequestTarget ajaxRequestTarget, String color) {
+	public void setColor(AjaxRequestTarget ajaxRequestTarget, CharSequence color) {
 		chain(ajaxRequestTarget, this.setColor(color));
 	}
 

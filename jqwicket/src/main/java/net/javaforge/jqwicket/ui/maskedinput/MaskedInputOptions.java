@@ -38,9 +38,9 @@ public class MaskedInputOptions extends AbstractJQOptions<MaskedInputOptions> {
 	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
 			MaskedInputOptions.class, "jquery.maskedinput-1.2.2.min.js");
 
-	private String mask;
+	private CharSequence mask;
 
-	public MaskedInputOptions(String mask) {
+	public MaskedInputOptions(CharSequence mask) {
 		this.setJsResourceReferences(JS_RESOURCE);
 		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
 		this.mask = mask;
@@ -49,7 +49,7 @@ public class MaskedInputOptions extends AbstractJQOptions<MaskedInputOptions> {
 	/**
 	 * @return the mask
 	 */
-	public String getMask() {
+	public CharSequence getMask() {
 		return mask;
 	}
 
@@ -59,7 +59,7 @@ public class MaskedInputOptions extends AbstractJQOptions<MaskedInputOptions> {
 	 * @param controlNavThumbsSearch
 	 * @return
 	 */
-	public MaskedInputOptions placeholder(String placeholder) {
+	public MaskedInputOptions placeholder(CharSequence placeholder) {
 		super.put("placeholder", placeholder);
 		return this;
 	}

@@ -18,9 +18,9 @@ package net.javaforge.jqwicket.ui.nivoslider;
 
 import static net.javaforge.jqwicket.JQuery.$f;
 import static net.javaforge.jqwicket.JQuery.js;
+import net.javaforge.jqwicket.IJsonAware;
 import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.JQStatement;
-import net.javaforge.jqwicket.Utils;
 import net.javaforge.jqwicket.ui.AbstractJQOptions;
 
 import org.apache.wicket.ResourceReference;
@@ -43,21 +43,26 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	public static final ResourceReference CSS_RESOURCE = new ResourceReference(
 			NivoSliderOptions.class, "nivo-slider.css");
 
-	public enum Effect {
+	public enum Effect implements IJsonAware {
 
 		SLICE_DOWN("sliceDown"), SLICE_DOWN_LEFT("sliceDownLeft"), SLICE_UP(
 				"sliceUp"), SLICE_UP_LEFT("sliceUpLeft"), SLICE_UP_DOWN(
 				"sliceUpDown"), SLICE_UP_DOWN_LEFT("sliceUpDownLeft"), FOLD(
 				"fold"), FADE("fade"), RANDOM("random");
 
-		private String effect;
+		private CharSequence effect;
 
-		private Effect(String effect) {
+		private Effect(CharSequence effect) {
 			this.effect = effect;
 		}
 
-		public String getEffect() {
-			return effect;
+		/**
+		 * {@inheritDoc}
+		 * 
+		 * @see net.javaforge.jqwicket.IJsonAware#toJson()
+		 */
+		public CharSequence toJson() {
+			return this.effect;
 		}
 	}
 
@@ -74,13 +79,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions effect(Effect... effects) {
-		super.put("effect",
-				Utils.join(effects, ",", new Utils.IJoinCallback<Effect>() {
-					public CharSequence toCharSequence(Effect obj) {
-						return obj.getEffect();
-					}
-				}));
-		return this;
+		return super.put("effect", effects);
 	}
 
 	/**
@@ -88,8 +87,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions slices(int slices) {
-		super.put("slices", slices);
-		return this;
+		return super.put("slices", slices);
 	}
 
 	/**
@@ -99,8 +97,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions animSpeed(int animSpeed) {
-		super.put("animSpeed", animSpeed);
-		return this;
+		return super.put("animSpeed", animSpeed);
 	}
 
 	/**
@@ -108,8 +105,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions pauseTime(int pauseTime) {
-		super.put("pauseTime", pauseTime);
-		return this;
+		return super.put("pauseTime", pauseTime);
 	}
 
 	/**
@@ -119,8 +115,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions startSlide(int startSlide) {
-		super.put("startSlide", startSlide);
-		return this;
+		return super.put("startSlide", startSlide);
 	}
 
 	/**
@@ -130,8 +125,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions directionNav(boolean directionNav) {
-		super.put("directionNav", directionNav);
-		return this;
+		return super.put("directionNav", directionNav);
 	}
 
 	/**
@@ -141,8 +135,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions directionNavHide(boolean directionNavHide) {
-		super.put("directionNavHide", directionNavHide);
-		return this;
+		return super.put("directionNavHide", directionNavHide);
 	}
 
 	/**
@@ -152,8 +145,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions controlNav(boolean controlNav) {
-		super.put("controlNav", controlNav);
-		return this;
+		return super.put("controlNav", controlNav);
 	}
 
 	/**
@@ -163,8 +155,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions controlNavThumbs(boolean controlNavThumbs) {
-		super.put("controlNavThumbs", controlNavThumbs);
-		return this;
+		return super.put("controlNavThumbs", controlNavThumbs);
 	}
 
 	/**
@@ -175,8 +166,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 */
 	public NivoSliderOptions controlNavThumbsFromRel(
 			boolean controlNavThumbsFromRel) {
-		super.put("controlNavThumbsFromRel", controlNavThumbsFromRel);
-		return this;
+		return super.put("controlNavThumbsFromRel", controlNavThumbsFromRel);
 	}
 
 	/**
@@ -186,7 +176,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions controlNavThumbsSearch(
-			String controlNavThumbsSearch) {
+			CharSequence controlNavThumbsSearch) {
 		super.put("controlNavThumbsSearch", controlNavThumbsSearch);
 		return this;
 	}
@@ -198,7 +188,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions controlNavThumbsReplace(
-			String controlNavThumbsReplace) {
+			CharSequence controlNavThumbsReplace) {
 		super.put("controlNavThumbsReplace", controlNavThumbsReplace);
 		return this;
 	}

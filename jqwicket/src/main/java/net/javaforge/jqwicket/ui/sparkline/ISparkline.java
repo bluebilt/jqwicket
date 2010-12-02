@@ -27,6 +27,6 @@ import net.javaforge.jqwicket.IJQWidget;
  */
 public interface ISparkline extends IJQWidget<SparklineOptions> {
 
-	static final String JQ_COMPONENT_NAME = "sparkline";
+	static final CharSequence JQ_COMPONENT_NAME = "sparkline";
 
 }

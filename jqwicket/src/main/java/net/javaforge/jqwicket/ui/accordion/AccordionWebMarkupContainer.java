@@ -81,9 +81,9 @@ public class AccordionWebMarkupContainer extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.accordion.IAccordion#activate(java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.accordion.IAccordion#activate(java.lang.CharSequence)
 	 */
-	public JQFunction activate(String selector) {
+	public JQFunction activate(CharSequence selector) {
 		return this.behavior.activate(selector);
 	}
 
@@ -91,9 +91,10 @@ public class AccordionWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.accordion.IAccordion#activate(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String)
+	 *      java.lang.CharSequence)
 	 */
-	public void activate(AjaxRequestTarget ajaxRequestTarget, String selector) {
+	public void activate(AjaxRequestTarget ajaxRequestTarget,
+			CharSequence selector) {
 		this.behavior.activate(ajaxRequestTarget, selector);
 	}
 

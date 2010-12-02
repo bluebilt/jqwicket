@@ -38,26 +38,26 @@ public class JQContributionConfig implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public static final String DEFAULT_JQUERY_URL = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js";
+	public static final CharSequence DEFAULT_JQUERY_URL = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js";
 
-	public static final String DEFAULT_JQUERYUI_URL = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js";
+	public static final CharSequence DEFAULT_JQUERYUI_URL = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js";
 
-	public static final String DEFAULT_JQUERYUI_CSS_URL = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css";
+	public static final CharSequence DEFAULT_JQUERYUI_CSS_URL = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css";
 
-	private Set<String> jsUrls;
+	private Set<CharSequence> jsUrls;
 
 	private Set<JavascriptResourceReference> jsResourceReferences;
 
-	private Set<String> cssUrls;
+	private Set<CharSequence> cssUrls;
 
 	private Set<ResourceReference> cssResourceReferences;
 
 	public JQContributionConfig() {
-		this(new String[] { DEFAULT_JQUERY_URL, DEFAULT_JQUERYUI_URL },
-				new String[] { DEFAULT_JQUERYUI_CSS_URL });
+		this(new CharSequence[] { DEFAULT_JQUERY_URL, DEFAULT_JQUERYUI_URL },
+				new CharSequence[] { DEFAULT_JQUERYUI_CSS_URL });
 	}
 
-	public JQContributionConfig(String... jsUrls) {
+	public JQContributionConfig(CharSequence... jsUrls) {
 		this(jsUrls != null ? Arrays.asList(jsUrls) : null, null, null, null);
 	}
 
@@ -65,29 +65,30 @@ public class JQContributionConfig implements Serializable {
 		this(null, jsRefs != null ? Arrays.asList(jsRefs) : null, null, null);
 	}
 
-	public JQContributionConfig(String[] jsUrls, String[] cssUrls) {
+	public JQContributionConfig(CharSequence[] jsUrls, CharSequence[] cssUrls) {
 		this(jsUrls != null ? Arrays.asList(jsUrls) : null, null,
 				cssUrls != null ? Arrays.asList(cssUrls) : null, null);
 	}
 
-	public JQContributionConfig(Collection<String> jsUrls,
+	public JQContributionConfig(Collection<CharSequence> jsUrls,
 			Collection<JavascriptResourceReference> jsResourceReferences,
-			Collection<String> cssUrls,
+			Collection<CharSequence> cssUrls,
 			Collection<ResourceReference> cssResourceReferences) {
 
-		this.jsUrls = new LinkedHashSet<String>(jsUrls != null ? jsUrls
-				: Collections.<String> emptySet());
+		this.jsUrls = new LinkedHashSet<CharSequence>(jsUrls != null ? jsUrls
+				: Collections.<CharSequence> emptySet());
 		this.jsResourceReferences = new LinkedHashSet<JavascriptResourceReference>(
 				jsResourceReferences != null ? jsResourceReferences
 						: Collections.<JavascriptResourceReference> emptySet());
-		this.cssUrls = new LinkedHashSet<String>(cssUrls != null ? cssUrls
-				: Collections.<String> emptySet());
+		this.cssUrls = new LinkedHashSet<CharSequence>(
+				cssUrls != null ? cssUrls
+						: Collections.<CharSequence> emptySet());
 		this.cssResourceReferences = new LinkedHashSet<ResourceReference>(
 				cssResourceReferences != null ? cssResourceReferences
 						: Collections.<ResourceReference> emptySet());
 	}
 
-	public JQContributionConfig withJsUrls(String... jsUrls) {
+	public JQContributionConfig withJsUrls(CharSequence... jsUrls) {
 		if (jsUrls != null)
 			this.jsUrls.addAll(Arrays.asList(jsUrls));
 		return this;
@@ -100,7 +101,7 @@ public class JQContributionConfig implements Serializable {
 		return this;
 	}
 
-	public JQContributionConfig withCssUrls(String... cssUrls) {
+	public JQContributionConfig withCssUrls(CharSequence... cssUrls) {
 		if (cssUrls != null)
 			this.cssUrls.addAll(Arrays.asList(cssUrls));
 		return this;
@@ -112,7 +113,7 @@ public class JQContributionConfig implements Serializable {
 		return this;
 	}
 
-	public Set<String> getJsUrls() {
+	public Set<CharSequence> getJsUrls() {
 		return Collections.unmodifiableSet(this.jsUrls);
 	}
 
@@ -120,7 +121,7 @@ public class JQContributionConfig implements Serializable {
 		return Collections.unmodifiableSet(this.jsResourceReferences);
 	}
 
-	public Set<String> getCssUrls() {
+	public Set<CharSequence> getCssUrls() {
 		return Collections.unmodifiableSet(this.cssUrls);
 	}
 

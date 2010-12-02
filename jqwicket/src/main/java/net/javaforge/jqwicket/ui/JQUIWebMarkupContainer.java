@@ -100,10 +100,10 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.IJQUIWidget#option(java.lang.String,
-	 *      java.lang.String)
+	 * @see net.javaforge.jqwicket.IJQUIWidget#option(java.lang.CharSequence,
+	 *      java.lang.CharSequence)
 	 */
-	public JQFunction option(String optionName, String optionValue) {
+	public JQFunction option(CharSequence optionName, CharSequence optionValue) {
 		return this.behavior.option(optionName, optionValue);
 	}
 
@@ -111,10 +111,10 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#option(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, java.lang.String)
+	 *      java.lang.CharSequence, java.lang.CharSequence)
 	 */
-	public void option(AjaxRequestTarget ajaxRequestTarget, String optionName,
-			String optionValue) {
+	public void option(AjaxRequestTarget ajaxRequestTarget,
+			CharSequence optionName, CharSequence optionValue) {
 		this.behavior.option(ajaxRequestTarget, optionName, optionValue);
 	}
 

@@ -51,7 +51,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param eventName
 	 * @return
 	 */
-	public ColorPickerOptions eventName(String eventName) {
+	public ColorPickerOptions eventName(CharSequence eventName) {
 		super.put("eventName", eventName);
 		return this;
 	}
@@ -63,7 +63,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param color
 	 * @return
 	 */
-	public ColorPickerOptions color(String color) {
+	public ColorPickerOptions color(CharSequence color) {
 		super.put("color", color);
 		return this;
 	}

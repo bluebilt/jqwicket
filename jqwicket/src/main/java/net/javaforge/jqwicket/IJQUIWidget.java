@@ -74,15 +74,15 @@ public interface IJQUIWidget<T extends IJQOptions<T>> extends IJQWidget<T>,
 	/**
 	 * Set any component option.
 	 */
-	JQFunction option(String optionName, String optionValue);
+	JQFunction option(CharSequence optionName, CharSequence optionValue);
 
 	/**
 	 * Set any component option.
 	 * 
 	 * @param ajaxRequestTarget
 	 */
-	void option(AjaxRequestTarget ajaxRequestTarget, String optionName,
-			String optionValue);
+	void option(AjaxRequestTarget ajaxRequestTarget, CharSequence optionName,
+			CharSequence optionValue);
 
 	/**
 	 * Set any component option.

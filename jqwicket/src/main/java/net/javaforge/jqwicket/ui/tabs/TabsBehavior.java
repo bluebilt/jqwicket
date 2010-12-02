@@ -23,7 +23,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 		ITabs {
@@ -43,27 +43,27 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(java.lang.String,
-	 *      java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(java.lang.CharSequence,
+	 *      java.lang.CharSequence)
 	 */
-	public JQFunction add(String url, String label) {
+	public JQFunction add(CharSequence url, CharSequence label) {
 		return this.add(url, label, null);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(java.lang.String,
-	 *      java.lang.String, java.lang.Integer)
+	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(java.lang.CharSequence,
+	 *      java.lang.CharSequence, java.lang.Integer)
 	 */
-	public JQFunction add(String url, String label, Integer index) {
+	public JQFunction add(CharSequence url, CharSequence label, Integer index) {
 		if (index != null)
 			return chain("'add'", url, label, String.valueOf(index));
 		else
@@ -74,10 +74,10 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, java.lang.String)
+	 *      java.lang.CharSequence, java.lang.CharSequence)
 	 */
-	public void add(AjaxRequestTarget ajaxRequestTarget, String url,
-			String label) {
+	public void add(AjaxRequestTarget ajaxRequestTarget, CharSequence url,
+			CharSequence label) {
 		chain(ajaxRequestTarget, this.add(url, label, null));
 	}
 
@@ -85,10 +85,10 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, java.lang.String, java.lang.Integer)
+	 *      java.lang.CharSequence, java.lang.CharSequence, java.lang.Integer)
 	 */
-	public void add(AjaxRequestTarget ajaxRequestTarget, String url,
-			String label, Integer index) {
+	public void add(AjaxRequestTarget ajaxRequestTarget, CharSequence url,
+			CharSequence label, Integer index) {
 		chain(ajaxRequestTarget, this.add(url, label, index));
 	}
 
@@ -190,9 +190,10 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#url(int, java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#url(int,
+	 *      java.lang.CharSequence)
 	 */
-	public JQFunction url(int index, String url) {
+	public JQFunction url(int index, CharSequence url) {
 		return chain("'url'", String.valueOf(index));
 	}
 
@@ -200,9 +201,10 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#url(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      int, java.lang.String)
+	 *      int, java.lang.CharSequence)
 	 */
-	public void url(AjaxRequestTarget ajaxRequestTarget, int index, String url) {
+	public void url(AjaxRequestTarget ajaxRequestTarget, int index,
+			CharSequence url) {
 		chain(ajaxRequestTarget, this.url(index, url));
 	}
 

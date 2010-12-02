@@ -43,7 +43,7 @@ public class AccordionBehavior extends JQUIComponentBehaivor<AccordionOptions>
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 
@@ -69,9 +69,9 @@ public class AccordionBehavior extends JQUIComponentBehaivor<AccordionOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.accordion.IAccordion#activate(java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.accordion.IAccordion#activate(java.lang.CharSequence)
 	 */
-	public JQFunction activate(String selector) {
+	public JQFunction activate(CharSequence selector) {
 		return chain("'activate'", selector);
 	}
 
@@ -79,9 +79,10 @@ public class AccordionBehavior extends JQUIComponentBehaivor<AccordionOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.accordion.IAccordion#activate(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String)
+	 *      java.lang.CharSequence)
 	 */
-	public void activate(AjaxRequestTarget ajaxRequestTarget, String selector) {
+	public void activate(AjaxRequestTarget ajaxRequestTarget,
+			CharSequence selector) {
 		chain(ajaxRequestTarget, this.activate(selector));
 	}
 

@@ -33,7 +33,7 @@ public class GMapIcon extends AbstractJQOptions<GMapIcon> {
 	 * @param image
 	 * @return
 	 */
-	public GMapIcon image(String image) {
+	public GMapIcon image(CharSequence image) {
 		return super.put("image", image);
 	}
 
@@ -46,7 +46,7 @@ public class GMapIcon extends AbstractJQOptions<GMapIcon> {
 	 * @param shadow
 	 * @return
 	 */
-	public GMapIcon shadow(String shadow) {
+	public GMapIcon shadow(CharSequence shadow) {
 		return super.put("shadow", shadow);
 	}
 

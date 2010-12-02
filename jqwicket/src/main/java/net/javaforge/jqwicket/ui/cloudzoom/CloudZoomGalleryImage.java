@@ -24,15 +24,15 @@ public class CloudZoomGalleryImage extends CloudZoomImage {
 
 	private static final long serialVersionUID = 1L;
 
-	private String thumbnailUrl;
+	private CharSequence thumbnailUrl;
 
-	public CloudZoomGalleryImage(String bigImageUrl, String smallImageUrl,
-			String thumbnailUrl) {
+	public CloudZoomGalleryImage(CharSequence bigImageUrl,
+			CharSequence smallImageUrl, CharSequence thumbnailUrl) {
 		super(bigImageUrl, smallImageUrl);
 		this.thumbnailUrl = thumbnailUrl;
 	}
 
-	public String getThumbnailUrl() {
+	public CharSequence getThumbnailUrl() {
 		return thumbnailUrl;
 	}
 

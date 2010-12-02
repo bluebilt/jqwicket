@@ -56,7 +56,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @param appendTo
 	 * @return
 	 */
-	public SortableOptions appendTo(String appendTo) {
+	public SortableOptions appendTo(CharSequence appendTo) {
 		super.put("appendTo", appendTo);
 		return this;
 	}
@@ -80,7 +80,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public SortableOptions cancel(String selector) {
+	public SortableOptions cancel(CharSequence selector) {
 		super.put("cancel", selector);
 		return this;
 	}
@@ -93,7 +93,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public SortableOptions connectWith(String selector) {
+	public SortableOptions connectWith(CharSequence selector) {
 		super.put("connectWith", selector);
 		return this;
 	}
@@ -105,7 +105,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public SortableOptions containment(String selector) {
+	public SortableOptions containment(CharSequence selector) {
 		super.put("containment", selector);
 		return this;
 	}
@@ -116,7 +116,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @param cursor
 	 * @return
 	 */
-	public SortableOptions cursor(String cursor) {
+	public SortableOptions cursor(CharSequence cursor) {
 		super.put("cursor", cursor);
 		return this;
 	}
@@ -130,7 +130,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @param cursorAt
 	 * @return
 	 */
-	public SortableOptions cursorAt(String cursorAt) {
+	public SortableOptions cursorAt(CharSequence cursorAt) {
 		super.put("cursorAt", cursorAt);
 		return this;
 	}
@@ -226,7 +226,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public SortableOptions handle(String selector) {
+	public SortableOptions handle(CharSequence selector) {
 		super.put("handle", selector);
 		return this;
 	}
@@ -240,7 +240,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @param helper
 	 * @return
 	 */
-	public SortableOptions helper(String helper) {
+	public SortableOptions helper(CharSequence helper) {
 		super.put("helper", helper);
 		return this;
 	}
@@ -266,7 +266,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public SortableOptions items(String selector) {
+	public SortableOptions items(CharSequence selector) {
 		super.put("items", selector);
 		return this;
 	}
@@ -289,7 +289,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @param placeholder
 	 * @return
 	 */
-	public SortableOptions placeholder(String placeholder) {
+	public SortableOptions placeholder(CharSequence placeholder) {
 		super.put("placeholder", placeholder);
 		return this;
 	}
@@ -364,7 +364,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @param tolerance
 	 * @return
 	 */
-	public SortableOptions tolerance(String tolerance) {
+	public SortableOptions tolerance(CharSequence tolerance) {
 		super.put("tolerance", tolerance);
 		return this;
 	}

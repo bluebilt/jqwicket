@@ -115,7 +115,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param scrolling
 	 * @return
 	 */
-	public FancyBoxOptions scrolling(String scrolling) {
+	public FancyBoxOptions scrolling(CharSequence scrolling) {
 		return super.put("scrolling", scrolling);
 	}
 
@@ -139,7 +139,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param width
 	 * @return
 	 */
-	public FancyBoxOptions width(String width) {
+	public FancyBoxOptions width(CharSequence width) {
 		return super.put("width", width);
 	}
 
@@ -163,10 +163,10 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param height
 	 * @return
 	 */
-	public FancyBoxOptions height(String height) {
+	public FancyBoxOptions height(CharSequence height) {
 		return super.put("height", height);
-	}	
-	
+	}
+
 	/**
 	 * If true, FancyBox is scaled to fit in viewport<br>
 	 * Default: true
@@ -275,7 +275,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param overlayColor
 	 * @return
 	 */
-	public FancyBoxOptions overlayColor(String overlayColor) {
+	public FancyBoxOptions overlayColor(CharSequence overlayColor) {
 		return super.put("overlayColor", overlayColor);
 	}
 
@@ -297,7 +297,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param titlePosition
 	 * @return
 	 */
-	public FancyBoxOptions titlePosition(String titlePosition) {
+	public FancyBoxOptions titlePosition(CharSequence titlePosition) {
 		return super.put("titlePosition", titlePosition);
 	}
 
@@ -342,7 +342,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param transitionIn
 	 * @return
 	 */
-	public FancyBoxOptions transitionIn(String transitionIn) {
+	public FancyBoxOptions transitionIn(CharSequence transitionIn) {
 		return super.put("transitionIn", transitionIn);
 	}
 
@@ -353,7 +353,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param transitionIn
 	 * @return
 	 */
-	public FancyBoxOptions transitionOut(String transitionOut) {
+	public FancyBoxOptions transitionOut(CharSequence transitionOut) {
 		return super.put("transitionOut", transitionOut);
 	}
 
@@ -397,7 +397,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param changeFade
 	 * @return
 	 */
-	public FancyBoxOptions changeFade(String changeFade) {
+	public FancyBoxOptions changeFade(CharSequence changeFade) {
 		return super.put("changeFade", changeFade);
 	}
 
@@ -408,7 +408,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param easingIn
 	 * @return
 	 */
-	public FancyBoxOptions easingIn(String easingIn) {
+	public FancyBoxOptions easingIn(CharSequence easingIn) {
 		return super.put("easingIn", easingIn);
 	}
 
@@ -419,7 +419,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param easingOut
 	 * @return
 	 */
-	public FancyBoxOptions easingOut(String easingOut) {
+	public FancyBoxOptions easingOut(CharSequence easingOut) {
 		return super.put("easingOut", easingOut);
 	}
 
@@ -463,7 +463,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param type
 	 * @return
 	 */
-	public FancyBoxOptions type(String type) {
+	public FancyBoxOptions type(CharSequence type) {
 		return super.put("type", type);
 	}
 
@@ -473,7 +473,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param href
 	 * @return
 	 */
-	public FancyBoxOptions href(String href) {
+	public FancyBoxOptions href(CharSequence href) {
 		return super.put("href", href);
 	}
 
@@ -483,7 +483,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param title
 	 * @return
 	 */
-	public FancyBoxOptions title(String title) {
+	public FancyBoxOptions title(CharSequence title) {
 		return super.put("title", title);
 	}
 
@@ -493,7 +493,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param content
 	 * @return
 	 */
-	public FancyBoxOptions content(String content) {
+	public FancyBoxOptions content(CharSequence content) {
 		return super.put("content", content);
 	}
 
@@ -504,7 +504,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param orig
 	 * @return
 	 */
-	public FancyBoxOptions orig(String orig) {
+	public FancyBoxOptions orig(CharSequence orig) {
 		return super.put("orig", orig);
 	}
 

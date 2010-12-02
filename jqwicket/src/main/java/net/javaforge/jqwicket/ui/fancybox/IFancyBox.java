@@ -26,6 +26,6 @@ import net.javaforge.jqwicket.IJQWidget;
  */
 public interface IFancyBox extends IJQWidget<FancyBoxOptions> {
 
-	static final String JQ_COMPONENT_NAME = "fancybox";
+	static final CharSequence JQ_COMPONENT_NAME = "fancybox";
 
 }

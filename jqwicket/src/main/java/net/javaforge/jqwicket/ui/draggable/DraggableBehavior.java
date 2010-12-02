@@ -40,7 +40,7 @@ public class DraggableBehavior extends JQUIComponentBehaivor<DraggableOptions>
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 }

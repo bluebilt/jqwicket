@@ -42,9 +42,9 @@ public class JQBehavior extends AbstractBehavior implements
 
 	private Set<ResourceReference> cssResourceReferences;
 
-	private Set<String> jsResourceUrls;
+	private Set<CharSequence> jsResourceUrls;
 
-	private Set<String> cssResourceUrls;
+	private Set<CharSequence> cssResourceUrls;
 
 	protected Component component;
 
@@ -95,12 +95,12 @@ public class JQBehavior extends AbstractBehavior implements
 		return this;
 	}
 
-	public JQBehavior addJsResourceUrls(String... urls) {
+	public JQBehavior addJsResourceUrls(CharSequence... urls) {
 		if (Utils.isEmpty(urls))
 			return this;
 
 		if (this.jsResourceUrls == null)
-			this.jsResourceUrls = new LinkedHashSet<String>();
+			this.jsResourceUrls = new LinkedHashSet<CharSequence>();
 
 		this.jsResourceUrls.addAll(Arrays.asList(urls));
 		return this;
@@ -117,12 +117,12 @@ public class JQBehavior extends AbstractBehavior implements
 		return this;
 	}
 
-	public JQBehavior addCssResourceUrls(String... urls) {
+	public JQBehavior addCssResourceUrls(CharSequence... urls) {
 		if (Utils.isEmpty(urls))
 			return this;
 
 		if (this.cssResourceUrls == null)
-			this.cssResourceUrls = new LinkedHashSet<String>();
+			this.cssResourceUrls = new LinkedHashSet<CharSequence>();
 
 		this.cssResourceUrls.addAll(Arrays.asList(urls));
 		return this;

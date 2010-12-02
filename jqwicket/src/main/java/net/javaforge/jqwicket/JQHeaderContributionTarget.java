@@ -39,11 +39,11 @@ public class JQHeaderContributionTarget implements Serializable {
 
 	private Set<JavascriptResourceReference> jsResourceReferences;
 
-	private Set<String> jsResourceUrls;
+	private Set<CharSequence> jsResourceUrls;
 
 	private Set<ResourceReference> cssResourceReferences;
 
-	private Set<String> cssResourceUrls;
+	private Set<CharSequence> cssResourceUrls;
 
 	private Set<JQStatement> jqStatements;
 
@@ -67,18 +67,19 @@ public class JQHeaderContributionTarget implements Serializable {
 	}
 
 	public JQHeaderContributionTarget addJavascriptResourceUrls(
-			Collection<String> urls) {
+			Collection<CharSequence> urls) {
 		if (isEmpty(urls))
 			return this;
 
 		if (this.jsResourceUrls == null)
-			this.jsResourceUrls = new LinkedHashSet<String>();
+			this.jsResourceUrls = new LinkedHashSet<CharSequence>();
 
 		this.jsResourceUrls.addAll(urls);
 		return this;
 	}
 
-	public JQHeaderContributionTarget addJavascriptResourceUrls(String... urls) {
+	public JQHeaderContributionTarget addJavascriptResourceUrls(
+			CharSequence... urls) {
 		if (isEmpty(urls))
 			return this;
 		return this.addJavascriptResourceUrls(Arrays.asList(urls));
@@ -103,18 +104,19 @@ public class JQHeaderContributionTarget implements Serializable {
 		return this.addCssResourceReferences(Arrays.asList(refs));
 	}
 
-	public JQHeaderContributionTarget addCssResourceUrls(Collection<String> urls) {
+	public JQHeaderContributionTarget addCssResourceUrls(
+			Collection<CharSequence> urls) {
 		if (isEmpty(urls))
 			return this;
 
 		if (this.cssResourceUrls == null)
-			this.cssResourceUrls = new LinkedHashSet<String>();
+			this.cssResourceUrls = new LinkedHashSet<CharSequence>();
 
 		this.cssResourceUrls.addAll(urls);
 		return this;
 	}
 
-	public JQHeaderContributionTarget addCssResourceUrls(String... urls) {
+	public JQHeaderContributionTarget addCssResourceUrls(CharSequence... urls) {
 		if (isEmpty(urls))
 			return this;
 		return this.addCssResourceUrls(Arrays.asList(urls));
@@ -172,10 +174,10 @@ public class JQHeaderContributionTarget implements Serializable {
 	 * 
 	 * @return
 	 */
-	public Collection<String> getJsResourceUrls() {
+	public Collection<CharSequence> getJsResourceUrls() {
 		return this.jsResourceUrls != null ? Collections
 				.unmodifiableSet(this.jsResourceUrls) : Collections
-				.<String> emptySet();
+				.<CharSequence> emptySet();
 	}
 
 	/**
@@ -196,10 +198,10 @@ public class JQHeaderContributionTarget implements Serializable {
 	 * 
 	 * @return
 	 */
-	public Collection<String> getCssResourceUrls() {
+	public Collection<CharSequence> getCssResourceUrls() {
 		return this.cssResourceUrls != null ? Collections
 				.unmodifiableSet(this.cssResourceUrls) : Collections
-				.<String> emptySet();
+				.<CharSequence> emptySet();
 	}
 
 	/**

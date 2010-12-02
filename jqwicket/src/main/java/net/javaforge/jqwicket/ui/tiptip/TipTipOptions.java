@@ -55,7 +55,7 @@ public class TipTipOptions extends AbstractJQOptions<TipTipOptions> {
 	 * @param activation
 	 * @return
 	 */
-	public TipTipOptions activation(String activation) {
+	public TipTipOptions activation(CharSequence activation) {
 		return super.put("activation", activation);
 	}
 
@@ -77,7 +77,7 @@ public class TipTipOptions extends AbstractJQOptions<TipTipOptions> {
 	 * @param maxWidth
 	 * @return
 	 */
-	public TipTipOptions maxWidth(String maxWidth) {
+	public TipTipOptions maxWidth(CharSequence maxWidth) {
 		return super.put("maxWidth", maxWidth);
 	}
 
@@ -99,7 +99,7 @@ public class TipTipOptions extends AbstractJQOptions<TipTipOptions> {
 	 * @param defaultPosition
 	 * @return
 	 */
-	public TipTipOptions defaultPosition(String defaultPosition) {
+	public TipTipOptions defaultPosition(CharSequence defaultPosition) {
 		return super.put("defaultPosition", defaultPosition);
 	}
 
@@ -141,7 +141,7 @@ public class TipTipOptions extends AbstractJQOptions<TipTipOptions> {
 	 * @param attribute
 	 * @return
 	 */
-	public TipTipOptions attribute(String attribute) {
+	public TipTipOptions attribute(CharSequence attribute) {
 		return super.put("attribute", attribute);
 	}
 
@@ -152,7 +152,7 @@ public class TipTipOptions extends AbstractJQOptions<TipTipOptions> {
 	 * @param content
 	 * @return
 	 */
-	public TipTipOptions content(String content) {
+	public TipTipOptions content(CharSequence content) {
 		return super.put("content", content);
 	}
 

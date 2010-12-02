@@ -28,11 +28,11 @@ public class GenericCJImageFlipboxBehavior extends
 
 	private static final long serialVersionUID = 1L;
 
-	public GenericCJImageFlipboxBehavior(String selector) {
+	public GenericCJImageFlipboxBehavior(CharSequence selector) {
 		this(selector, new CJImageFlipboxOptions());
 	}
 
-	public GenericCJImageFlipboxBehavior(String selector,
+	public GenericCJImageFlipboxBehavior(CharSequence selector,
 			CJImageFlipboxOptions options) {
 		super(selector, options);
 	}
@@ -42,7 +42,7 @@ public class GenericCJImageFlipboxBehavior extends
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 

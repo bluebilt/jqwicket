@@ -28,6 +28,6 @@ import net.javaforge.jqwicket.IJQWidget;
  */
 public interface ITipTip extends IJQWidget<TipTipOptions> {
 
-	static final String JQ_COMPONENT_NAME = "tipTip";
+	static final CharSequence JQ_COMPONENT_NAME = "tipTip";
 
 }

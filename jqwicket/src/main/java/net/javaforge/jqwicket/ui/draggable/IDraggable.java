@@ -24,6 +24,6 @@ import net.javaforge.jqwicket.IJQUIWidget;
  */
 public interface IDraggable extends IJQUIWidget<DraggableOptions> {
 
-	static final String JQ_COMPONENT_NAME = "draggable";
+	static final CharSequence JQ_COMPONENT_NAME = "draggable";
 
 }

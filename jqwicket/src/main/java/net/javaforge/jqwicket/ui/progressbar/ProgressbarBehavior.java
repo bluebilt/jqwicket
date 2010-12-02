@@ -23,7 +23,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class ProgressbarBehavior extends
 		JQUIComponentBehaivor<ProgressbarOptions> implements IProgressbar {
@@ -43,7 +43,7 @@ public class ProgressbarBehavior extends
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 

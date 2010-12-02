@@ -77,9 +77,9 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 				"GHierarchicalMapTypeControl"), GOVERVIEWMAPCONTROL(
 				"GOverviewMapControl"), GNAVLABELCONTROL("GNavLabelControl");
 
-		private String control;
+		private CharSequence control;
 
-		private ControlType(String control) {
+		private ControlType(CharSequence control) {
 			this.control = control;
 		}
 
@@ -94,15 +94,15 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 
 	}
 
-	private String apiKey;
+	private CharSequence apiKey;
 
-	public GMapOptions(String apiKey) {
+	public GMapOptions(CharSequence apiKey) {
 		this.apiKey = apiKey;
 		this.setJsResourceReferences(JS_RESOURCE);
 		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
 	}
 
-	public String getApiKey() {
+	public CharSequence getApiKey() {
 		return apiKey;
 	}
 
@@ -113,7 +113,7 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 	 * @param address
 	 * @return
 	 */
-	public GMapOptions address(String address) {
+	public GMapOptions address(CharSequence address) {
 		return super.put("address", address);
 	}
 
@@ -165,7 +165,6 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 		return super.put("markers", markers);
 	}
 
-	
 	/**
 	 * @param controls
 	 * @return
@@ -173,7 +172,7 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 	public GMapOptions controls(boolean controls) {
 		return super.put("controls", controls);
 	}
-	
+
 	/**
 	 * A simple array of string values representing the function names (without
 	 * "()") to add controls. Please refer to the Google Maps API for possible
@@ -220,7 +219,7 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 	 * @param html_prepend
 	 * @return
 	 */
-	public GMapOptions html_prepend(String html_prepend) {
+	public GMapOptions html_prepend(CharSequence html_prepend) {
 		return super.put("html_prepend", html_prepend);
 	}
 
@@ -231,10 +230,10 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 	 * @param html_append
 	 * @return
 	 */
-	public GMapOptions html_append(String html_append) {
+	public GMapOptions html_append(CharSequence html_append) {
 		return super.put("html_append", html_append);
 	}
-	
+
 	/**
 	 * Subset of properties for defining a custom marker image for all markers.
 	 * 

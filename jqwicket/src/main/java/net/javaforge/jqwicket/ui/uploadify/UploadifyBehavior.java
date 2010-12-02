@@ -62,7 +62,7 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * 
 	 * @see net.javaforge.jqwicket.IJQWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 
@@ -110,7 +110,7 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * 
 	 * @see net.javaforge.jqwicket.ui.uploadify.IUploadify#uploadifyCancel(java.lang.String)
 	 */
-	public JQFunction uploadifyCancel(String id) {
+	public JQFunction uploadifyCancel(CharSequence id) {
 		return chain("'uploadifyCancel'", id);
 	}
 
@@ -118,9 +118,10 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.uploadify.IUploadify#uploadifyCancel(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String)
+	 *      java.lang.CharSequence)
 	 */
-	public void uploadifyCancel(AjaxRequestTarget ajaxRequestTarget, String id) {
+	public void uploadifyCancel(AjaxRequestTarget ajaxRequestTarget,
+			CharSequence id) {
 		chain(ajaxRequestTarget, this.uploadifyCancel(id));
 	}
 
@@ -148,7 +149,7 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * @see net.javaforge.jqwicket.ui.uploadify.IUploadify#uploadifySettings(java.lang.String,
 	 *      java.lang.String)
 	 */
-	public JQFunction uploadifySettings(String name, String value) {
+	public JQFunction uploadifySettings(CharSequence name, CharSequence value) {
 		return chain("'uploadifySettings'", name, value);
 	}
 
@@ -156,10 +157,10 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.uploadify.IUploadify#uploadifySettings(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, java.lang.String)
+	 *      java.lang.CharSequence, java.lang.CharSequence)
 	 */
 	public void uploadifySettings(AjaxRequestTarget ajaxRequestTarget,
-			String name, String value) {
+			CharSequence name, CharSequence value) {
 		chain(ajaxRequestTarget, this.uploadifySettings(name, value));
 
 	}
@@ -167,10 +168,10 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.uploadify.IUploadify#uploadifySettings(java.lang.String,
-	 *      java.lang.String, boolean)
+	 * @see net.javaforge.jqwicket.ui.uploadify.IUploadify#uploadifySettings(java.lang.CharSequence,
+	 *      java.lang.CharSequence, boolean)
 	 */
-	public JQFunction uploadifySettings(String name, String value,
+	public JQFunction uploadifySettings(CharSequence name, CharSequence value,
 			boolean resetObject) {
 		return chain("'uploadifySettings'", name, value,
 				String.valueOf(resetObject));
@@ -180,10 +181,10 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.uploadify.IUploadify#uploadifySettings(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, java.lang.String, boolean)
+	 *      java.lang.CharSequence, java.lang.CharSequence, boolean)
 	 */
 	public void uploadifySettings(AjaxRequestTarget ajaxRequestTarget,
-			String name, String value, boolean resetObject) {
+			CharSequence name, CharSequence value, boolean resetObject) {
 		chain(ajaxRequestTarget,
 				this.uploadifySettings(name, value, resetObject));
 
@@ -210,9 +211,9 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.uploadify.IUploadify#uploadifyUpload(java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.uploadify.IUploadify#uploadifyUpload(java.lang.CharSequence)
 	 */
-	public JQFunction uploadifyUpload(String id) {
+	public JQFunction uploadifyUpload(CharSequence id) {
 		return chain("'uploadifyUpload'", id);
 	}
 
@@ -220,9 +221,10 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.uploadify.IUploadify#uploadifyUpload(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String)
+	 *      java.lang.CharSequence)
 	 */
-	public void uploadifyUpload(AjaxRequestTarget ajaxRequestTarget, String id) {
+	public void uploadifyUpload(AjaxRequestTarget ajaxRequestTarget,
+			CharSequence id) {
 		chain(ajaxRequestTarget, this.uploadifyUpload(id));
 	}
 

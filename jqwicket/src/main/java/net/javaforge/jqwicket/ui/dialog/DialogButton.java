@@ -23,17 +23,17 @@ import net.javaforge.jqwicket.IJsonAware;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class DialogButton implements Serializable, IJsonAware {
 
 	private static final long serialVersionUID = 1L;
 
-	private String name;
+	private CharSequence name;
 
 	private JQFunction callback;
 
-	public DialogButton(String name, JQFunction callback) {
+	public DialogButton(CharSequence name, JQFunction callback) {
 		this.name = name;
 		this.callback = callback;
 	}
@@ -47,16 +47,6 @@ public class DialogButton implements Serializable, IJsonAware {
 		return new StringBuffer().append("{text:\"").append(this.name)
 				.append("\", click:").append(this.callback.render())
 				.append("}");
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString() {
-		return String.valueOf(this.toJson());
 	}
 
 }

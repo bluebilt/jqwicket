@@ -61,20 +61,20 @@ public class TabsWebMarkupContainer extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(java.lang.String,
-	 *      java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(java.lang.CharSequence,
+	 *      java.lang.CharSequence)
 	 */
-	public JQFunction add(String url, String label) {
+	public JQFunction add(CharSequence url, CharSequence label) {
 		return this.behavior.add(url, label);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(java.lang.String,
-	 *      java.lang.String, java.lang.Integer)
+	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(java.lang.CharSequence,
+	 *      java.lang.CharSequence, java.lang.Integer)
 	 */
-	public JQFunction add(String url, String label, Integer index) {
+	public JQFunction add(CharSequence url, CharSequence label, Integer index) {
 		return this.behavior.add(url, label, index);
 	}
 
@@ -82,10 +82,10 @@ public class TabsWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, java.lang.String)
+	 *      java.lang.CharSequence, java.lang.CharSequence)
 	 */
-	public void add(AjaxRequestTarget ajaxRequestTarget, String url,
-			String label) {
+	public void add(AjaxRequestTarget ajaxRequestTarget, CharSequence url,
+			CharSequence label) {
 		this.behavior.add(ajaxRequestTarget, url, label);
 	}
 
@@ -93,10 +93,10 @@ public class TabsWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#add(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, java.lang.String, java.lang.Integer)
+	 *      java.lang.CharSequence, java.lang.CharSequence, java.lang.Integer)
 	 */
-	public void add(AjaxRequestTarget ajaxRequestTarget, String url,
-			String label, Integer index) {
+	public void add(AjaxRequestTarget ajaxRequestTarget, CharSequence url,
+			CharSequence label, Integer index) {
 		this.behavior.add(ajaxRequestTarget, url, label, index);
 	}
 
@@ -199,9 +199,10 @@ public class TabsWebMarkupContainer extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#url(int, java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#url(int,
+	 *      java.lang.CharSequence)
 	 */
-	public JQFunction url(int index, String url) {
+	public JQFunction url(int index, CharSequence url) {
 		return this.behavior.url(index, url);
 	}
 
@@ -209,9 +210,10 @@ public class TabsWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.tabs.ITabs#url(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      int, java.lang.String)
+	 *      int, java.lang.CharSequence)
 	 */
-	public void url(AjaxRequestTarget ajaxRequestTarget, int index, String url) {
+	public void url(AjaxRequestTarget ajaxRequestTarget, int index,
+			CharSequence url) {
 		this.behavior.url(ajaxRequestTarget, index, url);
 
 	}

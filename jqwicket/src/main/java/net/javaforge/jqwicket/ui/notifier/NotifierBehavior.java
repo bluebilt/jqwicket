@@ -45,17 +45,17 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.String,
-	 *      java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
+	 *      java.lang.CharSequence)
 	 */
-	public JQFunction create(String title, String text) {
+	public JQFunction create(CharSequence title, CharSequence text) {
 		return create(new DefaultJQOptions().put("title", title).put("text",
 				text));
 	}
@@ -64,10 +64,10 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, java.lang.String)
+	 *      java.lang.CharSequence, java.lang.CharSequence)
 	 */
-	public void create(AjaxRequestTarget ajaxRequestTarget, String title,
-			String text) {
+	public void create(AjaxRequestTarget ajaxRequestTarget, CharSequence title,
+			CharSequence text) {
 		chain(ajaxRequestTarget, this.create(title, text));
 	}
 
@@ -93,10 +93,10 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.String,
+	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
 	 *      net.javaforge.jqwicket.ui.IJQOptions)
 	 */
-	public JQFunction create(String template, IJQOptions<?> msg) {
+	public JQFunction create(CharSequence template, IJQOptions<?> msg) {
 		return chain("'create'", template, msg.toJson());
 	}
 
@@ -104,21 +104,21 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, net.javaforge.jqwicket.ui.IJQOptions)
+	 *      java.lang.CharSequence, net.javaforge.jqwicket.ui.IJQOptions)
 	 */
-	public void create(AjaxRequestTarget ajaxRequestTarget, String template,
-			IJQOptions<?> msg) {
+	public void create(AjaxRequestTarget ajaxRequestTarget,
+			CharSequence template, IJQOptions<?> msg) {
 		chain(ajaxRequestTarget, create(template, msg));
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.String,
+	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
 	 *      net.javaforge.jqwicket.ui.IJQOptions,
 	 *      net.javaforge.jqwicket.ui.IJQOptions)
 	 */
-	public JQFunction create(String template, IJQOptions<?> msg,
+	public JQFunction create(CharSequence template, IJQOptions<?> msg,
 			IJQOptions<?> options) {
 		return chain("'create'", template, msg.toJson(), options.toJson());
 	}
@@ -127,11 +127,11 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String, net.javaforge.jqwicket.ui.IJQOptions,
+	 *      java.lang.CharSequence, net.javaforge.jqwicket.ui.IJQOptions,
 	 *      net.javaforge.jqwicket.ui.IJQOptions)
 	 */
-	public void create(AjaxRequestTarget ajaxRequestTarget, String template,
-			IJQOptions<?> msg, IJQOptions<?> options) {
+	public void create(AjaxRequestTarget ajaxRequestTarget,
+			CharSequence template, IJQOptions<?> msg, IJQOptions<?> options) {
 		chain(ajaxRequestTarget, create(template, msg, options));
 	}
 

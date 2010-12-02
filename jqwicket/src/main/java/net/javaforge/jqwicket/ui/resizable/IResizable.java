@@ -24,6 +24,6 @@ import net.javaforge.jqwicket.IJQUIWidget;
  */
 public interface IResizable extends IJQUIWidget<ResizableOptions> {
 
-	static final String JQ_COMPONENT_NAME = "resizable";
+	static final CharSequence JQ_COMPONENT_NAME = "resizable";
 
 }

@@ -19,7 +19,12 @@ public class LiScrollBehavior extends JQComponentBehaivor<LiScrollOptions>
 		super(options);
 	}
 
-	public String getName() {
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.IJQWidget#getName()
+	 */
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 

@@ -39,9 +39,9 @@ public enum EffectEasing implements IJsonAware {
 			"easeInBounce"), EASE_OUT_BOUNCE("easeOutBounce"), EASE_IN_OUT_BOUNCE(
 			"easeInOutBounce");
 
-	private String easingName;
+	private CharSequence easingName;
 
-	private EffectEasing(String name) {
+	private EffectEasing(CharSequence name) {
 		this.easingName = name;
 	}
 

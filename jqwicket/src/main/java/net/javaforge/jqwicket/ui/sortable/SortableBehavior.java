@@ -44,7 +44,7 @@ public class SortableBehavior extends JQUIComponentBehaivor<SortableOptions>
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 

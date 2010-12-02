@@ -27,11 +27,11 @@ public class GenericTipTipBehavior extends
 
 	private static final long serialVersionUID = 1L;
 
-	public GenericTipTipBehavior(String selector) {
+	public GenericTipTipBehavior(CharSequence selector) {
 		this(selector, new TipTipOptions());
 	}
 
-	public GenericTipTipBehavior(String selector, TipTipOptions options) {
+	public GenericTipTipBehavior(CharSequence selector, TipTipOptions options) {
 		super(selector, options);
 	}
 
@@ -40,7 +40,7 @@ public class GenericTipTipBehavior extends
 	 * 
 	 * @see net.javaforge.jqwicket.IJQWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 

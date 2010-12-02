@@ -36,7 +36,7 @@ public interface IJQWidget<T extends IJQOptions<T>> extends
 	 * 
 	 * @return
 	 */
-	String getName();
+	CharSequence getName();
 
 	/**
 	 * Returns options associated with the jquery component.

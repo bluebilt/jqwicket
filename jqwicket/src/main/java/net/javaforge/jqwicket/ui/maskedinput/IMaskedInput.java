@@ -28,6 +28,6 @@ import net.javaforge.jqwicket.IJQWidget;
  */
 public interface IMaskedInput extends IJQWidget<MaskedInputOptions> {
 
-	static final String JQ_COMPONENT_NAME = "mask";
+	static final CharSequence JQ_COMPONENT_NAME = "mask";
 
 }

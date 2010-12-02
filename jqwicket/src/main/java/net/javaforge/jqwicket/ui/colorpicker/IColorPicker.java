@@ -27,7 +27,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface IColorPicker extends IJQWidget<ColorPickerOptions> {
 
-	static final String JQ_COMPONENT_NAME = "ColorPicker";
+	static final CharSequence JQ_COMPONENT_NAME = "ColorPicker";
 
 	/**
 	 * Method to show the color picker.
@@ -62,14 +62,14 @@ public interface IColorPicker extends IJQWidget<ColorPickerOptions> {
 	 * 
 	 * @return the associated JsStatement
 	 */
-	JQFunction setColor(String color);
+	JQFunction setColor(CharSequence color);
 
 	/**
 	 * Method to set the color within the ajax request
 	 * 
 	 * @param ajaxRequestTarget
 	 */
-	void setColor(AjaxRequestTarget ajaxRequestTarget, String color);
+	void setColor(AjaxRequestTarget ajaxRequestTarget, CharSequence color);
 
 	/**
 	 * Method to set the color .

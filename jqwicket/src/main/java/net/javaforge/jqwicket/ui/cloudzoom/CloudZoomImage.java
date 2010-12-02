@@ -26,39 +26,39 @@ public class CloudZoomImage implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String bigImageUrl;
+	private CharSequence bigImageUrl;
 
-	private String smallImageUrl;
+	private CharSequence smallImageUrl;
 
-	private String imageTitle;
+	private CharSequence imageTitle;
 
-	private String imageAlt;
+	private CharSequence imageAlt;
 
-	public CloudZoomImage(String bigImageUrl, String smallImageUrl) {
+	public CloudZoomImage(CharSequence bigImageUrl, CharSequence smallImageUrl) {
 		this(bigImageUrl, smallImageUrl, null, null);
 	}
 
-	public CloudZoomImage(String bigImageUrl, String smallImageUrl,
-			String imageTitle, String imageAlt) {
+	public CloudZoomImage(CharSequence bigImageUrl, CharSequence smallImageUrl,
+			CharSequence imageTitle, CharSequence imageAlt) {
 		this.bigImageUrl = bigImageUrl;
 		this.smallImageUrl = smallImageUrl;
 		this.imageTitle = imageTitle;
 		this.imageAlt = imageAlt;
 	}
 
-	public String getBigImageUrl() {
+	public CharSequence getBigImageUrl() {
 		return bigImageUrl;
 	}
 
-	public String getSmallImageUrl() {
+	public CharSequence getSmallImageUrl() {
 		return smallImageUrl;
 	}
 
-	public String getImageTitle() {
+	public CharSequence getImageTitle() {
 		return imageTitle;
 	}
 
-	public String getImageAlt() {
+	public CharSequence getImageAlt() {
 		return imageAlt;
 	}
 

@@ -60,12 +60,12 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		return this;
 	}
 
-	public DialogOptions closeText(String closeText) {
+	public DialogOptions closeText(CharSequence closeText) {
 		super.put("closeText", closeText);
 		return this;
 	}
 
-	public DialogOptions dialogClass(String dialogClass) {
+	public DialogOptions dialogClass(CharSequence dialogClass) {
 		super.put("dialogClass", dialogClass);
 		return this;
 	}
@@ -85,7 +85,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		return this;
 	}
 
-	public DialogOptions hideEffect(String effect) {
+	public DialogOptions hideEffect(CharSequence effect) {
 		super.put("hide", effect);
 		return this;
 	}
@@ -125,7 +125,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		return this;
 	}
 
-	public DialogOptions showEffect(String effect) {
+	public DialogOptions showEffect(CharSequence effect) {
 		super.put("show", effect);
 		return this;
 	}
@@ -143,7 +143,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param title
 	 * @return
 	 */
-	public DialogOptions title(String title) {
+	public DialogOptions title(CharSequence title) {
 		super.put("title", title);
 		return this;
 	}

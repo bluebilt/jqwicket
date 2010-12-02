@@ -27,7 +27,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface ISelectable extends IJQUIWidget<SelectableOptions> {
 
-	static final String JQ_COMPONENT_NAME = "selectable";
+	static final CharSequence JQ_COMPONENT_NAME = "selectable";
 
 	/**
 	 * Refresh the position and size of each selectee element. This method can

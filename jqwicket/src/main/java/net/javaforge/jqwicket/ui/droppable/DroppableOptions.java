@@ -60,7 +60,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public DroppableOptions accept(String selector) {
+	public DroppableOptions accept(CharSequence selector) {
 		super.put("accept", selector);
 		return this;
 	}
@@ -87,7 +87,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public DroppableOptions activeClass(String selector) {
+	public DroppableOptions activeClass(CharSequence selector) {
 		super.put("activeClass", selector);
 		return this;
 	}
@@ -124,7 +124,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param hoverClass
 	 * @return
 	 */
-	public DroppableOptions hoverClass(String hoverClass) {
+	public DroppableOptions hoverClass(CharSequence hoverClass) {
 		super.put("hoverClass", hoverClass);
 		return this;
 	}
@@ -137,7 +137,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param scope
 	 * @return
 	 */
-	public DroppableOptions scope(String scope) {
+	public DroppableOptions scope(CharSequence scope) {
 		super.put("scope", scope);
 		return this;
 	}
@@ -155,7 +155,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param snapTolerance
 	 * @return
 	 */
-	public DroppableOptions tolerance(String tolerance) {
+	public DroppableOptions tolerance(CharSequence tolerance) {
 		super.put("tolerance", tolerance);
 		return this;
 	}

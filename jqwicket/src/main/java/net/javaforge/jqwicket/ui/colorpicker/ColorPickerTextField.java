@@ -83,7 +83,7 @@ public class ColorPickerTextField<T> extends TextField<T> implements
 	 * 
 	 * @see net.javaforge.jqwicket.IJQWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return this.behavior.getName();
 	}
 
@@ -162,9 +162,9 @@ public class ColorPickerTextField<T> extends TextField<T> implements
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.colorpicker.IColorPicker#setColor(java.lang.String)
+	 * @see net.javaforge.jqwicket.ui.colorpicker.IColorPicker#setColor(java.lang.CharSequence)
 	 */
-	public JQFunction setColor(String color) {
+	public JQFunction setColor(CharSequence color) {
 		return this.behavior.setColor(color);
 	}
 
@@ -172,9 +172,9 @@ public class ColorPickerTextField<T> extends TextField<T> implements
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.colorpicker.IColorPicker#setColor(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.String)
+	 *      java.lang.CharSequence)
 	 */
-	public void setColor(AjaxRequestTarget ajaxRequestTarget, String color) {
+	public void setColor(AjaxRequestTarget ajaxRequestTarget, CharSequence color) {
 		this.behavior.setColor(ajaxRequestTarget, color);
 	}
 

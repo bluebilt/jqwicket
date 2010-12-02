@@ -28,5 +28,5 @@ import net.javaforge.jqwicket.IJQWidget;
  */
 public interface ICJImageFlipbox extends IJQWidget<CJImageFlipboxOptions> {
 
-	static final String JQ_COMPONENT_NAME = "cjImageFlipBox";
+	static final CharSequence JQ_COMPONENT_NAME = "cjImageFlipBox";
 }

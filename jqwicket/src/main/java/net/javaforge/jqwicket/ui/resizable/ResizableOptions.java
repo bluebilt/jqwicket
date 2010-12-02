@@ -28,10 +28,9 @@ import net.javaforge.jqwicket.ui.XYPosition;
 
 /**
  * @author mkalina
- *
+ * 
  */
-public class ResizableOptions extends
-		AbstractJQOptions<ResizableOptions> {
+public class ResizableOptions extends AbstractJQOptions<ResizableOptions> {
 
 	private static final long serialVersionUID = 1L;
 
@@ -53,7 +52,7 @@ public class ResizableOptions extends
 	 * @param selector
 	 * @return
 	 */
-	public ResizableOptions alsoResize(String selector) {
+	public ResizableOptions alsoResize(CharSequence selector) {
 		super.put("alsoResize", selector);
 		return this;
 	}
@@ -149,7 +148,7 @@ public class ResizableOptions extends
 	 * @param selector
 	 * @return
 	 */
-	public ResizableOptions cancel(String selector) {
+	public ResizableOptions cancel(CharSequence selector) {
 		super.put("cancel", selector);
 		return this;
 	}
@@ -162,7 +161,7 @@ public class ResizableOptions extends
 	 * @param selector
 	 * @return
 	 */
-	public ResizableOptions containment(String selector) {
+	public ResizableOptions containment(CharSequence selector) {
 		super.put("containment", selector);
 		return this;
 	}
@@ -227,7 +226,7 @@ public class ResizableOptions extends
 	 * @param selector
 	 * @return
 	 */
-	public ResizableOptions handles(String selector) {
+	public ResizableOptions handles(CharSequence selector) {
 		super.put("handles", selector);
 		return this;
 	}
@@ -255,7 +254,7 @@ public class ResizableOptions extends
 	 * @param helper
 	 * @return
 	 */
-	public ResizableOptions helper(String helper) {
+	public ResizableOptions helper(CharSequence helper) {
 		super.put("helper", helper);
 		return this;
 	}

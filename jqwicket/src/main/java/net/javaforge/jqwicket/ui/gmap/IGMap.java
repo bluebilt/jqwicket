@@ -25,6 +25,6 @@ import net.javaforge.jqwicket.IJQWidget;
  */
 public interface IGMap extends IJQWidget<GMapOptions> {
 
-	static final String JQ_COMPONENT_NAME = "gMap";
+	static final CharSequence JQ_COMPONENT_NAME = "gMap";
 
 }

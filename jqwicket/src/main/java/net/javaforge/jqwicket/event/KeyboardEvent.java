@@ -30,9 +30,9 @@ public enum KeyboardEvent implements IJQEvent {
 	FOCUSIN("focusin"), //
 	FOCUSOUT("focusout");
 
-	private String event;
+	private CharSequence event;
 
-	private KeyboardEvent(String event) {
+	private KeyboardEvent(CharSequence event) {
 		this.event = event;
 	}
 
@@ -41,7 +41,7 @@ public enum KeyboardEvent implements IJQEvent {
 	 * 
 	 * @see net.javaforge.jqwicket.event.IJQEvent#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return this.event;
 	}
 

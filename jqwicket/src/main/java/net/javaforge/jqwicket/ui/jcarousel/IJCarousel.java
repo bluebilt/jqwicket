@@ -27,6 +27,6 @@ import net.javaforge.jqwicket.IJQWidget;
  */
 public interface IJCarousel extends IJQWidget<JCarouselOptions> {
 
-	static final String JQ_COMPONENT_NAME = "jcarousel";
+	static final CharSequence JQ_COMPONENT_NAME = "jcarousel";
 
 }

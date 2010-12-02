@@ -43,7 +43,7 @@ public class ButtonBehaivor extends JQUIComponentBehaivor<ButtonOptions>
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 

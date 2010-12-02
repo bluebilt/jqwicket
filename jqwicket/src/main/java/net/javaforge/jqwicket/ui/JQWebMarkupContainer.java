@@ -64,7 +64,7 @@ public abstract class JQWebMarkupContainer<B extends JQComponentBehaivor<O>, O e
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return this.behavior.getName();
 	}
 

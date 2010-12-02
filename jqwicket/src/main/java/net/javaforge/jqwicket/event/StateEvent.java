@@ -31,7 +31,7 @@ public enum StateEvent implements IJQEvent {
 	 * 
 	 * @see net.javaforge.jqwicket.event.IJQEvent#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return this.name().toLowerCase();
 	}
 

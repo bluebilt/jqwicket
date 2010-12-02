@@ -84,7 +84,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param width
 	 * @return
 	 */
-	public SparklineOptions width(String width) {
+	public SparklineOptions width(CharSequence width) {
 		return super.put("width", width);
 	}
 
@@ -95,7 +95,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param height
 	 * @return
 	 */
-	public SparklineOptions height(String height) {
+	public SparklineOptions height(CharSequence height) {
 		return super.put("height", height);
 	}
 
@@ -105,7 +105,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param lineColor
 	 * @return
 	 */
-	public SparklineOptions lineColor(String lineColor) {
+	public SparklineOptions lineColor(CharSequence lineColor) {
 		return super.put("lineColor", lineColor);
 	}
 
@@ -298,7 +298,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param barColor
 	 * @return
 	 */
-	public SparklineOptions barColor(String barColor) {
+	public SparklineOptions barColor(CharSequence barColor) {
 		return super.put("barColor", barColor);
 	}
 
@@ -310,7 +310,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param negBarColor
 	 * @return
 	 */
-	public SparklineOptions negBarColor(String negBarColor) {
+	public SparklineOptions negBarColor(CharSequence negBarColor) {
 		return super.put("negBarColor", negBarColor);
 	}
 
@@ -322,7 +322,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param zeroColor
 	 * @return
 	 */
-	public SparklineOptions zeroColor(String zeroColor) {
+	public SparklineOptions zeroColor(CharSequence zeroColor) {
 		return super.put("zeroColor", zeroColor);
 	}
 
@@ -336,7 +336,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param nullColor
 	 * @return
 	 */
-	public SparklineOptions nullColor(String nullColor) {
+	public SparklineOptions nullColor(CharSequence nullColor) {
 		return super.put("nullColor", nullColor);
 	}
 
@@ -418,7 +418,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param zeroAxis
 	 * @return
 	 */
-	public SparklineOptions posBarColor(String posBarColor) {
+	public SparklineOptions posBarColor(CharSequence posBarColor) {
 		return super.put("posBarColor", posBarColor);
 	}
 
@@ -451,7 +451,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param thresholdColor
 	 * @return
 	 */
-	public SparklineOptions thresholdColor(String thresholdColor) {
+	public SparklineOptions thresholdColor(CharSequence thresholdColor) {
 		return super.put("thresholdColor", thresholdColor);
 	}
 
@@ -463,7 +463,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param targetColor
 	 * @return
 	 */
-	public SparklineOptions targetColor(String targetColor) {
+	public SparklineOptions targetColor(CharSequence targetColor) {
 		return super.put("targetColor", targetColor);
 	}
 
@@ -485,7 +485,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param performanceColor
 	 * @return
 	 */
-	public SparklineOptions performanceColor(String performanceColor) {
+	public SparklineOptions performanceColor(CharSequence performanceColor) {
 		return super.put("performanceColor", performanceColor);
 	}
 
@@ -519,7 +519,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param offset
 	 * @return
 	 */
-	public SparklineOptions offset(String offset) {
+	public SparklineOptions offset(CharSequence offset) {
 		return super.put("offset", offset);
 	}
 
@@ -557,7 +557,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param outlierIQR
 	 * @return
 	 */
-	public SparklineOptions outlierIQR(String outlierIQR) {
+	public SparklineOptions outlierIQR(CharSequence outlierIQR) {
 		return super.put("outlierIQR", outlierIQR);
 	}
 
@@ -568,7 +568,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param boxLineColor
 	 * @return
 	 */
-	public SparklineOptions boxLineColor(String boxLineColor) {
+	public SparklineOptions boxLineColor(CharSequence boxLineColor) {
 		return super.put("boxLineColor", boxLineColor);
 	}
 
@@ -579,7 +579,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param boxFillColor
 	 * @return
 	 */
-	public SparklineOptions boxFillColor(String boxFillColor) {
+	public SparklineOptions boxFillColor(CharSequence boxFillColor) {
 		return super.put("boxFillColor", boxFillColor);
 	}
 
@@ -590,7 +590,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param whiskerColor
 	 * @return
 	 */
-	public SparklineOptions whiskerColor(String whiskerColor) {
+	public SparklineOptions whiskerColor(CharSequence whiskerColor) {
 		return super.put("whiskerColor", whiskerColor);
 	}
 
@@ -601,7 +601,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param outlierLineColor
 	 * @return
 	 */
-	public SparklineOptions outlierLineColor(String outlierLineColor) {
+	public SparklineOptions outlierLineColor(CharSequence outlierLineColor) {
 		return super.put("outlierLineColor", outlierLineColor);
 	}
 
@@ -612,7 +612,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param outlierFillColor
 	 * @return
 	 */
-	public SparklineOptions outlierFillColor(String outlierFillColor) {
+	public SparklineOptions outlierFillColor(CharSequence outlierFillColor) {
 		return super.put("outlierFillColor", outlierFillColor);
 	}
 
@@ -623,7 +623,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param medianColor
 	 * @return
 	 */
-	public SparklineOptions medianColor(String medianColor) {
+	public SparklineOptions medianColor(CharSequence medianColor) {
 		return super.put("medianColor", medianColor);
 	}
 
@@ -635,7 +635,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param target
 	 * @return
 	 */
-	public SparklineOptions target(String target) {
+	public SparklineOptions target(CharSequence target) {
 		return super.put("target", target);
 	}
 

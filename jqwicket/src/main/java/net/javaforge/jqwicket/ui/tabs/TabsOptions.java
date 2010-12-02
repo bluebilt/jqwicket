@@ -117,7 +117,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param event
 	 * @return
 	 */
-	public TabsOptions event(String event) {
+	public TabsOptions event(CharSequence event) {
 		super.put("event", event);
 		return this;
 	}
@@ -145,7 +145,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param idPrefix
 	 * @return
 	 */
-	public TabsOptions idPrefix(String idPrefix) {
+	public TabsOptions idPrefix(CharSequence idPrefix) {
 		super.put("idPrefix", idPrefix);
 		return this;
 	}
@@ -158,7 +158,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param panelTemplate
 	 * @return
 	 */
-	public TabsOptions panelTemplate(String panelTemplate) {
+	public TabsOptions panelTemplate(CharSequence panelTemplate) {
 		super.put("panelTemplate", panelTemplate);
 		return this;
 	}
@@ -184,7 +184,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param spinner
 	 * @return
 	 */
-	public TabsOptions spinner(String spinner) {
+	public TabsOptions spinner(CharSequence spinner) {
 		super.put("spinner", spinner);
 		return this;
 	}
@@ -197,7 +197,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param tabTemplate
 	 * @return
 	 */
-	public TabsOptions tabTemplate(String tabTemplate) {
+	public TabsOptions tabTemplate(CharSequence tabTemplate) {
 		super.put("tabTemplate", tabTemplate);
 		return this;
 	}

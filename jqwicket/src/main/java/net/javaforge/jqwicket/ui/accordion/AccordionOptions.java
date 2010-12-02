@@ -63,7 +63,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @param activeSelector
 	 * @return
 	 */
-	public AccordionOptions active(String activeSelector) {
+	public AccordionOptions active(CharSequence activeSelector) {
 		super.put("active", activeSelector);
 		return this;
 	}
@@ -148,7 +148,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @param event
 	 * @return
 	 */
-	public AccordionOptions event(String event) {
+	public AccordionOptions event(CharSequence event) {
 		super.put("event", event);
 		return this;
 	}
@@ -171,7 +171,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public AccordionOptions header(String selector) {
+	public AccordionOptions header(CharSequence selector) {
 		super.put("header", selector);
 		return this;
 	}

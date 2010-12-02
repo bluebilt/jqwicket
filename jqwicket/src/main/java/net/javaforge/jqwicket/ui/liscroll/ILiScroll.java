@@ -8,6 +8,6 @@ import net.javaforge.jqwicket.IJQWidget;
  */
 public interface ILiScroll extends IJQWidget<LiScrollOptions> {
 
-	static final String JQ_COMPONENT_NAME = "liScroll";
+	static final CharSequence JQ_COMPONENT_NAME = "liScroll";
 	
 }

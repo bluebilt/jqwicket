@@ -121,9 +121,9 @@ public class JQContributionRenderer implements IHeaderContributor {
 	}
 
 	private void renderJsResourcesUrls(IHeaderResponse response,
-			Collection<String> resources) {
-		for (String url : resources) {
-			response.renderJavascriptReference(url);
+			Collection<CharSequence> resources) {
+		for (CharSequence url : resources) {
+			response.renderJavascriptReference(String.valueOf(url));
 		}
 	}
 
@@ -135,9 +135,9 @@ public class JQContributionRenderer implements IHeaderContributor {
 	}
 
 	private void renderCssResourcesUrls(IHeaderResponse response,
-			Collection<String> resources) {
-		for (String url : resources) {
-			response.renderCSSReference(url);
+			Collection<CharSequence> resources) {
+		for (CharSequence url : resources) {
+			response.renderCSSReference(String.valueOf(url));
 		}
 	}
 
@@ -158,10 +158,12 @@ public class JQContributionRenderer implements IHeaderContributor {
 		IJavascriptCompressor compressor = Application.get()
 				.getResourceSettings().getJavascriptCompressor();
 
-		String script = compressor != null ? compressor.compress(q.render())
-				: q.render();
+		CharSequence rawScript = q.render();
+		CharSequence script = (compressor != null && Utils
+				.isNotBlank(rawScript)) ? compressor.compress(String
+				.valueOf(rawScript)) : rawScript;
 
-		if (script != null)
+		if (Utils.isNotBlank(script))
 			response.renderJavascript(script, UUID.randomUUID().toString());
 
 	}

@@ -28,7 +28,7 @@ public class GMapBehavior extends JQComponentBehaivor<GMapOptions> implements
 
 	private static final long serialVersionUID = 1L;
 
-	public GMapBehavior(String apiKey) {
+	public GMapBehavior(CharSequence apiKey) {
 		this(new GMapOptions(apiKey));
 	}
 
@@ -41,7 +41,7 @@ public class GMapBehavior extends JQComponentBehaivor<GMapOptions> implements
 	 * 
 	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
 	 */
-	public String getName() {
+	public CharSequence getName() {
 		return JQ_COMPONENT_NAME;
 	}
 
@@ -52,12 +52,12 @@ public class GMapBehavior extends JQComponentBehaivor<GMapOptions> implements
 	 */
 	@Override
 	public void contributeInternal(JQHeaderContributionTarget target) {
-		target.addJavascriptResourceUrls(this.getGMapsJavascriptUrl()
-				+ this.options.getApiKey());
+		target.addJavascriptResourceUrls(new StringBuffer(this
+				.getGMapsJavascriptUrl()).append(this.options.getApiKey()));
 		super.contributeInternal(target);
 	}
 
-	protected String getGMapsJavascriptUrl() {
+	protected CharSequence getGMapsJavascriptUrl() {
 		return "http://maps.google.com/maps?file=api&amp;v=2&amp;key=";
 	}
 

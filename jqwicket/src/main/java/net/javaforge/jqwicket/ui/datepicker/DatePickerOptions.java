@@ -54,7 +54,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public DatePickerOptions altField(String selector) {
+	public DatePickerOptions altField(CharSequence selector) {
 		super.put("altField", selector);
 		return this;
 	}
@@ -68,7 +68,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param altFormat
 	 * @return
 	 */
-	public DatePickerOptions altFormat(String altFormat) {
+	public DatePickerOptions altFormat(CharSequence altFormat) {
 		super.put("altFormat", altFormat);
 		return this;
 	}
@@ -80,7 +80,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param autoSize
 	 * @return
 	 */
-	public DatePickerOptions appendText(String appendText) {
+	public DatePickerOptions appendText(CharSequence appendText) {
 		super.put("appendText", appendText);
 		return this;
 	}
@@ -104,7 +104,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param buttonImage
 	 * @return
 	 */
-	public DatePickerOptions buttonImage(String buttonImage) {
+	public DatePickerOptions buttonImage(CharSequence buttonImage) {
 		super.put("buttonImage", buttonImage);
 		return this;
 	}
@@ -128,7 +128,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param buttonText
 	 * @return
 	 */
-	public DatePickerOptions buttonText(String buttonText) {
+	public DatePickerOptions buttonText(CharSequence buttonText) {
 		super.put("buttonText", buttonText);
 		return this;
 	}
@@ -198,7 +198,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param closeText
 	 * @return
 	 */
-	public DatePickerOptions closeText(String closeText) {
+	public DatePickerOptions closeText(CharSequence closeText) {
 		super.put("closeText", closeText);
 		return this;
 	}
@@ -223,7 +223,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param currentText
 	 * @return
 	 */
-	public DatePickerOptions currentText(String currentText) {
+	public DatePickerOptions currentText(CharSequence currentText) {
 		super.put("currentText", currentText);
 		return this;
 	}
@@ -236,7 +236,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param dateFormat
 	 * @return
 	 */
-	public DatePickerOptions dateFormat(String dateFormat) {
+	public DatePickerOptions dateFormat(CharSequence dateFormat) {
 		super.put("dateFormat", dateFormat);
 		return this;
 	}
@@ -252,7 +252,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param dayNames
 	 * @return
 	 */
-	public DatePickerOptions dayNames(String... dayNames) {
+	public DatePickerOptions dayNames(CharSequence... dayNames) {
 		super.put("dayNames", dayNames);
 		return this;
 	}
@@ -266,7 +266,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param dayNamesMin
 	 * @return
 	 */
-	public DatePickerOptions dayNamesMin(String... dayNamesMin) {
+	public DatePickerOptions dayNamesMin(CharSequence... dayNamesMin) {
 		super.put("dayNamesMin", dayNamesMin);
 		return this;
 	}
@@ -280,7 +280,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param dayNamesMin
 	 * @return
 	 */
-	public DatePickerOptions dayNamesShort(String... dayNamesShort) {
+	public DatePickerOptions dayNamesShort(CharSequence... dayNamesShort) {
 		super.put("dayNamesShort", dayNamesShort);
 		return this;
 	}
@@ -295,7 +295,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param defaultDate
 	 * @return
 	 */
-	public DatePickerOptions defaultDate(String defaultDate) {
+	public DatePickerOptions defaultDate(CharSequence defaultDate) {
 		super.put("defaultDate", defaultDate);
 		return this;
 	}
@@ -399,7 +399,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param maxDate
 	 * @return
 	 */
-	public DatePickerOptions maxDate(String maxDate) {
+	public DatePickerOptions maxDate(CharSequence maxDate) {
 		super.put("maxDate", maxDate);
 		return this;
 	}
@@ -427,7 +427,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param minDate
 	 * @return
 	 */
-	public DatePickerOptions minDate(String minDate) {
+	public DatePickerOptions minDate(CharSequence minDate) {
 		super.put("minDate", minDate);
 		return this;
 	}
@@ -455,7 +455,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param monthNames
 	 * @return
 	 */
-	public DatePickerOptions monthNames(String... monthNames) {
+	public DatePickerOptions monthNames(CharSequence... monthNames) {
 		super.put("monthNames", monthNames);
 		return this;
 	}
@@ -470,7 +470,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param monthNamesShort
 	 * @return
 	 */
-	public DatePickerOptions monthNamesShort(String... monthNamesShort) {
+	public DatePickerOptions monthNamesShort(CharSequence... monthNamesShort) {
 		super.put("monthNamesShort", monthNamesShort);
 		return this;
 	}
@@ -497,7 +497,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param nextText
 	 * @return
 	 */
-	public DatePickerOptions nextText(String nextText) {
+	public DatePickerOptions nextText(CharSequence nextText) {
 		super.put("nextText", nextText);
 		return this;
 	}
@@ -539,7 +539,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param prevText
 	 * @return
 	 */
-	public DatePickerOptions prevText(String prevText) {
+	public DatePickerOptions prevText(CharSequence prevText) {
 		super.put("prevText", prevText);
 		return this;
 	}
@@ -569,7 +569,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param shortYearCutoff
 	 * @return
 	 */
-	public DatePickerOptions shortYearCutoff(String shortYearCutoff) {
+	public DatePickerOptions shortYearCutoff(CharSequence shortYearCutoff) {
 		super.put("shortYearCutoff", shortYearCutoff);
 		return this;
 	}
@@ -599,7 +599,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param showAnim
 	 * @return
 	 */
-	public DatePickerOptions showAnim(String showAnim) {
+	public DatePickerOptions showAnim(CharSequence showAnim) {
 		super.put("showAnim", showAnim);
 		return this;
 	}
@@ -660,7 +660,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param showOn
 	 * @return
 	 */
-	public DatePickerOptions showOn(String showOn) {
+	public DatePickerOptions showOn(CharSequence showOn) {
 		super.put("showOn", showOn);
 		return this;
 	}
@@ -723,7 +723,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param weekHeader
 	 * @return
 	 */
-	public DatePickerOptions weekHeader(String weekHeader) {
+	public DatePickerOptions weekHeader(CharSequence weekHeader) {
 		super.put("weekHeader", weekHeader);
 		return this;
 	}
@@ -739,7 +739,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param yearRange
 	 * @return
 	 */
-	public DatePickerOptions yearRange(String yearRange) {
+	public DatePickerOptions yearRange(CharSequence yearRange) {
 		super.put("yearRange", yearRange);
 		return this;
 	}
@@ -751,7 +751,7 @@ public class DatePickerOptions extends AbstractJQOptions<DatePickerOptions> {
 	 * @param yearSuffix
 	 * @return
 	 */
-	public DatePickerOptions yearSuffix(String yearSuffix) {
+	public DatePickerOptions yearSuffix(CharSequence yearSuffix) {
 		super.put("yearSuffix", yearSuffix);
 		return this;
 	}

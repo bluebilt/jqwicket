@@ -99,10 +99,18 @@ public class Utils {
 	}
 
 	public static final <T> CharSequence join(T[] objects, String separator) {
-
 		return join(objects, separator, new IJoinCallback<T>() {
 			public CharSequence toCharSequence(T obj) {
 				return String.valueOf(obj);
+			}
+		});
+	}
+
+	public static final CharSequence join(IRenderable[] statements,
+			String separator) {
+		return join(statements, separator, new IJoinCallback<IRenderable>() {
+			public CharSequence toCharSequence(IRenderable obj) {
+				return obj.render();
 			}
 		});
 	}
@@ -139,8 +147,8 @@ public class Utils {
 		return buf;
 	}
 
-	public static final <T> CharSequence join(T[] objects, String separator,
-			IJoinCallback<T> callback) {
+	public static final <T> CharSequence join(T[] objects,
+			CharSequence separator, IJoinCallback<T> callback) {
 
 		if (isEmpty(objects))
 			return "";
@@ -171,7 +179,9 @@ public class Utils {
 					continue;
 
 				CharSequence jsonValue;
-				if (value instanceof IJsonAware) {
+				if (value instanceof IRenderable) {
+					jsonValue = ((IRenderable) value).render();
+				} else if (value instanceof IJsonAware) {
 					jsonValue = ((IJsonAware) value).toJson();
 				} else if (value instanceof Map) {
 					jsonValue = "[" + toJson((Map) value) + "]";

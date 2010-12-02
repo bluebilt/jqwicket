@@ -32,7 +32,7 @@ public class GMapMarker extends AbstractJQOptions<GMapMarker> {
 	 * @param address
 	 * @return
 	 */
-	public GMapMarker address(String address) {
+	public GMapMarker address(CharSequence address) {
 		return super.put("address", address);
 	}
 
@@ -64,7 +64,7 @@ public class GMapMarker extends AbstractJQOptions<GMapMarker> {
 	 * @param html
 	 * @return
 	 */
-	public GMapMarker html(String html) {
+	public GMapMarker html(CharSequence html) {
 		return super.put("html", html);
 	}
 

@@ -27,7 +27,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
  */
 public interface IAccordion extends IJQUIWidget<AccordionOptions> {
 
-	static final String JQ_COMPONENT_NAME = "accordion";
+	static final CharSequence JQ_COMPONENT_NAME = "accordion";
 
 	/**
 	 * Activate a content part of the Accordion programmatically. The index can
@@ -47,7 +47,7 @@ public interface IAccordion extends IJQUIWidget<AccordionOptions> {
 	 * Activate a content part of the Accordion programmatically. The index can
 	 * be a Selector matching an element
 	 */
-	JQFunction activate(String selector);
+	JQFunction activate(CharSequence selector);
 
 	/**
 	 * Activate a content part of the Accordion programmatically. The index can
@@ -55,7 +55,7 @@ public interface IAccordion extends IJQUIWidget<AccordionOptions> {
 	 * 
 	 * @param ajaxRequestTarget
 	 */
-	void activate(AjaxRequestTarget ajaxRequestTarget, String selector);
+	void activate(AjaxRequestTarget ajaxRequestTarget, CharSequence selector);
 
 	/**
 	 * Activate a content part of the Accordion programmatically. T Pass false
