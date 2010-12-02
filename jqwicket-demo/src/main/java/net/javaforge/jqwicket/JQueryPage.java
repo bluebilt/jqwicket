@@ -11,8 +11,8 @@ public class JQueryPage extends WebPage {
 	@Override
 	protected void onBeforeRender() {
 		JQContributionRenderer
-				.setJQueryContributionConfig(new JQContributionConfig()
-						.withJQueryCoreJsUrlOnly("http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"));
+				.setJQueryContributionConfig(new JQContributionConfig(
+						"http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"));
 		super.onBeforeRender();
 	}
 
