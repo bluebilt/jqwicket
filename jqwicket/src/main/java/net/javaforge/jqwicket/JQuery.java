@@ -22,8 +22,6 @@ import static net.javaforge.jqwicket.Utils.join;
 import java.util.Collection;
 import java.util.Map;
 
-import net.javaforge.jqwicket.Utils.IJoinCallback;
-
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AbstractAjaxBehavior;
 
