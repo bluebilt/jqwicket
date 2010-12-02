@@ -17,9 +17,8 @@
 package net.javaforge.jqwicket;
 
 import static net.javaforge.jqwicket.Utils.isEmpty;
-import static net.javaforge.jqwicket.Utils.isNotBlank;
-import static net.javaforge.jqwicket.Utils.isNotEmpty;
 
+import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.UUID;
@@ -102,69 +101,68 @@ public class JQContributionRenderer implements IHeaderContributor {
 		if (!target.hasResourcesToRender())
 			return;
 
-		if (isNotBlank(config.getJqueryCoreJsUrl()))
-			response.renderJavascriptReference(config.getJqueryCoreJsUrl());
-		else if (config.getJqueryCoreJsResourceReference() != null)
-			response.renderJavascriptReference(config
-					.getJqueryCoreJsResourceReference());
+		// first render resources from global config
+		this.renderJsResourcesUrls(response, config.getJsUrls());
+		this.renderJsResourcesRefs(response, config.getJsResourceReferences());
+		this.renderCssResourcesUrls(response, config.getCssUrls());
+		this.renderCssResourcesRefs(response, config.getCssResourceReferences());
 
-		if (isNotBlank(config.getJqueryUiJsUrl()))
-			response.renderJavascriptReference(config.getJqueryUiJsUrl());
-		else if (config.getJqueryUiJsResourceReference() != null)
-			response.renderJavascriptReference(config
-					.getJqueryUiJsResourceReference());
+		// now render resource explicitly added to the target
+		this.renderJsResourcesUrls(response, target.getJsResourceUrls());
+		this.renderJsResourcesRefs(response, target.getJsResourceReferences());
+		this.renderCssResourcesUrls(response, target.getCssResourceUrls());
+		this.renderCssResourcesRefs(response, target.getCssResourceReferences());
 
-		if (isNotBlank(config.getJqueryUiCssUrl()))
-			response.renderCSSReference(config.getJqueryUiCssUrl());
-		else if (config.getJqueryUiCssResourceReference() != null)
-			response.renderCSSReference(config
-					.getJqueryUiCssResourceReference());
-
-		if (isNotEmpty(target.getJsResourceUrls())) {
-			for (String r : target.getJsResourceUrls()) {
-				response.renderJavascriptReference(r);
-			}
-		}
-
-		if (isNotEmpty(target.getJsResourceReferences())) {
-			for (JavascriptResourceReference r : target
-					.getJsResourceReferences()) {
-				response.renderJavascriptReference(r);
-			}
-		}
-
-		if (isNotEmpty(target.getCssResourceReferences())) {
-			for (ResourceReference r : target.getCssResourceReferences()) {
-				response.renderCSSReference(r);
-			}
-		}
-
-		if (isNotEmpty(target.getCssResourceUrls())) {
-			for (String r : target.getCssResourceUrls()) {
-				response.renderCSSReference(r);
-			}
-		}
-
-		String script = this.renderDocumentReadyJavaScript(target);
-		if (script != null)
-			response.renderJavascript(script, UUID.randomUUID().toString());
+		this.renderDocumentReadyJavaScript(response, target.getJQStatements());
 
 		// clear contributors after rendering
 		this.contributors.clear();
 
 	}
 
-	private String renderDocumentReadyJavaScript(
-			JQHeaderContributionTarget target) {
+	private void renderJsResourcesUrls(IHeaderResponse response,
+			Collection<String> resources) {
+		for (String url : resources) {
+			response.renderJavascriptReference(url);
+		}
+	}
 
-		if (isEmpty(target.getJsStatements()))
-			return null;
+	private void renderJsResourcesRefs(IHeaderResponse response,
+			Collection<JavascriptResourceReference> resources) {
+		for (JavascriptResourceReference ref : resources) {
+			response.renderJavascriptReference(ref);
+		}
+	}
 
-		JQStatement q = JQuery.documentReady(target.getJsStatements());
+	private void renderCssResourcesUrls(IHeaderResponse response,
+			Collection<String> resources) {
+		for (String url : resources) {
+			response.renderCSSReference(url);
+		}
+	}
+
+	private void renderCssResourcesRefs(IHeaderResponse response,
+			Collection<ResourceReference> resources) {
+		for (ResourceReference ref : resources) {
+			response.renderCSSReference(ref);
+		}
+	}
+
+	private void renderDocumentReadyJavaScript(IHeaderResponse response,
+			Collection<JQStatement> statements) {
+
+		if (isEmpty(statements))
+			return;
+
+		JQStatement q = JQuery.documentReady(statements);
 		IJavascriptCompressor compressor = Application.get()
 				.getResourceSettings().getJavascriptCompressor();
 
-		return compressor != null ? compressor.compress(q.render()) : q
-				.render();
+		String script = compressor != null ? compressor.compress(q.render())
+				: q.render();
+
+		if (script != null)
+			response.renderJavascript(script, UUID.randomUUID().toString());
+
 	}
 }

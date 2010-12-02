@@ -76,7 +76,7 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 
 	protected void initComponentJavascript(JQHeaderContributionTarget target) {
 		if (!Page.class.isAssignableFrom(this.component.getClass()))
-			target.addJsStatement($(this.component).chain(this.getName(),
+			target.addJQStatements($(this.component).chain(this.getName(),
 					this.options.toJson()));
 	}
 

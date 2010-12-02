@@ -45,7 +45,7 @@ public abstract class GenericJQComponentBehaivor<T extends IJQOptions<T>>
 	 */
 	@Override
 	protected void initComponentJavascript(JQHeaderContributionTarget target) {
-		target.addJsStatement($(this.selector).chain(this.getName(),
+		target.addJQStatements($(this.selector).chain(this.getName(),
 				this.options.toJson()));
 	}
 

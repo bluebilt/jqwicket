@@ -54,7 +54,7 @@ public class MaskedInputBehavior extends
 	 */
 	@Override
 	protected void initComponentJavascript(JQHeaderContributionTarget target) {
-		target.addJsStatement($(this.component).chain(this.getName(),
+		target.addJQStatements($(this.component).chain(this.getName(),
 				Utils.quote(this.options.getMask()), this.options.toJson()));
 	}
 

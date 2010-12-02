@@ -54,7 +54,7 @@ public class CJImageFlipboxBehavior extends
 	@Override
 	protected void initComponentJavascript(JQHeaderContributionTarget target) {
 		super.initComponentJavascript(target);
-		target.addJsStatement($(this.component).addClass(
+		target.addJQStatements($(this.component).addClass(
 				"cj_image_flipbox_block"));
 	}
 

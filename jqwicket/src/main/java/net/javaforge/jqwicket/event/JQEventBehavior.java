@@ -57,7 +57,7 @@ public abstract class JQEventBehavior extends JQBehavior implements
 			for (IJQEvent e : this.events) {
 				stmt.chain(e.getName(), callback.render());
 			}
-			target.addJsStatement(stmt);
+			target.addJQStatements(stmt);
 		}
 	}
 

@@ -54,7 +54,7 @@ public class SparklineBehavior extends JQComponentBehaivor<SparklineOptions>
 	 */
 	@Override
 	protected void initComponentJavascript(JQHeaderContributionTarget target) {
-		target.addJsStatement($(this.component).chain(
+		target.addJQStatements($(this.component).chain(
 				this.getName(),
 				this.options.hasValues() ? Utils.toJson(this.options
 						.getValues()) : Utils.quote("html"),

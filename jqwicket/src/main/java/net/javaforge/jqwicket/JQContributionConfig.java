@@ -17,215 +17,115 @@
 package net.javaforge.jqwicket;
 
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 /**
+ * Global JQWicket contribution config defining javascript/css resources that
+ * will be always rendered into the HTML-Page head section as soon as some
+ * JQWicket component/behavior will be rendered.
+ * 
  * @author mkalina
- *
+ * 
  */
 public class JQContributionConfig implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private String jqueryCoreJsUrl = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js";
+	public static final String DEFAULT_JQUERY_URL = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js";
 
-	private String jqueryUiJsUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js";
+	public static final String DEFAULT_JQUERYUI_URL = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js";
 
-	private String jqueryUiCssUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css";
+	public static final String DEFAULT_JQUERYUI_CSS_URL = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css";
 
-	private JavascriptResourceReference jqueryCoreJsResourceReference;
+	private Set<String> jsUrls;
 
-	private JavascriptResourceReference jqueryUiJsResourceReference;
+	private Set<JavascriptResourceReference> jsResourceReferences;
 
-	private ResourceReference jqueryUiCssResourceReference;
+	private Set<String> cssUrls;
 
-	/**
-	 * Initializes this config with given url to the jquery ui library (e.g. <a
-	 * href
-	 * ="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">http
-	 * ://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js</a>)
-	 * 
-	 * @param url
-	 * @return
-	 */
-	public JQContributionConfig withJQueryCoreJsUrl(String url) {
-		this.jqueryCoreJsUrl = url;
-		this.jqueryCoreJsResourceReference = null;
+	private Set<ResourceReference> cssResourceReferences;
+
+	public JQContributionConfig() {
+		this(new String[] { DEFAULT_JQUERY_URL, DEFAULT_JQUERYUI_URL },
+				new String[] { DEFAULT_JQUERYUI_CSS_URL });
+	}
+
+	public JQContributionConfig(String... jsUrls) {
+		this(jsUrls != null ? Arrays.asList(jsUrls) : null, null, null, null);
+	}
+
+	public JQContributionConfig(JavascriptResourceReference... jsRefs) {
+		this(null, jsRefs != null ? Arrays.asList(jsRefs) : null, null, null);
+	}
+
+	public JQContributionConfig(String[] jsUrls, String[] cssUrls) {
+		this(jsUrls != null ? Arrays.asList(jsUrls) : null, null,
+				cssUrls != null ? Arrays.asList(cssUrls) : null, null);
+	}
+
+	public JQContributionConfig(Collection<String> jsUrls,
+			Collection<JavascriptResourceReference> jsResourceReferences,
+			Collection<String> cssUrls,
+			Collection<ResourceReference> cssResourceReferences) {
+
+		this.jsUrls = new LinkedHashSet<String>(jsUrls != null ? jsUrls
+				: Collections.<String> emptySet());
+		this.jsResourceReferences = new LinkedHashSet<JavascriptResourceReference>(
+				jsResourceReferences != null ? jsResourceReferences
+						: Collections.<JavascriptResourceReference> emptySet());
+		this.cssUrls = new LinkedHashSet<String>(cssUrls != null ? cssUrls
+				: Collections.<String> emptySet());
+		this.cssResourceReferences = new LinkedHashSet<ResourceReference>(
+				cssResourceReferences != null ? cssResourceReferences
+						: Collections.<ResourceReference> emptySet());
+	}
+
+	public JQContributionConfig withJsUrls(String... jsUrls) {
+		if (jsUrls != null)
+			this.jsUrls.addAll(Arrays.asList(jsUrls));
 		return this;
 	}
 
-	/**
-	 * Initializes this config with given url to the jquery ui library (e.g. <a
-	 * href
-	 * ="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js">
-	 * http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js</a>)
-	 * 
-	 * @param url
-	 * @return
-	 */
-	public JQContributionConfig withJQueryUiJsUrl(String url) {
-		this.jqueryUiJsUrl = url;
-		this.jqueryUiJsResourceReference = null;
+	public JQContributionConfig withJsRefs(
+			JavascriptResourceReference... jsRefs) {
+		if (jsRefs != null)
+			this.jsResourceReferences.addAll(Arrays.asList(jsRefs));
 		return this;
 	}
 
-	/**
-	 * Initializes this config with given url to the jquery ui css file(e.g. <a
-	 * href =
-	 * "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css"
-	 * >http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-
-	 * ui.css</a>)
-	 * 
-	 * @param url
-	 * @return
-	 */
-	public JQContributionConfig withJQueryUiCssUrl(String url) {
-		this.jqueryUiCssUrl = url;
-		this.jqueryUiCssResourceReference = null;
+	public JQContributionConfig withCssUrls(String... cssUrls) {
+		if (cssUrls != null)
+			this.cssUrls.addAll(Arrays.asList(cssUrls));
 		return this;
 	}
 
-	/**
-	 * Initializes this config with given resource reference to the jquery core
-	 * library.
-	 * 
-	 * @param ref
-	 * @return
-	 */
-	public JQContributionConfig withJQueryCoreJsResourceReference(
-			JavascriptResourceReference ref) {
-		this.jqueryCoreJsUrl = null;
-		this.jqueryCoreJsResourceReference = ref;
+	public JQContributionConfig withCssRefs(ResourceReference... cssRefs) {
+		if (cssRefs != null)
+			this.cssResourceReferences.addAll(Arrays.asList(cssRefs));
 		return this;
 	}
 
-	/**
-	 * Initializes this config with given resource reference to the jquery ui
-	 * library.
-	 * 
-	 * @param ref
-	 * @return
-	 */
-	public JQContributionConfig withJQueryUiJsResourceReference(
-			JavascriptResourceReference ref) {
-		this.jqueryUiJsUrl = null;
-		this.jqueryUiJsResourceReference = ref;
-		return this;
+	public Set<String> getJsUrls() {
+		return Collections.unmodifiableSet(this.jsUrls);
 	}
 
-	/**
-	 * Initializes this config with given resource reference to the jquery css
-	 * file.
-	 * 
-	 * @param ref
-	 * @return
-	 */
-	public JQContributionConfig withJQueryUiCssResourceReference(
-			ResourceReference ref) {
-		this.jqueryUiCssUrl = null;
-		this.jqueryUiCssResourceReference = ref;
-		return this;
+	public Set<JavascriptResourceReference> getJsResourceReferences() {
+		return Collections.unmodifiableSet(this.jsResourceReferences);
 	}
 
-	/**
-	 * Initializes this config only with jquery core library url (e.g. <a href
-	 * ="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js">http
-	 * ://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js</a>). Once
-	 * configured only reference to the jquery core will be rendered with the
-	 * html page.
-	 * 
-	 * @param url
-	 * @return
-	 */
-	public JQContributionConfig withJQueryCoreJsUrlOnly(String url) {
-		this.jqueryCoreJsUrl = url;
-		this.jqueryCoreJsResourceReference = null;
-		this.jqueryUiJsUrl = null;
-		this.jqueryUiJsResourceReference = null;
-		this.jqueryUiCssUrl = null;
-		this.jqueryUiCssResourceReference = null;
-		return this;
+	public Set<String> getCssUrls() {
+		return Collections.unmodifiableSet(this.cssUrls);
 	}
 
-	/**
-	 * Initializes this config only with the resource reference to the jquery
-	 * core library. Once configured only reference to the jquery core will be
-	 * rendered with the html page.
-	 * 
-	 * @param url
-	 * @return
-	 */
-	public JQContributionConfig withJQueryCoreJsResourceReferenceOnly(
-			JavascriptResourceReference ref) {
-		this.jqueryCoreJsUrl = null;
-		this.jqueryCoreJsResourceReference = ref;
-		this.jqueryUiJsUrl = null;
-		this.jqueryUiJsResourceReference = null;
-		this.jqueryUiCssUrl = null;
-		this.jqueryUiCssResourceReference = null;
-		return this;
-	}
-
-	/**
-	 * Returns configured jquery core library url or null, if no url specified.
-	 * 
-	 * @return configured jquery core library url or null, if no url specified.
-	 */
-	public String getJqueryCoreJsUrl() {
-		return jqueryCoreJsUrl;
-	}
-
-	/**
-	 * Returns configured jquery ui library url or null, if no url specified.
-	 * 
-	 * @return configured jquery ui library url or null, if no url specified.
-	 */
-	public String getJqueryUiJsUrl() {
-		return jqueryUiJsUrl;
-	}
-
-	/**
-	 * Returns configured jquery css file url or null, if no url specified.
-	 * 
-	 * @return configured jquery css file url or null, if no url specified.
-	 */
-	public String getJqueryUiCssUrl() {
-		return jqueryUiCssUrl;
-	}
-
-	/**
-	 * Returns configured jquery core library resource reference or null, if no
-	 * reference specified.
-	 * 
-	 * @return configured jquery core library resource reference or null, if no
-	 *         reference specified.
-	 */
-	public ResourceReference getJqueryCoreJsResourceReference() {
-		return jqueryCoreJsResourceReference;
-	}
-
-	/**
-	 * Returns configured jquery ui library resource reference or null, if no
-	 * url specified.
-	 * 
-	 * @return configured jquery ui library resource reference or null, if no
-	 *         url specified.
-	 */
-	public ResourceReference getJqueryUiJsResourceReference() {
-		return jqueryUiJsResourceReference;
-	}
-
-	/**
-	 * Returns configured jquery css resource reference or null, if no reference
-	 * specified.
-	 * 
-	 * @return configured jquery css resource reference or null, if no reference
-	 *         specified.
-	 */
-	public ResourceReference getJqueryUiCssResourceReference() {
-		return jqueryUiCssResourceReference;
+	public Set<ResourceReference> getCssResourceReferences() {
+		return Collections.unmodifiableSet(this.cssResourceReferences);
 	}
 
 }
