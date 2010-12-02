@@ -48,11 +48,11 @@ public class CloudZoomBehavior extends JQComponentBehaivor<CloudZoomOptions> {
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.JQComponentBehaivor#initComponentJavascript(net.javaforge.jqwicket.JQHeaderContributionTarget)
+	 * @see net.javaforge.jqwicket.ui.JQComponentBehaivor#contributeInternal(net.javaforge.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
-	protected void initComponentJavascript(JQHeaderContributionTarget target) {
-		; // no init javascript
+	protected void contributeInternal(JQHeaderContributionTarget target) {
+		; // do nothing here
 	}
 
 }

@@ -48,13 +48,17 @@ public class GMapBehavior extends JQComponentBehaivor<GMapOptions> implements
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.JQComponentBehaivor#contribute(net.javaforge.jqwicket.JQHeaderContributionTarget)
+	 * @see net.javaforge.jqwicket.ui.JQComponentBehaivor#contributeInternal(net.javaforge.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
-	public void contribute(JQHeaderContributionTarget target) {
-		target.addJavascriptResourceUrls("http://maps.google.com/maps?file=api&amp;v=2&amp;key="
+	public void contributeInternal(JQHeaderContributionTarget target) {
+		target.addJavascriptResourceUrls(this.getGMapsJavascriptUrl()
 				+ this.options.getApiKey());
-		super.contribute(target);
+		super.contributeInternal(target);
+	}
+
+	protected String getGMapsJavascriptUrl() {
+		return "http://maps.google.com/maps?file=api&amp;v=2&amp;key=";
 	}
 
 }

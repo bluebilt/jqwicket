@@ -62,9 +62,9 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	}
 
 	public NivoSliderOptions() {
-		this.jsResourceReferences(JS_RESOURCE);
-		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
-		this.cssResourceReferences(CSS_RESOURCE);
+		this.setJsResourceReferences(JS_RESOURCE);
+		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.setCssResourceReferences(CSS_RESOURCE);
 	}
 
 	/**

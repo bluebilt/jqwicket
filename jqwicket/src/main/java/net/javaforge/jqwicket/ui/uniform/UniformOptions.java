@@ -42,9 +42,9 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 			UniformOptions.class, "theme/aristo/css/uniform.aristo.css");
 
 	public UniformOptions() {
-		this.jsResourceReferences(JS_RESOURCE);
-		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
-		this.cssResourceReferences(CSS_RESOURCE_DEFAULT);
+		this.setJsResourceReferences(JS_RESOURCE);
+		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.setCssResourceReferences(CSS_RESOURCE_DEFAULT);
 	}
 
 	/**

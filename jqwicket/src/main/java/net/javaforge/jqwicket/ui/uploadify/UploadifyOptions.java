@@ -64,9 +64,9 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	}
 
 	public UploadifyOptions() {
-		this.jsResourceReferences(JS_SWFOBJ_RESOURCE, JS_RESOURCE);
-		this.jsResourceReferencesMin(JS_SWFOBJ_RESOURCE, JS_RESOURCE_MIN);
-		this.cssResourceReferences(CSS_RESOURCE);
+		this.setJsResourceReferences(JS_SWFOBJ_RESOURCE, JS_RESOURCE);
+		this.setJsResourceReferencesMin(JS_SWFOBJ_RESOURCE, JS_RESOURCE_MIN);
+		this.setCssResourceReferences(CSS_RESOURCE);
 	}
 
 	/**

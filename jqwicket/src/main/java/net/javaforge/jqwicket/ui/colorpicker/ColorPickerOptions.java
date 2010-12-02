@@ -41,8 +41,8 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 			ColorPickerOptions.class, "css/colorpicker.css");
 
 	public ColorPickerOptions() {
-		this.jsResourceReferences(JS_RESOURCE);
-		this.cssResourceReferences(CSS_RESOURCE);
+		this.setJsResourceReferences(JS_RESOURCE);
+		this.setCssResourceReferences(CSS_RESOURCE);
 	}
 
 	/**

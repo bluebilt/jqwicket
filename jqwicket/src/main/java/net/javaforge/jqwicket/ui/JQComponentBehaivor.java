@@ -18,10 +18,10 @@ package net.javaforge.jqwicket.ui;
 
 import static net.javaforge.jqwicket.JQuery.$;
 import static net.javaforge.jqwicket.JQuery.$f;
+import net.javaforge.jqwicket.IJQWidget;
 import net.javaforge.jqwicket.JQBehavior;
 import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.JQHeaderContributionTarget;
-import net.javaforge.jqwicket.IJQWidget;
 import net.javaforge.jqwicket.Utils;
 
 import org.apache.wicket.Page;
@@ -44,14 +44,23 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 
 	public JQComponentBehaivor(T options) {
 		this.options = options;
-
-		JavascriptResourceReference[] jsRefs = options.jsResourceReferences();
+		JavascriptResourceReference[] jsRefs = options
+				.getJsResourceReferences();
 		if (Utils.isDevelopmentMode()
-				&& Utils.isNotEmpty(options.jsResourceReferencesMin()))
-			jsRefs = options.jsResourceReferencesMin();
+				&& Utils.isNotEmpty(options.getJsResourceReferencesMin())) {
+			jsRefs = options.getJsResourceReferencesMin();
+		}
+
+		String[] jsUrls = options.getJsResourceUrls();
+		if (Utils.isDevelopmentMode()
+				&& Utils.isNotEmpty(options.getJsResourceUrlsMin())) {
+			jsUrls = options.getJsResourceUrlsMin();
+		}
 
 		this.addJsResourceReferences(jsRefs);
-		this.addCssResourceReferences(options.cssResourceReferences());
+		this.addJsResourceUrls(jsUrls);
+		this.addCssResourceReferences(options.getCssResourceReferences());
+		this.addCssResourceUrls(options.getCssResourceUrls());
 	}
 
 	/**
@@ -66,15 +75,10 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQBehavior#contribute(net.javaforge.jqwicket.JQHeaderContributionTarget)
+	 * @see net.javaforge.jqwicket.JQBehavior#contributeInternal(net.javaforge.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
-	public void contribute(JQHeaderContributionTarget target) {
-		super.contribute(target);
-		this.initComponentJavascript(target);
-	}
-
-	protected void initComponentJavascript(JQHeaderContributionTarget target) {
+	protected void contributeInternal(JQHeaderContributionTarget target) {
 		if (!Page.class.isAssignableFrom(this.component.getClass()))
 			target.addJQStatements($(this.component).chain(this.getName(),
 					this.options.toJson()));

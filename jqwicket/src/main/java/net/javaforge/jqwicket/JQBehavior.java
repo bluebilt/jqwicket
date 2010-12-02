@@ -42,6 +42,10 @@ public class JQBehavior extends AbstractBehavior implements
 
 	private Set<ResourceReference> cssResourceReferences;
 
+	private Set<String> jsResourceUrls;
+
+	private Set<String> cssResourceUrls;
+
 	protected Component component;
 
 	public JQBehavior() {
@@ -80,30 +84,47 @@ public class JQBehavior extends AbstractBehavior implements
 	}
 
 	public JQBehavior addJsResourceReferences(
-			JavascriptResourceReference... resourceRefs) {
-		if (Utils.isEmpty(resourceRefs))
+			JavascriptResourceReference... refs) {
+		if (Utils.isEmpty(refs))
 			return this;
 
 		if (this.jsResourceReferences == null)
 			this.jsResourceReferences = new LinkedHashSet<JavascriptResourceReference>();
 
-		for (JavascriptResourceReference ref : resourceRefs) {
-			this.jsResourceReferences.add(ref);
-		}
+		this.jsResourceReferences.addAll(Arrays.asList(refs));
 		return this;
 	}
 
-	public JQBehavior addCssResourceReferences(
-			ResourceReference... resourceRefs) {
-		if (Utils.isEmpty(resourceRefs))
+	public JQBehavior addJsResourceUrls(String... urls) {
+		if (Utils.isEmpty(urls))
+			return this;
+
+		if (this.jsResourceUrls == null)
+			this.jsResourceUrls = new LinkedHashSet<String>();
+
+		this.jsResourceUrls.addAll(Arrays.asList(urls));
+		return this;
+	}
+
+	public JQBehavior addCssResourceReferences(ResourceReference... refs) {
+		if (Utils.isEmpty(refs))
 			return this;
 
 		if (this.cssResourceReferences == null)
 			this.cssResourceReferences = new LinkedHashSet<ResourceReference>();
 
-		for (ResourceReference ref : resourceRefs) {
-			this.cssResourceReferences.add(ref);
-		}
+		this.cssResourceReferences.addAll(Arrays.asList(refs));
+		return this;
+	}
+
+	public JQBehavior addCssResourceUrls(String... urls) {
+		if (Utils.isEmpty(urls))
+			return this;
+
+		if (this.cssResourceUrls == null)
+			this.cssResourceUrls = new LinkedHashSet<String>();
+
+		this.cssResourceUrls.addAll(Arrays.asList(urls));
 		return this;
 	}
 
@@ -124,9 +145,21 @@ public class JQBehavior extends AbstractBehavior implements
 	 * 
 	 * @see net.javaforge.jqwicket.IJQHeaderContributor#contribute(net.javaforge.jqwicket.JQHeaderContributionTarget)
 	 */
-	public void contribute(JQHeaderContributionTarget target) {
-		target.addJQStatements(this.statements);
+	public final void contribute(JQHeaderContributionTarget target) {
 		target.addJavascriptResourceReferences(this.jsResourceReferences);
+		target.addJavascriptResourceUrls(this.jsResourceUrls);
 		target.addCssResourceReferences(this.cssResourceReferences);
+		target.addCssResourceUrls(this.cssResourceUrls);
+		target.addJQStatements(this.statements);
+		this.contributeInternal(target);
+	}
+
+	/**
+	 * Subclasses should override this method to add custom contributions to the
+	 * target.
+	 * 
+	 * @param target
+	 */
+	protected void contributeInternal(JQHeaderContributionTarget target) {
 	}
 }

@@ -44,9 +44,9 @@ public class CloudZoomOptions extends AbstractJQOptions<CloudZoomOptions> {
 
 	public CloudZoomOptions(CloudZoomImage image,
 			CloudZoomGalleryImage... galleryImages) {
-		this.jsResourceReferences(JS_RESOURCE);
-		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
-		this.cssResourceReferences(CSS_RESOURCE);
+		this.setJsResourceReferences(JS_RESOURCE);
+		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.setCssResourceReferences(CSS_RESOURCE);
 		this.image = image;
 		this.galleryImages = galleryImages;
 	}

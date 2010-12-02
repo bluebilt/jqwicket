@@ -98,8 +98,8 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 
 	public GMapOptions(String apiKey) {
 		this.apiKey = apiKey;
-		this.jsResourceReferences(JS_RESOURCE);
-		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.setJsResourceReferences(JS_RESOURCE);
+		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
 	}
 
 	public String getApiKey() {

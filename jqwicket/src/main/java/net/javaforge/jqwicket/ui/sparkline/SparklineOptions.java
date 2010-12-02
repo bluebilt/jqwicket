@@ -52,8 +52,8 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	}
 
 	public SparklineOptions(float[] values) {
-		this.jsResourceReferences(JS_RESOURCE);
-		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.setJsResourceReferences(JS_RESOURCE);
+		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
 		this.values = values;
 	}
 

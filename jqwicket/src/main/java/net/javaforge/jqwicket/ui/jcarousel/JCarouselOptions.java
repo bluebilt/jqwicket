@@ -48,9 +48,9 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 			JCarouselOptions.class, "skins/ie7/skin.css");
 
 	public JCarouselOptions() {
-		this.jsResourceReferences(JS_RESOURCE);
-		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
-		this.cssResourceReferences(CSS_RESOURCE_TANGO);
+		this.setJsResourceReferences(JS_RESOURCE);
+		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.setCssResourceReferences(CSS_RESOURCE_TANGO);
 	}
 
 	/**

@@ -44,9 +44,9 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 			FancyBoxOptions.class, "jquery.fancybox-1.3.4.css");
 
 	public FancyBoxOptions() {
-		this.jsResourceReferences(JS_RESOURCE);
-		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
-		this.cssResourceReferences(CSS_RESOURCE);
+		this.setJsResourceReferences(JS_RESOURCE);
+		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.setCssResourceReferences(CSS_RESOURCE);
 	}
 
 	/**

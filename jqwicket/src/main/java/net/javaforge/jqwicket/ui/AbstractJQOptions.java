@@ -49,15 +49,21 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<?>>
 
 	private JavascriptResourceReference[] jsResourceReferences;
 
+	private String[] cssResourceUrls;
+
+	private String[] jsResourceUrlsMin;
+
+	private String[] jsResourceUrls;
+
 	public AbstractJQOptions() {
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.IJQOptions#cssResourceReferences(org.apache.wicket.ResourceReference[])
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#setCssResourceReferences(org.apache.wicket.ResourceReference[])
 	 */
-	public T cssResourceReferences(ResourceReference... refs) {
+	public T setCssResourceReferences(ResourceReference... refs) {
 		this.cssResourceReferences = refs;
 		return (T) this;
 	}
@@ -65,27 +71,27 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<?>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.IJQOptions#cssResourceReferences()
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#getCssResourceReferences()
 	 */
-	public ResourceReference[] cssResourceReferences() {
+	public ResourceReference[] getCssResourceReferences() {
 		return this.cssResourceReferences;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.IJQOptions#jsResourceReferences()
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#getJsResourceReferences()
 	 */
-	public JavascriptResourceReference[] jsResourceReferences() {
+	public JavascriptResourceReference[] getJsResourceReferences() {
 		return this.jsResourceReferences;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.IJQOptions#jsResourceReferences(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#setJsResourceReferences(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
 	 */
-	public T jsResourceReferences(JavascriptResourceReference... refs) {
+	public T setJsResourceReferences(JavascriptResourceReference... refs) {
 		this.jsResourceReferences = refs;
 		return (T) this;
 	}
@@ -93,20 +99,77 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<?>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.IJQOptions#jsResourceReferencesMin()
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#getJsResourceReferencesMin()
 	 */
-	public JavascriptResourceReference[] jsResourceReferencesMin() {
+	public JavascriptResourceReference[] getJsResourceReferencesMin() {
 		return this.jsResourceReferencesMin;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.IJQOptions#jsResourceReferencesMin(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#setJsResourceReferencesMin(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
 	 */
-	public T jsResourceReferencesMin(JavascriptResourceReference... refs) {
+	public T setJsResourceReferencesMin(JavascriptResourceReference... refs) {
 		this.jsResourceReferencesMin = refs;
 		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#setCssResourceUrls(java.lang.String[])
+	 */
+	public T setCssResourceUrls(String... urls) {
+		this.cssResourceUrls = urls;
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#getCssResourceUrls()
+	 */
+	public String[] getCssResourceUrls() {
+		return this.cssResourceUrls;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#setJsResourceUrlsMin(java.lang.String[])
+	 */
+	public T setJsResourceUrlsMin(String... urls) {
+		this.jsResourceUrlsMin = urls;
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#getJsResourceUrlsMin()
+	 */
+	public String[] getJsResourceUrlsMin() {
+		return this.jsResourceUrlsMin;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#setJsResourceUrls(java.lang.String[])
+	 */
+	public T setJsResourceUrls(String... urls) {
+		this.jsResourceUrls = urls;
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#getJsResourceUrls()
+	 */
+	public String[] getJsResourceUrls() {
+		return this.jsResourceUrls;
 	}
 
 	/**
@@ -169,9 +232,9 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<?>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.IJQOptions#getJsStatement(java.lang.CharSequence)
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#getJQStatement(java.lang.CharSequence)
 	 */
-	public JQStatement getJsStatement(CharSequence key) {
+	public JQStatement getJQStatement(CharSequence key) {
 		return (JQStatement) options.get(key);
 	}
 

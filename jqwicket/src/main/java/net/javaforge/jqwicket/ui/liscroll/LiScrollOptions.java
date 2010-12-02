@@ -20,8 +20,8 @@ public class LiScrollOptions extends AbstractJQOptions<LiScrollOptions>{
 			LiScrollOptions.class, "li-scroller.css");
 
 	public LiScrollOptions() {
-		this.jsResourceReferences(JS_RESOURCE);
-		this.cssResourceReferences(CSS_RESOURCE);		
+		this.setJsResourceReferences(JS_RESOURCE);
+		this.setCssResourceReferences(CSS_RESOURCE);		
 	}
 
 	public LiScrollOptions travelocity(float travelocity) {

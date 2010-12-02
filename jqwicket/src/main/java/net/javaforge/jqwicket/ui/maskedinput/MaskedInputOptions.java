@@ -41,8 +41,8 @@ public class MaskedInputOptions extends AbstractJQOptions<MaskedInputOptions> {
 	private String mask;
 
 	public MaskedInputOptions(String mask) {
-		this.jsResourceReferences(JS_RESOURCE);
-		this.jsResourceReferencesMin(JS_RESOURCE_MIN);
+		this.setJsResourceReferences(JS_RESOURCE);
+		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
 		this.mask = mask;
 	}
 

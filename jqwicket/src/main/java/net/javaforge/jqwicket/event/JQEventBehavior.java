@@ -47,10 +47,10 @@ public abstract class JQEventBehavior extends JQBehavior implements
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.JQBehavior#contribute(net.javaforge.jqwicket.JQHeaderContributionTarget)
+	 * @see net.javaforge.jqwicket.JQBehavior#contributeInternal(net.javaforge.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
-	public void contribute(JQHeaderContributionTarget target) {
+	public void contributeInternal(JQHeaderContributionTarget target) {
 		JQFunction callback = this.callback();
 		if (isNotEmpty(this.events) && callback != null) {
 			JQStatement stmt = $(this.component);

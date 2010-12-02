@@ -49,11 +49,11 @@ public class CJImageFlipboxBehavior extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.JQComponentBehaivor#initComponentJavascript(net.javaforge.jqwicket.JQHeaderContributionTarget)
+	 * @see net.javaforge.jqwicket.ui.JQComponentBehaivor#contributeInternal(net.javaforge.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
-	protected void initComponentJavascript(JQHeaderContributionTarget target) {
-		super.initComponentJavascript(target);
+	protected void contributeInternal(JQHeaderContributionTarget target) {
+		super.contributeInternal(target);
 		target.addJQStatements($(this.component).addClass(
 				"cj_image_flipbox_block"));
 	}

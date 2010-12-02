@@ -35,28 +35,54 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 		IJsonAware {
 
 	/**
-	 * Sets css resource references necessary for component rendering.
+	 * Sets css resource references necessary for component rendering. If
+	 * nothing set, default resources will be used.
 	 * 
 	 * @param refs
 	 * @return
 	 */
-	T cssResourceReferences(ResourceReference... refs);
+	T setCssResourceReferences(ResourceReference... refs);
+
+	/**
+	 * Sets css resource urls necessary for component rendering. If nothing set,
+	 * default resources will be used.
+	 * 
+	 * @param refs
+	 * @return
+	 */
+	T setCssResourceUrls(String... urls);
 
 	/**
 	 * Returns css resource references necessary for component rendering.
 	 * 
 	 * @return
 	 */
-	ResourceReference[] cssResourceReferences();
+	ResourceReference[] getCssResourceReferences();
+
+	/**
+	 * Returns css resource urls necessary for component rendering.
+	 * 
+	 * @return
+	 */
+	String[] getCssResourceUrls();
 
 	/**
 	 * Sets minified javascript resource references necessary for component
-	 * rendering.
+	 * rendering. If nothing set, default resources will be used.
 	 * 
 	 * @param refs
 	 * @return
 	 */
-	T jsResourceReferencesMin(JavascriptResourceReference... refs);
+	T setJsResourceReferencesMin(JavascriptResourceReference... refs);
+
+	/**
+	 * Sets minified javascript resource urls necessary for component rendering.
+	 * If nothing set, default resources will be used.
+	 * 
+	 * @param refs
+	 * @return
+	 */
+	T setJsResourceUrlsMin(String... urls);
 
 	/**
 	 * Returns minified javascript resource references necessary for component
@@ -64,22 +90,47 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	 * 
 	 * @return
 	 */
-	JavascriptResourceReference[] jsResourceReferencesMin();
+	JavascriptResourceReference[] getJsResourceReferencesMin();
 
 	/**
-	 * Sets javascript resource references necessary for component rendering.
+	 * Returns minified javascript resource urls necessary for component
+	 * rendering.
+	 * 
+	 * @return
+	 */
+	String[] getJsResourceUrlsMin();
+
+	/**
+	 * Sets javascript resource references necessary for component rendering. If
+	 * nothing set, default resources will be used.
 	 * 
 	 * @param refs
 	 * @return
 	 */
-	T jsResourceReferences(JavascriptResourceReference... refs);
+	T setJsResourceReferences(JavascriptResourceReference... refs);
+
+	/**
+	 * Sets javascript resource urls necessary for component rendering. If
+	 * nothing set, default resources will be used.
+	 * 
+	 * @param refs
+	 * @return
+	 */
+	T setJsResourceUrls(String... urls);
 
 	/**
 	 * Returns javascript resource references necessary for component rendering.
 	 * 
 	 * @return
 	 */
-	JavascriptResourceReference[] jsResourceReferences();
+	JavascriptResourceReference[] getJsResourceReferences();
+
+	/**
+	 * Returns javascript resource urls necessary for component rendering.
+	 * 
+	 * @return
+	 */
+	String[] getJsResourceUrls();
 
 	boolean isEmpty();
 
@@ -93,7 +144,7 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 
 	Object getObject(CharSequence key);
 
-	JQStatement getJsStatement(CharSequence key);
+	JQStatement getJQStatement(CharSequence key);
 
 	int getInt(CharSequence key);
 
@@ -122,7 +173,7 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	T put(CharSequence key, IJQOptions<?> options);
 
 	T put(CharSequence key, Enum<?> enumVal);
-	
+
 	T putUnquoted(CharSequence key, Enum<?> enumVal);
 
 	T put(CharSequence name, JQStatement value);

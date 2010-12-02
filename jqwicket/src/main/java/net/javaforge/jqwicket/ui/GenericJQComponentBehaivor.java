@@ -41,10 +41,10 @@ public abstract class GenericJQComponentBehaivor<T extends IJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.JQComponentBehaivor#initComponentJavascript(net.javaforge.jqwicket.JQHeaderContributionTarget)
+	 * @see net.javaforge.jqwicket.ui.JQComponentBehaivor#contributeInternal(net.javaforge.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
-	protected void initComponentJavascript(JQHeaderContributionTarget target) {
+	protected void contributeInternal(JQHeaderContributionTarget target) {
 		target.addJQStatements($(this.selector).chain(this.getName(),
 				this.options.toJson()));
 	}
