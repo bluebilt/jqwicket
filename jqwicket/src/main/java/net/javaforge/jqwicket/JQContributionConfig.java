@@ -17,12 +17,9 @@
 package net.javaforge.jqwicket;
 
 import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
+import org.apache.wicket.Application;
+import org.apache.wicket.MetaDataKey;
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
@@ -38,95 +35,113 @@ public class JQContributionConfig implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	public static final CharSequence DEFAULT_JQUERY_URL = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js";
+	private static final MetaDataKey<JQContributionConfig> configKey = new MetaDataKey<JQContributionConfig>() {
+		private static final long serialVersionUID = 1L;
+	};
 
-	public static final CharSequence DEFAULT_JQUERYUI_URL = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js";
+	private static final CharSequence defaultJQueryCoreJsUrl = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js";
 
-	public static final CharSequence DEFAULT_JQUERYUI_CSS_URL = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css";
+	private static final CharSequence defaultJQueryUiJsUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js";
 
-	private Set<CharSequence> jsUrls;
+	private static final CharSequence defaultJQueryUiCssUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/themes/base/jquery-ui.css";
 
-	private Set<JavascriptResourceReference> jsResourceReferences;
+	private CharSequence jqueryCoreJsUrl;
 
-	private Set<CharSequence> cssUrls;
+	private JavascriptResourceReference jqueryCoreJsResourceReference;
 
-	private Set<ResourceReference> cssResourceReferences;
+	private CharSequence jqueryUiJsUrl;
+
+	private JavascriptResourceReference jqueryUiJsResourceReference;
+
+	private CharSequence jqueryUiCssUrl;
+
+	private ResourceReference jqueryUiCssResourceReference;
+
+	public static JQContributionConfig get() {
+		return Application.get().getMetaData(configKey);
+	}
+
+	public static void set(JQContributionConfig config) {
+		Application.get().setMetaData(configKey, config);
+	}
 
 	public JQContributionConfig() {
-		this(new CharSequence[] { DEFAULT_JQUERY_URL, DEFAULT_JQUERYUI_URL },
-				new CharSequence[] { DEFAULT_JQUERYUI_CSS_URL });
+		this.jqueryCoreJsUrl = defaultJQueryCoreJsUrl;
 	}
 
-	public JQContributionConfig(CharSequence... jsUrls) {
-		this(jsUrls != null ? Arrays.asList(jsUrls) : null, null, null, null);
+	public JQContributionConfig(CharSequence jqueryCoreJsUrl) {
+		this.jqueryCoreJsResourceReference = null;
+		this.jqueryCoreJsUrl = jqueryCoreJsUrl;
 	}
 
-	public JQContributionConfig(JavascriptResourceReference... jsRefs) {
-		this(null, jsRefs != null ? Arrays.asList(jsRefs) : null, null, null);
+	public JQContributionConfig(
+			JavascriptResourceReference jqueryCoreResourceReference) {
+		this.jqueryCoreJsResourceReference = jqueryCoreResourceReference;
+		this.jqueryCoreJsUrl = null;
 	}
 
-	public JQContributionConfig(CharSequence[] jsUrls, CharSequence[] cssUrls) {
-		this(jsUrls != null ? Arrays.asList(jsUrls) : null, null,
-				cssUrls != null ? Arrays.asList(cssUrls) : null, null);
-	}
-
-	public JQContributionConfig(Collection<CharSequence> jsUrls,
-			Collection<JavascriptResourceReference> jsResourceReferences,
-			Collection<CharSequence> cssUrls,
-			Collection<ResourceReference> cssResourceReferences) {
-
-		this.jsUrls = new LinkedHashSet<CharSequence>(jsUrls != null ? jsUrls
-				: Collections.<CharSequence> emptySet());
-		this.jsResourceReferences = new LinkedHashSet<JavascriptResourceReference>(
-				jsResourceReferences != null ? jsResourceReferences
-						: Collections.<JavascriptResourceReference> emptySet());
-		this.cssUrls = new LinkedHashSet<CharSequence>(
-				cssUrls != null ? cssUrls
-						: Collections.<CharSequence> emptySet());
-		this.cssResourceReferences = new LinkedHashSet<ResourceReference>(
-				cssResourceReferences != null ? cssResourceReferences
-						: Collections.<ResourceReference> emptySet());
-	}
-
-	public JQContributionConfig withJsUrls(CharSequence... jsUrls) {
-		if (jsUrls != null)
-			this.jsUrls.addAll(Arrays.asList(jsUrls));
+	public JQContributionConfig withDefaultJQueryUi() {
+		this.jqueryUiJsUrl = defaultJQueryUiJsUrl;
+		this.jqueryUiCssUrl = defaultJQueryUiCssUrl;
+		this.jqueryUiJsResourceReference = null;
+		this.jqueryUiCssResourceReference = null;
 		return this;
 	}
 
-	public JQContributionConfig withJsRefs(
-			JavascriptResourceReference... jsRefs) {
-		if (jsRefs != null)
-			this.jsResourceReferences.addAll(Arrays.asList(jsRefs));
+	public JQContributionConfig withJQueryUiJs(CharSequence url) {
+		this.jqueryUiJsUrl = url;
+		this.jqueryUiJsResourceReference = null;
 		return this;
 	}
 
-	public JQContributionConfig withCssUrls(CharSequence... cssUrls) {
-		if (cssUrls != null)
-			this.cssUrls.addAll(Arrays.asList(cssUrls));
+	public JQContributionConfig withJQueryUiJs(JavascriptResourceReference ref) {
+		this.jqueryUiJsUrl = null;
+		this.jqueryUiJsResourceReference = ref;
 		return this;
 	}
 
-	public JQContributionConfig withCssRefs(ResourceReference... cssRefs) {
-		if (cssRefs != null)
-			this.cssResourceReferences.addAll(Arrays.asList(cssRefs));
+	public JQContributionConfig withJQueryUiCss(CharSequence url) {
+		this.jqueryUiCssUrl = url;
+		this.jqueryUiCssResourceReference = null;
 		return this;
 	}
 
-	public Set<CharSequence> getJsUrls() {
-		return Collections.unmodifiableSet(this.jsUrls);
+	public JQContributionConfig withJQueryUiCss(ResourceReference ref) {
+		this.jqueryUiCssUrl = null;
+		this.jqueryUiCssResourceReference = ref;
+		return this;
 	}
 
-	public Set<JavascriptResourceReference> getJsResourceReferences() {
-		return Collections.unmodifiableSet(this.jsResourceReferences);
+	public JQContributionConfig withoutJQueryUi() {
+		this.jqueryUiJsUrl = null;
+		this.jqueryUiCssUrl = null;
+		this.jqueryUiJsResourceReference = null;
+		this.jqueryUiCssResourceReference = null;
+		return this;
 	}
 
-	public Set<CharSequence> getCssUrls() {
-		return Collections.unmodifiableSet(this.cssUrls);
+	public CharSequence getJqueryCoreJsUrl() {
+		return jqueryCoreJsUrl;
 	}
 
-	public Set<ResourceReference> getCssResourceReferences() {
-		return Collections.unmodifiableSet(this.cssResourceReferences);
+	public JavascriptResourceReference getJqueryCoreJsResourceReference() {
+		return jqueryCoreJsResourceReference;
+	}
+
+	public CharSequence getJqueryUiJsUrl() {
+		return jqueryUiJsUrl;
+	}
+
+	public JavascriptResourceReference getJqueryUiJsResourceReference() {
+		return jqueryUiJsResourceReference;
+	}
+
+	public CharSequence getJqueryUiCssUrl() {
+		return jqueryUiCssUrl;
+	}
+
+	public ResourceReference getJqueryUiCssResourceReference() {
+		return jqueryUiCssResourceReference;
 	}
 
 }

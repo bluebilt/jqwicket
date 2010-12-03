@@ -39,11 +39,11 @@ public class JQComponentOnBeforeRenderListener implements
 		IComponentOnBeforeRenderListener {
 
 	public JQComponentOnBeforeRenderListener() {
-		this(null);
+		this(new JQContributionConfig());
 	}
 
 	public JQComponentOnBeforeRenderListener(JQContributionConfig config) {
-		JQContributionRenderer.setJQueryContributionConfig(config);
+		JQContributionConfig.set(config);
 	}
 
 	/**
@@ -52,7 +52,6 @@ public class JQComponentOnBeforeRenderListener implements
 	 * @see org.apache.wicket.application.IComponentOnBeforeRenderListener#onBeforeRender(org.apache.wicket.Component)
 	 */
 	public void onBeforeRender(Component component) {
-
 		if (component == null)
 			return;
 
@@ -62,7 +61,6 @@ public class JQComponentOnBeforeRenderListener implements
 		}
 
 		addJQueryHeaderContributor(component, findJQueryBehaviors(component));
-
 	}
 
 	private Collection<JQBehavior> findJQueryBehaviors(Component component) {

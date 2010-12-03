@@ -4,9 +4,8 @@ import net.javaforge.jqwicket.ui.datepicker.DatePickerBehavior;
 import net.javaforge.jqwicket.ui.datepicker.DatePickerTextField;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.WebPage;
 
-public class DatePickerPage extends WebPage {
+public class DatePickerPage extends BaseJQueryUIPage {
 
 	public DatePickerPage() {
 

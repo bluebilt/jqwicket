@@ -4,12 +4,12 @@ import net.javaforge.jqwicket.ui.notifier.NotifierWebMarkupContainer;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
-import org.apache.wicket.markup.html.WebPage;
 
-public class NotifierPage extends WebPage {
+public class NotifierPage extends BaseJQueryUIPage {
 	@SuppressWarnings("serial")
 	public NotifierPage() {
-		final NotifierWebMarkupContainer notifier = new NotifierWebMarkupContainer("notifier1");
+		final NotifierWebMarkupContainer notifier = new NotifierWebMarkupContainer(
+				"notifier1");
 		add(notifier);
 		add(new AjaxLink<Void>("notifier.open1") {
 			@Override

@@ -5,9 +5,8 @@ import net.javaforge.jqwicket.ui.dialog.DialogWebMarkupContainer;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
-import org.apache.wicket.markup.html.WebPage;
 
-public class DialogPage extends WebPage {
+public class DialogPage extends BaseJQueryUIPage {
 
 	@SuppressWarnings("serial")
 	public DialogPage() {

@@ -8,19 +8,4 @@ public class JQueryPage extends WebPage {
 		add(JQBehaviors.js("alert('this page uses only jquery!')"));
 	}
 
-	@Override
-	protected void onBeforeRender() {
-		JQContributionRenderer
-				.setJQueryContributionConfig(new JQContributionConfig(
-						"http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"));
-		super.onBeforeRender();
-	}
-
-	@Override
-	protected void onAfterRender() {
-		super.onAfterRender();
-		JQContributionRenderer
-				.setJQueryContributionConfig(new JQContributionConfig());
-	}
-
 }

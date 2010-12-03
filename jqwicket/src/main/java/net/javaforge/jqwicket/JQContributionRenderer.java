@@ -45,17 +45,9 @@ public class JQContributionRenderer implements IHeaderContributor {
 
 	private static final long serialVersionUID = 1L;
 
-	private static JQContributionConfig config = new JQContributionConfig();
-
 	private static final MetaDataKey<JQContributionRenderer> KEY = new MetaDataKey<JQContributionRenderer>() {
 		private static final long serialVersionUID = 1L;
 	};
-
-	public static final void setJQueryContributionConfig(
-			JQContributionConfig config) {
-		if (config != null)
-			JQContributionRenderer.config = config;
-	}
 
 	public static final JQContributionRenderer get() {
 		JQContributionRenderer target = RequestCycle.get().getMetaData(KEY);
@@ -92,8 +84,8 @@ public class JQContributionRenderer implements IHeaderContributor {
 		if (AjaxRequestTarget.get() != null || isEmpty(this.contributors))
 			return;
 
+		JQContributionConfig config = JQContributionConfig.get();
 		JQHeaderContributionTarget target = new JQHeaderContributionTarget();
-
 		for (IJQHeaderContributor c : this.contributors) {
 			c.contribute(target);
 		}
@@ -102,10 +94,15 @@ public class JQContributionRenderer implements IHeaderContributor {
 			return;
 
 		// first render resources from global config
-		this.renderJsResourcesUrls(response, config.getJsUrls());
-		this.renderJsResourcesRefs(response, config.getJsResourceReferences());
-		this.renderCssResourcesUrls(response, config.getCssUrls());
-		this.renderCssResourcesRefs(response, config.getCssResourceReferences());
+		this.renderJsResourcesUrl(response, config.getJqueryCoreJsUrl());
+		this.renderJsResourcesRef(response,
+				config.getJqueryCoreJsResourceReference());
+		this.renderJsResourcesUrl(response, config.getJqueryUiJsUrl());
+		this.renderJsResourcesRef(response,
+				config.getJqueryUiJsResourceReference());
+		this.renderCssResourcesUrl(response, config.getJqueryUiCssUrl());
+		this.renderCssResourcesRef(response,
+				config.getJqueryUiCssResourceReference());
 
 		// now render resource explicitly added to the target
 		this.renderJsResourcesUrls(response, target.getJsResourceUrls());
@@ -123,29 +120,52 @@ public class JQContributionRenderer implements IHeaderContributor {
 	private void renderJsResourcesUrls(IHeaderResponse response,
 			Collection<CharSequence> resources) {
 		for (CharSequence url : resources) {
-			response.renderJavascriptReference(String.valueOf(url));
+			renderJsResourcesUrl(response, url);
 		}
+	}
+
+	private void renderJsResourcesUrl(IHeaderResponse response, CharSequence url) {
+		if (Utils.isNotBlank(url))
+			response.renderJavascriptReference(String.valueOf(url));
 	}
 
 	private void renderJsResourcesRefs(IHeaderResponse response,
 			Collection<JavascriptResourceReference> resources) {
 		for (JavascriptResourceReference ref : resources) {
-			response.renderJavascriptReference(ref);
+			renderJsResourcesRef(response, ref);
 		}
+	}
+
+	private void renderJsResourcesRef(IHeaderResponse response,
+			JavascriptResourceReference ref) {
+		if (ref != null)
+			response.renderJavascriptReference(ref);
 	}
 
 	private void renderCssResourcesUrls(IHeaderResponse response,
 			Collection<CharSequence> resources) {
 		for (CharSequence url : resources) {
-			response.renderCSSReference(String.valueOf(url));
+			renderCssResourcesUrl(response, url);
 		}
+	}
+
+	private void renderCssResourcesUrl(IHeaderResponse response,
+			CharSequence url) {
+		if (Utils.isNotBlank(url))
+			response.renderCSSReference(String.valueOf(url));
 	}
 
 	private void renderCssResourcesRefs(IHeaderResponse response,
 			Collection<ResourceReference> resources) {
 		for (ResourceReference ref : resources) {
-			response.renderCSSReference(ref);
+			renderCssResourcesRef(response, ref);
 		}
+	}
+
+	private void renderCssResourcesRef(IHeaderResponse response,
+			ResourceReference ref) {
+		if (ref != null)
+			response.renderCSSReference(ref);
 	}
 
 	private void renderDocumentReadyJavaScript(IHeaderResponse response,

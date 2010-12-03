@@ -32,14 +32,13 @@ import org.apache.wicket.RequestCycle;
 import org.apache.wicket.ajax.AbstractDefaultAjaxBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 
 /**
  * @author mkalina
  * 
  */
-public class DNDPage extends WebPage {
+public class DNDPage extends BaseJQueryUIPage {
 
 	private static final Map<String, String> labels = new MapBuilder<String, String>()
 			.add("lolcatShirt", "Lolcat Shirt")
@@ -55,19 +54,19 @@ public class DNDPage extends WebPage {
 		AccordionWebMarkupContainer accordion = new AccordionWebMarkupContainer(
 				"catalog");
 		for (Map.Entry<String, String> e : labels.entrySet()) {
-			accordion.add(new Label(e.getKey(), e.getValue())
-					.add(JQBehaviors.draggable(new DraggableOptions().appendTo(
-							"body").helper("clone"))));
-		} 
+			accordion.add(new Label(e.getKey(), e.getValue()).add(JQBehaviors
+					.draggable(new DraggableOptions().appendTo("body").helper(
+							"clone"))));
+		}
 		add(accordion);
 
-		
 		// Create shopping cart webmarkup container
 		WebMarkupContainer cartContainer = new WebMarkupContainer(
 				"cartContainer");
 		add(cartContainer);
 
-		// added ajax behavior to the shopping cart that responds to the page with simple javascript alert 
+		// added ajax behavior to the shopping cart that responds to the page
+		// with simple javascript alert
 		final AbstractDefaultAjaxBehavior behave = new AbstractDefaultAjaxBehavior() {
 			private static final long serialVersionUID = 1L;
 
@@ -81,20 +80,24 @@ public class DNDPage extends WebPage {
 			}
 		};
 		cartContainer.add(behave);
-		
-		// make shopping cart container droppable 
-		// and implement onDropEvent to send the ajax request to the shopping cart! 
+
+		// make shopping cart container droppable
+		// and implement onDropEvent to send the ajax request to the shopping
+		// cart!
 		cartContainer.add(JQBehaviors.droppable(new DroppableOptions()
 				.activeClass("ui-state-default")
 				.hoverClass("ui-state-hover")
 				.accept(":not(.ui-sortable-helper)")
-				.dropEvent($f(
-						$this().find(".placeholder").remove(),
-						$("<li></li>").text("ui.draggable.text()").appendTo("this"),
-						wicketAjaxGet(behave, new MapBuilder<String, Object>()
-								.add("product",js("ui.draggable.text()")).build()), 
-								"event", "ui"))
-		));
+				.dropEvent(
+						$f($this().find(".placeholder").remove(),
+								$("<li></li>").text("ui.draggable.text()")
+										.appendTo("this"),
+								wicketAjaxGet(
+										behave,
+										new MapBuilder<String, Object>().add(
+												"product",
+												js("ui.draggable.text()"))
+												.build()), "event", "ui"))));
 
 	}
 }

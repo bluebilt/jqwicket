@@ -6,10 +6,9 @@ import net.javaforge.jqwicket.ui.accordion.AccordionBehavior;
 import net.javaforge.jqwicket.ui.accordion.AccordionWebMarkupContainer;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 
-public class AccordionPage extends WebPage {
+public class AccordionPage extends BaseJQueryUIPage {
 
 	public AccordionPage() {
 

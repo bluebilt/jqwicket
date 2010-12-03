@@ -2,11 +2,10 @@ package net.javaforge.jqwicket;
 
 import net.javaforge.jqwicket.ui.button.ButtonBehaivor;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.link.Link;
 
-public class ButtonPage extends WebPage {
+public class ButtonPage extends BaseJQueryUIPage {
 
 	@SuppressWarnings("serial")
 	public ButtonPage() {

@@ -4,10 +4,9 @@ import net.javaforge.jqwicket.ui.progressbar.ProgressbarWebMarkupContainer;
 
 import org.apache.wicket.ajax.AbstractAjaxTimerBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.util.time.Duration;
 
-public class ProgressbarPage extends WebPage {
+public class ProgressbarPage extends BaseJQueryUIPage {
 
 	private int counter = 0;
 
