@@ -43,7 +43,8 @@ public class WicketApplication extends WebApplication {
 		mountBookmarkablePage("fancybox", FancyBoxPage.class);
 		mountBookmarkablePage("cloudzoom", CloudZoomPage.class);
 		mountBookmarkablePage("gmap", GMapPage.class);
-
+		mountBookmarkablePage("fliptext", FlipTextPage.class);
+		mountBookmarkablePage("extruder", ExtruderPage.class);
 	}
 
 	/**

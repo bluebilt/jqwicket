@@ -15,7 +15,7 @@
 		</init-param>
 		<init-param>
 			<param-name>ignorePaths</param-name>
-			<param-value>_up,_images,_styles</param-value>
+			<param-value>_up,_images,_styles,_static</param-value>
 		</init-param>
 	</filter>
 
