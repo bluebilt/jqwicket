@@ -376,6 +376,19 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<?>>
 	/**
 	 * {@inheritDoc}
 	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#putDblquoted(java.lang.CharSequence,
+	 *      java.lang.CharSequence)
+	 */
+	public T putDblquoted(CharSequence key, CharSequence value) {
+		if (isNotBlank(value)) {
+			options.put(key, Utils.dblquote(value));
+		}
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
 	 * @see net.javaforge.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
 	 *      net.javaforge.jqwicket.ui.IJQOptions)
 	 */

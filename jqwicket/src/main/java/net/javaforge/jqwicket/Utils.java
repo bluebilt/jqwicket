@@ -83,12 +83,16 @@ public class Utils {
 	}
 
 	public static final CharSequence quote(CharSequence value) {
-
 		if (isBlank(value))
 			return null;
-
 		return new StringBuffer().append("'").append(value).append("'");
 	}
+	
+	public static final CharSequence dblquote(CharSequence value) {
+		if (isBlank(value))
+			return null;
+		return new StringBuffer().append("\"").append(value).append("\"");
+	}	
 
 	public static final CharSequence semicolon(CharSequence value) {
 

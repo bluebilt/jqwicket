@@ -169,6 +169,8 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	boolean getBoolean(CharSequence key, boolean defaultValue);
 
 	T putUnquoted(CharSequence key, CharSequence value);
+	
+	T putDblquoted(CharSequence key, CharSequence value);
 
 	T put(CharSequence key, IJQOptions<?> options);
 
