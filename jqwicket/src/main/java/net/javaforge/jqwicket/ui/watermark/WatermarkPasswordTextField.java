@@ -17,7 +17,6 @@
 package net.javaforge.jqwicket.ui.watermark;
 
 import net.javaforge.jqwicket.JQFunction;
-import net.javaforge.jqwicket.JQHeaderContributionTarget;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.PasswordTextField;
@@ -27,8 +26,7 @@ import org.apache.wicket.model.IModel;
  * @author mkalina
  * 
  */
-public class WatermarkPasswordTextField extends PasswordTextField implements
-		IWatermark {
+public class WatermarkPasswordTextField extends PasswordTextField {
 
 	private static final long serialVersionUID = 1L;
 
@@ -63,70 +61,20 @@ public class WatermarkPasswordTextField extends PasswordTextField implements
 		return this.behavior.getOptions();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.javaforge.jqwicket.IJQHeaderContributor#contribute(net.javaforge.jqwicket.JQHeaderContributionTarget)
-	 */
-	public void contribute(JQHeaderContributionTarget target) {
-		// do nothing here because the underlying behavior already contributes
-		// necessary scripts to the jquery target.
+	public JQFunction show() {
+		return this.behavior.show(this.getMarkupId());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.javaforge.jqwicket.ui.watermark.IWatermark#show(java.lang.CharSequence)
-	 */
-	public JQFunction show(CharSequence selector) {
-		return this.behavior.show(selector);
+	public void show(AjaxRequestTarget ajaxRequestTarget) {
+		this.behavior.show(ajaxRequestTarget, this.getMarkupId());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.javaforge.jqwicket.ui.watermark.IWatermark#show(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence)
-	 */
-	public void show(AjaxRequestTarget ajaxRequestTarget, CharSequence selector) {
-		this.behavior.show(ajaxRequestTarget, selector);
+	public JQFunction hide() {
+		return this.behavior.hide(this.getMarkupId());
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.javaforge.jqwicket.ui.watermark.IWatermark#hide(java.lang.CharSequence)
-	 */
-	public JQFunction hide(CharSequence selector) {
-		return this.behavior.hide(selector);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.javaforge.jqwicket.ui.watermark.IWatermark#hide(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence)
-	 */
-	public void hide(AjaxRequestTarget ajaxRequestTarget, CharSequence selector) {
-		this.behavior.hide(ajaxRequestTarget, selector);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.javaforge.jqwicket.ui.watermark.IWatermark#showAll()
-	 */
-	public JQFunction showAll() {
-		return this.behavior.showAll();
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see net.javaforge.jqwicket.ui.watermark.IWatermark#showAll(org.apache.wicket.ajax.AjaxRequestTarget)
-	 */
-	public void showAll(AjaxRequestTarget ajaxRequestTarget) {
-		this.behavior.showAll(ajaxRequestTarget);
+	public void hide(AjaxRequestTarget ajaxRequestTarget) {
+		this.behavior.hide(ajaxRequestTarget, this.getMarkupId());
 	}
 
 }
