@@ -45,6 +45,7 @@ public class WicketApplication extends WebApplication {
 		mountBookmarkablePage("gmap", GMapPage.class);
 		mountBookmarkablePage("fliptext", FlipTextPage.class);
 		mountBookmarkablePage("extruder", ExtruderPage.class);
+		mountBookmarkablePage("kwicks", KwicksPage.class);
 	}
 
 	/**
