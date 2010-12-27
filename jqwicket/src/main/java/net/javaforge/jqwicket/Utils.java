@@ -87,12 +87,24 @@ public class Utils {
 			return null;
 		return new StringBuffer().append("'").append(value).append("'");
 	}
-	
+
+	public static final CharSequence[] quote(CharSequence[] value) {
+		if (isEmpty(value))
+			return null;
+
+		CharSequence[] quoted = new CharSequence[value.length];
+		for (int i = 0; i < value.length; i++) {
+			quoted[i] = Utils.quote(value[i]);
+		}
+
+		return quoted;
+	}
+
 	public static final CharSequence dblquote(CharSequence value) {
 		if (isBlank(value))
 			return null;
 		return new StringBuffer().append("\"").append(value).append("\"");
-	}	
+	}
 
 	public static final CharSequence semicolon(CharSequence value) {
 
@@ -230,9 +242,21 @@ public class Utils {
 				.append("]");
 	}
 
-	public static CharSequence toJson(String[] args) {
+	public static CharSequence toJson(CharSequence[] args) {
 		return new StringBuilder().append("[").append(join(args, ","))
 				.append("]");
+	}
+
+	public static CharSequence toJson(CharSequence[][] args) {
+		StringBuilder buf = new StringBuilder("[");
+		for (int i = 0; i < args.length; i++) {
+			if (i != 0)
+				buf.append(",");
+			buf.append(Utils.toJson(Utils.quote(args[i])));
+
+		}
+		buf.append("]");
+		return buf;
 	}
 
 	public static CharSequence toJson(Object[] args) {

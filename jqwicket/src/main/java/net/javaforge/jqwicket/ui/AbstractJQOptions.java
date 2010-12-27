@@ -580,11 +580,21 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<?>>
 		if (Utils.isEmpty(values))
 			return (T) this;
 
-		CharSequence[] quoted = new CharSequence[values.length];
-		for (int i = 0; i < values.length; i++) {
-			quoted[i] = Utils.quote(values[i]);
-		}
-		options.put(key, quoted);
+		options.put(key, Utils.quote(values));
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 *      java.lang.CharSequence[][])
+	 */
+	public T put(CharSequence key, CharSequence[][] values) {
+		if (values == null)
+			return (T) this;
+
+		options.put(key, Utils.toJson(values));
 		return (T) this;
 	}
 
