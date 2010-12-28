@@ -1,5 +1,7 @@
 package net.javaforge.jqwicket;
 
+import net.javaforge.jqwicket.dnd.DND2Page;
+
 import org.apache.wicket.protocol.http.WebApplication;
 
 /**
@@ -49,6 +51,7 @@ public class WicketApplication extends WebApplication {
 		mountBookmarkablePage("markitup", MarkItUpPage.class);
 		mountBookmarkablePage("lwrte", LWRTEPage.class);
 		mountBookmarkablePage("ckeditor", CKEditorPage.class);
+		mountBookmarkablePage("dnd2", DND2Page.class);
 	}
 
 	/**
