@@ -4,6 +4,8 @@ import java.util.UUID;
 
 import net.javaforge.jqwicket.ui.JQComponentBehaivor;
 
+import org.apache.wicket.RequestCycle;
+import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.markup.html.IHeaderResponse;
 
@@ -15,6 +17,9 @@ public class CKEditorBehavior extends JQComponentBehaivor<CKEditorOptions>
 		implements ICKEditor, IHeaderContributor {
 
 	private static final long serialVersionUID = 1L;
+
+	private static final ResourceReference baseRef = new ResourceReference(
+			CKEditorOptions.class, "");
 
 	public CKEditorBehavior() {
 		this(new CKEditorOptions());
@@ -40,12 +45,14 @@ public class CKEditorBehavior extends JQComponentBehaivor<CKEditorOptions>
 	 */
 	@Override
 	public void renderHead(IHeaderResponse response) {
-		String ckeditorResourcesUrl = new StringBuffer("resources/")
-				.append(CKEditorOptions.class.getName()).append("/").toString();
-		String script = String
-				.format("function CKEDITOR_GETURL(resource){ return resource.indexOf('%s') == 0 ? resource : '%s' + resource; }",
-						ckeditorResourcesUrl, ckeditorResourcesUrl);
-		response.renderJavascript(script, UUID.randomUUID().toString());
+		CharSequence baseUrl = RequestCycle.get().urlFor(baseRef);
+		StringBuffer buf = new StringBuffer();
+		buf.append(String.format("var CKEDITOR_BASEPATH = '%s';\n", baseUrl));
+		buf.append(String
+				.format("function CKEDITOR_GETURL(resource){\n"
+						+ " return resource.indexOf('%s') >= 0 ? resource : '%s' + resource;\n"
+						+ "}", baseUrl, baseUrl));
+		response.renderJavascript(buf, UUID.randomUUID().toString());
 	}
 
 }
