@@ -16,21 +16,18 @@
  */
 package net.javaforge.jqwicket.ui;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 /**
+ * Default {@link IJQOptions} implementation.
+ * 
  * @author mkalina
  * 
  */
-public class DefaultJQOptions extends AbstractJQOptions<DefaultJQOptions>
-		implements IJQOptions<DefaultJQOptions> {
+public class JQOptions extends AbstractJQOptions<JQOptions> implements
+		IJQOptions<JQOptions> {
 
 	private static final long serialVersionUID = 1L;
 
-	protected Map<String, Object> options = new LinkedHashMap<String, Object>();
-
-	public DefaultJQOptions() {
+	public JQOptions() {
 	}
 
 }

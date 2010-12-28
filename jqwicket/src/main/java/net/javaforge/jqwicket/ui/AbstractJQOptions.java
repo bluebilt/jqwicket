@@ -30,6 +30,8 @@ import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 /**
+ * Base abstract {@link IJQOptions} implementation.
+ * 
  * @author mkalina
  * 
  * @param <T>

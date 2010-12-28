@@ -49,4 +49,11 @@ public abstract class GenericJQComponentBehaivor<T extends IJQOptions<T>>
 				this.options.toJson()));
 	}
 
+	/**
+	 * @return the selector
+	 */
+	public CharSequence getSelector() {
+		return selector;
+	}
+
 }
