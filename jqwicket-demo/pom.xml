@@ -193,7 +193,7 @@
 	</distributionManagement>
 
 	<properties>
-		<wicket.version>1.4.13</wicket.version>
+		<wicket.version>1.4.14</wicket.version>
 		<jetty.version>6.1.4</jetty.version>
 	</properties>
 </project>
