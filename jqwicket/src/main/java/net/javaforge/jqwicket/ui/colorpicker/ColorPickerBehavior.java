@@ -23,7 +23,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.Utils;
-import net.javaforge.jqwicket.ui.DefaultJQOptions;
+import net.javaforge.jqwicket.ui.JQOptions;
 import net.javaforge.jqwicket.ui.JQComponentBehaivor;
 
 /**
@@ -117,7 +117,7 @@ public class ColorPickerBehavior extends
 	public JQFunction setColor(int r, int g, int b) {
 		return $f($(this.component).chain(
 				"ColorPickerSetColor",
-				new DefaultJQOptions().put("r", r).put("g", g).put("b", b)
+				new JQOptions().put("r", r).put("g", g).put("b", b)
 						.toJson()));
 	}
 

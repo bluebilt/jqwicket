@@ -21,7 +21,7 @@ import static net.javaforge.jqwicket.JQuery.js;
 import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.JQStatement;
 import net.javaforge.jqwicket.ui.AbstractJQOptions;
-import net.javaforge.jqwicket.ui.DefaultJQOptions;
+import net.javaforge.jqwicket.ui.JQOptions;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
@@ -79,7 +79,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 */
 	public ColorPickerOptions color(int r, int g, int b) {
 		super.putUnquoted("color",
-				new DefaultJQOptions().put("r", r).put("g", g).put("b", b)
+				new JQOptions().put("r", r).put("g", g).put("b", b)
 						.toJson());
 		return this;
 	}

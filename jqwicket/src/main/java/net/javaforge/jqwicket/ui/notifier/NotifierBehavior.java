@@ -17,7 +17,7 @@
 package net.javaforge.jqwicket.ui.notifier;
 
 import net.javaforge.jqwicket.JQFunction;
-import net.javaforge.jqwicket.ui.DefaultJQOptions;
+import net.javaforge.jqwicket.ui.JQOptions;
 import net.javaforge.jqwicket.ui.IJQOptions;
 import net.javaforge.jqwicket.ui.JQUIComponentBehaivor;
 
@@ -56,7 +56,7 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	 *      java.lang.CharSequence)
 	 */
 	public JQFunction create(CharSequence title, CharSequence text) {
-		return create(new DefaultJQOptions().put("title", title).put("text",
+		return create(new JQOptions().put("title", title).put("text",
 				text));
 	}
 

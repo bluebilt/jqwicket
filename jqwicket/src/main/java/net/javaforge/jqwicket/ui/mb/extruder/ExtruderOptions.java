@@ -23,7 +23,7 @@ import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.JQStatement;
 import net.javaforge.jqwicket.Utils;
 import net.javaforge.jqwicket.ui.AbstractJQOptions;
-import net.javaforge.jqwicket.ui.DefaultJQOptions;
+import net.javaforge.jqwicket.ui.JQOptions;
 import net.javaforge.jqwicket.ui.mb.fliptext.FlipTextOptions;
 
 import org.apache.wicket.ResourceReference;
@@ -95,7 +95,7 @@ public class ExtruderOptions extends AbstractJQOptions<ExtruderOptions> {
 	}
 
 	public CharSequence getExtruderClass() {
-		DefaultJQOptions opt = new DefaultJQOptions().putDblquoted("title",
+		JQOptions opt = new JQOptions().putDblquoted("title",
 				this.title);
 		if (Utils.isNotBlank(this.url)) {
 			opt.putDblquoted("url", this.url);
