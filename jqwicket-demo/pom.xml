@@ -35,7 +35,7 @@
 		<dependency>
 			<groupId>net.javaforge.jqwicket</groupId>
 			<artifactId>jqwicket</artifactId>
-			<version>0.3</version> <!-- jqwicket version should be the same as demo version -->
+			<version>0.4-SNAPSHOT</version> <!-- jqwicket version should be the same as demo version -->
 		</dependency>
 
 		<!-- WICKET DEPENDENCIES -->
