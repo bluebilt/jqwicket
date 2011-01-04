@@ -51,8 +51,8 @@ public class WicketApplication extends WebApplication {
 		mountBookmarkablePage("lwrte", LWRTEPage.class);
 		mountBookmarkablePage("ckeditor", CKEditorPage.class);
 		mountBookmarkablePage("prettyloader", PrettyLoaderPage.class);
-		
-		
+		mountBookmarkablePage("prettycomments", PrettyCommentsPage.class);
+
 		mountBookmarkablePage("dnd", DNDPage.class);
 		mountBookmarkablePage("dnd2", DND2Page.class);
 	}
