@@ -154,6 +154,6 @@
 	</distributionManagement>
 
 	<properties>
-		<wicket.version>1.4.14</wicket.version>
+		<wicket.version>1.4.15</wicket.version>
 	</properties>
 </project>
