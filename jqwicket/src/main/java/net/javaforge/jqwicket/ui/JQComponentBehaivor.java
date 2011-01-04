@@ -44,15 +44,18 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 
 	public JQComponentBehaivor(T options) {
 		this.options = options;
+
 		JavascriptResourceReference[] jsRefs = options
 				.getJsResourceReferences();
-		if (Utils.isDevelopmentMode()
+
+		if (Utils.isDeploymentMode()
 				&& Utils.isNotEmpty(options.getJsResourceReferencesMin())) {
 			jsRefs = options.getJsResourceReferencesMin();
 		}
 
 		String[] jsUrls = options.getJsResourceUrls();
-		if (Utils.isDevelopmentMode()
+
+		if (Utils.isDeploymentMode()
 				&& Utils.isNotEmpty(options.getJsResourceUrlsMin())) {
 			jsUrls = options.getJsResourceUrlsMin();
 		}

@@ -38,6 +38,11 @@ public class Utils {
 				.getConfigurationType());
 	}
 
+	public static boolean isDeploymentMode() {
+		return Application.DEPLOYMENT.equalsIgnoreCase(Application.get()
+				.getConfigurationType());
+	}
+
 	public static boolean isEmpty(Object[] array) {
 		if (array == null || array.length == 0) {
 			return true;
