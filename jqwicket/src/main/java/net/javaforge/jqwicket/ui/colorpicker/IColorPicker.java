@@ -22,6 +22,9 @@ import net.javaforge.jqwicket.IJQWidget;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
+ * Implementation of the <a href="http://www.eyecon.ro/colorpicker/">Color
+ * Picker jquery plugin</a>
+ * 
  * @author mkalina
  * 
  */

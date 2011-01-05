@@ -19,6 +19,10 @@ package net.javaforge.jqwicket.ui.prettypopin;
 import net.javaforge.jqwicket.IJQWidget;
 
 /**
+ * Implementation of the <a
+ * href="http://www.no-margin-for-errors.com/projects/prettypopin/">Pretty Popin
+ * jquery plugin</a>
+ * 
  * @author mkalina
  * 
  */
