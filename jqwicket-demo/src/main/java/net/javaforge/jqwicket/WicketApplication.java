@@ -54,6 +54,7 @@ public class WicketApplication extends WebApplication {
 		mountBookmarkablePage("prettyloader", PrettyLoaderPage.class);
 		mountBookmarkablePage("prettycomments", PrettyCommentsPage.class);
 		mountBookmarkablePage("prettypopin", PrettyPopinPage.class);
+		mountBookmarkablePage("prettygallery", PrettyGalleryPage.class);
 
 		mountBookmarkablePage("dnd", DNDPage.class);
 		mountBookmarkablePage("dnd2", DND2Page.class);
