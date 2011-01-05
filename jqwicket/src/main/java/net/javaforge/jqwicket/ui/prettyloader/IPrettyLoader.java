@@ -24,7 +24,7 @@ import net.javaforge.jqwicket.JQFunction;
 /**
  * Implementation of the <a
  * href="http://www.no-margin-for-errors.com/projects/prettyloader/"
- * >PrettyLoader JQeury plugin</a>
+ * >PrettyLoader JQuery plugin</a>
  * 
  * @author mkalina
  * 
