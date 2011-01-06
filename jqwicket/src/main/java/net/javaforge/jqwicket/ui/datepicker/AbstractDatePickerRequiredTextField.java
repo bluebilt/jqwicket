@@ -16,13 +16,38 @@
  */
 package net.javaforge.jqwicket.ui.datepicker;
 
+import org.apache.wicket.model.IModel;
+
 /**
  * @author mkalina
  * 
  */
-public class DatePickerOptions extends
-		AbstractDatePickerOptions<DatePickerOptions> {
+public abstract class AbstractDatePickerRequiredTextField<T, O extends AbstractDatePickerOptions<O>, B extends AbstractDatePickerBehavior<O>>
+		extends AbstractDatePickerTextField<T, O, B> {
 
 	private static final long serialVersionUID = 1L;
+
+	public AbstractDatePickerRequiredTextField(String id, Class<T> type,
+			O options) {
+		super(id, type, options);
+		super.setRequired(true);
+	}
+
+	public AbstractDatePickerRequiredTextField(String id, IModel<T> model,
+			Class<T> type, O options) {
+		super(id, model, type, options);
+		super.setRequired(true);
+	}
+
+	public AbstractDatePickerRequiredTextField(String id, IModel<T> model,
+			O options) {
+		super(id, model, options);
+		super.setRequired(true);
+	}
+
+	public AbstractDatePickerRequiredTextField(String id, O options) {
+		super(id, options);
+		super.setRequired(true);
+	}
 
 }

@@ -14,55 +14,56 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.javaforge.jqwicket.ui.datepicker;
+package net.javaforge.jqwicket.ui.datetimepicker;
+
+import net.javaforge.jqwicket.ui.datepicker.AbstractDatePickerTextField;
 
 import org.apache.wicket.model.IModel;
 
 /**
  * @author mkalina
  * 
- * @param <T>
- *            the model object's type
  */
-public class DatePickerTextField<T> extends
-		AbstractDatePickerTextField<T, DatePickerOptions, DatePickerBehavior>
-		implements IDatePicker {
+public class TimePickerTextField<T>
+		extends
+		AbstractDatePickerTextField<T, DateTimePickerOptions, TimePickerBehavior>
+		implements ITimePicker {
 
 	private static final long serialVersionUID = 1L;
 
-	public DatePickerTextField(String id, Class<T> type) {
-		super(id, type, new DatePickerOptions());
+	public TimePickerTextField(String id, Class<T> type) {
+		super(id, type, new DateTimePickerOptions());
 	}
 
-	public DatePickerTextField(String id, Class<T> type,
-			DatePickerOptions options) {
+	public TimePickerTextField(String id, Class<T> type,
+			DateTimePickerOptions options) {
 		super(id, type, options);
 	}
 
-	public DatePickerTextField(String id) {
-		super(id, new DatePickerOptions());
+	public TimePickerTextField(String id) {
+		super(id, new DateTimePickerOptions());
 	}
 
-	public DatePickerTextField(String id, DatePickerOptions options) {
+	public TimePickerTextField(String id, DateTimePickerOptions options) {
 		super(id, options);
 	}
 
-	public DatePickerTextField(String id, IModel<T> model, Class<T> type,
-			DatePickerOptions options) {
+	public TimePickerTextField(String id, IModel<T> model, Class<T> type,
+			DateTimePickerOptions options) {
 		super(id, model, type, options);
 	}
 
-	public DatePickerTextField(String id, IModel<T> model, Class<T> type) {
-		super(id, model, type, new DatePickerOptions());
+	public TimePickerTextField(String id, IModel<T> model, Class<T> type) {
+		super(id, model, type, new DateTimePickerOptions());
 	}
 
-	public DatePickerTextField(String id, IModel<T> model,
-			DatePickerOptions options) {
+	public TimePickerTextField(String id, IModel<T> model,
+			DateTimePickerOptions options) {
 		super(id, model, options);
 	}
 
-	public DatePickerTextField(String id, IModel<T> model) {
-		super(id, model, new DatePickerOptions());
+	public TimePickerTextField(String id, IModel<T> model) {
+		super(id, model, new DateTimePickerOptions());
 	}
 
 	/**
@@ -71,8 +72,9 @@ public class DatePickerTextField<T> extends
 	 * @see net.javaforge.jqwicket.ui.datepicker.AbstractDatePickerTextField#newDatePickerBehavior(net.javaforge.jqwicket.ui.datepicker.AbstractDatePickerOptions)
 	 */
 	@Override
-	protected DatePickerBehavior newDatePickerBehavior(DatePickerOptions options) {
-		return new DatePickerBehavior(options);
+	protected TimePickerBehavior newDatePickerBehavior(
+			DateTimePickerOptions options) {
+		return new TimePickerBehavior(options);
 	}
 
 }

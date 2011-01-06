@@ -38,7 +38,7 @@ import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
  *            type of options itself.
  */
 @SuppressWarnings("unchecked")
-public abstract class AbstractJQOptions<T extends AbstractJQOptions<?>>
+public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 		implements IJQOptions<T> {
 
 	private static final long serialVersionUID = 1L;

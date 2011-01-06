@@ -14,15 +14,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.javaforge.jqwicket.ui.datepicker;
+package net.javaforge.jqwicket.ui.datetimepicker;
+
+import net.javaforge.jqwicket.ui.datepicker.IGenericDatePicker;
 
 /**
+ * Implementation of the <a
+ * href="https://github.com/trentrichardson/jQuery-Timepicker-Addon">jQuery
+ * Timepicke Addon plugin</a>
+ * 
  * @author mkalina
  * 
  */
-public class DatePickerOptions extends
-		AbstractDatePickerOptions<DatePickerOptions> {
+public interface IDateTimePicker extends
+		IGenericDatePicker<DateTimePickerOptions> {
 
-	private static final long serialVersionUID = 1L;
+	static final CharSequence JQ_COMPONENT_NAME = "datetimepicker";
 
 }

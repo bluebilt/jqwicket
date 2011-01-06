@@ -14,15 +14,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package net.javaforge.jqwicket.ui.datepicker;
+package net.javaforge.jqwicket.ui.datetimepicker;
+
+import net.javaforge.jqwicket.ui.datepicker.AbstractDatePickerBehavior;
 
 /**
  * @author mkalina
  * 
  */
-public class DatePickerOptions extends
-		AbstractDatePickerOptions<DatePickerOptions> {
+public class TimePickerBehavior extends
+		AbstractDatePickerBehavior<DateTimePickerOptions> implements
+		ITimePicker {
 
 	private static final long serialVersionUID = 1L;
+
+	public TimePickerBehavior() {
+		this(new DateTimePickerOptions());
+	}
+
+	public TimePickerBehavior(DateTimePickerOptions options) {
+		super(options);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see net.javaforge.jqwicket.IJQUIWidget#getName()
+	 */
+	public CharSequence getName() {
+		return JQ_COMPONENT_NAME;
+	}
 
 }

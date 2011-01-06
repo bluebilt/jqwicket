@@ -27,6 +27,7 @@ public class WicketApplication extends WebApplication {
 		mountBookmarkablePage("accordion", AccordionPage.class);
 		mountBookmarkablePage("button", ButtonPage.class);
 		mountBookmarkablePage("datepicker", DatePickerPage.class);
+		mountBookmarkablePage("datetimepicker", DateTimePickerPage.class);
 		mountBookmarkablePage("dialog", DialogPage.class);
 		mountBookmarkablePage("progressbar", ProgressbarPage.class);
 		mountBookmarkablePage("slider", SliderPage.class);

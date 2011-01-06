@@ -16,91 +16,12 @@
  */
 package net.javaforge.jqwicket.ui.datepicker;
 
-import net.javaforge.jqwicket.IJQUIWidget;
-import net.javaforge.jqwicket.JQFunction;
-import net.javaforge.jqwicket.ui.XYPosition;
-
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 /**
  * @author mkalina
  * 
  */
-public interface IDatePicker extends IJQUIWidget<DatePickerOptions> {
+public interface IDatePicker extends IGenericDatePicker<DatePickerOptions> {
 
 	static final CharSequence JQ_COMPONENT_NAME = "datepicker";
 
-	/**
-	 * Open a datepicker in a "dialog" box.
-	 */
-	JQFunction dialog(CharSequence date, JQFunction onSelect,
-			DatePickerOptions options, XYPosition position);
-
-	/**
-	 * Open a datepicker in a "dialog" box.
-	 * 
-	 * @param ajaxRequestTarget
-	 */
-	void dialog(AjaxRequestTarget ajaxRequestTarget, CharSequence date,
-			JQFunction onSelect, DatePickerOptions options, XYPosition position);
-
-	/**
-	 * Close a previously opened date picker.
-	 */
-	JQFunction hide();
-
-	/**
-	 * Close a previously opened date picker.
-	 * 
-	 * @param ajaxRequestTarget
-	 */
-	void hide(AjaxRequestTarget ajaxRequestTarget);
-
-	/**
-	 * Call up a previously attached date picker.
-	 */
-	JQFunction show();
-
-	/**
-	 * Call up a previously attached date picker.
-	 * 
-	 * @param ajaxRequestTarget
-	 */
-	void show(AjaxRequestTarget ajaxRequestTarget);
-
-	/**
-	 * Redraw a date picker, after having made some external modifications.
-	 */
-	JQFunction refresh();
-
-	/**
-	 * Redraw a date picker, after having made some external modifications.
-	 * 
-	 * @param ajaxRequestTarget
-	 */
-	void refresh(AjaxRequestTarget ajaxRequestTarget);
-
-	/**
-	 * Sets the current date for the datepicker.
-	 */
-	JQFunction setDate(CharSequence date);
-
-	/**
-	 * Sets the current date for the datepicker.
-	 * 
-	 * @param ajaxRequestTarget
-	 */
-	void setDate(AjaxRequestTarget ajaxRequestTarget, CharSequence date);
-
-	/**
-	 * Sets the current date for the datepicker.
-	 */
-	JQFunction setDate(int date);
-
-	/**
-	 * Sets the current date for the datepicker.
-	 * 
-	 * @param ajaxRequestTarget
-	 */
-	void setDate(AjaxRequestTarget ajaxRequestTarget, int date);
 }
