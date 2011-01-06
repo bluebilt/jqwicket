@@ -21,6 +21,7 @@ import static net.javaforge.jqwicket.JQuery.js;
 import net.javaforge.jqwicket.IJsonAware;
 import net.javaforge.jqwicket.JQFunction;
 import net.javaforge.jqwicket.JQStatement;
+import net.javaforge.jqwicket.Utils;
 import net.javaforge.jqwicket.ui.AbstractJQOptions;
 
 import org.apache.wicket.ResourceReference;
@@ -62,7 +63,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 		 * @see net.javaforge.jqwicket.IJsonAware#toJson()
 		 */
 		public CharSequence toJson() {
-			return this.effect;
+			return Utils.quote(this.effect);
 		}
 	}
 
