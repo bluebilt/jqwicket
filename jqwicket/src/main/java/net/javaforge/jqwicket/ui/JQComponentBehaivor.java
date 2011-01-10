@@ -53,7 +53,7 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 			jsRefs = options.getJsResourceReferencesMin();
 		}
 
-		String[] jsUrls = options.getJsResourceUrls();
+		CharSequence[] jsUrls = options.getJsResourceUrls();
 
 		if (Utils.isDeploymentMode()
 				&& Utils.isNotEmpty(options.getJsResourceUrlsMin())) {

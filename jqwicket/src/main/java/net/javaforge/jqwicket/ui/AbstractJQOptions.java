@@ -51,11 +51,11 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 
 	private JavascriptResourceReference[] jsResourceReferences;
 
-	private String[] cssResourceUrls;
+	private CharSequence[] cssResourceUrls;
 
-	private String[] jsResourceUrlsMin;
+	private CharSequence[] jsResourceUrlsMin;
 
-	private String[] jsResourceUrls;
+	private CharSequence[] jsResourceUrls;
 
 	public AbstractJQOptions() {
 	}
@@ -120,9 +120,9 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.IJQOptions#setCssResourceUrls(java.lang.String[])
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#setCssResourceUrls(java.lang.CharSequence[])
 	 */
-	public T setCssResourceUrls(String... urls) {
+	public T setCssResourceUrls(CharSequence... urls) {
 		this.cssResourceUrls = urls;
 		return (T) this;
 	}
@@ -132,7 +132,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	 * 
 	 * @see net.javaforge.jqwicket.ui.IJQOptions#getCssResourceUrls()
 	 */
-	public String[] getCssResourceUrls() {
+	public CharSequence[] getCssResourceUrls() {
 		return this.cssResourceUrls;
 	}
 
@@ -141,7 +141,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	 * 
 	 * @see net.javaforge.jqwicket.ui.IJQOptions#setJsResourceUrlsMin(java.lang.String[])
 	 */
-	public T setJsResourceUrlsMin(String... urls) {
+	public T setJsResourceUrlsMin(CharSequence... urls) {
 		this.jsResourceUrlsMin = urls;
 		return (T) this;
 	}
@@ -151,16 +151,16 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	 * 
 	 * @see net.javaforge.jqwicket.ui.IJQOptions#getJsResourceUrlsMin()
 	 */
-	public String[] getJsResourceUrlsMin() {
+	public CharSequence[] getJsResourceUrlsMin() {
 		return this.jsResourceUrlsMin;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see net.javaforge.jqwicket.ui.IJQOptions#setJsResourceUrls(java.lang.String[])
+	 * @see net.javaforge.jqwicket.ui.IJQOptions#setJsResourceUrls(java.lang.CharSequence[])
 	 */
-	public T setJsResourceUrls(String... urls) {
+	public T setJsResourceUrls(CharSequence... urls) {
 		this.jsResourceUrls = urls;
 		return (T) this;
 	}
@@ -170,7 +170,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	 * 
 	 * @see net.javaforge.jqwicket.ui.IJQOptions#getJsResourceUrls()
 	 */
-	public String[] getJsResourceUrls() {
+	public CharSequence[] getJsResourceUrls() {
 		return this.jsResourceUrls;
 	}
 

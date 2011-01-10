@@ -136,6 +136,15 @@ public class Utils {
 		});
 	}
 
+	public static final CharSequence join(IJsonAware[] statements,
+			String separator) {
+		return join(statements, separator, new IJoinCallback<IJsonAware>() {
+			public CharSequence toCharSequence(IJsonAware obj) {
+				return obj.toJson();
+			}
+		});
+	}
+
 	public static final CharSequence join(int[] objects, String separator) {
 
 		StringBuffer buf = new StringBuffer();

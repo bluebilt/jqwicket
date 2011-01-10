@@ -50,7 +50,7 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	 * @param refs
 	 * @return
 	 */
-	T setCssResourceUrls(String... urls);
+	T setCssResourceUrls(CharSequence... urls);
 
 	/**
 	 * Returns css resource references necessary for component rendering.
@@ -64,7 +64,7 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	 * 
 	 * @return
 	 */
-	String[] getCssResourceUrls();
+	CharSequence[] getCssResourceUrls();
 
 	/**
 	 * Sets minified javascript resource references necessary for component
@@ -82,7 +82,7 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	 * @param refs
 	 * @return
 	 */
-	T setJsResourceUrlsMin(String... urls);
+	T setJsResourceUrlsMin(CharSequence... urls);
 
 	/**
 	 * Returns minified javascript resource references necessary for component
@@ -98,7 +98,7 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	 * 
 	 * @return
 	 */
-	String[] getJsResourceUrlsMin();
+	CharSequence[] getJsResourceUrlsMin();
 
 	/**
 	 * Sets javascript resource references necessary for component rendering. If
@@ -116,7 +116,7 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	 * @param refs
 	 * @return
 	 */
-	T setJsResourceUrls(String... urls);
+	T setJsResourceUrls(CharSequence... urls);
 
 	/**
 	 * Returns javascript resource references necessary for component rendering.
@@ -130,7 +130,7 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	 * 
 	 * @return
 	 */
-	String[] getJsResourceUrls();
+	CharSequence[] getJsResourceUrls();
 
 	boolean isEmpty();
 
