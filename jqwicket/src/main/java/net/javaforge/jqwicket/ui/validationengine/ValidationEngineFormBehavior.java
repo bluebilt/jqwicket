@@ -63,35 +63,36 @@ public class ValidationEngineFormBehavior extends
 	 */
 	@Override
 	public void bind(Component component) {
-		if (options.hasValidationRules()) {
-
-			Collection<AjaxValidationRule> ajaxRules = this.options
-					.getAjaxValidationRules();
-			if (Utils.isNotEmpty(ajaxRules)) {
-				for (AjaxValidationRule r : ajaxRules) {
-					component.add(r.getAjaxBehavior());
-				}
-			}
-
-			Collection<FuncValidationRule> funcRules = this.options
-					.getFuncValidationRules();
-			if (Utils.isNotEmpty(funcRules)) {
-				for (final FuncValidationRule r : funcRules) {
-					component.add(new AbstractBehavior() {
-						private static final long serialVersionUID = 1L;
-
-						@Override
-						public void renderHead(IHeaderResponse response) {
-							response.renderJavascript(r.getFuncDef(), UUID
-									.randomUUID().toString());
-						}
-					});
-				}
-			}
-
-		}
 
 		super.bind(component);
+
+		if (!options.hasValidationRules())
+			return;
+
+		Collection<AjaxValidationRule> ajaxRules = this.options
+				.getAjaxValidationRules();
+		if (Utils.isNotEmpty(ajaxRules)) {
+			for (AjaxValidationRule r : ajaxRules) {
+				component.add(r.getAjaxBehavior());
+			}
+		}
+
+		Collection<FuncValidationRule> funcRules = this.options
+				.getFuncValidationRules();
+		if (Utils.isNotEmpty(funcRules)) {
+			for (final FuncValidationRule r : funcRules) {
+				component.add(new AbstractBehavior() {
+					private static final long serialVersionUID = 1L;
+
+					@Override
+					public void renderHead(IHeaderResponse response) {
+						response.renderJavascript(r.getFuncDef(), UUID
+								.randomUUID().toString());
+					}
+				});
+			}
+		}
+
 	}
 
 	/**
@@ -105,14 +106,34 @@ public class ValidationEngineFormBehavior extends
 			throw new IllegalStateException(
 					"ValidationEngineFormBehavior can only be added to the Form or its subclasses!");
 
-		StringBuffer buf = new StringBuffer();
+		final StringBuffer buf = new StringBuffer();
 		if (options.hasValidationRules()) {
-			buf.append("$.extend($.validationEngineLanguage.allRules, ");
-			buf.append("{")
-					.append(Utils.join(options.getValidationRulesAsArray(), ",\n"))
-					.append("}");
-			buf.append(");\n");
+
+			if (options.isValidationRulesResourceSpecified()) {
+
+				buf.append("$.extend($.validationEngineLanguage.allRules, ");
+				buf.append("{")
+						.append(Utils.join(options.getValidationRulesAsArray(),
+								",\n")).append("}");
+				buf.append(");\n");
+
+			} else {
+
+				buf.append("$.fn.validationEngineLanguage = function() {};\n");
+				buf.append("$.validationEngineLanguage = {\n");
+				buf.append("newLang: function() {\n");
+				buf.append("$.validationEngineLanguage.allRules = 	{");
+				buf.append(Utils.join(options.getValidationRulesAsArray(),
+						",\n"));
+				buf.append("};\n");
+				buf.append("}\n");
+				buf.append("};\n");
+				buf.append("$.validationEngineLanguage.newLang();\n");
+
+			}
+
 		}
+		
 		target.addJQStatements(JQuery.js(buf));
 
 		super.contributeInternal(target);

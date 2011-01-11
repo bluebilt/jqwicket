@@ -84,8 +84,19 @@ public class ValidationEngineOptions extends
 
 	private List<ValidationRule<?>> validationRules;
 
-	public ValidationEngineOptions() {
-		this(JS_VALIDATION_ENGINE_RULES_EN);
+	private boolean validationRulesResourceSpecified;
+
+	public ValidationEngineOptions(ValidationRule<?>... rules) {
+		this(true, rules);
+	}
+
+	public ValidationEngineOptions(boolean useDefaultRulesResource,
+			ValidationRule<?>... rules) {
+		setJsResourceReferences(jsValidationEngineResource,
+				useDefaultRulesResource ? JS_VALIDATION_ENGINE_RULES_EN : null);
+		setCssResourceReferences(cssResource);
+		this.addValidationRules(rules);
+		this.validationRulesResourceSpecified = useDefaultRulesResource;
 	}
 
 	/**
@@ -99,6 +110,7 @@ public class ValidationEngineOptions extends
 		setJsResourceReferences(validationEngineRules,
 				jsValidationEngineResource);
 		setCssResourceReferences(cssResource);
+		this.validationRulesResourceSpecified = true;
 	}
 
 	/**
@@ -110,6 +122,14 @@ public class ValidationEngineOptions extends
 		setJsResourceUrls(validationEngineRulesUrl);
 		setJsResourceReferences(jsValidationEngineResource);
 		setCssResourceReferences(cssResource);
+		this.validationRulesResourceSpecified = true;
+	}
+
+	/**
+	 * @return the validationRulesResourceSpecified
+	 */
+	public boolean isValidationRulesResourceSpecified() {
+		return validationRulesResourceSpecified;
 	}
 
 	/**
