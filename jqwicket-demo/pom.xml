@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.javaforge.jqwicket</groupId>
 	<artifactId>jqwicket-demo</artifactId>
@@ -7,6 +8,14 @@
 	<name>jqwicket-demo</name>
 	<description>jqwicket: wicket/jquery integration demo</description>
 	<url>http://code.google.com/p/${project.artifactId}/</url>
+
+
+	<properties>
+		<wicket.version>1.4.17</wicket.version>
+		<jqwicket.version>0.5-SNAPSHOT</jqwicket.version> <!-- jqwicket version should be the same as demo version -->
+		<jetty.version>6.1.4</jetty.version>
+	</properties>
+
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -35,7 +44,7 @@
 		<dependency>
 			<groupId>net.javaforge.jqwicket</groupId>
 			<artifactId>jqwicket</artifactId>
-			<version>0.4</version> <!-- jqwicket version should be the same as demo version -->
+			<version>${jqwicket.version}</version>
 		</dependency>
 
 		<!-- WICKET DEPENDENCIES -->
@@ -192,8 +201,4 @@
 		</snapshotRepository>
 	</distributionManagement>
 
-	<properties>
-		<wicket.version>1.4.15</wicket.version>
-		<jetty.version>6.1.4</jetty.version>
-	</properties>
 </project>
