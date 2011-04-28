@@ -44,17 +44,19 @@ public abstract class JQuery {
 	}
 
 	public static final JQStatement $(Component component) {
-		CharSequence _selector = component == null ? "" : new StringBuffer()
-				.append("#").append(component.getMarkupId()).toString();
-		return $(_selector);
+		return $(selector(component));
 	}
 
 	public static final JQStatement $(Component component, CharSequence selector) {
 		CharSequence _selector = component == null ? selector
-				: new StringBuffer().append("#")
-						.append(component.getMarkupId()).append(" ")
-						.append(selector).toString();
+				: new StringBuffer().append(selector(component)).append(" ")
+						.append(selector);
 		return $(_selector);
+	}
+
+	public static final CharSequence selector(Component component) {
+		return component == null ? "" : new StringBuffer().append("#").append(
+				component.getMarkupId());
 	}
 
 	public static final JQStatement $this() {
