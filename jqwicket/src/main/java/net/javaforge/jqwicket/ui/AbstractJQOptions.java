@@ -61,6 +61,61 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	}
 
 	/**
+	 * Creates new options instance from the pure json options definition.<br>
+	 * Example usage:<br>
+	 * 
+	 * <pre>
+	 * IJQOptions&lt;?&gt; options = JQOptions.valueOf(&quot;a:1, b:23, c:'2233'&quot;);
+	 * </pre>
+	 * 
+	 * @param options
+	 *            is a pure json options definition.
+	 * @return new options instance
+	 */
+	public static final IJQOptions<?> valueOf(final CharSequence options) {
+		return valueOf(options, JQOptions.class);
+	}
+
+	/**
+	 * Creates new type-safe options instance from the pure json options
+	 * definition.<br>
+	 * Example usage:<br>
+	 * 
+	 * <pre>
+	 * MyOptions o = MyOptions.valueOf(&quot;a:1, b:23, c:'2233'&quot;, MyOptions.class);
+	 * </pre>
+	 * 
+	 * @param <T>
+	 *            is a resulting options type
+	 * @param options
+	 *            is a pure json options definition.
+	 * @param targetType
+	 *            is a class of the resulting options type
+	 * @return new options instance
+	 */
+	public static final <T extends IJQOptions<?>> T valueOf(
+			final CharSequence options, Class<T> targetType) {
+		try {
+			T opts = targetType.newInstance();
+			if (Utils.isBlank(options))
+				return opts;
+
+			String[] splitted = String.valueOf(options).split(",");
+			for (String s : splitted) {
+				opts.putUnquoted(s.substring(0, s.indexOf(':')).trim(), s
+						.substring(s.indexOf(':') + 1).trim());
+			}
+
+			return opts;
+
+		} catch (Exception e) {
+			throw new RuntimeException("Error creating new options instance!",
+					e);
+		}
+
+	}
+
+	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see net.javaforge.jqwicket.ui.IJQOptions#setCssResourceReferences(org.apache.wicket.ResourceReference[])
