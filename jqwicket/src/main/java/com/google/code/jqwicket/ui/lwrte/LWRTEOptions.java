@@ -1,0 +1,100 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.google.code.jqwicket.ui.lwrte;
+
+
+import org.apache.wicket.ResourceReference;
+import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
+
+import com.google.code.jqwicket.ui.AbstractJQOptions;
+
+/**
+ * @author mkalina
+ * 
+ */
+public class LWRTEOptions extends AbstractJQOptions<LWRTEOptions> {
+
+	private static final long serialVersionUID = 1L;
+
+	private static final JavascriptResourceReference jsResource = new JavascriptResourceReference(
+			LWRTEOptions.class, "jquery.rte.js");
+
+	private static final JavascriptResourceReference jsDefaultToolbarResouce = new JavascriptResourceReference(
+			LWRTEOptions.class, "jquery.rte.tb.js");
+
+	private static final ResourceReference cssDefaultResouce = new ResourceReference(
+			LWRTEOptions.class, "jquery.rte.css");
+
+	public LWRTEOptions() {
+		this(jsDefaultToolbarResouce, cssDefaultResouce);
+		this.css("default.css").controlsRte("rte_toolbar")
+				.controlsHtml("html_toolbar");
+	}
+
+	public LWRTEOptions(JavascriptResourceReference jsToolbarResource) {
+		this(jsToolbarResource, cssDefaultResouce);
+		this.css("default.css");
+	}
+
+	public LWRTEOptions(ResourceReference cssResouce) {
+		this(jsDefaultToolbarResouce, cssResouce);
+		this.css("default.css").controlsRte("rte_toolbar")
+				.controlsHtml("html_toolbar");
+	}
+
+	public LWRTEOptions(JavascriptResourceReference jsToolbarResource,
+			ResourceReference cssResouce) {
+		this.setJsResourceReferences(jsResource, jsToolbarResource);
+		this.setCssResourceReferences(cssResouce);
+	}
+
+	public LWRTEOptions css(CharSequence... css) {
+		return super.put("css", css);
+	}
+
+	public LWRTEOptions frameClass(CharSequence frameClass) {
+		return super.put("frame_class", frameClass);
+	}
+
+	public LWRTEOptions baseUrl(CharSequence baseUrl) {
+		return super.put("base_url", baseUrl);
+	}
+
+	public LWRTEOptions width(int width) {
+		return super.put("width", width);
+	}
+
+	public LWRTEOptions width(CharSequence width) {
+		return super.put("width", width);
+	}
+
+	public LWRTEOptions height(int height) {
+		return super.put("height", height);
+	}
+
+	public LWRTEOptions height(CharSequence height) {
+		return super.put("height", height);
+	}
+
+	public LWRTEOptions controlsRte(CharSequence controlsRte) {
+		return super.putUnquoted("controls_rte", controlsRte);
+	}
+
+	public LWRTEOptions controlsHtml(CharSequence controlsHtml) {
+		return super.putUnquoted("controls_html", controlsHtml);
+	}
+}
