@@ -41,9 +41,9 @@ public class JQContributionConfig implements Serializable {
 
 	private static final CharSequence defaultJQueryCoreJsUrl = "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js";
 
-	private static final CharSequence defaultJQueryUiJsUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/jquery-ui.min.js";
+	private static final CharSequence defaultJQueryUiJsUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js";
 
-	private static final CharSequence defaultJQueryUiCssUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.11/themes/base/jquery-ui.css";
+	private static final CharSequence defaultJQueryUiCssUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/base/jquery-ui.css";
 
 	private CharSequence jqueryCoreJsUrl;
 
