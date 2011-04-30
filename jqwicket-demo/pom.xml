@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.google.code.jqwicket</groupId>
 	<artifactId>jqwicket-demo</artifactId>
 	<packaging>war</packaging>
-	<version>0.5-SNAPSHOT</version>
+	<version>0.5</version>
 	<name>jqwicket-demo</name>
 	<description>jqwicket: wicket/jquery integration demo</description>
 	<url>http://code.google.com/p/${project.artifactId}/</url>
@@ -24,8 +23,8 @@
 		</license>
 	</licenses>
 	<scm>
-		<connection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket-demo</connection>
-		<developerConnection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket-demo</developerConnection>
+		<connection>scm:svn:https://jqwicket.googlecode.com/svn/tags/jqwicket-demo-0.5</connection>
+		<developerConnection>scm:svn:https://jqwicket.googlecode.com/svn/tags/jqwicket-demo-0.5</developerConnection>
 	</scm>
 	<issueManagement>
 		<system>Google Code</system>
@@ -44,7 +43,7 @@
 		<dependency>
 			<groupId>com.google.code.jqwicket</groupId>
 			<artifactId>jqwicket</artifactId>
-			<version>${jqwicket.version}</version>
+			<version>0.5</version>
 		</dependency>
 
 		<!-- WICKET DEPENDENCIES -->
