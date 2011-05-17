@@ -126,7 +126,9 @@ public class JQContributionRenderer implements IHeaderContributor {
 
 	private void renderJsResourcesUrl(IHeaderResponse response, CharSequence url) {
 		if (Utils.isNotBlank(url))
-			response.renderJavascriptReference(String.valueOf(url));
+			response.renderJavascriptReference(RequestCycle.get()
+					.getProcessor().getRequestCodingStrategy()
+					.rewriteStaticRelativeUrl(String.valueOf(url)));
 	}
 
 	private void renderJsResourcesRefs(IHeaderResponse response,
@@ -152,7 +154,10 @@ public class JQContributionRenderer implements IHeaderContributor {
 	private void renderCssResourcesUrl(IHeaderResponse response,
 			CharSequence url) {
 		if (Utils.isNotBlank(url))
-			response.renderCSSReference(String.valueOf(url));
+			response.renderCSSReference(RequestCycle.get().getProcessor()
+					.getRequestCodingStrategy()
+					.rewriteStaticRelativeUrl(String.valueOf(url)));
+
 	}
 
 	private void renderCssResourcesRefs(IHeaderResponse response,
