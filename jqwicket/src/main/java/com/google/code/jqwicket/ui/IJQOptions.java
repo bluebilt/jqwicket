@@ -18,7 +18,6 @@ package com.google.code.jqwicket.ui;
 
 import java.io.Serializable;
 
-
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
@@ -54,6 +53,24 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	T setCssResourceUrls(CharSequence... urls);
 
 	/**
+	 * Adds additional css resource references necessary for component
+	 * rendering.
+	 * 
+	 * @param refs
+	 * 
+	 * @return
+	 */
+	T addCssResourceReferences(ResourceReference... refs);
+
+	/**
+	 * Adds additional css resource urls necessary for component rendering.
+	 * 
+	 * @param urls
+	 * @return
+	 */
+	T addCssResourceUrls(CharSequence... urls);
+
+	/**
 	 * Returns css resource references necessary for component rendering.
 	 * 
 	 * @return
@@ -77,6 +94,15 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	T setJsResourceReferencesMin(JavascriptResourceReference... refs);
 
 	/**
+	 * Adds additional (minified) resource references necessary for component
+	 * rendering.
+	 * 
+	 * @param refs
+	 * @return
+	 */
+	T addJsResourceReferencesMin(JavascriptResourceReference... refs);
+
+	/**
 	 * Sets minified javascript resource urls necessary for component rendering.
 	 * If nothing set, default resources will be used.
 	 * 
@@ -84,6 +110,15 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	 * @return
 	 */
 	T setJsResourceUrlsMin(CharSequence... urls);
+
+	/**
+	 * Adds additional (minified) resource urls necessary for component
+	 * rendering.
+	 * 
+	 * @param urls
+	 * @return
+	 */
+	T addJsResourceUrlsMin(CharSequence... urls);
 
 	/**
 	 * Returns minified javascript resource references necessary for component
@@ -111,6 +146,15 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	T setJsResourceReferences(JavascriptResourceReference... refs);
 
 	/**
+	 * Adds additional javascript resource references necessary for component
+	 * rendering.
+	 * 
+	 * @param refs
+	 * @return
+	 */
+	T addJsResourceReferences(JavascriptResourceReference... refs);
+
+	/**
 	 * Sets javascript resource urls necessary for component rendering. If
 	 * nothing set, default resources will be used.
 	 * 
@@ -118,6 +162,15 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 	 * @return
 	 */
 	T setJsResourceUrls(CharSequence... urls);
+
+	/**
+	 * Adds additional javascript resource references necessary for component
+	 * rendering.
+	 * 
+	 * @param urls
+	 * @return
+	 */
+	T addJsResourceUrls(CharSequence... urls);
 
 	/**
 	 * Returns javascript resource references necessary for component rendering.

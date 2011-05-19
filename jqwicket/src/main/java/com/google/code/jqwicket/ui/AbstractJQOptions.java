@@ -21,7 +21,6 @@ import static com.google.code.jqwicket.Utils.isNotBlank;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
@@ -129,6 +128,17 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
+	 * @see com.google.code.jqwicket.ui.IJQOptions#addCssResourceReferences(org.apache.wicket.ResourceReference[])
+	 */
+	public T addCssResourceReferences(ResourceReference... refs) {
+		this.cssResourceReferences = Utils.join(this.cssResourceReferences,
+				refs);
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
 	 * @see com.google.code.jqwicket.ui.IJQOptions#getCssResourceReferences()
 	 */
 	public ResourceReference[] getCssResourceReferences() {
@@ -157,6 +167,16 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
+	 * @see com.google.code.jqwicket.ui.IJQOptions#addJsResourceReferences(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
+	 */
+	public T addJsResourceReferences(JavascriptResourceReference... refs) {
+		this.jsResourceReferences = Utils.join(this.jsResourceReferences, refs);
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
 	 * @see com.google.code.jqwicket.ui.IJQOptions#getJsResourceReferencesMin()
 	 */
 	public JavascriptResourceReference[] getJsResourceReferencesMin() {
@@ -176,10 +196,31 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
+	 * @see com.google.code.jqwicket.ui.IJQOptions#addJsResourceReferencesMin(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
+	 */
+	public T addJsResourceReferencesMin(JavascriptResourceReference... refs) {
+		this.jsResourceReferencesMin = Utils.join(this.jsResourceReferencesMin,
+				refs);
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
 	 * @see com.google.code.jqwicket.ui.IJQOptions#setCssResourceUrls(java.lang.CharSequence[])
 	 */
 	public T setCssResourceUrls(CharSequence... urls) {
 		this.cssResourceUrls = urls;
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.ui.IJQOptions#addCssResourceUrls(java.lang.CharSequence[])
+	 */
+	public T addCssResourceUrls(CharSequence... urls) {
+		this.cssResourceUrls = Utils.join(this.cssResourceUrls, urls);
 		return (T) this;
 	}
 
@@ -205,6 +246,16 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
+	 * @see com.google.code.jqwicket.ui.IJQOptions#addJsResourceUrlsMin(java.lang.CharSequence[])
+	 */
+	public T addJsResourceUrlsMin(CharSequence... urls) {
+		this.jsResourceUrlsMin = Utils.join(this.jsResourceUrlsMin, urls);
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
 	 * @see com.google.code.jqwicket.ui.IJQOptions#getJsResourceUrlsMin()
 	 */
 	public CharSequence[] getJsResourceUrlsMin() {
@@ -218,6 +269,16 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	 */
 	public T setJsResourceUrls(CharSequence... urls) {
 		this.jsResourceUrls = urls;
+		return (T) this;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.ui.IJQOptions#addJsResourceUrls(java.lang.CharSequence[])
+	 */
+	public T addJsResourceUrls(CharSequence... urls) {
+		this.jsResourceUrls = Utils.join(this.jsResourceUrls, urls);
 		return (T) this;
 	}
 
