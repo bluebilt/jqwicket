@@ -37,7 +37,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 
 	private static final long serialVersionUID = 1L;
 
-	private B behavior;
+	protected B behavior;
 
 	public AbstractDatePickerTextField(String id, O options) {
 		super(id);

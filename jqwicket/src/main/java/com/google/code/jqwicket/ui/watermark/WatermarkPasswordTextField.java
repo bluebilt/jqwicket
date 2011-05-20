@@ -16,7 +16,6 @@
  */
 package com.google.code.jqwicket.ui.watermark;
 
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.model.IModel;
@@ -31,17 +30,21 @@ public class WatermarkPasswordTextField extends PasswordTextField {
 
 	private static final long serialVersionUID = 1L;
 
-	private WatermarkBehavior behavior;
+	protected WatermarkBehavior behavior;
 
 	public WatermarkPasswordTextField(String id, CharSequence watermark) {
 		super(id);
-		add(this.behavior = new WatermarkBehavior(watermark));
+		add(this.behavior = newWatermarkBehavior(watermark));
 	}
 
 	public WatermarkPasswordTextField(String id, CharSequence watermark,
 			IModel<String> model) {
 		super(id, model);
-		add(this.behavior = new WatermarkBehavior(watermark));
+		add(this.behavior = newWatermarkBehavior(watermark));
+	}
+
+	protected WatermarkBehavior newWatermarkBehavior(CharSequence watermark) {
+		return new WatermarkBehavior(watermark);
 	}
 
 	/**

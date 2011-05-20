@@ -27,13 +27,15 @@ public class CKEditorTextArea<T> extends TextArea<T> {
 
 	private static final long serialVersionUID = 1L;
 
+	protected CKEditorBehavior behavior;
+
 	public CKEditorTextArea(String id) {
 		this(id, new CKEditorOptions());
 	}
 
 	public CKEditorTextArea(String id, CKEditorOptions options) {
 		super(id);
-		super.add(new CKEditorBehavior(options));
+		add(this.behavior = newBehavior(options));
 	}
 
 	public CKEditorTextArea(String id, IModel<T> model) {
@@ -42,7 +44,10 @@ public class CKEditorTextArea<T> extends TextArea<T> {
 
 	public CKEditorTextArea(String id, CKEditorOptions options, IModel<T> model) {
 		super(id, model);
-		super.add(new CKEditorBehavior(options));
+		add(behavior = newBehavior(options));
 	}
 
+	protected CKEditorBehavior newBehavior(CKEditorOptions options) {
+		return new CKEditorBehavior(options);
+	}
 }

@@ -38,7 +38,7 @@ public class ColorPickerTextField<T> extends TextField<T> implements
 
 	private static final long serialVersionUID = 1L;
 
-	private ColorPickerBehavior behavior;
+	protected ColorPickerBehavior behavior;
 
 	public ColorPickerTextField(String id) {
 		this(id, new ColorPickerOptions());

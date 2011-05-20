@@ -16,7 +16,6 @@
  */
 package com.google.code.jqwicket.ui.watermark;
 
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.model.IModel;
@@ -31,29 +30,33 @@ public class WatermarkRequiredTextField<T> extends RequiredTextField<T> {
 
 	private static final long serialVersionUID = 1L;
 
-	private WatermarkBehavior behavior;
+	protected WatermarkBehavior behavior;
 
 	public WatermarkRequiredTextField(String id, CharSequence watermark) {
 		super(id);
-		add(this.behavior = new WatermarkBehavior(watermark));
+		add(this.behavior = newWatermarkBehavior(watermark));
 	}
 
 	public WatermarkRequiredTextField(String id, CharSequence watermark,
 			Class<T> type) {
 		super(id, type);
-		add(this.behavior = new WatermarkBehavior(watermark));
+		add(this.behavior = newWatermarkBehavior(watermark));
 	}
 
 	public WatermarkRequiredTextField(String id, CharSequence watermark,
 			IModel<T> model) {
 		super(id, model);
-		add(this.behavior = new WatermarkBehavior(watermark));
+		add(this.behavior = newWatermarkBehavior(watermark));
 	}
 
 	public WatermarkRequiredTextField(String id, CharSequence watermark,
 			IModel<T> model, Class<T> type) {
 		super(id, model, type);
-		add(this.behavior = new WatermarkBehavior(watermark));
+		add(this.behavior = newWatermarkBehavior(watermark));
+	}
+
+	protected WatermarkBehavior newWatermarkBehavior(CharSequence watermark) {
+		return new WatermarkBehavior(watermark);
 	}
 
 	/**

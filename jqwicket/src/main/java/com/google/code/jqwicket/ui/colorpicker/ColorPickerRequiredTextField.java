@@ -38,7 +38,7 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T>
 
 	private static final long serialVersionUID = 1L;
 
-	private ColorPickerBehavior behavior;
+	protected ColorPickerBehavior behavior;
 
 	public ColorPickerRequiredTextField(String id) {
 		this(id, new ColorPickerOptions());
