@@ -19,12 +19,12 @@ package com.google.code.jqwicket.ui.validationengine;
 import java.util.Collection;
 import java.util.UUID;
 
-
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.AbstractBehavior;
 import org.apache.wicket.markup.html.IHeaderResponse;
 import org.apache.wicket.markup.html.form.Form;
 
+import com.google.code.jqwicket.JQContributionConfig;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.JQuery;
 import com.google.code.jqwicket.Utils;
@@ -107,12 +107,17 @@ public class ValidationEngineFormBehavior extends
 			throw new IllegalStateException(
 					"ValidationEngineFormBehavior can only be added to the Form or its subclasses!");
 
+		JQContributionConfig config = JQContributionConfig.get();
+		CharSequence prefix = Utils.isNotBlank(config.getNonConflictAlias()) ? config
+				.getNonConflictAlias() : "$";
+
 		final StringBuffer buf = new StringBuffer();
 		if (options.hasValidationRules()) {
 
 			if (options.isValidationRulesResourceSpecified()) {
 
-				buf.append("$.extend($.validationEngineLanguage.allRules, ");
+				buf.append(prefix).append(".extend(").append(prefix)
+						.append(".validationEngineLanguage.allRules, ");
 				buf.append("{")
 						.append(Utils.join(options.getValidationRulesAsArray(),
 								",\n")).append("}");
@@ -120,21 +125,24 @@ public class ValidationEngineFormBehavior extends
 
 			} else {
 
-				buf.append("$.fn.validationEngineLanguage = function() {};\n");
-				buf.append("$.validationEngineLanguage = {\n");
+				buf.append(prefix).append(
+						".fn.validationEngineLanguage = function() {};\n");
+				buf.append(prefix).append(".validationEngineLanguage = {\n");
 				buf.append("newLang: function() {\n");
-				buf.append("$.validationEngineLanguage.allRules = 	{");
+				buf.append(prefix).append(
+						".validationEngineLanguage.allRules = 	{");
 				buf.append(Utils.join(options.getValidationRulesAsArray(),
 						",\n"));
 				buf.append("};\n");
 				buf.append("}\n");
 				buf.append("};\n");
-				buf.append("$.validationEngineLanguage.newLang();\n");
+				buf.append(prefix).append(
+						".validationEngineLanguage.newLang();\n");
 
 			}
 
 		}
-		
+
 		target.addJQStatements(JQuery.js(buf));
 
 		super.contributeInternal(target);

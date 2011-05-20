@@ -22,8 +22,9 @@ import com.google.code.jqwicket.JQFunction;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
 
-
 import static com.google.code.jqwicket.JQuery.$f;
+import static com.google.code.jqwicket.JQuery.$dot;
+import static com.google.code.jqwicket.JQuery.$dotMethod;
 
 /**
  * @author mkalina
@@ -40,9 +41,7 @@ public class PrettyLoaderBehavior extends
 
 	public PrettyLoaderBehavior(PrettyLoaderOptions options) {
 		super(options);
-		super.addJQStatements(new StringBuffer().append("$.")
-				.append(this.getName()).append("(")
-				.append(this.options.toJson()).append(")"));
+		super.addJQStatements($dot(this.getName(), this.options.toJson()));
 	}
 
 	/**
@@ -70,8 +69,7 @@ public class PrettyLoaderBehavior extends
 	 * @see com.google.code.jqwicket.ui.prettyloader.IPrettyLoader#show()
 	 */
 	public JQFunction show() {
-		return $f(new StringBuffer("$.").append(this.getName()).append(
-				".show()"));
+		return $f($dotMethod(this.getName(), "show"));
 	}
 
 	/**
@@ -89,8 +87,7 @@ public class PrettyLoaderBehavior extends
 	 * @see com.google.code.jqwicket.ui.prettyloader.IPrettyLoader#show(int)
 	 */
 	public JQFunction show(int seconds) {
-		return $f(new StringBuffer("$.").append(this.getName())
-				.append(".show(").append(seconds).append(")"));
+		return $f($dotMethod(this.getName(), "show", String.valueOf(seconds)));
 	}
 
 	/**
@@ -110,8 +107,7 @@ public class PrettyLoaderBehavior extends
 	 * @see com.google.code.jqwicket.ui.prettyloader.IPrettyLoader#hide()
 	 */
 	public JQFunction hide() {
-		return $f(new StringBuffer("$.").append(this.getName()).append(
-				".hide()"));
+		return $f($dotMethod(this.getName(), "hide"));
 	}
 
 	/**

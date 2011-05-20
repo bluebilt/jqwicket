@@ -17,6 +17,7 @@
 package com.google.code.jqwicket.ui.blockui;
 
 import static com.google.code.jqwicket.JQuery.$;
+import static com.google.code.jqwicket.JQuery.$dot;
 import static com.google.code.jqwicket.JQuery.$f;
 
 import org.apache.wicket.Component;
@@ -88,8 +89,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
 	public JQFunction block(BlockUIOptions options) {
-		return $f(new StringBuffer("$.blockUI(").append(
-				options != null ? options.toJson() : "").append(")"));
+		return $f($dot("blockUI", options != null ? options.toJson() : ""));
 	}
 
 	/**
@@ -211,8 +211,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
 	public JQFunction unblock(BlockUIOptions options) {
-		return $f(new StringBuffer("$.unblockUI(").append(
-				options != null ? options.toJson() : "").append(")"));
+		return $f($dot("unblockUI", options != null ? options.toJson() : ""));
 	}
 
 	/**
