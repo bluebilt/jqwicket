@@ -36,17 +36,37 @@ public abstract class JQuery {
 	}
 
 	public static final JQStatement $() {
-		return new JQStatement().append("$");
+		return new JQStatement().append(jqueryPrefix());
 	}
 
+	/**
+	 * Generates: $('selector')
+	 * 
+	 * @param selector
+	 * @return
+	 */
 	public static final JQStatement $(CharSequence selector) {
-		return new JQStatement().append("$('").append(selector).append("')");
+		return new JQStatement().append(jqueryPrefix()).append("('")
+				.append(selector).append("')");
 	}
 
+	/**
+	 * Generates: $('componentId')
+	 * 
+	 * @param component
+	 * @return
+	 */
 	public static final JQStatement $(Component component) {
 		return $(selector(component));
 	}
 
+	/**
+	 * Generates: $('#componentId selector')
+	 * 
+	 * @param component
+	 * @param selector
+	 * @return
+	 */
 	public static final JQStatement $(Component component, CharSequence selector) {
 		CharSequence _selector = component == null ? selector
 				: new StringBuffer().append(selector(component)).append(" ")
@@ -54,17 +74,58 @@ public abstract class JQuery {
 		return $(_selector);
 	}
 
+	/**
+	 * Generates: #componentId
+	 * 
+	 * @param component
+	 * @return
+	 */
 	public static final CharSequence selector(Component component) {
 		return component == null ? "" : new StringBuffer().append("#").append(
 				component.getMarkupId());
 	}
 
+	/**
+	 * Generates: $(this)
+	 * 
+	 * @return
+	 */
 	public static final JQStatement $this() {
-		return new JQStatement().append("$(this)");
+		return new JQStatement().append(jqueryPrefix()).append("(this)");
 	}
 
+	/**
+	 * Generates: $.ns(args)
+	 * 
+	 * @param ns
+	 * @return
+	 */
+	public static final JQStatement $dot(CharSequence ns, CharSequence... args) {
+		return new JQStatement().append(jqueryPrefix()).chain(ns, args);
+	}
+
+	/**
+	 * 
+	 * Generates: $.ns.method(args)
+	 * 
+	 * @param ns
+	 * @param method
+	 * @param args
+	 * @return
+	 */
+	public static final JQStatement $dotMethod(CharSequence ns,
+			CharSequence method, CharSequence... args) {
+		return new JQStatement().append(jqueryPrefix()).append(".").append(ns)
+				.chain(method, args);
+	}
+
+	/**
+	 * Generates: $(document)
+	 * 
+	 * @return
+	 */
 	public static final JQStatement $document() {
-		return new JQStatement().append("$(document)");
+		return new JQStatement().append(jqueryPrefix()).append("(document)");
 	}
 
 	public static final JQFunction $f(JQStatement statement) {
@@ -337,5 +398,10 @@ public abstract class JQuery {
 				return js;
 			}
 		};
+	}
+
+	private static final CharSequence jqueryPrefix() {
+		CharSequence alias = JQContributionConfig.get().getNonConflictAlias();
+		return alias != null ? alias : "$";
 	}
 }

@@ -34,8 +34,8 @@ public abstract class BaseJQueryUIPage extends WebPage implements
 	 * @see com.google.code.jqwicket.IJQHeaderContributor#contribute(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	public void contribute(JQHeaderContributionTarget target) {
-		target.addJavascriptResourceUrls("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/jquery-ui.min.js");
-		target.addCssResourceUrls("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.7/themes/base/jquery-ui.css");
+		target.addJavascriptResourceUrls("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js");
+		target.addCssResourceUrls("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css");
 
 	}
 

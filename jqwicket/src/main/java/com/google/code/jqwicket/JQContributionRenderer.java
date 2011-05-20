@@ -179,14 +179,22 @@ public class JQContributionRenderer implements IHeaderContributor {
 		if (isEmpty(statements))
 			return;
 
-		JQStatement q = JQuery.documentReady(statements);
 		IJavascriptCompressor compressor = Application.get()
 				.getResourceSettings().getJavascriptCompressor();
+		JQContributionConfig config = JQContributionConfig.get();
+
+		StringBuffer script = new StringBuffer();
+
+		if (Utils.isNotBlank(config.getNonConflictAlias())) {
+			script.append("var ").append(config.getNonConflictAlias())
+					.append(" = jQuery.noConflict();\n");
+		}
+
+		JQStatement q = JQuery.documentReady(statements);
 
 		CharSequence rawScript = q.render();
-		CharSequence script = (compressor != null && Utils
-				.isNotBlank(rawScript)) ? compressor.compress(String
-				.valueOf(rawScript)) : rawScript;
+		script.append((compressor != null && Utils.isNotBlank(rawScript)) ? compressor
+				.compress(String.valueOf(rawScript)) : rawScript);
 
 		if (Utils.isNotBlank(script))
 			response.renderJavascript(script, UUID.randomUUID().toString());

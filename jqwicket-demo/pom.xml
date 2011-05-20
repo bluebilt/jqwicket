@@ -11,7 +11,7 @@
 
 	<properties>
 		<wicket.version>1.4.17</wicket.version>
-		<jqwicket.version>0.5-SNAPSHOT</jqwicket.version> <!-- jqwicket version should be the same as demo version -->
+		<jqwicket.version>0.6-SNAPSHOT</jqwicket.version> <!-- jqwicket version should be the same as demo version -->
 		<jetty.version>6.1.4</jetty.version>
 	</properties>
 

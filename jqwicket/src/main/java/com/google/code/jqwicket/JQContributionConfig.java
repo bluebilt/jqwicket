@@ -39,11 +39,11 @@ public class JQContributionConfig implements Serializable {
 		private static final long serialVersionUID = 1L;
 	};
 
-	private static final CharSequence defaultJQueryCoreJsUrl = "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js";
+	private static final CharSequence defaultJQueryCoreJsUrl = "http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js";
 
-	private static final CharSequence defaultJQueryUiJsUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js";
+	private static final CharSequence defaultJQueryUiJsUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js";
 
-	private static final CharSequence defaultJQueryUiCssUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/themes/base/jquery-ui.css";
+	private static final CharSequence defaultJQueryUiCssUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css";
 
 	private CharSequence jqueryCoreJsUrl;
 
@@ -54,6 +54,8 @@ public class JQContributionConfig implements Serializable {
 	private JavascriptResourceReference jqueryUiJsResourceReference;
 
 	private CharSequence jqueryUiCssUrl;
+
+	private CharSequence nonConflictAlias;
 
 	private ResourceReference jqueryUiCssResourceReference;
 
@@ -78,6 +80,12 @@ public class JQContributionConfig implements Serializable {
 			JavascriptResourceReference jqueryCoreResourceReference) {
 		this.jqueryCoreJsResourceReference = jqueryCoreResourceReference;
 		this.jqueryCoreJsUrl = null;
+	}
+
+	public JQContributionConfig enableNonConflictMode(
+			CharSequence nonConflictAlias) {
+		this.nonConflictAlias = nonConflictAlias;
+		return this;
 	}
 
 	public JQContributionConfig withDefaultJQueryUi() {
@@ -142,6 +150,10 @@ public class JQContributionConfig implements Serializable {
 
 	public ResourceReference getJqueryUiCssResourceReference() {
 		return jqueryUiCssResourceReference;
+	}
+
+	public CharSequence getNonConflictAlias() {
+		return nonConflictAlias;
 	}
 
 }
