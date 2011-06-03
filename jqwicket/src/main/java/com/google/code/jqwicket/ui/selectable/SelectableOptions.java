@@ -16,12 +16,12 @@
  */
 package com.google.code.jqwicket.ui.selectable;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -143,7 +143,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public SelectableOptions selectedEvent(JQStatement callbackBody) {
+	public SelectableOptions selectedEvent(IJQStatement callbackBody) {
 		return this.selectedEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -154,7 +154,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public SelectableOptions selectedEvent(JQFunction callback) {
+	public SelectableOptions selectedEvent(IJQFunction callback) {
 		super.put("selected", callback);
 		return this;
 	}
@@ -178,7 +178,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public SelectableOptions selectingEvent(JQStatement callbackBody) {
+	public SelectableOptions selectingEvent(IJQStatement callbackBody) {
 		return this.selectingEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -189,7 +189,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public SelectableOptions selectingEvent(JQFunction callback) {
+	public SelectableOptions selectingEvent(IJQFunction callback) {
 		super.put("selecting", callback);
 		return this;
 	}
@@ -210,7 +210,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public SelectableOptions startEvent(JQStatement callbackBody) {
+	public SelectableOptions startEvent(IJQStatement callbackBody) {
 		return this.startEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -220,7 +220,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public SelectableOptions startEvent(JQFunction callback) {
+	public SelectableOptions startEvent(IJQFunction callback) {
 		super.put("start", callback);
 		return this;
 	}
@@ -241,7 +241,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public SelectableOptions stopEvent(JQStatement callbackBody) {
+	public SelectableOptions stopEvent(IJQStatement callbackBody) {
 		return this.stopEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -251,7 +251,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public SelectableOptions stopEvent(JQFunction callback) {
+	public SelectableOptions stopEvent(IJQFunction callback) {
 		super.put("stop", callback);
 		return this;
 	}
@@ -274,7 +274,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public SelectableOptions unselectedEvent(JQStatement callbackBody) {
+	public SelectableOptions unselectedEvent(IJQStatement callbackBody) {
 		return this.unselectedEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -285,7 +285,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public SelectableOptions unselectedEvent(JQFunction callback) {
+	public SelectableOptions unselectedEvent(IJQFunction callback) {
 		super.put("unselected", callback);
 		return this;
 	}
@@ -308,7 +308,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public SelectableOptions unselectingEvent(JQStatement callbackBody) {
+	public SelectableOptions unselectingEvent(IJQStatement callbackBody) {
 		return this.unselectingEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -319,7 +319,7 @@ public class SelectableOptions extends AbstractJQOptions<SelectableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public SelectableOptions unselectingEvent(JQFunction callback) {
+	public SelectableOptions unselectingEvent(IJQFunction callback) {
 		super.put("unselecting", callback);
 		return this;
 	}

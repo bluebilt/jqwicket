@@ -16,14 +16,12 @@
  */
 package com.google.code.jqwicket.ui.accordion;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.effect.Effect;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -100,7 +98,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @param animated
 	 * @return
 	 */
-	public AccordionOptions animated(Effect animated) {
+	public AccordionOptions animated(CharSequence animated) {
 		super.put("animated", animated);
 		return this;
 	}
@@ -185,7 +183,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @param icons
 	 * @return
 	 */
-	public AccordionOptions icons(IJQOptions<?> icons) {
+	public AccordionOptions icons(CharSequence icons) {
 		super.put("icons", icons);
 		return this;
 	}
@@ -209,7 +207,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @param navigationFilter
 	 * @return
 	 */
-	public AccordionOptions navigationFilter(JQFunction navigationFilter) {
+	public AccordionOptions navigationFilter(IJQFunction navigationFilter) {
 		super.put("navigationFilter", navigationFilter);
 		return this;
 	}
@@ -246,7 +244,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public AccordionOptions changeEvent(JQStatement callbackBody) {
+	public AccordionOptions changeEvent(IJQStatement callbackBody) {
 		return this.changeEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -258,7 +256,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public AccordionOptions changeEvent(JQFunction callback) {
+	public AccordionOptions changeEvent(IJQFunction callback) {
 		super.put("change", callback);
 		return this;
 	}
@@ -279,7 +277,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public AccordionOptions changestartEvent(JQStatement callbackBody) {
+	public AccordionOptions changestartEvent(IJQStatement callbackBody) {
 		return this.changeEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -289,7 +287,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public AccordionOptions changestartEvent(JQFunction callback) {
+	public AccordionOptions changestartEvent(IJQFunction callback) {
 		super.put("changestart", callback);
 		return this;
 	}

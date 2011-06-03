@@ -16,18 +16,17 @@
  */
 package com.google.code.jqwicket.ui.mb.extruder;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.IJsonAware;
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
 import com.google.code.jqwicket.Utils;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.JQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
+import com.google.code.jqwicket.api.JQOptions;
 import com.google.code.jqwicket.ui.mb.fliptext.FlipTextOptions;
 
 /**
@@ -53,22 +52,16 @@ public class ExtruderOptions extends AbstractJQOptions<ExtruderOptions> {
 	public static final ResourceReference CSS_RESOURCE = new ResourceReference(
 			ExtruderOptions.class, "css/mbExtruder.css");
 
-	public enum Position implements IJsonAware {
+	public enum Position {
 
 		TOP, LEFT, RIGHT, BOTTOM;
 
-		public CharSequence toJson() {
-			return this.name().toLowerCase();
-		}
 	}
 
-	public enum TextOrientation implements IJsonAware {
+	public enum TextOrientation {
 
 		TB, BT;
 
-		public CharSequence toJson() {
-			return this.name().toLowerCase();
-		}
 	}
 
 	private CharSequence title;
@@ -96,12 +89,10 @@ public class ExtruderOptions extends AbstractJQOptions<ExtruderOptions> {
 	}
 
 	public CharSequence getExtruderClass() {
-		JQOptions opt = new JQOptions().putDblquoted("title",
-				this.title);
-		if (Utils.isNotBlank(this.url)) {
-			opt.putDblquoted("url", this.url);
-		}
-		return opt.toJson();
+		JQOptions opt = new JQOptions().put("title", this.title);
+		if (Utils.isNotBlank(this.url))
+			opt.put("url", this.url);
+		return opt;
 	}
 
 	public ExtruderOptions positionFixed(boolean positionFixed) {
@@ -139,11 +130,12 @@ public class ExtruderOptions extends AbstractJQOptions<ExtruderOptions> {
 	 * @return
 	 */
 	public ExtruderOptions position(Position position) {
-		return super.put("position", position);
+		return super.put("position", position.name().toLowerCase());
 	}
 
 	/**
-	 * the opacity of the sliding panel once it’s closed (doesn’t work in IE)<br>
+	 * the opacity of the sliding panel once it’s closed (doesn’t work in
+	 * IE)<br>
 	 * Default: 1
 	 * 
 	 * @param extruderOpacity
@@ -170,14 +162,15 @@ public class ExtruderOptions extends AbstractJQOptions<ExtruderOptions> {
 	}
 
 	/**
-	 * “tb”, or “bt” the orientation of the text for titles in the left panel
-	 * flaps
+	 * “tb”, or “bt” the orientation of the text for titles in the left
+	 * panel flaps
 	 * 
 	 * @param textOrientation
 	 * @return
 	 */
 	public ExtruderOptions textOrientation(TextOrientation textOrientation) {
-		return super.put("textOrientation", textOrientation);
+		return super.put("textOrientation", textOrientation.name()
+				.toLowerCase());
 	}
 
 	/**
@@ -233,11 +226,11 @@ public class ExtruderOptions extends AbstractJQOptions<ExtruderOptions> {
 		return this.onExtOpenEvent(js(callbackBody));
 	}
 
-	public ExtruderOptions onExtOpenEvent(JQStatement callbackBody) {
+	public ExtruderOptions onExtOpenEvent(IJQStatement callbackBody) {
 		return this.onExtOpenEvent($f(callbackBody));
 	}
 
-	public ExtruderOptions onExtOpenEvent(JQFunction callback) {
+	public ExtruderOptions onExtOpenEvent(IJQFunction callback) {
 		super.put("onExtOpen", callback);
 		return this;
 	}
@@ -246,11 +239,11 @@ public class ExtruderOptions extends AbstractJQOptions<ExtruderOptions> {
 		return this.onExtContentLoadEvent(js(callbackBody));
 	}
 
-	public ExtruderOptions onExtContentLoadEvent(JQStatement callbackBody) {
+	public ExtruderOptions onExtContentLoadEvent(IJQStatement callbackBody) {
 		return this.onExtContentLoadEvent($f(callbackBody));
 	}
 
-	public ExtruderOptions onExtContentLoadEvent(JQFunction callback) {
+	public ExtruderOptions onExtContentLoadEvent(IJQFunction callback) {
 		super.put("onExtContentLoad", callback);
 		return this;
 	}
@@ -259,11 +252,11 @@ public class ExtruderOptions extends AbstractJQOptions<ExtruderOptions> {
 		return this.onExtCloseEvent(js(callbackBody));
 	}
 
-	public ExtruderOptions onExtCloseEvent(JQStatement callbackBody) {
+	public ExtruderOptions onExtCloseEvent(IJQStatement callbackBody) {
 		return this.onExtCloseEvent($f(callbackBody));
 	}
 
-	public ExtruderOptions onExtCloseEvent(JQFunction callback) {
+	public ExtruderOptions onExtCloseEvent(IJQFunction callback) {
 		super.put("onExtClose", callback);
 		return this;
 	}

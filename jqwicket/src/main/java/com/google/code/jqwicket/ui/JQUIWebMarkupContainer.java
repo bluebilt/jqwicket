@@ -16,12 +16,12 @@
  */
 package com.google.code.jqwicket.ui;
 
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
 
 import com.google.code.jqwicket.IJQUIWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 
 /**
  * Abstract wicket web markup container for pure jquery ui components.
@@ -49,7 +49,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#destroy()
 	 */
-	public JQFunction destroy() {
+	public IJQFunction destroy() {
 		return this.behavior.destroy();
 	}
 
@@ -67,7 +67,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#disable()
 	 */
-	public JQFunction disable() {
+	public IJQFunction disable() {
 		return this.behavior.disable();
 	}
 
@@ -85,7 +85,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#enable()
 	 */
-	public JQFunction enable() {
+	public IJQFunction enable() {
 		return this.behavior.enable();
 	}
 
@@ -104,7 +104,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	 * @see com.google.code.jqwicket.IJQUIWidget#option(java.lang.CharSequence,
 	 *      java.lang.CharSequence)
 	 */
-	public JQFunction option(CharSequence optionName, CharSequence optionValue) {
+	public IJQFunction option(CharSequence optionName, CharSequence optionValue) {
 		return this.behavior.option(optionName, optionValue);
 	}
 
@@ -122,9 +122,9 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.IJQUIWidget#options(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.IJQUIWidget#options(com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction options(IJQOptions<?> options) {
+	public IJQFunction options(IJQOptions<?> options) {
 		return this.behavior.options(options);
 	}
 
@@ -132,7 +132,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#options(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void options(AjaxRequestTarget ajaxRequestTarget,
 			IJQOptions<?> options) {
@@ -144,7 +144,7 @@ public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>,
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#widget()
 	 */
-	public JQFunction widget() {
+	public IJQFunction widget() {
 		return this.behavior.widget();
 	}
 

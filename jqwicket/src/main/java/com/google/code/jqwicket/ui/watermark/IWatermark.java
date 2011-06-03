@@ -19,7 +19,7 @@ package com.google.code.jqwicket.ui.watermark;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 
 /**
@@ -33,15 +33,15 @@ public interface IWatermark extends IJQWidget<WatermarkOptions> {
 
 	static final CharSequence JQ_COMPONENT_NAME = "watermark";
 
-	JQFunction show(CharSequence selector);
+	IJQFunction show(CharSequence selector);
 
 	void show(AjaxRequestTarget ajaxRequestTarget, CharSequence selector);
 
-	JQFunction hide(CharSequence selector);
+	IJQFunction hide(CharSequence selector);
 
 	void hide(AjaxRequestTarget ajaxRequestTarget, CharSequence selector);
 
-	JQFunction showAll();
+	IJQFunction showAll();
 
 	void showAll(AjaxRequestTarget ajaxRequestTarget);
 }

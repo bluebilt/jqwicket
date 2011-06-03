@@ -16,16 +16,15 @@
  */
 package com.google.code.jqwicket.ui.colorpicker;
 
-import static com.google.code.jqwicket.JQuery.$;
-import static com.google.code.jqwicket.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$f;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.JQOptions;
 import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
-import com.google.code.jqwicket.ui.JQOptions;
-
 
 /**
  * @author mkalina
@@ -58,7 +57,7 @@ public class ColorPickerBehavior extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.colorpicker.IColorPicker#show()
 	 */
-	public JQFunction show() {
+	public IJQFunction show() {
 		return $f($(this.component).chain("ColorPickerShow"));
 	}
 
@@ -76,7 +75,7 @@ public class ColorPickerBehavior extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.colorpicker.IColorPicker#hide()
 	 */
-	public JQFunction hide() {
+	public IJQFunction hide() {
 		return $f($(this.component).chain("ColorPickerHide"));
 	}
 
@@ -94,7 +93,7 @@ public class ColorPickerBehavior extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.colorpicker.IColorPicker#setColor(java.lang.String)
 	 */
-	public JQFunction setColor(CharSequence color) {
+	public IJQFunction setColor(CharSequence color) {
 		return $f($(this.component).chain("ColorPickerSetColor",
 				Utils.quote(color)));
 	}
@@ -115,11 +114,9 @@ public class ColorPickerBehavior extends
 	 * @see com.google.code.jqwicket.ui.colorpicker.IColorPicker#setColor(int,
 	 *      int, int)
 	 */
-	public JQFunction setColor(int r, int g, int b) {
-		return $f($(this.component).chain(
-				"ColorPickerSetColor",
-				new JQOptions().put("r", r).put("g", g).put("b", b)
-						.toJson()));
+	public IJQFunction setColor(int r, int g, int b) {
+		return $f($(this.component).chain("ColorPickerSetColor",
+				new JQOptions().put("r", r).put("g", g).put("b", b)));
 	}
 
 	/**

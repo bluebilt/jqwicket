@@ -16,11 +16,12 @@
  */
 package com.google.code.jqwicket.ui.lwrte;
 
-
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.Utils;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.JQLiteral;
 
 /**
  * @author mkalina
@@ -63,7 +64,12 @@ public class LWRTEOptions extends AbstractJQOptions<LWRTEOptions> {
 	}
 
 	public LWRTEOptions css(CharSequence... css) {
-		return super.put("css", css);
+		return super.put("css",
+				Utils.walk(css, new Utils.IArrayWalkCallback<CharSequence>() {
+					public CharSequence onElement(int index, CharSequence obj) {
+						return JQLiteral._(obj);
+					}
+				}));
 	}
 
 	public LWRTEOptions frameClass(CharSequence frameClass) {
@@ -91,10 +97,10 @@ public class LWRTEOptions extends AbstractJQOptions<LWRTEOptions> {
 	}
 
 	public LWRTEOptions controlsRte(CharSequence controlsRte) {
-		return super.putUnquoted("controls_rte", controlsRte);
+		return super.put("controls_rte", JQLiteral._raw(controlsRte));
 	}
 
 	public LWRTEOptions controlsHtml(CharSequence controlsHtml) {
-		return super.putUnquoted("controls_html", controlsHtml);
+		return super.put("controls_html", JQLiteral._raw(controlsHtml));
 	}
 }

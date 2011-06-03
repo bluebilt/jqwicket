@@ -16,7 +16,7 @@
  */
 package com.google.code.jqwicket.ui.uniform;
 
-import static com.google.code.jqwicket.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 import com.google.code.jqwicket.IJQWidget;
 
@@ -43,8 +43,7 @@ public class GenericUniformBehavior extends AbstractUniformBehavior implements
 	}
 
 	protected void contributeSelector(CharSequence selector) {
-		this.addJQStatements($(selector).chain(this.getName(),
-				this.options.toJson()));
+		this.addJQStatements($(selector).chain(this.getName(), this.options));
 	}
 
 }

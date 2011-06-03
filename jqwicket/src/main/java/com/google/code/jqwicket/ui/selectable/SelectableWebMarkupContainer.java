@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.selectable;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIWebMarkupContainer;
 
 /**
@@ -66,7 +66,7 @@ public class SelectableWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.selectable.ISelectable#refresh()
 	 */
-	public JQFunction refresh() {
+	public IJQFunction refresh() {
 		return this.behavior.refresh();
 	}
 

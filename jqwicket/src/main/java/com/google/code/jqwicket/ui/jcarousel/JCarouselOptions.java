@@ -16,17 +16,15 @@
  */
 package com.google.code.jqwicket.ui.jcarousel;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.effect.EffectEasing;
-import com.google.code.jqwicket.effect.EffectSpeed;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -145,7 +143,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param speed
 	 * @return
 	 */
-	public JCarouselOptions animation(EffectSpeed speed) {
+	public JCarouselOptions animation(CharSequence speed) {
 		super.put("animation", speed);
 		return this;
 	}
@@ -170,7 +168,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param easing
 	 * @return
 	 */
-	public JCarouselOptions easing(EffectEasing easing) {
+	public JCarouselOptions easing(CharSequence easing) {
 		super.put("easing", easing);
 		return this;
 	}
@@ -281,7 +279,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public JCarouselOptions initEvent(JQStatement callbackBody) {
+	public JCarouselOptions initEvent(IJQStatement callbackBody) {
 		return this.initEvent($f(callbackBody, "carousel", "state"));
 	}
 
@@ -294,7 +292,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public JCarouselOptions initEvent(JQFunction callback) {
+	public JCarouselOptions initEvent(IJQFunction callback) {
 		super.put("initCallback", callback);
 		return this;
 	}
@@ -325,7 +323,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public JCarouselOptions initLoadEvent(JQStatement callbackBody) {
+	public JCarouselOptions initLoadEvent(IJQStatement callbackBody) {
 		return this.initLoadEvent($f(callbackBody, "carousel", "state"));
 	}
 
@@ -339,7 +337,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public JCarouselOptions initLoadEvent(JQFunction callback) {
+	public JCarouselOptions initLoadEvent(IJQFunction callback) {
 		super.put("itemLoadCallback", callback);
 		return this;
 	}
@@ -374,7 +372,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public JCarouselOptions itemFirstInEvent(JQStatement callbackBody) {
+	public JCarouselOptions itemFirstInEvent(IJQStatement callbackBody) {
 		return this.itemFirstInEvent($f(callbackBody, "carousel", "obj",
 				"indx", "state"));
 	}
@@ -391,7 +389,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public JCarouselOptions itemFirstInEvent(JQFunction callback) {
+	public JCarouselOptions itemFirstInEvent(IJQFunction callback) {
 		super.put("itemFirstInCallback", callback);
 		return this;
 	}
@@ -426,7 +424,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public JCarouselOptions itemFirstOutEvent(JQStatement callbackBody) {
+	public JCarouselOptions itemFirstOutEvent(IJQStatement callbackBody) {
 		return this.itemFirstOutEvent($f(callbackBody, "carousel", "obj",
 				"indx", "state"));
 	}
@@ -443,7 +441,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public JCarouselOptions itemFirstOutEvent(JQFunction callback) {
+	public JCarouselOptions itemFirstOutEvent(IJQFunction callback) {
 		super.put("itemFirstOutCallback", callback);
 		return this;
 	}
@@ -478,7 +476,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public JCarouselOptions itemLastInEvent(JQStatement callbackBody) {
+	public JCarouselOptions itemLastInEvent(IJQStatement callbackBody) {
 		return this.itemLastInEvent($f(callbackBody, "carousel", "obj", "indx",
 				"state"));
 	}
@@ -495,7 +493,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public JCarouselOptions itemLastInEvent(JQFunction callback) {
+	public JCarouselOptions itemLastInEvent(IJQFunction callback) {
 		super.put("itemLastInCallback", callback);
 		return this;
 	}
@@ -529,7 +527,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public JCarouselOptions itemLastOutEvent(JQStatement callbackBody) {
+	public JCarouselOptions itemLastOutEvent(IJQStatement callbackBody) {
 		return this.itemLastOutEvent($f(callbackBody, "carousel", "obj",
 				"indx", "state"));
 	}
@@ -546,7 +544,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public JCarouselOptions itemLastOutEvent(JQFunction callback) {
+	public JCarouselOptions itemLastOutEvent(IJQFunction callback) {
 		super.put("itemLastOutCallback", callback);
 		return this;
 	}
@@ -579,7 +577,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public JCarouselOptions itemVisibleInEvent(JQStatement callbackBody) {
+	public JCarouselOptions itemVisibleInEvent(IJQStatement callbackBody) {
 		return this.itemVisibleInEvent($f(callbackBody, "carousel", "obj",
 				"indx", "state"));
 	}
@@ -596,7 +594,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public JCarouselOptions itemVisibleInEvent(JQFunction callback) {
+	public JCarouselOptions itemVisibleInEvent(IJQFunction callback) {
 		super.put("itemVisibleInCallback", callback);
 		return this;
 	}
@@ -629,7 +627,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public JCarouselOptions itemVisibleOutEvent(JQStatement callbackBody) {
+	public JCarouselOptions itemVisibleOutEvent(IJQStatement callbackBody) {
 		return this.itemVisibleOutEvent($f(callbackBody, "carousel", "obj",
 				"indx", "state"));
 	}
@@ -646,7 +644,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public JCarouselOptions itemVisibleOutEvent(JQFunction callback) {
+	public JCarouselOptions itemVisibleOutEvent(IJQFunction callback) {
 		super.put("itemVisibleOutCallback", callback);
 		return this;
 	}

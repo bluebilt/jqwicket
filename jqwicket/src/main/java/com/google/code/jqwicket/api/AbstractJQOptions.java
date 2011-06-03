@@ -14,7 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.code.jqwicket.ui;
+package com.google.code.jqwicket.api;
 
 import static com.google.code.jqwicket.Utils.isNotBlank;
 
@@ -24,13 +24,11 @@ import java.util.Map;
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.IJsonAware;
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
 import com.google.code.jqwicket.Utils;
 
 /**
- * Base abstract {@link IJQOptions} implementation.
+ * Base abstract {@link IJQOptions} implementation. See {@link IJQOptions} for
+ * further details.
  * 
  * @author mkalina
  * 
@@ -102,8 +100,8 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 
 			String[] splitted = String.valueOf(options).split(",");
 			for (String s : splitted) {
-				opts.putUnquoted(s.substring(0, s.indexOf(':')).trim(), s
-						.substring(s.indexOf(':') + 1).trim());
+				opts.put(s.substring(0, s.indexOf(':')).trim(),
+						JQLiteral._raw(s.substring(s.indexOf(':') + 1).trim()));
 			}
 
 			return opts;
@@ -118,7 +116,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#setCssResourceReferences(org.apache.wicket.ResourceReference[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#setCssResourceReferences(org.apache.wicket.ResourceReference[])
 	 */
 	public T setCssResourceReferences(ResourceReference... refs) {
 		this.cssResourceReferences = refs;
@@ -128,7 +126,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#addCssResourceReferences(org.apache.wicket.ResourceReference[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#addCssResourceReferences(org.apache.wicket.ResourceReference[])
 	 */
 	public T addCssResourceReferences(ResourceReference... refs) {
 		this.cssResourceReferences = Utils.join(this.cssResourceReferences,
@@ -139,7 +137,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getCssResourceReferences()
+	 * @see com.google.code.jqwicket.api.IJQOptions#getCssResourceReferences()
 	 */
 	public ResourceReference[] getCssResourceReferences() {
 		return this.cssResourceReferences;
@@ -148,7 +146,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getJsResourceReferences()
+	 * @see com.google.code.jqwicket.api.IJQOptions#getJsResourceReferences()
 	 */
 	public JavascriptResourceReference[] getJsResourceReferences() {
 		return this.jsResourceReferences;
@@ -157,7 +155,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#setJsResourceReferences(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#setJsResourceReferences(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
 	 */
 	public T setJsResourceReferences(JavascriptResourceReference... refs) {
 		this.jsResourceReferences = refs;
@@ -167,7 +165,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#addJsResourceReferences(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#addJsResourceReferences(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
 	 */
 	public T addJsResourceReferences(JavascriptResourceReference... refs) {
 		this.jsResourceReferences = Utils.join(this.jsResourceReferences, refs);
@@ -177,7 +175,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getJsResourceReferencesMin()
+	 * @see com.google.code.jqwicket.api.IJQOptions#getJsResourceReferencesMin()
 	 */
 	public JavascriptResourceReference[] getJsResourceReferencesMin() {
 		return this.jsResourceReferencesMin;
@@ -186,7 +184,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#setJsResourceReferencesMin(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#setJsResourceReferencesMin(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
 	 */
 	public T setJsResourceReferencesMin(JavascriptResourceReference... refs) {
 		this.jsResourceReferencesMin = refs;
@@ -196,7 +194,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#addJsResourceReferencesMin(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#addJsResourceReferencesMin(org.apache.wicket.markup.html.resources.JavascriptResourceReference[])
 	 */
 	public T addJsResourceReferencesMin(JavascriptResourceReference... refs) {
 		this.jsResourceReferencesMin = Utils.join(this.jsResourceReferencesMin,
@@ -207,7 +205,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#setCssResourceUrls(java.lang.CharSequence[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#setCssResourceUrls(java.lang.CharSequence[])
 	 */
 	public T setCssResourceUrls(CharSequence... urls) {
 		this.cssResourceUrls = urls;
@@ -217,7 +215,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#addCssResourceUrls(java.lang.CharSequence[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#addCssResourceUrls(java.lang.CharSequence[])
 	 */
 	public T addCssResourceUrls(CharSequence... urls) {
 		this.cssResourceUrls = Utils.join(this.cssResourceUrls, urls);
@@ -227,7 +225,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getCssResourceUrls()
+	 * @see com.google.code.jqwicket.api.IJQOptions#getCssResourceUrls()
 	 */
 	public CharSequence[] getCssResourceUrls() {
 		return this.cssResourceUrls;
@@ -236,7 +234,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#setJsResourceUrlsMin(java.lang.String[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#setJsResourceUrlsMin(java.lang.String[])
 	 */
 	public T setJsResourceUrlsMin(CharSequence... urls) {
 		this.jsResourceUrlsMin = urls;
@@ -246,7 +244,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#addJsResourceUrlsMin(java.lang.CharSequence[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#addJsResourceUrlsMin(java.lang.CharSequence[])
 	 */
 	public T addJsResourceUrlsMin(CharSequence... urls) {
 		this.jsResourceUrlsMin = Utils.join(this.jsResourceUrlsMin, urls);
@@ -256,7 +254,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getJsResourceUrlsMin()
+	 * @see com.google.code.jqwicket.api.IJQOptions#getJsResourceUrlsMin()
 	 */
 	public CharSequence[] getJsResourceUrlsMin() {
 		return this.jsResourceUrlsMin;
@@ -265,7 +263,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#setJsResourceUrls(java.lang.CharSequence[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#setJsResourceUrls(java.lang.CharSequence[])
 	 */
 	public T setJsResourceUrls(CharSequence... urls) {
 		this.jsResourceUrls = urls;
@@ -275,7 +273,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#addJsResourceUrls(java.lang.CharSequence[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#addJsResourceUrls(java.lang.CharSequence[])
 	 */
 	public T addJsResourceUrls(CharSequence... urls) {
 		this.jsResourceUrls = Utils.join(this.jsResourceUrls, urls);
@@ -285,7 +283,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getJsResourceUrls()
+	 * @see com.google.code.jqwicket.api.IJQOptions#getJsResourceUrls()
 	 */
 	public CharSequence[] getJsResourceUrls() {
 		return this.jsResourceUrls;
@@ -294,7 +292,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#isEmpty()
+	 * @see com.google.code.jqwicket.api.IJQOptions#isEmpty()
 	 */
 	public boolean isEmpty() {
 		return this.options.isEmpty();
@@ -303,7 +301,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#get(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#get(java.lang.CharSequence)
 	 */
 	public CharSequence get(CharSequence key) {
 		return this.get(key, null);
@@ -312,7 +310,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#get(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#get(java.lang.CharSequence,
 	 *      java.lang.CharSequence)
 	 */
 	public CharSequence get(CharSequence key, CharSequence defaultValue) {
@@ -323,7 +321,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getString(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#getString(java.lang.CharSequence)
 	 */
 	public String getString(CharSequence key) {
 		return String.valueOf(this.get(key));
@@ -332,7 +330,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getString(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#getString(java.lang.CharSequence,
 	 *      java.lang.String)
 	 */
 	public String getString(CharSequence key, String defaultValue) {
@@ -342,7 +340,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getObject(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#getObject(java.lang.CharSequence)
 	 */
 	public Object getObject(CharSequence key) {
 		return options.get(key);
@@ -351,16 +349,16 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getJQStatement(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#getJQStatement(java.lang.CharSequence)
 	 */
-	public JQStatement getJQStatement(CharSequence key) {
-		return (JQStatement) options.get(key);
+	public IJQStatement getJQStatement(CharSequence key) {
+		return (IJQStatement) options.get(key);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getInt(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#getInt(java.lang.CharSequence)
 	 */
 	public int getInt(CharSequence key) {
 		return this.getInt(key, (Integer) null);
@@ -369,7 +367,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getInt(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#getInt(java.lang.CharSequence,
 	 *      int)
 	 */
 	public int getInt(CharSequence key, int defaultValue) {
@@ -383,7 +381,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getOptions(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#getOptions(java.lang.CharSequence)
 	 */
 	public AbstractJQOptions<?> getOptions(CharSequence key) {
 		Object object = this.options.get(key);
@@ -393,7 +391,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getShort(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#getShort(java.lang.CharSequence)
 	 */
 	public short getShort(CharSequence key) {
 		return this.getShort(key, (Short) null);
@@ -402,7 +400,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getShort(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#getShort(java.lang.CharSequence,
 	 *      short)
 	 */
 	public short getShort(CharSequence key, short defaultValue) {
@@ -416,7 +414,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getDouble(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#getDouble(java.lang.CharSequence)
 	 */
 	public double getDouble(CharSequence key) {
 		return this.getDouble(key, (Double) null);
@@ -425,7 +423,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getDouble(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#getDouble(java.lang.CharSequence,
 	 *      double)
 	 */
 	public double getDouble(CharSequence key, double defaultValue) {
@@ -438,7 +436,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getFloat(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#getFloat(java.lang.CharSequence)
 	 */
 	public float getFloat(CharSequence key) {
 		return this.getFloat(key, (Float) null);
@@ -447,7 +445,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getFloat(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#getFloat(java.lang.CharSequence,
 	 *      float)
 	 */
 	public float getFloat(CharSequence key, float defaultValue) {
@@ -460,7 +458,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getBoolean(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#getBoolean(java.lang.CharSequence)
 	 */
 	public boolean getBoolean(CharSequence key) {
 		return ((Boolean) this.options.get(key)).booleanValue();
@@ -469,7 +467,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#getBoolean(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#getBoolean(java.lang.CharSequence,
 	 *      boolean)
 	 */
 	public boolean getBoolean(CharSequence key, boolean defaultValue) {
@@ -482,85 +480,10 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#putUnquoted(java.lang.CharSequence,
-	 *      java.lang.CharSequence)
-	 */
-	public T putUnquoted(CharSequence key, CharSequence value) {
-		if (isNotBlank(value)) {
-			options.put(key, value);
-		}
-		return (T) this;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#putDblquoted(java.lang.CharSequence,
-	 *      java.lang.CharSequence)
-	 */
-	public T putDblquoted(CharSequence key, CharSequence value) {
-		if (isNotBlank(value)) {
-			options.put(key, Utils.dblquote(value));
-		}
-		return (T) this;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
-	 */
-	public T put(CharSequence key, IJQOptions<?> options) {
-		if (options != null) {
-			this.options.put(key, options);
-		}
-		return (T) this;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
-	 *      java.lang.Enum)
-	 */
-	public T put(CharSequence key, Enum<?> enumVal) {
-		return putEnumInternal(key, enumVal, true);
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#putUnquoted(java.lang.CharSequence,
-	 *      java.lang.Enum)
-	 */
-	public T putUnquoted(CharSequence key, Enum<?> enumVal) {
-		return putEnumInternal(key, enumVal, false);
-	}
-
-	private T putEnumInternal(CharSequence key, Enum<?> enumVal, boolean quoted) {
-		if (enumVal == null)
-			return (T) this;
-
-		CharSequence val = null;
-
-		if (enumVal instanceof IJsonAware)
-			val = ((IJsonAware) enumVal).toJson();
-		else
-			val = enumVal.name().toLowerCase();
-
-		val = quoted ? Utils.quote(val) : val;
-		options.put(key, val);
-		return (T) this;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
 	 *      com.google.code.jqwicket.JQStatement)
 	 */
-	public T put(CharSequence name, JQStatement value) {
+	public T put(CharSequence name, IJQStatement value) {
 		options.put(name, value);
 		return (T) this;
 	}
@@ -568,10 +491,10 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
-	 *      com.google.code.jqwicket.JQFunction)
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
+	 *      com.google.code.jqwicket.api.IJQFunction)
 	 */
-	public T put(CharSequence name, JQFunction value) {
+	public T put(CharSequence name, IJQFunction value) {
 		options.put(name, value);
 		return (T) this;
 	}
@@ -579,12 +502,12 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
 	 *      java.lang.CharSequence)
 	 */
 	public T put(CharSequence key, CharSequence value) {
 		if (isNotBlank(value)) {
-			options.put(key, Utils.quote(value));
+			options.put(key, JQLiteral._(value));
 		}
 		return (T) this;
 	}
@@ -592,7 +515,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
 	 *      int)
 	 */
 	public T put(CharSequence key, int value) {
@@ -603,7 +526,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
 	 *      int[])
 	 */
 	public T put(CharSequence key, int... values) {
@@ -614,7 +537,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
 	 *      double)
 	 */
 	public T put(CharSequence key, double value) {
@@ -625,7 +548,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
 	 *      double[])
 	 */
 	public T put(CharSequence key, double... values) {
@@ -636,7 +559,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
 	 *      float)
 	 */
 	public T put(CharSequence key, float value) {
@@ -647,7 +570,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
 	 *      float[])
 	 */
 	public T put(CharSequence key, float... values) {
@@ -658,7 +581,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
 	 *      boolean)
 	 */
 	public T put(CharSequence key, boolean value) {
@@ -669,7 +592,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
 	 *      boolean[])
 	 */
 	public T put(CharSequence key, boolean... values) {
@@ -680,10 +603,13 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
-	 *      com.google.code.jqwicket.IJsonAware[])
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
+	 *      java.lang.CharSequence[])
 	 */
-	public T put(CharSequence key, IJsonAware... values) {
+	public T put(CharSequence key, CharSequence... values) {
+		if (Utils.isEmpty(values))
+			return (T) this;
+
 		options.put(key, values);
 		return (T) this;
 	}
@@ -691,22 +617,7 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
-	 *      java.lang.CharSequence[])
-	 */
-	public T put(CharSequence key, CharSequence... values) {
-
-		if (Utils.isEmpty(values))
-			return (T) this;
-
-		options.put(key, Utils.quote(values));
-		return (T) this;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#put(java.lang.CharSequence,
+	 * @see com.google.code.jqwicket.api.IJQOptions#put(java.lang.CharSequence,
 	 *      java.lang.CharSequence[][])
 	 */
 	public T put(CharSequence key, CharSequence[][] values) {
@@ -717,10 +628,17 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 		return (T) this;
 	}
 
+	public T put(CharSequence key, Enum<?> e) {
+		if (e != null) {
+			this.options.put(key, JQLiteral._(e.name()));
+		}
+		return (T) this;
+	}
+
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#removeOption(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#removeOption(java.lang.CharSequence)
 	 */
 	public void removeOption(CharSequence key) {
 		this.options.remove(key);
@@ -729,18 +647,13 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.IJQOptions#containsKey(java.lang.CharSequence)
+	 * @see com.google.code.jqwicket.api.IJQOptions#containsKey(java.lang.CharSequence)
 	 */
 	public boolean containsKey(CharSequence key) {
 		return options.containsKey(key);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.IJsonAware#toJson()
-	 */
-	public CharSequence toJson() {
+	private CharSequence toJson() {
 		return Utils.toJson(this.options);
 	}
 
@@ -751,8 +664,19 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
 	 */
 	@Override
 	public String toString() {
-		return new StringBuffer().append("[")
-				.append(Utils.toJson(this.options)).append("]").toString();
+		return String.valueOf(toJson());
+	}
+
+	public char charAt(int index) {
+		return toJson().charAt(index);
+	}
+
+	public int length() {
+		return toJson().length();
+	}
+
+	public CharSequence subSequence(int start, int end) {
+		return toJson().subSequence(start, end);
 	}
 
 }

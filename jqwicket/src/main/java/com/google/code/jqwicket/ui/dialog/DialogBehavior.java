@@ -16,16 +16,16 @@
  */
 package com.google.code.jqwicket.ui.dialog;
 
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.JQLiteral;
 import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class DialogBehavior extends JQUIComponentBehaivor<DialogOptions>
 		implements IDialog {
@@ -55,7 +55,7 @@ public class DialogBehavior extends JQUIComponentBehaivor<DialogOptions>
 			this.options.removeOption("buttons");
 			return this;
 		}
-		this.options.putUnquoted("buttons", Utils.toJson(buttons));
+		this.options.put("buttons", JQLiteral._raw(Utils.toJson(buttons)));
 		return this;
 	}
 
@@ -64,8 +64,8 @@ public class DialogBehavior extends JQUIComponentBehaivor<DialogOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.dialog.IDialog#open()
 	 */
-	public JQFunction open() {
-		return chain("'open'");
+	public IJQFunction open() {
+		return chain("open");
 	}
 
 	/**
@@ -82,8 +82,8 @@ public class DialogBehavior extends JQUIComponentBehaivor<DialogOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.dialog.IDialog#close()
 	 */
-	public JQFunction close() {
-		return chain("'close'");
+	public IJQFunction close() {
+		return chain("close");
 	}
 
 	/**
@@ -100,8 +100,8 @@ public class DialogBehavior extends JQUIComponentBehaivor<DialogOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.dialog.IDialog#isOpen()
 	 */
-	public JQFunction isOpen() {
-		return chain("'isOpen'");
+	public IJQFunction isOpen() {
+		return chain("isOpen");
 	}
 
 	/**
@@ -118,8 +118,8 @@ public class DialogBehavior extends JQUIComponentBehaivor<DialogOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.dialog.IDialog#moveToTop()
 	 */
-	public JQFunction moveToTop() {
-		return chain("'moveToTop'");
+	public IJQFunction moveToTop() {
+		return chain("moveToTop");
 	}
 
 	/**

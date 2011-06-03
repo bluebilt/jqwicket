@@ -16,7 +16,7 @@
  */
 package com.google.code.jqwicket.ui.cjimageflipbox;
 
-import static com.google.code.jqwicket.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;

@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.dialog;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIWebMarkupContainer;
 
 /**
@@ -64,7 +64,7 @@ public class DialogWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.dialog.IDialog#open()
 	 */
-	public JQFunction open() {
+	public IJQFunction open() {
 		return this.behavior.open();
 	}
 
@@ -82,7 +82,7 @@ public class DialogWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.dialog.IDialog#close()
 	 */
-	public JQFunction close() {
+	public IJQFunction close() {
 		return this.behavior.close();
 	}
 
@@ -100,7 +100,7 @@ public class DialogWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.dialog.IDialog#isOpen()
 	 */
-	public JQFunction isOpen() {
+	public IJQFunction isOpen() {
 		return this.behavior.isOpen();
 	}
 
@@ -118,7 +118,7 @@ public class DialogWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.dialog.IDialog#moveToTop()
 	 */
-	public JQFunction moveToTop() {
+	public IJQFunction moveToTop() {
 		return this.behavior.moveToTop();
 	}
 

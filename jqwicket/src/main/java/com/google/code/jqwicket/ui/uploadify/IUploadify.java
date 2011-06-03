@@ -20,8 +20,8 @@ package com.google.code.jqwicket.ui.uploadify;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQWidget;
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 
 /**
  * Implementation of Uploadify jquery plugin: <a
@@ -41,7 +41,7 @@ public interface IUploadify extends IJQWidget<UploadifyOptions> {
 	 * 
 	 * @return
 	 */
-	JQFunction uploadify();
+	IJQFunction uploadify();
 
 	/**
 	 * The .uploadify() function creates an instance of the Uploadify uploader
@@ -63,7 +63,7 @@ public interface IUploadify extends IJQWidget<UploadifyOptions> {
 	 *            documentation.
 	 * @return
 	 */
-	JQFunction uploadify(IJQOptions<?> options);
+	IJQFunction uploadify(IJQOptions<?> options);
 
 	/**
 	 * The .uploadify() function creates an instance of the Uploadify uploader
@@ -90,7 +90,7 @@ public interface IUploadify extends IJQWidget<UploadifyOptions> {
 	 *            added to the queue.
 	 * @return
 	 */
-	JQFunction uploadifyCancel(CharSequence id);
+	IJQFunction uploadifyCancel(CharSequence id);
 
 	/**
 	 * The .uploadifyCancel() method removes a file from the upload queue. If
@@ -113,7 +113,7 @@ public interface IUploadify extends IJQWidget<UploadifyOptions> {
 	 * 
 	 * @return
 	 */
-	JQFunction uploadifyClearQueue();
+	IJQFunction uploadifyClearQueue();
 
 	/**
 	 * The .uploadifyClearQueue() method triggers the uploadifyClearQueue event
@@ -152,7 +152,7 @@ public interface IUploadify extends IJQWidget<UploadifyOptions> {
 	 *            The value you would like to set.
 	 * @return
 	 */
-	JQFunction uploadifySettings(CharSequence name, CharSequence value);
+	IJQFunction uploadifySettings(CharSequence name, CharSequence value);
 
 	/**
 	 * <pre>
@@ -217,7 +217,7 @@ public interface IUploadify extends IJQWidget<UploadifyOptions> {
 	 *            the existing object.
 	 * @return
 	 */
-	JQFunction uploadifySettings(CharSequence name, CharSequence value,
+	IJQFunction uploadifySettings(CharSequence name, CharSequence value,
 			boolean resetObject);
 
 	/**
@@ -262,7 +262,7 @@ public interface IUploadify extends IJQWidget<UploadifyOptions> {
 	 * 
 	 * @return
 	 */
-	JQFunction uploadifyUpload();
+	IJQFunction uploadifyUpload();
 
 	/**
 	 * The .uploadifyUpload() method initiates the upload or one or all of the
@@ -284,7 +284,7 @@ public interface IUploadify extends IJQWidget<UploadifyOptions> {
 	 * 
 	 * @return
 	 */
-	JQFunction uploadifyUpload(CharSequence id);
+	IJQFunction uploadifyUpload(CharSequence id);
 
 	/**
 	 * The .uploadifyUpload() method initiates the upload or one or all of the

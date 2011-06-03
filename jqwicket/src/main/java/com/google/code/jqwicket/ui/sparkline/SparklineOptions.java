@@ -16,13 +16,11 @@
  */
 package com.google.code.jqwicket.ui.sparkline;
 
-
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.IJsonAware;
 import com.google.code.jqwicket.Utils;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.JQLiteral;
 
 /**
  * @author mkalina
@@ -33,17 +31,14 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	private static final long serialVersionUID = 1L;
 
 	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			SparklineOptions.class, "jquery.sparkline.js");
+			SparklineOptions.class, "jquery.sparkline-1.6.js");
 
 	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
-			SparklineOptions.class, "jquery.sparkline.min.js");
+			SparklineOptions.class, "jquery.sparkline-1.6.min.js");
 
-	public enum Type implements IJsonAware {
+	public enum Type {
 		LINE, BAR, TRISTATE, DISCRETE, BULLET, PIE, BOX;
 
-		public CharSequence toJson() {
-			return this.name().toLowerCase();
-		}
 	}
 
 	private float[] values;
@@ -73,7 +68,7 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @return
 	 */
 	public SparklineOptions type(Type type) {
-		return super.put("type", type);
+		return super.put("type", type.name().toLowerCase());
 	}
 
 	/**
@@ -152,6 +147,40 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 */
 	public SparklineOptions composite(boolean composite) {
 		return super.put("composite", composite);
+	}
+
+	/**
+	 * If true then options can be specified as attributes on each tag to be
+	 * transformed into a sparkline, as well as passed to the sparkline()
+	 * function. See also tagOptionPrefix
+	 * 
+	 * @param enableTagOptions
+	 * @return
+	 */
+	public SparklineOptions enableTagOptions(boolean enableTagOptions) {
+		return super.put("enableTagOptions", enableTagOptions);
+	}
+
+	/**
+	 * String that each option passed as an attribute on a tag must begin with.
+	 * Defaults to 'spark'
+	 * 
+	 * @param tagOptionPrefix
+	 * @return
+	 */
+	public SparklineOptions tagOptionPrefix(CharSequence tagOptionPrefix) {
+		return super.put("tagOptionPrefix", tagOptionPrefix);
+	}
+
+	/**
+	 * The name of the tag attribute to fetch values from, if present - Defaults
+	 * to 'values'
+	 * 
+	 * @param tagValuesAttribute
+	 * @return
+	 */
+	public SparklineOptions tagValuesAttribute(CharSequence tagValuesAttribute) {
+		return super.put("tagValuesAttribute", tagValuesAttribute);
 	}
 
 	/**
@@ -391,8 +420,8 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @param colorMap
 	 * @return
 	 */
-	public SparklineOptions colorMap(IJQOptions<?> colorMap) {
-		return super.putUnquoted("colorMap", colorMap.toJson());
+	public SparklineOptions colorMap(CharSequence colorMap) {
+		return super.put("colorMap", JQLiteral._raw(colorMap));
 	}
 
 	/**
@@ -409,18 +438,29 @@ public class SparklineOptions extends AbstractJQOptions<SparklineOptions> {
 	 * @return
 	 */
 	public SparklineOptions colorMap(String[] colorMap) {
-		return super.putUnquoted("colorMap", Utils.toJson(colorMap));
+		return super.put("colorMap", JQLiteral._raw(Utils.toJson(colorMap)));
 	}
 
 	/**
 	 * Tristate Chart Option<br>
 	 * Colour for positive (win) values
 	 * 
-	 * @param zeroAxis
+	 * @param posBarColor
 	 * @return
 	 */
 	public SparklineOptions posBarColor(CharSequence posBarColor) {
 		return super.put("posBarColor", posBarColor);
+	}
+
+	/**
+	 * Tristate Chart Option<br>
+	 * Colour for zero (draw) values
+	 * 
+	 * @param zeroBarColor
+	 * @return
+	 */
+	public SparklineOptions zeroBarColor(CharSequence zeroBarColor) {
+		return super.put("zeroBarColor", zeroBarColor);
 	}
 
 	/**

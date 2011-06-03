@@ -20,7 +20,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * @author mkalina
@@ -75,7 +75,7 @@ public class WatermarkTextField<T> extends TextField<T> {
 		return this.behavior.getOptions();
 	}
 
-	public JQFunction show() {
+	public IJQFunction show() {
 		return this.behavior.show(this.getMarkupId());
 	}
 
@@ -83,7 +83,7 @@ public class WatermarkTextField<T> extends TextField<T> {
 		this.behavior.show(ajaxRequestTarget, this.getMarkupId());
 	}
 
-	public JQFunction hide() {
+	public IJQFunction hide() {
 		return this.behavior.hide(this.getMarkupId());
 	}
 

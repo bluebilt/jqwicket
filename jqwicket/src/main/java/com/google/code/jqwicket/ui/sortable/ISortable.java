@@ -20,8 +20,8 @@ package com.google.code.jqwicket.ui.sortable;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQUIWidget;
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 
 /**
  * @author mkalina
@@ -36,7 +36,7 @@ public interface ISortable extends IJQUIWidget<SortableOptions> {
 	 * Calling this method produces a hash that can be appended to any url to
 	 * easily submit a new item order back to the server.
 	 */
-	JQFunction serialize();
+	IJQFunction serialize();
 
 	/**
 	 * Serializes the sortable's item id's into a form/ajax submittable string.
@@ -52,7 +52,7 @@ public interface ISortable extends IJQUIWidget<SortableOptions> {
 	 * Calling this method produces a hash that can be appended to any url to
 	 * easily submit a new item order back to the server.
 	 */
-	JQFunction serialize(IJQOptions<?> options);
+	IJQFunction serialize(IJQOptions<?> options);
 
 	/**
 	 * Serializes the sortable's item id's into a form/ajax submittable string.
@@ -82,7 +82,7 @@ public interface ISortable extends IJQUIWidget<SortableOptions> {
 	 * then <br>
 	 * result[0] will contain "hello" and result[1] will contain "goodbye".
 	 */
-	JQFunction toArray();
+	IJQFunction toArray();
 
 	/**
 	 * Serializes the sortable's item id's into an array of string. If you have<br>
@@ -111,7 +111,7 @@ public interface ISortable extends IJQUIWidget<SortableOptions> {
 	 * Refresh the sortable items. Custom trigger the reloading of all sortable
 	 * items, causing new items to be recognized.
 	 */
-	JQFunction refresh();
+	IJQFunction refresh();
 
 	/**
 	 * Refresh the sortable items. Custom trigger the reloading of all sortable
@@ -126,7 +126,7 @@ public interface ISortable extends IJQUIWidget<SortableOptions> {
 	 * refreshes the cached item positions of all sortables. This is usually
 	 * done automatically by the script and slows down performance. Use wisely.
 	 */
-	JQFunction refreshPositions();
+	IJQFunction refreshPositions();
 
 	/**
 	 * Refresh the cached positions of the sortables' items. Calling this method
@@ -142,7 +142,7 @@ public interface ISortable extends IJQUIWidget<SortableOptions> {
 	 * was before the current sort started. Useful in the stop and receive
 	 * callback functions..
 	 */
-	JQFunction cancel();
+	IJQFunction cancel();
 
 	/**
 	 * Cancels a change in the current sortable and reverts it back to how it

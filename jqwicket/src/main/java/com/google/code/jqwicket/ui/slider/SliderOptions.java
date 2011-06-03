@@ -16,12 +16,12 @@
  */
 package com.google.code.jqwicket.ui.slider;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -95,7 +95,7 @@ public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 		return this;
 	}
 
-	public SliderOptions startEvent(JQFunction callback) {
+	public SliderOptions startEvent(IJQFunction callback) {
 		super.put("start", callback);
 		return this;
 	}
@@ -104,12 +104,12 @@ public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 		return this.startEvent(js(callbackBody));
 	}
 
-	public SliderOptions startEvent(JQStatement callbackBody) {
+	public SliderOptions startEvent(IJQStatement callbackBody) {
 		super.put("start", $f(callbackBody, "event", "ui"));
 		return this;
 	}
 
-	public SliderOptions slideEvent(JQFunction callback) {
+	public SliderOptions slideEvent(IJQFunction callback) {
 		super.put("slide", callback);
 		return this;
 	}
@@ -118,12 +118,12 @@ public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 		return this.slideEvent(js(callbackBody));
 	}
 
-	public SliderOptions slideEvent(JQStatement callbackBody) {
+	public SliderOptions slideEvent(IJQStatement callbackBody) {
 		super.put("slide", $f(callbackBody, "event", "ui"));
 		return this;
 	}
 
-	public SliderOptions changeEvent(JQFunction callback) {
+	public SliderOptions changeEvent(IJQFunction callback) {
 		super.put("change", callback);
 		return this;
 	}
@@ -132,12 +132,12 @@ public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 		return this.changeEvent(js(callbackBody));
 	}
 
-	public SliderOptions changeEvent(JQStatement callbackBody) {
+	public SliderOptions changeEvent(IJQStatement callbackBody) {
 		super.put("change", $f(callbackBody, "event", "ui"));
 		return this;
 	}
 
-	public SliderOptions stopEvent(JQFunction callback) {
+	public SliderOptions stopEvent(IJQFunction callback) {
 		super.put("stop", callback);
 		return this;
 	}
@@ -146,7 +146,7 @@ public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 		return this.stopEvent(js(callbackBody));
 	}
 
-	public SliderOptions stopEvent(JQStatement callbackBody) {
+	public SliderOptions stopEvent(IJQStatement callbackBody) {
 		super.put("stop", $f(callbackBody, "event", "ui"));
 		return this;
 	}

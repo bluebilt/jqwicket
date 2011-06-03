@@ -16,15 +16,15 @@
  */
 package com.google.code.jqwicket.ui.watermark;
 
-import static com.google.code.jqwicket.JQuery.$;
-import static com.google.code.jqwicket.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$f;
 
 import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.Utils;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
 
 /**
@@ -62,7 +62,7 @@ public class WatermarkBehavior extends JQComponentBehaivor<WatermarkOptions>
 	protected void contributeInternal(JQHeaderContributionTarget target) {
 		if (!Page.class.isAssignableFrom(this.component.getClass()))
 			target.addJQStatements($(this.component).chain(this.getName(),
-					Utils.quote(options.getText()), this.options.toJson()));
+					Utils.quote(options.getText()), this.options));
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class WatermarkBehavior extends JQComponentBehaivor<WatermarkOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.watermark.IWatermark#show(java.lang.CharSequence)
 	 */
-	public JQFunction show(CharSequence selector) {
+	public IJQFunction show(CharSequence selector) {
 		return $f($(this.component).chain("show", selector));
 	}
 
@@ -89,7 +89,7 @@ public class WatermarkBehavior extends JQComponentBehaivor<WatermarkOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.watermark.IWatermark#hide(java.lang.CharSequence)
 	 */
-	public JQFunction hide(CharSequence selector) {
+	public IJQFunction hide(CharSequence selector) {
 		return $f($(this.component).chain("hide", selector));
 	}
 
@@ -108,7 +108,7 @@ public class WatermarkBehavior extends JQComponentBehaivor<WatermarkOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.watermark.IWatermark#showAll()
 	 */
-	public JQFunction showAll() {
+	public IJQFunction showAll() {
 		return $f($(this.component).chain("showAll"));
 	}
 

@@ -16,16 +16,16 @@
  */
 package com.google.code.jqwicket.ui.colorpicker;
 
-import static com.google.code.jqwicket.JQuery.$;
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.$this;
+import static com.google.code.jqwicket.api.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.$this;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.RequiredTextField;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * @author mkalina
@@ -121,7 +121,7 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T>
 
 		ColorPickerBehavior b = new ColorPickerBehavior(options);
 		b.addJQStatements($(this).chain("keyup",
-				$f("$(this).ColorPickerSetColor(this.value);").render()));
+				$f("$(this).ColorPickerSetColor(this.value);")));
 		return b;
 	}
 
@@ -130,7 +130,7 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T>
 	 * 
 	 * @see com.google.code.jqwicket.ui.colorpicker.IColorPicker#show()
 	 */
-	public JQFunction show() {
+	public IJQFunction show() {
 		return this.behavior.show();
 	}
 
@@ -148,7 +148,7 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T>
 	 * 
 	 * @see com.google.code.jqwicket.ui.colorpicker.IColorPicker#hide()
 	 */
-	public JQFunction hide() {
+	public IJQFunction hide() {
 		return this.behavior.hide();
 	}
 
@@ -166,7 +166,7 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T>
 	 * 
 	 * @see com.google.code.jqwicket.ui.colorpicker.IColorPicker#setColor(java.lang.CharSequence)
 	 */
-	public JQFunction setColor(CharSequence color) {
+	public IJQFunction setColor(CharSequence color) {
 		return this.behavior.setColor(color);
 	}
 
@@ -186,7 +186,7 @@ public class ColorPickerRequiredTextField<T> extends RequiredTextField<T>
 	 * @see com.google.code.jqwicket.ui.colorpicker.IColorPicker#setColor(int,
 	 *      int, int)
 	 */
-	public JQFunction setColor(int r, int g, int b) {
+	public IJQFunction setColor(int r, int g, int b) {
 		return this.behavior.setColor(r, g, b);
 	}
 

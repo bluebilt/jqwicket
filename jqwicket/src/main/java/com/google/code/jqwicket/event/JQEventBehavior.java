@@ -16,15 +16,14 @@
  */
 package com.google.code.jqwicket.event;
 
-import static com.google.code.jqwicket.JQuery.$;
 import static com.google.code.jqwicket.Utils.isNotEmpty;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 import com.google.code.jqwicket.IJQHeaderContributor;
 import com.google.code.jqwicket.JQBehavior;
-import com.google.code.jqwicket.JQFunction;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.JQStatement;
-
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * Abstract behavior for adding jquery event handling to the wicket components.
@@ -52,11 +51,11 @@ public abstract class JQEventBehavior extends JQBehavior implements
 	 */
 	@Override
 	public void contributeInternal(JQHeaderContributionTarget target) {
-		JQFunction callback = this.callback();
+		IJQFunction callback = this.callback();
 		if (isNotEmpty(this.events) && callback != null) {
-			JQStatement stmt = $(this.component);
+			IJQStatement stmt = $(this.component);
 			for (IJQEvent e : this.events) {
-				stmt.chain(e.getName(), callback.render());
+				stmt.chain(e.getName(), callback);
 			}
 			target.addJQStatements(stmt);
 		}
@@ -67,5 +66,5 @@ public abstract class JQEventBehavior extends JQBehavior implements
 	 * 
 	 * @return javascript callback function
 	 */
-	public abstract JQFunction callback();
+	public abstract IJQFunction callback();
 }

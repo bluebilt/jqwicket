@@ -18,10 +18,10 @@ package com.google.code.jqwicket;
 
 import java.io.Serializable;
 
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 
 /**
  * Central interface for JQuery UI widgets.
@@ -38,7 +38,7 @@ public interface IJQUIWidget<T extends IJQOptions<T>> extends IJQWidget<T>,
 	 * Remove the component functionality completely. This will return the
 	 * element back to its pre-init state.
 	 */
-	JQFunction destroy();
+	IJQFunction destroy();
 
 	/**
 	 * Remove the component functionality completely. This will return the
@@ -51,7 +51,7 @@ public interface IJQUIWidget<T extends IJQOptions<T>> extends IJQWidget<T>,
 	/**
 	 * Disable the component.
 	 */
-	JQFunction disable();
+	IJQFunction disable();
 
 	/**
 	 * Disable the component.
@@ -63,7 +63,7 @@ public interface IJQUIWidget<T extends IJQOptions<T>> extends IJQWidget<T>,
 	/**
 	 * Enable the component.
 	 */
-	JQFunction enable();
+	IJQFunction enable();
 
 	/**
 	 * Enable the component.
@@ -75,7 +75,7 @@ public interface IJQUIWidget<T extends IJQOptions<T>> extends IJQWidget<T>,
 	/**
 	 * Set any component option.
 	 */
-	JQFunction option(CharSequence optionName, CharSequence optionValue);
+	IJQFunction option(CharSequence optionName, CharSequence optionValue);
 
 	/**
 	 * Set any component option.
@@ -88,7 +88,7 @@ public interface IJQUIWidget<T extends IJQOptions<T>> extends IJQWidget<T>,
 	/**
 	 * Set any component option.
 	 */
-	JQFunction options(IJQOptions<?> options);
+	IJQFunction options(IJQOptions<?> options);
 
 	/**
 	 * Set any component option.
@@ -101,7 +101,7 @@ public interface IJQUIWidget<T extends IJQOptions<T>> extends IJQWidget<T>,
 	/**
 	 * Returns the .ui-... element.
 	 */
-	JQFunction widget();
+	IJQFunction widget();
 
 	/**
 	 * Returns the .ui-... element.

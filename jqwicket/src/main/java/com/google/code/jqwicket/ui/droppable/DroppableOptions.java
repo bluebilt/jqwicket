@@ -16,12 +16,12 @@
  */
 package com.google.code.jqwicket.ui.droppable;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -76,7 +76,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param selector
 	 * @return
 	 */
-	public DroppableOptions accept(JQFunction callback) {
+	public DroppableOptions accept(IJQFunction callback) {
 		super.put("accept", callback);
 		return this;
 	}
@@ -181,7 +181,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public DroppableOptions activateEvent(JQStatement callbackBody) {
+	public DroppableOptions activateEvent(IJQStatement callbackBody) {
 		return this.activateEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -193,7 +193,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public DroppableOptions activateEvent(JQFunction callback) {
+	public DroppableOptions activateEvent(IJQFunction callback) {
 		super.put("activate", callback);
 		return this;
 	}
@@ -214,7 +214,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public DroppableOptions deactivateEvent(JQStatement callbackBody) {
+	public DroppableOptions deactivateEvent(IJQStatement callbackBody) {
 		return this.deactivateEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -224,7 +224,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public DroppableOptions deactivateEvent(JQFunction callback) {
+	public DroppableOptions deactivateEvent(IJQFunction callback) {
 		super.put("deactivate", callback);
 		return this;
 	}
@@ -247,7 +247,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public DroppableOptions overEvent(JQStatement callbackBody) {
+	public DroppableOptions overEvent(IJQStatement callbackBody) {
 		return this.overEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -258,7 +258,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public DroppableOptions overEvent(JQFunction callback) {
+	public DroppableOptions overEvent(IJQFunction callback) {
 		super.put("over", callback);
 		return this;
 	}
@@ -281,7 +281,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public DroppableOptions outEvent(JQStatement callbackBody) {
+	public DroppableOptions outEvent(IJQStatement callbackBody) {
 		return this.outEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -292,7 +292,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public DroppableOptions outEvent(JQFunction callback) {
+	public DroppableOptions outEvent(IJQFunction callback) {
 		super.put("out", callback);
 		return this;
 	}
@@ -319,7 +319,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public DroppableOptions dropEvent(JQStatement callbackBody) {
+	public DroppableOptions dropEvent(IJQStatement callbackBody) {
 		return this.dropEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -332,7 +332,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public DroppableOptions dropEvent(JQFunction callback) {
+	public DroppableOptions dropEvent(IJQFunction callback) {
 		super.put("drop", callback);
 		return this;
 	}

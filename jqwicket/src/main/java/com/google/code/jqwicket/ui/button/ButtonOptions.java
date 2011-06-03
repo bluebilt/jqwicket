@@ -16,8 +16,7 @@
  */
 package com.google.code.jqwicket.ui.button;
 
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
 
 /**
  * @author mkalina
@@ -37,7 +36,7 @@ public class ButtonOptions extends AbstractJQOptions<ButtonOptions> {
 		return this;
 	}
 
-	public ButtonOptions icons(IJQOptions<?> icons) {
+	public ButtonOptions icons(CharSequence icons) {
 		super.put("icons", icons);
 		return this;
 	}

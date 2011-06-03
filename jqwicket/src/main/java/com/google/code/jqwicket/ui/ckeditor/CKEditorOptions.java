@@ -16,13 +16,11 @@
  */
 package com.google.code.jqwicket.ui.ckeditor;
 
-
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.IJsonAware;
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.JQLiteral;
 
 /**
  * @author mkalina
@@ -38,19 +36,18 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	private static final JavascriptResourceReference jsCKEditorAdapterResource = new JavascriptResourceReference(
 			CKEditorOptions.class, "ckeditor-jqueryadapter-3.5.js");
 
-	public enum EnterMode implements IJsonAware {
-
+	public enum EnterMode {
 		ENTER_P("CKEDITOR.ENTER_P"), ENTER_BR("CKEDITOR.ENTER_BR"), ENTER_DIV(
 				"CKEDITOR.ENTER_DIV");
+
+		private CharSequence value;
 
 		private EnterMode(CharSequence value) {
 			this.value = value;
 		}
 
-		private CharSequence value;
-
-		public CharSequence toJson() {
-			return this.value;
+		public CharSequence getValue() {
+			return value;
 		}
 	}
 
@@ -207,7 +204,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @return
 	 */
 	public CKEditorOptions colorButton_backStyle(
-			IJQOptions<?> colorButton_backStyle) {
+			CharSequence colorButton_backStyle) {
 		return super.put("colorButton_backStyle", colorButton_backStyle);
 	}
 
@@ -256,7 +253,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @return
 	 */
 	public CKEditorOptions colorButton_foreStyle(
-			IJQOptions<?> colorButton_foreStyle) {
+			CharSequence colorButton_foreStyle) {
 		return super.put("colorButton_foreStyle", colorButton_foreStyle);
 	}
 
@@ -331,7 +328,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param coreStyles_bold
 	 * @return
 	 */
-	public CKEditorOptions coreStyles_bold(IJQOptions<?> coreStyles_bold) {
+	public CKEditorOptions coreStyles_bold(CharSequence coreStyles_bold) {
 		return super.put("coreStyles_bold", coreStyles_bold);
 	}
 
@@ -347,7 +344,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param coreStyles_italic
 	 * @return
 	 */
-	public CKEditorOptions coreStyles_italic(IJQOptions<?> coreStyles_italic) {
+	public CKEditorOptions coreStyles_italic(CharSequence coreStyles_italic) {
 		return super.put("coreStyles_italic", coreStyles_italic);
 	}
 
@@ -363,7 +360,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param coreStyles_strike
 	 * @return
 	 */
-	public CKEditorOptions coreStyles_strike(IJQOptions<?> coreStyles_strike) {
+	public CKEditorOptions coreStyles_strike(CharSequence coreStyles_strike) {
 		return super.put("coreStyles_strike", coreStyles_strike);
 	}
 
@@ -380,7 +377,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @return
 	 */
 	public CKEditorOptions coreStyles_subscript(
-			IJQOptions<?> coreStyles_subscript) {
+			CharSequence coreStyles_subscript) {
 		return super.put("coreStyles_subscript", coreStyles_subscript);
 	}
 
@@ -397,7 +394,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @return
 	 */
 	public CKEditorOptions coreStyles_superscript(
-			IJQOptions<?> coreStyles_superscript) {
+			CharSequence coreStyles_superscript) {
 		return super.put("coreStyles_superscript", coreStyles_superscript);
 	}
 
@@ -414,7 +411,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @return
 	 */
 	public CKEditorOptions coreStyles_underline(
-			IJQOptions<?> coreStyles_underline) {
+			CharSequence coreStyles_underline) {
 		return super.put("coreStyles_underline", coreStyles_underline);
 	}
 
@@ -701,7 +698,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @return
 	 */
 	public CKEditorOptions enterMode(EnterMode enterMode) {
-		return super.putUnquoted("enterMode", enterMode);
+		return super.put("enterMode", JQLiteral._raw(enterMode.value));
 	}
 
 	/**
@@ -953,7 +950,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public CKEditorOptions fillEmptyBlocks(JQFunction callback) {
+	public CKEditorOptions fillEmptyBlocks(IJQFunction callback) {
 		return super.put("fillEmptyBlocks", callback);
 	}
 
@@ -975,7 +972,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param find_highlight
 	 * @return
 	 */
-	public CKEditorOptions find_highlight(IJQOptions<?> find_highlight) {
+	public CKEditorOptions find_highlight(CharSequence find_highlight) {
 		return super.put("find_highlight", find_highlight);
 	}
 
@@ -1040,7 +1037,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param font_style
 	 * @return
 	 */
-	public CKEditorOptions font_style(IJQOptions<?> font_style) {
+	public CKEditorOptions font_style(CharSequence font_style) {
 		return super.put("font_style", font_style);
 	}
 
@@ -1112,7 +1109,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param fontSize_style
 	 * @return
 	 */
-	public CKEditorOptions fontSize_style(IJQOptions<?> fontSize_style) {
+	public CKEditorOptions fontSize_style(CharSequence fontSize_style) {
 		return super.put("fontSize_style", fontSize_style);
 	}
 
@@ -1174,7 +1171,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param format_address
 	 * @return
 	 */
-	public CKEditorOptions format_address(IJQOptions<?> format_address) {
+	public CKEditorOptions format_address(CharSequence format_address) {
 		return super.put("format_address", format_address);
 	}
 
@@ -1191,7 +1188,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param format_div
 	 * @return
 	 */
-	public CKEditorOptions format_div(IJQOptions<?> format_div) {
+	public CKEditorOptions format_div(CharSequence format_div) {
 		return super.put("format_div", format_div);
 	}
 
@@ -1208,7 +1205,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param format_h1
 	 * @return
 	 */
-	public CKEditorOptions format_h1(IJQOptions<?> format_h1) {
+	public CKEditorOptions format_h1(CharSequence format_h1) {
 		return super.put("format_h1", format_h1);
 	}
 
@@ -1225,7 +1222,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param format_h2
 	 * @return
 	 */
-	public CKEditorOptions format_h2(IJQOptions<?> format_h2) {
+	public CKEditorOptions format_h2(CharSequence format_h2) {
 		return super.put("format_h2", format_h2);
 	}
 
@@ -1242,7 +1239,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param format_h3
 	 * @return
 	 */
-	public CKEditorOptions format_h3(IJQOptions<?> format_h3) {
+	public CKEditorOptions format_h3(CharSequence format_h3) {
 		return super.put("format_h3", format_h3);
 	}
 
@@ -1259,7 +1256,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param format_h4
 	 * @return
 	 */
-	public CKEditorOptions format_h4(IJQOptions<?> format_h4) {
+	public CKEditorOptions format_h4(CharSequence format_h4) {
 		return super.put("format_h4", format_h4);
 	}
 
@@ -1276,7 +1273,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param format_h5
 	 * @return
 	 */
-	public CKEditorOptions format_h5(IJQOptions<?> format_h5) {
+	public CKEditorOptions format_h5(CharSequence format_h5) {
 		return super.put("format_h5", format_h5);
 	}
 
@@ -1293,7 +1290,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param format_h6
 	 * @return
 	 */
-	public CKEditorOptions format_h6(IJQOptions<?> format_h6) {
+	public CKEditorOptions format_h6(CharSequence format_h6) {
 		return super.put("format_h6", format_h6);
 	}
 
@@ -1310,7 +1307,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param format_h6
 	 * @return
 	 */
-	public CKEditorOptions format_p(IJQOptions<?> format_p) {
+	public CKEditorOptions format_p(CharSequence format_p) {
 		return super.put("format_p", format_p);
 	}
 
@@ -1327,7 +1324,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param format_pre
 	 * @return
 	 */
-	public CKEditorOptions format_pre(IJQOptions<?> format_pre) {
+	public CKEditorOptions format_pre(CharSequence format_pre) {
 		return super.put("format_pre", format_pre);
 	}
 
@@ -2048,7 +2045,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param shiftEnterMode
 	 * @return
 	 */
-	public CKEditorOptions shiftEnterMode(EnterMode shiftEnterMode) {
+	public CKEditorOptions shiftEnterMode(CharSequence shiftEnterMode) {
 		return super.put("shiftEnterMode", shiftEnterMode);
 	}
 
@@ -2279,7 +2276,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * @param stylesSet
 	 * @return
 	 */
-	public CKEditorOptions stylesSet(IJQOptions<?>[] stylesSet) {
+	public CKEditorOptions stylesSet(CharSequence... stylesSet) {
 		return super.put("stylesSet", stylesSet);
 	}
 

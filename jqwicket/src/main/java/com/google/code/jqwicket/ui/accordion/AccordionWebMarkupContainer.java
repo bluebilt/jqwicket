@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.accordion;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIWebMarkupContainer;
 
 /**
@@ -65,7 +65,7 @@ public class AccordionWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.accordion.IAccordion#activate(int)
 	 */
-	public JQFunction activate(int index) {
+	public IJQFunction activate(int index) {
 		return this.behavior.activate(index);
 	}
 
@@ -84,7 +84,7 @@ public class AccordionWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.accordion.IAccordion#activate(java.lang.CharSequence)
 	 */
-	public JQFunction activate(CharSequence selector) {
+	public IJQFunction activate(CharSequence selector) {
 		return this.behavior.activate(selector);
 	}
 
@@ -104,7 +104,7 @@ public class AccordionWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.accordion.IAccordion#activate(boolean)
 	 */
-	public JQFunction activate(boolean activate) {
+	public IJQFunction activate(boolean activate) {
 		return this.behavior.activate(activate);
 	}
 
@@ -123,7 +123,7 @@ public class AccordionWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.accordion.IAccordion#resize()
 	 */
-	public JQFunction resize() {
+	public IJQFunction resize() {
 		return this.behavior.resize();
 	}
 

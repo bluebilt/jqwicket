@@ -16,17 +16,16 @@
  */
 package com.google.code.jqwicket.ui.nivoslider;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQLiteral._;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.IJsonAware;
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.Utils;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -45,12 +44,16 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	public static final ResourceReference CSS_RESOURCE = new ResourceReference(
 			NivoSliderOptions.class, "nivo-slider.css");
 
-	public enum Effect implements IJsonAware {
+	public enum Effect {
 
-		SLICE_DOWN("sliceDown"), SLICE_DOWN_LEFT("sliceDownLeft"), SLICE_UP(
-				"sliceUp"), SLICE_UP_LEFT("sliceUpLeft"), SLICE_UP_DOWN(
-				"sliceUpDown"), SLICE_UP_DOWN_LEFT("sliceUpDownLeft"), FOLD(
-				"fold"), FADE("fade"), RANDOM("random");
+		SLICE_DOWN(_("sliceDown")), SLICE_DOWN_LEFT(_("sliceDownLeft")), SLICE_UP(
+				_("sliceUp")), SLICE_UP_LEFT(_("sliceUpLeft")), SLICE_UP_DOWN(
+				_("sliceUpDown")), SLICE_UP_DOWN_LEFT(_("sliceUpDownLeft")), FOLD(
+				_("fold")), FADE(_("fade")), RANDOM(_("random")), SLIDE_IN_RIGHT(
+				_("slideInRight")), SLIDE_IN_LEFT(_("slideInLeft")), BOX_RANDOM(
+				_("boxRandom")), BOX_RAIN(_("boxRain")), BOX_RAIN_REVERSE(
+				_("boxRainReverse")), BOX_RAIN_GROW(_("boxRainGrow")), BOX_RAIN_GROW_REVERSE(
+				_("boxRainGrowReverse"));
 
 		private CharSequence effect;
 
@@ -58,14 +61,6 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 			this.effect = effect;
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * 
-		 * @see com.google.code.jqwicket.IJsonAware#toJson()
-		 */
-		public CharSequence toJson() {
-			return Utils.quote(this.effect);
-		}
 	}
 
 	public NivoSliderOptions() {
@@ -81,15 +76,41 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @return
 	 */
 	public NivoSliderOptions effect(Effect... effects) {
-		return super.put("effect", effects);
+		CharSequence[] se = new CharSequence[effects.length];
+		for (int i = 0; i < effects.length; i++) {
+			se[i] = effects[i].effect;
+		}
+		return super.put("effect", se);
 	}
 
 	/**
+	 * For slice animations
+	 * 
 	 * @param slices
 	 * @return
 	 */
 	public NivoSliderOptions slices(int slices) {
 		return super.put("slices", slices);
+	}
+
+	/**
+	 * For box animations.
+	 * 
+	 * @param boxCols
+	 * @return
+	 */
+	public NivoSliderOptions boxCols(int boxCols) {
+		return super.put("boxCols", boxCols);
+	}
+
+	/**
+	 * For box animations
+	 * 
+	 * @param boxRows
+	 * @return
+	 */
+	public NivoSliderOptions boxRows(int boxRows) {
+		return super.put("boxRows", boxRows);
 	}
 
 	/**
@@ -103,6 +124,8 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	}
 
 	/**
+	 * How long each slide will show
+	 * 
 	 * @param pauseTime
 	 * @return
 	 */
@@ -121,7 +144,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	}
 
 	/**
-	 * Next & Prev
+	 * Next & Prev navigation
 	 * 
 	 * @param directionNav
 	 * @return
@@ -141,7 +164,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	}
 
 	/**
-	 * 1,2,3...
+	 * 1,2,3... navigation
 	 * 
 	 * @param controlNav
 	 * @return
@@ -240,6 +263,28 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	}
 
 	/**
+	 * Prev directionNav text
+	 * 
+	 * @param prevText
+	 * @return
+	 */
+	public NivoSliderOptions prevText(CharSequence prevText) {
+		super.put("prevText", prevText);
+		return this;
+	}
+
+	/**
+	 * Next directionNav text
+	 * 
+	 * @param nextText
+	 * @return
+	 */
+	public NivoSliderOptions nextText(CharSequence nextText) {
+		super.put("nextText", nextText);
+		return this;
+	}
+
+	/**
 	 * Fires before change
 	 * 
 	 * @param callbackBody
@@ -255,7 +300,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public NivoSliderOptions beforeChangeEvent(JQStatement callbackBody) {
+	public NivoSliderOptions beforeChangeEvent(IJQStatement callbackBody) {
 		return this.beforeChangeEvent($f(callbackBody));
 	}
 
@@ -265,7 +310,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public NivoSliderOptions beforeChangeEvent(JQFunction callback) {
+	public NivoSliderOptions beforeChangeEvent(IJQFunction callback) {
 		super.put("beforeChange", callback);
 		return this;
 	}
@@ -286,7 +331,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public NivoSliderOptions afterChangeEvent(JQStatement callbackBody) {
+	public NivoSliderOptions afterChangeEvent(IJQStatement callbackBody) {
 		return this.afterChangeEvent($f(callbackBody));
 	}
 
@@ -296,7 +341,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public NivoSliderOptions afterChangeEvent(JQFunction callback) {
+	public NivoSliderOptions afterChangeEvent(IJQFunction callback) {
 		super.put("afterChange", callback);
 		return this;
 	}
@@ -317,7 +362,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public NivoSliderOptions slideshowEndEvent(JQStatement callbackBody) {
+	public NivoSliderOptions slideshowEndEvent(IJQStatement callbackBody) {
 		return this.slideshowEndEvent($f(callbackBody));
 	}
 
@@ -327,7 +372,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public NivoSliderOptions slideshowEndEvent(JQFunction callback) {
+	public NivoSliderOptions slideshowEndEvent(IJQFunction callback) {
 		super.put("slideshowEnd", callback);
 		return this;
 	}
@@ -348,7 +393,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public NivoSliderOptions lastSlideEvent(JQStatement callbackBody) {
+	public NivoSliderOptions lastSlideEvent(IJQStatement callbackBody) {
 		return this.lastSlideEvent($f(callbackBody));
 	}
 
@@ -358,7 +403,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public NivoSliderOptions lastSlideEvent(JQFunction callback) {
+	public NivoSliderOptions lastSlideEvent(IJQFunction callback) {
 		super.put("lastSlide", callback);
 		return this;
 	}
@@ -379,7 +424,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public NivoSliderOptions afterLoadEvent(JQStatement callbackBody) {
+	public NivoSliderOptions afterLoadEvent(IJQStatement callbackBody) {
 		return this.afterLoadEvent($f(callbackBody));
 	}
 
@@ -389,7 +434,7 @@ public class NivoSliderOptions extends AbstractJQOptions<NivoSliderOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public NivoSliderOptions afterLoadEvent(JQFunction callback) {
+	public NivoSliderOptions afterLoadEvent(IJQFunction callback) {
 		super.put("afterLoad", callback);
 		return this;
 	}

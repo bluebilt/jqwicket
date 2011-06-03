@@ -16,12 +16,11 @@
  */
 package com.google.code.jqwicket.ui.uploadify;
 
-
 import org.apache.wicket.RequestCycle;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
 
 /**
@@ -72,8 +71,8 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify()
 	 */
-	public JQFunction uploadify() {
-		return chain("'uploadify'");
+	public IJQFunction uploadify() {
+		return chain("uploadify");
 	}
 
 	/**
@@ -89,17 +88,17 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify(com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction uploadify(IJQOptions<?> options) {
-		return chain("'uploadify'", options.toJson());
+	public IJQFunction uploadify(IJQOptions<?> options) {
+		return chain("uploadify", options);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void uploadify(AjaxRequestTarget ajaxRequestTarget,
 			IJQOptions<?> options) {
@@ -111,8 +110,8 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyCancel(java.lang.String)
 	 */
-	public JQFunction uploadifyCancel(CharSequence id) {
-		return chain("'uploadifyCancel'", id);
+	public IJQFunction uploadifyCancel(CharSequence id) {
+		return chain("uploadifyCancel", id);
 	}
 
 	/**
@@ -131,8 +130,8 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyClearQueue()
 	 */
-	public JQFunction uploadifyClearQueue() {
-		return chain("'uploadifyClearQueue'");
+	public IJQFunction uploadifyClearQueue() {
+		return chain("uploadifyClearQueue");
 	}
 
 	/**
@@ -150,8 +149,8 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifySettings(java.lang.String,
 	 *      java.lang.String)
 	 */
-	public JQFunction uploadifySettings(CharSequence name, CharSequence value) {
-		return chain("'uploadifySettings'", name, value);
+	public IJQFunction uploadifySettings(CharSequence name, CharSequence value) {
+		return chain("uploadifySettings", name, value);
 	}
 
 	/**
@@ -172,9 +171,9 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifySettings(java.lang.CharSequence,
 	 *      java.lang.CharSequence, boolean)
 	 */
-	public JQFunction uploadifySettings(CharSequence name, CharSequence value,
+	public IJQFunction uploadifySettings(CharSequence name, CharSequence value,
 			boolean resetObject) {
-		return chain("'uploadifySettings'", name, value,
+		return chain("uploadifySettings", name, value,
 				String.valueOf(resetObject));
 	}
 
@@ -196,8 +195,8 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyUpload()
 	 */
-	public JQFunction uploadifyUpload() {
-		return chain("'uploadifyUpload'");
+	public IJQFunction uploadifyUpload() {
+		return chain("uploadifyUpload");
 	}
 
 	/**
@@ -214,8 +213,8 @@ public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyUpload(java.lang.CharSequence)
 	 */
-	public JQFunction uploadifyUpload(CharSequence id) {
-		return chain("'uploadifyUpload'", id);
+	public IJQFunction uploadifyUpload(CharSequence id) {
+		return chain("uploadifyUpload", id);
 	}
 
 	/**

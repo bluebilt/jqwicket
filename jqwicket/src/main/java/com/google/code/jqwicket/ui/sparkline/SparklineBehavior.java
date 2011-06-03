@@ -16,10 +16,11 @@
  */
 package com.google.code.jqwicket.ui.sparkline;
 
-import static com.google.code.jqwicket.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.Utils;
+import com.google.code.jqwicket.api.JQLiteral;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
 
 /**
@@ -57,8 +58,8 @@ public class SparklineBehavior extends JQComponentBehaivor<SparklineOptions>
 	protected void contributeInternal(JQHeaderContributionTarget target) {
 		target.addJQStatements($(this.component).chain(
 				this.getName(),
-				this.options.hasValues() ? Utils.toJson(this.options
-						.getValues()) : Utils.quote("html"),
-				this.options.toJson()));
+				this.options.hasValues() ? JQLiteral._raw(Utils
+						.toJson(this.options.getValues())) : "html",
+				this.options));
 	}
 }

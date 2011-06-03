@@ -20,8 +20,8 @@ package com.google.code.jqwicket.ui.notifier;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 import com.google.code.jqwicket.ui.JQUIWebMarkupContainer;
 
 /**
@@ -62,7 +62,7 @@ public class NotifierWebMarkupContainer extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQUIWebMarkupContainer#newJQComponentBehavior(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.ui.JQUIWebMarkupContainer#newJQComponentBehavior(com.google.code.jqwicket.api.IJQOptions)
 	 */
 	@Override
 	protected NotifierBehavior newJQComponentBehavior(NotifierOptions options) {
@@ -75,7 +75,7 @@ public class NotifierWebMarkupContainer extends
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
 	 *      java.lang.CharSequence)
 	 */
-	public JQFunction create(CharSequence title, CharSequence text) {
+	public IJQFunction create(CharSequence title, CharSequence text) {
 		return this.behavior.create(title, text);
 	}
 
@@ -93,9 +93,9 @@ public class NotifierWebMarkupContainer extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction create(IJQOptions<?> msg) {
+	public IJQFunction create(IJQOptions<?> msg) {
 		return this.behavior.create(msg);
 	}
 
@@ -103,7 +103,7 @@ public class NotifierWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void create(AjaxRequestTarget ajaxRequestTarget, IJQOptions<?> msg) {
 		this.behavior.create(ajaxRequestTarget, msg);
@@ -113,9 +113,9 @@ public class NotifierWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction create(CharSequence template, IJQOptions<?> msg) {
+	public IJQFunction create(CharSequence template, IJQOptions<?> msg) {
 		return this.behavior.create(template, msg);
 	}
 
@@ -123,7 +123,7 @@ public class NotifierWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence, com.google.code.jqwicket.ui.IJQOptions)
+	 *      java.lang.CharSequence, com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void create(AjaxRequestTarget ajaxRequestTarget,
 			CharSequence template, IJQOptions<?> msg) {
@@ -134,10 +134,10 @@ public class NotifierWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
-	 *      com.google.code.jqwicket.ui.IJQOptions,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions,
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction create(CharSequence template, IJQOptions<?> msg,
+	public IJQFunction create(CharSequence template, IJQOptions<?> msg,
 			IJQOptions<?> options) {
 		return this.behavior.create(template, msg, options);
 	}
@@ -146,8 +146,8 @@ public class NotifierWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence, com.google.code.jqwicket.ui.IJQOptions,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      java.lang.CharSequence, com.google.code.jqwicket.api.IJQOptions,
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void create(AjaxRequestTarget ajaxRequestTarget,
 			CharSequence template, IJQOptions<?> msg, IJQOptions<?> options) {
@@ -159,7 +159,7 @@ public class NotifierWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#open()
 	 */
-	public JQFunction open() {
+	public IJQFunction open() {
 		return this.behavior.open();
 	}
 
@@ -177,7 +177,7 @@ public class NotifierWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#close()
 	 */
-	public JQFunction close() {
+	public IJQFunction close() {
 		return this.behavior.close();
 	}
 

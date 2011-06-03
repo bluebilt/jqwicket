@@ -16,10 +16,9 @@
  */
 package com.google.code.jqwicket.ui.maskedinput;
 
-import static com.google.code.jqwicket.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
 
 /**
@@ -56,7 +55,7 @@ public class MaskedInputBehavior extends
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {
 		target.addJQStatements($(this.component).chain(this.getName(),
-				Utils.quote(this.options.getMask()), this.options.toJson()));
+				this.options.getMask(), this.options));
 	}
 
 }

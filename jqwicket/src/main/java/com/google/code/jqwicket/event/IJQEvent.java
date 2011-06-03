@@ -16,15 +16,13 @@
  */
 package com.google.code.jqwicket.event;
 
-import com.google.code.jqwicket.IJsonAware;
-
 /**
  * generic interface describing jquery events.
  * 
  * @author mkalina
  * 
  */
-public interface IJQEvent extends IJsonAware {
+public interface IJQEvent extends CharSequence {
 
 	/**
 	 * Returns the javascript/jquery name of the event.

@@ -16,16 +16,15 @@
  */
 package com.google.code.jqwicket.ui.uploadify;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -389,7 +388,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param scriptData
 	 * @return
 	 */
-	public UploadifyOptions scriptData(IJQOptions<?> scriptData) {
+	public UploadifyOptions scriptData(CharSequence scriptData) {
 		super.put("scriptData", scriptData);
 		return this;
 	}
@@ -508,7 +507,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onAllCompleteEvent(JQStatement callbackBody) {
+	public UploadifyOptions onAllCompleteEvent(IJQStatement callbackBody) {
 		return this.onAllCompleteEvent($f(callbackBody, "event", "data"));
 	}
 
@@ -531,7 +530,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onAllCompleteEvent(JQFunction callback) {
+	public UploadifyOptions onAllCompleteEvent(IJQFunction callback) {
 		super.put("onAllComplete", callback);
 		return this;
 	}
@@ -594,7 +593,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onCancelEvent(JQStatement callbackBody) {
+	public UploadifyOptions onCancelEvent(IJQStatement callbackBody) {
 		return this.onCancelEvent($f(callbackBody, "event", "ID", "fileObj",
 				"data"));
 	}
@@ -626,7 +625,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onCancelEvent(JQFunction callback) {
+	public UploadifyOptions onCancelEvent(IJQFunction callback) {
 		super.put("onCancel", callback);
 		return this;
 	}
@@ -673,7 +672,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onCheckEvent(JQStatement callbackBody) {
+	public UploadifyOptions onCheckEvent(IJQStatement callbackBody) {
 		return this.onCheckEvent($f(callbackBody, "event", "data", "key"));
 	}
 
@@ -696,7 +695,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onCheckEvent(JQFunction callback) {
+	public UploadifyOptions onCheckEvent(IJQFunction callback) {
 		super.put("onCheck", callback);
 		return this;
 	}
@@ -731,7 +730,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onClearQueueEvent(JQStatement callbackBody) {
+	public UploadifyOptions onClearQueueEvent(IJQStatement callbackBody) {
 		return this.onClearQueueEvent($f(callbackBody, "event"));
 	}
 
@@ -748,7 +747,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onClearQueueEvent(JQFunction callback) {
+	public UploadifyOptions onClearQueueEvent(IJQFunction callback) {
 		super.put("onClearQueue", callback);
 		return this;
 	}
@@ -825,7 +824,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onCompleteEvent(JQStatement callbackBody) {
+	public UploadifyOptions onCompleteEvent(IJQStatement callbackBody) {
 		return this.onCompleteEvent($f(callbackBody, "event", "ID", "fileObj",
 				"response", "data"));
 	}
@@ -864,7 +863,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onCompleteEvent(JQFunction callback) {
+	public UploadifyOptions onCompleteEvent(IJQFunction callback) {
 		super.put("onComplete", callback);
 		return this;
 	}
@@ -935,7 +934,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onErrorEvent(JQStatement callbackBody) {
+	public UploadifyOptions onErrorEvent(IJQStatement callbackBody) {
 		return this.onErrorEvent($f(callbackBody, "event", "ID", "fileObj",
 				"errorObj"));
 	}
@@ -971,7 +970,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onErrorEvent(JQFunction callback) {
+	public UploadifyOptions onErrorEvent(IJQFunction callback) {
 		super.put("onError", callback);
 		return this;
 	}
@@ -1004,7 +1003,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onInitEvent(JQStatement callbackBody) {
+	public UploadifyOptions onInitEvent(IJQStatement callbackBody) {
 		return this.onInitEvent($f(callbackBody));
 	}
 
@@ -1020,7 +1019,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onInitEvent(JQFunction callback) {
+	public UploadifyOptions onInitEvent(IJQFunction callback) {
 		super.put("onInit", callback);
 		return this;
 	}
@@ -1079,7 +1078,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onOpenEvent(JQStatement callbackBody) {
+	public UploadifyOptions onOpenEvent(IJQStatement callbackBody) {
 		return this.onOpenEvent($f(callbackBody, "event", "ID", "fileObj"));
 	}
 
@@ -1108,7 +1107,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onOpenEvent(JQFunction callback) {
+	public UploadifyOptions onOpenEvent(IJQFunction callback) {
 		super.put("onOpen", callback);
 		return this;
 	}
@@ -1181,7 +1180,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onProgressEvent(JQStatement callbackBody) {
+	public UploadifyOptions onProgressEvent(IJQStatement callbackBody) {
 		return this.onProgressEvent($f(callbackBody, "event", "ID", "fileObj",
 				"data"));
 	}
@@ -1218,7 +1217,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onProgressEvent(JQFunction callback) {
+	public UploadifyOptions onProgressEvent(IJQFunction callback) {
 		super.put("onProgress", callback);
 		return this;
 	}
@@ -1263,7 +1262,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onQueueFullEvent(JQStatement callbackBody) {
+	public UploadifyOptions onQueueFullEvent(IJQStatement callbackBody) {
 		return this
 				.onQueueFullEvent($f(callbackBody, "event", "queueSizeLimit"));
 	}
@@ -1286,7 +1285,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onQueueFullEvent(JQFunction callback) {
+	public UploadifyOptions onQueueFullEvent(IJQFunction callback) {
 		super.put("onQueueFull", callback);
 		return this;
 	}
@@ -1341,7 +1340,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onSelectEvent(JQStatement callbackBody) {
+	public UploadifyOptions onSelectEvent(IJQStatement callbackBody) {
 		return this.onSelectEvent($f(callbackBody, "event", "ID", "fileObj"));
 	}
 
@@ -1368,7 +1367,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onSelectEvent(JQFunction callback) {
+	public UploadifyOptions onSelectEvent(IJQFunction callback) {
 		super.put("onSelect", callback);
 		return this;
 	}
@@ -1423,7 +1422,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onSelectOnceEvent(JQStatement callbackBody) {
+	public UploadifyOptions onSelectOnceEvent(IJQStatement callbackBody) {
 		return this.onSelectOnceEvent($f(callbackBody, "event", "data"));
 	}
 
@@ -1449,7 +1448,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onSelectOnceEvent(JQFunction callback) {
+	public UploadifyOptions onSelectOnceEvent(IJQFunction callback) {
 		super.put("onSelectOnce", callback);
 		return this;
 	}
@@ -1483,7 +1482,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public UploadifyOptions onSWFReadyEvent(JQStatement callbackBody) {
+	public UploadifyOptions onSWFReadyEvent(IJQStatement callbackBody) {
 		return this.onSWFReadyEvent($f(callbackBody));
 	}
 
@@ -1499,7 +1498,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public UploadifyOptions onSWFReadyEvent(JQFunction callback) {
+	public UploadifyOptions onSWFReadyEvent(IJQFunction callback) {
 		super.put("onSWFReady", callback);
 		return this;
 	}

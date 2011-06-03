@@ -16,8 +16,8 @@
  */
 package com.google.code.jqwicket.ui;
 
-import static com.google.code.jqwicket.JQuery.$;
-import static com.google.code.jqwicket.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$f;
 
 import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestTarget;
@@ -25,9 +25,10 @@ import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
 import com.google.code.jqwicket.IJQWidget;
 import com.google.code.jqwicket.JQBehavior;
-import com.google.code.jqwicket.JQFunction;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.Utils;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 
 /**
  * Abstract component behavior for JQuery components.
@@ -85,17 +86,17 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 	protected void contributeInternal(JQHeaderContributionTarget target) {
 		if (!Page.class.isAssignableFrom(this.component.getClass()))
 			target.addJQStatements($(this.component).chain(this.getName(),
-					this.options.toJson()));
+					this.options));
 	}
 
-	protected JQFunction chain(CharSequence... methodArgs) {
+	protected IJQFunction chain(CharSequence... methodArgs) {
 		return $f($(this.component).chain(this.getName(), methodArgs));
 	}
 
 	protected void chain(AjaxRequestTarget ajaxRequestTarget,
-			JQFunction function) {
+			IJQFunction function) {
 		ajaxRequestTarget.appendJavascript(String.valueOf(function
-				.renderBodyOnly()));
+				.toStringBodyOnly()));
 	}
 
 }

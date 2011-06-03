@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.button;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQUIWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * @author mkalina
@@ -35,7 +35,7 @@ public interface IButton extends IJQUIWidget<ButtonOptions> {
 	 * state after the native element's checked or disabled state is changed
 	 * programatically.
 	 */
-	JQFunction refresh();
+	IJQFunction refresh();
 
 	/**
 	 * Refreshes the visual state of the button. Useful for updating button

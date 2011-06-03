@@ -19,7 +19,7 @@ package com.google.code.jqwicket.ui.mb.fliptext;
 
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
 
 /**
  * @author mkalina

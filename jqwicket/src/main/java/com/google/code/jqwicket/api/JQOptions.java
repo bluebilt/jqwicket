@@ -14,19 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.code.jqwicket;
+package com.google.code.jqwicket.api;
 
 /**
+ * Default {@link IJQOptions} implementation.
+ * 
  * @author mkalina
  * 
  */
-public interface IJsonAware {
+public class JQOptions extends AbstractJQOptions<JQOptions> implements
+		IJQOptions<JQOptions> {
 
-	/**
-	 * Converts this to the json representation.
-	 * 
-	 * @return
-	 */
-	CharSequence toJson();
+	private static final long serialVersionUID = 1L;
+
+	public JQOptions() {
+	}
 
 }

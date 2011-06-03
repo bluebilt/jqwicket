@@ -16,7 +16,7 @@
  */
 package com.google.code.jqwicket.ui.gmap;
 
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
 
 /**
  * @author mkalina

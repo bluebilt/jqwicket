@@ -19,7 +19,7 @@ package com.google.code.jqwicket.ui.tabs;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
 
 /**
@@ -54,7 +54,7 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#add(java.lang.CharSequence,
 	 *      java.lang.CharSequence)
 	 */
-	public JQFunction add(CharSequence url, CharSequence label) {
+	public IJQFunction add(CharSequence url, CharSequence label) {
 		return this.add(url, label, null);
 	}
 
@@ -64,11 +64,11 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#add(java.lang.CharSequence,
 	 *      java.lang.CharSequence, java.lang.Integer)
 	 */
-	public JQFunction add(CharSequence url, CharSequence label, Integer index) {
+	public IJQFunction add(CharSequence url, CharSequence label, Integer index) {
 		if (index != null)
-			return chain("'add'", url, label, String.valueOf(index));
+			return chain("add", url, label, String.valueOf(index));
 		else
-			return chain("'add'", url, label);
+			return chain("add", url, label);
 	}
 
 	/**
@@ -98,8 +98,8 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#remove(int)
 	 */
-	public JQFunction remove(int index) {
-		return chain("'remove'", String.valueOf(index));
+	public IJQFunction remove(int index) {
+		return chain("remove", String.valueOf(index));
 	}
 
 	/**
@@ -117,8 +117,8 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#enable(int)
 	 */
-	public JQFunction enable(int index) {
-		return chain("'enable'", String.valueOf(index));
+	public IJQFunction enable(int index) {
+		return chain("enable", String.valueOf(index));
 	}
 
 	/**
@@ -136,8 +136,8 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#disable(int)
 	 */
-	public JQFunction disable(int index) {
-		return chain("'disable'", String.valueOf(index));
+	public IJQFunction disable(int index) {
+		return chain("disable", String.valueOf(index));
 	}
 
 	/**
@@ -155,8 +155,8 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#select(int)
 	 */
-	public JQFunction select(int index) {
-		return chain("'select'", String.valueOf(index));
+	public IJQFunction select(int index) {
+		return chain("select", String.valueOf(index));
 	}
 
 	/**
@@ -174,8 +174,8 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#load(int)
 	 */
-	public JQFunction load(int index) {
-		return chain("'load'", String.valueOf(index));
+	public IJQFunction load(int index) {
+		return chain("load", String.valueOf(index));
 	}
 
 	/**
@@ -194,8 +194,8 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#url(int,
 	 *      java.lang.CharSequence)
 	 */
-	public JQFunction url(int index, CharSequence url) {
-		return chain("'url'", String.valueOf(index));
+	public IJQFunction url(int index, CharSequence url) {
+		return chain("url", String.valueOf(index));
 	}
 
 	/**
@@ -214,8 +214,8 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#length()
 	 */
-	public JQFunction length() {
-		return chain("'length'");
+	public IJQFunction length() {
+		return chain("length");
 	}
 
 	/**
@@ -232,8 +232,8 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#abort()
 	 */
-	public JQFunction abort() {
-		return chain("'abort'");
+	public IJQFunction abort() {
+		return chain("abort");
 	}
 
 	/**
@@ -250,8 +250,8 @@ public class TabsBehavior extends JQUIComponentBehaivor<TabsOptions> implements
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#rotate(int, boolean)
 	 */
-	public JQFunction rotate(int ms, boolean continuing) {
-		return chain("'rotate'", String.valueOf(ms), String.valueOf(continuing));
+	public IJQFunction rotate(int ms, boolean continuing) {
+		return chain("rotate", String.valueOf(ms), String.valueOf(continuing));
 	}
 
 	/**

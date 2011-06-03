@@ -16,12 +16,12 @@
  */
 package com.google.code.jqwicket.ui;
 
-
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.model.IModel;
 
 import com.google.code.jqwicket.IJQWidget;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.api.IJQOptions;
 
 /**
  * Abstract wicket web markup container for pure jquery components.

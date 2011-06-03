@@ -20,7 +20,7 @@ import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 
 /**
@@ -37,7 +37,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Blocks complete screen using default options.
 	 */
-	JQFunction block();
+	IJQFunction block();
 
 	/**
 	 * Blocks complete screen using default options.
@@ -49,7 +49,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Blocks complete screen using custom options.
 	 */
-	JQFunction block(BlockUIOptions options);
+	IJQFunction block(BlockUIOptions options);
 
 	/**
 	 * Blocks complete screen using custom options.
@@ -61,7 +61,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Blocks specific ui element using default options.
 	 */
-	JQFunction block(CharSequence selector);
+	IJQFunction block(CharSequence selector);
 
 	/**
 	 * Blocks specific ui element using default options.
@@ -73,7 +73,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Blocks specific ui element using custom options.
 	 */
-	JQFunction block(CharSequence selector, BlockUIOptions options);
+	IJQFunction block(CharSequence selector, BlockUIOptions options);
 
 	/**
 	 * Blocks specific ui element using custom options.
@@ -86,7 +86,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Blocks specific ui element using default options.
 	 */
-	JQFunction block(Component component);
+	IJQFunction block(Component component);
 
 	/**
 	 * Blocks specific ui element using default options.
@@ -98,7 +98,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Blocks specific ui element using custom options.
 	 */
-	JQFunction block(Component component, BlockUIOptions options);
+	IJQFunction block(Component component, BlockUIOptions options);
 
 	/**
 	 * Blocks specific ui element using custom options.
@@ -111,7 +111,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Unblocks complete screen using default options.
 	 */
-	JQFunction unblock();
+	IJQFunction unblock();
 
 	/**
 	 * Unblocks complete screen using default options.
@@ -123,7 +123,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Unblocks complete screen using custom options.
 	 */
-	JQFunction unblock(BlockUIOptions options);
+	IJQFunction unblock(BlockUIOptions options);
 
 	/**
 	 * Unblocks complete screen using custom options.
@@ -135,7 +135,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Unblocks specific ui element using default options.
 	 */
-	JQFunction unblock(CharSequence selector);
+	IJQFunction unblock(CharSequence selector);
 
 	/**
 	 * Unblocks specific ui element using default options.
@@ -147,7 +147,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Unblocks specific ui element using custom options.
 	 */
-	JQFunction unblock(CharSequence selector, BlockUIOptions options);
+	IJQFunction unblock(CharSequence selector, BlockUIOptions options);
 
 	/**
 	 * Unblocks specific ui element using custom options.
@@ -160,7 +160,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Unblocks specific ui element using default options.
 	 */
-	JQFunction unblock(Component component);
+	IJQFunction unblock(Component component);
 
 	/**
 	 * Unblocks specific ui element using default options.
@@ -172,7 +172,7 @@ public interface IBlockUI extends IJQWidget<BlockUIOptions> {
 	/**
 	 * Unblocks specific ui element using custom options.
 	 */
-	JQFunction unblock(Component component, BlockUIOptions options);
+	IJQFunction unblock(Component component, BlockUIOptions options);
 
 	/**
 	 * Unblocks specific ui element using custom options.

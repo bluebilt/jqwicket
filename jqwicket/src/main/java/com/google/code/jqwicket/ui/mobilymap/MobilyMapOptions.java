@@ -16,15 +16,15 @@
  */
 package com.google.code.jqwicket.ui.mobilymap;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -188,7 +188,7 @@ public class MobilyMapOptions extends AbstractJQOptions<MobilyMapOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public MobilyMapOptions markerClickEvent(JQStatement callbackBody) {
+	public MobilyMapOptions markerClickEvent(IJQStatement callbackBody) {
 		return this.markerClickEvent($f(callbackBody));
 	}
 
@@ -198,7 +198,7 @@ public class MobilyMapOptions extends AbstractJQOptions<MobilyMapOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public MobilyMapOptions markerClickEvent(JQFunction callback) {
+	public MobilyMapOptions markerClickEvent(IJQFunction callback) {
 		super.put("onMarkerClick", callback);
 		return this;
 	}
@@ -219,7 +219,7 @@ public class MobilyMapOptions extends AbstractJQOptions<MobilyMapOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public MobilyMapOptions popupCloseEvent(JQStatement callbackBody) {
+	public MobilyMapOptions popupCloseEvent(IJQStatement callbackBody) {
 		return this.popupCloseEvent($f(callbackBody));
 	}
 
@@ -229,7 +229,7 @@ public class MobilyMapOptions extends AbstractJQOptions<MobilyMapOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public MobilyMapOptions popupCloseEvent(JQFunction callback) {
+	public MobilyMapOptions popupCloseEvent(IJQFunction callback) {
 		super.put("onPopupClose", callback);
 		return this;
 	}
@@ -250,7 +250,7 @@ public class MobilyMapOptions extends AbstractJQOptions<MobilyMapOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public MobilyMapOptions mapLoadEvent(JQStatement callbackBody) {
+	public MobilyMapOptions mapLoadEvent(IJQStatement callbackBody) {
 		return this.mapLoadEvent($f(callbackBody));
 	}
 
@@ -260,7 +260,7 @@ public class MobilyMapOptions extends AbstractJQOptions<MobilyMapOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public MobilyMapOptions mapLoadEvent(JQFunction callback) {
+	public MobilyMapOptions mapLoadEvent(IJQFunction callback) {
 		super.put("onMapLoad", callback);
 		return this;
 	}

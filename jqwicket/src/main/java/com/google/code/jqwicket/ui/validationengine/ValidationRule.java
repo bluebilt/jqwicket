@@ -20,16 +20,14 @@ import static com.google.code.jqwicket.Utils.quote;
 
 import java.io.Serializable;
 
-import com.google.code.jqwicket.IJsonAware;
 import com.google.code.jqwicket.Utils;
-
 
 /**
  * @author mkalina
  * 
  */
 public abstract class ValidationRule<T extends ValidationRule<T>> implements
-		IJsonAware, Serializable {
+		Serializable, CharSequence {
 
 	private static final long serialVersionUID = 1L;
 
@@ -42,19 +40,29 @@ public abstract class ValidationRule<T extends ValidationRule<T>> implements
 		this.alertTextErrors = alertTextErrors;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.IJsonAware#toJson()
-	 */
-	public CharSequence toJson() {
+	protected abstract CharSequence customPayloadToJson();
+
+	public char charAt(int index) {
+		return toString().charAt(index);
+	}
+
+	public int length() {
+		return toString().length();
+	}
+
+	public CharSequence subSequence(int start, int end) {
+		return toString().subSequence(start, end);
+	}
+
+	@Override
+	public String toString() {
 		StringBuffer buf = new StringBuffer();
-		buf.append(quote(this.name)).append(":");
+		buf.append(quote(name)).append(":");
 		buf.append("{");
 		buf.append(this.customPayloadToJson());
-		if (Utils.isNotEmpty(this.alertTextErrors)) {
+		if (Utils.isNotEmpty(alertTextErrors)) {
 			buf.append(",");
-			for (int i = 0; i < this.alertTextErrors.length; i++) {
+			for (int i = 0; i < alertTextErrors.length; i++) {
 				if (i > 0)
 					buf.append(",");
 				buf.append("'alertText");
@@ -64,8 +72,6 @@ public abstract class ValidationRule<T extends ValidationRule<T>> implements
 			}
 		}
 		buf.append("}");
-		return buf;
+		return buf.toString();
 	}
-
-	protected abstract CharSequence customPayloadToJson();
 }

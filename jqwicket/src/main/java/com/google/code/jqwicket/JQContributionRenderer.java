@@ -33,6 +33,9 @@ import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.markup.html.IHeaderResponse;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
+import com.google.code.jqwicket.api.IJQStatement;
+import com.google.code.jqwicket.api.JQuery;
+
 /**
  * Wicket's {@link IHeaderContributor} implementation able to render all
  * necessary jquery/css resources gathered from the component hierarchy to the
@@ -174,7 +177,7 @@ public class JQContributionRenderer implements IHeaderContributor {
 	}
 
 	private void renderDocumentReadyJavaScript(IHeaderResponse response,
-			Collection<JQStatement> statements) {
+			Collection<IJQStatement> statements) {
 
 		if (isEmpty(statements))
 			return;
@@ -190,11 +193,9 @@ public class JQContributionRenderer implements IHeaderContributor {
 					.append(" = jQuery.noConflict();\n");
 		}
 
-		JQStatement q = JQuery.documentReady(statements);
-
-		CharSequence rawScript = q.render();
-		script.append((compressor != null && Utils.isNotBlank(rawScript)) ? compressor
-				.compress(String.valueOf(rawScript)) : rawScript);
+		IJQStatement q = JQuery.documentReady(statements);
+		script.append((compressor != null && Utils.isNotBlank(q)) ? compressor
+				.compress(String.valueOf(q)) : q);
 
 		if (Utils.isNotBlank(script))
 			response.renderJavascript(script, UUID.randomUUID().toString());

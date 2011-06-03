@@ -21,7 +21,7 @@ import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQWebMarkupContainer;
 
 /**
@@ -66,7 +66,7 @@ public class BlockUIWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block()
 	 */
-	public JQFunction block() {
+	public IJQFunction block() {
 		return this.behavior.block();
 	}
 
@@ -85,7 +85,7 @@ public class BlockUIWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction block(BlockUIOptions options) {
+	public IJQFunction block(BlockUIOptions options) {
 		return this.behavior.block(options);
 	}
 
@@ -105,7 +105,7 @@ public class BlockUIWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(java.lang.CharSequence)
 	 */
-	public JQFunction block(CharSequence selector) {
+	public IJQFunction block(CharSequence selector) {
 		return this.behavior.block(selector);
 	}
 
@@ -125,7 +125,7 @@ public class BlockUIWebMarkupContainer extends
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(java.lang.CharSequence,
 	 *      com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction block(CharSequence selector, BlockUIOptions options) {
+	public IJQFunction block(CharSequence selector, BlockUIOptions options) {
 		return this.behavior.block(selector, options);
 	}
 
@@ -146,7 +146,7 @@ public class BlockUIWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(org.apache.wicket.Component)
 	 */
-	public JQFunction block(Component component) {
+	public IJQFunction block(Component component) {
 		return this.behavior.block(component);
 	}
 
@@ -166,7 +166,7 @@ public class BlockUIWebMarkupContainer extends
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(org.apache.wicket.Component,
 	 *      com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction block(Component component, BlockUIOptions options) {
+	public IJQFunction block(Component component, BlockUIOptions options) {
 		return this.behavior.block(component, options);
 	}
 
@@ -187,7 +187,7 @@ public class BlockUIWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock()
 	 */
-	public JQFunction unblock() {
+	public IJQFunction unblock() {
 		return this.behavior.unblock();
 	}
 
@@ -205,7 +205,7 @@ public class BlockUIWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction unblock(BlockUIOptions options) {
+	public IJQFunction unblock(BlockUIOptions options) {
 		return this.behavior.unblock(options);
 	}
 
@@ -225,7 +225,7 @@ public class BlockUIWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(java.lang.CharSequence)
 	 */
-	public JQFunction unblock(CharSequence selector) {
+	public IJQFunction unblock(CharSequence selector) {
 		return this.behavior.unblock(selector);
 	}
 
@@ -246,7 +246,7 @@ public class BlockUIWebMarkupContainer extends
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(java.lang.CharSequence,
 	 *      com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction unblock(CharSequence selector, BlockUIOptions options) {
+	public IJQFunction unblock(CharSequence selector, BlockUIOptions options) {
 		return this.behavior.unblock(selector, options);
 	}
 
@@ -267,7 +267,7 @@ public class BlockUIWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(org.apache.wicket.Component)
 	 */
-	public JQFunction unblock(Component component) {
+	public IJQFunction unblock(Component component) {
 		return this.behavior.unblock(component);
 	}
 
@@ -287,7 +287,7 @@ public class BlockUIWebMarkupContainer extends
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(org.apache.wicket.Component,
 	 *      com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction unblock(Component component, BlockUIOptions options) {
+	public IJQFunction unblock(Component component, BlockUIOptions options) {
 		return this.behavior.unblock(component, options);
 	}
 

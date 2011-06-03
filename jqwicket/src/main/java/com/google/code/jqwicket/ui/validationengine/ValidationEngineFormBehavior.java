@@ -26,7 +26,7 @@ import org.apache.wicket.markup.html.form.Form;
 
 import com.google.code.jqwicket.JQContributionConfig;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.JQuery;
+import com.google.code.jqwicket.api.JQuery;
 import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
 

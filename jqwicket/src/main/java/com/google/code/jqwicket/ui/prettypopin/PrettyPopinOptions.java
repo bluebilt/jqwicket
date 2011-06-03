@@ -16,16 +16,16 @@
  */
 package com.google.code.jqwicket.ui.prettypopin;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.RequestCycle;
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -117,7 +117,7 @@ public class PrettyPopinOptions extends AbstractJQOptions<PrettyPopinOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public PrettyPopinOptions callback(JQStatement callbackBody) {
+	public PrettyPopinOptions callback(IJQStatement callbackBody) {
 		return this.callback($f(callbackBody));
 	}
 
@@ -127,7 +127,7 @@ public class PrettyPopinOptions extends AbstractJQOptions<PrettyPopinOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public PrettyPopinOptions callback(JQFunction callback) {
+	public PrettyPopinOptions callback(IJQFunction callback) {
 		return super.put("callback", callback);
 	}
 

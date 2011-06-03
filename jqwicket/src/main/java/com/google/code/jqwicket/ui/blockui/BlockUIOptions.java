@@ -16,15 +16,14 @@
  */
 package com.google.code.jqwicket.ui.blockui;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -78,9 +77,9 @@ public class BlockUIOptions extends AbstractJQOptions<BlockUIOptions> {
 	 * @param css
 	 * @return
 	 */
-	public BlockUIOptions css(IJQOptions<?> css) {
+	public BlockUIOptions css(CharSequence css) {
 		return super.put("css", css);
-	}
+	} 
 
 	/**
 	 * styles for the overlay <br>
@@ -97,7 +96,7 @@ public class BlockUIOptions extends AbstractJQOptions<BlockUIOptions> {
 	 * @param overlayCSS
 	 * @return
 	 */
-	public BlockUIOptions overlayCSS(IJQOptions<?> overlayCSS) {
+	public BlockUIOptions overlayCSS(CharSequence overlayCSS) {
 		return super.put("overlayCSS", overlayCSS);
 	}
 
@@ -125,7 +124,7 @@ public class BlockUIOptions extends AbstractJQOptions<BlockUIOptions> {
 	 * @param growlCSS
 	 * @return
 	 */
-	public BlockUIOptions growlCSS(IJQOptions<?> growlCSS) {
+	public BlockUIOptions growlCSS(CharSequence growlCSS) {
 		return super.put("growlCSS", growlCSS);
 	}
 
@@ -405,7 +404,7 @@ public class BlockUIOptions extends AbstractJQOptions<BlockUIOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public BlockUIOptions itemVisibleInEvent(JQStatement callbackBody) {
+	public BlockUIOptions itemVisibleInEvent(IJQStatement callbackBody) {
 		return this.itemVisibleInEvent($f(callbackBody, "element", "options"));
 	}
 
@@ -424,7 +423,7 @@ public class BlockUIOptions extends AbstractJQOptions<BlockUIOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public BlockUIOptions itemVisibleInEvent(JQFunction callback) {
+	public BlockUIOptions itemVisibleInEvent(IJQFunction callback) {
 		super.put("onUnblock", callback);
 		return this;
 	}

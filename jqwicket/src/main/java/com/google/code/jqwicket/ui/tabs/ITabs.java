@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.tabs;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQUIWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * @author mkalina
@@ -37,7 +37,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	 * (remote) tab. The third is the zero-based position where to insert the
 	 * new tab. Optional, by default a new tab is appended at the end.
 	 */
-	JQFunction add(CharSequence url, CharSequence label);
+	IJQFunction add(CharSequence url, CharSequence label);
 
 	/**
 	 * Add a new tab. The second argument is either a URL consisting of a
@@ -46,7 +46,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	 * (remote) tab. The third is the zero-based position where to insert the
 	 * new tab. Optional, by default a new tab is appended at the end.
 	 */
-	JQFunction add(CharSequence url, CharSequence label, Integer index);
+	IJQFunction add(CharSequence url, CharSequence label, Integer index);
 
 	/**
 	 * Add a new tab. The second argument is either a URL consisting of a
@@ -76,7 +76,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	 * Remove a tab. The second argument is the zero-based index of the tab to
 	 * be removed.
 	 */
-	JQFunction remove(int index);
+	IJQFunction remove(int index);
 
 	/**
 	 * Remove a tab. The index argument is the zero-based index of the tab to be
@@ -89,7 +89,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	/**
 	 * Enable a disabled tab.
 	 */
-	JQFunction enable(int index);
+	IJQFunction enable(int index);
 
 	/**
 	 * Enable a disabled tab.
@@ -101,7 +101,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	/**
 	 * Disable a tab.
 	 */
-	JQFunction disable(int index);
+	IJQFunction disable(int index);
 
 	/**
 	 * Disable a tab.
@@ -113,7 +113,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	/**
 	 * Select a tab, as if it were clicked.
 	 */
-	JQFunction select(int index);
+	IJQFunction select(int index);
 
 	/**
 	 * Select a tab, as if it were clicked.
@@ -127,7 +127,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	 * loads the tab content from the remote location, even if cache is set to
 	 * true.
 	 */
-	JQFunction load(int index);
+	IJQFunction load(int index);
 
 	/**
 	 * Reload the content of an Ajax tab programmatically. This method always
@@ -144,7 +144,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	 * only change the URL for an existing remote tab with this method, but also
 	 * turn an in-page tab into a remote tab.
 	 */
-	JQFunction url(int index, CharSequence url);
+	IJQFunction url(int index, CharSequence url);
 
 	/**
 	 * Change the url from which an Ajax (remote) tab will be loaded. The
@@ -159,7 +159,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	/**
 	 * Retrieve the number of tabs of the first matched tab pane.
 	 */
-	JQFunction length();
+	IJQFunction length();
 
 	/**
 	 * Retrieve the number of tabs of the first matched tab pane.
@@ -171,7 +171,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	/**
 	 * Terminate all running tab ajax requests and animations.
 	 */
-	JQFunction abort();
+	IJQFunction abort();
 
 	/**
 	 * Terminate all running tab ajax requests and animations.
@@ -187,7 +187,7 @@ public interface ITabs extends IJQUIWidget<TabsOptions> {
 	 * controls whether or not to continue the rotation after a tab has been
 	 * selected by a user.
 	 */
-	JQFunction rotate(int ms, boolean continuing);
+	IJQFunction rotate(int ms, boolean continuing);
 
 	/**
 	 * Set up an automatic rotation through tabs of a tab pane. The second

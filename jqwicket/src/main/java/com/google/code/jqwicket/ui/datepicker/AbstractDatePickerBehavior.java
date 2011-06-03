@@ -19,10 +19,9 @@ package com.google.code.jqwicket.ui.datepicker;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
 import com.google.code.jqwicket.ui.XYPosition;
 
@@ -43,22 +42,22 @@ public abstract class AbstractDatePickerBehavior<T extends AbstractDatePickerOpt
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IGenericDatePicker#dialog(java.lang.CharSequence,
-	 *      com.google.code.jqwicket.JQFunction,
+	 *      com.google.code.jqwicket.api.IJQFunction,
 	 *      com.google.code.jqwicket.ui.datepicker.AbstractDatePickerOptions,
 	 *      com.google.code.jqwicket.ui.XYPosition)
 	 */
-	public JQFunction dialog(CharSequence date, JQFunction onSelect, T options,
-			XYPosition position) {
+	public IJQFunction dialog(CharSequence date, IJQFunction onSelect,
+			T options, XYPosition position) {
 
 		List<CharSequence> args = new ArrayList<CharSequence>();
-		args.add("'dialog'");
+		args.add("dialog");
 		args.add(date);
 		if (onSelect != null)
-			args.add(onSelect.render());
+			args.add(onSelect);
 		if (options != null)
-			args.add(options.toJson());
+			args.add(options);
 		if (position != null)
-			args.add(position.toJson());
+			args.add(position);
 
 		return chain(args.toArray(new CharSequence[args.size()]));
 	}
@@ -67,12 +66,12 @@ public abstract class AbstractDatePickerBehavior<T extends AbstractDatePickerOpt
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IGenericDatePicker#dialog(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence, com.google.code.jqwicket.JQFunction,
+	 *      java.lang.CharSequence, com.google.code.jqwicket.api.IJQFunction,
 	 *      com.google.code.jqwicket.ui.datepicker.AbstractDatePickerOptions,
 	 *      com.google.code.jqwicket.ui.XYPosition)
 	 */
 	public void dialog(AjaxRequestTarget ajaxRequestTarget, CharSequence date,
-			JQFunction onSelect, T options, XYPosition position) {
+			IJQFunction onSelect, T options, XYPosition position) {
 		chain(ajaxRequestTarget, this.dialog(date, onSelect, options, position));
 	}
 
@@ -81,8 +80,8 @@ public abstract class AbstractDatePickerBehavior<T extends AbstractDatePickerOpt
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#hide()
 	 */
-	public JQFunction hide() {
-		return chain("'hide'");
+	public IJQFunction hide() {
+		return chain("hide");
 	}
 
 	/**
@@ -99,8 +98,8 @@ public abstract class AbstractDatePickerBehavior<T extends AbstractDatePickerOpt
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#show()
 	 */
-	public JQFunction show() {
-		return chain("'hide'");
+	public IJQFunction show() {
+		return chain("hide");
 	}
 
 	/**
@@ -117,8 +116,8 @@ public abstract class AbstractDatePickerBehavior<T extends AbstractDatePickerOpt
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#refresh()
 	 */
-	public JQFunction refresh() {
-		return chain("'refresh'");
+	public IJQFunction refresh() {
+		return chain("refresh");
 	}
 
 	/**
@@ -135,8 +134,8 @@ public abstract class AbstractDatePickerBehavior<T extends AbstractDatePickerOpt
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#setDate(java.lang.CharSequence)
 	 */
-	public JQFunction setDate(CharSequence date) {
-		return chain("'setDate'", date);
+	public IJQFunction setDate(CharSequence date) {
+		return chain("setDate", date);
 	}
 
 	/**
@@ -154,8 +153,8 @@ public abstract class AbstractDatePickerBehavior<T extends AbstractDatePickerOpt
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#setDate(int)
 	 */
-	public JQFunction setDate(int date) {
-		return chain("'setDate'", String.valueOf(date));
+	public IJQFunction setDate(int date) {
+		return chain("setDate", String.valueOf(date));
 	}
 
 	/**

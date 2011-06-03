@@ -16,8 +16,8 @@
  */
 package com.google.code.jqwicket.ui.position;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * @author mkalina
@@ -114,7 +114,7 @@ public class PositionOptions extends AbstractJQOptions<PositionOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public PositionOptions using(JQFunction callback) {
+	public PositionOptions using(IJQFunction callback) {
 		super.put("using", callback);
 		return this;
 	}

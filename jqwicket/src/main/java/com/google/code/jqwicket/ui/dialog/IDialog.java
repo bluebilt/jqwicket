@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.dialog;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQUIWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * @author mkalina
@@ -35,7 +35,7 @@ public interface IDialog extends IJQUIWidget<DialogOptions> {
 	 * 
 	 * @return the associated JsStatement
 	 */
-	JQFunction open();
+	IJQFunction open();
 
 	/**
 	 * Method to open the dialog within the ajax request
@@ -49,7 +49,7 @@ public interface IDialog extends IJQUIWidget<DialogOptions> {
 	 * 
 	 * @return the associated JsStatement
 	 */
-	JQFunction close();
+	IJQFunction close();
 
 	/**
 	 * Method to close the dialog within the ajax request
@@ -63,7 +63,7 @@ public interface IDialog extends IJQUIWidget<DialogOptions> {
 	 * 
 	 * @return the associated JsStatement
 	 */
-	JQFunction isOpen();
+	IJQFunction isOpen();
 
 	/**
 	 * Method returning true if the dialog is currently open
@@ -77,7 +77,7 @@ public interface IDialog extends IJQUIWidget<DialogOptions> {
 	 * 
 	 * @return the associated JsStatement
 	 */
-	JQFunction moveToTop();
+	IJQFunction moveToTop();
 
 	/**
 	 * Method to move to top the dialog within the ajax request

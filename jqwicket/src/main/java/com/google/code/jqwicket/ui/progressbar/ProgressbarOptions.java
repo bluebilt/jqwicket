@@ -16,12 +16,12 @@
  */
 package com.google.code.jqwicket.ui.progressbar;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -41,7 +41,7 @@ public class ProgressbarOptions extends AbstractJQOptions<ProgressbarOptions> {
 		return this;
 	}
 
-	public ProgressbarOptions changeEvent(JQFunction callback) {
+	public ProgressbarOptions changeEvent(IJQFunction callback) {
 		super.put("change", callback);
 		return this;
 	}
@@ -50,12 +50,12 @@ public class ProgressbarOptions extends AbstractJQOptions<ProgressbarOptions> {
 		return this.changeEvent(js(callbackBody));
 	}
 
-	public ProgressbarOptions changeEvent(JQStatement callbackBody) {
+	public ProgressbarOptions changeEvent(IJQStatement callbackBody) {
 		super.put("change", $f(callbackBody, "event", "ui"));
 		return this;
 	}
 
-	public ProgressbarOptions completeEvent(JQFunction callback) {
+	public ProgressbarOptions completeEvent(IJQFunction callback) {
 		super.put("complete", callback);
 		return this;
 	}
@@ -64,7 +64,7 @@ public class ProgressbarOptions extends AbstractJQOptions<ProgressbarOptions> {
 		return this.completeEvent(js(callbackBody));
 	}
 
-	public ProgressbarOptions completeEvent(JQStatement callbackBody) {
+	public ProgressbarOptions completeEvent(IJQStatement callbackBody) {
 		super.put("complete", $f(callbackBody, "event", "ui"));
 		return this;
 	}

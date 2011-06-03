@@ -45,13 +45,21 @@ public enum KeyboardEvent implements IJQEvent {
 		return this.event;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.IJsonAware#toJson()
-	 */
-	public CharSequence toJson() {
-		return this.getName();
+	public int length() {
+		return this.name().length();
+	}
+
+	public char charAt(int index) {
+		return this.name().charAt(index);
+	}
+
+	public CharSequence subSequence(int start, int end) {
+		return this.name().subSequence(start, end);
+	}
+
+	@Override
+	public String toString() {
+		return String.valueOf(this.getName());
 	}
 
 }

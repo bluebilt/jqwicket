@@ -20,7 +20,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * @author mkalina
@@ -65,7 +65,7 @@ public class WatermarkPasswordTextField extends PasswordTextField {
 		return this.behavior.getOptions();
 	}
 
-	public JQFunction show() {
+	public IJQFunction show() {
 		return this.behavior.show(this.getMarkupId());
 	}
 
@@ -73,7 +73,7 @@ public class WatermarkPasswordTextField extends PasswordTextField {
 		this.behavior.show(ajaxRequestTarget, this.getMarkupId());
 	}
 
-	public JQFunction hide() {
+	public IJQFunction hide() {
 		return this.behavior.hide(this.getMarkupId());
 	}
 

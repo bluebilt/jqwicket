@@ -19,7 +19,7 @@ package com.google.code.jqwicket.ui.accordion;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
 
 /**
@@ -53,8 +53,8 @@ public class AccordionBehavior extends JQUIComponentBehaivor<AccordionOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.accordion.IAccordion#activate(int)
 	 */
-	public JQFunction activate(int index) {
-		return chain("'activate'", String.valueOf(index));
+	public IJQFunction activate(int index) {
+		return chain("activate", String.valueOf(index));
 	}
 
 	/**
@@ -72,8 +72,8 @@ public class AccordionBehavior extends JQUIComponentBehaivor<AccordionOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.accordion.IAccordion#activate(java.lang.CharSequence)
 	 */
-	public JQFunction activate(CharSequence selector) {
-		return chain("'activate'", selector);
+	public IJQFunction activate(CharSequence selector) {
+		return chain("activate", selector);
 	}
 
 	/**
@@ -92,8 +92,8 @@ public class AccordionBehavior extends JQUIComponentBehaivor<AccordionOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.accordion.IAccordion#activate(boolean)
 	 */
-	public JQFunction activate(boolean activate) {
-		return chain("'activate'", String.valueOf(activate));
+	public IJQFunction activate(boolean activate) {
+		return chain("activate", String.valueOf(activate));
 	}
 
 	/**
@@ -111,8 +111,8 @@ public class AccordionBehavior extends JQUIComponentBehaivor<AccordionOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.accordion.IAccordion#resize()
 	 */
-	public JQFunction resize() {
-		return chain("'resize'");
+	public IJQFunction resize() {
+		return chain("resize");
 	}
 
 	/**

@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.button;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIWebMarkupContainer;
 
 /**
@@ -64,7 +64,7 @@ public class ButtonWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.button.IButton#refresh()
 	 */
-	public JQFunction refresh() {
+	public IJQFunction refresh() {
 		return this.behavior.refresh();
 	}
 

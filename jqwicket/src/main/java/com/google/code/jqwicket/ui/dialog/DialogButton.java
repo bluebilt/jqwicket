@@ -18,36 +18,47 @@ package com.google.code.jqwicket.ui.dialog;
 
 import java.io.Serializable;
 
-import com.google.code.jqwicket.IJsonAware;
-import com.google.code.jqwicket.JQFunction;
-
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
+import com.google.code.jqwicket.api.JQOptions;
+import com.google.code.jqwicket.api.JQuery;
 
 /**
  * @author mkalina
  * 
  */
-public class DialogButton implements Serializable, IJsonAware {
+public class DialogButton implements Serializable, CharSequence {
 
 	private static final long serialVersionUID = 1L;
 
-	private CharSequence name;
+	private IJQOptions<?> options;
 
-	private JQFunction callback;
-
-	public DialogButton(CharSequence name, JQFunction callback) {
-		this.name = name;
-		this.callback = callback;
+	public DialogButton(CharSequence name, IJQFunction callback) {
+		this.options = new JQOptions().put("text", name).put("click", callback);
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.IJsonAware#toJson()
-	 */
-	public CharSequence toJson() {
-		return new StringBuffer().append("{text:\"").append(this.name)
-				.append("\", click:").append(this.callback.render())
-				.append("}");
+	public int length() {
+		return options.length();
+	}
+
+	public char charAt(int index) {
+		return options.charAt(index);
+	}
+
+	public CharSequence subSequence(int start, int end) {
+		return options.subSequence(start, end);
+	}
+
+	@Override
+	public String toString() {
+		return this.options.toString();
+	}
+
+	public static void main(String[] args) {
+
+		DialogButton b = new DialogButton("me", JQuery.$f("alert('yeeeah');"));
+		System.out.println(b);
+
 	}
 
 }

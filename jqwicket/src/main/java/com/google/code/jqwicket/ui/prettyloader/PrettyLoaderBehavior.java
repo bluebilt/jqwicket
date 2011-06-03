@@ -16,15 +16,16 @@
  */
 package com.google.code.jqwicket.ui.prettyloader;
 
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.$ns;
+import static com.google.code.jqwicket.api.JQuery.$;
+import static com.google.code.jqwicket.api.JQLiteral.*;
+
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
-
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.$dot;
-import static com.google.code.jqwicket.JQuery.$dotMethod;
 
 /**
  * @author mkalina
@@ -41,7 +42,7 @@ public class PrettyLoaderBehavior extends
 
 	public PrettyLoaderBehavior(PrettyLoaderOptions options) {
 		super(options);
-		super.addJQStatements($dot(this.getName(), this.options.toJson()));
+		super.addJQStatements($().chain(this.getName(), this.options));
 	}
 
 	/**
@@ -68,8 +69,8 @@ public class PrettyLoaderBehavior extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.prettyloader.IPrettyLoader#show()
 	 */
-	public JQFunction show() {
-		return $f($dotMethod(this.getName(), "show"));
+	public IJQFunction show() {
+		return $f($ns(this.getName()).chain("show"));
 	}
 
 	/**
@@ -86,8 +87,8 @@ public class PrettyLoaderBehavior extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.prettyloader.IPrettyLoader#show(int)
 	 */
-	public JQFunction show(int seconds) {
-		return $f($dotMethod(this.getName(), "show", String.valueOf(seconds)));
+	public IJQFunction show(int seconds) {
+		return $f($ns(this.getName()).chain("show", _raw(seconds)));
 	}
 
 	/**
@@ -106,8 +107,8 @@ public class PrettyLoaderBehavior extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.prettyloader.IPrettyLoader#hide()
 	 */
-	public JQFunction hide() {
-		return $f($dotMethod(this.getName(), "hide"));
+	public IJQFunction hide() {
+		return $f($ns(this.getName()).chain("hide"));
 	}
 
 	/**

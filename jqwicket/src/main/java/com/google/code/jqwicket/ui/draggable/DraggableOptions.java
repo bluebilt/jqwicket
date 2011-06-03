@@ -16,18 +16,17 @@
  */
 package com.google.code.jqwicket.ui.draggable;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 import com.google.code.jqwicket.ui.XYPosition;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 
@@ -162,7 +161,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param cursorAt
 	 * @return
 	 */
-	public DraggableOptions cursorAt(IJQOptions<?> cursorAt) {
+	public DraggableOptions cursorAt(CharSequence cursorAt) {
 		super.put("cursorAt", cursorAt);
 		return this;
 	}
@@ -201,7 +200,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @return
 	 */
 	public DraggableOptions grid(XYPosition grid) {
-		super.putUnquoted("grid", grid.toJson());
+		super.put("grid", grid);
 		return this;
 	}
 
@@ -238,7 +237,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param helper
 	 * @return
 	 */
-	public DraggableOptions helper(JQFunction callback) {
+	public DraggableOptions helper(IJQFunction callback) {
 		super.put("helper", callback);
 		return this;
 	}
@@ -477,7 +476,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public DraggableOptions startEvent(JQStatement callbackBody) {
+	public DraggableOptions startEvent(IJQStatement callbackBody) {
 		return this.startEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -487,7 +486,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public DraggableOptions startEvent(JQFunction callback) {
+	public DraggableOptions startEvent(IJQFunction callback) {
 		super.put("start", callback);
 		return this;
 	}
@@ -508,7 +507,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public DraggableOptions dragEvent(JQStatement callbackBody) {
+	public DraggableOptions dragEvent(IJQStatement callbackBody) {
 		return this.dragEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -518,7 +517,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public DraggableOptions dragEvent(JQFunction callback) {
+	public DraggableOptions dragEvent(IJQFunction callback) {
 		super.put("drag", callback);
 		return this;
 	}
@@ -539,7 +538,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public DraggableOptions stopEvent(JQStatement callbackBody) {
+	public DraggableOptions stopEvent(IJQStatement callbackBody) {
 		return this.stopEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -549,7 +548,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public DraggableOptions stopEvent(JQFunction callback) {
+	public DraggableOptions stopEvent(IJQFunction callback) {
 		super.put("stop", callback);
 		return this;
 	}

@@ -16,7 +16,7 @@
  */
 package com.google.code.jqwicket.ui.mb.fliptext;
 
-import static com.google.code.jqwicket.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 import org.apache.wicket.Page;
 

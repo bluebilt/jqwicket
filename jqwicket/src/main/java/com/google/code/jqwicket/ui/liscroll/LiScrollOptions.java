@@ -4,7 +4,7 @@ package com.google.code.jqwicket.ui.liscroll;
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
 
 /**
  * 

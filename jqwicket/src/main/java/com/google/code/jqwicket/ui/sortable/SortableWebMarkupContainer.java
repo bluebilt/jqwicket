@@ -20,8 +20,8 @@ package com.google.code.jqwicket.ui.sortable;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 import com.google.code.jqwicket.ui.JQUIWebMarkupContainer;
 
 /**
@@ -54,7 +54,7 @@ public class SortableWebMarkupContainer extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQUIWebMarkupContainer#newJQComponentBehavior(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.ui.JQUIWebMarkupContainer#newJQComponentBehavior(com.google.code.jqwicket.api.IJQOptions)
 	 */
 	@Override
 	protected SortableBehavior newJQComponentBehavior(SortableOptions options) {
@@ -66,7 +66,7 @@ public class SortableWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#serialize()
 	 */
-	public JQFunction serialize() {
+	public IJQFunction serialize() {
 		return this.behavior.serialize();
 	}
 
@@ -82,9 +82,9 @@ public class SortableWebMarkupContainer extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.sortable.ISortable#serialize(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.ui.sortable.ISortable#serialize(com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction serialize(IJQOptions<?> options) {
+	public IJQFunction serialize(IJQOptions<?> options) {
 		return this.behavior.serialize(options);
 	}
 
@@ -92,7 +92,7 @@ public class SortableWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#serialize(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void serialize(AjaxRequestTarget ajaxRequestTarget,
 			IJQOptions<?> options) {
@@ -104,7 +104,7 @@ public class SortableWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#toArray()
 	 */
-	public JQFunction toArray() {
+	public IJQFunction toArray() {
 		return this.behavior.toArray();
 	}
 
@@ -122,7 +122,7 @@ public class SortableWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#refresh()
 	 */
-	public JQFunction refresh() {
+	public IJQFunction refresh() {
 		return this.behavior.refresh();
 	}
 
@@ -140,7 +140,7 @@ public class SortableWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#refreshPositions()
 	 */
-	public JQFunction refreshPositions() {
+	public IJQFunction refreshPositions() {
 		return this.behavior.refreshPositions();
 	}
 
@@ -158,7 +158,7 @@ public class SortableWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#cancel()
 	 */
-	public JQFunction cancel() {
+	public IJQFunction cancel() {
 		return this.behavior.cancel();
 	}
 

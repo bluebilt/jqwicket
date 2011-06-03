@@ -1,12 +1,11 @@
 package com.google.code.jqwicket.ui.markitup;
 
-import static com.google.code.jqwicket.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 import org.apache.wicket.Page;
 
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
-
 
 /**
  * 
@@ -47,7 +46,7 @@ public class MarkItUpBehavior extends JQComponentBehaivor<MarkItUpOptions>
 						this.options.getSet().getName()));
 			else
 				target.addJQStatements($(this.component).chain(this.getName(),
-						this.options.toJson()));
+						this.options));
 		}
 	}
 }

@@ -16,11 +16,11 @@
  */
 package com.google.code.jqwicket.ui;
 
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQUIWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 
 /**
  * Abstract component behavior for JQuery UI components.
@@ -43,8 +43,8 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#destroy()
 	 */
-	public JQFunction destroy() {
-		return chain("'destroy'");
+	public IJQFunction destroy() {
+		return chain("destroy");
 	}
 
 	/**
@@ -61,8 +61,8 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#disable()
 	 */
-	public JQFunction disable() {
-		return chain("'disable'");
+	public IJQFunction disable() {
+		return chain("disable");
 	}
 
 	/**
@@ -79,8 +79,8 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#enable()
 	 */
-	public JQFunction enable() {
-		return chain("'enable'");
+	public IJQFunction enable() {
+		return chain("enable");
 	}
 
 	/**
@@ -98,8 +98,8 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	 * @see com.google.code.jqwicket.IJQUIWidget#option(java.lang.CharSequence,
 	 *      java.lang.CharSequence)
 	 */
-	public JQFunction option(CharSequence optionName, CharSequence optionValue) {
-		return chain("'option'", optionName, optionValue);
+	public IJQFunction option(CharSequence optionName, CharSequence optionValue) {
+		return chain("option", optionName, optionValue);
 	}
 
 	/**
@@ -116,17 +116,17 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.IJQUIWidget#options(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.IJQUIWidget#options(com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction options(IJQOptions<?> options) {
-		return chain("'option'", options.toJson());
+	public IJQFunction options(IJQOptions<?> options) {
+		return chain("option", options);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#options(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void options(AjaxRequestTarget ajaxRequestTarget,
 			IJQOptions<?> options) {
@@ -138,8 +138,8 @@ public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#widget()
 	 */
-	public JQFunction widget() {
-		return chain("'widget'");
+	public IJQFunction widget() {
+		return chain("widget");
 	}
 
 	/**

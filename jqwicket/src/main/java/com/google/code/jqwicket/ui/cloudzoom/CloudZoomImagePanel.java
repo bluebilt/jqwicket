@@ -19,7 +19,6 @@ package com.google.code.jqwicket.ui.cloudzoom;
 import java.util.Arrays;
 import java.util.Collections;
 
-
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.image.Image;
@@ -51,9 +50,8 @@ public class CloudZoomImagePanel extends Panel {
 		// add default zoom image
 		final CloudZoomImage img = options.getImage();
 		final WebMarkupContainer bigImage = this.newCloudZoomLink(
-				"cloudZoom-bigImage", img, getDefaultCssClass(), Utils
-						.substringBetween(String.valueOf(options.toJson()),
-								"{", "}"));
+				"cloudZoom-bigImage", img, getDefaultCssClass(),
+				Utils.substringBetween(String.valueOf(options), "{", "}"));
 		bigImage.add(this.newCloudZoomImage("cloudZoom-smallImage",
 				img.getSmallImageUrl(), img.getImageAlt(), img.getImageTitle()));
 		add(bigImage);

@@ -16,16 +16,16 @@
  */
 package com.google.code.jqwicket.ui.colorpicker;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.JQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
+import com.google.code.jqwicket.api.JQOptions;
 
 /**
  * @author mkalina
@@ -79,9 +79,8 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @return
 	 */
 	public ColorPickerOptions color(int r, int g, int b) {
-		super.putUnquoted("color",
-				new JQOptions().put("r", r).put("g", g).put("b", b)
-						.toJson());
+		super.put("color",
+				new JQOptions().put("r", r).put("g", g).put("b", b));
 		return this;
 	}
 
@@ -126,7 +125,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public ColorPickerOptions onShowEvent(JQStatement callbackBody) {
+	public ColorPickerOptions onShowEvent(IJQStatement callbackBody) {
 		return this.onShowEvent($f(callbackBody, "colpkr"));
 	}
 
@@ -136,7 +135,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public ColorPickerOptions onShowEvent(JQFunction callback) {
+	public ColorPickerOptions onShowEvent(IJQFunction callback) {
 		super.put("onShow", callback);
 		return this;
 	}
@@ -157,7 +156,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public ColorPickerOptions onBeforeShowEvent(JQStatement callbackBody) {
+	public ColorPickerOptions onBeforeShowEvent(IJQStatement callbackBody) {
 		return this.onBeforeShowEvent($f(callbackBody));
 	}
 
@@ -167,7 +166,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public ColorPickerOptions onBeforeShowEvent(JQFunction callback) {
+	public ColorPickerOptions onBeforeShowEvent(IJQFunction callback) {
 		super.put("onBeforeShow", callback);
 		return this;
 	}
@@ -188,7 +187,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public ColorPickerOptions onHideEvent(JQStatement callbackBody) {
+	public ColorPickerOptions onHideEvent(IJQStatement callbackBody) {
 		return this.onHideEvent($f(callbackBody, "colpkr"));
 	}
 
@@ -198,7 +197,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public ColorPickerOptions onHideEvent(JQFunction callback) {
+	public ColorPickerOptions onHideEvent(IJQFunction callback) {
 		super.put("onHide", callback);
 		return this;
 	}
@@ -219,7 +218,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public ColorPickerOptions onChangeEvent(JQStatement callbackBody) {
+	public ColorPickerOptions onChangeEvent(IJQStatement callbackBody) {
 		return this.onChangeEvent($f(callbackBody, "hsb", "hex", "rgb"));
 	}
 
@@ -229,7 +228,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public ColorPickerOptions onChangeEvent(JQFunction callback) {
+	public ColorPickerOptions onChangeEvent(IJQFunction callback) {
 		super.put("onChange", callback);
 		return this;
 	}
@@ -250,7 +249,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public ColorPickerOptions onSubmitEvent(JQStatement callbackBody) {
+	public ColorPickerOptions onSubmitEvent(IJQStatement callbackBody) {
 		return this.onSubmitEvent($f(callbackBody));
 	}
 
@@ -260,7 +259,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public ColorPickerOptions onSubmitEvent(JQFunction callback) {
+	public ColorPickerOptions onSubmitEvent(IJQFunction callback) {
 		super.put("onSubmit", callback);
 		return this;
 	}

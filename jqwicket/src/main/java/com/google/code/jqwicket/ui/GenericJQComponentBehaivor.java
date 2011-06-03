@@ -16,9 +16,10 @@
  */
 package com.google.code.jqwicket.ui;
 
-import static com.google.code.jqwicket.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.api.IJQOptions;
 
 /**
  * Generic, selector based abstract component behavior for JQuery components.
@@ -47,7 +48,7 @@ public abstract class GenericJQComponentBehaivor<T extends IJQOptions<T>>
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {
 		target.addJQStatements($(this.selector).chain(this.getName(),
-				this.options.toJson()));
+				this.options));
 	}
 
 	/**

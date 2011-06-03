@@ -19,8 +19,8 @@ package com.google.code.jqwicket.ui.sortable;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
 
 /**
@@ -54,8 +54,8 @@ public class SortableBehavior extends JQUIComponentBehaivor<SortableOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#serialize()
 	 */
-	public JQFunction serialize() {
-		return chain("'serialize'");
+	public IJQFunction serialize() {
+		return chain("serialize");
 	}
 
 	/**
@@ -70,17 +70,17 @@ public class SortableBehavior extends JQUIComponentBehaivor<SortableOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.sortable.ISortable#serialize(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.ui.sortable.ISortable#serialize(com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction serialize(IJQOptions<?> options) {
-		return chain("'serialize'");
+	public IJQFunction serialize(IJQOptions<?> options) {
+		return chain("serialize");
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#serialize(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void serialize(AjaxRequestTarget ajaxRequestTarget,
 			IJQOptions<?> options) {
@@ -92,8 +92,8 @@ public class SortableBehavior extends JQUIComponentBehaivor<SortableOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#toArray()
 	 */
-	public JQFunction toArray() {
-		return chain("'toArray'");
+	public IJQFunction toArray() {
+		return chain("toArray");
 	}
 
 	/**
@@ -110,8 +110,8 @@ public class SortableBehavior extends JQUIComponentBehaivor<SortableOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#refresh()
 	 */
-	public JQFunction refresh() {
-		return chain("'refresh'");
+	public IJQFunction refresh() {
+		return chain("refresh");
 	}
 
 	/**
@@ -128,8 +128,8 @@ public class SortableBehavior extends JQUIComponentBehaivor<SortableOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#refreshPositions()
 	 */
-	public JQFunction refreshPositions() {
-		return chain("'refreshPositions'");
+	public IJQFunction refreshPositions() {
+		return chain("refreshPositions");
 	}
 
 	/**
@@ -146,8 +146,8 @@ public class SortableBehavior extends JQUIComponentBehaivor<SortableOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.sortable.ISortable#cancel()
 	 */
-	public JQFunction cancel() {
-		return chain("'cancel'");
+	public IJQFunction cancel() {
+		return chain("cancel");
 	}
 
 	/**

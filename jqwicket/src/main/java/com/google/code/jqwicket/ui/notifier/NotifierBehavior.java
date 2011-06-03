@@ -16,12 +16,11 @@
  */
 package com.google.code.jqwicket.ui.notifier;
 
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.ui.IJQOptions;
-import com.google.code.jqwicket.ui.JQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
+import com.google.code.jqwicket.api.JQOptions;
 import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
 
 /**
@@ -56,9 +55,8 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
 	 *      java.lang.CharSequence)
 	 */
-	public JQFunction create(CharSequence title, CharSequence text) {
-		return create(new JQOptions().put("title", title).put("text",
-				text));
+	public IJQFunction create(CharSequence title, CharSequence text) {
+		return create(new JQOptions().put("title", title).put("text", text));
 	}
 
 	/**
@@ -75,17 +73,17 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction create(IJQOptions<?> msg) {
-		return chain("'create'", msg.toJson());
+	public IJQFunction create(IJQOptions<?> msg) {
+		return chain("create", msg);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void create(AjaxRequestTarget ajaxRequestTarget, IJQOptions<?> msg) {
 		chain(ajaxRequestTarget, this.create(msg));
@@ -95,17 +93,17 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction create(CharSequence template, IJQOptions<?> msg) {
-		return chain("'create'", template, msg.toJson());
+	public IJQFunction create(CharSequence template, IJQOptions<?> msg) {
+		return chain("create", template, msg);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence, com.google.code.jqwicket.ui.IJQOptions)
+	 *      java.lang.CharSequence, com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void create(AjaxRequestTarget ajaxRequestTarget,
 			CharSequence template, IJQOptions<?> msg) {
@@ -116,20 +114,20 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(java.lang.CharSequence,
-	 *      com.google.code.jqwicket.ui.IJQOptions,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions,
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction create(CharSequence template, IJQOptions<?> msg,
+	public IJQFunction create(CharSequence template, IJQOptions<?> msg,
 			IJQOptions<?> options) {
-		return chain("'create'", template, msg.toJson(), options.toJson());
+		return chain("create", template, msg, options);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#create(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence, com.google.code.jqwicket.ui.IJQOptions,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      java.lang.CharSequence, com.google.code.jqwicket.api.IJQOptions,
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void create(AjaxRequestTarget ajaxRequestTarget,
 			CharSequence template, IJQOptions<?> msg, IJQOptions<?> options) {
@@ -141,8 +139,8 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#open()
 	 */
-	public JQFunction open() {
-		return chain("'open'");
+	public IJQFunction open() {
+		return chain("open");
 	}
 
 	/**
@@ -159,8 +157,8 @@ public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.notifier.INotifier#close()
 	 */
-	public JQFunction close() {
-		return chain("'close'");
+	public IJQFunction close() {
+		return chain("close");
 	}
 
 	/**

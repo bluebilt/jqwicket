@@ -16,17 +16,16 @@
  */
 package com.google.code.jqwicket.ui.dialog;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 
@@ -41,7 +40,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		position(Position.CENTER);
 	}
 
-	public DialogOptions buttons(IJQOptions<?> options) {
+	public DialogOptions buttons(CharSequence options) {
 		super.put("buttons", options);
 		return this;
 	}
@@ -117,7 +116,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	}
 
 	public DialogOptions position(Position position) {
-		super.put("position", position);
+		super.put("position", position.name().toLowerCase());
 		return this;
 	}
 
@@ -171,7 +170,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param beforeclose
 	 * @return instance of the current component
 	 */
-	public DialogOptions beforeCloseEvent(JQFunction callback) {
+	public DialogOptions beforeCloseEvent(IJQFunction callback) {
 		super.put("beforeclose", callback);
 		return this;
 	}
@@ -180,7 +179,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		return this.beforeCloseEvent(js(callbackBody));
 	}
 
-	public DialogOptions beforeCloseEvent(JQStatement callbackBody) {
+	public DialogOptions beforeCloseEvent(IJQStatement callbackBody) {
 		super.put("beforeclose", $f(callbackBody, "event", "ui"));
 		return this;
 	}
@@ -191,7 +190,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param close
 	 * @return instance of the current component
 	 */
-	public DialogOptions closeEvent(JQFunction callback) {
+	public DialogOptions closeEvent(IJQFunction callback) {
 		super.put("close", callback);
 		return this;
 	}
@@ -200,7 +199,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		return this.closeEvent(js(callbackBody));
 	}
 
-	public DialogOptions closeEvent(JQStatement callbackBody) {
+	public DialogOptions closeEvent(IJQStatement callbackBody) {
 		super.put("close", $f(callbackBody, "event", "ui"));
 		return this;
 	}
@@ -211,7 +210,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param drag
 	 * @return instance of the current component
 	 */
-	public DialogOptions dragEvent(JQFunction callback) {
+	public DialogOptions dragEvent(IJQFunction callback) {
 		super.put("drag", callback);
 		return this;
 	}
@@ -220,7 +219,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		return this.dragEvent(js(callbackBody));
 	}
 
-	public DialogOptions dragEvent(JQStatement callbackBody) {
+	public DialogOptions dragEvent(IJQStatement callbackBody) {
 		super.put("drag", $f(callbackBody, "event", "ui"));
 		return this;
 	}
@@ -231,7 +230,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param dragStart
 	 * @return instance of the current component
 	 */
-	public DialogOptions dragStartEvent(JQFunction callback) {
+	public DialogOptions dragStartEvent(IJQFunction callback) {
 		super.put("dragStart", callback);
 		return this;
 	}
@@ -240,7 +239,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		return this.dragStartEvent(js(callbackBody));
 	}
 
-	public DialogOptions dragStartEvent(JQStatement callbackBody) {
+	public DialogOptions dragStartEvent(IJQStatement callbackBody) {
 		super.put("dragStart", $f(callbackBody, "event", "ui"));
 		return this;
 	}
@@ -251,7 +250,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param dragStop
 	 * @return instance of the current component
 	 */
-	public DialogOptions dragStopEvent(JQFunction callback) {
+	public DialogOptions dragStopEvent(IJQFunction callback) {
 		super.put("dragStop", callback);
 		return this;
 	}
@@ -260,7 +259,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		return this.dragStopEvent(js(callbackBody));
 	}
 
-	public DialogOptions dragStopEvent(JQStatement callbackBody) {
+	public DialogOptions dragStopEvent(IJQStatement callbackBody) {
 		super.put("dragStop", $f(callbackBody, "event", "ui"));
 		return this;
 	}
@@ -271,7 +270,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param focus
 	 * @return instance of the current component
 	 */
-	public DialogOptions focusEvent(JQFunction callback) {
+	public DialogOptions focusEvent(IJQFunction callback) {
 		super.put("focus", callback);
 		return this;
 	}
@@ -280,7 +279,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		return this.focusEvent(js(callbackBody));
 	}
 
-	public DialogOptions focusEvent(JQStatement callbackBody) {
+	public DialogOptions focusEvent(IJQStatement callbackBody) {
 		super.put("focus", $f(callbackBody, "event", "ui"));
 		return this;
 	}
@@ -291,7 +290,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param open
 	 * @return instance of the current component
 	 */
-	public DialogOptions openEvent(JQFunction callback) {
+	public DialogOptions openEvent(IJQFunction callback) {
 		super.put("open", callback);
 		return this;
 	}
@@ -300,7 +299,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		return this.openEvent(js(callbackBody));
 	}
 
-	public DialogOptions openEvent(JQStatement callbackBody) {
+	public DialogOptions openEvent(IJQStatement callbackBody) {
 		super.put("open", $f(callbackBody, "event", "ui"));
 		return this;
 	}
@@ -311,7 +310,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param resize
 	 * @return instance of the current component
 	 */
-	public DialogOptions resizeEvent(JQFunction callback) {
+	public DialogOptions resizeEvent(IJQFunction callback) {
 		super.put("resize", callback);
 		return this;
 	}
@@ -320,7 +319,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 		return this.resizeEvent(js(callbackBody));
 	}
 
-	public DialogOptions resizeEvent(JQStatement callbackBody) {
+	public DialogOptions resizeEvent(IJQStatement callbackBody) {
 		super.put("resize", $f(callbackBody, "event", "ui"));
 		return this;
 	}
@@ -331,7 +330,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param resizeStart
 	 * @return instance of the current component
 	 */
-	public DialogOptions resizeStartEvent(JQFunction callback) {
+	public DialogOptions resizeStartEvent(IJQFunction callback) {
 		super.put("resizeStart", callback);
 		return this;
 	}
@@ -352,7 +351,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public DialogOptions resizeStartEvent(JQStatement callbackBody) {
+	public DialogOptions resizeStartEvent(IJQStatement callbackBody) {
 		super.put("resizeStart", $f(callbackBody, "event", "ui"));
 		return this;
 	}
@@ -363,7 +362,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param resizeStop
 	 * @return instance of the current component
 	 */
-	public DialogOptions resizeStopEvent(JQFunction callback) {
+	public DialogOptions resizeStopEvent(IJQFunction callback) {
 		super.put("resizeStop", callback);
 		return this;
 	}
@@ -384,7 +383,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public DialogOptions resizeStopEvent(JQStatement callbackBody) {
+	public DialogOptions resizeStopEvent(IJQStatement callbackBody) {
 		super.put("resizeStop", $f(callbackBody, "event", "ui"));
 		return this;
 	}

@@ -19,7 +19,7 @@ package com.google.code.jqwicket.ui.prettyloader;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 
 /**
@@ -39,7 +39,7 @@ public interface IPrettyLoader extends IJQWidget<PrettyLoaderOptions> {
 	 * 
 	 * @return
 	 */
-	JQFunction show();
+	IJQFunction show();
 
 	/**
 	 * Displays the loader.
@@ -54,7 +54,7 @@ public interface IPrettyLoader extends IJQWidget<PrettyLoaderOptions> {
 	 * @param milliseconds
 	 * @return
 	 */
-	JQFunction show(int milliseconds);
+	IJQFunction show(int milliseconds);
 
 	/**
 	 * Displays the loader and will hide it after given number of milliseconds.
@@ -69,7 +69,7 @@ public interface IPrettyLoader extends IJQWidget<PrettyLoaderOptions> {
 	 * 
 	 * @return
 	 */
-	JQFunction hide();
+	IJQFunction hide();
 
 	/**
 	 * Will hide prettyLoader

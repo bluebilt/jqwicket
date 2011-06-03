@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.selectable;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQUIWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * @author mkalina
@@ -35,7 +35,7 @@ public interface ISelectable extends IJQUIWidget<SelectableOptions> {
 	 * be used to manually recalculate the position and size of each selectee
 	 * element. Very useful if autoRefresh is set to false.
 	 */
-	JQFunction refresh();
+	IJQFunction refresh();
 
 	/**
 	 * Refresh the position and size of each selectee element. This method can

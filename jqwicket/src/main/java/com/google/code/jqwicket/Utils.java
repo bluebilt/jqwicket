@@ -22,6 +22,8 @@ import java.util.Map;
 
 import org.apache.wicket.Application;
 
+import com.google.code.jqwicket.api.JQLiteral;
+
 /**
  * @author mkalina
  * 
@@ -88,32 +90,65 @@ public class Utils {
 		return (value == null || isBlank(value.toString()));
 	}
 
+	/**
+	 * Surrounds given value with quotes.
+	 * 
+	 * @param value
+	 * @return
+	 */
 	public static final CharSequence quote(CharSequence value) {
 		if (isBlank(value))
 			return null;
 		return new StringBuffer().append("'").append(value).append("'");
 	}
 
+	/**
+	 * Quotes each element in the given array.
+	 * 
+	 * @param value
+	 * @return
+	 */
 	public static final CharSequence[] quote(CharSequence[] value) {
 		if (isEmpty(value))
 			return null;
 
-		CharSequence[] quoted = new CharSequence[value.length];
-		for (int i = 0; i < value.length; i++) {
-			quoted[i] = Utils.quote(value[i]);
-		}
-
-		return quoted;
+		return walk(value, new IArrayWalkCallback<CharSequence>() {
+			public CharSequence onElement(int index, CharSequence obj) {
+				return quote(obj);
+			}
+		});
 	}
 
+	/**
+	 * Surrounds given value with double-quotes.
+	 * 
+	 * @param value
+	 * @return
+	 */
 	public static final CharSequence dblquote(CharSequence value) {
 		if (isBlank(value))
 			return null;
 		return new StringBuffer().append("\"").append(value).append("\"");
 	}
 
-	public static final CharSequence semicolon(CharSequence value) {
+	/**
+	 * Double-Quotes each element in the given array.
+	 * 
+	 * @param value
+	 * @return
+	 */
+	public static final CharSequence[] dblquote(CharSequence[] value) {
+		if (isEmpty(value))
+			return null;
 
+		return walk(value, new IArrayWalkCallback<CharSequence>() {
+			public CharSequence onElement(int index, CharSequence obj) {
+				return dblquote(obj);
+			}
+		});
+	}
+
+	public static final CharSequence semicolon(CharSequence value) {
 		if (isBlank(value))
 			return "";
 
@@ -128,26 +163,7 @@ public class Utils {
 		});
 	}
 
-	public static final CharSequence join(IRenderable[] statements,
-			String separator) {
-		return join(statements, separator, new IJoinCallback<IRenderable>() {
-			public CharSequence toCharSequence(IRenderable obj) {
-				return obj.render();
-			}
-		});
-	}
-
-	public static final CharSequence join(IJsonAware[] statements,
-			String separator) {
-		return join(statements, separator, new IJoinCallback<IJsonAware>() {
-			public CharSequence toCharSequence(IJsonAware obj) {
-				return obj.toJson();
-			}
-		});
-	}
-
 	public static final CharSequence join(int[] objects, String separator) {
-
 		StringBuffer buf = new StringBuffer();
 		for (int i = 0; i < objects.length; i++) {
 			buf.append(objects[i]);
@@ -158,7 +174,6 @@ public class Utils {
 	}
 
 	public static final CharSequence join(float[] objects, String separator) {
-
 		StringBuffer buf = new StringBuffer();
 		for (int i = 0; i < objects.length; i++) {
 			buf.append(objects[i]);
@@ -199,7 +214,7 @@ public class Utils {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static CharSequence toJson(Map<CharSequence, ? extends Object> map) {
-		StringBuilder sb = new StringBuilder();
+		StringBuffer sb = new StringBuffer();
 		sb.append("{");
 		if (map != null) {
 			int count = 0;
@@ -210,11 +225,7 @@ public class Utils {
 					continue;
 
 				CharSequence jsonValue;
-				if (value instanceof IRenderable) {
-					jsonValue = ((IRenderable) value).render();
-				} else if (value instanceof IJsonAware) {
-					jsonValue = ((IJsonAware) value).toJson();
-				} else if (value instanceof Map) {
+				if (value instanceof Map) {
 					jsonValue = "[" + toJson((Map) value) + "]";
 				} else if (value instanceof int[]) {
 					jsonValue = toJson((int[]) value);
@@ -222,10 +233,8 @@ public class Utils {
 					jsonValue = toJson((float[]) value);
 				} else if (value instanceof boolean[]) {
 					jsonValue = toJson((boolean[]) value);
-				} else if (value instanceof String[]) {
-					jsonValue = toJson((String[]) value);
-				} else if (value instanceof IJsonAware[]) {
-					jsonValue = toJson((IJsonAware[]) value);
+				} else if (value instanceof CharSequence[]) {
+					jsonValue = toJson((CharSequence[]) value);
 				} else if (value instanceof Object[]) {
 					jsonValue = toJson((Object[]) value);
 				} else
@@ -239,7 +248,7 @@ public class Utils {
 			}
 		}
 		sb.append("}");
-		return sb;
+		return JQLiteral._raw(sb);
 	}
 
 	public static CharSequence toJson(int[] args) {
@@ -267,7 +276,7 @@ public class Utils {
 		for (int i = 0; i < args.length; i++) {
 			if (i != 0)
 				buf.append(",");
-			buf.append(Utils.toJson(Utils.quote(args[i])));
+			buf.append(Utils.toJson(Utils.dblquote(args[i])));
 
 		}
 		buf.append("]");
@@ -279,18 +288,31 @@ public class Utils {
 				.append("]");
 	}
 
-	public static CharSequence toJson(IJsonAware[] args) {
-		return new StringBuilder().append("[")
-				.append(join(args, ",", new IJoinCallback<IJsonAware>() {
-					public CharSequence toCharSequence(IJsonAware obj) {
-						return obj.toJson();
-					}
-				})).append("]");
+	@SuppressWarnings("unchecked")
+	public static <T> T[] walk(T[] array, IArrayWalkCallback<T> callback) {
+
+		if (array == null)
+			return null;
+
+		T[] result = (T[]) Array.newInstance(array.getClass()
+				.getComponentType(), array.length);
+		for (int i = 0; i < array.length; i++) {
+			T e = callback.onElement(i, array[i]);
+			System.out.println(e);
+			result[i] = e;
+		}
+
+		return (T[]) result;
 	}
 
 	public static interface IJoinCallback<T> {
 
 		CharSequence toCharSequence(T obj);
+	}
+
+	public static interface IArrayWalkCallback<T> {
+
+		T onElement(int index, T obj);
 	}
 
 	// Substring between

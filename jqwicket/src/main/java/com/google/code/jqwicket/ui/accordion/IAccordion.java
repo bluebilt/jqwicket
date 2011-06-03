@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.accordion;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQUIWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * @author mkalina
@@ -34,7 +34,7 @@ public interface IAccordion extends IJQUIWidget<AccordionOptions> {
 	 * Activate a content part of the Accordion programmatically. The index can
 	 * be a zero-indexed number to match the position of the header to close
 	 */
-	JQFunction activate(int index);
+	IJQFunction activate(int index);
 
 	/**
 	 * Activate a content part of the Accordion programmatically. The index can
@@ -48,7 +48,7 @@ public interface IAccordion extends IJQUIWidget<AccordionOptions> {
 	 * Activate a content part of the Accordion programmatically. The index can
 	 * be a Selector matching an element
 	 */
-	JQFunction activate(CharSequence selector);
+	IJQFunction activate(CharSequence selector);
 
 	/**
 	 * Activate a content part of the Accordion programmatically. The index can
@@ -62,7 +62,7 @@ public interface IAccordion extends IJQUIWidget<AccordionOptions> {
 	 * Activate a content part of the Accordion programmatically. T Pass false
 	 * to close all (only possible with collapsible:true ).
 	 */
-	JQFunction activate(boolean activate);
+	IJQFunction activate(boolean activate);
 
 	/**
 	 * Activate a content part of the Accordion programmatically. Pass false to
@@ -75,7 +75,7 @@ public interface IAccordion extends IJQUIWidget<AccordionOptions> {
 	/**
 	 * Get any accordion option.
 	 */
-	JQFunction resize();
+	IJQFunction resize();
 
 	/**
 	 * Get any accordion option.

@@ -35,12 +35,16 @@ public enum StateEvent implements IJQEvent {
 		return this.name().toLowerCase();
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.IJsonAware#toJson()
-	 */
-	public CharSequence toJson() {
-		return this.getName();
+	public int length() {
+		return this.getName().length();
 	}
+
+	public char charAt(int index) {
+		return this.getName().charAt(index);
+	}
+
+	public CharSequence subSequence(int start, int end) {
+		return this.getName().subSequence(start, end);
+	}
+
 }

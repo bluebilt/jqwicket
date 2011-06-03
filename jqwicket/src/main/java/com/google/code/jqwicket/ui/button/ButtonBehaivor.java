@@ -19,7 +19,7 @@ package com.google.code.jqwicket.ui.button;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
 
 /**
@@ -53,8 +53,8 @@ public class ButtonBehaivor extends JQUIComponentBehaivor<ButtonOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.button.IButton#refresh()
 	 */
-	public JQFunction refresh() {
-		return chain("'refresh'");
+	public IJQFunction refresh() {
+		return chain("refresh");
 	}
 
 	/**

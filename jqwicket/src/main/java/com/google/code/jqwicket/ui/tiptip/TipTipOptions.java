@@ -16,15 +16,15 @@
  */
 package com.google.code.jqwicket.ui.tiptip;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -175,7 +175,7 @@ public class TipTipOptions extends AbstractJQOptions<TipTipOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public TipTipOptions enterEvent(JQStatement callbackBody) {
+	public TipTipOptions enterEvent(IJQStatement callbackBody) {
 		return this.enterEvent($f(callbackBody));
 	}
 
@@ -186,7 +186,7 @@ public class TipTipOptions extends AbstractJQOptions<TipTipOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public TipTipOptions enterEvent(JQFunction callback) {
+	public TipTipOptions enterEvent(IJQFunction callback) {
 		super.put("enter", callback);
 		return this;
 	}
@@ -209,7 +209,7 @@ public class TipTipOptions extends AbstractJQOptions<TipTipOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public TipTipOptions exitEvent(JQStatement callbackBody) {
+	public TipTipOptions exitEvent(IJQStatement callbackBody) {
 		return this.exitEvent($f(callbackBody));
 	}
 
@@ -220,7 +220,7 @@ public class TipTipOptions extends AbstractJQOptions<TipTipOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public TipTipOptions exitEvent(JQFunction callback) {
+	public TipTipOptions exitEvent(IJQFunction callback) {
 		super.put("exit", callback);
 		return this;
 	}

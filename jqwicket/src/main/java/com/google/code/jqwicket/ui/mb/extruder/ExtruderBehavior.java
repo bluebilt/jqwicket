@@ -16,11 +16,11 @@
  */
 package com.google.code.jqwicket.ui.mb.extruder;
 
-import static com.google.code.jqwicket.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.api.JQLiteral;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
-
 
 /**
  * @author mkalina
@@ -60,7 +60,8 @@ public class ExtruderBehavior extends JQComponentBehaivor<ExtruderOptions>
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {
 		target.addJQStatements($(this.component).addClass(
-				this.options.getExtruderClass()));
+				JQLiteral._raw(new StringBuffer("'").append(
+						this.options.getExtruderClass()).append("'"))));
 		super.contributeInternal(target);
 	}
 

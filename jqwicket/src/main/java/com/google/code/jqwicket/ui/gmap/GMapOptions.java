@@ -16,11 +16,10 @@
  */
 package com.google.code.jqwicket.ui.gmap;
 
-
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.IJsonAware;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.JQLiteral;
 
 /**
  * @author mkalina
@@ -36,7 +35,7 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
 			GMapOptions.class, "jquery.gmap-1.1.0-min.js");
 
-	public enum MapType implements IJsonAware {
+	public enum MapType {
 
 		/**
 		 * displays the default road map view.
@@ -58,17 +57,9 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 		 */
 		G_PHYSICAL_MAP;
 
-		/**
-		 * {@inheritDoc}
-		 * 
-		 * @see com.google.code.jqwicket.IJsonAware#toJson()
-		 */
-		public CharSequence toJson() {
-			return this.name();
-		}
 	}
 
-	public enum ControlType implements IJsonAware {
+	public enum ControlType {
 
 		GSMALLMAPCONTROL("GSmallMapControl"), GLARGEMAPCONTROL(
 				"GLargeMapControl"), GSMALLZOOMCONTROL("GSmallZoomControl"), GLARGEMAPCONTROL3D(
@@ -84,13 +75,13 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 			this.control = control;
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * 
-		 * @see com.google.code.jqwicket.IJsonAware#toJson()
-		 */
-		public CharSequence toJson() {
+		public CharSequence render() {
 			return this.control;
+		}
+
+		public CharSequence render(boolean withTrailingSemicolon) {
+			throw new UnsupportedOperationException(
+					"Method render(withTrailingSemicolon) is not supported!");
 		}
 
 	}
@@ -184,7 +175,11 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 	 * @return
 	 */
 	public GMapOptions controls(ControlType... controls) {
-		return super.put("controls", controls);
+		CharSequence[] csCOntrols = new CharSequence[controls.length];
+		for (int i = 0; i < controls.length; i++) {
+			csCOntrols[i] = controls[i].control;
+		}
+		return super.put("controls", csCOntrols);
 	}
 
 	/**
@@ -209,7 +204,7 @@ public class GMapOptions extends AbstractJQOptions<GMapOptions> {
 	 * @return
 	 */
 	public GMapOptions maptype(MapType type) {
-		return super.putUnquoted("maptype", type);
+		return super.put("maptype", JQLiteral._raw(type));
 	}
 
 	/**

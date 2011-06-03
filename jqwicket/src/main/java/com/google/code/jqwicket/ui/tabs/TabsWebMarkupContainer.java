@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.tabs;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIWebMarkupContainer;
 
 /**
@@ -65,7 +65,7 @@ public class TabsWebMarkupContainer extends
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#add(java.lang.CharSequence,
 	 *      java.lang.CharSequence)
 	 */
-	public JQFunction add(CharSequence url, CharSequence label) {
+	public IJQFunction add(CharSequence url, CharSequence label) {
 		return this.behavior.add(url, label);
 	}
 
@@ -75,7 +75,7 @@ public class TabsWebMarkupContainer extends
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#add(java.lang.CharSequence,
 	 *      java.lang.CharSequence, java.lang.Integer)
 	 */
-	public JQFunction add(CharSequence url, CharSequence label, Integer index) {
+	public IJQFunction add(CharSequence url, CharSequence label, Integer index) {
 		return this.behavior.add(url, label, index);
 	}
 
@@ -106,7 +106,7 @@ public class TabsWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#remove(int)
 	 */
-	public JQFunction remove(int index) {
+	public IJQFunction remove(int index) {
 		return this.behavior.remove(index);
 	}
 
@@ -126,7 +126,7 @@ public class TabsWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#enable(int)
 	 */
-	public JQFunction enable(int index) {
+	public IJQFunction enable(int index) {
 		return this.behavior.enable(index);
 	}
 
@@ -145,7 +145,7 @@ public class TabsWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#disable(int)
 	 */
-	public JQFunction disable(int index) {
+	public IJQFunction disable(int index) {
 		return this.behavior.disable(index);
 	}
 
@@ -164,7 +164,7 @@ public class TabsWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#select(int)
 	 */
-	public JQFunction select(int index) {
+	public IJQFunction select(int index) {
 		return this.behavior.select(index);
 	}
 
@@ -183,7 +183,7 @@ public class TabsWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#load(int)
 	 */
-	public JQFunction load(int index) {
+	public IJQFunction load(int index) {
 		return this.behavior.load(index);
 	}
 
@@ -203,7 +203,7 @@ public class TabsWebMarkupContainer extends
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#url(int,
 	 *      java.lang.CharSequence)
 	 */
-	public JQFunction url(int index, CharSequence url) {
+	public IJQFunction url(int index, CharSequence url) {
 		return this.behavior.url(index, url);
 	}
 
@@ -224,7 +224,7 @@ public class TabsWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#length()
 	 */
-	public JQFunction length() {
+	public IJQFunction length() {
 		return this.behavior.length();
 	}
 
@@ -242,7 +242,7 @@ public class TabsWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#abort()
 	 */
-	public JQFunction abort() {
+	public IJQFunction abort() {
 		return this.behavior.abort();
 	}
 
@@ -260,7 +260,7 @@ public class TabsWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.tabs.ITabs#rotate(int, boolean)
 	 */
-	public JQFunction rotate(int ms, boolean continuing) {
+	public IJQFunction rotate(int ms, boolean continuing) {
 		return this.behavior.rotate(ms, continuing);
 	}
 

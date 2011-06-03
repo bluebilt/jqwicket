@@ -16,31 +16,36 @@
  */
 package com.google.code.jqwicket.ui;
 
-import com.google.code.jqwicket.IJsonAware;
+import com.google.code.jqwicket.api.JQLiteral;
 
 /**
  * @author mkalina
  * 
  */
-public class XYPosition implements IJsonAware {
+public class XYPosition implements CharSequence {
 
-	private int x;
-
-	private int y;
+	private JQLiteral buf;
 
 	public XYPosition(int x, int y) {
-		this.x = x;
-		this.y = y;
+		this.buf = JQLiteral._raw(new StringBuffer().append("[").append(x)
+				.append(",").append(y).append("]"));
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.IJsonAware#toJson()
-	 */
-	public CharSequence toJson() {
-		return new StringBuffer().append("[").append(x).append(",").append(y)
-				.append("]");
+	public int length() {
+		return this.buf.length();
+	}
+
+	public char charAt(int index) {
+		return this.buf.charAt(index);
+	}
+
+	public CharSequence subSequence(int start, int end) {
+		return this.buf.subSequence(start, end);
+	}
+
+	@Override
+	public String toString() {
+		return String.valueOf(this.buf);
 	}
 
 }

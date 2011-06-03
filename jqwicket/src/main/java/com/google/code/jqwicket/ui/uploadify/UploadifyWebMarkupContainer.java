@@ -20,8 +20,8 @@ package com.google.code.jqwicket.ui.uploadify;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 import com.google.code.jqwicket.ui.JQWebMarkupContainer;
 
 /**
@@ -54,7 +54,7 @@ public class UploadifyWebMarkupContainer extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQUIWebMarkupContainer#newJQComponentBehavior(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.ui.JQUIWebMarkupContainer#newJQComponentBehavior(com.google.code.jqwicket.api.IJQOptions)
 	 */
 	@Override
 	protected UploadifyBehavior newJQComponentBehavior(UploadifyOptions options) {
@@ -66,7 +66,7 @@ public class UploadifyWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify()
 	 */
-	public JQFunction uploadify() {
+	public IJQFunction uploadify() {
 		return this.behavior.uploadify();
 	}
 
@@ -82,9 +82,9 @@ public class UploadifyWebMarkupContainer extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify(com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction uploadify(IJQOptions<?> options) {
+	public IJQFunction uploadify(IJQOptions<?> options) {
 		return this.behavior.uploadify(options);
 	}
 
@@ -92,7 +92,7 @@ public class UploadifyWebMarkupContainer extends
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void uploadify(AjaxRequestTarget ajaxRequestTarget,
 			IJQOptions<?> options) {
@@ -104,7 +104,7 @@ public class UploadifyWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyCancel(java.lang.CharSequence)
 	 */
-	public JQFunction uploadifyCancel(CharSequence id) {
+	public IJQFunction uploadifyCancel(CharSequence id) {
 		return this.behavior.uploadifyCancel(id);
 	}
 
@@ -124,7 +124,7 @@ public class UploadifyWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyClearQueue()
 	 */
-	public JQFunction uploadifyClearQueue() {
+	public IJQFunction uploadifyClearQueue() {
 		return this.behavior.uploadifyClearQueue();
 	}
 
@@ -143,7 +143,7 @@ public class UploadifyWebMarkupContainer extends
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifySettings(java.lang.CharSequence,
 	 *      java.lang.CharSequence)
 	 */
-	public JQFunction uploadifySettings(CharSequence name, CharSequence value) {
+	public IJQFunction uploadifySettings(CharSequence name, CharSequence value) {
 		return this.behavior.uploadifySettings(name, value);
 	}
 
@@ -164,7 +164,7 @@ public class UploadifyWebMarkupContainer extends
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifySettings(java.lang.CharSequence,
 	 *      java.lang.CharSequence, boolean)
 	 */
-	public JQFunction uploadifySettings(CharSequence name, CharSequence value,
+	public IJQFunction uploadifySettings(CharSequence name, CharSequence value,
 			boolean resetObject) {
 		return this.behavior.uploadifySettings(name, value, resetObject);
 	}
@@ -186,7 +186,7 @@ public class UploadifyWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyUpload()
 	 */
-	public JQFunction uploadifyUpload() {
+	public IJQFunction uploadifyUpload() {
 		return this.behavior.uploadifyUpload();
 	}
 
@@ -205,7 +205,7 @@ public class UploadifyWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyUpload(java.lang.CharSequence)
 	 */
-	public JQFunction uploadifyUpload(CharSequence id) {
+	public IJQFunction uploadifyUpload(CharSequence id) {
 		return this.behavior.uploadifyUpload(id);
 	}
 

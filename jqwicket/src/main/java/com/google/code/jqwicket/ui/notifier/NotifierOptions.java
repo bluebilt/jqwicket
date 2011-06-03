@@ -16,15 +16,15 @@
  */
 package com.google.code.jqwicket.ui.notifier;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -137,7 +137,7 @@ public class NotifierOptions extends AbstractJQOptions<NotifierOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public NotifierOptions beforeOpenEvent(JQStatement callbackBody) {
+	public NotifierOptions beforeOpenEvent(IJQStatement callbackBody) {
 		return this.beforeOpenEvent($f(callbackBody));
 	}
 
@@ -148,7 +148,7 @@ public class NotifierOptions extends AbstractJQOptions<NotifierOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public NotifierOptions beforeOpenEvent(JQFunction callback) {
+	public NotifierOptions beforeOpenEvent(IJQFunction callback) {
 		super.put("beforeopen", callback);
 		return this;
 	}
@@ -169,7 +169,7 @@ public class NotifierOptions extends AbstractJQOptions<NotifierOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public NotifierOptions openEvent(JQStatement callbackBody) {
+	public NotifierOptions openEvent(IJQStatement callbackBody) {
 		return this.openEvent($f(callbackBody));
 	}
 
@@ -179,7 +179,7 @@ public class NotifierOptions extends AbstractJQOptions<NotifierOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public NotifierOptions openEvent(JQFunction callback) {
+	public NotifierOptions openEvent(IJQFunction callback) {
 		super.put("open", callback);
 		return this;
 	}
@@ -200,7 +200,7 @@ public class NotifierOptions extends AbstractJQOptions<NotifierOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public NotifierOptions closeEvent(JQStatement callbackBody) {
+	public NotifierOptions closeEvent(IJQStatement callbackBody) {
 		return this.closeEvent($f(callbackBody));
 	}
 
@@ -210,7 +210,7 @@ public class NotifierOptions extends AbstractJQOptions<NotifierOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public NotifierOptions closeEvent(JQFunction callback) {
+	public NotifierOptions closeEvent(IJQFunction callback) {
 		super.put("close", callback);
 		return this;
 	}
@@ -239,7 +239,7 @@ public class NotifierOptions extends AbstractJQOptions<NotifierOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public NotifierOptions clickEvent(JQStatement callbackBody) {
+	public NotifierOptions clickEvent(IJQStatement callbackBody) {
 		return this.clickEvent($f(callbackBody, "e", "instance"));
 	}
 
@@ -253,7 +253,7 @@ public class NotifierOptions extends AbstractJQOptions<NotifierOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public NotifierOptions clickEvent(JQFunction callback) {
+	public NotifierOptions clickEvent(IJQFunction callback) {
 		super.put("click", callback);
 		return this;
 	}

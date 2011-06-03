@@ -25,6 +25,9 @@ import org.apache.wicket.ResourceReference;
 import org.apache.wicket.behavior.AbstractBehavior;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
+import com.google.code.jqwicket.api.IJQStatement;
+import com.google.code.jqwicket.api.JQuery;
+
 /**
  * Base, low-level jquery wicket behavior able to render javascript statements
  * and javascript/css resources.
@@ -36,7 +39,7 @@ public class JQBehavior extends AbstractBehavior implements
 
 	private static final long serialVersionUID = 1L;
 
-	private Set<JQStatement> statements;
+	private Set<IJQStatement> statements;
 
 	private Set<JavascriptResourceReference> jsResourceReferences;
 
@@ -51,7 +54,7 @@ public class JQBehavior extends AbstractBehavior implements
 	public JQBehavior() {
 	}
 
-	public JQBehavior(JQStatement... statements) {
+	public JQBehavior(IJQStatement... statements) {
 		this.addJQStatements(statements);
 	}
 
@@ -59,12 +62,12 @@ public class JQBehavior extends AbstractBehavior implements
 		this.addJQStatements(statements);
 	}
 
-	public JQBehavior addJQStatements(JQStatement... statements) {
+	public JQBehavior addJQStatements(IJQStatement... statements) {
 		if (Utils.isEmpty(statements))
 			return this;
 
 		if (this.statements == null)
-			this.statements = new LinkedHashSet<JQStatement>();
+			this.statements = new LinkedHashSet<IJQStatement>();
 
 		this.statements.addAll(Arrays.asList(statements));
 		return this;
@@ -75,7 +78,7 @@ public class JQBehavior extends AbstractBehavior implements
 			return this;
 
 		if (this.statements == null)
-			this.statements = new LinkedHashSet<JQStatement>();
+			this.statements = new LinkedHashSet<IJQStatement>();
 
 		for (CharSequence stmt : statements) {
 			this.statements.add(JQuery.js(stmt));

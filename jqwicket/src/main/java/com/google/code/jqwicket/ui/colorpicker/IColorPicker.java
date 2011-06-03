@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.colorpicker;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * Implementation of the <a href="http://www.eyecon.ro/colorpicker/">Color
@@ -38,7 +38,7 @@ public interface IColorPicker extends IJQWidget<ColorPickerOptions> {
 	 * 
 	 * @return the associated JsStatement
 	 */
-	JQFunction show();
+	IJQFunction show();
 
 	/**
 	 * Method to show the color picker within the ajax request
@@ -52,7 +52,7 @@ public interface IColorPicker extends IJQWidget<ColorPickerOptions> {
 	 * 
 	 * @return the associated JsStatement
 	 */
-	JQFunction hide();
+	IJQFunction hide();
 
 	/**
 	 * Method to hide the color picker within the ajax request
@@ -66,7 +66,7 @@ public interface IColorPicker extends IJQWidget<ColorPickerOptions> {
 	 * 
 	 * @return the associated JsStatement
 	 */
-	JQFunction setColor(CharSequence color);
+	IJQFunction setColor(CharSequence color);
 
 	/**
 	 * Method to set the color within the ajax request
@@ -80,7 +80,7 @@ public interface IColorPicker extends IJQWidget<ColorPickerOptions> {
 	 * 
 	 * @return the associated JsStatement
 	 */
-	JQFunction setColor(int r, int g, int b);
+	IJQFunction setColor(int r, int g, int b);
 
 	/**
 	 * Method to set the color within the ajax request

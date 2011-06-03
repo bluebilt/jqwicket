@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.slider;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIWebMarkupContainer;
 
 /**
@@ -64,7 +64,7 @@ public class SliderWebMarkupContainer extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.slider.ISlider#value(int)
 	 */
-	public JQFunction value(int value) {
+	public IJQFunction value(int value) {
 		return this.behavior.value(value);
 	}
 

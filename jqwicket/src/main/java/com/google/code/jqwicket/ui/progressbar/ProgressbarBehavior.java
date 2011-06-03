@@ -16,10 +16,10 @@
  */
 package com.google.code.jqwicket.ui.progressbar;
 
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.JQLiteral;
 import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
 
 /**
@@ -63,8 +63,8 @@ public class ProgressbarBehavior extends
 	 * 
 	 * @see com.google.code.jqwicket.ui.progressbar.IProgressbar#value(int)
 	 */
-	public JQFunction value(int value) {
-		return chain("\"value\"", String.valueOf(value));
+	public IJQFunction value(int value) {
+		return chain("value", JQLiteral._raw(value));
 	}
 
 }

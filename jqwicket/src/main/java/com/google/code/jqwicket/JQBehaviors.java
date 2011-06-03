@@ -16,8 +16,10 @@
  */
 package com.google.code.jqwicket;
 
-import static com.google.code.jqwicket.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.$f;
 
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 import com.google.code.jqwicket.event.JQEventBehavior;
 import com.google.code.jqwicket.event.KeyboardEvent;
 import com.google.code.jqwicket.event.MouseEvent;
@@ -52,7 +54,7 @@ public abstract class JQBehaviors {
 	 * @param statements
 	 * @return
 	 */
-	public static final JQBehavior js(JQStatement... statements) {
+	public static final JQBehavior js(IJQStatement... statements) {
 		return new JQBehavior(statements);
 	}
 
@@ -90,7 +92,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -112,14 +114,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseOver(final JQStatement stmt,
+	public static final JQEventBehavior mouseOver(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.OVER) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -141,13 +143,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseOver(final JQFunction function) {
+	public static final JQEventBehavior mouseOver(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.OVER) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -176,7 +178,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -198,14 +200,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseToggle(final JQStatement stmt,
+	public static final JQEventBehavior mouseToggle(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.TOGGLE) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -227,13 +229,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseToggle(final JQFunction function) {
+	public static final JQEventBehavior mouseToggle(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.TOGGLE) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -262,7 +264,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -284,14 +286,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseClick(final JQStatement stmt,
+	public static final JQEventBehavior mouseClick(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.CLICK) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -313,13 +315,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseClick(final JQFunction function) {
+	public static final JQEventBehavior mouseClick(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.CLICK) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -348,7 +350,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -371,13 +373,13 @@ public abstract class JQBehaviors {
 	 * @return
 	 */
 	public static final JQEventBehavior mouseDoubleClick(
-			final JQStatement stmt, final CharSequence... args) {
+			final IJQStatement stmt, final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.DBLCLICK) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -400,13 +402,13 @@ public abstract class JQBehaviors {
 	 * @return
 	 */
 	public static final JQEventBehavior mouseDoubleClick(
-			final JQFunction function) {
+			final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.DBLCLICK) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -435,7 +437,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -457,14 +459,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior focusIn(final JQStatement stmt,
+	public static final JQEventBehavior focusIn(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.FOCUSIN) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -486,13 +488,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior focusIn(final JQFunction function) {
+	public static final JQEventBehavior focusIn(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.FOCUSIN) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -521,7 +523,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -543,14 +545,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior focusOut(final JQStatement stmt,
+	public static final JQEventBehavior focusOut(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.FOCUSOUT) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -572,13 +574,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior focusOut(final JQFunction function) {
+	public static final JQEventBehavior focusOut(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.FOCUSOUT) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -607,7 +609,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -629,14 +631,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseHover(final JQStatement stmt,
+	public static final JQEventBehavior mouseHover(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.HOVER) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -658,13 +660,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseHover(final JQFunction function) {
+	public static final JQEventBehavior mouseHover(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.HOVER) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -693,7 +695,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -715,14 +717,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseDown(final JQStatement stmt,
+	public static final JQEventBehavior mouseDown(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.DOWN) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -744,13 +746,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseDown(final JQFunction function) {
+	public static final JQEventBehavior mouseDown(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.DOWN) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -779,7 +781,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -801,14 +803,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseEnter(final JQStatement stmt,
+	public static final JQEventBehavior mouseEnter(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.ENTER) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -830,13 +832,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseEnter(final JQFunction function) {
+	public static final JQEventBehavior mouseEnter(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.ENTER) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -865,7 +867,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -887,14 +889,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseLeave(final JQStatement stmt,
+	public static final JQEventBehavior mouseLeave(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.LEAVE) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -916,13 +918,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseLeave(final JQFunction function) {
+	public static final JQEventBehavior mouseLeave(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.LEAVE) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -951,7 +953,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -973,14 +975,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseMove(final JQStatement stmt,
+	public static final JQEventBehavior mouseMove(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.MOVE) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1002,13 +1004,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseMove(final JQFunction function) {
+	public static final JQEventBehavior mouseMove(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.MOVE) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1037,7 +1039,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -1059,14 +1061,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseOut(final JQStatement stmt,
+	public static final JQEventBehavior mouseOut(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.OUT) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1088,13 +1090,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseOut(final JQFunction function) {
+	public static final JQEventBehavior mouseOut(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.OUT) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1123,7 +1125,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -1145,14 +1147,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseUp(final JQStatement stmt,
+	public static final JQEventBehavior mouseUp(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(MouseEvent.UP) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1174,13 +1176,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior mouseUp(final JQFunction function) {
+	public static final JQEventBehavior mouseUp(final IJQFunction function) {
 		return new JQEventBehavior(MouseEvent.UP) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1209,7 +1211,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -1231,14 +1233,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior keyUp(final JQStatement stmt,
+	public static final JQEventBehavior keyUp(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(KeyboardEvent.UP) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1260,13 +1262,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior keyUp(final JQFunction function) {
+	public static final JQEventBehavior keyUp(final IJQFunction function) {
 		return new JQEventBehavior(KeyboardEvent.UP) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1295,7 +1297,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -1317,14 +1319,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior keyDown(final JQStatement stmt,
+	public static final JQEventBehavior keyDown(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(KeyboardEvent.DOWN) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1346,13 +1348,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior keyDown(final JQFunction function) {
+	public static final JQEventBehavior keyDown(final IJQFunction function) {
 		return new JQEventBehavior(KeyboardEvent.DOWN) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1381,7 +1383,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -1403,14 +1405,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior keyPress(final JQStatement stmt,
+	public static final JQEventBehavior keyPress(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(KeyboardEvent.PRESS) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1432,13 +1434,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior keyPress(final JQFunction function) {
+	public static final JQEventBehavior keyPress(final IJQFunction function) {
 		return new JQEventBehavior(KeyboardEvent.PRESS) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1467,7 +1469,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -1489,14 +1491,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior blur(final JQStatement stmt,
+	public static final JQEventBehavior blur(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(StateEvent.BLUR) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1518,13 +1520,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior blur(final JQFunction function) {
+	public static final JQEventBehavior blur(final IJQFunction function) {
 		return new JQEventBehavior(StateEvent.BLUR) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1553,7 +1555,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -1575,14 +1577,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior change(final JQStatement stmt,
+	public static final JQEventBehavior change(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(StateEvent.CHANGE) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1604,13 +1606,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior change(final JQFunction function) {
+	public static final JQEventBehavior change(final IJQFunction function) {
 		return new JQEventBehavior(StateEvent.CHANGE) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1639,7 +1641,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -1661,14 +1663,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior error(final JQStatement stmt,
+	public static final JQEventBehavior error(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(StateEvent.ERROR) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1690,13 +1692,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior error(final JQFunction function) {
+	public static final JQEventBehavior error(final IJQFunction function) {
 		return new JQEventBehavior(StateEvent.ERROR) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1725,7 +1727,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -1747,14 +1749,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior focus(final JQStatement stmt,
+	public static final JQEventBehavior focus(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(StateEvent.FOCUS) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1776,13 +1778,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior focus(final JQFunction function) {
+	public static final JQEventBehavior focus(final IJQFunction function) {
 		return new JQEventBehavior(StateEvent.FOCUS) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1811,7 +1813,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -1833,14 +1835,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior load(final JQStatement stmt,
+	public static final JQEventBehavior load(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(StateEvent.LOAD) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1862,13 +1864,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior load(final JQFunction function) {
+	public static final JQEventBehavior load(final IJQFunction function) {
 		return new JQEventBehavior(StateEvent.LOAD) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1897,7 +1899,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -1919,14 +1921,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior resize(final JQStatement stmt,
+	public static final JQEventBehavior resize(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(StateEvent.RESIZE) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -1948,13 +1950,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior resize(final JQFunction function) {
+	public static final JQEventBehavior resize(final IJQFunction function) {
 		return new JQEventBehavior(StateEvent.RESIZE) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -1983,7 +1985,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -2005,14 +2007,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior scroll(final JQStatement stmt,
+	public static final JQEventBehavior scroll(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(StateEvent.SCROLL) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -2034,13 +2036,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior scroll(final JQFunction function) {
+	public static final JQEventBehavior scroll(final IJQFunction function) {
 		return new JQEventBehavior(StateEvent.SCROLL) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -2069,7 +2071,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -2091,14 +2093,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior select(final JQStatement stmt,
+	public static final JQEventBehavior select(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(StateEvent.SELECT) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -2120,13 +2122,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior select(final JQFunction function) {
+	public static final JQEventBehavior select(final IJQFunction function) {
 		return new JQEventBehavior(StateEvent.SELECT) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};
@@ -2155,7 +2157,7 @@ public abstract class JQBehaviors {
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(js, args);
 			}
 		};
@@ -2177,14 +2179,14 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior submit(final JQStatement stmt,
+	public static final JQEventBehavior submit(final IJQStatement stmt,
 			final CharSequence... args) {
 		return new JQEventBehavior(StateEvent.SUBMIT) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return $f(stmt, args);
 			}
 		};
@@ -2206,13 +2208,13 @@ public abstract class JQBehaviors {
 	 * @param args
 	 * @return
 	 */
-	public static final JQEventBehavior submit(final JQFunction function) {
+	public static final JQEventBehavior submit(final IJQFunction function) {
 		return new JQEventBehavior(StateEvent.SUBMIT) {
 
 			private static final long serialVersionUID = 1L;
 
 			@Override
-			public JQFunction callback() {
+			public IJQFunction callback() {
 				return function;
 			}
 		};

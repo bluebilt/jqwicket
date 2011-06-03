@@ -142,5 +142,5 @@ public abstract class AjaxValidationRule extends
 		}
 		return buf;
 	}
-
+	
 }

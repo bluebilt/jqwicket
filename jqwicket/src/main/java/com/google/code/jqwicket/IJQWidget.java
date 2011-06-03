@@ -18,7 +18,7 @@ package com.google.code.jqwicket;
 
 import java.io.Serializable;
 
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.IJQOptions;
 
 
 /**

@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.slider;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQUIWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * @author mkalina
@@ -35,7 +35,7 @@ public interface ISlider extends IJQUIWidget<SliderOptions> {
 	 * 
 	 * @return the associated JsStatement
 	 */
-	JQFunction value(int value);
+	IJQFunction value(int value);
 
 	/**
 	 * Method to value the slider within the ajax request

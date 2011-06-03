@@ -16,16 +16,15 @@
  */
 package com.google.code.jqwicket.ui.blockui;
 
-import static com.google.code.jqwicket.JQuery.$;
-import static com.google.code.jqwicket.JQuery.$dot;
-import static com.google.code.jqwicket.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$f;
 
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.JQuery;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.JQuery;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
 
 /**
@@ -69,7 +68,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block()
 	 */
-	public JQFunction block() {
+	public IJQFunction block() {
 		return this.block(this.options);
 	}
 
@@ -88,8 +87,8 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction block(BlockUIOptions options) {
-		return $f($dot("blockUI", options != null ? options.toJson() : ""));
+	public IJQFunction block(BlockUIOptions options) {
+		return $f($().chain("blockUI", options != null ? options : ""));
 	}
 
 	/**
@@ -109,7 +108,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(org.apache.wicket.Component)
 	 */
-	public JQFunction block(Component component) {
+	public IJQFunction block(Component component) {
 		return this.block(JQuery.selector(component));
 	}
 
@@ -129,7 +128,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(org.apache.wicket.Component,
 	 *      com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction block(Component component, BlockUIOptions options) {
+	public IJQFunction block(Component component, BlockUIOptions options) {
 		return this.block(JQuery.selector(component), options);
 	}
 
@@ -150,7 +149,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(java.lang.CharSequence)
 	 */
-	public JQFunction block(CharSequence selector) {
+	public IJQFunction block(CharSequence selector) {
 		return this.block(selector, this.options);
 	}
 
@@ -170,9 +169,8 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(java.lang.CharSequence,
 	 *      com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction block(CharSequence selector, BlockUIOptions options) {
-		return $f($(selector).chain("block",
-				options != null ? options.toJson() : ""));
+	public IJQFunction block(CharSequence selector, BlockUIOptions options) {
+		return $f($(selector).chain("block", options != null ? options : ""));
 	}
 
 	/**
@@ -192,7 +190,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock()
 	 */
-	public JQFunction unblock() {
+	public IJQFunction unblock() {
 		return this.unblock(this.options);
 	}
 
@@ -210,8 +208,8 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction unblock(BlockUIOptions options) {
-		return $f($dot("unblockUI", options != null ? options.toJson() : ""));
+	public IJQFunction unblock(BlockUIOptions options) {
+		return $f($().chain("unblockUI", options != null ? options : ""));
 	}
 
 	/**
@@ -230,7 +228,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(java.lang.CharSequence)
 	 */
-	public JQFunction unblock(CharSequence selector) {
+	public IJQFunction unblock(CharSequence selector) {
 		return unblock(selector, this.options);
 	}
 
@@ -251,9 +249,8 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(java.lang.CharSequence,
 	 *      com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction unblock(CharSequence selector, BlockUIOptions options) {
-		return $f($(selector).chain("unblock",
-				options != null ? options.toJson() : ""));
+	public IJQFunction unblock(CharSequence selector, BlockUIOptions options) {
+		return $f($(selector).chain("unblock", options != null ? options : ""));
 	}
 
 	/**
@@ -273,7 +270,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(org.apache.wicket.Component)
 	 */
-	public JQFunction unblock(Component component) {
+	public IJQFunction unblock(Component component) {
 		return this.unblock(JQuery.selector(component));
 	}
 
@@ -293,7 +290,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(org.apache.wicket.Component,
 	 *      com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
-	public JQFunction unblock(Component component, BlockUIOptions options) {
+	public IJQFunction unblock(Component component, BlockUIOptions options) {
 		return this.unblock(JQuery.selector(component), options);
 	}
 

@@ -16,16 +16,15 @@
  */
 package com.google.code.jqwicket.ui.fancybox;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -210,7 +209,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param ajax
 	 * @return
 	 */
-	public FancyBoxOptions ajax(IJQOptions<?> ajax) {
+	public FancyBoxOptions ajax(CharSequence ajax) {
 		return super.put("ajax", ajax);
 	}
 
@@ -221,7 +220,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param swf
 	 * @return
 	 */
-	public FancyBoxOptions swf(IJQOptions<?> swf) {
+	public FancyBoxOptions swf(CharSequence swf) {
 		return super.put("swf", swf);
 	}
 
@@ -309,7 +308,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public FancyBoxOptions titleFormat(JQFunction callback) {
+	public FancyBoxOptions titleFormat(IJQFunction callback) {
 		return super.put("titleFormat", callback);
 	}
 
@@ -320,7 +319,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public FancyBoxOptions titleFormat(JQStatement callbackBody) {
+	public FancyBoxOptions titleFormat(IJQStatement callbackBody) {
 		return this.titleFormat($f(callbackBody, "title", "currentArray",
 				"currentIndex", "currentOpts"));
 	}
@@ -535,7 +534,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public FancyBoxOptions startEvent(JQStatement callbackBody) {
+	public FancyBoxOptions startEvent(IJQStatement callbackBody) {
 		return this.startEvent($f(callbackBody));
 	}
 
@@ -545,7 +544,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public FancyBoxOptions startEvent(JQFunction callback) {
+	public FancyBoxOptions startEvent(IJQFunction callback) {
 		return super.put("onStart", callback);
 	}
 
@@ -565,7 +564,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public FancyBoxOptions cancelEvent(JQStatement callbackBody) {
+	public FancyBoxOptions cancelEvent(IJQStatement callbackBody) {
 		return this.cancelEvent($f(callbackBody));
 	}
 
@@ -575,7 +574,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public FancyBoxOptions cancelEvent(JQFunction callback) {
+	public FancyBoxOptions cancelEvent(IJQFunction callback) {
 		return super.put("onCancel", callback);
 	}
 
@@ -595,7 +594,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public FancyBoxOptions completeEvent(JQStatement callbackBody) {
+	public FancyBoxOptions completeEvent(IJQStatement callbackBody) {
 		return this.completeEvent($f(callbackBody));
 	}
 
@@ -605,7 +604,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public FancyBoxOptions completeEvent(JQFunction callback) {
+	public FancyBoxOptions completeEvent(IJQFunction callback) {
 		return super.put("onComplete", callback);
 	}
 
@@ -625,7 +624,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public FancyBoxOptions cleanupEvent(JQStatement callbackBody) {
+	public FancyBoxOptions cleanupEvent(IJQStatement callbackBody) {
 		return this.cleanupEvent($f(callbackBody));
 	}
 
@@ -635,7 +634,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public FancyBoxOptions cleanupEvent(JQFunction callback) {
+	public FancyBoxOptions cleanupEvent(IJQFunction callback) {
 		return super.put("onCleanup", callback);
 	}
 
@@ -655,7 +654,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public FancyBoxOptions closedEvent(JQStatement callbackBody) {
+	public FancyBoxOptions closedEvent(IJQStatement callbackBody) {
 		return this.closedEvent($f(callbackBody));
 	}
 
@@ -665,7 +664,7 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public FancyBoxOptions closedEvent(JQFunction callback) {
+	public FancyBoxOptions closedEvent(IJQFunction callback) {
 		return super.put("onClosed", callback);
 	}
 }

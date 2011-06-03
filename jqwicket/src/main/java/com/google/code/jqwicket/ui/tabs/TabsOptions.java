@@ -16,21 +16,25 @@
  */
 package com.google.code.jqwicket.ui.tabs;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.IJQOptions;
+import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
+
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 
 	private static final long serialVersionUID = 1L;
+
+	private static final JavascriptResourceReference jsCookieResource = new JavascriptResourceReference(
+			TabsOptions.class, "jquery.cookie.js");
 
 	/**
 	 * Disables (true) or enables (false) the tabs. Can be set when initialising
@@ -40,8 +44,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions disabled(boolean disabled) {
-		super.put("disabled", disabled);
-		return this;
+		return super.put("disabled", disabled);
 	}
 
 	/**
@@ -51,9 +54,8 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param ajaxOptions
 	 * @return
 	 */
-	public TabsOptions ajaxOptions(IJQOptions<?> ajaxOptions) {
-		super.put("ajaxOptions", ajaxOptions);
-		return this;
+	public TabsOptions ajaxOptions(CharSequence ajaxOptions) {
+		return super.put("ajaxOptions", ajaxOptions);
 	}
 
 	/**
@@ -67,8 +69,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions cache(boolean cache) {
-		super.put("cache", cache);
-		return this;
+		return super.put("cache", cache);
 	}
 
 	/**
@@ -79,8 +80,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions collapsible(boolean collapsible) {
-		super.put("collapsible", collapsible);
-		return this;
+		return super.put("collapsible", collapsible);
 	}
 
 	/**
@@ -95,9 +95,10 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param cookie
 	 * @return
 	 */
-	public TabsOptions cookie(IJQOptions<?> cookie) {
-		super.put("cookie", cookie);
-		return this;
+	public TabsOptions cookie(CharSequence cookie) {
+		return super.put("cookie", cookie)
+				.addJsResourceReferences(jsCookieResource)
+				.addJsResourceReferencesMin(jsCookieResource);
 	}
 
 	/**
@@ -108,8 +109,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions disabled(int... disabled) {
-		super.put("disabled", disabled);
-		return this;
+		return super.put("disabled", disabled);
 	}
 
 	/**
@@ -119,8 +119,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions event(CharSequence event) {
-		super.put("event", event);
-		return this;
+		return super.put("event", event);
 	}
 
 	/**
@@ -132,9 +131,8 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param fx
 	 * @return
 	 */
-	public TabsOptions fx(IJQOptions<?> fx) {
-		super.put("fx", fx);
-		return this;
+	public TabsOptions fx(CharSequence fx) {
+		return super.put("fx", fx);
 	}
 
 	/**
@@ -147,8 +145,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions idPrefix(CharSequence idPrefix) {
-		super.put("idPrefix", idPrefix);
-		return this;
+		return super.put("idPrefix", idPrefix);
 	}
 
 	/**
@@ -160,8 +157,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions panelTemplate(CharSequence panelTemplate) {
-		super.put("panelTemplate", panelTemplate);
-		return this;
+		return super.put("panelTemplate", panelTemplate);
 	}
 
 	/**
@@ -172,8 +168,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions selected(int selected) {
-		super.put("selected", selected);
-		return this;
+		return super.put("selected", selected);
 	}
 
 	/**
@@ -186,8 +181,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions spinner(CharSequence spinner) {
-		super.put("spinner", spinner);
-		return this;
+		return super.put("spinner", spinner);
 	}
 
 	/**
@@ -199,8 +193,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions tabTemplate(CharSequence tabTemplate) {
-		super.put("tabTemplate", tabTemplate);
-		return this;
+		return super.put("tabTemplate", tabTemplate);
 	}
 
 	/**
@@ -219,7 +212,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public TabsOptions selectEvent(JQStatement callbackBody) {
+	public TabsOptions selectEvent(IJQStatement callbackBody) {
 		return this.selectEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -229,9 +222,8 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public TabsOptions selectEvent(JQFunction callback) {
-		super.put("select", callback);
-		return this;
+	public TabsOptions selectEvent(IJQFunction callback) {
+		return super.put("select", callback);
 	}
 
 	/**
@@ -252,7 +244,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public TabsOptions loadEvent(JQStatement callbackBody) {
+	public TabsOptions loadEvent(IJQStatement callbackBody) {
 		return this.loadEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -263,9 +255,8 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public TabsOptions loadEvent(JQFunction callback) {
-		super.put("load", callback);
-		return this;
+	public TabsOptions loadEvent(IJQFunction callback) {
+		return super.put("load", callback);
 	}
 
 	/**
@@ -284,7 +275,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public TabsOptions showEvent(JQStatement callbackBody) {
+	public TabsOptions showEvent(IJQStatement callbackBody) {
 		return this.showEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -294,9 +285,8 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public TabsOptions showEvent(JQFunction callback) {
-		super.put("show", callback);
-		return this;
+	public TabsOptions showEvent(IJQFunction callback) {
+		return super.put("show", callback);
 	}
 
 	/**
@@ -315,7 +305,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public TabsOptions addEvent(JQStatement callbackBody) {
+	public TabsOptions addEvent(IJQStatement callbackBody) {
 		return this.addEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -325,9 +315,8 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public TabsOptions addEvent(JQFunction callback) {
-		super.put("add", callback);
-		return this;
+	public TabsOptions addEvent(IJQFunction callback) {
+		return super.put("add", callback);
 	}
 
 	/**
@@ -346,7 +335,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public TabsOptions removeEvent(JQStatement callbackBody) {
+	public TabsOptions removeEvent(IJQStatement callbackBody) {
 		return this.removeEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -356,9 +345,8 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public TabsOptions removeEvent(JQFunction callback) {
-		super.put("remove", callback);
-		return this;
+	public TabsOptions removeEvent(IJQFunction callback) {
+		return super.put("remove", callback);
 	}
 
 	/**
@@ -377,7 +365,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public TabsOptions enableEvent(JQStatement callbackBody) {
+	public TabsOptions enableEvent(IJQStatement callbackBody) {
 		return this.enableEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -387,9 +375,8 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public TabsOptions enableEvent(JQFunction callback) {
-		super.put("enable", callback);
-		return this;
+	public TabsOptions enableEvent(IJQFunction callback) {
+		return super.put("enable", callback);
 	}
 
 	/**
@@ -408,7 +395,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public TabsOptions disableEvent(JQStatement callbackBody) {
+	public TabsOptions disableEvent(IJQStatement callbackBody) {
 		return this.disableEvent($f(callbackBody, "event", "ui"));
 	}
 
@@ -418,9 +405,8 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public TabsOptions disableEvent(JQFunction callback) {
-		super.put("disable", callback);
-		return this;
+	public TabsOptions disableEvent(IJQFunction callback) {
+		return super.put("disable", callback);
 	}
 
 }

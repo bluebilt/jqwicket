@@ -29,6 +29,8 @@ import java.util.Set;
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
+import com.google.code.jqwicket.api.IJQStatement;
+
 /**
  * @author mkalina
  * 
@@ -45,7 +47,7 @@ public class JQHeaderContributionTarget implements Serializable {
 
 	private Set<CharSequence> cssResourceUrls;
 
-	private Set<JQStatement> jqStatements;
+	private Set<IJQStatement> jqStatements;
 
 	public JQHeaderContributionTarget addJavascriptResourceReferences(
 			Collection<JavascriptResourceReference> refs) {
@@ -123,18 +125,19 @@ public class JQHeaderContributionTarget implements Serializable {
 	}
 
 	public JQHeaderContributionTarget addJQStatements(
-			Collection<JQStatement> statements) {
+			Collection<IJQStatement> statements) {
 		if (isEmpty(statements))
 			return this;
 
 		if (this.jqStatements == null)
-			this.jqStatements = new LinkedHashSet<JQStatement>();
+			this.jqStatements = new LinkedHashSet<IJQStatement>();
 
 		this.jqStatements.addAll(statements);
 		return this;
 	}
 
-	public JQHeaderContributionTarget addJQStatements(JQStatement... statements) {
+	public JQHeaderContributionTarget addJQStatements(
+			IJQStatement... statements) {
 		if (isEmpty(statements))
 			return this;
 		return this.addJQStatements(Arrays.asList(statements));
@@ -210,10 +213,10 @@ public class JQHeaderContributionTarget implements Serializable {
 	 * 
 	 * @return
 	 */
-	public Collection<JQStatement> getJQStatements() {
+	public Collection<IJQStatement> getJQStatements() {
 		return this.jqStatements != null ? Collections
 				.unmodifiableSet(this.jqStatements) : Collections
-				.<JQStatement> emptySet();
+				.<IJQStatement> emptySet();
 	}
 
 }

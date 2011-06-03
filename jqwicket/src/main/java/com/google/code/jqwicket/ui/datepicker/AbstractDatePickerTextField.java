@@ -21,9 +21,9 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.ui.IJQOptions;
 import com.google.code.jqwicket.ui.XYPosition;
 
 /**
@@ -73,7 +73,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#destroy()
 	 */
-	public JQFunction destroy() {
+	public IJQFunction destroy() {
 		return behavior.destroy();
 	}
 
@@ -91,7 +91,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#disable()
 	 */
-	public JQFunction disable() {
+	public IJQFunction disable() {
 		return behavior.disable();
 	}
 
@@ -109,7 +109,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#enable()
 	 */
-	public JQFunction enable() {
+	public IJQFunction enable() {
 		return behavior.enable();
 	}
 
@@ -128,7 +128,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * @see com.google.code.jqwicket.IJQUIWidget#option(java.lang.CharSequence,
 	 *      java.lang.CharSequence)
 	 */
-	public JQFunction option(CharSequence optionName, CharSequence optionValue) {
+	public IJQFunction option(CharSequence optionName, CharSequence optionValue) {
 		return behavior.option(optionName, optionValue);
 	}
 
@@ -147,11 +147,11 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#dialog(java.lang.CharSequence,
-	 *      com.google.code.jqwicket.JQFunction,
+	 *      com.google.code.jqwicket.api.IJQFunction,
 	 *      com.google.code.jqwicket.ui.datepicker.DatePickerOptions,
 	 *      com.google.code.jqwicket.ui.XYPosition)
 	 */
-	public JQFunction dialog(CharSequence date, JQFunction onSelect, O options,
+	public IJQFunction dialog(CharSequence date, IJQFunction onSelect, O options,
 			XYPosition position) {
 		return behavior.dialog(date, onSelect, options, position);
 	}
@@ -160,12 +160,12 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#dialog(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence, com.google.code.jqwicket.JQFunction,
+	 *      java.lang.CharSequence, com.google.code.jqwicket.api.IJQFunction,
 	 *      com.google.code.jqwicket.ui.datepicker.DatePickerOptions,
 	 *      com.google.code.jqwicket.ui.XYPosition)
 	 */
 	public void dialog(AjaxRequestTarget ajaxRequestTarget, CharSequence date,
-			JQFunction onSelect, O options, XYPosition position) {
+			IJQFunction onSelect, O options, XYPosition position) {
 		behavior.dialog(ajaxRequestTarget, date, onSelect, options, position);
 	}
 
@@ -174,7 +174,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#hide()
 	 */
-	public JQFunction hide() {
+	public IJQFunction hide() {
 		return behavior.hide();
 	}
 
@@ -192,7 +192,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#show()
 	 */
-	public JQFunction show() {
+	public IJQFunction show() {
 		return behavior.show();
 	}
 
@@ -210,7 +210,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#refresh()
 	 */
-	public JQFunction refresh() {
+	public IJQFunction refresh() {
 		return behavior.refresh();
 	}
 
@@ -228,7 +228,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#setDate(java.lang.CharSequence)
 	 */
-	public JQFunction setDate(CharSequence date) {
+	public IJQFunction setDate(CharSequence date) {
 		return behavior.setDate(date);
 	}
 
@@ -247,7 +247,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * 
 	 * @see com.google.code.jqwicket.ui.datepicker.IDatePicker#setDate(int)
 	 */
-	public JQFunction setDate(int date) {
+	public IJQFunction setDate(int date) {
 		return behavior.setDate(date);
 	}
 
@@ -282,9 +282,9 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.IJQUIWidget#options(com.google.code.jqwicket.ui.IJQOptions)
+	 * @see com.google.code.jqwicket.IJQUIWidget#options(com.google.code.jqwicket.api.IJQOptions)
 	 */
-	public JQFunction options(IJQOptions<?> options) {
+	public IJQFunction options(IJQOptions<?> options) {
 		return this.behavior.options(options);
 	}
 
@@ -292,7 +292,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * {@inheritDoc}
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#options(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      com.google.code.jqwicket.ui.IJQOptions)
+	 *      com.google.code.jqwicket.api.IJQOptions)
 	 */
 	public void options(AjaxRequestTarget ajaxRequestTarget,
 			IJQOptions<?> options) {
@@ -304,7 +304,7 @@ public abstract class AbstractDatePickerTextField<T, O extends AbstractDatePicke
 	 * 
 	 * @see com.google.code.jqwicket.IJQUIWidget#widget()
 	 */
-	public JQFunction widget() {
+	public IJQFunction widget() {
 		return this.behavior.widget();
 	}
 

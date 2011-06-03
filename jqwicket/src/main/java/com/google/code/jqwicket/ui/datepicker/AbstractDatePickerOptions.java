@@ -16,15 +16,12 @@
  */
 package com.google.code.jqwicket.ui.datepicker;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.effect.Effect;
-import com.google.code.jqwicket.effect.EffectSpeed;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -137,7 +134,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param function
 	 * @return
 	 */
-	public T calculateWeek(JQFunction function) {
+	public T calculateWeek(IJQFunction function) {
 		return super.put("calculateWeek", function);
 
 	}
@@ -317,7 +314,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param duration
 	 * @return
 	 */
-	public T duration(EffectSpeed duration) {
+	public T duration(CharSequence duration) {
 		return super.put("duration", duration);
 
 	}
@@ -591,18 +588,6 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	}
 
 	/**
-	 * Set the name of the animation used to show/hide the datepicker. Use
-	 * 'show' (the default), 'slideDown', 'fadeIn', any of the show/hide jQuery
-	 * UI effects, or '' for no animation. Default:'show'
-	 * 
-	 * @param showAnim
-	 * @return
-	 */
-	public T showAnim(Effect effect) {
-		return super.put("showAnim", effect);
-	}
-
-	/**
 	 * Whether to show the button panel. Default:false
 	 * 
 	 * @param showButtonPanel
@@ -653,7 +638,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param showOptions
 	 * @return
 	 */
-	public T showOptions(IJQOptions<?> showOptions) {
+	public T showOptions(CharSequence showOptions) {
 		return super.put("showOptions", showOptions);
 	}
 
@@ -750,7 +735,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param callbackBody
 	 * @return
 	 */
-	public T beforeShowEvent(JQStatement callbackBody) {
+	public T beforeShowEvent(IJQStatement callbackBody) {
 		return this.beforeShowEvent($f(callbackBody, "input", "inst"));
 	}
 
@@ -762,7 +747,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param callback
 	 * @return
 	 */
-	public T beforeShowEvent(JQFunction callback) {
+	public T beforeShowEvent(IJQFunction callback) {
 		return super.put("beforeShow", callback);
 	}
 
@@ -790,7 +775,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param callbackBody
 	 * @return
 	 */
-	public T beforeShowDayEvent(JQStatement callbackBody) {
+	public T beforeShowDayEvent(IJQStatement callbackBody) {
 		return this.beforeShowDayEvent($f(callbackBody, "date"));
 	}
 
@@ -804,7 +789,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param callback
 	 * @return
 	 */
-	public T beforeShowDayEvent(JQFunction callback) {
+	public T beforeShowDayEvent(IJQFunction callback) {
 		return super.put("beforeShowDay", callback);
 
 	}
@@ -831,7 +816,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param callbackBody
 	 * @return
 	 */
-	public T onChangeMonthYearEvent(JQStatement callbackBody) {
+	public T onChangeMonthYearEvent(IJQStatement callbackBody) {
 		return this.onChangeMonthYearEvent($f(callbackBody, "year", "month",
 				"inst"));
 	}
@@ -845,7 +830,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param callback
 	 * @return
 	 */
-	public T onChangeMonthYearEvent(JQFunction callback) {
+	public T onChangeMonthYearEvent(IJQFunction callback) {
 		return super.put("onChangeMonthYear", callback);
 	}
 
@@ -871,7 +856,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param callbackBody
 	 * @return
 	 */
-	public T onCloseEvent(JQStatement callbackBody) {
+	public T onCloseEvent(IJQStatement callbackBody) {
 		return this.onCloseEvent($f(callbackBody, "dateText", "inst"));
 	}
 
@@ -884,7 +869,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param callback
 	 * @return
 	 */
-	public T onCloseEvent(JQFunction callback) {
+	public T onCloseEvent(IJQFunction callback) {
 		return super.put("onClose", callback);
 
 	}
@@ -909,7 +894,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param callbackBody
 	 * @return
 	 */
-	public T onSelectEvent(JQStatement callbackBody) {
+	public T onSelectEvent(IJQStatement callbackBody) {
 		return this.onSelectEvent($f(callbackBody, "dateText", "inst"));
 	}
 
@@ -921,7 +906,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @param callback
 	 * @return
 	 */
-	public T onSelectEvent(JQFunction callback) {
+	public T onSelectEvent(IJQFunction callback) {
 		return super.put("onSelect", callback);
 	}
 }

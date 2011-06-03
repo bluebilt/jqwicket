@@ -19,7 +19,7 @@ package com.google.code.jqwicket.ui.slider;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
 
 /**
@@ -63,7 +63,7 @@ public class SliderBehavior extends JQUIComponentBehaivor<SliderOptions>
 	 * 
 	 * @see com.google.code.jqwicket.ui.slider.ISlider#value(int)
 	 */
-	public JQFunction value(int value) {
+	public IJQFunction value(int value) {
 		return chain("\"value\"", String.valueOf(value));
 	}
 

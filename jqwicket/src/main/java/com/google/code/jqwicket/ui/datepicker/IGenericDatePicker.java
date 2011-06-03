@@ -20,7 +20,7 @@ package com.google.code.jqwicket.ui.datepicker;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQUIWidget;
-import com.google.code.jqwicket.JQFunction;
+import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.XYPosition;
 
 /**
@@ -33,7 +33,7 @@ public interface IGenericDatePicker<T extends AbstractDatePickerOptions<T>>
 	/**
 	 * Open a datepicker in a "dialog" box.
 	 */
-	JQFunction dialog(CharSequence date, JQFunction onSelect, T options,
+	IJQFunction dialog(CharSequence date, IJQFunction onSelect, T options,
 			XYPosition position);
 
 	/**
@@ -42,12 +42,12 @@ public interface IGenericDatePicker<T extends AbstractDatePickerOptions<T>>
 	 * @param ajaxRequestTarget
 	 */
 	void dialog(AjaxRequestTarget ajaxRequestTarget, CharSequence date,
-			JQFunction onSelect, T options, XYPosition position);
+			IJQFunction onSelect, T options, XYPosition position);
 
 	/**
 	 * Close a previously opened date picker.
 	 */
-	JQFunction hide();
+	IJQFunction hide();
 
 	/**
 	 * Close a previously opened date picker.
@@ -59,7 +59,7 @@ public interface IGenericDatePicker<T extends AbstractDatePickerOptions<T>>
 	/**
 	 * Call up a previously attached date picker.
 	 */
-	JQFunction show();
+	IJQFunction show();
 
 	/**
 	 * Call up a previously attached date picker.
@@ -71,7 +71,7 @@ public interface IGenericDatePicker<T extends AbstractDatePickerOptions<T>>
 	/**
 	 * Redraw a date picker, after having made some external modifications.
 	 */
-	JQFunction refresh();
+	IJQFunction refresh();
 
 	/**
 	 * Redraw a date picker, after having made some external modifications.
@@ -83,7 +83,7 @@ public interface IGenericDatePicker<T extends AbstractDatePickerOptions<T>>
 	/**
 	 * Sets the current date for the datepicker.
 	 */
-	JQFunction setDate(CharSequence date);
+	IJQFunction setDate(CharSequence date);
 
 	/**
 	 * Sets the current date for the datepicker.
@@ -95,7 +95,7 @@ public interface IGenericDatePicker<T extends AbstractDatePickerOptions<T>>
 	/**
 	 * Sets the current date for the datepicker.
 	 */
-	JQFunction setDate(int date);
+	IJQFunction setDate(int date);
 
 	/**
 	 * Sets the current date for the datepicker.

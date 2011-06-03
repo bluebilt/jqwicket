@@ -16,14 +16,14 @@
  */
 package com.google.code.jqwicket.ui.maskedinput;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -34,10 +34,10 @@ public class MaskedInputOptions extends AbstractJQOptions<MaskedInputOptions> {
 	private static final long serialVersionUID = 1L;
 
 	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			MaskedInputOptions.class, "jquery.maskedinput-1.2.2.js");
+			MaskedInputOptions.class, "jquery.maskedinput-1.3.js");
 
 	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
-			MaskedInputOptions.class, "jquery.maskedinput-1.2.2.min.js");
+			MaskedInputOptions.class, "jquery.maskedinput-1.3.min.js");
 
 	private CharSequence mask;
 
@@ -81,7 +81,7 @@ public class MaskedInputOptions extends AbstractJQOptions<MaskedInputOptions> {
 	 * @param callbackBody
 	 * @return
 	 */
-	public MaskedInputOptions completedEvent(JQStatement callbackBody) {
+	public MaskedInputOptions completedEvent(IJQStatement callbackBody) {
 		return this.completedEvent($f(callbackBody));
 	}
 
@@ -91,7 +91,7 @@ public class MaskedInputOptions extends AbstractJQOptions<MaskedInputOptions> {
 	 * @param callback
 	 * @return
 	 */
-	public MaskedInputOptions completedEvent(JQFunction callback) {
+	public MaskedInputOptions completedEvent(IJQFunction callback) {
 		super.put("completed", callback);
 		return this;
 	}

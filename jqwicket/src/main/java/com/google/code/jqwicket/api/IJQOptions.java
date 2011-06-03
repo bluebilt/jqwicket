@@ -14,25 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.code.jqwicket.ui;
+package com.google.code.jqwicket.api;
 
 import java.io.Serializable;
 
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.IJsonAware;
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
-
 /**
+ * Interface representing jquery options objects (serialized as json)
+ * 
  * @author mkalina
  * 
  * @param <T>
  *            is a type of options itself.
  */
 public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
-		IJsonAware {
+		CharSequence {
 
 	/**
 	 * Sets css resource references necessary for component rendering. If
@@ -198,7 +196,7 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 
 	Object getObject(CharSequence key);
 
-	JQStatement getJQStatement(CharSequence key);
+	IJQStatement getJQStatement(CharSequence key);
 
 	int getInt(CharSequence key);
 
@@ -222,19 +220,9 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 
 	boolean getBoolean(CharSequence key, boolean defaultValue);
 
-	T putUnquoted(CharSequence key, CharSequence value);
+	T put(CharSequence name, IJQStatement value);
 
-	T putDblquoted(CharSequence key, CharSequence value);
-
-	T put(CharSequence key, IJQOptions<?> options);
-
-	T put(CharSequence key, Enum<?> enumVal);
-
-	T putUnquoted(CharSequence key, Enum<?> enumVal);
-
-	T put(CharSequence name, JQStatement value);
-
-	T put(CharSequence name, JQFunction value);
+	T put(CharSequence name, IJQFunction value);
 
 	T put(CharSequence key, CharSequence value);
 
@@ -254,11 +242,11 @@ public interface IJQOptions<T extends IJQOptions<?>> extends Serializable,
 
 	T put(CharSequence key, boolean... values);
 
-	T put(CharSequence key, IJsonAware... values);
-
 	T put(CharSequence key, CharSequence... values);
 
 	T put(CharSequence key, CharSequence[][] values);
+
+	T put(CharSequence key, Enum<?> e);
 
 	void removeOption(CharSequence key);
 

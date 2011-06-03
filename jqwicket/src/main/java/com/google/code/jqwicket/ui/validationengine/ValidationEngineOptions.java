@@ -16,8 +16,8 @@
  */
 package com.google.code.jqwicket.ui.validationengine;
 
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -27,11 +27,10 @@ import java.util.List;
 import org.apache.wicket.ResourceReference;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.IJsonAware;
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.JQStatement;
 import com.google.code.jqwicket.Utils;
-import com.google.code.jqwicket.ui.AbstractJQOptions;
+import com.google.code.jqwicket.api.AbstractJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
@@ -60,7 +59,7 @@ public class ValidationEngineOptions extends
 	public static final JavascriptResourceReference JS_VALIDATION_ENGINE_RULES_PT = new JavascriptResourceReference(
 			ValidationEngineOptions.class, "jquery.validationEngine-pt.js");
 
-	public enum PromptPosition implements IJsonAware {
+	public enum PromptPosition {
 
 		TOP_LEFT("topLeft"), TOP_RIGHT("topRight"), BOTTOM_LEFT("bottomLeft"), CENTER_RIGHT(
 				"centerRight"), BOTTOM_RIGHT("bottomRight");
@@ -71,13 +70,8 @@ public class ValidationEngineOptions extends
 			this.value = value;
 		}
 
-		/**
-		 * {@inheritDoc}
-		 * 
-		 * @see com.google.code.jqwicket.IJsonAware#toJson()
-		 */
-		public CharSequence toJson() {
-			return Utils.quote(this.value);
+		public CharSequence getValue() {
+			return value;
 		}
 
 	}
@@ -244,7 +238,7 @@ public class ValidationEngineOptions extends
 	 * @return
 	 */
 	public ValidationEngineOptions promptPosition(PromptPosition promptPosition) {
-		return super.put("promptPosition", promptPosition);
+		return super.put("promptPosition", promptPosition.value);
 	}
 
 	/**
@@ -309,7 +303,7 @@ public class ValidationEngineOptions extends
 	 * @param callbackBody
 	 * @return
 	 */
-	public ValidationEngineOptions onSuccessEvent(JQStatement callbackBody) {
+	public ValidationEngineOptions onSuccessEvent(IJQStatement callbackBody) {
 		return this.onSuccessEvent($f(callbackBody, "formData"));
 	}
 
@@ -320,7 +314,7 @@ public class ValidationEngineOptions extends
 	 * @param callbackBody
 	 * @return
 	 */
-	public ValidationEngineOptions onSuccessEvent(JQFunction callback) {
+	public ValidationEngineOptions onSuccessEvent(IJQFunction callback) {
 		super.put("success", callback);
 		return this;
 	}
@@ -329,11 +323,11 @@ public class ValidationEngineOptions extends
 		return this.onFailureEvent(js(callbackBody));
 	}
 
-	public ValidationEngineOptions onFailureEvent(JQStatement callbackBody) {
+	public ValidationEngineOptions onFailureEvent(IJQStatement callbackBody) {
 		return this.onFailureEvent($f(callbackBody, "formData"));
 	}
 
-	public ValidationEngineOptions onFailureEvent(JQFunction callback) {
+	public ValidationEngineOptions onFailureEvent(IJQFunction callback) {
 		super.put("failure", callback);
 		return this;
 	}

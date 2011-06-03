@@ -20,8 +20,8 @@ package com.google.code.jqwicket.ui.notifier;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.IJQUIWidget;
-import com.google.code.jqwicket.JQFunction;
-import com.google.code.jqwicket.ui.IJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
 
 /**
  * @author mkalina
@@ -31,31 +31,31 @@ public interface INotifier extends IJQUIWidget<NotifierOptions> {
 
 	static final CharSequence JQ_COMPONENT_NAME = "notify";
 
-	JQFunction create(CharSequence title, CharSequence text);
+	IJQFunction create(CharSequence title, CharSequence text);
 
 	void create(AjaxRequestTarget ajaxRequestTarget, CharSequence title,
 			CharSequence text);
 
-	JQFunction create(IJQOptions<?> msg);
+	IJQFunction create(IJQOptions<?> msg);
 
 	void create(AjaxRequestTarget ajaxRequestTarget, IJQOptions<?> msg);
 
-	JQFunction create(CharSequence template, IJQOptions<?> msg);
+	IJQFunction create(CharSequence template, IJQOptions<?> msg);
 
 	void create(AjaxRequestTarget ajaxRequestTarget, CharSequence template,
 			IJQOptions<?> msg);
 
-	JQFunction create(CharSequence template, IJQOptions<?> msg,
+	IJQFunction create(CharSequence template, IJQOptions<?> msg,
 			IJQOptions<?> options);
 
 	void create(AjaxRequestTarget ajaxRequestTarget, CharSequence template,
 			IJQOptions<?> msg, IJQOptions<?> options);
 
-	JQFunction open();
+	IJQFunction open();
 
 	void open(AjaxRequestTarget ajaxRequestTarget);
 
-	JQFunction close();
+	IJQFunction close();
 
 	void close(AjaxRequestTarget ajaxRequestTarget);
 
