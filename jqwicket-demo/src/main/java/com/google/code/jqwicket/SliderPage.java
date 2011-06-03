@@ -1,15 +1,13 @@
 package com.google.code.jqwicket;
 
-import static com.google.code.jqwicket.JQuery.js;
-import static com.google.code.jqwicket.JQuery.wicketAjaxGet;
+import static com.google.code.jqwicket.api.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.wicketAjaxGet;
 
 import org.apache.wicket.RequestCycle;
 import org.apache.wicket.ajax.AbstractDefaultAjaxBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 
-import com.google.code.jqwicket.MapBuilder;
-import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.ui.slider.SliderBehavior;
 import com.google.code.jqwicket.ui.slider.SliderOptions;
 

@@ -1,12 +1,11 @@
 package com.google.code.jqwicket;
 
-import static com.google.code.jqwicket.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 
 import com.google.code.jqwicket.JQBehaviors;
-import com.google.code.jqwicket.effect.Effect;
 import com.google.code.jqwicket.ui.accordion.AccordionBehavior;
 import com.google.code.jqwicket.ui.accordion.AccordionWebMarkupContainer;
 
@@ -28,7 +27,7 @@ public class AccordionPage extends BaseJQueryUIPage {
 				.add(new AccordionBehavior()));
 
 		Label x = new Label("effect-label", "TESTS ET ET ST SET SETSE SET ");
-		x.add(JQBehaviors.js($(x).effect(Effect.PULSATE)));
+		x.add(JQBehaviors.js($(x).effect("pulsate")));
 		add(x);
 
 	}

@@ -1,16 +1,15 @@
 package com.google.code.jqwicket;
 
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Button;
 
-import com.google.code.jqwicket.JQBehaviors;
+import com.google.code.jqwicket.api.IJQStatement;
 import com.google.code.jqwicket.ui.blockui.BlockUIBehavior;
 import com.google.code.jqwicket.ui.blockui.BlockUIOptions;
-
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.js;
 
 public class BlockUIPage extends WebPage {
 
@@ -19,9 +18,10 @@ public class BlockUIPage extends WebPage {
 		BlockUIBehavior b = new BlockUIBehavior();
 		add(b);
 
-		add(new Button("blockScreenButton").add(JQBehaviors.mouseClick($f(b
-				.block().renderBodyOnlyAsJQStatement(),
-				js("setTimeout($.unblockUI, 2000);")))));
+		add(new Button("blockScreenButton").add(JQBehaviors
+				.mouseClick($f(new IJQStatement[] {
+						b.block().toStatementBodyOnly(),
+						js("setTimeout($.unblockUI, 2000)") }))));
 		add(new Button("blockScreenButton2").add(JQBehaviors.mouseClick(b
 				.block(new BlockUIOptions()
 						.message("Custom loading message...")))));

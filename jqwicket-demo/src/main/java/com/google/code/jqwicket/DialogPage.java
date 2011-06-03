@@ -1,5 +1,7 @@
 package com.google.code.jqwicket;
 
+import static com.google.code.jqwicket.api.JQuery.$f;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,7 +15,7 @@ import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.markup.repeater.data.ListDataProvider;
 
-import com.google.code.jqwicket.ui.JQOptions;
+import com.google.code.jqwicket.api.JQOptions;
 import com.google.code.jqwicket.ui.dialog.DialogOptions;
 import com.google.code.jqwicket.ui.dialog.DialogWebMarkupContainer;
 
@@ -35,15 +37,14 @@ public class DialogPage extends BaseJQueryUIPage {
 			}
 		});
 
-		DataView<String> listview = new DataView<String>("pageable", new ListDataProvider<String>(list)) {
-			
-			
-			
+		DataView<String> listview = new DataView<String>("pageable",
+				new ListDataProvider<String>(list)) {
+
 			@Override
 			protected void populateItem(Item<String> item) {
-				
+
 				this.add(item);
-				
+
 				item.add(new Label("somecolumn", item.getModel()));
 				final Link<Void> link = new Link<Void>("accept") {
 					@Override
@@ -59,9 +60,7 @@ public class DialogPage extends BaseJQueryUIPage {
 
 				};
 				item.add(link);
-				
-				
-				
+
 				DialogWebMarkupContainer confirm = new DialogWebMarkupContainer(
 						"confirm-dialog",
 						new DialogOptions()
@@ -70,11 +69,11 @@ public class DialogPage extends BaseJQueryUIPage {
 								.buttons(
 										new JQOptions()
 												.put("'Yes'",
-														JQuery.$f("$(this).dialog('close'); window.location = '"
+														$f("$(this).dialog('close'); window.location = '"
 																+ link.urlFor(ILinkListener.INTERFACE)
 																+ "';"))
 												.put("'No'",
-														JQuery.$f("$(this).dialog('close')"))));
+														$f("$(this).dialog('close')"))));
 				item.add(confirm);
 
 				link.add(JQBehaviors.mouseClick(confirm.open()));

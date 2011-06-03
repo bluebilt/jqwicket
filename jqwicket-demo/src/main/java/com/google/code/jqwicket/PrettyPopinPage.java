@@ -1,7 +1,5 @@
 package com.google.code.jqwicket;
 
-
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.html.link.Link;
 
@@ -9,7 +7,7 @@ import com.google.code.jqwicket.dnd.DND2Page;
 import com.google.code.jqwicket.ui.prettypopin.PrettyPopinBehavior;
 import com.google.code.jqwicket.ui.prettypopin.PrettyPopinOptions;
 
-public class PrettyPopinPage extends WebPage {
+public class PrettyPopinPage extends BaseJQueryUIPage {
 
 	public PrettyPopinPage() {
 

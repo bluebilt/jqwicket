@@ -1,13 +1,12 @@
 package com.google.code.jqwicket;
 
-import static com.google.code.jqwicket.JQuery.$;
-
+import static com.google.code.jqwicket.api.JQuery.$;
 
 import org.apache.wicket.markup.html.WebPage;
 
 import com.google.code.jqwicket.ui.mb.extruder.ExtruderOptions;
-import com.google.code.jqwicket.ui.mb.extruder.ExtruderWebMarkupContainer;
 import com.google.code.jqwicket.ui.mb.extruder.ExtruderOptions.Position;
+import com.google.code.jqwicket.ui.mb.extruder.ExtruderWebMarkupContainer;
 
 public class ExtruderPage extends WebPage {
 
@@ -19,17 +18,15 @@ public class ExtruderPage extends WebPage {
 						.position(Position.BOTTOM).width(350)
 						.extruderOpacity(1)));
 
-		ExtruderWebMarkupContainer extruderLeft = null;
-		extruderLeft = new ExtruderWebMarkupContainer("extruderLeft",
-				new ExtruderOptions("Our network ",
+		ExtruderWebMarkupContainer extruderLeft = new ExtruderWebMarkupContainer(
+				"extruderLeft", new ExtruderOptions("Our network ",
 						"_static/extruder/extruderLeft.html")
-						.position(Position.LEFT)
-						.width(300)
-						.extruderOpacity(0.8f)
-						.hidePanelsOnClose(false)
-						.accordionPanels(false)
-						.onExtContentLoadEvent(
-								$(extruderLeft).chain("openPanel")));
+						.position(Position.LEFT).width(300)
+						.extruderOpacity(0.8f).hidePanelsOnClose(false)
+						.accordionPanels(false));
+
+		extruderLeft.getOptions().onExtContentLoadEvent(
+				$(extruderLeft).chain("openPanel"));
 		add(extruderLeft);
 
 		add(new ExtruderWebMarkupContainer("extruderLeft1",

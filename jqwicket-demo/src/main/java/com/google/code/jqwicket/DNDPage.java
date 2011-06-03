@@ -16,14 +16,13 @@
  */
 package com.google.code.jqwicket;
 
-import static com.google.code.jqwicket.JQuery.$;
-import static com.google.code.jqwicket.JQuery.$f;
-import static com.google.code.jqwicket.JQuery.$this;
-import static com.google.code.jqwicket.JQuery.js;
-import static com.google.code.jqwicket.JQuery.wicketAjaxGet;
+import static com.google.code.jqwicket.api.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.$this;
+import static com.google.code.jqwicket.api.JQuery.js;
+import static com.google.code.jqwicket.api.JQuery.wicketAjaxGet;
 
 import java.util.Map;
-
 
 import org.apache.wicket.RequestCycle;
 import org.apache.wicket.ajax.AbstractDefaultAjaxBehavior;
@@ -31,9 +30,6 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 
-import com.google.code.jqwicket.JQBehaviors;
-import com.google.code.jqwicket.MapBuilder;
-import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.ui.accordion.AccordionWebMarkupContainer;
 import com.google.code.jqwicket.ui.draggable.DraggableOptions;
 import com.google.code.jqwicket.ui.droppable.DroppableOptions;
