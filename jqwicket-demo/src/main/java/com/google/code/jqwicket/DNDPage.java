@@ -30,6 +30,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 
+import com.google.code.jqwicket.api.JQLiteral;
 import com.google.code.jqwicket.ui.accordion.AccordionWebMarkupContainer;
 import com.google.code.jqwicket.ui.draggable.DraggableOptions;
 import com.google.code.jqwicket.ui.droppable.DroppableOptions;
@@ -84,20 +85,24 @@ public class DNDPage extends BaseJQueryUIPage {
 		// make shopping cart container droppable
 		// and implement onDropEvent to send the ajax request to the shopping
 		// cart!
-		cartContainer.add(JQBehaviors.droppable(new DroppableOptions()
+		Map<String, Object> ajaxGetParams = new MapBuilder<String, Object>()
+				.add("product", js("ui.draggable.text()")).build();
+
+		DroppableOptions options = new DroppableOptions()
 				.activeClass("ui-state-default")
 				.hoverClass("ui-state-hover")
 				.accept(":not(.ui-sortable-helper)")
 				.dropEvent(
-						$f($this().find(".placeholder").remove(),
-								$("<li></li>").text("ui.draggable.text()")
-										.appendTo("this"),
-								wicketAjaxGet(
-										behave,
-										new MapBuilder<String, Object>().add(
-												"product",
-												js("ui.draggable.text()"))
-												.build()), "event", "ui"))));
+						$f(
+								$this().find(".placeholder").remove(),
+								$("<li></li>").text(
+										JQLiteral._raw("ui.draggable.text()"))
+										.appendTo(JQLiteral._raw("this")),
+								wicketAjaxGet(behave, ajaxGetParams)//
+						).withParams("event", "ui") //
+				);
+
+		cartContainer.add(JQBehaviors.droppable(options));
 
 	}
 }
