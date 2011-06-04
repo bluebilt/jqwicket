@@ -297,9 +297,7 @@ public class Utils {
 		T[] result = (T[]) Array.newInstance(array.getClass()
 				.getComponentType(), array.length);
 		for (int i = 0; i < array.length; i++) {
-			T e = callback.onElement(i, array[i]);
-			System.out.println(e);
-			result[i] = e;
+			result[i] = callback.onElement(i, array[i]);
 		}
 
 		return (T[]) result;

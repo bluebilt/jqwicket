@@ -111,8 +111,8 @@ public class ColorPickerTextField<T> extends TextField<T> implements
 			ColorPickerOptions options) {
 
 		if (!options.containsKey("onSubmit"))
-			options.onSubmitEvent($f("$(el).val(hex);$(el).ColorPickerHide();",
-					"hsb", "hex", "rgb", "el"));
+			options.onSubmitEvent($f("$(el).val(hex);$(el).ColorPickerHide();")
+					.withParams("hsb", "hex", "rgb", "el"));
 
 		if (!options.containsKey("onBeforeShow"))
 			options.onBeforeShowEvent($this().chain("ColorPickerSetColor",

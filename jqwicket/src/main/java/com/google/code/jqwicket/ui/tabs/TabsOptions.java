@@ -213,7 +213,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions selectEvent(IJQStatement callbackBody) {
-		return this.selectEvent($f(callbackBody, "event", "ui"));
+		return this.selectEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -245,7 +245,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions loadEvent(IJQStatement callbackBody) {
-		return this.loadEvent($f(callbackBody, "event", "ui"));
+		return this.loadEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -276,7 +276,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions showEvent(IJQStatement callbackBody) {
-		return this.showEvent($f(callbackBody, "event", "ui"));
+		return this.showEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -306,7 +306,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions addEvent(IJQStatement callbackBody) {
-		return this.addEvent($f(callbackBody, "event", "ui"));
+		return this.addEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -336,7 +336,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions removeEvent(IJQStatement callbackBody) {
-		return this.removeEvent($f(callbackBody, "event", "ui"));
+		return this.removeEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -366,7 +366,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions enableEvent(IJQStatement callbackBody) {
-		return this.enableEvent($f(callbackBody, "event", "ui"));
+		return this.enableEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -396,7 +396,7 @@ public class TabsOptions extends AbstractJQOptions<TabsOptions> {
 	 * @return
 	 */
 	public TabsOptions disableEvent(IJQStatement callbackBody) {
-		return this.disableEvent($f(callbackBody, "event", "ui"));
+		return this.disableEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**

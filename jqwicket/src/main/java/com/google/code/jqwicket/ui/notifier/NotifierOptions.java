@@ -240,7 +240,7 @@ public class NotifierOptions extends AbstractJQOptions<NotifierOptions> {
 	 * @return
 	 */
 	public NotifierOptions clickEvent(IJQStatement callbackBody) {
-		return this.clickEvent($f(callbackBody, "e", "instance"));
+		return this.clickEvent($f(callbackBody).withParams("e", "instance"));
 	}
 
 	/**

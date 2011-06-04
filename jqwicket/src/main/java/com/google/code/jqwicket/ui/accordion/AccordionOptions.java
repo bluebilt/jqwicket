@@ -221,7 +221,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 */
 	public AccordionOptions navigationFilter(CharSequence js,
 			CharSequence... args) {
-		return this.navigationFilter($f(js, args));
+		return this.navigationFilter($f(js).withParams(args));
 	}
 
 	/**
@@ -245,7 +245,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions changeEvent(IJQStatement callbackBody) {
-		return this.changeEvent($f(callbackBody, "event", "ui"));
+		return this.changeEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -278,7 +278,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions changestartEvent(IJQStatement callbackBody) {
-		return this.changeEvent($f(callbackBody, "event", "ui"));
+		return this.changeEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**

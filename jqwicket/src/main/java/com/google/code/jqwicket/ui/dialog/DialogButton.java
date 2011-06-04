@@ -21,7 +21,6 @@ import java.io.Serializable;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQOptions;
 import com.google.code.jqwicket.api.JQOptions;
-import com.google.code.jqwicket.api.JQuery;
 
 /**
  * @author mkalina
@@ -52,13 +51,6 @@ public class DialogButton implements Serializable, CharSequence {
 	@Override
 	public String toString() {
 		return this.options.toString();
-	}
-
-	public static void main(String[] args) {
-
-		DialogButton b = new DialogButton("me", JQuery.$f("alert('yeeeah');"));
-		System.out.println(b);
-
 	}
 
 }

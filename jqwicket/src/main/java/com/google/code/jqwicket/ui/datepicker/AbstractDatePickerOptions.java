@@ -150,7 +150,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @return
 	 */
 	public T calculateWeek(CharSequence js, CharSequence... args) {
-		return super.put("calculateWeek", $f(js, args));
+		return super.put("calculateWeek", $f(js).withParams(args));
 
 	}
 
@@ -736,7 +736,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @return
 	 */
 	public T beforeShowEvent(IJQStatement callbackBody) {
-		return this.beforeShowEvent($f(callbackBody, "input", "inst"));
+		return this.beforeShowEvent($f(callbackBody).withParams("input", "inst"));
 	}
 
 	/**
@@ -776,7 +776,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @return
 	 */
 	public T beforeShowDayEvent(IJQStatement callbackBody) {
-		return this.beforeShowDayEvent($f(callbackBody, "date"));
+		return this.beforeShowDayEvent($f(callbackBody).withParams("date"));
 	}
 
 	/**
@@ -817,8 +817,8 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @return
 	 */
 	public T onChangeMonthYearEvent(IJQStatement callbackBody) {
-		return this.onChangeMonthYearEvent($f(callbackBody, "year", "month",
-				"inst"));
+		return this.onChangeMonthYearEvent($f(callbackBody).withParams("year",
+				"month", "inst"));
 	}
 
 	/**
@@ -857,7 +857,7 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @return
 	 */
 	public T onCloseEvent(IJQStatement callbackBody) {
-		return this.onCloseEvent($f(callbackBody, "dateText", "inst"));
+		return this.onCloseEvent($f(callbackBody).withParams("dateText", "inst"));
 	}
 
 	/**
@@ -895,7 +895,8 @@ public abstract class AbstractDatePickerOptions<T extends AbstractDatePickerOpti
 	 * @return
 	 */
 	public T onSelectEvent(IJQStatement callbackBody) {
-		return this.onSelectEvent($f(callbackBody, "dateText", "inst"));
+		return this
+				.onSelectEvent($f(callbackBody).withParams("dateText", "inst"));
 	}
 
 	/**

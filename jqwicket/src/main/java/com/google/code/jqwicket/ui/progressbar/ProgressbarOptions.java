@@ -25,7 +25,7 @@ import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class ProgressbarOptions extends AbstractJQOptions<ProgressbarOptions> {
 
@@ -51,7 +51,7 @@ public class ProgressbarOptions extends AbstractJQOptions<ProgressbarOptions> {
 	}
 
 	public ProgressbarOptions changeEvent(IJQStatement callbackBody) {
-		super.put("change", $f(callbackBody, "event", "ui"));
+		super.put("change", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -65,7 +65,7 @@ public class ProgressbarOptions extends AbstractJQOptions<ProgressbarOptions> {
 	}
 
 	public ProgressbarOptions completeEvent(IJQStatement callbackBody) {
-		super.put("complete", $f(callbackBody, "event", "ui"));
+		super.put("complete", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 

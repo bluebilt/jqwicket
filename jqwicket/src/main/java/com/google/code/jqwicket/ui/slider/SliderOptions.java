@@ -25,7 +25,7 @@ import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 
@@ -105,7 +105,7 @@ public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 	}
 
 	public SliderOptions startEvent(IJQStatement callbackBody) {
-		super.put("start", $f(callbackBody, "event", "ui"));
+		super.put("start", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -119,7 +119,7 @@ public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 	}
 
 	public SliderOptions slideEvent(IJQStatement callbackBody) {
-		super.put("slide", $f(callbackBody, "event", "ui"));
+		super.put("slide", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -133,7 +133,7 @@ public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 	}
 
 	public SliderOptions changeEvent(IJQStatement callbackBody) {
-		super.put("change", $f(callbackBody, "event", "ui"));
+		super.put("change", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -147,7 +147,7 @@ public class SliderOptions extends AbstractJQOptions<SliderOptions> {
 	}
 
 	public SliderOptions stopEvent(IJQStatement callbackBody) {
-		super.put("stop", $f(callbackBody, "event", "ui"));
+		super.put("stop", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 }

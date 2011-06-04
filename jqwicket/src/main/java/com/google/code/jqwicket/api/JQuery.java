@@ -27,7 +27,6 @@ public abstract class JQuery {
 	private static final CharSequence defaultJQueryPrefix = "$";
 
 	private static final CharSequence jqueryPrefix() {
-
 		if (JQContributionConfig.get() == null)
 			return defaultJQueryPrefix;
 
@@ -63,7 +62,7 @@ public abstract class JQuery {
 	 * @return
 	 */
 	public static final IJQStatement $(Component component) {
-		return $(selector(component));
+		return S.id(component).to$();
 	}
 
 	/**
@@ -74,33 +73,6 @@ public abstract class JQuery {
 	public static final IJQStatement $this() {
 		return new JQStatement().appendRawCharSequence(jqueryPrefix())
 				.appendRawCharSequence("(this)");
-	}
-
-	/**
-	 * Generates selector for the component using:
-	 * {@link Component#getMarkupId()}
-	 * 
-	 * @param component
-	 * @return
-	 */
-	public static final CharSequence selector(Component component) {
-		return component == null ? "" : new StringBuffer().append("#").append(
-				component.getMarkupId());
-	}
-
-	/**
-	 * Generates: $('#componentId selector')
-	 * 
-	 * @param component
-	 * @param selector
-	 * @return
-	 */
-	public static final IJQStatement $(Component component,
-			CharSequence selector) {
-		CharSequence _selector = component == null ? selector
-				: new StringBuffer().append(selector(component)).append(" ")
-						.append(selector);
-		return $(_selector);
 	}
 
 	/**
@@ -165,100 +137,8 @@ public abstract class JQuery {
 		return $document().chain("ready", new JQFunction(statements));
 	}
 
-	//
-	// public static final IJQFunction $f(CharSequence stmt1, CharSequence
-	// stmt2) {
-	// return function(stmt1, stmt2);
-	// }
-	//
-	// public static final IJQFunction function(CharSequence stmt1,
-	// CharSequence stmt2) {
-	// return function(stmt1, stmt2, (CharSequence[]) null);
-	// }
-	//
-	// public static final IJQFunction $f(CharSequence stmt1, CharSequence
-	// stmt2,
-	// CharSequence stmt3) {
-	// return function(stmt1, stmt2, stmt3);
-	// }
-	//
-	// public static final IJQFunction function(CharSequence stmt1,
-	// CharSequence stmt2, CharSequence stmt3) {
-	// return function(stmt1, stmt2, stmt3, (CharSequence[]) null);
-	// }
-	//
-	// public static final IJQFunction $f(CharSequence[] statements) {
-	// return function(statements);
-	// }
-	//
-	// public static final IJQFunction function(CharSequence[] statements) {
-	// return function(statements, (CharSequence[]) null);
-	// }
-	//
-	// public static final IJQFunction $f(CharSequence stmt, CharSequence...
-	// args) {
-	// return function(stmt, args);
-	// }
-	//
-	// public static final IJQFunction $f(CharSequence stmt1, CharSequence
-	// stmt2,
-	// CharSequence... args) {
-	// return function(stmt1, stmt2, args);
-	// }
-	//
-	// public static final IJQFunction function(CharSequence stmt1,
-	// CharSequence stmt2, CharSequence... args) {
-	// return function(new CharSequence[] { stmt1, stmt2 }, args);
-	// }
-	//
-	// public static final IJQFunction $f(CharSequence stmt1, CharSequence
-	// stmt2,
-	// CharSequence stmt3, CharSequence... args) {
-	// return function(stmt1, stmt2, stmt3, args);
-	// }
-	//
-	// public static final IJQFunction function(CharSequence stmt1,
-	// CharSequence stmt2, CharSequence stmt3, CharSequence... args) {
-	// return function(new CharSequence[] { stmt1, stmt2, stmt3 }, args);
-	// }
-	//
-	// public static final IJQFunction $f(CharSequence[] statements,
-	// CharSequence... args) {
-	// return function(statements, args);
-	// }
-	//
-	// public static final IJQFunction function(CharSequence[] statements,
-	// CharSequence... args) {
-	// return new JQFunction(join(statements, "\n"), args);
-	// }
-	//
-	// public static final IJQFunction $f(CharSequence js) {
-	// return function(js);
-	// }
-	//
-	// public static final IJQFunction function(CharSequence js) {
-	// return function(js, (CharSequence[]) null);
-	// }
-	//
-	// public static final IJQFunction function(CharSequence js,
-	// CharSequence... args) {
-	// return new JQFunction(js, args);
-	// }
-
-	public static final IJQFunction $f(CharSequence body, CharSequence... args) {
-		return new JQFunction(body, args);
-	}
-
-	public static final IJQFunction $f(IJQStatement body, CharSequence... args) {
-		return new JQFunction(body, args);
-	}
-
-	public static final IJQFunction $f(IJQStatement[] body) {
-		return new JQFunction(body);
-	}
-
-	public static final IJQFunction $f(IJQStatement[] body, CharSequence[] args) {
-		return new JQFunction(body, args);
+	public static final IJQFunction $f(CharSequence... bodyStatements) {
+		return new JQFunction(bodyStatements);
 	}
 
 	/**

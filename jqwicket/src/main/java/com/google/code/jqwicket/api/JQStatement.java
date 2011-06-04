@@ -18,8 +18,6 @@ package com.google.code.jqwicket.api;
 
 import static com.google.code.jqwicket.Utils.join;
 import static com.google.code.jqwicket.api.JQLiteral._;
-import static com.google.code.jqwicket.api.JQLiteral._quoted;
-import static com.google.code.jqwicket.api.JQuery.selector;
 
 import java.io.Serializable;
 
@@ -159,7 +157,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * , java.lang.CharSequence[])
 	 */
 	public IJQStatement add(Component component, CharSequence... args) {
-		return add(joinToArray(_quoted(selector(component)), args));
+		return add(joinToArray(S.id(component), args));
 	}
 
 	/*
@@ -403,7 +401,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * Component)
 	 */
 	public IJQStatement children(Component component) {
-		return chain("children", _quoted(selector(component)));
+		return chain("children", S.id(component));
 	}
 
 	/*
@@ -456,7 +454,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * , java.lang.CharSequence[])
 	 */
 	public IJQStatement closest(Component component, CharSequence... args) {
-		return chain("closest", joinToArray(_quoted(selector(component)), args));
+		return chain("closest", joinToArray(S.id(component), args));
 	}
 
 	/*
@@ -697,7 +695,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement detach(Component component) {
-		return chain("detach", _quoted(selector(component)));
+		return chain("detach", S.id(component));
 	}
 
 	/*
@@ -847,7 +845,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement filter(Component component) {
-		return chain("filter", _quoted(selector(component)));
+		return chain("filter", S.id(component));
 	}
 
 	/*
@@ -868,7 +866,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement find(Component component) {
-		return chain("find", _quoted(selector(component)));
+		return chain("find", S.id(component));
 	}
 
 	/*
@@ -996,7 +994,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement has(Component component) {
-		return chain("has", _quoted(selector(component)));
+		return chain("has", S.id(component));
 	}
 
 	/*
@@ -1099,7 +1097,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement index(Component component) {
-		return chain("index", _quoted(selector(component)));
+		return chain("index", S.id(component));
 	}
 
 	/*
@@ -1139,7 +1137,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * .Component)
 	 */
 	public IJQStatement insertAfter(Component component) {
-		return chain("insertAfter", _quoted(selector(component)));
+		return chain("insertAfter", S.id(component));
 	}
 
 	/*
@@ -1161,7 +1159,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * .Component)
 	 */
 	public IJQStatement insertBefore(Component component) {
-		return chain("insertBefore", _quoted(selector(component)));
+		return chain("insertBefore", S.id(component));
 	}
 
 	/*
@@ -1180,7 +1178,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * com.google.code.jqwicket.api.IJQStatement#is(org.apache.wicket.Component)
 	 */
 	public IJQStatement is(Component component) {
-		return chain("is", _quoted(selector(component)));
+		return chain("is", S.id(component));
 	}
 
 	/*
@@ -1434,7 +1432,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement next(Component component) {
-		return chain("next", _quoted(selector(component)));
+		return chain("next", S.id(component));
 	}
 
 	/*
@@ -1456,7 +1454,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement nextAll(Component component) {
-		return chain("nextAll", _quoted(selector(component)));
+		return chain("nextAll", S.id(component));
 	}
 
 	/*
@@ -1478,7 +1476,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * .Component)
 	 */
 	public IJQStatement nextUntil(Component component) {
-		return chain("nextUntil", _quoted(selector(component)));
+		return chain("nextUntil", S.id(component));
 	}
 
 	/*
@@ -1519,7 +1517,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement not(Component component) {
-		return chain("not", _quoted(selector(component)));
+		return chain("not", S.id(component));
 	}
 
 	/*
@@ -1614,7 +1612,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement parent(Component component) {
-		return chain("parent", _quoted(selector(component)));
+		return chain("parent", S.id(component));
 	}
 
 	/*
@@ -1636,7 +1634,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement parents(Component component) {
-		return chain("parents", _quoted(selector(component)));
+		return chain("parents", S.id(component));
 	}
 
 	/*
@@ -1658,7 +1656,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * .Component)
 	 */
 	public IJQStatement parentsUntil(Component component) {
-		return chain("parentsUntil", _quoted(selector(component)));
+		return chain("parentsUntil", S.id(component));
 	}
 
 	/*
@@ -1733,7 +1731,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * .Component)
 	 */
 	public IJQStatement prependTo(Component component) {
-		return chain("prependTo", _quoted(selector(component)));
+		return chain("prependTo", S.id(component));
 	}
 
 	/*
@@ -1754,7 +1752,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement prev(Component component) {
-		return chain("prev", _quoted(selector(component)));
+		return chain("prev", S.id(component));
 	}
 
 	/*
@@ -1776,7 +1774,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement prevAll(Component component) {
-		return chain("prevAll", _quoted(selector(component)));
+		return chain("prevAll", S.id(component));
 	}
 
 	/*
@@ -1798,7 +1796,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * .Component)
 	 */
 	public IJQStatement prevUntil(Component component) {
-		return chain("prevUntil", _quoted(selector(component)));
+		return chain("prevUntil", S.id(component));
 	}
 
 	/*
@@ -1883,7 +1881,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement remove(Component component) {
-		return chain("remove", _quoted(selector(component)));
+		return chain("remove", S.id(component));
 	}
 
 	/*
@@ -1949,7 +1947,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * .Component)
 	 */
 	public IJQStatement replaceAll(Component component) {
-		return chain("replaceAll", _quoted(selector(component)));
+		return chain("replaceAll", S.id(component));
 	}
 
 	/*
@@ -2065,7 +2063,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * Component)
 	 */
 	public IJQStatement siblings(Component component) {
-		return chain("siblings", _quoted(selector(component)));
+		return chain("siblings", S.id(component));
 	}
 
 	/*
@@ -2302,7 +2300,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * )
 	 */
 	public IJQStatement wrapAll(Component component) {
-		return chain("wrapAll", _quoted(selector(component)));
+		return chain("wrapAll", S.id(component));
 	}
 
 	/*
@@ -2324,7 +2322,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * .Component)
 	 */
 	public IJQStatement wrapInner(Component component) {
-		return chain("wrapInner", _quoted(selector(component)));
+		return chain("wrapInner", S.id(component));
 	}
 
 	private CharSequence[] joinToArray(CharSequence first,

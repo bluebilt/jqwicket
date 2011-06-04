@@ -10,6 +10,8 @@ import java.io.Serializable;
  */
 public interface IJQFunction extends Serializable, CharSequence {
 
+	IJQFunction withParams(CharSequence... args);
+
 	CharSequence[] getArgs();
 
 	CharSequence toStringBodyOnly();

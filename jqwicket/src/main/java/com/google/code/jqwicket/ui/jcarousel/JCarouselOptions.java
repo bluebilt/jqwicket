@@ -280,7 +280,7 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @return
 	 */
 	public JCarouselOptions initEvent(IJQStatement callbackBody) {
-		return this.initEvent($f(callbackBody, "carousel", "state"));
+		return this.initEvent($f(callbackBody).withParams("carousel", "state"));
 	}
 
 	/**
@@ -324,7 +324,8 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @return
 	 */
 	public JCarouselOptions initLoadEvent(IJQStatement callbackBody) {
-		return this.initLoadEvent($f(callbackBody, "carousel", "state"));
+		return this.initLoadEvent($f(callbackBody).withParams("carousel",
+				"state"));
 	}
 
 	/**
@@ -373,8 +374,8 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @return
 	 */
 	public JCarouselOptions itemFirstInEvent(IJQStatement callbackBody) {
-		return this.itemFirstInEvent($f(callbackBody, "carousel", "obj",
-				"indx", "state"));
+		return this.itemFirstInEvent($f(callbackBody).withParams("carousel",
+				"obj", "indx", "state"));
 	}
 
 	/**
@@ -425,8 +426,8 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @return
 	 */
 	public JCarouselOptions itemFirstOutEvent(IJQStatement callbackBody) {
-		return this.itemFirstOutEvent($f(callbackBody, "carousel", "obj",
-				"indx", "state"));
+		return this.itemFirstOutEvent($f(callbackBody).withParams("carousel",
+				"obj", "indx", "state"));
 	}
 
 	/**
@@ -477,8 +478,8 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @return
 	 */
 	public JCarouselOptions itemLastInEvent(IJQStatement callbackBody) {
-		return this.itemLastInEvent($f(callbackBody, "carousel", "obj", "indx",
-				"state"));
+		return this.itemLastInEvent($f(callbackBody).withParams("carousel",
+				"obj", "indx", "state"));
 	}
 
 	/**
@@ -528,8 +529,8 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @return
 	 */
 	public JCarouselOptions itemLastOutEvent(IJQStatement callbackBody) {
-		return this.itemLastOutEvent($f(callbackBody, "carousel", "obj",
-				"indx", "state"));
+		return this.itemLastOutEvent($f(callbackBody).withParams("carousel",
+				"obj", "indx", "state"));
 	}
 
 	/**
@@ -578,8 +579,8 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @return
 	 */
 	public JCarouselOptions itemVisibleInEvent(IJQStatement callbackBody) {
-		return this.itemVisibleInEvent($f(callbackBody, "carousel", "obj",
-				"indx", "state"));
+		return this.itemVisibleInEvent($f(callbackBody).withParams("carousel",
+				"obj", "indx", "state"));
 	}
 
 	/**
@@ -628,8 +629,8 @@ public class JCarouselOptions extends AbstractJQOptions<JCarouselOptions> {
 	 * @return
 	 */
 	public JCarouselOptions itemVisibleOutEvent(IJQStatement callbackBody) {
-		return this.itemVisibleOutEvent($f(callbackBody, "carousel", "obj",
-				"indx", "state"));
+		return this.itemVisibleOutEvent($f(callbackBody).withParams("carousel",
+				"obj", "indx", "state"));
 	}
 
 	/**

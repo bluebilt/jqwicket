@@ -477,7 +477,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @return
 	 */
 	public DraggableOptions startEvent(IJQStatement callbackBody) {
-		return this.startEvent($f(callbackBody, "event", "ui"));
+		return this.startEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -508,7 +508,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @return
 	 */
 	public DraggableOptions dragEvent(IJQStatement callbackBody) {
-		return this.dragEvent($f(callbackBody, "event", "ui"));
+		return this.dragEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -539,7 +539,7 @@ public class DraggableOptions extends AbstractJQOptions<DraggableOptions> {
 	 * @return
 	 */
 	public DraggableOptions stopEvent(IJQStatement callbackBody) {
-		return this.stopEvent($f(callbackBody, "event", "ui"));
+		return this.stopEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**

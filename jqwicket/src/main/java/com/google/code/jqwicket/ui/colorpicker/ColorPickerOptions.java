@@ -79,8 +79,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @return
 	 */
 	public ColorPickerOptions color(int r, int g, int b) {
-		super.put("color",
-				new JQOptions().put("r", r).put("g", g).put("b", b));
+		super.put("color", new JQOptions().put("r", r).put("g", g).put("b", b));
 		return this;
 	}
 
@@ -126,7 +125,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @return
 	 */
 	public ColorPickerOptions onShowEvent(IJQStatement callbackBody) {
-		return this.onShowEvent($f(callbackBody, "colpkr"));
+		return this.onShowEvent($f(callbackBody).withParams("colpkr"));
 	}
 
 	/**
@@ -188,7 +187,7 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @return
 	 */
 	public ColorPickerOptions onHideEvent(IJQStatement callbackBody) {
-		return this.onHideEvent($f(callbackBody, "colpkr"));
+		return this.onHideEvent($f(callbackBody).withParams("colpkr"));
 	}
 
 	/**
@@ -219,7 +218,8 @@ public class ColorPickerOptions extends AbstractJQOptions<ColorPickerOptions> {
 	 * @return
 	 */
 	public ColorPickerOptions onChangeEvent(IJQStatement callbackBody) {
-		return this.onChangeEvent($f(callbackBody, "hsb", "hex", "rgb"));
+		return this.onChangeEvent($f(callbackBody)
+				.withParams("hsb", "hex", "rgb"));
 	}
 
 	/**

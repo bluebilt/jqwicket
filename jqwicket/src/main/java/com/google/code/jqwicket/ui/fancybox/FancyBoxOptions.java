@@ -320,8 +320,8 @@ public class FancyBoxOptions extends AbstractJQOptions<FancyBoxOptions> {
 	 * @return
 	 */
 	public FancyBoxOptions titleFormat(IJQStatement callbackBody) {
-		return this.titleFormat($f(callbackBody, "title", "currentArray",
-				"currentIndex", "currentOpts"));
+		return this.titleFormat($f(callbackBody).withParams("title",
+				"currentArray", "currentIndex", "currentOpts"));
 	}
 
 	/**

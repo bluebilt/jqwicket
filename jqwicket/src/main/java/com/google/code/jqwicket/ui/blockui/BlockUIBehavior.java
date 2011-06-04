@@ -24,7 +24,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.api.IJQFunction;
-import com.google.code.jqwicket.api.JQuery;
+import com.google.code.jqwicket.api.S;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
 
 /**
@@ -109,7 +109,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#block(org.apache.wicket.Component)
 	 */
 	public IJQFunction block(Component component) {
-		return this.block(JQuery.selector(component));
+		return this.block(S.id(component));
 	}
 
 	/**
@@ -119,7 +119,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 *      org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
 	public void block(Component component, AjaxRequestTarget ajaxRequestTarget) {
-		this.block(JQuery.selector(component), ajaxRequestTarget);
+		this.block(S.id(component), ajaxRequestTarget);
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 *      com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
 	public IJQFunction block(Component component, BlockUIOptions options) {
-		return this.block(JQuery.selector(component), options);
+		return this.block(S.id(component), options);
 	}
 
 	/**
@@ -141,7 +141,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 */
 	public void block(Component component, BlockUIOptions options,
 			AjaxRequestTarget ajaxRequestTarget) {
-		this.block(JQuery.selector(component), options, ajaxRequestTarget);
+		this.block(S.id(component), options, ajaxRequestTarget);
 	}
 
 	/**
@@ -271,7 +271,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 * @see com.google.code.jqwicket.ui.blockui.IBlockUI#unblock(org.apache.wicket.Component)
 	 */
 	public IJQFunction unblock(Component component) {
-		return this.unblock(JQuery.selector(component));
+		return this.unblock(S.id(component));
 	}
 
 	/**
@@ -291,7 +291,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	 *      com.google.code.jqwicket.ui.blockui.BlockUIOptions)
 	 */
 	public IJQFunction unblock(Component component, BlockUIOptions options) {
-		return this.unblock(JQuery.selector(component), options);
+		return this.unblock(S.id(component), options);
 	}
 
 	/**

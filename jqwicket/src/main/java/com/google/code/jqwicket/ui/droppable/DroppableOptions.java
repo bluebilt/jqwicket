@@ -25,7 +25,7 @@ import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 
@@ -182,7 +182,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @return
 	 */
 	public DroppableOptions activateEvent(IJQStatement callbackBody) {
-		return this.activateEvent($f(callbackBody, "event", "ui"));
+		return this.activateEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -215,7 +215,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @return
 	 */
 	public DroppableOptions deactivateEvent(IJQStatement callbackBody) {
-		return this.deactivateEvent($f(callbackBody, "event", "ui"));
+		return this.deactivateEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -248,7 +248,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @return
 	 */
 	public DroppableOptions overEvent(IJQStatement callbackBody) {
-		return this.overEvent($f(callbackBody, "event", "ui"));
+		return this.overEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -282,7 +282,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @return
 	 */
 	public DroppableOptions outEvent(IJQStatement callbackBody) {
-		return this.outEvent($f(callbackBody, "event", "ui"));
+		return this.outEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -320,7 +320,7 @@ public class DroppableOptions extends AbstractJQOptions<DroppableOptions> {
 	 * @return
 	 */
 	public DroppableOptions dropEvent(IJQStatement callbackBody) {
-		return this.dropEvent($f(callbackBody, "event", "ui"));
+		return this.dropEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**

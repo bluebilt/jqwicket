@@ -314,7 +314,7 @@ public class ResizableOptions extends AbstractJQOptions<ResizableOptions> {
 	 * @return
 	 */
 	public ResizableOptions startEvent(IJQStatement callbackBody) {
-		return this.startEvent($f(callbackBody, "event", "ui"));
+		return this.startEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -347,7 +347,7 @@ public class ResizableOptions extends AbstractJQOptions<ResizableOptions> {
 	 * @return
 	 */
 	public ResizableOptions resizeEvent(IJQStatement callbackBody) {
-		return this.resizeEvent($f(callbackBody, "event", "ui"));
+		return this.resizeEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -379,7 +379,7 @@ public class ResizableOptions extends AbstractJQOptions<ResizableOptions> {
 	 * @return
 	 */
 	public ResizableOptions stopEvent(IJQStatement callbackBody) {
-		return this.stopEvent($f(callbackBody, "event", "ui"));
+		return this.stopEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**

@@ -383,7 +383,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions startEvent(IJQStatement callbackBody) {
-		return this.startEvent($f(callbackBody, "event", "ui"));
+		return this.startEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -414,7 +414,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions sortEvent(IJQStatement callbackBody) {
-		return this.sortEvent($f(callbackBody, "event", "ui"));
+		return this.sortEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -447,7 +447,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions changeEvent(IJQStatement callbackBody) {
-		return this.changeEvent($f(callbackBody, "event", "ui"));
+		return this.changeEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -481,7 +481,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions beforeStopEvent(IJQStatement callbackBody) {
-		return this.beforeStopEvent($f(callbackBody, "event", "ui"));
+		return this.beforeStopEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -513,7 +513,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions stopEvent(IJQStatement callbackBody) {
-		return this.stopEvent($f(callbackBody, "event", "ui"));
+		return this.stopEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -546,7 +546,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions updateEvent(IJQStatement callbackBody) {
-		return this.updateEvent($f(callbackBody, "event", "ui"));
+		return this.updateEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -580,7 +580,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions receiveEvent(IJQStatement callbackBody) {
-		return this.receiveEvent($f(callbackBody, "event", "ui"));
+		return this.receiveEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -614,7 +614,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions removeEvent(IJQStatement callbackBody) {
-		return this.removeEvent($f(callbackBody, "event", "ui"));
+		return this.removeEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -648,7 +648,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions overEvent(IJQStatement callbackBody) {
-		return this.overEvent($f(callbackBody, "event", "ui"));
+		return this.overEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -682,7 +682,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions outEvent(IJQStatement callbackBody) {
-		return this.outEvent($f(callbackBody, "event", "ui"));
+		return this.outEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -716,7 +716,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions activateEvent(IJQStatement callbackBody) {
-		return this.activateEvent($f(callbackBody, "event", "ui"));
+		return this.activateEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**
@@ -750,7 +750,7 @@ public class SortableOptions extends AbstractJQOptions<SortableOptions> {
 	 * @return
 	 */
 	public SortableOptions deactivateEvent(IJQStatement callbackBody) {
-		return this.deactivateEvent($f(callbackBody, "event", "ui"));
+		return this.deactivateEvent($f(callbackBody).withParams("event", "ui"));
 	}
 
 	/**

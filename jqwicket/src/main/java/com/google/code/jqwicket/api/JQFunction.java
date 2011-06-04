@@ -17,30 +17,22 @@ class JQFunction implements IJQFunction, Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private CharSequence[] args;
+	private CharSequence[] params;
 
 	private CharSequence body;
 
-	JQFunction(CharSequence bodyJs) {
-		this(bodyJs, (CharSequence[]) null);
+	JQFunction(CharSequence... bodyStatements) {
+		this.body = Utils.join(Utils.walk(bodyStatements,
+				new Utils.IArrayWalkCallback<CharSequence>() {
+					public CharSequence onElement(int index, CharSequence obj) {
+						return semicolon(obj);
+					}
+				}), "\n");
 	}
 
-	JQFunction(CharSequence bodyJs, CharSequence... args) {
-		this.body = semicolon(bodyJs);
-		this.args = args;
-	}
-
-	JQFunction(IJQStatement bodyStatement, CharSequence... args) {
-		this(new IJQStatement[] { bodyStatement }, args);
-	}
-
-	JQFunction(IJQStatement[] bodyStatements) {
-		this(bodyStatements, (CharSequence[]) null);
-	}
-
-	JQFunction(IJQStatement[] bodyStatements, CharSequence[] args) {
-		this.body = Utils.join(bodyStatements, "\n");
-		this.args = args;
+	public IJQFunction withParams(CharSequence... params) {
+		this.params = params;
+		return this;
 	}
 
 	public int length() {
@@ -59,15 +51,15 @@ class JQFunction implements IJQFunction, Serializable {
 	public String toString() {
 		StringBuffer sb = new StringBuffer();
 		sb.append("function(");
-		if (isNotEmpty(args)) {
-			sb.append(Utils.join(args, ","));
+		if (isNotEmpty(params)) {
+			sb.append(Utils.join(params, ","));
 		}
 		sb.append("){").append(toStringBodyOnly()).append("}");
 		return sb.toString();
 	}
 
 	public CharSequence[] getArgs() {
-		return args;
+		return params;
 	}
 
 	public CharSequence toStringBodyOnly() {

@@ -180,7 +180,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	}
 
 	public DialogOptions beforeCloseEvent(IJQStatement callbackBody) {
-		super.put("beforeclose", $f(callbackBody, "event", "ui"));
+		super.put("beforeclose", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -200,7 +200,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	}
 
 	public DialogOptions closeEvent(IJQStatement callbackBody) {
-		super.put("close", $f(callbackBody, "event", "ui"));
+		super.put("close", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -220,7 +220,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	}
 
 	public DialogOptions dragEvent(IJQStatement callbackBody) {
-		super.put("drag", $f(callbackBody, "event", "ui"));
+		super.put("drag", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -240,7 +240,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	}
 
 	public DialogOptions dragStartEvent(IJQStatement callbackBody) {
-		super.put("dragStart", $f(callbackBody, "event", "ui"));
+		super.put("dragStart", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -260,7 +260,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	}
 
 	public DialogOptions dragStopEvent(IJQStatement callbackBody) {
-		super.put("dragStop", $f(callbackBody, "event", "ui"));
+		super.put("dragStop", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -280,7 +280,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	}
 
 	public DialogOptions focusEvent(IJQStatement callbackBody) {
-		super.put("focus", $f(callbackBody, "event", "ui"));
+		super.put("focus", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -300,7 +300,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	}
 
 	public DialogOptions openEvent(IJQStatement callbackBody) {
-		super.put("open", $f(callbackBody, "event", "ui"));
+		super.put("open", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -320,7 +320,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	}
 
 	public DialogOptions resizeEvent(IJQStatement callbackBody) {
-		super.put("resize", $f(callbackBody, "event", "ui"));
+		super.put("resize", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -352,7 +352,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @return
 	 */
 	public DialogOptions resizeStartEvent(IJQStatement callbackBody) {
-		super.put("resizeStart", $f(callbackBody, "event", "ui"));
+		super.put("resizeStart", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 
@@ -384,7 +384,7 @@ public class DialogOptions extends AbstractJQOptions<DialogOptions> {
 	 * @return
 	 */
 	public DialogOptions resizeStopEvent(IJQStatement callbackBody) {
-		super.put("resizeStop", $f(callbackBody, "event", "ui"));
+		super.put("resizeStop", $f(callbackBody).withParams("event", "ui"));
 		return this;
 	}
 

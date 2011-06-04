@@ -79,7 +79,7 @@ public class BlockUIOptions extends AbstractJQOptions<BlockUIOptions> {
 	 */
 	public BlockUIOptions css(CharSequence css) {
 		return super.put("css", css);
-	} 
+	}
 
 	/**
 	 * styles for the overlay <br>
@@ -405,7 +405,8 @@ public class BlockUIOptions extends AbstractJQOptions<BlockUIOptions> {
 	 * @return
 	 */
 	public BlockUIOptions itemVisibleInEvent(IJQStatement callbackBody) {
-		return this.itemVisibleInEvent($f(callbackBody, "element", "options"));
+		return this.itemVisibleInEvent($f(callbackBody).withParams("element",
+				"options"));
 	}
 
 	/**

@@ -146,8 +146,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	/**
 	 * The displayData option determines what data is displayed in the file
 	 * upload queue item during an upload. By default, the percentage complete
-	 * is shown. You can set the value to “speed” to display the average upload
-	 * speed in KB/s.<br>
+	 * is shown. You can set the value to “speed” to display the average
+	 * upload speed in KB/s.<br>
 	 * Default:'percentage'<br>
 	 * Required:optional
 	 * 
@@ -177,8 +177,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * The fileDataName option sets the name of the file input that the flash
 	 * file uses when uploading the files. This value is used for referencing
 	 * the files that have been uploaded in your back-end script. For example,
-	 * if you set the value of fileDataName to ‘uploadify’, you would reference
-	 * the uploaded files as $_FILES['uploadify'] in your PHP script.<br>
+	 * if you set the value of fileDataName to ‘uploadify’, you would
+	 * reference the uploaded files as $_FILES['uploadify'] in your PHP script.<br>
 	 * Default:'Filedata'<br>
 	 * Required:optional
 	 * 
@@ -360,10 +360,11 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 
 	/**
 	 * The scriptAccess option sets the scriptAccess property for the flash
-	 * button file. Setting this option to “always” can alleviate some issues
-	 * during testing that involve communication problems between the flash file
-	 * and the HTML page if they are in different domains. For security
-	 * purposes, “sameDomain” shoudl be used in the production environment.<br>
+	 * button file. Setting this option to “always” can alleviate some
+	 * issues during testing that involve communication problems between the
+	 * flash file and the HTML page if they are in different domains. For
+	 * security purposes, “sameDomain” shoudl be used in the production
+	 * environment.<br>
 	 * Input Format:'sameDomain' / 'always'<br>
 	 * Default:'sameDomain'<br>
 	 * Required:optional
@@ -450,10 +451,11 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 
 	/**
 	 * The wmode option sets the wmode of the flash button. Setting wmode to
-	 * ‘transparent’ will make the background of the file transparent, but it
-	 * will be the top most layer of your page. If you have a nearby select and
-	 * the drop down overlaps the flash button with a wmode set to
-	 * ‘transparent,’ the drop down will appear to be under the flash button.<br>
+	 * ‘transparent’ will make the background of the file transparent, but
+	 * it will be the top most layer of your page. If you have a nearby select
+	 * and the drop down overlaps the flash button with a wmode set to
+	 * ‘transparent,’ the drop down will appear to be under the flash
+	 * button.<br>
 	 * Default:'opaque'<br>
 	 * Required:optional
 	 * 
@@ -508,7 +510,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @return
 	 */
 	public UploadifyOptions onAllCompleteEvent(IJQStatement callbackBody) {
-		return this.onAllCompleteEvent($f(callbackBody, "event", "data"));
+		return this.onAllCompleteEvent($f(callbackBody).withParams("event",
+				"data"));
 	}
 
 	/**
@@ -552,11 +555,11 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * <li>[size] – The size in bytes of the file</li>
 	 * <li>[creationDate] – The date the file was created</li>
 	 * <li>[modificationDate] – The last date the file was modified</li>
-	 * <li>[type] – The file extension beginning with a ‘.’ data Details about
-	 * the file queue.</li>
+	 * <li>[type] – The file extension beginning with a ‘.’ data Details
+	 * about the file queue.</li>
 	 * <li>[fileCount] – The total number of files left in the queue</li>
-	 * <li>[allBytesTotal] – The total number of bytes left for all files in the
-	 * queue</li>
+	 * <li>[allBytesTotal] – The total number of bytes left for all files in
+	 * the queue</li>
 	 * </ul>
 	 * 
 	 * @param callbackBody
@@ -583,19 +586,19 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * <li>[size] – The size in bytes of the file</li>
 	 * <li>[creationDate] – The date the file was created</li>
 	 * <li>[modificationDate] – The last date the file was modified</li>
-	 * <li>[type] – The file extension beginning with a ‘.’ data Details about
-	 * the file queue.</li>
+	 * <li>[type] – The file extension beginning with a ‘.’ data Details
+	 * about the file queue.</li>
 	 * <li>[fileCount] – The total number of files left in the queue</li>
-	 * <li>[allBytesTotal] – The total number of bytes left for all files in the
-	 * queue</li>
+	 * <li>[allBytesTotal] – The total number of bytes left for all files in
+	 * the queue</li>
 	 * </ul>
 	 * 
 	 * @param callbackBody
 	 * @return
 	 */
 	public UploadifyOptions onCancelEvent(IJQStatement callbackBody) {
-		return this.onCancelEvent($f(callbackBody, "event", "ID", "fileObj",
-				"data"));
+		return this.onCancelEvent($f(callbackBody).withParams("event", "ID",
+				"fileObj", "data"));
 	}
 
 	/**
@@ -615,11 +618,11 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * <li>[size] – The size in bytes of the file</li>
 	 * <li>[creationDate] – The date the file was created</li>
 	 * <li>[modificationDate] – The last date the file was modified</li>
-	 * <li>[type] – The file extension beginning with a ‘.’ data Details about
-	 * the file queue.</li>
+	 * <li>[type] – The file extension beginning with a ‘.’ data Details
+	 * about the file queue.</li>
 	 * <li>[fileCount] – The total number of files left in the queue</li>
-	 * <li>[allBytesTotal] – The total number of bytes left for all files in the
-	 * queue</li>
+	 * <li>[allBytesTotal] – The total number of bytes left for all files in
+	 * the queue</li>
 	 * </ul>
 	 * 
 	 * @param callback
@@ -673,7 +676,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @return
 	 */
 	public UploadifyOptions onCheckEvent(IJQStatement callbackBody) {
-		return this.onCheckEvent($f(callbackBody, "event", "data", "key"));
+		return this.onCheckEvent($f(callbackBody).withParams("event", "data",
+				"key"));
 	}
 
 	/**
@@ -731,7 +735,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @return
 	 */
 	public UploadifyOptions onClearQueueEvent(IJQStatement callbackBody) {
-		return this.onClearQueueEvent($f(callbackBody, "event"));
+		return this.onClearQueueEvent($f(callbackBody).withParams("event"));
 	}
 
 	/**
@@ -773,8 +777,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * <li>[size] – The size in bytes of the file</li>
 	 * <li>[creationDate] – The date the file was created</li>
 	 * <li>[modificationDate] – The last date the file was modified</li>
-	 * <li>[type] – The file extension beginning with a ‘.’ response The text
-	 * response sent back from the back-end upload script.</li>
+	 * <li>[type] – The file extension beginning with a ‘.’ response The
+	 * text response sent back from the back-end upload script.</li>
 	 * </ul>
 	 * 
 	 * data An object containing general data about the upload and the queue.<br>
@@ -811,8 +815,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * <li>[size] – The size in bytes of the file</li>
 	 * <li>[creationDate] – The date the file was created</li>
 	 * <li>[modificationDate] – The last date the file was modified</li>
-	 * <li>[type] – The file extension beginning with a ‘.’ response The text
-	 * response sent back from the back-end upload script.</li>
+	 * <li>[type] – The file extension beginning with a ‘.’ response The
+	 * text response sent back from the back-end upload script.</li>
 	 * </ul>
 	 * 
 	 * data An object containing general data about the upload and the queue.<br>
@@ -825,8 +829,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @return
 	 */
 	public UploadifyOptions onCompleteEvent(IJQStatement callbackBody) {
-		return this.onCompleteEvent($f(callbackBody, "event", "ID", "fileObj",
-				"response", "data"));
+		return this.onCompleteEvent($f(callbackBody).withParams("event", "ID",
+				"fileObj", "response", "data"));
 	}
 
 	/**
@@ -850,8 +854,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * <li>[size] – The size in bytes of the file</li>
 	 * <li>[creationDate] – The date the file was created</li>
 	 * <li>[modificationDate] – The last date the file was modified</li>
-	 * <li>[type] – The file extension beginning with a ‘.’ response The text
-	 * response sent back from the back-end upload script.</li>
+	 * <li>[type] – The file extension beginning with a ‘.’ response The
+	 * text response sent back from the back-end upload script.</li>
 	 * </ul>
 	 * 
 	 * data An object containing general data about the upload and the queue.<br>
@@ -935,8 +939,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @return
 	 */
 	public UploadifyOptions onErrorEvent(IJQStatement callbackBody) {
-		return this.onErrorEvent($f(callbackBody, "event", "ID", "fileObj",
-				"errorObj"));
+		return this.onErrorEvent($f(callbackBody).withParams("event", "ID",
+				"fileObj", "errorObj"));
 	}
 
 	/**
@@ -1079,7 +1083,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @return
 	 */
 	public UploadifyOptions onOpenEvent(IJQStatement callbackBody) {
-		return this.onOpenEvent($f(callbackBody, "event", "ID", "fileObj"));
+		return this.onOpenEvent($f(callbackBody).withParams("event", "ID",
+				"fileObj"));
 	}
 
 	/**
@@ -1181,8 +1186,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @return
 	 */
 	public UploadifyOptions onProgressEvent(IJQStatement callbackBody) {
-		return this.onProgressEvent($f(callbackBody, "event", "ID", "fileObj",
-				"data"));
+		return this.onProgressEvent($f(callbackBody).withParams("event", "ID",
+				"fileObj", "data"));
 	}
 
 	/**
@@ -1263,8 +1268,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @return
 	 */
 	public UploadifyOptions onQueueFullEvent(IJQStatement callbackBody) {
-		return this
-				.onQueueFullEvent($f(callbackBody, "event", "queueSizeLimit"));
+		return this.onQueueFullEvent($f(callbackBody).withParams("event",
+				"queueSizeLimit"));
 	}
 
 	/**
@@ -1341,7 +1346,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @return
 	 */
 	public UploadifyOptions onSelectEvent(IJQStatement callbackBody) {
-		return this.onSelectEvent($f(callbackBody, "event", "ID", "fileObj"));
+		return this.onSelectEvent($f(callbackBody).withParams("event", "ID",
+				"fileObj"));
 	}
 
 	/**
@@ -1385,8 +1391,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * <li>[fileCount] – The total number of files in the queue</li>
 	 * <li>[filesSelected] – The number of files selected in the select
 	 * operation</li>
-	 * <li>[filesReplaced] – The number of files that were replaced in the queue
-	 * </li>
+	 * <li>[filesReplaced] – The number of files that were replaced in the
+	 * queue</li>
 	 * <li>[allBytesTotal] – The total number of bytes for all files in the
 	 * queue</li>
 	 * </ul>
@@ -1412,8 +1418,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * <li>[fileCount] – The total number of files in the queue</li>
 	 * <li>[filesSelected] – The number of files selected in the select
 	 * operation</li>
-	 * <li>[filesReplaced] – The number of files that were replaced in the queue
-	 * </li>
+	 * <li>[filesReplaced] – The number of files that were replaced in the
+	 * queue</li>
 	 * <li>[allBytesTotal] – The total number of bytes for all files in the
 	 * queue</li>
 	 * </ul>
@@ -1423,7 +1429,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * @return
 	 */
 	public UploadifyOptions onSelectOnceEvent(IJQStatement callbackBody) {
-		return this.onSelectOnceEvent($f(callbackBody, "event", "data"));
+		return this.onSelectOnceEvent($f(callbackBody).withParams("event",
+				"data"));
 	}
 
 	/**
@@ -1439,8 +1446,8 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 	 * <li>[fileCount] – The total number of files in the queue</li>
 	 * <li>[filesSelected] – The number of files selected in the select
 	 * operation</li>
-	 * <li>[filesReplaced] – The number of files that were replaced in the queue
-	 * </li>
+	 * <li>[filesReplaced] – The number of files that were replaced in the
+	 * queue</li>
 	 * <li>[allBytesTotal] – The total number of bytes for all files in the
 	 * queue</li>
 	 * </ul>

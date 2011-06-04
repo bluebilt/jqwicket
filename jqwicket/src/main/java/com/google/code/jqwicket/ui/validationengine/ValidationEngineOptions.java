@@ -304,7 +304,7 @@ public class ValidationEngineOptions extends
 	 * @return
 	 */
 	public ValidationEngineOptions onSuccessEvent(IJQStatement callbackBody) {
-		return this.onSuccessEvent($f(callbackBody, "formData"));
+		return this.onSuccessEvent($f(callbackBody).withParams("formData"));
 	}
 
 	/**
@@ -324,7 +324,7 @@ public class ValidationEngineOptions extends
 	}
 
 	public ValidationEngineOptions onFailureEvent(IJQStatement callbackBody) {
-		return this.onFailureEvent($f(callbackBody, "formData"));
+		return this.onFailureEvent($f(callbackBody).withParams("formData"));
 	}
 
 	public ValidationEngineOptions onFailureEvent(IJQFunction callback) {
