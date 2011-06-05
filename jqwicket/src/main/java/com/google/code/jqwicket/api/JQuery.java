@@ -115,8 +115,8 @@ public abstract class JQuery {
 	 * @param js
 	 *            is a javascript block
 	 * @param args
-	 *            (optional) array of arguments used to replace placeholder with
-	 *            "js" string.
+	 *            (optional) array of arguments used to replace placeholder
+	 *            within the "js" parameter.
 	 * @return
 	 */
 	public static final IJQStatement js(CharSequence js, Object... args) {
@@ -143,16 +143,36 @@ public abstract class JQuery {
 		return js(buf);
 	}
 
+	/**
+	 * Generates javascript's "document ready" block from the collection of
+	 * {@link IJQStatement}-s.
+	 * 
+	 * @param statements
+	 * @return
+	 */
 	public static final IJQStatement documentReady(
 			Collection<IJQStatement> statements) {
-		return documentReady(statements.toArray(new JQStatement[statements
+		return documentReady(statements.toArray(new IJQStatement[statements
 				.size()]));
 	}
 
+	/**
+	 * Generates javascript's "document ready" block from the array of character
+	 * sequences.
+	 * 
+	 * @param statements
+	 * @return
+	 */
 	public static final IJQStatement documentReady(IJQStatement... statements) {
 		return $document().chain("ready", new JQFunction(statements));
 	}
 
+	/**
+	 * Generates javascript function from array of character sequences.
+	 * 
+	 * @param bodyStatements
+	 * @return
+	 */
 	public static final IJQFunction $f(CharSequence... bodyStatements) {
 		return new JQFunction(bodyStatements);
 	}
@@ -211,7 +231,7 @@ public abstract class JQuery {
 	}
 
 	/**
-	 * Creates JQStatement to invoke the respond method on
+	 * Creates IJQStatement to invoke the respond method on
 	 * {@link AbstractAjaxBehavior} added to the wicket component.
 	 * 
 	 * @param url
@@ -225,7 +245,7 @@ public abstract class JQuery {
 	}
 
 	/**
-	 * Creates JQStatement to invoke the respond method on
+	 * Creates IJQStatement to invoke the respond method on
 	 * {@link AbstractAjaxBehavior} added to the wicket component.
 	 * 
 	 * @param url

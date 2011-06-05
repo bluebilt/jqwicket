@@ -87,8 +87,12 @@ class JQFunction implements IJQFunction, Serializable {
 		return sb.toString();
 	}
 
-	public CharSequence[] getArgs() {
+	public CharSequence[] getParams() {
 		return params;
+	}
+
+	public CharSequence getName() {
+		return name;
 	}
 
 	public CharSequence toStringBodyOnly() {

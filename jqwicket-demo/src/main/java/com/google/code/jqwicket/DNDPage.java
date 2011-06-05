@@ -16,6 +16,7 @@
  */
 package com.google.code.jqwicket;
 
+import static com.google.code.jqwicket.api.JQLiteral._raw;
 import static com.google.code.jqwicket.api.JQuery.$;
 import static com.google.code.jqwicket.api.JQuery.$f;
 import static com.google.code.jqwicket.api.JQuery.$this;
@@ -30,7 +31,7 @@ import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 
-import com.google.code.jqwicket.api.JQLiteral;
+import com.google.code.jqwicket.api.S;
 import com.google.code.jqwicket.ui.accordion.AccordionWebMarkupContainer;
 import com.google.code.jqwicket.ui.draggable.DraggableOptions;
 import com.google.code.jqwicket.ui.droppable.DroppableOptions;
@@ -94,14 +95,13 @@ public class DNDPage extends BaseJQueryUIPage {
 				.accept(":not(.ui-sortable-helper)")
 				.dropEvent(
 						$f(
-								$this().find(".placeholder").remove(),
-								$("<li></li>").text(
-										JQLiteral._raw("ui.draggable.text()"))
-										.appendTo(JQLiteral._raw("this")),
+								$this().find(S.clazz("placeholder")).remove(),
+								$("<li></li>")
+										.text(_raw("ui.draggable.text()"))
+										.appendTo(_raw("this")),
 								wicketAjaxGet(behave, ajaxGetParams)//
 						).withParams("event", "ui") //
 				);
-
 		cartContainer.add(JQBehaviors.droppable(options));
 
 	}

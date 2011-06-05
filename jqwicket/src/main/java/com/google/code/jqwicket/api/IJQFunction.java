@@ -26,9 +26,35 @@ import java.io.Serializable;
  */
 public interface IJQFunction extends Serializable, CharSequence {
 
+	/**
+	 * Defines the name of the javascript function to render.
+	 * 
+	 * @param name
+	 * @return
+	 */
+	IJQFunction withName(CharSequence name);
+
+	/**
+	 * Defines the parameters of the javascript function to render.
+	 * 
+	 * @param args
+	 * @return
+	 */
 	IJQFunction withParams(CharSequence... args);
 
-	CharSequence[] getArgs();
+	/**
+	 * Returns the name of the function.
+	 * 
+	 * @return
+	 */
+	CharSequence getName();
+
+	/**
+	 * Returns the arrray of parameters.
+	 * 
+	 * @return
+	 */
+	CharSequence[] getParams();
 
 	CharSequence toStringBodyOnly();
 

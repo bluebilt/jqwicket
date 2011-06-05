@@ -16,6 +16,7 @@
  */
 package com.google.code.jqwicket.ui.accordion;
 
+import static com.google.code.jqwicket.api.JQLiteral._raw;
 
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
@@ -54,7 +55,7 @@ public class AccordionBehavior extends JQUIComponentBehaivor<AccordionOptions>
 	 * @see com.google.code.jqwicket.ui.accordion.IAccordion#activate(int)
 	 */
 	public IJQFunction activate(int index) {
-		return chain("activate", String.valueOf(index));
+		return chain("activate", _raw(index));
 	}
 
 	/**
@@ -93,7 +94,7 @@ public class AccordionBehavior extends JQUIComponentBehaivor<AccordionOptions>
 	 * @see com.google.code.jqwicket.ui.accordion.IAccordion#activate(boolean)
 	 */
 	public IJQFunction activate(boolean activate) {
-		return chain("activate", String.valueOf(activate));
+		return chain("activate", _raw(activate));
 	}
 
 	/**

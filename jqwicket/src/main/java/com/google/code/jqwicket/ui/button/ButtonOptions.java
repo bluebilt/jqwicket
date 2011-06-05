@@ -20,29 +20,25 @@ import com.google.code.jqwicket.api.AbstractJQOptions;
 
 /**
  * @author mkalina
- *
+ * 
  */
 public class ButtonOptions extends AbstractJQOptions<ButtonOptions> {
 
 	private static final long serialVersionUID = 1L;
 
 	public ButtonOptions disabled(boolean disabled) {
-		super.put("disabled", disabled);
-		return this;
+		return super.put("disabled", disabled);
 	}
 
 	public ButtonOptions text(boolean text) {
-		super.put("text", text);
-		return this;
+		return super.put("text", text);
 	}
 
 	public ButtonOptions icons(CharSequence icons) {
-		super.put("icons", icons);
-		return this;
+		return super.put("icons", icons);
 	}
 
 	public ButtonOptions label(CharSequence label) {
-		super.put("label", label);
-		return this;
+		return super.put("label", label);
 	}
 }

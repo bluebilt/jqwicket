@@ -39,8 +39,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions disabled(boolean disabled) {
-		super.put("disabled", disabled);
-		return this;
+		return super.put("disabled", disabled);
 	}
 
 	/**
@@ -51,8 +50,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions active(boolean active) {
-		super.put("active", active);
-		return this;
+		return super.put("active", active);
 	}
 
 	/**
@@ -63,8 +61,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions active(CharSequence activeSelector) {
-		super.put("active", activeSelector);
-		return this;
+		return super.put("active", activeSelector);
 	}
 
 	/**
@@ -75,8 +72,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions active(int activeNumber) {
-		super.put("active", activeNumber);
-		return this;
+		return super.put("active", activeNumber);
 	}
 
 	/**
@@ -86,8 +82,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions animated(boolean animated) {
-		super.put("animated", animated);
-		return this;
+		return super.put("animated", animated);
 	}
 
 	/**
@@ -99,8 +94,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions animated(CharSequence animated) {
-		super.put("animated", animated);
-		return this;
+		return super.put("animated", animated);
 	}
 
 	/**
@@ -111,8 +105,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions autoHeight(boolean autoHeight) {
-		super.put("autoHeight", autoHeight);
-		return this;
+		return super.put("autoHeight", autoHeight);
 	}
 
 	/**
@@ -124,8 +117,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions clearStyle(boolean clearStyle) {
-		super.put("clearStyle", clearStyle);
-		return this;
+		return super.put("clearStyle", clearStyle);
 	}
 
 	/**
@@ -137,8 +129,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions collapsible(boolean collapsible) {
-		super.put("collapsible", collapsible);
-		return this;
+		return super.put("collapsible", collapsible);
 	}
 
 	/**
@@ -148,8 +139,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions event(CharSequence event) {
-		super.put("event", event);
-		return this;
+		return super.put("event", event);
 	}
 
 	/**
@@ -160,8 +150,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions fillSpace(boolean fillSpace) {
-		super.put("fillSpace", fillSpace);
-		return this;
+		return super.put("fillSpace", fillSpace);
 	}
 
 	/**
@@ -171,8 +160,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions header(CharSequence selector) {
-		super.put("header", selector);
-		return this;
+		return super.put("header", selector);
 	}
 
 	/**
@@ -184,8 +172,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions icons(CharSequence icons) {
-		super.put("icons", icons);
-		return this;
+		return super.put("icons", icons);
 	}
 
 	/**
@@ -197,8 +184,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions navigation(boolean navigation) {
-		super.put("navigation", navigation);
-		return this;
+		return super.put("navigation", navigation);
 	}
 
 	/**
@@ -208,8 +194,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions navigationFilter(IJQFunction navigationFilter) {
-		super.put("navigationFilter", navigationFilter);
-		return this;
+		return super.put("navigationFilter", navigationFilter);
 	}
 
 	/**
@@ -257,8 +242,7 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions changeEvent(IJQFunction callback) {
-		super.put("change", callback);
-		return this;
+		return super.put("change", callback);
 	}
 
 	/**
@@ -288,7 +272,6 @@ public class AccordionOptions extends AbstractJQOptions<AccordionOptions> {
 	 * @return
 	 */
 	public AccordionOptions changestartEvent(IJQFunction callback) {
-		super.put("changestart", callback);
-		return this;
+		return super.put("changestart", callback);
 	}
 }

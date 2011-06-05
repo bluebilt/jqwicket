@@ -100,7 +100,6 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	public void block(BlockUIOptions options,
 			AjaxRequestTarget ajaxRequestTarget) {
 		this.chain(ajaxRequestTarget, this.block(options));
-
 	}
 
 	/**
