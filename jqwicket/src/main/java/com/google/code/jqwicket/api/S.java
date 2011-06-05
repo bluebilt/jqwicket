@@ -1,3 +1,19 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.google.code.jqwicket.api;
 
 import org.apache.wicket.Component;
@@ -188,11 +204,31 @@ public abstract class S {
 	 *      href="http://api.jquery.com/child-selector/">http://api.jquery.com/child-selector/</a>
 	 * 
 	 * @param parent
+	 *            Any valid selector.
 	 * @param child
+	 *            A selector to filter the child elements.
 	 * @return
 	 */
 	public static final SBuilder child(CharSequence parent, CharSequence child) {
 		return new SBuilder().child(parent, child);
+	}
+
+	/**
+	 * Creates jquery child selector:
+	 * <tt>#parentComponentId > #childComponentId</tt>
+	 * 
+	 * @see <a
+	 *      href="http://api.jquery.com/child-selector/">http://api.jquery.com/child-selector/</a>
+	 * 
+	 * @param parentComponent
+	 *            any parent component
+	 * @param child
+	 *            any child component
+	 * @return
+	 */
+	public static final SBuilder child(Component parentComponent,
+			Component childChilComponent) {
+		return new SBuilder().child(parentComponent, childChilComponent);
 	}
 
 	/**
@@ -236,6 +272,25 @@ public abstract class S {
 	public static final SBuilder descendant(CharSequence ancestor,
 			CharSequence descendant) {
 		return new SBuilder().descendant(ancestor, descendant);
+	}
+
+	/**
+	 * Creates jquery descendant selector:
+	 * <tt>#ancestorComponentId #descendantComponentId</tt>
+	 * 
+	 * @see <a
+	 *      href="http://api.jquery.com/descendant-selector/">http://api.jquery.com/descendant-selector/</a>
+	 * 
+	 * @param ancestorComponent
+	 *            a ancestor component
+	 * @param descendantComponent
+	 *            a descendant component
+	 * @return
+	 */
+	public static final SBuilder descendant(Component ancestorComponent,
+			Component descendantComponent) {
+		return new SBuilder()
+				.descendant(ancestorComponent, descendantComponent);
 	}
 
 	/**
@@ -400,6 +455,19 @@ public abstract class S {
 	}
 
 	/**
+	 * Creates jquery has selector: <tt>:has(#componentId)</tt>
+	 * 
+	 * @see <a
+	 *      href="http://api.jquery.com/has-selector/">http://api.jquery.com/has-selector/</a>
+	 * @param component
+	 *            is a component to find
+	 * @return
+	 */
+	public static final SBuilder has(Component component) {
+		return new SBuilder().has(component);
+	}
+
+	/**
 	 * Creates jquery header selector: <tt>:header</tt>
 	 * 
 	 * @see <a
@@ -515,6 +583,19 @@ public abstract class S {
 	}
 
 	/**
+	 * Creates jquery multiple selector:
+	 * <tt>componentId1, componentId2, ..., componentIdN</tt>
+	 * 
+	 * @see <a
+	 *      href="http://api.jquery.com/multiple-selector/">http://api.jquery.com/multiple-selector/</a>
+	 * @param components
+	 * @return
+	 */
+	public static final SBuilder multiple(Component... components) {
+		return new SBuilder().multiple(components);
+	}
+
+	/**
 	 * Creates jquery next adjacent selector: <tt>prev + next</tt>
 	 * 
 	 * @see <a
@@ -529,6 +610,22 @@ public abstract class S {
 	public static final SBuilder nextAdjacent(CharSequence prev,
 			CharSequence next) {
 		return new SBuilder().nextAdjacent(prev, next);
+	}
+
+	/**
+	 * Creates jquery next adjacent selector:
+	 * <tt>#prevComponentId + #nextComponentId</tt>
+	 * 
+	 * @see <a
+	 *      href="http://api.jquery.com/next-adjacent-Selector/">http://api.jquery.com/next-adjacent-Selector/</a>
+	 * @param prevComponent
+	 * @param nextComponent
+	 * 
+	 * @return
+	 */
+	public static final SBuilder nextAdjacent(Component prevComponent,
+			Component nextComponent) {
+		return new SBuilder().nextAdjacent(prevComponent, nextComponent);
 	}
 
 	/**
@@ -549,6 +646,21 @@ public abstract class S {
 	}
 
 	/**
+	 * Creates jquery next adjacent selector:
+	 * <tt>#prevComponentId ~ #siblingComponentId</tt>
+	 * 
+	 * @see <a
+	 *      href="http://api.jquery.com/next-siblings-selector/">http://api.jquery.com/next-siblings-selector/</a>
+	 * @param prevComponent
+	 * @param siblingComponent
+	 * @return
+	 */
+	public static final SBuilder nextSiblings(Component prevComponent,
+			Component siblingComponent) {
+		return new SBuilder().nextSiblings(prevComponent, siblingComponent);
+	}
+
+	/**
 	 * Creates jquery not selector: <tt>:not(selector)</tt>
 	 * 
 	 * @see <a
@@ -558,6 +670,18 @@ public abstract class S {
 	 */
 	public static final SBuilder not(CharSequence selector) {
 		return new SBuilder().not(selector);
+	}
+
+	/**
+	 * Creates jquery not selector: <tt>:not(#componentId)</tt>
+	 * 
+	 * @see <a
+	 *      href="http://api.jquery.com/not-selector/">http://api.jquery.com/not-selector/</a>
+	 * @param component
+	 * @return
+	 */
+	public static final SBuilder not(Component component) {
+		return new SBuilder().not(component);
 	}
 
 	/**
@@ -700,6 +824,18 @@ public abstract class S {
 
 		SBuilder() {
 			this.buf = new StringBuffer();
+		}
+
+		/**
+		 * Creates jquery not selector: <tt>:not(#componentId)</tt>
+		 * 
+		 * @see <a
+		 *      href="http://api.jquery.com/not-selector/">http://api.jquery.com/not-selector/</a>
+		 * @param component
+		 * @return
+		 */
+		public SBuilder not(Component component) {
+			return not(id(component));
 		}
 
 		/**
@@ -879,6 +1015,21 @@ public abstract class S {
 		}
 
 		/**
+		 * Creates jquery next adjacent selector:
+		 * <tt>#prevComponentId ~ #siblingComponentId</tt>
+		 * 
+		 * @see <a
+		 *      href="http://api.jquery.com/next-siblings-selector/">http://api.jquery.com/next-siblings-selector/</a>
+		 * @param prevComponent
+		 * @param siblingComponent
+		 * @return
+		 */
+		public SBuilder nextSiblings(Component prevComponent,
+				Component siblingComponent) {
+			return nextSiblings(id(prevComponent), id(siblingComponent));
+		}
+
+		/**
 		 * Creates jquery next adjacent selector: <tt>prev + next</tt>
 		 * 
 		 * @see <a
@@ -896,6 +1047,22 @@ public abstract class S {
 		}
 
 		/**
+		 * Creates jquery next adjacent selector:
+		 * <tt>#prevComponentId + #nextComponentId</tt>
+		 * 
+		 * @see <a
+		 *      href="http://api.jquery.com/next-adjacent-Selector/">http://api.jquery.com/next-adjacent-Selector/</a>
+		 * @param prevComponent
+		 * @param nextComponent
+		 * 
+		 * @return
+		 */
+		public SBuilder nextAdjacent(Component prevComponent,
+				Component nextComponent) {
+			return nextAdjacent(id(prevComponent), id(nextComponent));
+		}
+
+		/**
 		 * Creates jquery multiple selector:
 		 * <tt>selector1, selector2, ..., selectorN</tt>
 		 * 
@@ -909,6 +1076,23 @@ public abstract class S {
 				buf.append(i != 0 ? "," : "").append(selectors[i]);
 			}
 			return this;
+		}
+
+		/**
+		 * Creates jquery multiple selector:
+		 * <tt>componentId1, componentId2, ..., componentIdN</tt>
+		 * 
+		 * @see <a
+		 *      href="http://api.jquery.com/multiple-selector/">http://api.jquery.com/multiple-selector/</a>
+		 * @param components
+		 * @return
+		 */
+		public SBuilder multiple(Component... components) {
+			CharSequence[] ids = new CharSequence[components.length];
+			for (int i = 0; i < components.length; i++) {
+				ids[i] = id(components[i]);
+			}
+			return multiple(ids);
 		}
 
 		/**
@@ -1034,6 +1218,19 @@ public abstract class S {
 		public SBuilder has(CharSequence selector) {
 			this.buf.append(":has(").append(selector).append(")");
 			return this;
+		}
+
+		/**
+		 * Creates jquery has selector: <tt>:has(#componentId)</tt>
+		 * 
+		 * @see <a
+		 *      href="http://api.jquery.com/has-selector/">http://api.jquery.com/has-selector/</a>
+		 * @param component
+		 *            is a component to find
+		 * @return
+		 */
+		public SBuilder has(Component component) {
+			return has(id(component));
 		}
 
 		/**
@@ -1215,6 +1412,24 @@ public abstract class S {
 		}
 
 		/**
+		 * Creates jquery descendant selector:
+		 * <tt>#ancestorComponentId #descendantComponentId</tt>
+		 * 
+		 * @see <a
+		 *      href="http://api.jquery.com/descendant-selector/">http://api.jquery.com/descendant-selector/</a>
+		 * 
+		 * @param ancestorComponent
+		 *            a ancestor component
+		 * @param descendantComponent
+		 *            a descendant component
+		 * @return
+		 */
+		public SBuilder descendant(Component ancestorComponent,
+				Component descendantComponent) {
+			return descendant(id(ancestorComponent), id(descendantComponent));
+		}
+
+		/**
 		 * Creates jquery contains selector: <tt>:contains('text')</tt>
 		 * 
 		 * @see <a
@@ -1255,6 +1470,24 @@ public abstract class S {
 		public SBuilder child(CharSequence parent, CharSequence child) {
 			this.buf.append(parent).append(" > ").append(child);
 			return this;
+		}
+
+		/**
+		 * Creates jquery child selector:
+		 * <tt>parentComponentId > childComponentId</tt>
+		 * 
+		 * @see <a
+		 *      href="http://api.jquery.com/child-selector/">http://api.jquery.com/child-selector/</a>
+		 * 
+		 * @param parentComponent
+		 *            any parent component
+		 * @param child
+		 *            any child component
+		 * @return
+		 */
+		public SBuilder child(Component parentComponent,
+				Component childChilComponent) {
+			return child(id(parentComponent), id(childChilComponent));
 		}
 
 		/**
