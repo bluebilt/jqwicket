@@ -8,10 +8,11 @@ public class TabsPage extends BaseJQueryUIPage {
 
 	public TabsPage() {
 
-		TabsOptions o = new TabsOptions().disabled(1).cookie(
+		TabsOptions options = new TabsOptions().disabled(1).cookie(
 				JQOptions.valueOf("expires: 7, path: '/'"));
 
-		add(new TabsWebMarkupContainer("tabs", o).add(JQBehaviors.draggable()));
+		add(new TabsWebMarkupContainer("tabs", options).add(JQBehaviors
+				.draggable()));
 	}
 
 }
