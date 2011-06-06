@@ -1701,7 +1701,7 @@ public abstract class S implements Serializable {
 			return buf.toString();
 		}
 
-		IJQStatement to$() {
+		public IJQStatement to$() {
 			return JQuery.$(this);
 		}
 
