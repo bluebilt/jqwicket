@@ -16,6 +16,8 @@
  */
 package com.google.code.jqwicket.api;
 
+import java.io.Serializable;
+
 import org.apache.wicket.Component;
 
 /**
@@ -25,7 +27,9 @@ import org.apache.wicket.Component;
  * @author mkalina
  * 
  */
-public abstract class S {
+public abstract class S implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	S() {
 		; // invisible
@@ -818,7 +822,9 @@ public abstract class S {
 		return new SBuilder().visible();
 	}
 
-	public static class SBuilder implements CharSequence {
+	public static class SBuilder implements CharSequence, Serializable {
+
+		private static final long serialVersionUID = 1L;
 
 		private StringBuffer buf;
 
