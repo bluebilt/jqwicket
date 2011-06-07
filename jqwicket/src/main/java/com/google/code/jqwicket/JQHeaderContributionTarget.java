@@ -47,7 +47,9 @@ public class JQHeaderContributionTarget implements Serializable {
 
 	private Set<CharSequence> cssResourceUrls;
 
-	private Set<IJQStatement> jqStatements;
+	private Set<IJQStatement> jqStatementsInsideDocumentReady;
+
+	private Set<IJQStatement> jqStatementsOutsideDocumentReady;
 
 	public JQHeaderContributionTarget addJavascriptResourceReferences(
 			Collection<JavascriptResourceReference> refs) {
@@ -124,23 +126,77 @@ public class JQHeaderContributionTarget implements Serializable {
 		return this.addCssResourceUrls(Arrays.asList(urls));
 	}
 
+	/**
+	 * Adds statements that will be rendered inside the "document.ready" block
+	 * 
+	 * @param statements
+	 * @return
+	 */
 	public JQHeaderContributionTarget addJQStatements(
 			Collection<IJQStatement> statements) {
-		if (isEmpty(statements))
-			return this;
-
-		if (this.jqStatements == null)
-			this.jqStatements = new LinkedHashSet<IJQStatement>();
-
-		this.jqStatements.addAll(statements);
-		return this;
+		return addJQStatements(statements, true);
 	}
 
+	/**
+	 * Adds statements that will be rendered inside the "document.ready" block
+	 * 
+	 * @param statements
+	 * @return
+	 */
 	public JQHeaderContributionTarget addJQStatements(
 			IJQStatement... statements) {
 		if (isEmpty(statements))
 			return this;
-		return this.addJQStatements(Arrays.asList(statements));
+		return this.addJQStatements(Arrays.asList(statements), true);
+	}
+
+	/**
+	 * Adds statements that will be rendered inside or outside the
+	 * "document.ready" block
+	 * 
+	 * @param statements
+	 * @param renderInsideDocumentReady
+	 * @return
+	 */
+	public JQHeaderContributionTarget addJQStatements(
+			IJQStatement[] statements, boolean renderInsideDocumentReady) {
+		if (isEmpty(statements))
+			return this;
+		return this.addJQStatements(Arrays.asList(statements),
+				renderInsideDocumentReady);
+	}
+
+	/**
+	 * Adds statements that will be rendered inside or outside the
+	 * "document.ready" block
+	 * 
+	 * @param statements
+	 * @param renderInsideDocumentReady
+	 * @return
+	 */
+	public JQHeaderContributionTarget addJQStatements(
+			Collection<IJQStatement> statements,
+			boolean renderInsideDocumentReady) {
+
+		if (isEmpty(statements))
+			return this;
+
+		if (renderInsideDocumentReady) {
+
+			if (this.jqStatementsInsideDocumentReady == null)
+				this.jqStatementsInsideDocumentReady = new LinkedHashSet<IJQStatement>();
+
+			this.jqStatementsInsideDocumentReady.addAll(statements);
+
+		} else {
+
+			if (this.jqStatementsOutsideDocumentReady == null)
+				this.jqStatementsOutsideDocumentReady = new LinkedHashSet<IJQStatement>();
+
+			this.jqStatementsOutsideDocumentReady.addAll(statements);
+		}
+
+		return this;
 	}
 
 	/**
@@ -155,7 +211,8 @@ public class JQHeaderContributionTarget implements Serializable {
 				|| isNotEmpty(this.jsResourceUrls)
 				|| isNotEmpty(this.cssResourceReferences)
 				|| isNotEmpty(this.cssResourceUrls)
-				|| isNotEmpty(this.jqStatements);
+				|| isNotEmpty(this.jqStatementsInsideDocumentReady)
+				|| isNotEmpty(this.jqStatementsOutsideDocumentReady);
 	}
 
 	/**
@@ -208,15 +265,29 @@ public class JQHeaderContributionTarget implements Serializable {
 	}
 
 	/**
-	 * Returns unmodifiable collection of available {@link JQStatement}-s. <br>
+	 * Returns unmodifiable collection of available {@link JQStatement}-s that
+	 * will be rendered inside "document.ready" block. <br>
 	 * This method will never return null.
 	 * 
 	 * @return
 	 */
-	public Collection<IJQStatement> getJQStatements() {
-		return this.jqStatements != null ? Collections
-				.unmodifiableSet(this.jqStatements) : Collections
-				.<IJQStatement> emptySet();
+	public Collection<IJQStatement> getJQStatementsInsideDocumentReady() {
+		return this.jqStatementsInsideDocumentReady != null ? Collections
+				.unmodifiableSet(this.jqStatementsInsideDocumentReady)
+				: Collections.<IJQStatement> emptySet();
+	}
+
+	/**
+	 * Returns unmodifiable collection of available {@link JQStatement}-s that
+	 * will be rendered outside "document.ready" block. <br>
+	 * This method will never return null.
+	 * 
+	 * @return
+	 */
+	public Collection<IJQStatement> getJQStatementsOutsideDocumentReady() {
+		return this.jqStatementsOutsideDocumentReady != null ? Collections
+				.unmodifiableSet(this.jqStatementsOutsideDocumentReady)
+				: Collections.<IJQStatement> emptySet();
 	}
 
 }

@@ -96,7 +96,11 @@ public class JQContributionRenderer implements IHeaderContributor {
 		if (!target.hasResourcesToRender())
 			return;
 
-		// first render resources from global config
+		// 1. render global javascripts
+		this.renderJavaScriptOutsideDocumentReady(response,
+				target.getJQStatementsOutsideDocumentReady());
+
+		// 2. render resources from global config
 		this.renderJsResourcesUrl(response, config.getJqueryCoreJsUrl());
 		this.renderJsResourcesRef(response,
 				config.getJqueryCoreJsResourceReference());
@@ -107,13 +111,13 @@ public class JQContributionRenderer implements IHeaderContributor {
 		this.renderCssResourcesRef(response,
 				config.getJqueryUiCssResourceReference());
 
-		// now render resource explicitly added to the target
+		// 3. render resource explicitly added to the target
 		this.renderJsResourcesUrls(response, target.getJsResourceUrls());
 		this.renderJsResourcesRefs(response, target.getJsResourceReferences());
 		this.renderCssResourcesUrls(response, target.getCssResourceUrls());
 		this.renderCssResourcesRefs(response, target.getCssResourceReferences());
-
-		this.renderDocumentReadyJavaScript(response, target.getJQStatements());
+		this.renderJavaScriptInsideDocumentReady(response,
+				target.getJQStatementsInsideDocumentReady());
 
 		// clear contributors after rendering
 		this.contributors.clear();
@@ -160,7 +164,6 @@ public class JQContributionRenderer implements IHeaderContributor {
 			response.renderCSSReference(RequestCycle.get().getProcessor()
 					.getRequestCodingStrategy()
 					.rewriteStaticRelativeUrl(String.valueOf(url)));
-
 	}
 
 	private void renderCssResourcesRefs(IHeaderResponse response,
@@ -176,29 +179,45 @@ public class JQContributionRenderer implements IHeaderContributor {
 			response.renderCSSReference(ref);
 	}
 
-	private void renderDocumentReadyJavaScript(IHeaderResponse response,
+	private void renderJavaScriptOutsideDocumentReady(IHeaderResponse response,
 			Collection<IJQStatement> statements) {
 
 		if (isEmpty(statements))
 			return;
 
-		IJavascriptCompressor compressor = Application.get()
-				.getResourceSettings().getJavascriptCompressor();
+		StringBuffer buf = new StringBuffer();
+		for (IJQStatement s : statements) {
+			buf.append(s);
+		}
+		response.renderJavascript(compressJavaScript(buf), UUID.randomUUID()
+				.toString());
+	}
+
+	private void renderJavaScriptInsideDocumentReady(IHeaderResponse response,
+			Collection<IJQStatement> statements) {
+
+		if (isEmpty(statements))
+			return;
+
 		JQContributionConfig config = JQContributionConfig.get();
 
 		StringBuffer script = new StringBuffer();
-
 		if (Utils.isNotBlank(config.getNonConflictAlias())) {
 			script.append("var ").append(config.getNonConflictAlias())
 					.append(" = jQuery.noConflict();\n");
 		}
 
-		IJQStatement q = JQuery.documentReady(statements);
-		script.append((compressor != null && Utils.isNotBlank(q)) ? compressor
-				.compress(String.valueOf(q)) : q);
+		script.append(compressJavaScript(JQuery.documentReady(statements)));
 
 		if (Utils.isNotBlank(script))
 			response.renderJavascript(script, UUID.randomUUID().toString());
+	}
 
+	private CharSequence compressJavaScript(CharSequence script) {
+		IJavascriptCompressor compressor = Application.get()
+				.getResourceSettings().getJavascriptCompressor();
+
+		return (compressor != null && Utils.isNotBlank(script)) ? compressor
+				.compress(String.valueOf(script)) : script;
 	}
 }

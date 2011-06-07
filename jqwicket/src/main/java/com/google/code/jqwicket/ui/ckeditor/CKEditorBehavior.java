@@ -1,13 +1,12 @@
 package com.google.code.jqwicket.ui.ckeditor;
 
-import java.util.UUID;
-
+import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.RequestCycle;
 import org.apache.wicket.ResourceReference;
-import org.apache.wicket.markup.html.IHeaderContributor;
-import org.apache.wicket.markup.html.IHeaderResponse;
 
+import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.api.IJQStatement;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
 
 /**
@@ -15,7 +14,7 @@ import com.google.code.jqwicket.ui.JQComponentBehaivor;
  * @author mkalina
  */
 public class CKEditorBehavior extends JQComponentBehaivor<CKEditorOptions>
-		implements ICKEditor, IHeaderContributor {
+		implements ICKEditor {
 
 	private static final long serialVersionUID = 1L;
 
@@ -42,18 +41,20 @@ public class CKEditorBehavior extends JQComponentBehaivor<CKEditorOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.apache.wicket.behavior.AbstractBehavior#renderHead(org.apache.wicket.markup.html.IHeaderResponse)
+	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
-	public void renderHead(IHeaderResponse response) {
+	protected void contributeInternal(JQHeaderContributionTarget target) {
+		super.contributeInternal(target);
 		CharSequence baseUrl = RequestCycle.get().urlFor(baseRef);
-		StringBuffer buf = new StringBuffer();
-		buf.append(String.format("var CKEDITOR_BASEPATH = '%s';\n", baseUrl));
-		buf.append(String
-				.format("function CKEDITOR_GETURL(resource){\n"
-						+ " return resource.indexOf('%s') >= 0 ? resource : '%s' + resource;\n"
-						+ "}", baseUrl, baseUrl));
-		response.renderJavascript(buf, UUID.randomUUID().toString());
+		target.addJQStatements(
+				new IJQStatement[] {
+						js(String.format("var CKEDITOR_BASEPATH = '%s';\n",
+								baseUrl)),
+						js(String
+								.format("function CKEDITOR_GETURL(resource){\n"
+										+ " return resource.indexOf('%s') >= 0 ? resource : '%s' + resource;\n"
+										+ "}", baseUrl, baseUrl)) }, false);
 	}
 
 }
