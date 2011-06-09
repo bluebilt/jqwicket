@@ -76,11 +76,12 @@ class JQStatement implements IJQStatement, Serializable {
 	 */
 	@Override
 	public String toString() {
-		return String.valueOf(this.toStringWithoutTrailingSemicolon() + ";");
+		return toString(true);
 	}
 
-	public String toStringWithoutTrailingSemicolon() {
-		return this.buf.toString().trim();
+	public String toString(boolean renderWithTrailingSemicolon) {
+		return this.buf.toString().trim()
+				+ (renderWithTrailingSemicolon ? ";" : "");
 	}
 
 	/*

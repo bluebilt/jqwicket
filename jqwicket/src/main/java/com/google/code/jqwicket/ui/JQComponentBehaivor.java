@@ -96,7 +96,7 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 	protected void chain(AjaxRequestTarget ajaxRequestTarget,
 			IJQFunction function) {
 		ajaxRequestTarget.appendJavascript(String.valueOf(function
-				.toStringBodyOnly()));
+				.toString(true)));
 	}
 
 }

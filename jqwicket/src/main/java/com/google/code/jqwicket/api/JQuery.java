@@ -266,8 +266,7 @@ public abstract class JQuery {
 				if (e.getValue() instanceof IJQStatement) {
 					buf.append("'+")
 							.append(((IJQStatement) e.getValue())
-									.toStringWithoutTrailingSemicolon())
-							.append("+'");
+									.toString(false)).append("+'");
 				} else {
 					buf.append(String.valueOf(e.getValue()));
 				}

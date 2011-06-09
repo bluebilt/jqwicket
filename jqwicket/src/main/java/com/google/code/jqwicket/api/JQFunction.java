@@ -72,6 +72,25 @@ class JQFunction implements IJQFunction, Serializable {
 
 	@Override
 	public String toString() {
+		return toString(false);
+	}
+
+	public CharSequence[] getParams() {
+		return params;
+	}
+
+	public CharSequence getName() {
+		return name;
+	}
+
+	public CharSequence toStringBodyOnly() {
+		return body;
+	}
+
+	public String toString(boolean renderFunctionBodyOnly) {
+		if (renderFunctionBodyOnly)
+			return String.valueOf(this.body);
+
 		StringBuffer sb = new StringBuffer();
 		sb.append("function");
 
@@ -87,19 +106,7 @@ class JQFunction implements IJQFunction, Serializable {
 		return sb.toString();
 	}
 
-	public CharSequence[] getParams() {
-		return params;
-	}
-
-	public CharSequence getName() {
-		return name;
-	}
-
-	public CharSequence toStringBodyOnly() {
-		return body;
-	}
-
-	public IJQStatement toStatementBodyOnly() {
+	public IJQStatement toStatement() {
 		return JQuery.js(this.body);
 	}
 

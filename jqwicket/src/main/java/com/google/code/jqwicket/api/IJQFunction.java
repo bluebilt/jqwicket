@@ -56,7 +56,12 @@ public interface IJQFunction extends Serializable, CharSequence {
 	 */
 	CharSequence[] getParams();
 
-	CharSequence toStringBodyOnly();
+	/**
+	 * 
+	 * @param renderFunctionBodyOnly
+	 * @return
+	 */
+	String toString(boolean renderFunctionBodyOnly);
 
-	IJQStatement toStatementBodyOnly();
+	IJQStatement toStatement();
 }

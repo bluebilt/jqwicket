@@ -2750,6 +2750,6 @@ public interface IJQStatement extends Serializable, CharSequence {
 	 */
 	IJQStatement wrapInner(Component component);
 
-	String toStringWithoutTrailingSemicolon();
+	String toString(boolean renderWithTrailingSemicolon);
 
 }
