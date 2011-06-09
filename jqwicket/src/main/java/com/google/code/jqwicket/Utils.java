@@ -97,9 +97,8 @@ public class Utils {
 	 * @return
 	 */
 	public static final CharSequence quote(CharSequence value) {
-		if (isBlank(value))
-			return null;
-		return new StringBuffer().append("'").append(value).append("'");
+		return value != null ? new StringBuffer().append("'").append(value)
+				.append("'") : null;
 	}
 
 	/**
@@ -126,9 +125,8 @@ public class Utils {
 	 * @return
 	 */
 	public static final CharSequence dblquote(CharSequence value) {
-		if (isBlank(value))
-			return null;
-		return new StringBuffer().append("\"").append(value).append("\"");
+		return value != null ? new StringBuffer().append("\"").append(value)
+				.append("\"") : null;
 	}
 
 	/**

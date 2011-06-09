@@ -20,7 +20,7 @@ public class BlockUIPage extends WebPage {
 
 		add(new Button("blockScreenButton").add(JQBehaviors
 				.mouseClick($f(new IJQStatement[] {
-						b.block().toStatementBodyOnly(),
+						b.block().toStatement(),
 						js("setTimeout($.unblockUI, 2000)") }))));
 		add(new Button("blockScreenButton2").add(JQBehaviors.mouseClick(b
 				.block(new BlockUIOptions()

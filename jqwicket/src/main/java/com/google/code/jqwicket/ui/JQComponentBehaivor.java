@@ -19,6 +19,7 @@ package com.google.code.jqwicket.ui;
 import static com.google.code.jqwicket.api.JQuery.$;
 import static com.google.code.jqwicket.api.JQuery.$f;
 
+import org.apache.wicket.Component;
 import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
@@ -29,6 +30,7 @@ import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQOptions;
+import com.google.code.jqwicket.api.IJQStatement;
 
 /**
  * Abstract component behavior for JQuery components.
@@ -87,6 +89,26 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 		if (!Page.class.isAssignableFrom(this.component.getClass()))
 			target.addJQStatements($(this.component).chain(this.getName(),
 					this.options));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.apache.wicket.behavior.AbstractBehavior#beforeRender(org.apache.wicket
+	 *      .Component)
+	 */
+	@Override
+	public void beforeRender(Component component) {
+		super.beforeRender(component);
+
+		if (AjaxRequestTarget.get() != null) {
+			JQHeaderContributionTarget ajaxTarget = new JQHeaderContributionTarget();
+			contributeInternal(ajaxTarget);
+			for (IJQStatement s : ajaxTarget
+					.getJQStatementsInsideDocumentReady()) {
+				AjaxRequestTarget.get().appendJavascript(String.valueOf(s));
+			}
+		}
 	}
 
 	protected IJQFunction chain(CharSequence... methodArgs) {

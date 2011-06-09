@@ -19,13 +19,11 @@ package com.google.code.jqwicket.ui.watermark;
 import static com.google.code.jqwicket.api.JQuery.$;
 import static com.google.code.jqwicket.api.JQuery.$f;
 
-import org.apache.wicket.Component;
 import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.api.IJQFunction;
-import com.google.code.jqwicket.api.IJQStatement;
 import com.google.code.jqwicket.ui.JQComponentBehaivor;
 
 /**
@@ -57,32 +55,13 @@ public class WatermarkBehavior extends JQComponentBehaivor<WatermarkOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.apache.wicket.behavior.AbstractBehavior#beforeRender(org.apache.wicket.Component)
-	 */
-	@Override
-	public void beforeRender(Component component) {
-		super.beforeRender(component);
-
-		if (AjaxRequestTarget.get() != null) {
-			AjaxRequestTarget.get().appendJavascript(
-					String.valueOf(createContributionStatement()));
-		}
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
 	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {
 		if (!Page.class.isAssignableFrom(this.component.getClass()))
-			target.addJQStatements(createContributionStatement());
-	}
-
-	private IJQStatement createContributionStatement() {
-		return $(this.component).chain(this.getName(), options.getText(),
-				this.options);
+			target.addJQStatements($(this.component).chain(this.getName(),
+					options.getText(), this.options));
 	}
 
 	/**
