@@ -328,7 +328,7 @@ class JQStatement implements IJQStatement, Serializable {
 	 * com.google.code.jqwicket.api.IJQStatement#attr(java.lang.CharSequence[])
 	 */
 	public IJQStatement attr(CharSequence... args) {
-		return chain("appendTo", args);
+		return chain("attr", args);
 	}
 
 	/*
