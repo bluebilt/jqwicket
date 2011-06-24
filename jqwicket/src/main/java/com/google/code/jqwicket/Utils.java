@@ -21,6 +21,8 @@ import java.util.Collection;
 import java.util.Map;
 
 import org.apache.wicket.Application;
+import org.apache.wicket.Component;
+import org.apache.wicket.model.Model;
 
 import com.google.code.jqwicket.api.JQLiteral;
 
@@ -44,6 +46,33 @@ public class Utils {
 	public static boolean isDeploymentMode() {
 		return Application.DEPLOYMENT.equalsIgnoreCase(Application.get()
 				.getConfigurationType());
+	}
+
+	/**
+	 * Returns localized string resource.
+	 * 
+	 * @param key
+	 *            is a resource key
+	 * @param args
+	 *            is an (optional) array of arguments.
+	 * @return
+	 */
+	public static CharSequence i18n(CharSequence key, CharSequence... args) {
+		return i18n(key, null, args);
+	}
+
+	/**
+	 * Returns localized string resource.
+	 * 
+	 * @param key
+	 * @param component
+	 * @param args
+	 * @return
+	 */
+	public static CharSequence i18n(CharSequence key, Component component,
+			CharSequence... args) {
+		return Application.get().getResourceSettings().getLocalizer()
+				.getString(String.valueOf(key), component, Model.of(args));
 	}
 
 	public static boolean isEmpty(Object[] array) {

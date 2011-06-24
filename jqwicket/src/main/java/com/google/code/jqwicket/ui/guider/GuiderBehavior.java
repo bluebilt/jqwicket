@@ -14,45 +14,34 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.code.jqwicket.ui;
+package com.google.code.jqwicket.ui.guider;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-import static com.google.code.jqwicket.api.JQuery.$f;
-
-import org.apache.wicket.Component;
-import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
 
-import com.google.code.jqwicket.IJQWidget;
 import com.google.code.jqwicket.JQBehavior;
-import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.api.IJQFunction;
-import com.google.code.jqwicket.api.IJQOptions;
-import com.google.code.jqwicket.api.IJQStatement;
+import com.google.code.jqwicket.api.JQuery;
 
 /**
- * Abstract component behavior for JQuery components.
- * 
  * @author mkalina
  * 
- * @param <T>
  */
-public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
-		JQBehavior implements IJQWidget<T> {
+public class GuiderBehavior extends JQBehavior implements IGuider {
 
 	private static final long serialVersionUID = 1L;
 
-	protected T options;
-
-	public JQComponentBehaivor(T options) {
-		this.options = options;
-		this.addResourcesFromOptions();
+	public GuiderBehavior(GuiderItem... items) {
+		if (Utils.isNotEmpty(items)) {
+			for (GuiderItem item : items) {
+				addOptionsResources(item.getOptions());
+				addJQStatements(item.toJQStatement());
+			}
+		}
 	}
 
-	protected void addResourcesFromOptions() {
-
+	protected void addOptionsResources(GuiderOptions options) {
 		JavascriptResourceReference[] jsRefs = options
 				.getJsResourceReferences();
 
@@ -77,46 +66,56 @@ public abstract class JQComponentBehaivor<T extends IJQOptions<T>> extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.IJQUIWidget#getOptions()
+	 * @see com.google.code.jqwicket.ui.guider.IGuider#show(java.lang.CharSequence)
 	 */
-	public T getOptions() {
-		return this.options;
+	public IJQFunction show(CharSequence id) {
+		return JQuery.$f(JQuery.js("guider").chain("show", id));
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.JQBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.ui.guider.IGuider#show(java.lang.CharSequence,
+	 *      org.apache.wicket.ajax.AjaxRequestTarget)
 	 */
-	@Override
-	protected void contributeInternal(JQHeaderContributionTarget target) {
-		if (!Page.class.isAssignableFrom(this.component.getClass()))
-			target.addJQStatements($(this.component).chain(this.getName(),
-					this.options));
+	public void show(CharSequence id, AjaxRequestTarget ajaxRequestTarget) {
+		chain(ajaxRequestTarget, this.show(id));
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see org.apache.wicket.behavior.AbstractBehavior#beforeRender(org.apache.wicket
-	 *      .Component)
+	 * @see com.google.code.jqwicket.ui.guider.IGuider#next()
 	 */
-	@Override
-	public void beforeRender(Component component) {
-		super.beforeRender(component);
-
-		if (AjaxRequestTarget.get() != null) {
-			JQHeaderContributionTarget ajaxTarget = new JQHeaderContributionTarget();
-			contributeInternal(ajaxTarget);
-			for (IJQStatement s : ajaxTarget
-					.getJQStatementsInsideDocumentReady()) {
-				AjaxRequestTarget.get().appendJavascript(String.valueOf(s));
-			}
-		}
+	public IJQFunction next() {
+		return JQuery.$f(JQuery.js("guider").chain("next"));
 	}
 
-	protected IJQFunction chain(CharSequence... methodArgs) {
-		return $f($(this.component).chain(this.getName(), methodArgs));
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.ui.guider.IGuider#next(org.apache.wicket.ajax.AjaxRequestTarget)
+	 */
+	public void next(AjaxRequestTarget ajaxRequestTarget) {
+		chain(ajaxRequestTarget, this.next());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.ui.guider.IGuider#hideAll()
+	 */
+	public IJQFunction hideAll() {
+		return JQuery.$f(JQuery.js("guider").chain("hideAll"));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.ui.guider.IGuider#hideAll(org.apache.wicket.ajax.AjaxRequestTarget)
+	 */
+	public void hideAll(AjaxRequestTarget ajaxRequestTarget) {
+		chain(ajaxRequestTarget, this.hideAll());
 	}
 
 	protected void chain(AjaxRequestTarget ajaxRequestTarget,
