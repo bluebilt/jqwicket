@@ -1,0 +1,7 @@
+http://arborjs.org/
+http://www.jstat.org/
+http://imakewebthings.github.com/jquery-waypoints/
+http://tutorialzine.com/2011/03/better-check-boxes-jquery-css/
+http://xoxco.com/clickable/jquery-tags-input
+http://christophercliff.github.com/sausage/
+http://www.dailycoding.com/Uploads/2011/03/imageLens/demo.html
