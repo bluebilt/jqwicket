@@ -1,6 +1,8 @@
 package com.google.code.jqwicket;
 
+import org.apache.wicket.protocol.http.HttpSessionStore;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.session.ISessionStore;
 
 import com.google.code.jqwicket.dnd.DND2Page;
 
@@ -17,6 +19,7 @@ public class WicketApplication extends WebApplication {
 
 		addPreComponentOnBeforeRenderListener(new JQComponentOnBeforeRenderListener());
 
+		getResourceSettings().setResourcePollFrequency(null);
 		getMarkupSettings().setStripWicketTags(true);
 
 		mountBookmarkablePage("jquery", JQueryPage.class);
@@ -71,6 +74,16 @@ public class WicketApplication extends WebApplication {
 	 */
 	public Class<HomePage> getHomePage() {
 		return HomePage.class;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see org.apache.wicket.protocol.http.WebApplication#newSessionStore()
+	 */
+	@Override
+	protected ISessionStore newSessionStore() {
+		return new HttpSessionStore(this);
 	}
 
 }
