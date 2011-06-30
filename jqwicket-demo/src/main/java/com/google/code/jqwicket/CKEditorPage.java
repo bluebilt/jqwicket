@@ -1,14 +1,12 @@
 package com.google.code.jqwicket;
 
-
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.PropertyModel;
 
 import com.google.code.jqwicket.ui.ckeditor.CKEditorOptions;
 import com.google.code.jqwicket.ui.ckeditor.CKEditorTextArea;
 
-public class CKEditorPage extends WebPage {
+public class CKEditorPage extends DemoPage {
 
 	public CKEditorPage() {
 		add(new CKEditorForm("ckeditorform"));
@@ -41,6 +39,26 @@ public class CKEditorPage extends WebPage {
 			System.out.println("submitted: " + value);
 		}
 
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "CKEditor jqwicket integration example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
 	}
 
 }

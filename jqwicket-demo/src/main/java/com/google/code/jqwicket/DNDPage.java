@@ -105,4 +105,24 @@ public class DNDPage extends BaseJQueryUIPage {
 		cartContainer.add(JQBehaviors.droppable(options));
 
 	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "Low-Level drag'n'drop example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return "This example demonstrates low-Level drag'n'drop";
+	}
 }

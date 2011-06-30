@@ -3,16 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
 <head>
-<title>Flip Text example</title>
+<wicket:head>
 <style type="text/css">
-body {
-	margin: 10px;
-	padding: 0 0 20px;
-	min-height: 100%;
-	font-family: "Arial", "Helvetica", "Verdana", "sans-serif";
-	font-size: 10px;
-}
-
 /* ------ example1
 -----------------------------------------------*/
 .europe_map {
@@ -54,16 +46,16 @@ ul.map_buttons li {
 	color: #fff;
 }
 
-a {
+#mapcontent a {
 	color: #fff;
 }
 </style>
+</wicket:head>
 </head>
-<body> 
+<body>
+<wicket:extend>
 
-
-
-	<div id="content">
+	<div id="mapcontent">
 		<div wicket:id="europeMap" class="europe_map">
 			<img src="_images/mobilymap/europe_map.jpg" alt="Europe Map" width="1475" height="1200" />
 			<div class="point" id="p-360-750">
@@ -102,8 +94,6 @@ a {
 		</ul>
 	</div>
 
-
-
-
+</wicket:extend>
 </body>
 </html>

@@ -17,7 +17,6 @@
 package com.google.code.jqwicket;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.ExternalLink;
 
 import com.google.code.jqwicket.ui.guider.GuiderBehavior;
@@ -31,7 +30,7 @@ import com.google.code.jqwicket.ui.guider.GuiderOptions;
  * @author mkalina
  * 
  */
-public class GuiderPage extends WebPage {
+public class GuiderPage extends DemoPage {
 
 	public GuiderPage() {
 
@@ -121,5 +120,25 @@ public class GuiderPage extends WebPage {
 		add(guider);
 		add(new ExternalLink("showGuide", "#").add(JQBehaviors
 				.mouseClick(guider.show("second"))));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery Guider Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
 	}
 }

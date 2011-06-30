@@ -1,13 +1,11 @@
 package com.google.code.jqwicket;
 
-
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.PropertyModel;
 
 import com.google.code.jqwicket.ui.lwrte.LWRTETextArea;
 
-public class LWRTEPage extends WebPage {
+public class LWRTEPage extends DemoPage {
 
 	public LWRTEPage() {
 		add(new LWRTEForm("lwrteform"));
@@ -33,4 +31,23 @@ public class LWRTEPage extends WebPage {
 
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery LWRTE Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
+	}
 }

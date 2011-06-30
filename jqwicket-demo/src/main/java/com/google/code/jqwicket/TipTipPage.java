@@ -16,8 +16,6 @@
  */
 package com.google.code.jqwicket;
 
-
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.Link;
 
 import com.google.code.jqwicket.ui.tiptip.GenericTipTipBehavior;
@@ -28,7 +26,7 @@ import com.google.code.jqwicket.ui.tiptip.TipTipOptions;
  * @author mkalina
  * 
  */
-public class TipTipPage extends WebPage {
+public class TipTipPage extends DemoPage {
 
 	@SuppressWarnings("serial")
 	public TipTipPage() {
@@ -46,4 +44,23 @@ public class TipTipPage extends WebPage {
 
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery TipTip Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
+	}
 }

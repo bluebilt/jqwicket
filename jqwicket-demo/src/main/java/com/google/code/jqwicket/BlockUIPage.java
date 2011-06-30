@@ -4,14 +4,13 @@ import static com.google.code.jqwicket.api.JQuery.$f;
 import static com.google.code.jqwicket.api.JQuery.js;
 
 import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Button;
 
 import com.google.code.jqwicket.api.IJQStatement;
 import com.google.code.jqwicket.ui.blockui.BlockUIBehavior;
 import com.google.code.jqwicket.ui.blockui.BlockUIOptions;
 
-public class BlockUIPage extends WebPage {
+public class BlockUIPage extends DemoPage {
 
 	public BlockUIPage() {
 
@@ -19,8 +18,7 @@ public class BlockUIPage extends WebPage {
 		add(b);
 
 		add(new Button("blockScreenButton").add(JQBehaviors
-				.mouseClick($f(new IJQStatement[] {
-						b.block().toStatement(),
+				.mouseClick($f(new IJQStatement[] { b.block().toStatement(),
 						js("setTimeout($.unblockUI, 2000)") }))));
 		add(new Button("blockScreenButton2").add(JQBehaviors.mouseClick(b
 				.block(new BlockUIOptions()
@@ -40,5 +38,25 @@ public class BlockUIPage extends WebPage {
 		add(new Button("unblockElementButton").add(JQBehaviors.mouseClick(b
 				.unblock(blockMe))));
 
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery BlockUI plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
 	}
 }

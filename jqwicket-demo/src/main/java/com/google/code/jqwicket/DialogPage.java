@@ -83,4 +83,24 @@ public class DialogPage extends BaseJQueryUIPage {
 		add(listview);
 
 	}
+	
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery UI Dialog example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return "This example demonstrates JQuery UI Dialog integration";
+	}
 }

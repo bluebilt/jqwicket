@@ -22,7 +22,6 @@ public class WicketApplication extends WebApplication {
 		getResourceSettings().setResourcePollFrequency(null);
 		getMarkupSettings().setStripWicketTags(true);
 
-		mountBookmarkablePage("jquery", JQueryPage.class);
 		mountBookmarkablePage("genericjqbehavior", GenericJQBehaviorPage.class);
 		mountBookmarkablePage("resizable", ResizablePage.class);
 		mountBookmarkablePage("selectable", SelectablePage.class);

@@ -1,6 +1,5 @@
 package com.google.code.jqwicket;
 
-
 import org.apache.wicket.markup.html.form.CheckBox;
 
 import com.google.code.jqwicket.ui.datepicker.DatePickerTextField;
@@ -14,4 +13,23 @@ public class UniformPage extends BaseJQueryUIPage {
 		add(new DatePickerTextField<String>("dateOfBirth"));
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery UI Uniform Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return "This example demonstrates JQuery UI Uniform Plugin integration";
+	}
 }

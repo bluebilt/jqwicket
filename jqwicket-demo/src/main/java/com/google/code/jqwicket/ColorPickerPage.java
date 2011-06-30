@@ -1,13 +1,30 @@
 package com.google.code.jqwicket;
 
-
-import org.apache.wicket.markup.html.WebPage;
-
 import com.google.code.jqwicket.ui.colorpicker.ColorPickerTextField;
 
-public class ColorPickerPage extends WebPage {
+public class ColorPickerPage extends DemoPage {
 
 	public ColorPickerPage() {
 		add(new ColorPickerTextField<String>("colorpicker"));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery ColorPicker Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
 	}
 }

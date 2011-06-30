@@ -16,9 +16,6 @@
  */
 package com.google.code.jqwicket;
 
-
-import org.apache.wicket.markup.html.WebPage;
-
 import com.google.code.jqwicket.ui.fancybox.FancyBoxOptions;
 import com.google.code.jqwicket.ui.fancybox.FancyBoxWebMarkupContainer;
 import com.google.code.jqwicket.ui.fancybox.GenericFancyBoxBehavior;
@@ -27,7 +24,7 @@ import com.google.code.jqwicket.ui.fancybox.GenericFancyBoxBehavior;
  * @author mkalina
  * 
  */
-public class FancyBoxPage extends WebPage {
+public class FancyBoxPage extends DemoPage {
 
 	public FancyBoxPage() {
 
@@ -69,5 +66,25 @@ public class FancyBoxPage extends WebPage {
 				.padding(0).autoScale(false).transitionIn("none")
 				.transitionOut("none")));
 
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery Fancybox Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
 	}
 }

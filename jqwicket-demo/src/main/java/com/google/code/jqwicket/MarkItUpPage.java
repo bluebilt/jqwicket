@@ -1,13 +1,11 @@
 package com.google.code.jqwicket;
 
-
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.model.PropertyModel;
 
 import com.google.code.jqwicket.ui.markitup.MarkItUpTextArea;
 
-public class MarkItUpPage extends WebPage {
+public class MarkItUpPage extends DemoPage {
 
 	public MarkItUpPage() {
 		add(new MarkItUpForm("markitupform"));
@@ -33,4 +31,23 @@ public class MarkItUpPage extends WebPage {
 
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery MarkItUp Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
+	}
 }

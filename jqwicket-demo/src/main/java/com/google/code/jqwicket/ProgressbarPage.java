@@ -1,6 +1,5 @@
 package com.google.code.jqwicket;
 
-
 import org.apache.wicket.ajax.AbstractAjaxTimerBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.util.time.Duration;
@@ -29,5 +28,25 @@ public class ProgressbarPage extends BaseJQueryUIPage {
 					counter = 0;
 			}
 		});
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery UI Progressbar example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return "This example demonstrates JQuery UI Progressbar integration";
 	}
 }

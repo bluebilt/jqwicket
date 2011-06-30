@@ -1,13 +1,10 @@
 package com.google.code.jqwicket;
 
-
-import org.apache.wicket.markup.html.WebPage;
-
 import com.google.code.jqwicket.ui.sparkline.SparklineOptions;
-import com.google.code.jqwicket.ui.sparkline.SparklineWebMarkupContainer;
 import com.google.code.jqwicket.ui.sparkline.SparklineOptions.Type;
+import com.google.code.jqwicket.ui.sparkline.SparklineWebMarkupContainer;
 
-public class SparklinePage extends WebPage {
+public class SparklinePage extends DemoPage {
 
 	public SparklinePage() {
 
@@ -22,4 +19,23 @@ public class SparklinePage extends WebPage {
 				.type(Type.BAR).barColor("red")));
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery Sparkline Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
+	}
 }

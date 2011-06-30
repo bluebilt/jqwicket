@@ -1,12 +1,12 @@
 package com.google.code.jqwicket;
 
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 
 import com.google.code.jqwicket.ui.notifier.NotifierWebMarkupContainer;
 
 public class NotifierPage extends BaseJQueryUIPage {
+
 	@SuppressWarnings("serial")
 	public NotifierPage() {
 		final NotifierWebMarkupContainer notifier = new NotifierWebMarkupContainer(
@@ -22,4 +22,25 @@ public class NotifierPage extends BaseJQueryUIPage {
 			}
 		});
 	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery Notifier Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return "This example demonstrates JQuery Notifier Plugin integration";
+	}
+
 }

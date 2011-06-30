@@ -1,12 +1,10 @@
 package com.google.code.jqwicket;
 
-
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.TextField;
 
 import com.google.code.jqwicket.ui.maskedinput.MaskedInputBehavior;
 
-public class MaskedInputPage extends WebPage {
+public class MaskedInputPage extends DemoPage {
 
 	public MaskedInputPage() {
 
@@ -26,4 +24,23 @@ public class MaskedInputPage extends WebPage {
 				"~9.99 ~9.99 999")));
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery MaskedInput Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
+	}
 }

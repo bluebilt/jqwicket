@@ -174,7 +174,7 @@
 				<executions>
 					<execution>
 						<id>attach-sources</id>
-						<phase>verify</phase>
+						<phase>validate</phase>
 						<goals>
 							<goal>jar</goal>
 						</goals>
@@ -192,6 +192,22 @@
 					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
 			</plugin>
+			<plugin>
+		        <artifactId>maven-war-plugin</artifactId>
+		        <version>2.1.1</version>
+		        <configuration>
+		          <archiveClasses>true</archiveClasses>
+		          <webResources>
+            		<resource>
+            			 <directory>target</directory>
+            			 <targetPath>WEB-INF/lib</targetPath>
+            			 <includes>
+			                <include>**/*-sources.jar</include>
+			             </includes>
+            		</resource>
+            	  </webResources>	
+		        </configuration>
+		    </plugin>
 			<plugin>
                 <groupId>net.kindleit</groupId>
                 <artifactId>maven-gae-plugin</artifactId>

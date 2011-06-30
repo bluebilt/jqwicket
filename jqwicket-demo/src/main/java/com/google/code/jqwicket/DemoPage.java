@@ -16,22 +16,24 @@
  */
 package com.google.code.jqwicket;
 
+import org.apache.wicket.markup.html.WebPage;
+import org.apache.wicket.markup.html.basic.Label;
+
 /**
  * @author mkalina
  * 
  */
-public abstract class BaseJQueryUIPage extends DemoPage implements
-		IJQHeaderContributor {
+public abstract class DemoPage extends WebPage {
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.IJQHeaderContributor#contribute(com.google.code.jqwicket.JQHeaderContributionTarget)
-	 */
-	public void contribute(JQHeaderContributionTarget target) {
-		target.addJavascriptResourceUrls("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js");
-		target.addCssResourceUrls("http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/base/jquery-ui.css");
-
+	public DemoPage() {
+		add(new Label("exampleTitle", getExampleTitle())
+				.setRenderBodyOnly(true));
+		add(new Label("exampleDescription", getExampleDescription())
+				.setRenderBodyOnly(true));
 	}
+
+	protected abstract String getExampleTitle();
+
+	protected abstract String getExampleDescription();
 
 }

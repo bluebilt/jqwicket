@@ -16,25 +16,63 @@
  */
 package com.google.code.jqwicket;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 
-import com.google.code.jqwicket.JQBehavior;
-import com.google.code.jqwicket.JQBehaviors;
+import com.google.code.jqwicket.api.JQLiteral;
+import com.google.code.jqwicket.api.JQuery;
+import com.google.code.jqwicket.api.S;
 
 /**
  * @author mkalina
  * 
  */
-public class GenericJQBehaviorPage extends WebPage {
+public class GenericJQBehaviorPage extends DemoPage {
+
 	public GenericJQBehaviorPage() {
-		// add JQBehavior to the page itself
-		add(new JQBehavior("alert('say hello on load from page!')"));
+
+		// add JQBehavior, that displays alert while click the link with id =
+		// link0
+		add(new JQBehavior(S.id("link0").to$()
+				.click(JQuery.$f("alert('hello world!')"))));
 
 		// add JQBehavior to the label
-		Label label = new Label("label", "Hello world!");
+		Label label = new Label("label",
+				"I'm a wicket label. Click me to see an alert!");
 		label.add(JQBehaviors.mouseClick("alert('clicked!')"));
 		add(label);
 
+		// add JQBehavior to some static html element
+		add(new JQBehavior(S
+				.id("censoredA")
+				.to$()
+				.click(JQuery.$f(
+						S.id("censoredDiv")
+								.to$()
+								.fadeIn(JQLiteral._raw(3000),
+										JQuery.$f(S.id("censoredSpan").to$()
+												.fadeIn(JQLiteral._raw(100)))),
+						"return false;"))));
+
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "Low-level JQBehavior example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return "This example demonstrates how to use pre-implemented JQBehavior class "
+				+ "to add jquery support to the wicket components";
 	}
 }

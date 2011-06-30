@@ -1,15 +1,12 @@
 package com.google.code.jqwicket;
 
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Button;
 
-import com.google.code.jqwicket.JQBehaviors;
 import com.google.code.jqwicket.ui.prettyloader.PrettyLoaderBehavior;
 
-public class PrettyLoaderPage extends WebPage {
+public class PrettyLoaderPage extends DemoPage {
 
 	private PrettyLoaderBehavior prettyLoader;
 
@@ -37,5 +34,25 @@ public class PrettyLoaderPage extends WebPage {
 			}
 		}.add(JQBehaviors.mouseClick(this.prettyLoader.show())));
 
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery PrettyLoader Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
 	}
 }

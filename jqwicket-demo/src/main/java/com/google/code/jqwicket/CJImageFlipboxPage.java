@@ -17,15 +17,13 @@
 package com.google.code.jqwicket;
 
 
-import org.apache.wicket.markup.html.WebPage;
-
 import com.google.code.jqwicket.ui.cjimageflipbox.CJImageFlipboxWebMarkupContainer;
 
 /**
  * @author mkalina
  * 
  */
-public class CJImageFlipboxPage extends WebPage {
+public class CJImageFlipboxPage extends DemoPage {
 
 	public CJImageFlipboxPage() {
 
@@ -33,4 +31,25 @@ public class CJImageFlipboxPage extends WebPage {
 
 	}
 
+	/** 
+	 * {@inheritDoc}	
+	 *
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery CJImageFlipbox plugin example";
+	}
+	
+	/** 
+	 * {@inheritDoc}	
+	 *
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }

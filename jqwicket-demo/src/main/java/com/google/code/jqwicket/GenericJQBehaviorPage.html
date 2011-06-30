@@ -2,12 +2,26 @@
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
-<head>
-<title>Generic JQBehavior page</title>
-</head>
 <body>
-<div class="demo">
+<wicket:extend>
+ 
+	<a id="link0" href="#">i'm not a wicket component. click me to show an alert</a>
+
+	<br/><br/>
 	<span wicket:id="label" />
-</div>
+	
+	<br/><br/>
+	<p>
+        Let it be known that the party of the first part
+        and the party of the second part are henceforth
+        and hereto directed to assess the allegations
+        for factual correctness... (<a id="censoredA" href="#">click!</a>)
+        <div id="censoredDiv" style="width:400px; height:65px; font-size:36px; text-align:center; color:yellow; background:red; padding-top:25px; top:0; left:0; display:none;">
+        	<span id="censoredSpan" style="display:none;">CENSORED!</span>
+        </div>
+    </p>
+
+	
+</wicket:extend>
 </body>
 </html>

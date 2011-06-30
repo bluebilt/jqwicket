@@ -2,13 +2,11 @@ package com.google.code.jqwicket;
 
 import static com.google.code.jqwicket.api.JQuery.$;
 
-import org.apache.wicket.markup.html.WebPage;
-
 import com.google.code.jqwicket.ui.mb.extruder.ExtruderOptions;
 import com.google.code.jqwicket.ui.mb.extruder.ExtruderOptions.Position;
 import com.google.code.jqwicket.ui.mb.extruder.ExtruderWebMarkupContainer;
 
-public class ExtruderPage extends WebPage {
+public class ExtruderPage extends DemoPage {
 
 	public ExtruderPage() {
 		add(new ExtruderWebMarkupContainer("extruderTop", "extruder top"));
@@ -39,6 +37,25 @@ public class ExtruderPage extends WebPage {
 				new ExtruderOptions("content in place").position(Position.LEFT)
 						.width(300).positionFixed(false).top(0)
 						.extruderOpacity(0.8f)));
-
+	}
+	
+	/** 
+	 * {@inheritDoc}	
+	 *
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery Extruder Plugin example";
+	}
+	
+	/** 
+	 * {@inheritDoc}	
+	 *
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
 	}
 }

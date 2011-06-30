@@ -19,7 +19,6 @@ package com.google.code.jqwicket.dnd;
 import java.util.Arrays;
 import java.util.List;
 
-
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 
@@ -52,4 +51,23 @@ public class DND2Page extends BaseJQueryUIPage {
 		add(new ShoppingCartPanel("cart"));
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQWicket drag'n'drop high level api example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return "This example demonstrates usega of JQWicket's high level drag'n'drop API";
+	}
 }

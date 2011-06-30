@@ -3,10 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:wicket="http://wicket.apache.org/" xml:lang="en" lang="en">
 <head>
-<title>ValidationEngine example</title>
+<wicket:head>
 <style type="text/css">
-body{	background:#ececec;}
-
 form.formular {
 	font-family: tahoma, verdana, "sans-serif";
 	font-size: 12px;
@@ -103,9 +101,10 @@ form.formular {
 	background: #FFEAEA;
 }
 </style>
+</wicket:head>
 </head>
-<body> 
-<div class="demo">
+<body>
+<wicket:extend>
 
 <form wicket:id="veForm" class="formular" method="post" action="">
 	<fieldset>
@@ -126,6 +125,6 @@ form.formular {
 	<input class="submit" type="submit" value="Validate & Send the form!"/>
 	<hr/>
 </form>
-</div><!-- End demo -->
+</wicket:extend>
 </body>
 </html>

@@ -44,9 +44,27 @@ public class DynamicAccordionPage extends BaseJQueryUIPage {
 				item.add(new Label("content", obj.content));
 			}
 		});
-		
-		add(accordion);
 
+		add(accordion);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery UI Accordion example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return "This example demonstrates JQuery UI Accordion integration";
+	}
 }

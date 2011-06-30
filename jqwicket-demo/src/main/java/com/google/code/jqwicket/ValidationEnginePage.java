@@ -1,6 +1,5 @@
 package com.google.code.jqwicket;
 
-import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.CompoundPropertyModel;
@@ -12,10 +11,30 @@ import com.google.code.jqwicket.ui.validationengine.ValidationEngineFormBehavior
 import com.google.code.jqwicket.ui.validationengine.ValidationEngineFormComponentBehavior;
 import com.google.code.jqwicket.ui.validationengine.ValidationEngineOptions;
 
-public class ValidationEnginePage extends WebPage {
+public class ValidationEnginePage extends DemoPage {
 
 	public ValidationEnginePage() {
 		add(new ValidationEngineForm("veForm"));
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery ValidationEngine Plugin example";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return null;
 	}
 
 	private static class ValidationEngineForm extends Form<Void> {

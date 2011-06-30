@@ -17,19 +17,32 @@ public class AccordionPage extends BaseJQueryUIPage {
 				"accordion-component");
 		Label label = new Label("accordion.label", "Hello WORLD!");
 		label.add(JQBehaviors.js($(label).css("color", "red")));
-		label.add(JQBehaviors.draggable());
 		a1.add(label);
-		a1.add(JQBehaviors.resizable());
 
 		add(a1);
 
 		add(new WebMarkupContainer("accordion-behavior")
 				.add(new AccordionBehavior()));
+	}
 
-		Label x = new Label("effect-label", "TESTS ET ET ST SET SETSE SET ");
-		x.add(JQBehaviors.js($(x).effect("pulsate")));
-		add(x);
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
+	 */
+	@Override
+	protected String getExampleTitle() {
+		return "JQuery UI Accordion example";
+	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
+	 */
+	@Override
+	protected String getExampleDescription() {
+		return "This example demonstrates JQuery UI Accordion integration";
 	}
 
 }
