@@ -26,10 +26,12 @@ import org.apache.wicket.markup.html.basic.Label;
 public abstract class DemoPage extends WebPage {
 
 	public DemoPage() {
+		
 		add(new Label("exampleTitle", getExampleTitle())
 				.setRenderBodyOnly(true));
 		add(new Label("exampleDescription", getExampleDescription())
 				.setRenderBodyOnly(true));
+		
 	}
 
 	protected abstract String getExampleTitle();

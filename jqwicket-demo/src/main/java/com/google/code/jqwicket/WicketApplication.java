@@ -71,8 +71,8 @@ public class WicketApplication extends WebApplication {
 	/**
 	 * @see org.apache.wicket.Application#getHomePage()
 	 */
-	public Class<DemoPage> getHomePage() {
-		return DemoPage.class;
+	public Class<GenericJQBehaviorPage> getHomePage() {
+		return GenericJQBehaviorPage.class;
 	}
 
 	/**
