@@ -20,6 +20,8 @@ import java.io.Serializable;
 
 import org.apache.wicket.Component;
 
+import com.google.code.jqwicket.JQBehavior;
+
 /**
  * Interface representing single javascript statement.
  * 
@@ -2750,6 +2752,20 @@ public interface IJQStatement extends Serializable, CharSequence {
 	 */
 	IJQStatement wrapInner(Component component);
 
+	/**
+	 * Renders this {@link IJQStatement} with ot without trailing semicolon to
+	 * string.
+	 * 
+	 * @param renderWithTrailingSemicolon
+	 * @return
+	 */
 	String toString(boolean renderWithTrailingSemicolon);
+
+	/**
+	 * Wraps this {@link IJQStatement} into the {@link JQBehavior}.
+	 * 
+	 * @return
+	 */
+	JQBehavior toJQBehavior();
 
 }

@@ -23,6 +23,7 @@ import java.io.Serializable;
 
 import org.apache.wicket.Component;
 
+import com.google.code.jqwicket.JQBehavior;
 import com.google.code.jqwicket.Utils;
 
 /**
@@ -79,6 +80,11 @@ class JQStatement implements IJQStatement, Serializable {
 		return toString(true);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.api.IJQStatement#toString(boolean)
+	 */
 	public String toString(boolean renderWithTrailingSemicolon) {
 		return this.buf.toString().trim()
 				+ (renderWithTrailingSemicolon ? ";" : "");
@@ -2331,4 +2337,12 @@ class JQStatement implements IJQStatement, Serializable {
 		return join(new CharSequence[] { first }, other);
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.api.IJQStatement#toJQBehavior()
+	 */
+	public JQBehavior toJQBehavior() {
+		return new JQBehavior(this);
+	}
 }
