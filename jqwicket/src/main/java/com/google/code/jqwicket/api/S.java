@@ -1684,23 +1684,48 @@ public abstract class S implements Serializable {
 			return this;
 		}
 
+		/**
+		 * {@inheritDoc}
+		 * 
+		 * @see java.lang.CharSequence#length()
+		 */
 		public int length() {
 			return buf.length();
 		}
 
+		/**
+		 * {@inheritDoc}
+		 * 
+		 * @see java.lang.CharSequence#charAt(int)
+		 */
 		public char charAt(int index) {
 			return buf.charAt(index);
 		}
 
+		/**
+		 * {@inheritDoc}
+		 * 
+		 * @see java.lang.CharSequence#subSequence(int, int)
+		 */
 		public CharSequence subSequence(int start, int end) {
 			return buf.subSequence(start, end);
 		}
 
+		/**
+		 * {@inheritDoc}
+		 * 
+		 * @see java.lang.Object#toString()
+		 */
 		@Override
 		public String toString() {
 			return buf.toString();
 		}
 
+		/**
+		 * Creates an {@link IJQStatement} from the given selector.
+		 * 
+		 * @return
+		 */
 		public IJQStatement to$() {
 			return JQuery.$(this);
 		}
