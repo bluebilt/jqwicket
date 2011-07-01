@@ -16,7 +16,7 @@ public class CKEditorPage extends DemoPage {
 
 		private static final long serialVersionUID = 1L;
 
-		private String value;
+		private String value = "<p>This is some <strong>sample text</strong>. You are using <a href=\"http://ckeditor.com/\">CKEditor</a>.</p>";
 
 		public CKEditorForm(String id) {
 			super(id);
