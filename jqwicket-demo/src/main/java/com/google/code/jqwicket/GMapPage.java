@@ -8,7 +8,7 @@ import com.google.code.jqwicket.ui.gmap.GMapWebMarkupContainer;
 
 public class GMapPage extends DemoPage {
 
-	private String key = "ABQIAAAA6cQIrMEc9zlaKBjWiPM5rxSjlBXfTSDcGsB79vzL90uiOHMpbBRa1FFoX2YfuQNFvFKxQtpz0ZCeuw";
+	private String key = "ABQIAAAAnpi8w430G2G-eFRpyPB7exTH5to4oArn01q2NFRzz_-kGVeHjRTZLRM0dF3Dnc925yq4UcIZj3b_dw";
 
 	public GMapPage() {
 		add(new GMapWebMarkupContainer("map1",
