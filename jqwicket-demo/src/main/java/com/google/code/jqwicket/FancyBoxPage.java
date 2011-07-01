@@ -78,13 +78,4 @@ public class FancyBoxPage extends DemoPage {
 		return "JQuery Fancybox Plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
 }

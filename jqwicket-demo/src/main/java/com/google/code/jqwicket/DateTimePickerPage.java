@@ -7,7 +7,7 @@ import com.google.code.jqwicket.ui.datetimepicker.DateTimePickerOptions;
 import com.google.code.jqwicket.ui.datetimepicker.DateTimePickerTextField;
 import com.google.code.jqwicket.ui.datetimepicker.TimePickerTextField;
 
-public class DateTimePickerPage extends BaseJQueryUIPage {
+public class DateTimePickerPage extends DemoPage {
 
 	public DateTimePickerPage() {
 
@@ -39,4 +39,5 @@ public class DateTimePickerPage extends BaseJQueryUIPage {
 	protected String getExampleDescription() {
 		return "This example demonstrates JQuery UI DateTimePicker integration";
 	}
+
 }

@@ -7,7 +7,7 @@ import com.google.code.jqwicket.dnd.DND2Page;
 import com.google.code.jqwicket.ui.prettypopin.PrettyPopinBehavior;
 import com.google.code.jqwicket.ui.prettypopin.PrettyPopinOptions;
 
-public class PrettyPopinPage extends BaseJQueryUIPage {
+public class PrettyPopinPage extends DemoPage {
 
 	public PrettyPopinPage() {
 

@@ -50,13 +50,4 @@ public class BlockUIPage extends DemoPage {
 		return "JQuery BlockUI plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
 }

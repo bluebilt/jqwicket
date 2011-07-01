@@ -23,14 +23,4 @@ public class UploadifyPage extends DemoPage {
 		return "JQuery Uploadify Plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
-
 }

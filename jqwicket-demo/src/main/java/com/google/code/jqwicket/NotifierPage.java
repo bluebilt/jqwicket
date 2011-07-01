@@ -5,7 +5,7 @@ import org.apache.wicket.ajax.markup.html.AjaxLink;
 
 import com.google.code.jqwicket.ui.notifier.NotifierWebMarkupContainer;
 
-public class NotifierPage extends BaseJQueryUIPage {
+public class NotifierPage extends DemoPage {
 
 	@SuppressWarnings("serial")
 	public NotifierPage() {

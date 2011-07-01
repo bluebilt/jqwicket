@@ -11,7 +11,7 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 import com.google.code.jqwicket.ui.slider.SliderBehavior;
 import com.google.code.jqwicket.ui.slider.SliderOptions;
 
-public class SliderPage extends BaseJQueryUIPage {
+public class SliderPage extends DemoPage {
 
 	public SliderPage() {
 

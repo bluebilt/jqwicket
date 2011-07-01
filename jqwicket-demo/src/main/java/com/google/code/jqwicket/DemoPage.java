@@ -18,6 +18,7 @@ package com.google.code.jqwicket;
 
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.util.string.Strings;
 
 /**
  * @author mkalina
@@ -26,16 +27,28 @@ import org.apache.wicket.markup.html.basic.Label;
 public abstract class DemoPage extends WebPage {
 
 	public DemoPage() {
-		
 		add(new Label("exampleTitle", getExampleTitle())
 				.setRenderBodyOnly(true));
 		add(new Label("exampleDescription", getExampleDescription())
 				.setRenderBodyOnly(true));
-		
+		add(new SourcePanel("sourcePanel", getHtmlSourceUrl(),
+				getJavaSourceUrl()));
 	}
 
 	protected abstract String getExampleTitle();
 
-	protected abstract String getExampleDescription();
+	protected String getExampleDescription() {
+		return null;
+	}
+
+	protected String getHtmlSourceUrl() {
+		return "/" + Strings.replaceAll(this.getClass().getName(), ".", "/")
+				+ ".html";
+	}
+
+	protected String getJavaSourceUrl() {
+		return "/" + Strings.replaceAll(this.getClass().getName(), ".", "/")
+				+ ".java";
+	}
 
 }

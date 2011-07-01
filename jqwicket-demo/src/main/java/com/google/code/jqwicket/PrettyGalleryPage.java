@@ -21,13 +21,4 @@ public class PrettyGalleryPage extends DemoPage {
 		return "JQuery PrettyGallery Plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
 }

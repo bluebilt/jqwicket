@@ -20,13 +20,4 @@ public class MobilyMapPage extends DemoPage {
 		return "JQuery MobilyMap Plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
 }

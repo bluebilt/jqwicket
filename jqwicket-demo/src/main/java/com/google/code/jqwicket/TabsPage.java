@@ -4,7 +4,7 @@ import com.google.code.jqwicket.api.JQOptions;
 import com.google.code.jqwicket.ui.tabs.TabsOptions;
 import com.google.code.jqwicket.ui.tabs.TabsWebMarkupContainer;
 
-public class TabsPage extends BaseJQueryUIPage {
+public class TabsPage extends DemoPage {
 
 	public TabsPage() {
 

@@ -7,7 +7,7 @@ import org.apache.wicket.util.time.Duration;
 import com.google.code.jqwicket.JQBehaviors;
 import com.google.code.jqwicket.ui.progressbar.ProgressbarWebMarkupContainer;
 
-public class ProgressbarPage extends BaseJQueryUIPage {
+public class ProgressbarPage extends DemoPage {
 
 	private int counter = 0;
 

@@ -34,13 +34,4 @@ public class MaskedInputPage extends DemoPage {
 		return "JQuery MaskedInput Plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
 }

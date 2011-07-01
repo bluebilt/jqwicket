@@ -41,13 +41,4 @@ public class MarkItUpPage extends DemoPage {
 		return "JQuery MarkItUp Plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
 }

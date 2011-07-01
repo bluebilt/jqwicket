@@ -46,13 +46,4 @@ public class PrettyLoaderPage extends DemoPage {
 		return "JQuery PrettyLoader Plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
 }

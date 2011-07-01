@@ -17,7 +17,8 @@ public class WicketApplication extends WebApplication {
 	@Override
 	protected void init() {
 
-		addPreComponentOnBeforeRenderListener(new JQComponentOnBeforeRenderListener());
+		addPreComponentOnBeforeRenderListener(new JQComponentOnBeforeRenderListener(
+				new JQContributionConfig().withDefaultJQueryUi()));
 
 		getResourceSettings().setResourcePollFrequency(null);
 		getMarkupSettings().setStripWicketTags(true);

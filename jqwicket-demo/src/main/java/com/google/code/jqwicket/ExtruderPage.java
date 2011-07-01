@@ -38,24 +38,15 @@ public class ExtruderPage extends DemoPage {
 						.width(300).positionFixed(false).top(0)
 						.extruderOpacity(0.8f)));
 	}
-	
-	/** 
-	 * {@inheritDoc}	
-	 *
+
+	/**
+	 * {@inheritDoc}
+	 * 
 	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
 	 */
 	@Override
 	protected String getExampleTitle() {
 		return "JQuery Extruder Plugin example";
 	}
-	
-	/** 
-	 * {@inheritDoc}	
-	 *
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
+
 }

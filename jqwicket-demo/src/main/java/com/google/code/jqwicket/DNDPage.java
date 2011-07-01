@@ -40,7 +40,7 @@ import com.google.code.jqwicket.ui.droppable.DroppableOptions;
  * @author mkalina
  * 
  */
-public class DNDPage extends BaseJQueryUIPage {
+public class DNDPage extends DemoPage {
 
 	private static final Map<String, String> labels = new MapBuilder<String, String>()
 			.add("lolcatShirt", "Lolcat Shirt")
@@ -125,4 +125,5 @@ public class DNDPage extends BaseJQueryUIPage {
 	protected String getExampleDescription() {
 		return "This example demonstrates low-Level drag'n'drop";
 	}
+
 }

@@ -51,14 +51,4 @@ public class CKEditorPage extends DemoPage {
 		return "CKEditor jqwicket integration example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
-
 }

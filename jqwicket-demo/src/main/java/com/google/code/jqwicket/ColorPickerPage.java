@@ -18,13 +18,4 @@ public class ColorPickerPage extends DemoPage {
 		return "JQuery ColorPicker Plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
 }

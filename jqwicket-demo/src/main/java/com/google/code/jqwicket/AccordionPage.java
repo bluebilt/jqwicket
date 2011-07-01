@@ -9,7 +9,7 @@ import com.google.code.jqwicket.JQBehaviors;
 import com.google.code.jqwicket.ui.accordion.AccordionBehavior;
 import com.google.code.jqwicket.ui.accordion.AccordionWebMarkupContainer;
 
-public class AccordionPage extends BaseJQueryUIPage {
+public class AccordionPage extends DemoPage {
 
 	public AccordionPage() {
 

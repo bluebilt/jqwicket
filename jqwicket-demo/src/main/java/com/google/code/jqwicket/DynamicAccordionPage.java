@@ -9,7 +9,7 @@ import org.apache.wicket.markup.html.list.ListView;
 
 import com.google.code.jqwicket.ui.accordion.AccordionWebMarkupContainer;
 
-public class DynamicAccordionPage extends BaseJQueryUIPage {
+public class DynamicAccordionPage extends DemoPage {
 
 	public static class AccordionItem {
 
@@ -65,6 +65,7 @@ public class DynamicAccordionPage extends BaseJQueryUIPage {
 	 */
 	@Override
 	protected String getExampleDescription() {
-		return "This example demonstrates JQuery UI Accordion integration";
+		return "This example demonstrates JQuery UI Accordion integration by creating accordion items dynamically";
 	}
+
 }

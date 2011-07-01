@@ -16,7 +16,6 @@
  */
 package com.google.code.jqwicket;
 
-
 import com.google.code.jqwicket.ui.cjimageflipbox.CJImageFlipboxWebMarkupContainer;
 
 /**
@@ -31,25 +30,14 @@ public class CJImageFlipboxPage extends DemoPage {
 
 	}
 
-	/** 
-	 * {@inheritDoc}	
-	 *
+	/**
+	 * {@inheritDoc}
+	 * 
 	 * @see com.google.code.jqwicket.DemoPage#getExampleTitle()
 	 */
 	@Override
 	protected String getExampleTitle() {
 		return "JQuery CJImageFlipbox plugin example";
 	}
-	
-	/** 
-	 * {@inheritDoc}	
-	 *
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
+
 }

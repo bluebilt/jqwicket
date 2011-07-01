@@ -5,7 +5,7 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 import com.google.code.jqwicket.ui.datepicker.DatePickerBehavior;
 import com.google.code.jqwicket.ui.datepicker.DatePickerTextField;
 
-public class DatePickerPage extends BaseJQueryUIPage {
+public class DatePickerPage extends DemoPage {
 
 	public DatePickerPage() {
 
@@ -33,4 +33,5 @@ public class DatePickerPage extends BaseJQueryUIPage {
 	protected String getExampleDescription() {
 		return "This example demonstrates JQuery UI Datepicker integration";
 	}
+
 }

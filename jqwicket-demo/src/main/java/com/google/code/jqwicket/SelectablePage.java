@@ -4,7 +4,7 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 
 import com.google.code.jqwicket.JQBehaviors;
 
-public class SelectablePage extends BaseJQueryUIPage {
+public class SelectablePage extends DemoPage {
 
 	public SelectablePage() {
 		add(new WebMarkupContainer("selectable").add(JQBehaviors.selectable()));

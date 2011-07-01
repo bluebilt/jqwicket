@@ -22,13 +22,13 @@ import java.util.List;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 
-import com.google.code.jqwicket.BaseJQueryUIPage;
+import com.google.code.jqwicket.DemoPage;
 
 /**
  * @author mkalina
  * 
  */
-public class DND2Page extends BaseJQueryUIPage {
+public class DND2Page extends DemoPage {
 
 	private static final List<Product> products = Arrays.asList(new Product(1,
 			"product 1"), new Product(2, "product 2"), new Product(3,
@@ -69,5 +69,25 @@ public class DND2Page extends BaseJQueryUIPage {
 	@Override
 	protected String getExampleDescription() {
 		return "This example demonstrates usega of JQWicket's high level drag'n'drop API";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getHtmlSourceUrl()
+	 */
+	@Override
+	protected String getHtmlSourceUrl() {
+		return "/com/google/code/jqwicket/dnd/DND2Page.html";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.DemoPage#getJavaSourceUrl()
+	 */
+	@Override
+	protected String getJavaSourceUrl() {
+		return "/com/google/code/jqwicket/dnd/DND2Page.java";
 	}
 }

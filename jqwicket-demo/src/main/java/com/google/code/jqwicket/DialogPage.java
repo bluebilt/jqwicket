@@ -19,7 +19,7 @@ import com.google.code.jqwicket.api.JQOptions;
 import com.google.code.jqwicket.ui.dialog.DialogOptions;
 import com.google.code.jqwicket.ui.dialog.DialogWebMarkupContainer;
 
-public class DialogPage extends BaseJQueryUIPage {
+public class DialogPage extends DemoPage {
 
 	private static final List<String> list = Arrays.asList("a", "b", "c");
 
@@ -83,7 +83,7 @@ public class DialogPage extends BaseJQueryUIPage {
 		add(listview);
 
 	}
-	
+
 	/**
 	 * {@inheritDoc}
 	 * 
@@ -103,4 +103,5 @@ public class DialogPage extends BaseJQueryUIPage {
 	protected String getExampleDescription() {
 		return "This example demonstrates JQuery UI Dialog integration";
 	}
+
 }

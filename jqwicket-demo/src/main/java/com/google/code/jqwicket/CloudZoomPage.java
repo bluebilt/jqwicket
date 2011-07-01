@@ -53,4 +53,5 @@ public class CloudZoomPage extends DemoPage {
 	protected String getExampleDescription() {
 		return null;
 	}
+
 }

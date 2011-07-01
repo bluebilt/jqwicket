@@ -27,16 +27,6 @@ public class ValidationEnginePage extends DemoPage {
 		return "JQuery ValidationEngine Plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
-
 	private static class ValidationEngineForm extends Form<Void> {
 
 		private static final long serialVersionUID = 1L;

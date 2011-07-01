@@ -22,13 +22,4 @@ public class NivoSliderPage extends DemoPage {
 		return "JQuery NivoSlider Plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
 }

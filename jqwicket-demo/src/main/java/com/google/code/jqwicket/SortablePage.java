@@ -4,7 +4,7 @@ import org.apache.wicket.markup.html.WebMarkupContainer;
 
 import com.google.code.jqwicket.JQBehaviors;
 
-public class SortablePage extends BaseJQueryUIPage {
+public class SortablePage extends DemoPage {
 
 	public SortablePage() {
 		add(new WebMarkupContainer("sortable").add(JQBehaviors.sortable()));

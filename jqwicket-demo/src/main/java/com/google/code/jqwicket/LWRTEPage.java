@@ -38,16 +38,7 @@ public class LWRTEPage extends DemoPage {
 	 */
 	@Override
 	protected String getExampleTitle() {
-		return "JQuery LWRTE Plugin example";
+		return "JQuery Lightweight Rich TextEdtior Plugin example";
 	}
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.DemoPage#getExampleDescription()
-	 */
-	@Override
-	protected String getExampleDescription() {
-		return null;
-	}
 }
