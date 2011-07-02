@@ -27,6 +27,8 @@ import org.apache.wicket.model.Model;
 import com.google.code.jqwicket.api.JQLiteral;
 
 /**
+ * Collection of utility methodes
+ *
  * @author mkalina
  * 
  *         Parts of the source code are taken from Apache's commons-lang
