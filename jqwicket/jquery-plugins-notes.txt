@@ -1,3 +1,4 @@
+http://harvesthq.github.com/chosen/
 http://arborjs.org/
 http://www.jstat.org/
 http://imakewebthings.github.com/jquery-waypoints/
