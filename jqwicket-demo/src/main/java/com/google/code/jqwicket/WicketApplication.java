@@ -14,7 +14,6 @@ public class WicketApplication extends WebApplication {
         super.getComponentPreOnBeforeRenderListeners().add(new JQComponentOnBeforeRenderListener(
                 new JQContributionConfig().withDefaultJQueryUi()));
 
-        getResourceSettings().setResourcePollFrequency(null);
         getMarkupSettings().setStripWicketTags(true);
 
         mountPage("genericjqbehavior", GenericJQBehaviorPage.class);
