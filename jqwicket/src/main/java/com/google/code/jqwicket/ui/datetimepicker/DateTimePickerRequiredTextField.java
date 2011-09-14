@@ -17,9 +17,8 @@
 package com.google.code.jqwicket.ui.datetimepicker;
 
 
-import org.apache.wicket.model.IModel;
-
 import com.google.code.jqwicket.ui.datepicker.AbstractDatePickerRequiredTextField;
+import org.apache.wicket.model.IModel;
 
 /**
  * @author mkalina
