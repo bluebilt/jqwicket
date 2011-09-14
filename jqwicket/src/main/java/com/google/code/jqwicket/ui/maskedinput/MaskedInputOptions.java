@@ -16,84 +16,82 @@
  */
 package com.google.code.jqwicket.ui.maskedinput;
 
-import static com.google.code.jqwicket.api.JQuery.$f;
-import static com.google.code.jqwicket.api.JQuery.js;
-
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 import com.google.code.jqwicket.api.AbstractJQOptions;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQStatement;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
+
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 /**
  * @author mkalina
- * 
  */
 public class MaskedInputOptions extends AbstractJQOptions<MaskedInputOptions> {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			MaskedInputOptions.class, "jquery.maskedinput-1.3.js");
+    public static final JavaScriptResourceReference JS_RESOURCE = new JavaScriptResourceReference(
+            MaskedInputOptions.class, "jquery.maskedinput-1.3.js");
 
-	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
-			MaskedInputOptions.class, "jquery.maskedinput-1.3.min.js");
+    public static final JavaScriptResourceReference JS_RESOURCE_MIN = new JavaScriptResourceReference(
+            MaskedInputOptions.class, "jquery.maskedinput-1.3.min.js");
 
-	private CharSequence mask;
+    private CharSequence mask;
 
-	public MaskedInputOptions(CharSequence mask) {
-		this.setJsResourceReferences(JS_RESOURCE);
-		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
-		this.mask = mask;
-	}
+    public MaskedInputOptions(CharSequence mask) {
+        this.setJsResourceReferences(JS_RESOURCE);
+        this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
+        this.mask = mask;
+    }
 
-	/**
-	 * @return the mask
-	 */
-	public CharSequence getMask() {
-		return mask;
-	}
+    /**
+     * @return the mask
+     */
+    public CharSequence getMask() {
+        return mask;
+    }
 
-	/**
-	 * Sets placeholder
-	 * 
-	 * @param controlNavThumbsSearch
-	 * @return
-	 */
-	public MaskedInputOptions placeholder(CharSequence placeholder) {
-		super.put("placeholder", placeholder);
-		return this;
-	}
+    /**
+     * Sets placeholder
+     *
+     * @param placeholder
+     * @return
+     */
+    public MaskedInputOptions placeholder(CharSequence placeholder) {
+        super.put("placeholder", placeholder);
+        return this;
+    }
 
-	/**
-	 * Triggers once the mask has been completed
-	 * 
-	 * @param callbackBody
-	 * @return
-	 */
-	public MaskedInputOptions completedEvent(CharSequence callbackBody) {
-		return this.completedEvent(js(callbackBody));
-	}
+    /**
+     * Triggers once the mask has been completed
+     *
+     * @param callbackBody
+     * @return
+     */
+    public MaskedInputOptions completedEvent(CharSequence callbackBody) {
+        return this.completedEvent(js(callbackBody));
+    }
 
-	/**
-	 * Triggers once the mask has been completed
-	 * 
-	 * @param callbackBody
-	 * @return
-	 */
-	public MaskedInputOptions completedEvent(IJQStatement callbackBody) {
-		return this.completedEvent($f(callbackBody));
-	}
+    /**
+     * Triggers once the mask has been completed
+     *
+     * @param callbackBody
+     * @return
+     */
+    public MaskedInputOptions completedEvent(IJQStatement callbackBody) {
+        return this.completedEvent($f(callbackBody));
+    }
 
-	/**
-	 * Triggers once the mask has been completed
-	 * 
-	 * @param callback
-	 * @return
-	 */
-	public MaskedInputOptions completedEvent(IJQFunction callback) {
-		super.put("completed", callback);
-		return this;
-	}
+    /**
+     * Triggers once the mask has been completed
+     *
+     * @param callback
+     * @return
+     */
+    public MaskedInputOptions completedEvent(IJQFunction callback) {
+        super.put("completed", callback);
+        return this;
+    }
 
 }

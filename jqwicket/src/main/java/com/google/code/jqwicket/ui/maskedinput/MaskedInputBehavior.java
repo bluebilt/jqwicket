@@ -16,17 +16,17 @@
  */
 package com.google.code.jqwicket.ui.maskedinput;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-
 import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
+
+import static com.google.code.jqwicket.api.JQuery.$;
 
 /**
  * @author mkalina
  * 
  */
 public class MaskedInputBehavior extends
-		JQComponentBehaivor<MaskedInputOptions> implements IMaskedInput {
+        JQComponentBehavior<MaskedInputOptions> implements IMaskedInput {
 
 	private static final long serialVersionUID = 1L;
 
@@ -50,7 +50,7 @@ public class MaskedInputBehavior extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.ui.JQComponentBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {

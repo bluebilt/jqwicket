@@ -16,216 +16,164 @@
  */
 package com.google.code.jqwicket.ui.uploadify;
 
-import org.apache.wicket.RequestCycle;
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQOptions;
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.request.cycle.RequestCycle;
 
 /**
  * @author mkalina
- * 
  */
-public class UploadifyBehavior extends JQComponentBehaivor<UploadifyOptions>
-		implements IUploadify {
+public class UploadifyBehavior extends JQComponentBehavior<UploadifyOptions>
+        implements IUploadify {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public UploadifyBehavior() {
-		this(new UploadifyOptions());
-	}
+    public UploadifyBehavior() {
+        this(new UploadifyOptions());
+    }
 
-	public UploadifyBehavior(UploadifyOptions options) {
-		super(options);
-		if (!options.containsKey("uploader"))
-			options.put(
-					"uploader",
-					RequestCycle.get().urlFor(
-							UploadifyOptions.SWF_UPLOADIFY_RESOURCE));
+    public UploadifyBehavior(UploadifyOptions options) {
+        super(options);
+        if (!options.containsKey("uploader"))
+            options.put(
+                    "uploader", RequestCycle.get().urlFor(UploadifyOptions.SWF_UPLOADIFY_RESOURCE, null));
 
-		if (!options.containsKey("expressInstall"))
-			options.put(
-					"expressInstall",
-					RequestCycle.get().urlFor(
-							UploadifyOptions.SWF_EXPRESS_INSTALL_RESOURCE));
+        if (!options.containsKey("expressInstall"))
+            options.put(
+                    "expressInstall", RequestCycle.get().urlFor(UploadifyOptions.SWF_EXPRESS_INSTALL_RESOURCE, null));
 
-		if (!options.containsKey("cancelImg"))
-			options.put(
-					"cancelImg",
-					RequestCycle.get().urlFor(
-							UploadifyOptions.PNG_CANCEL_RESOURCE));
-	}
+        if (!options.containsKey("cancelImg"))
+            options.put(
+                    "cancelImg", RequestCycle.get().urlFor(UploadifyOptions.PNG_CANCEL_RESOURCE, null));
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.IJQWidget#getName()
-	 */
-	public CharSequence getName() {
-		return JQ_COMPONENT_NAME;
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public CharSequence getName() {
+        return JQ_COMPONENT_NAME;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify()
-	 */
-	public IJQFunction uploadify() {
-		return chain("uploadify");
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public IJQFunction uploadify() {
+        return chain("uploadify");
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify(org.apache.wicket.ajax.AjaxRequestTarget)
-	 */
-	public void uploadify(AjaxRequestTarget ajaxRequestTarget) {
-		chain(ajaxRequestTarget, this.uploadify());
+    /**
+     * {@inheritDoc}
+     */
+    public void uploadify(AjaxRequestTarget ajaxRequestTarget) {
+        chain(ajaxRequestTarget, this.uploadify());
 
-	}
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify(com.google.code.jqwicket.api.IJQOptions)
-	 */
-	public IJQFunction uploadify(IJQOptions<?> options) {
-		return chain("uploadify", options);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public IJQFunction uploadify(IJQOptions<?> options) {
+        return chain("uploadify", options);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadify(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      com.google.code.jqwicket.api.IJQOptions)
-	 */
-	public void uploadify(AjaxRequestTarget ajaxRequestTarget,
-			IJQOptions<?> options) {
-		chain(ajaxRequestTarget, this.uploadify(options));
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public void uploadify(AjaxRequestTarget ajaxRequestTarget, IJQOptions<?> options) {
+        chain(ajaxRequestTarget, this.uploadify(options));
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyCancel(java.lang.String)
-	 */
-	public IJQFunction uploadifyCancel(CharSequence id) {
-		return chain("uploadifyCancel", id);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public IJQFunction uploadifyCancel(CharSequence id) {
+        return chain("uploadifyCancel", id);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyCancel(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence)
-	 */
-	public void uploadifyCancel(AjaxRequestTarget ajaxRequestTarget,
-			CharSequence id) {
-		chain(ajaxRequestTarget, this.uploadifyCancel(id));
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public void uploadifyCancel(AjaxRequestTarget ajaxRequestTarget, CharSequence id) {
+        chain(ajaxRequestTarget, this.uploadifyCancel(id));
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyClearQueue()
-	 */
-	public IJQFunction uploadifyClearQueue() {
-		return chain("uploadifyClearQueue");
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public IJQFunction uploadifyClearQueue() {
+        return chain("uploadifyClearQueue");
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyClearQueue(org.apache.wicket.ajax.AjaxRequestTarget)
-	 */
-	public void uploadifyClearQueue(AjaxRequestTarget ajaxRequestTarget) {
-		chain(ajaxRequestTarget, this.uploadifyClearQueue());
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public void uploadifyClearQueue(AjaxRequestTarget ajaxRequestTarget) {
+        chain(ajaxRequestTarget, this.uploadifyClearQueue());
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifySettings(java.lang.String,
-	 *      java.lang.String)
-	 */
-	public IJQFunction uploadifySettings(CharSequence name, CharSequence value) {
-		return chain("uploadifySettings", name, value);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public IJQFunction uploadifySettings(CharSequence name, CharSequence value) {
+        return chain("uploadifySettings", name, value);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifySettings(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence, java.lang.CharSequence)
-	 */
-	public void uploadifySettings(AjaxRequestTarget ajaxRequestTarget,
-			CharSequence name, CharSequence value) {
-		chain(ajaxRequestTarget, this.uploadifySettings(name, value));
+    /**
+     * {@inheritDoc}
+     */
+    public void uploadifySettings(AjaxRequestTarget ajaxRequestTarget,
+                                  CharSequence name, CharSequence value) {
+        chain(ajaxRequestTarget, this.uploadifySettings(name, value));
 
-	}
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifySettings(java.lang.CharSequence,
-	 *      java.lang.CharSequence, boolean)
-	 */
-	public IJQFunction uploadifySettings(CharSequence name, CharSequence value,
-			boolean resetObject) {
-		return chain("uploadifySettings", name, value,
-				String.valueOf(resetObject));
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public IJQFunction uploadifySettings(CharSequence name, CharSequence value,
+                                         boolean resetObject) {
+        return chain("uploadifySettings", name, value,
+                String.valueOf(resetObject));
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifySettings(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence, java.lang.CharSequence, boolean)
-	 */
-	public void uploadifySettings(AjaxRequestTarget ajaxRequestTarget,
-			CharSequence name, CharSequence value, boolean resetObject) {
-		chain(ajaxRequestTarget,
-				this.uploadifySettings(name, value, resetObject));
+    /**
+     * {@inheritDoc}
+     */
+    public void uploadifySettings(AjaxRequestTarget ajaxRequestTarget,
+                                  CharSequence name, CharSequence value, boolean resetObject) {
+        chain(ajaxRequestTarget,
+                this.uploadifySettings(name, value, resetObject));
 
-	}
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyUpload()
-	 */
-	public IJQFunction uploadifyUpload() {
-		return chain("uploadifyUpload");
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public IJQFunction uploadifyUpload() {
+        return chain("uploadifyUpload");
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyUpload(org.apache.wicket.ajax.AjaxRequestTarget)
-	 */
-	public void uploadifyUpload(AjaxRequestTarget ajaxRequestTarget) {
-		chain(ajaxRequestTarget, this.uploadifyUpload());
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public void uploadifyUpload(AjaxRequestTarget ajaxRequestTarget) {
+        chain(ajaxRequestTarget, this.uploadifyUpload());
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyUpload(java.lang.CharSequence)
-	 */
-	public IJQFunction uploadifyUpload(CharSequence id) {
-		return chain("uploadifyUpload", id);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public IJQFunction uploadifyUpload(CharSequence id) {
+        return chain("uploadifyUpload", id);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.uploadify.IUploadify#uploadifyUpload(org.apache.wicket.ajax.AjaxRequestTarget,
-	 *      java.lang.CharSequence)
-	 */
-	public void uploadifyUpload(AjaxRequestTarget ajaxRequestTarget,
-			CharSequence id) {
-		chain(ajaxRequestTarget, this.uploadifyUpload(id));
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public void uploadifyUpload(AjaxRequestTarget ajaxRequestTarget, CharSequence id) {
+        chain(ajaxRequestTarget, this.uploadifyUpload(id));
+    }
 
 }

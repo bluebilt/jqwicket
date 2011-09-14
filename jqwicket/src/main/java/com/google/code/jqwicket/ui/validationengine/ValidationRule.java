@@ -16,11 +16,11 @@
  */
 package com.google.code.jqwicket.ui.validationengine;
 
-import static com.google.code.jqwicket.Utils.quote;
+import com.google.code.jqwicket.Utils;
 
 import java.io.Serializable;
 
-import com.google.code.jqwicket.Utils;
+import static com.google.code.jqwicket.Utils.quote;
 
 /**
  * @author mkalina

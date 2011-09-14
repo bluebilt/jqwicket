@@ -16,9 +16,9 @@
  */
 package com.google.code.jqwicket.ui.uniform;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-
 import com.google.code.jqwicket.IJQWidget;
+
+import static com.google.code.jqwicket.api.JQuery.$;
 
 /**
  * Generic, jquery selector based uniform behavior. This behavior can be added

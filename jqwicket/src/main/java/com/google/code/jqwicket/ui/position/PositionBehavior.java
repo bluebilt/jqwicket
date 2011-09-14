@@ -16,13 +16,13 @@
  */
 package com.google.code.jqwicket.ui.position;
 
-import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
+import com.google.code.jqwicket.ui.JQUIComponentBehavior;
 
 /**
  * @author mkalina
  *
  */
-public class PositionBehavior extends JQUIComponentBehaivor<PositionOptions>
+public class PositionBehavior extends JQUIComponentBehavior<PositionOptions>
 		implements IPosition {
 
 	private static final long serialVersionUID = 1L;

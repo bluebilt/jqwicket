@@ -16,14 +16,14 @@
  */
 package com.google.code.jqwicket.event;
 
-import static com.google.code.jqwicket.Utils.isNotEmpty;
-import static com.google.code.jqwicket.api.JQuery.$;
-
 import com.google.code.jqwicket.IJQHeaderContributor;
 import com.google.code.jqwicket.JQBehavior;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQStatement;
+
+import static com.google.code.jqwicket.Utils.isNotEmpty;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 /**
  * Abstract behavior for adding jquery event handling to the wicket components.

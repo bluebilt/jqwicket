@@ -16,13 +16,13 @@
  */
 package com.google.code.jqwicket.ui.fancybox;
 
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
-public class FancyBoxBehavior extends JQComponentBehaivor<FancyBoxOptions>
+public class FancyBoxBehavior extends JQComponentBehavior<FancyBoxOptions>
 		implements IFancyBox {
 
 	private static final long serialVersionUID = 1L;

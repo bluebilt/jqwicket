@@ -16,18 +16,17 @@
  */
 package com.google.code.jqwicket.ui.accordion;
 
-import static com.google.code.jqwicket.api.JQLiteral._raw;
-
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.ui.JQUIComponentBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.api.IJQFunction;
-import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
+import static com.google.code.jqwicket.api.JQLiteral._raw;
 
 /**
  * @author mkalina
  * 
  */
-public class AccordionBehavior extends JQUIComponentBehaivor<AccordionOptions>
+public class AccordionBehavior extends JQUIComponentBehavior<AccordionOptions>
 		implements IAccordion {
 
 	private static final long serialVersionUID = 1L;

@@ -16,278 +16,263 @@
  */
 package com.google.code.jqwicket;
 
+import com.google.code.jqwicket.api.IJQStatement;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.apache.wicket.request.resource.ResourceReference;
+
+import java.io.Serializable;
+import java.util.*;
+
 import static com.google.code.jqwicket.Utils.isEmpty;
 import static com.google.code.jqwicket.Utils.isNotEmpty;
 
-import java.io.Serializable;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedHashSet;
-import java.util.Set;
-
-import org.apache.wicket.ResourceReference;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
-import com.google.code.jqwicket.api.IJQStatement;
-
 /**
  * @author mkalina
- * 
  */
 public class JQHeaderContributionTarget implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private Set<JavascriptResourceReference> jsResourceReferences;
+    private Set<JavaScriptResourceReference> jsResourceReferences;
 
-	private Set<CharSequence> jsResourceUrls;
+    private Set<CharSequence> jsResourceUrls;
 
-	private Set<ResourceReference> cssResourceReferences;
+    private Set<ResourceReference> cssResourceReferences;
 
-	private Set<CharSequence> cssResourceUrls;
+    private Set<CharSequence> cssResourceUrls;
 
-	private Set<IJQStatement> jqStatementsInsideDocumentReady;
+    private Set<IJQStatement> jqStatementsInsideDocumentReady;
 
-	private Set<IJQStatement> jqStatementsOutsideDocumentReady;
+    private Set<IJQStatement> jqStatementsOutsideDocumentReady;
 
-	public JQHeaderContributionTarget addJavascriptResourceReferences(
-			Collection<JavascriptResourceReference> refs) {
-		if (isEmpty(refs))
-			return this;
+    public JQHeaderContributionTarget addJavascriptResourceReferences(
+            Collection<JavaScriptResourceReference> refs) {
+        if (isEmpty(refs))
+            return this;
 
-		if (this.jsResourceReferences == null)
-			this.jsResourceReferences = new LinkedHashSet<JavascriptResourceReference>();
+        if (this.jsResourceReferences == null)
+            this.jsResourceReferences = new LinkedHashSet<JavaScriptResourceReference>();
 
-		this.jsResourceReferences.addAll(refs);
-		return this;
-	}
+        this.jsResourceReferences.addAll(refs);
+        return this;
+    }
 
-	public JQHeaderContributionTarget addJavascriptResourceReferences(
-			JavascriptResourceReference... refs) {
-		if (isEmpty(refs))
-			return this;
-		return this.addJavascriptResourceReferences(Arrays.asList(refs));
-	}
+    public JQHeaderContributionTarget addJavascriptResourceReferences(
+            JavaScriptResourceReference... refs) {
+        if (isEmpty(refs))
+            return this;
+        return this.addJavascriptResourceReferences(Arrays.asList(refs));
+    }
 
-	public JQHeaderContributionTarget addJavascriptResourceUrls(
-			Collection<CharSequence> urls) {
-		if (isEmpty(urls))
-			return this;
+    public JQHeaderContributionTarget addJavascriptResourceUrls(
+            Collection<CharSequence> urls) {
+        if (isEmpty(urls))
+            return this;
 
-		if (this.jsResourceUrls == null)
-			this.jsResourceUrls = new LinkedHashSet<CharSequence>();
+        if (this.jsResourceUrls == null)
+            this.jsResourceUrls = new LinkedHashSet<CharSequence>();
 
-		this.jsResourceUrls.addAll(urls);
-		return this;
-	}
+        this.jsResourceUrls.addAll(urls);
+        return this;
+    }
 
-	public JQHeaderContributionTarget addJavascriptResourceUrls(
-			CharSequence... urls) {
-		if (isEmpty(urls))
-			return this;
-		return this.addJavascriptResourceUrls(Arrays.asList(urls));
-	}
+    public JQHeaderContributionTarget addJavascriptResourceUrls(
+            CharSequence... urls) {
+        if (isEmpty(urls))
+            return this;
+        return this.addJavascriptResourceUrls(Arrays.asList(urls));
+    }
 
-	public JQHeaderContributionTarget addCssResourceReferences(
-			Collection<ResourceReference> refs) {
-		if (isEmpty(refs))
-			return this;
+    public JQHeaderContributionTarget addCssResourceReferences(
+            Collection<ResourceReference> refs) {
+        if (isEmpty(refs))
+            return this;
 
-		if (this.cssResourceReferences == null)
-			this.cssResourceReferences = new LinkedHashSet<ResourceReference>();
+        if (this.cssResourceReferences == null)
+            this.cssResourceReferences = new LinkedHashSet<ResourceReference>();
 
-		this.cssResourceReferences.addAll(refs);
-		return this;
-	}
+        this.cssResourceReferences.addAll(refs);
+        return this;
+    }
 
-	public JQHeaderContributionTarget addCssResourceReferences(
-			ResourceReference... refs) {
-		if (isEmpty(refs))
-			return this;
-		return this.addCssResourceReferences(Arrays.asList(refs));
-	}
+    public JQHeaderContributionTarget addCssResourceReferences(
+            ResourceReference... refs) {
+        if (isEmpty(refs))
+            return this;
+        return this.addCssResourceReferences(Arrays.asList(refs));
+    }
 
-	public JQHeaderContributionTarget addCssResourceUrls(
-			Collection<CharSequence> urls) {
-		if (isEmpty(urls))
-			return this;
+    public JQHeaderContributionTarget addCssResourceUrls(
+            Collection<CharSequence> urls) {
+        if (isEmpty(urls))
+            return this;
 
-		if (this.cssResourceUrls == null)
-			this.cssResourceUrls = new LinkedHashSet<CharSequence>();
+        if (this.cssResourceUrls == null)
+            this.cssResourceUrls = new LinkedHashSet<CharSequence>();
 
-		this.cssResourceUrls.addAll(urls);
-		return this;
-	}
+        this.cssResourceUrls.addAll(urls);
+        return this;
+    }
 
-	public JQHeaderContributionTarget addCssResourceUrls(CharSequence... urls) {
-		if (isEmpty(urls))
-			return this;
-		return this.addCssResourceUrls(Arrays.asList(urls));
-	}
+    public JQHeaderContributionTarget addCssResourceUrls(CharSequence... urls) {
+        if (isEmpty(urls))
+            return this;
+        return this.addCssResourceUrls(Arrays.asList(urls));
+    }
 
-	/**
-	 * Adds statements that will be rendered inside the "document.ready" block
-	 * 
-	 * @param statements
-	 * @return
-	 */
-	public JQHeaderContributionTarget addJQStatements(
-			Collection<IJQStatement> statements) {
-		return addJQStatements(statements, true);
-	}
+    /**
+     * Adds statements that will be rendered inside the "document.ready" block
+     *
+     * @param statements
+     * @return
+     */
+    public JQHeaderContributionTarget addJQStatements(
+            Collection<IJQStatement> statements) {
+        return addJQStatements(statements, true);
+    }
 
-	/**
-	 * Adds statements that will be rendered inside the "document.ready" block
-	 * 
-	 * @param statements
-	 * @return
-	 */
-	public JQHeaderContributionTarget addJQStatements(
-			IJQStatement... statements) {
-		if (isEmpty(statements))
-			return this;
-		return this.addJQStatements(Arrays.asList(statements), true);
-	}
+    /**
+     * Adds statements that will be rendered inside the "document.ready" block
+     *
+     * @param statements
+     * @return
+     */
+    public JQHeaderContributionTarget addJQStatements(
+            IJQStatement... statements) {
+        if (isEmpty(statements))
+            return this;
+        return this.addJQStatements(Arrays.asList(statements), true);
+    }
 
-	/**
-	 * Adds statements that will be rendered inside or outside the
-	 * "document.ready" block
-	 * 
-	 * @param statements
-	 * @param renderInsideDocumentReady
-	 * @return
-	 */
-	public JQHeaderContributionTarget addJQStatements(
-			IJQStatement[] statements, boolean renderInsideDocumentReady) {
-		if (isEmpty(statements))
-			return this;
-		return this.addJQStatements(Arrays.asList(statements),
-				renderInsideDocumentReady);
-	}
+    /**
+     * Adds statements that will be rendered inside or outside the "document.ready" block
+     *
+     * @param statements
+     * @param renderInsideDocumentReady
+     * @return
+     */
+    public JQHeaderContributionTarget addJQStatements(
+            IJQStatement[] statements, boolean renderInsideDocumentReady) {
+        if (isEmpty(statements))
+            return this;
+        return this.addJQStatements(Arrays.asList(statements),
+                renderInsideDocumentReady);
+    }
 
-	/**
-	 * Adds statements that will be rendered inside or outside the
-	 * "document.ready" block
-	 * 
-	 * @param statements
-	 * @param renderInsideDocumentReady
-	 * @return
-	 */
-	public JQHeaderContributionTarget addJQStatements(
-			Collection<IJQStatement> statements,
-			boolean renderInsideDocumentReady) {
+    /**
+     * Adds statements that will be rendered inside or outside the "document.ready" block
+     *
+     * @param statements
+     * @param renderInsideDocumentReady
+     * @return
+     */
+    public JQHeaderContributionTarget addJQStatements(
+            Collection<IJQStatement> statements,
+            boolean renderInsideDocumentReady) {
 
-		if (isEmpty(statements))
-			return this;
+        if (isEmpty(statements))
+            return this;
 
-		if (renderInsideDocumentReady) {
+        if (renderInsideDocumentReady) {
 
-			if (this.jqStatementsInsideDocumentReady == null)
-				this.jqStatementsInsideDocumentReady = new LinkedHashSet<IJQStatement>();
+            if (this.jqStatementsInsideDocumentReady == null)
+                this.jqStatementsInsideDocumentReady = new LinkedHashSet<IJQStatement>();
 
-			this.jqStatementsInsideDocumentReady.addAll(statements);
+            this.jqStatementsInsideDocumentReady.addAll(statements);
 
-		} else {
+        } else {
 
-			if (this.jqStatementsOutsideDocumentReady == null)
-				this.jqStatementsOutsideDocumentReady = new LinkedHashSet<IJQStatement>();
+            if (this.jqStatementsOutsideDocumentReady == null)
+                this.jqStatementsOutsideDocumentReady = new LinkedHashSet<IJQStatement>();
 
-			this.jqStatementsOutsideDocumentReady.addAll(statements);
-		}
+            this.jqStatementsOutsideDocumentReady.addAll(statements);
+        }
 
-		return this;
-	}
+        return this;
+    }
 
-	/**
-	 * Returns true, if at least one resource (url, resource reference,
-	 * statement..) was added to the contribution target and should be rendered.
-	 * Otherwise returns false.
-	 * 
-	 * @return
-	 */
-	public boolean hasResourcesToRender() {
-		return isNotEmpty(this.jsResourceReferences)
-				|| isNotEmpty(this.jsResourceUrls)
-				|| isNotEmpty(this.cssResourceReferences)
-				|| isNotEmpty(this.cssResourceUrls)
-				|| isNotEmpty(this.jqStatementsInsideDocumentReady)
-				|| isNotEmpty(this.jqStatementsOutsideDocumentReady);
-	}
+    /**
+     * Returns true, if at least one resource (url, resource reference, statement..) was added to the contribution target
+     * and should be rendered. Otherwise returns false.
+     *
+     * @return
+     */
+    public boolean hasResourcesToRender() {
+        return isNotEmpty(this.jsResourceReferences)
+                || isNotEmpty(this.jsResourceUrls)
+                || isNotEmpty(this.cssResourceReferences)
+                || isNotEmpty(this.cssResourceUrls)
+                || isNotEmpty(this.jqStatementsInsideDocumentReady)
+                || isNotEmpty(this.jqStatementsOutsideDocumentReady);
+    }
 
-	/**
-	 * Returns unmodifiable collection of available javascript resource
-	 * references. <br>
-	 * This method will never return null.
-	 * 
-	 * @return
-	 */
-	public Collection<JavascriptResourceReference> getJsResourceReferences() {
-		return this.jsResourceReferences != null ? Collections
-				.unmodifiableSet(this.jsResourceReferences) : Collections
-				.<JavascriptResourceReference> emptySet();
-	}
+    /**
+     * Returns unmodifiable collection of available javascript resource references. <br> This method will never return
+     * null.
+     *
+     * @return
+     */
+    public Collection<JavaScriptResourceReference> getJsResourceReferences() {
+        return this.jsResourceReferences != null ? Collections
+                .unmodifiableSet(this.jsResourceReferences) : Collections
+                .<JavaScriptResourceReference>emptySet();
+    }
 
-	/**
-	 * Returns unmodifiable collection of available javascript resource urls. <br>
-	 * This method will never return null.
-	 * 
-	 * @return
-	 */
-	public Collection<CharSequence> getJsResourceUrls() {
-		return this.jsResourceUrls != null ? Collections
-				.unmodifiableSet(this.jsResourceUrls) : Collections
-				.<CharSequence> emptySet();
-	}
+    /**
+     * Returns unmodifiable collection of available javascript resource urls. <br> This method will never return null.
+     *
+     * @return
+     */
+    public Collection<CharSequence> getJsResourceUrls() {
+        return this.jsResourceUrls != null ? Collections
+                .unmodifiableSet(this.jsResourceUrls) : Collections
+                .<CharSequence>emptySet();
+    }
 
-	/**
-	 * Returns unmodifiable collection of available css resource references. <br>
-	 * This method will never return null.
-	 * 
-	 * @return
-	 */
-	public Collection<ResourceReference> getCssResourceReferences() {
-		return this.cssResourceReferences != null ? Collections
-				.unmodifiableSet(this.cssResourceReferences) : Collections
-				.<ResourceReference> emptySet();
-	}
+    /**
+     * Returns unmodifiable collection of available css resource references. <br> This method will never return null.
+     *
+     * @return
+     */
+    public Collection<ResourceReference> getCssResourceReferences() {
+        return this.cssResourceReferences != null ? Collections
+                .unmodifiableSet(this.cssResourceReferences) : Collections
+                .<ResourceReference>emptySet();
+    }
 
-	/**
-	 * Returns unmodifiable collection of available css resource urls. <br>
-	 * This method will never return null.
-	 * 
-	 * @return
-	 */
-	public Collection<CharSequence> getCssResourceUrls() {
-		return this.cssResourceUrls != null ? Collections
-				.unmodifiableSet(this.cssResourceUrls) : Collections
-				.<CharSequence> emptySet();
-	}
+    /**
+     * Returns unmodifiable collection of available css resource urls. <br> This method will never return null.
+     *
+     * @return
+     */
+    public Collection<CharSequence> getCssResourceUrls() {
+        return this.cssResourceUrls != null ? Collections
+                .unmodifiableSet(this.cssResourceUrls) : Collections
+                .<CharSequence>emptySet();
+    }
 
-	/**
-	 * Returns unmodifiable collection of available {@link JQStatement}-s that
-	 * will be rendered inside "document.ready" block. <br>
-	 * This method will never return null.
-	 * 
-	 * @return
-	 */
-	public Collection<IJQStatement> getJQStatementsInsideDocumentReady() {
-		return this.jqStatementsInsideDocumentReady != null ? Collections
-				.unmodifiableSet(this.jqStatementsInsideDocumentReady)
-				: Collections.<IJQStatement> emptySet();
-	}
+    /**
+     * Returns unmodifiable collection of available {@link IJQStatement}-s that will be rendered inside "document.ready"
+     * block. <br> This method will never return null.
+     *
+     * @return
+     */
+    public Collection<IJQStatement> getJQStatementsInsideDocumentReady() {
+        return this.jqStatementsInsideDocumentReady != null ? Collections
+                .unmodifiableSet(this.jqStatementsInsideDocumentReady)
+                : Collections.<IJQStatement>emptySet();
+    }
 
-	/**
-	 * Returns unmodifiable collection of available {@link JQStatement}-s that
-	 * will be rendered outside "document.ready" block. <br>
-	 * This method will never return null.
-	 * 
-	 * @return
-	 */
-	public Collection<IJQStatement> getJQStatementsOutsideDocumentReady() {
-		return this.jqStatementsOutsideDocumentReady != null ? Collections
-				.unmodifiableSet(this.jqStatementsOutsideDocumentReady)
-				: Collections.<IJQStatement> emptySet();
-	}
+    /**
+     * Returns unmodifiable collection of available {@link IJQStatement}-s that will be rendered outside "document.ready"
+     * block. <br> This method will never return null.
+     *
+     * @return
+     */
+    public Collection<IJQStatement> getJQStatementsOutsideDocumentReady() {
+        return this.jqStatementsOutsideDocumentReady != null ? Collections
+                .unmodifiableSet(this.jqStatementsOutsideDocumentReady)
+                : Collections.<IJQStatement>emptySet();
+    }
 
 }

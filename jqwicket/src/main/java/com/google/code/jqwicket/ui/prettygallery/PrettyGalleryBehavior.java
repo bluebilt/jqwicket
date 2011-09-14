@@ -16,14 +16,14 @@
  */
 package com.google.code.jqwicket.ui.prettygallery;
 
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
 public class PrettyGalleryBehavior extends
-		JQComponentBehaivor<PrettyGalleryOptions> implements IPrettyGallery {
+        JQComponentBehavior<PrettyGalleryOptions> implements IPrettyGallery {
 
 	private static final long serialVersionUID = 1L;
 

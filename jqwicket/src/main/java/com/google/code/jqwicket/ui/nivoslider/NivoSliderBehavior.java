@@ -16,13 +16,13 @@
  */
 package com.google.code.jqwicket.ui.nivoslider;
 
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
-public class NivoSliderBehavior extends JQComponentBehaivor<NivoSliderOptions>
+public class NivoSliderBehavior extends JQComponentBehavior<NivoSliderOptions>
 		implements INivoSlider {
 
 	private static final long serialVersionUID = 1L;

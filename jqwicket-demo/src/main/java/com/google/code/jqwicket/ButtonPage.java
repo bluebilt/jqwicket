@@ -3,7 +3,7 @@ package com.google.code.jqwicket;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.link.Link;
 
-import com.google.code.jqwicket.ui.button.ButtonBehaivor;
+import com.google.code.jqwicket.ui.button.ButtonBehavior;
 import com.google.code.jqwicket.ui.button.ButtonOptions;
 
 public class ButtonPage extends DemoPage {
@@ -11,10 +11,10 @@ public class ButtonPage extends DemoPage {
 	@SuppressWarnings("serial")
 	public ButtonPage() {
 
-		add(new Button("button1").add(new ButtonBehaivor()));
+		add(new Button("button1").add(new ButtonBehavior()));
 
 		Button b2 = new Button("button2");
-		b2.add(new ButtonBehaivor());
+		b2.add(new ButtonBehavior());
 		add(b2);
 
 		Link<Void> b3 = new Link<Void>("button3") {
@@ -23,7 +23,7 @@ public class ButtonPage extends DemoPage {
 				// do something here
 			}
 		};
-		b3.add(new ButtonBehaivor(new ButtonOptions().label("my label")
+		b3.add(new ButtonBehavior(new ButtonOptions().label("my label")
 				.disabled(true)));
 		add(b3);
 	}

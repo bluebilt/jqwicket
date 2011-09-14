@@ -16,13 +16,13 @@
  */
 package com.google.code.jqwicket.ui.resizable;
 
-import static com.google.code.jqwicket.api.JQuery.$f;
-import static com.google.code.jqwicket.api.JQuery.js;
-
 import com.google.code.jqwicket.api.AbstractJQOptions;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQStatement;
 import com.google.code.jqwicket.ui.XYPosition;
+
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 /**
  * @author mkalina

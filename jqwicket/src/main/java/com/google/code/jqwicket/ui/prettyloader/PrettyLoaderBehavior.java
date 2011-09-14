@@ -16,23 +16,20 @@
  */
 package com.google.code.jqwicket.ui.prettyloader;
 
-import static com.google.code.jqwicket.api.JQuery.$f;
-import static com.google.code.jqwicket.api.JQuery.$ns;
-import static com.google.code.jqwicket.api.JQuery.$;
-import static com.google.code.jqwicket.api.JQLiteral.*;
-
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.api.IJQFunction;
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+
+import static com.google.code.jqwicket.api.JQLiteral._raw;
+import static com.google.code.jqwicket.api.JQuery.*;
 
 /**
  * @author mkalina
  * 
  */
 public class PrettyLoaderBehavior extends
-		JQComponentBehaivor<PrettyLoaderOptions> implements IPrettyLoader {
+        JQComponentBehavior<PrettyLoaderOptions> implements IPrettyLoader {
 
 	private static final long serialVersionUID = 1L;
 
@@ -57,7 +54,7 @@ public class PrettyLoaderBehavior extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.ui.JQComponentBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {

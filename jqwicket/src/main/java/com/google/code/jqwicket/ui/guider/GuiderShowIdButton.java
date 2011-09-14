@@ -27,7 +27,7 @@ public class GuiderShowIdButton extends GuiderButton {
 	private static final long serialVersionUID = 1L;
 
 	public GuiderShowIdButton(CharSequence name, CharSequence id) {
-		this.name(name).onclick("guider.show('" + id + "')");
+		this.name(name).onclick(IGuider.JQ_COMPONENT_NAME + ".show('" + id + "')");
 	}
 
 }

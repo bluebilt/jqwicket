@@ -1,12 +1,12 @@
 package com.google.code.jqwicket.ui.kwicks;
 
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
-public class KwicksBehavior extends JQComponentBehaivor<KwicksOptions>
+public class KwicksBehavior extends JQComponentBehavior<KwicksOptions>
 		implements IKwicks {
 
 	private static final long serialVersionUID = 1L;

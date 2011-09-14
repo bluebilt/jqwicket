@@ -17,11 +17,10 @@
 package com.google.code.jqwicket.dnd;
 
 
-import org.apache.wicket.markup.html.panel.Panel;
-import org.apache.wicket.model.IModel;
-
 import com.google.code.jqwicket.ui.draggable.DraggableBehavior;
 import com.google.code.jqwicket.ui.draggable.DraggableOptions;
+import org.apache.wicket.markup.html.panel.Panel;
+import org.apache.wicket.model.IModel;
 
 /**
  * Base abstract panel for draggable components.

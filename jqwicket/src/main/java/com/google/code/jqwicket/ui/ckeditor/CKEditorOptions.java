@@ -16,11 +16,10 @@
  */
 package com.google.code.jqwicket.ui.ckeditor;
 
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 import com.google.code.jqwicket.api.AbstractJQOptions;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.JQLiteral;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 /**
  * @author mkalina
@@ -30,10 +29,10 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 
 	private static final long serialVersionUID = 1L;
 
-	private static final JavascriptResourceReference jsCKEditorResource = new JavascriptResourceReference(
+	private static final JavaScriptResourceReference jsCKEditorResource = new JavaScriptResourceReference(
 			CKEditorOptions.class, "ckeditor-3.5.js");
 
-	private static final JavascriptResourceReference jsCKEditorAdapterResource = new JavascriptResourceReference(
+	private static final JavaScriptResourceReference jsCKEditorAdapterResource = new JavaScriptResourceReference(
 			CKEditorOptions.class, "ckeditor-jqueryadapter-3.5.js");
 
 	public enum EnterMode {

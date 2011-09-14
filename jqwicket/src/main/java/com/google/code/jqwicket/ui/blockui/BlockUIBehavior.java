@@ -16,22 +16,21 @@
  */
 package com.google.code.jqwicket.ui.blockui;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-import static com.google.code.jqwicket.api.JQuery.$f;
-
-import org.apache.wicket.Component;
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.S;
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
+import org.apache.wicket.Component;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+
+import static com.google.code.jqwicket.api.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$f;
 
 /**
  * @author mkalina
  * 
  */
-public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
+public class BlockUIBehavior extends JQComponentBehavior<BlockUIOptions>
 		implements IBlockUI {
 
 	private static final long serialVersionUID = 1L;
@@ -56,7 +55,7 @@ public class BlockUIBehavior extends JQComponentBehaivor<BlockUIOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.ui.JQComponentBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {

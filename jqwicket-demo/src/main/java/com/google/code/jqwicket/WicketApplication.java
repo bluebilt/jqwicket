@@ -1,9 +1,7 @@
 package com.google.code.jqwicket;
 
 import com.google.code.jqwicket.dnd.DND2Page;
-import org.apache.wicket.protocol.http.HttpSessionStore;
 import org.apache.wicket.protocol.http.WebApplication;
-import org.apache.wicket.session.ISessionStore;
 
 /**
  *
@@ -13,56 +11,56 @@ public class WicketApplication extends WebApplication {
     @Override
     protected void init() {
 
-        addPreComponentOnBeforeRenderListener(new JQComponentOnBeforeRenderListener(
+        super.getComponentPreOnBeforeRenderListeners().add(new JQComponentOnBeforeRenderListener(
                 new JQContributionConfig().withDefaultJQueryUi()));
 
         getResourceSettings().setResourcePollFrequency(null);
         getMarkupSettings().setStripWicketTags(true);
 
-        mountBookmarkablePage("genericjqbehavior", GenericJQBehaviorPage.class);
-        mountBookmarkablePage("resizable", ResizablePage.class);
-        mountBookmarkablePage("selectable", SelectablePage.class);
-        mountBookmarkablePage("sortable", SortablePage.class);
-        mountBookmarkablePage("accordion", AccordionPage.class);
-        mountBookmarkablePage("dynamicaccordion", DynamicAccordionPage.class);
-        mountBookmarkablePage("button", ButtonPage.class);
-        mountBookmarkablePage("datepicker", DatePickerPage.class);
-        mountBookmarkablePage("datetimepicker", DateTimePickerPage.class);
-        mountBookmarkablePage("dialog", DialogPage.class);
-        mountBookmarkablePage("progressbar", ProgressbarPage.class);
-        mountBookmarkablePage("slider", SliderPage.class);
-        mountBookmarkablePage("notifier", NotifierPage.class);
-        mountBookmarkablePage("uniform", UniformPage.class);
-        mountBookmarkablePage("uploadify", UploadifyPage.class);
-        mountBookmarkablePage("nivoslider", NivoSliderPage.class);
-        mountBookmarkablePage("maskedinput", MaskedInputPage.class);
-        mountBookmarkablePage("colorpicker", ColorPickerPage.class);
-        mountBookmarkablePage("jcarousel", JCarouselPage.class);
-        mountBookmarkablePage("tabs", TabsPage.class);
-        mountBookmarkablePage("sparkline", SparklinePage.class);
-        mountBookmarkablePage("tiptip", TipTipPage.class);
-        mountBookmarkablePage("cjimageflipbox", CJImageFlipboxPage.class);
-        mountBookmarkablePage("liscroll", LiScrollPage.class);
-        mountBookmarkablePage("fancybox", FancyBoxPage.class);
-        mountBookmarkablePage("cloudzoom", CloudZoomPage.class);
-        mountBookmarkablePage("gmap", GMapPage.class);
-        mountBookmarkablePage("fliptext", FlipTextPage.class);
-        mountBookmarkablePage("extruder", ExtruderPage.class);
-        mountBookmarkablePage("kwicks", KwicksPage.class);
-        mountBookmarkablePage("markitup", MarkItUpPage.class);
-        mountBookmarkablePage("lwrte", LWRTEPage.class);
-        mountBookmarkablePage("ckeditor", CKEditorPage.class);
-        mountBookmarkablePage("prettyloader", PrettyLoaderPage.class);
-        mountBookmarkablePage("prettycomments", PrettyCommentsPage.class);
-        mountBookmarkablePage("prettypopin", PrettyPopinPage.class);
-        mountBookmarkablePage("prettygallery", PrettyGalleryPage.class);
-        mountBookmarkablePage("validationengine", ValidationEnginePage.class);
-        mountBookmarkablePage("blockui", BlockUIPage.class);
-        mountBookmarkablePage("mobilymap", MobilyMapPage.class);
-        mountBookmarkablePage("guider", GuiderPage.class);
+        mountPage("genericjqbehavior", GenericJQBehaviorPage.class);
+        mountPage("resizable", ResizablePage.class);
+        mountPage("selectable", SelectablePage.class);
+        mountPage("sortable", SortablePage.class);
+        mountPage("accordion", AccordionPage.class);
+        mountPage("dynamicaccordion", DynamicAccordionPage.class);
+        mountPage("button", ButtonPage.class);
+        mountPage("datepicker", DatePickerPage.class);
+        mountPage("datetimepicker", DateTimePickerPage.class);
+        mountPage("dialog", DialogPage.class);
+        mountPage("progressbar", ProgressbarPage.class);
+        mountPage("slider", SliderPage.class);
+        mountPage("notifier", NotifierPage.class);
+        mountPage("uniform", UniformPage.class);
+        mountPage("uploadify", UploadifyPage.class);
+        mountPage("nivoslider", NivoSliderPage.class);
+        mountPage("maskedinput", MaskedInputPage.class);
+        mountPage("colorpicker", ColorPickerPage.class);
+        mountPage("jcarousel", JCarouselPage.class);
+        mountPage("tabs", TabsPage.class);
+        mountPage("sparkline", SparklinePage.class);
+        mountPage("tiptip", TipTipPage.class);
+        mountPage("cjimageflipbox", CJImageFlipboxPage.class);
+        mountPage("liscroll", LiScrollPage.class);
+        mountPage("fancybox", FancyBoxPage.class);
+        mountPage("cloudzoom", CloudZoomPage.class);
+        mountPage("gmap", GMapPage.class);
+        mountPage("fliptext", FlipTextPage.class);
+        mountPage("extruder", ExtruderPage.class);
+        mountPage("kwicks", KwicksPage.class);
+        mountPage("markitup", MarkItUpPage.class);
+        mountPage("lwrte", LWRTEPage.class);
+        mountPage("ckeditor", CKEditorPage.class);
+        mountPage("prettyloader", PrettyLoaderPage.class);
+        mountPage("prettycomments", PrettyCommentsPage.class);
+        mountPage("prettypopin", PrettyPopinPage.class);
+        mountPage("prettygallery", PrettyGalleryPage.class);
+        mountPage("validationengine", ValidationEnginePage.class);
+        mountPage("blockui", BlockUIPage.class);
+        mountPage("mobilymap", MobilyMapPage.class);
+        mountPage("guider", GuiderPage.class);
 
-        mountBookmarkablePage("dnd", DNDPage.class);
-        mountBookmarkablePage("dnd2", DND2Page.class);
+        mountPage("dnd", DNDPage.class);
+        mountPage("dnd2", DND2Page.class);
     }
 
     /**
@@ -70,16 +68,6 @@ public class WicketApplication extends WebApplication {
      */
     public Class<GenericJQBehaviorPage> getHomePage() {
         return GenericJQBehaviorPage.class;
-    }
-
-    /**
-     * {@inheritDoc}
-     *
-     * @see org.apache.wicket.protocol.http.WebApplication#newSessionStore()
-     */
-    @Override
-    protected ISessionStore newSessionStore() {
-        return new HttpSessionStore(this);
     }
 
 }

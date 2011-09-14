@@ -16,9 +16,9 @@
  */
 package com.google.code.jqwicket.api;
 
-import java.io.Serializable;
-
 import org.apache.wicket.Component;
+
+import java.io.Serializable;
 
 /**
  * 

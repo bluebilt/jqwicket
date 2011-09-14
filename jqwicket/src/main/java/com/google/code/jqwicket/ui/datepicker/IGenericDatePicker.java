@@ -17,11 +17,10 @@
 package com.google.code.jqwicket.ui.datepicker;
 
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.IJQUIWidget;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.XYPosition;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina

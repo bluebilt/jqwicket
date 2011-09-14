@@ -16,9 +16,8 @@
  */
 package com.google.code.jqwicket.ui.guider;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.api.IJQFunction;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * Implementation of the <a href="https://github.com/jeff-optimizely/Guiders-JS/">Guiders JQuery plugin</a>
@@ -26,6 +25,8 @@ import com.google.code.jqwicket.api.IJQFunction;
  * 
  */
 public interface IGuider {
+
+    static final CharSequence JQ_COMPONENT_NAME = "guiders";
 
 	/**
 	 * show a guider with specific id

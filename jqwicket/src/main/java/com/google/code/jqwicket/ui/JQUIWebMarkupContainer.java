@@ -16,12 +16,11 @@
  */
 package com.google.code.jqwicket.ui;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.model.IModel;
-
 import com.google.code.jqwicket.IJQUIWidget;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQOptions;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.model.IModel;
 
 /**
  * Abstract wicket web markup container for pure jquery ui components.
@@ -31,7 +30,7 @@ import com.google.code.jqwicket.api.IJQOptions;
  * @param <B>
  * @param <O>
  */
-public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehaivor<O>, O extends IJQOptions<O>>
+public abstract class JQUIWebMarkupContainer<B extends JQUIComponentBehavior<O>, O extends IJQOptions<O>>
 		extends JQWebMarkupContainer<B, O> implements IJQUIWidget<O> {
 
 	private static final long serialVersionUID = 1L;

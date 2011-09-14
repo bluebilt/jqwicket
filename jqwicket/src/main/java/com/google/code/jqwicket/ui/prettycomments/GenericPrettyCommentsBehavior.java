@@ -16,14 +16,14 @@
  */
 package com.google.code.jqwicket.ui.prettycomments;
 
-import com.google.code.jqwicket.ui.GenericJQComponentBehaivor;
+import com.google.code.jqwicket.ui.GenericJQComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
 public class GenericPrettyCommentsBehavior extends
-		GenericJQComponentBehaivor<PrettyCommentsOptions> implements
+        GenericJQComponentBehavior<PrettyCommentsOptions> implements
 		IPrettyComments {
 
 	private static final long serialVersionUID = 1L;

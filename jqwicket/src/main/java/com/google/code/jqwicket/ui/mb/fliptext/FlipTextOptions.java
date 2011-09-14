@@ -17,38 +17,36 @@
 package com.google.code.jqwicket.ui.mb.fliptext;
 
 
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 import com.google.code.jqwicket.api.AbstractJQOptions;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 /**
  * @author mkalina
- * 
  */
 public class FlipTextOptions extends AbstractJQOptions<FlipTextOptions> {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			FlipTextOptions.class, "jquery.mb.flipText.js");
+    public static final JavaScriptResourceReference JS_RESOURCE = new JavaScriptResourceReference(
+            FlipTextOptions.class, "jquery.mb.flipText.js");
 
-	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
-			FlipTextOptions.class, "jquery.mb.flipText.min.js");
+    public static final JavaScriptResourceReference JS_RESOURCE_MIN = new JavaScriptResourceReference(
+            FlipTextOptions.class, "jquery.mb.flipText.min.js");
 
-	private boolean topToBottom;
+    private boolean topToBottom;
 
-	public FlipTextOptions() {
-		this(true);
-	}
+    public FlipTextOptions() {
+        this(true);
+    }
 
-	public FlipTextOptions(boolean topToBottom) {
-		this.setJsResourceReferences(JS_RESOURCE);
-		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
-		this.topToBottom = topToBottom;
-	}
+    public FlipTextOptions(boolean topToBottom) {
+        this.setJsResourceReferences(JS_RESOURCE);
+        this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
+        this.topToBottom = topToBottom;
+    }
 
-	public boolean isTopToBottom() {
-		return topToBottom;
-	}
+    public boolean isTopToBottom() {
+        return topToBottom;
+    }
 
 }

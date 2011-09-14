@@ -16,9 +16,7 @@
  */
 package com.google.code.jqwicket.ui.cloudzoom;
 
-import java.util.Arrays;
-import java.util.Collections;
-
+import com.google.code.jqwicket.Utils;
 import org.apache.wicket.markup.ComponentTag;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.image.Image;
@@ -26,7 +24,8 @@ import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.panel.Panel;
 
-import com.google.code.jqwicket.Utils;
+import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * @author mkalina

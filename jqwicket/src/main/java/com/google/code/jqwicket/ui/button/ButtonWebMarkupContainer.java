@@ -17,18 +17,17 @@
 package com.google.code.jqwicket.ui.button;
 
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.model.IModel;
-
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.ui.JQUIWebMarkupContainer;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.model.IModel;
 
 /**
  * @author mkalina
  *
  */
 public class ButtonWebMarkupContainer extends
-		JQUIWebMarkupContainer<ButtonBehaivor, ButtonOptions> implements IButton {
+		JQUIWebMarkupContainer<ButtonBehavior, ButtonOptions> implements IButton {
 
 	private static final long serialVersionUID = 1L;
 
@@ -55,8 +54,8 @@ public class ButtonWebMarkupContainer extends
 	 * @see com.google.code.jqwicket.ui.JQUIWebMarkupContainer#newJQComponentBehavior(com.google.code.jqwicket.ui.JQOptions)
 	 */
 	@Override
-	protected ButtonBehaivor newJQComponentBehavior(ButtonOptions options) {
-		return new ButtonBehaivor(options);
+	protected ButtonBehavior newJQComponentBehavior(ButtonOptions options) {
+		return new ButtonBehavior(options);
 	}
 
 	/**

@@ -16,12 +16,11 @@
  */
 package com.google.code.jqwicket;
 
-import java.io.Serializable;
-
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQOptions;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+
+import java.io.Serializable;
 
 /**
  * Central interface for JQuery UI widgets.

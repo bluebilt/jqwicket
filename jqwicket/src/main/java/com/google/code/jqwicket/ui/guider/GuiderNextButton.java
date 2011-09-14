@@ -27,7 +27,7 @@ public class GuiderNextButton extends GuiderButton {
 	private static final long serialVersionUID = 1L;
 
 	public GuiderNextButton(CharSequence name) {
-		this.name(name).onclick("guider.next");
+		this.name(name).onclick(IGuider.JQ_COMPONENT_NAME + ".next");
 	}
 
 }

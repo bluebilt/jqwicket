@@ -16,22 +16,21 @@
  */
 package com.google.code.jqwicket.ui.colorpicker;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-import static com.google.code.jqwicket.api.JQuery.$f;
-
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
+import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.JQOptions;
-import com.google.code.jqwicket.Utils;
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+
+import static com.google.code.jqwicket.api.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$f;
 
 /**
  * @author mkalina
  * 
  */
 public class ColorPickerBehavior extends
-		JQComponentBehaivor<ColorPickerOptions> implements IColorPicker {
+        JQComponentBehavior<ColorPickerOptions> implements IColorPicker {
 
 	private static final long serialVersionUID = 1L;
 

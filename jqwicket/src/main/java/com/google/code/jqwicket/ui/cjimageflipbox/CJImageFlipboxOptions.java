@@ -17,33 +17,31 @@
 package com.google.code.jqwicket.ui.cjimageflipbox;
 
 
-import org.apache.wicket.ResourceReference;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 import com.google.code.jqwicket.api.AbstractJQOptions;
+import org.apache.wicket.request.resource.CssResourceReference;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 /**
  * @author mkalina
- * 
  */
 public class CJImageFlipboxOptions extends
-		AbstractJQOptions<CJImageFlipboxOptions> {
+        AbstractJQOptions<CJImageFlipboxOptions> {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			CJImageFlipboxOptions.class, "jquery.cj-image-flipbox.js");
+    public static final JavaScriptResourceReference JS_RESOURCE = new JavaScriptResourceReference(
+            CJImageFlipboxOptions.class, "jquery.cj-image-flipbox.js");
 
-	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
-			CJImageFlipboxOptions.class, "jquery.cj-image-flipbox.min.js");
+    public static final JavaScriptResourceReference JS_RESOURCE_MIN = new JavaScriptResourceReference(
+            CJImageFlipboxOptions.class, "jquery.cj-image-flipbox.min.js");
 
-	public static final ResourceReference CSS_RESOURCE = new ResourceReference(
-			CJImageFlipboxOptions.class, "jquery.cj-image-flipbox.css");
+    public static final CssResourceReference CSS_RESOURCE = new CssResourceReference(
+            CJImageFlipboxOptions.class, "jquery.cj-image-flipbox.css");
 
-	public CJImageFlipboxOptions() {
-		this.setJsResourceReferences(JS_RESOURCE);
-		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
-		this.setCssResourceReferences(CSS_RESOURCE);
-	}
+    public CJImageFlipboxOptions() {
+        this.setJsResourceReferences(JS_RESOURCE);
+        this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
+        this.setCssResourceReferences(CSS_RESOURCE);
+    }
 
 }

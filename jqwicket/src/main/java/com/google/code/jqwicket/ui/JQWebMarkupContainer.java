@@ -16,12 +16,11 @@
  */
 package com.google.code.jqwicket.ui;
 
-import org.apache.wicket.markup.html.WebMarkupContainer;
-import org.apache.wicket.model.IModel;
-
 import com.google.code.jqwicket.IJQWidget;
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.api.IJQOptions;
+import org.apache.wicket.markup.html.WebMarkupContainer;
+import org.apache.wicket.model.IModel;
 
 /**
  * Abstract wicket web markup container for pure jquery components.
@@ -30,12 +29,12 @@ import com.google.code.jqwicket.api.IJQOptions;
  * 
  * @param <B>
  *            is the type of the component's concrete
- *            {@link JQComponentBehaivor}.
+ *            {@link JQComponentBehavior}.
  * @param <O>
  *            is the type of the component's concrete {@link IJQOptions}
  *            implementation.
  */
-public abstract class JQWebMarkupContainer<B extends JQComponentBehaivor<O>, O extends IJQOptions<O>>
+public abstract class JQWebMarkupContainer<B extends JQComponentBehavior<O>, O extends IJQOptions<O>>
 		extends WebMarkupContainer implements IJQWidget<O> {
 
 	private static final long serialVersionUID = 1L;

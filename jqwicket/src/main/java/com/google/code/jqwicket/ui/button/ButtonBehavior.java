@@ -14,48 +14,55 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.code.jqwicket.ui;
+package com.google.code.jqwicket.ui.button;
 
-import static com.google.code.jqwicket.api.JQuery.$;
 
-import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.api.IJQOptions;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.ui.JQUIComponentBehavior;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
- * Generic, selector based abstract component behavior for JQuery components.
- * 
  * @author mkalina
- * 
- * @param <T>
+ *
  */
-public abstract class GenericJQComponentBehaivor<T extends IJQOptions<T>>
-		extends JQComponentBehaivor<T> {
+public class ButtonBehavior extends JQUIComponentBehavior<ButtonOptions>
+		implements IButton {
 
 	private static final long serialVersionUID = 1L;
 
-	private CharSequence selector;
+	public ButtonBehavior() {
+		this(new ButtonOptions());
+	}
 
-	public GenericJQComponentBehaivor(CharSequence selector, T options) {
+	public ButtonBehavior(ButtonOptions options) {
 		super(options);
-		this.selector = selector;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.IJQUIWidget#getName()
 	 */
-	@Override
-	protected void contributeInternal(JQHeaderContributionTarget target) {
-		target.addJQStatements($(this.selector).chain(this.getName(),
-				this.options));
+	public CharSequence getName() {
+		return JQ_COMPONENT_NAME;
 	}
 
 	/**
-	 * @return the selector
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.ui.button.IButton#refresh()
 	 */
-	public CharSequence getSelector() {
-		return selector;
+	public IJQFunction refresh() {
+		return chain("refresh");
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see com.google.code.jqwicket.ui.button.IButton#refresh(org.apache.wicket.ajax.AjaxRequestTarget)
+	 */
+	public void refresh(AjaxRequestTarget ajaxRequestTarget) {
+		chain(ajaxRequestTarget, this.refresh());
 	}
 
 }

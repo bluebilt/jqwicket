@@ -1,12 +1,12 @@
 package com.google.code.jqwicket.ui.liscroll;
 
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 
 /**
  * 
  * @author cschaedel
  */
-public class LiScrollBehavior extends JQComponentBehaivor<LiScrollOptions>
+public class LiScrollBehavior extends JQComponentBehavior<LiScrollOptions>
 		implements ILiScroll {
 
 	private static final long serialVersionUID = 1L;

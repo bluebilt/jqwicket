@@ -16,18 +16,18 @@
  */
 package com.google.code.jqwicket.ui.sparkline;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.api.JQLiteral;
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
+
+import static com.google.code.jqwicket.api.JQuery.$;
 
 /**
  * @author mkalina
  * 
  */
-public class SparklineBehavior extends JQComponentBehaivor<SparklineOptions>
+public class SparklineBehavior extends JQComponentBehavior<SparklineOptions>
 		implements ISparkline {
 
 	private static final long serialVersionUID = 1L;
@@ -52,7 +52,7 @@ public class SparklineBehavior extends JQComponentBehaivor<SparklineOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.ui.JQComponentBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {

@@ -19,14 +19,16 @@ package com.google.code.jqwicket;
 import com.google.code.jqwicket.api.IJQStatement;
 import com.google.code.jqwicket.api.JQuery;
 import org.apache.wicket.Application;
+import org.apache.wicket.Component;
 import org.apache.wicket.MetaDataKey;
-import org.apache.wicket.RequestCycle;
-import org.apache.wicket.ResourceReference;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.javascript.IJavascriptCompressor;
+import org.apache.wicket.behavior.Behavior;
+import org.apache.wicket.javascript.IJavaScriptCompressor;
 import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.markup.html.IHeaderResponse;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
+import org.apache.wicket.request.cycle.RequestCycle;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.apache.wicket.request.resource.ResourceReference;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
@@ -36,13 +38,12 @@ import java.util.UUID;
 import static com.google.code.jqwicket.Utils.isEmpty;
 
 /**
- * Wicket's {@link IHeaderContributor} implementation able to render all
- * necessary jquery/css resources gathered from the component hierarchy to the
- * html-page head section.
+ * Wicket's {@link IHeaderContributor} implementation able to render all necessary jquery/css resources gathered from
+ * the component hierarchy to the html-page head section.
  *
  * @author mkalina
  */
-public class JQContributionRenderer implements IHeaderContributor {
+public class JQContributionRenderer extends Behavior {
 
     private static final long serialVersionUID = 1L;
 
@@ -65,8 +66,19 @@ public class JQContributionRenderer implements IHeaderContributor {
     JQContributionRenderer() {
     }
 
-    public JQContributionRenderer addContributor(
-            IJQHeaderContributor contributor) {
+
+    public JQContributionRenderer addContributors(Collection<? extends IJQHeaderContributor> contributors) {
+
+        if (this.contributors == null)
+            this.contributors = new LinkedHashSet<IJQHeaderContributor>();
+
+        if (Utils.isNotEmpty(contributors))
+            this.contributors.addAll(contributors);
+
+        return this;
+    }
+
+    public JQContributionRenderer addContributor(IJQHeaderContributor contributor) {
 
         if (this.contributors == null)
             this.contributors = new LinkedHashSet<IJQHeaderContributor>();
@@ -77,10 +89,9 @@ public class JQContributionRenderer implements IHeaderContributor {
 
     /**
      * {@inheritDoc}
-     *
-     * @see org.apache.wicket.markup.html.IHeaderContributor#renderHead(org.apache.wicket.markup.html.IHeaderResponse)
      */
-    public void renderHead(IHeaderResponse response) {
+    @Override
+    public void renderHead(Component component, IHeaderResponse response) {
 
         if (AjaxRequestTarget.get() != null || isEmpty(this.contributors))
             return;
@@ -131,22 +142,21 @@ public class JQContributionRenderer implements IHeaderContributor {
 
     private void renderJsResourcesUrl(IHeaderResponse response, CharSequence url) {
         if (Utils.isNotBlank(url))
-            response.renderJavascriptReference(RequestCycle.get()
-                    .getProcessor().getRequestCodingStrategy()
-                    .rewriteStaticRelativeUrl(String.valueOf(url)));
+            response.renderJavaScriptReference(RequestCycle.get()
+                    .getUrlRenderer().renderContextRelativeUrl(String.valueOf(url)));
     }
 
     private void renderJsResourcesRefs(IHeaderResponse response,
-                                       Collection<JavascriptResourceReference> resources) {
-        for (JavascriptResourceReference ref : resources) {
+                                       Collection<JavaScriptResourceReference> resources) {
+        for (JavaScriptResourceReference ref : resources) {
             renderJsResourcesRef(response, ref);
         }
     }
 
     private void renderJsResourcesRef(IHeaderResponse response,
-                                      JavascriptResourceReference ref) {
+                                      JavaScriptResourceReference ref) {
         if (ref != null)
-            response.renderJavascriptReference(ref);
+            response.renderJavaScriptReference(ref);
     }
 
     private void renderCssResourcesUrls(IHeaderResponse response,
@@ -159,9 +169,8 @@ public class JQContributionRenderer implements IHeaderContributor {
     private void renderCssResourcesUrl(IHeaderResponse response,
                                        CharSequence url) {
         if (Utils.isNotBlank(url))
-            response.renderCSSReference(RequestCycle.get().getProcessor()
-                    .getRequestCodingStrategy()
-                    .rewriteStaticRelativeUrl(String.valueOf(url)));
+            response.renderCSSReference(RequestCycle.get()
+                    .getUrlRenderer().renderContextRelativeUrl(String.valueOf(url)));
     }
 
     private void renderCssResourcesRefs(IHeaderResponse response,
@@ -187,7 +196,7 @@ public class JQContributionRenderer implements IHeaderContributor {
         for (IJQStatement s : statements) {
             buf.append(s);
         }
-        response.renderJavascript(compressJavaScript(buf), UUID.randomUUID()
+        response.renderJavaScript(compressJavaScript(buf), UUID.randomUUID()
                 .toString());
     }
 
@@ -208,18 +217,18 @@ public class JQContributionRenderer implements IHeaderContributor {
         script.append(compressJavaScript(JQuery.documentReady(statements)));
 
         if (Utils.isNotBlank(script))
-            response.renderJavascript(script, UUID.randomUUID().toString());
+            response.renderJavaScript(script, UUID.randomUUID().toString());
     }
 
     private CharSequence compressJavaScript(CharSequence script) {
 
-        final IJavascriptCompressor compressor;
+        final IJavaScriptCompressor compressor;
 
         if (JQContributionConfig.get().isUseYuiJavascriptCompressor())
             compressor = YuiJavascriptCompressor.get();
         else
             compressor = Application.get()
-                    .getResourceSettings().getJavascriptCompressor();
+                    .getResourceSettings().getJavaScriptCompressor();
 
         return (compressor != null && Utils.isNotBlank(script)) ? compressor
                 .compress(String.valueOf(script)) : script;

@@ -16,19 +16,18 @@
  */
 package com.google.code.jqwicket.ui.mb.fliptext;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-
+import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 import org.apache.wicket.Page;
 
-import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 
 /**
  * @author mkalina
  * 
  */
-public class FlipTextBehavior extends JQComponentBehaivor<FlipTextOptions>
+public class FlipTextBehavior extends JQComponentBehavior<FlipTextOptions>
 		implements IFlipText {
 
 	private static final long serialVersionUID = 1L;
@@ -53,7 +52,7 @@ public class FlipTextBehavior extends JQComponentBehaivor<FlipTextOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.ui.JQComponentBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {

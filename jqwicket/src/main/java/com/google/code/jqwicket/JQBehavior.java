@@ -16,153 +16,145 @@
  */
 package com.google.code.jqwicket;
 
+import com.google.code.jqwicket.api.IJQStatement;
+import com.google.code.jqwicket.api.JQuery;
+import org.apache.wicket.Component;
+import org.apache.wicket.behavior.Behavior;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.apache.wicket.request.resource.ResourceReference;
+
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import org.apache.wicket.Component;
-import org.apache.wicket.ResourceReference;
-import org.apache.wicket.behavior.AbstractBehavior;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
-import com.google.code.jqwicket.api.IJQStatement;
-import com.google.code.jqwicket.api.JQuery;
-
 /**
- * Base, low-level jquery wicket behavior able to render javascript statements
- * and javascript/css resources.
- * 
+ * Base, low-level jquery wicket behavior able to render javascript statements and javascript/css resources.
+ *
  * @author mkalina
  */
-public class JQBehavior extends AbstractBehavior implements
-		IJQHeaderContributor {
+public class JQBehavior extends Behavior implements IJQHeaderContributor {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private Set<IJQStatement> statements;
+    private Set<IJQStatement> statements;
 
-	private Set<JavascriptResourceReference> jsResourceReferences;
+    private Set<JavaScriptResourceReference> jsResourceReferences;
 
-	private Set<ResourceReference> cssResourceReferences;
+    private Set<ResourceReference> cssResourceReferences;
 
-	private Set<CharSequence> jsResourceUrls;
+    private Set<CharSequence> jsResourceUrls;
 
-	private Set<CharSequence> cssResourceUrls;
+    private Set<CharSequence> cssResourceUrls;
 
-	protected Component component;
+    protected Component component;
 
-	public JQBehavior() {
-	}
+    public JQBehavior() {
+    }
 
-	public JQBehavior(IJQStatement... statements) {
-		this.addJQStatements(statements);
-	}
+    public JQBehavior(IJQStatement... statements) {
+        this.addJQStatements(statements);
+    }
 
-	public JQBehavior(CharSequence... statements) {
-		this.addJQStatements(statements);
-	}
+    public JQBehavior(CharSequence... statements) {
+        this.addJQStatements(statements);
+    }
 
-	public JQBehavior addJQStatements(IJQStatement... statements) {
-		if (Utils.isEmpty(statements))
-			return this;
+    public JQBehavior addJQStatements(IJQStatement... statements) {
+        if (Utils.isEmpty(statements))
+            return this;
 
-		if (this.statements == null)
-			this.statements = new LinkedHashSet<IJQStatement>();
+        if (this.statements == null)
+            this.statements = new LinkedHashSet<IJQStatement>();
 
-		this.statements.addAll(Arrays.asList(statements));
-		return this;
-	}
+        this.statements.addAll(Arrays.asList(statements));
+        return this;
+    }
 
-	public JQBehavior addJQStatements(CharSequence... statements) {
-		if (Utils.isEmpty(statements))
-			return this;
+    public JQBehavior addJQStatements(CharSequence... statements) {
+        if (Utils.isEmpty(statements))
+            return this;
 
-		if (this.statements == null)
-			this.statements = new LinkedHashSet<IJQStatement>();
+        if (this.statements == null)
+            this.statements = new LinkedHashSet<IJQStatement>();
 
-		for (CharSequence stmt : statements) {
-			this.statements.add(JQuery.js(stmt));
-		}
-		return this;
-	}
+        for (CharSequence stmt : statements) {
+            this.statements.add(JQuery.js(stmt));
+        }
+        return this;
+    }
 
-	public JQBehavior addJsResourceReferences(
-			JavascriptResourceReference... refs) {
-		if (Utils.isEmpty(refs))
-			return this;
+    public JQBehavior addJsResourceReferences(
+            JavaScriptResourceReference... refs) {
+        if (Utils.isEmpty(refs))
+            return this;
 
-		if (this.jsResourceReferences == null)
-			this.jsResourceReferences = new LinkedHashSet<JavascriptResourceReference>();
+        if (this.jsResourceReferences == null)
+            this.jsResourceReferences = new LinkedHashSet<JavaScriptResourceReference>();
 
-		this.jsResourceReferences.addAll(Arrays.asList(refs));
-		return this;
-	}
+        this.jsResourceReferences.addAll(Arrays.asList(refs));
+        return this;
+    }
 
-	public JQBehavior addJsResourceUrls(CharSequence... urls) {
-		if (Utils.isEmpty(urls))
-			return this;
+    public JQBehavior addJsResourceUrls(CharSequence... urls) {
+        if (Utils.isEmpty(urls))
+            return this;
 
-		if (this.jsResourceUrls == null)
-			this.jsResourceUrls = new LinkedHashSet<CharSequence>();
+        if (this.jsResourceUrls == null)
+            this.jsResourceUrls = new LinkedHashSet<CharSequence>();
 
-		this.jsResourceUrls.addAll(Arrays.asList(urls));
-		return this;
-	}
+        this.jsResourceUrls.addAll(Arrays.asList(urls));
+        return this;
+    }
 
-	public JQBehavior addCssResourceReferences(ResourceReference... refs) {
-		if (Utils.isEmpty(refs))
-			return this;
+    public JQBehavior addCssResourceReferences(ResourceReference... refs) {
+        if (Utils.isEmpty(refs))
+            return this;
 
-		if (this.cssResourceReferences == null)
-			this.cssResourceReferences = new LinkedHashSet<ResourceReference>();
+        if (this.cssResourceReferences == null)
+            this.cssResourceReferences = new LinkedHashSet<ResourceReference>();
 
-		this.cssResourceReferences.addAll(Arrays.asList(refs));
-		return this;
-	}
+        this.cssResourceReferences.addAll(Arrays.asList(refs));
+        return this;
+    }
 
-	public JQBehavior addCssResourceUrls(CharSequence... urls) {
-		if (Utils.isEmpty(urls))
-			return this;
+    public JQBehavior addCssResourceUrls(CharSequence... urls) {
+        if (Utils.isEmpty(urls))
+            return this;
 
-		if (this.cssResourceUrls == null)
-			this.cssResourceUrls = new LinkedHashSet<CharSequence>();
+        if (this.cssResourceUrls == null)
+            this.cssResourceUrls = new LinkedHashSet<CharSequence>();
 
-		this.cssResourceUrls.addAll(Arrays.asList(urls));
-		return this;
-	}
+        this.cssResourceUrls.addAll(Arrays.asList(urls));
+        return this;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.apache.wicket.behavior.AbstractBehavior#bind(org.apache.wicket.Component)
-	 */
-	@Override
-	public void bind(Component component) {
-		this.component = component;
-		this.component.setOutputMarkupId(true);
-		super.bind(component);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void bind(Component component) {
+        this.component = component;
+        this.component.setOutputMarkupId(true);
+        super.bind(component);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.IJQHeaderContributor#contribute(com.google.code.jqwicket.JQHeaderContributionTarget)
-	 */
-	public final void contribute(JQHeaderContributionTarget target) {
-		target.addJavascriptResourceReferences(this.jsResourceReferences);
-		target.addJavascriptResourceUrls(this.jsResourceUrls);
-		target.addCssResourceReferences(this.cssResourceReferences);
-		target.addCssResourceUrls(this.cssResourceUrls);
-		target.addJQStatements(this.statements);
-		this.contributeInternal(target);
-	}
+    /**
+     * {@inheritDoc}
+     */
+    public final void contribute(JQHeaderContributionTarget target) {
+        target.addJavascriptResourceReferences(this.jsResourceReferences);
+        target.addJavascriptResourceUrls(this.jsResourceUrls);
+        target.addCssResourceReferences(this.cssResourceReferences);
+        target.addCssResourceUrls(this.cssResourceUrls);
+        target.addJQStatements(this.statements);
+        this.contributeInternal(target);
+    }
 
-	/**
-	 * Subclasses should override this method to add custom contributions to the
-	 * target.
-	 * 
-	 * @param target
-	 */
-	protected void contributeInternal(JQHeaderContributionTarget target) {
-	}
+    /**
+     * Subclasses should override this method to add custom contributions to the target.
+     *
+     * @param target
+     */
+    protected void contributeInternal(JQHeaderContributionTarget target) {
+    }
 }

@@ -16,14 +16,14 @@
  */
 package com.google.code.jqwicket.ui.tiptip;
 
-import com.google.code.jqwicket.ui.GenericJQComponentBehaivor;
+import com.google.code.jqwicket.ui.GenericJQComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
 public class GenericTipTipBehavior extends
-		GenericJQComponentBehaivor<TipTipOptions> implements ITipTip {
+        GenericJQComponentBehavior<TipTipOptions> implements ITipTip {
 
 	private static final long serialVersionUID = 1L;
 

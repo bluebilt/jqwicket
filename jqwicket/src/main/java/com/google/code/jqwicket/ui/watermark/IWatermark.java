@@ -16,10 +16,9 @@
  */
 package com.google.code.jqwicket.ui.watermark;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.IJQWidget;
 import com.google.code.jqwicket.api.IJQFunction;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 
 /**

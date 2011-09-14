@@ -16,13 +16,13 @@
  */
 package com.google.code.jqwicket.ui.droppable;
 
-import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
+import com.google.code.jqwicket.ui.JQUIComponentBehavior;
 
 /**
  * @author mkalina
  *
  */
-public class DroppableBehavior extends JQUIComponentBehaivor<DroppableOptions>
+public class DroppableBehavior extends JQUIComponentBehavior<DroppableOptions>
 		implements IDroppable {
 
 	private static final long serialVersionUID = 1L;

@@ -17,57 +17,53 @@
 package com.google.code.jqwicket.ui.watermark;
 
 
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 import com.google.code.jqwicket.api.AbstractJQOptions;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 /**
  * @author mkalina
- * 
  */
 public class WatermarkOptions extends AbstractJQOptions<WatermarkOptions> {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			WatermarkOptions.class, "jquery.watermark.js");
+    public static final JavaScriptResourceReference JS_RESOURCE = new JavaScriptResourceReference(
+            WatermarkOptions.class, "jquery.watermark.js");
 
-	public static final JavascriptResourceReference JS_RESOURCE_MIN = new JavascriptResourceReference(
-			WatermarkOptions.class, "jquery.watermark.min.js");
+    public static final JavaScriptResourceReference JS_RESOURCE_MIN = new JavaScriptResourceReference(
+            WatermarkOptions.class, "jquery.watermark.min.js");
 
-	private CharSequence text;
+    private CharSequence text;
 
-	public WatermarkOptions(CharSequence text) {
-		this.setJsResourceReferences(JS_RESOURCE);
-		this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
-		this.text = text;
-	}
+    public WatermarkOptions(CharSequence text) {
+        this.setJsResourceReferences(JS_RESOURCE);
+        this.setJsResourceReferencesMin(JS_RESOURCE_MIN);
+        this.text = text;
+    }
 
-	public WatermarkOptions className(String className) {
-		return super.put("className", className);
-	}
+    public WatermarkOptions className(String className) {
+        return super.put("className", className);
+    }
 
-	public WatermarkOptions useNative(boolean useNative) {
-		return super.put("useNative", useNative);
-	}
+    public WatermarkOptions useNative(boolean useNative) {
+        return super.put("useNative", useNative);
+    }
 
-	/**
-	 * The hideBeforeUnload option can be set to false to disable the automatic
-	 * hiding of watermarks during the beforeunload event. It is a global option
-	 * that determines the behavior of all watermarks on the current page. The
-	 * option is not evaluated until the beforeunload event takes place, so the
-	 * option can be set at any point before that. The default value for this
-	 * option is true.
-	 * 
-	 * @param hideBeforeUnload
-	 * @return
-	 */
-	public WatermarkOptions hideBeforeUnload(boolean hideBeforeUnload) {
-		return super.put("hideBeforeUnload", hideBeforeUnload);
-	}
+    /**
+     * The hideBeforeUnload option can be set to false to disable the automatic hiding of watermarks during the
+     * beforeunload event. It is a global option that determines the behavior of all watermarks on the current page. The
+     * option is not evaluated until the beforeunload event takes place, so the option can be set at any point before that.
+     * The default value for this option is true.
+     *
+     * @param hideBeforeUnload
+     * @return
+     */
+    public WatermarkOptions hideBeforeUnload(boolean hideBeforeUnload) {
+        return super.put("hideBeforeUnload", hideBeforeUnload);
+    }
 
-	public CharSequence getText() {
-		return text;
-	}
+    public CharSequence getText() {
+        return text;
+    }
 
 }

@@ -16,13 +16,13 @@
  */
 package com.google.code.jqwicket.ui.resizable;
 
-import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
+import com.google.code.jqwicket.ui.JQUIComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
-public class ResizableBehavior extends JQUIComponentBehaivor<ResizableOptions>
+public class ResizableBehavior extends JQUIComponentBehavior<ResizableOptions>
 		implements IResizable {
 
 	private static final long serialVersionUID = 1L;

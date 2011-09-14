@@ -16,17 +16,17 @@
  */
 package com.google.code.jqwicket.ui.mb.extruder;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-
 import com.google.code.jqwicket.JQHeaderContributionTarget;
 import com.google.code.jqwicket.api.JQLiteral;
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
+
+import static com.google.code.jqwicket.api.JQuery.$;
 
 /**
  * @author mkalina
  * 
  */
-public class ExtruderBehavior extends JQComponentBehaivor<ExtruderOptions>
+public class ExtruderBehavior extends JQComponentBehavior<ExtruderOptions>
 		implements IExtruder {
 
 	private static final long serialVersionUID = 1L;
@@ -55,7 +55,7 @@ public class ExtruderBehavior extends JQComponentBehaivor<ExtruderOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.ui.JQComponentBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {

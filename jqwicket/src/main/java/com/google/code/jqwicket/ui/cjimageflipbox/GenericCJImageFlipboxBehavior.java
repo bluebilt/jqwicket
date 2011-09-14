@@ -16,14 +16,14 @@
  */
 package com.google.code.jqwicket.ui.cjimageflipbox;
 
-import com.google.code.jqwicket.ui.GenericJQComponentBehaivor;
+import com.google.code.jqwicket.ui.GenericJQComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
 public class GenericCJImageFlipboxBehavior extends
-		GenericJQComponentBehaivor<CJImageFlipboxOptions> implements
+        GenericJQComponentBehavior<CJImageFlipboxOptions> implements
 		ICJImageFlipbox {
 
 	private static final long serialVersionUID = 1L;

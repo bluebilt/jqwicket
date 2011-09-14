@@ -16,11 +16,10 @@
  */
 package com.google.code.jqwicket.ui;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.IJQUIWidget;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQOptions;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * Abstract component behavior for JQuery UI components.
@@ -29,12 +28,12 @@ import com.google.code.jqwicket.api.IJQOptions;
  * 
  * @param <T>
  */
-public abstract class JQUIComponentBehaivor<T extends IJQOptions<T>> extends
-		JQComponentBehaivor<T> implements IJQUIWidget<T> {
+public abstract class JQUIComponentBehavior<T extends IJQOptions<T>> extends
+        JQComponentBehavior<T> implements IJQUIWidget<T> {
 
 	private static final long serialVersionUID = 1L;
 
-	public JQUIComponentBehaivor(T options) {
+	public JQUIComponentBehavior(T options) {
 		super(options);
 	}
 

@@ -17,13 +17,13 @@
 package com.google.code.jqwicket.ui.gmap;
 
 import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
-public class GMapBehavior extends JQComponentBehaivor<GMapOptions> implements
+public class GMapBehavior extends JQComponentBehavior<GMapOptions> implements
 		IGMap {
 
 	private static final long serialVersionUID = 1L;
@@ -48,7 +48,7 @@ public class GMapBehavior extends JQComponentBehaivor<GMapOptions> implements
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.ui.JQComponentBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
 	public void contributeInternal(JQHeaderContributionTarget target) {

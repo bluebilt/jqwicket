@@ -9,7 +9,7 @@ public class UploadifyPage extends DemoPage {
 
 	public UploadifyPage() {
 		add(new WebMarkupContainer("file_upload").add(new UploadifyBehavior(
-				new UploadifyOptions().script("http://localhost:8080/_up")
+				new UploadifyOptions().script("http://localhost:8080/jqwicket-demo/_up")
 						.scriptAccess("always").auto(true).multi(true))));
 	}
 

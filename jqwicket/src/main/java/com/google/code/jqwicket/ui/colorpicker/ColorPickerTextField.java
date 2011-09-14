@@ -16,16 +16,13 @@
  */
 package com.google.code.jqwicket.ui.colorpicker;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-import static com.google.code.jqwicket.api.JQuery.$f;
-import static com.google.code.jqwicket.api.JQuery.$this;
-
+import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.api.IJQFunction;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.IModel;
 
-import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.api.IJQFunction;
+import static com.google.code.jqwicket.api.JQuery.*;
 
 /**
  * @author mkalina

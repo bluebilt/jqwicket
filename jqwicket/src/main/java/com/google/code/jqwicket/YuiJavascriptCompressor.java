@@ -1,7 +1,7 @@
 package com.google.code.jqwicket;
 
 import com.yahoo.platform.yui.compressor.JavaScriptCompressor;
-import org.apache.wicket.javascript.IJavascriptCompressor;
+import org.apache.wicket.javascript.IJavaScriptCompressor;
 import org.mozilla.javascript.ErrorReporter;
 import org.mozilla.javascript.EvaluatorException;
 import org.slf4j.Logger;
@@ -15,7 +15,7 @@ import java.io.StringWriter;
  * @author mkalina
  * @version $Id$
  */
-public class YuiJavascriptCompressor implements IJavascriptCompressor {
+public class YuiJavascriptCompressor implements IJavaScriptCompressor {
 
     private static final Logger log = LoggerFactory.getLogger(YuiJavascriptCompressor.class);
 
@@ -44,6 +44,9 @@ public class YuiJavascriptCompressor implements IJavascriptCompressor {
         return instance;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public String compress(final String original) {
 
         if (Utils.isBlank(original))

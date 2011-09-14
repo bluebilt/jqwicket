@@ -17,57 +17,55 @@
 package com.google.code.jqwicket.ui.prettycomments;
 
 
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 import com.google.code.jqwicket.api.AbstractJQOptions;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 /**
  * @author mkalina
- * 
  */
 public class PrettyCommentsOptions extends
-		AbstractJQOptions<PrettyCommentsOptions> {
+        AbstractJQOptions<PrettyCommentsOptions> {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private static final JavascriptResourceReference jsResource = new JavascriptResourceReference(
-			PrettyCommentsOptions.class, "prettyComments.js");
+    private static final JavaScriptResourceReference jsResource = new JavaScriptResourceReference(
+            PrettyCommentsOptions.class, "prettyComments.js");
 
-	private static final JavascriptResourceReference jsResourceMin = new JavascriptResourceReference(
-			PrettyCommentsOptions.class, "prettyComments.min.js");
+    private static final JavaScriptResourceReference jsResourceMin = new JavaScriptResourceReference(
+            PrettyCommentsOptions.class, "prettyComments.min.js");
 
-	public PrettyCommentsOptions() {
-		this.setJsResourceReferences(jsResource);
-		this.setJsResourceReferencesMin(jsResourceMin);
-	}
+    public PrettyCommentsOptions() {
+        this.setJsResourceReferences(jsResource);
+        this.setJsResourceReferencesMin(jsResourceMin);
+    }
 
-	/**
-	 * Sets animation enabled/disabled
-	 * 
-	 * @param animate
-	 * @return
-	 */
-	public PrettyCommentsOptions animate(boolean animate) {
-		return super.put("animate", animate);
-	}
+    /**
+     * Sets animation enabled/disabled
+     *
+     * @param animate
+     * @return
+     */
+    public PrettyCommentsOptions animate(boolean animate) {
+        return super.put("animate", animate);
+    }
 
-	/**
-	 * Sets animation speed: 'slow'/'normal'/'fast'
-	 * 
-	 * @param animationSpeed
-	 * @return
-	 */
-	public PrettyCommentsOptions animationSpeed(CharSequence animationSpeed) {
-		return super.put("animationSpeed", animationSpeed);
-	}
+    /**
+     * Sets animation speed: 'slow'/'normal'/'fast'
+     *
+     * @param animationSpeed
+     * @return
+     */
+    public PrettyCommentsOptions animationSpeed(CharSequence animationSpeed) {
+        return super.put("animationSpeed", animationSpeed);
+    }
 
-	/**
-	 * Sets max. height
-	 * 
-	 * @param maxHeight
-	 * @return
-	 */
-	public PrettyCommentsOptions maxHeight(int maxHeight) {
-		return super.put("maxHeight", maxHeight);
-	}
+    /**
+     * Sets max. height
+     *
+     * @param maxHeight
+     * @return
+     */
+    public PrettyCommentsOptions maxHeight(int maxHeight) {
+        return super.put("maxHeight", maxHeight);
+    }
 }

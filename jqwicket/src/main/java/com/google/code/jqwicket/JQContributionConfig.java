@@ -18,15 +18,14 @@ package com.google.code.jqwicket;
 
 import org.apache.wicket.Application;
 import org.apache.wicket.MetaDataKey;
-import org.apache.wicket.ResourceReference;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
+import org.apache.wicket.request.resource.ResourceReference;
 
 import java.io.Serializable;
 
 /**
- * Global JQWicket contribution config defining javascript/css resources that
- * will be always rendered into the HTML-Page head section as soon as some
- * JQWicket component/behavior will be rendered.
+ * Global JQWicket contribution config defining javascript/css resources that will be always rendered into the HTML-Page
+ * head section as soon as some JQWicket component/behavior will be rendered.
  *
  * @author mkalina
  */
@@ -38,19 +37,22 @@ public class JQContributionConfig implements Serializable {
         private static final long serialVersionUID = 1L;
     };
 
-    private static final CharSequence defaultJQueryCoreJsUrl = "http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js";
+    private static final CharSequence defaultJQueryCoreJsUrl = "http://ajax.googleapis.com/ajax/libs/" +
+            "jquery/1.6.3/jquery.min.js";
 
-    private static final CharSequence defaultJQueryUiJsUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js";
+    private static final CharSequence defaultJQueryUiJsUrl = "http://ajax.googleapis.com/ajax/libs/" +
+            "jqueryui/1.8.16/jquery-ui.min.js";
 
-    private static final CharSequence defaultJQueryUiCssUrl = "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css";
+    private static final CharSequence defaultJQueryUiCssUrl = "http://ajax.googleapis.com/ajax/libs/" +
+            "jqueryui/1.8.16/themes/base/jquery-ui.css";
 
     private CharSequence jqueryCoreJsUrl;
 
-    private JavascriptResourceReference jqueryCoreJsResourceReference;
+    private JavaScriptResourceReference jqueryCoreJsResourceReference;
 
     private CharSequence jqueryUiJsUrl;
 
-    private JavascriptResourceReference jqueryUiJsResourceReference;
+    private JavaScriptResourceReference jqueryUiJsResourceReference;
 
     private CharSequence jqueryUiCssUrl;
 
@@ -78,7 +80,7 @@ public class JQContributionConfig implements Serializable {
     }
 
     public JQContributionConfig(
-            JavascriptResourceReference jqueryCoreResourceReference) {
+            JavaScriptResourceReference jqueryCoreResourceReference) {
         this.jqueryCoreJsResourceReference = jqueryCoreResourceReference;
         this.jqueryCoreJsUrl = null;
     }
@@ -103,7 +105,7 @@ public class JQContributionConfig implements Serializable {
         return this;
     }
 
-    public JQContributionConfig withJQueryUiJs(JavascriptResourceReference ref) {
+    public JQContributionConfig withJQueryUiJs(JavaScriptResourceReference ref) {
         this.jqueryUiJsUrl = null;
         this.jqueryUiJsResourceReference = ref;
         return this;
@@ -130,8 +132,8 @@ public class JQContributionConfig implements Serializable {
     }
 
     /**
-     * Configure jqwicket to use yui-compressor while rendering javascript. <br/>
-     * Note! Add yui-compressor library to your project to be able to use this feature.
+     * Configure jqwicket to use yui-compressor while rendering javascript. <br/> Note! Add yui-compressor library to
+     * your project to be able to use this feature.
      *
      * @return this contribution config
      */
@@ -144,7 +146,7 @@ public class JQContributionConfig implements Serializable {
         return jqueryCoreJsUrl;
     }
 
-    public JavascriptResourceReference getJqueryCoreJsResourceReference() {
+    public JavaScriptResourceReference getJqueryCoreJsResourceReference() {
         return jqueryCoreJsResourceReference;
     }
 
@@ -152,7 +154,7 @@ public class JQContributionConfig implements Serializable {
         return jqueryUiJsUrl;
     }
 
-    public JavascriptResourceReference getJqueryUiJsResourceReference() {
+    public JavaScriptResourceReference getJqueryUiJsResourceReference() {
         return jqueryUiJsResourceReference;
     }
 
@@ -168,7 +170,7 @@ public class JQContributionConfig implements Serializable {
         return nonConflictAlias;
     }
 
-    public boolean isUseYuiJavascriptCompressor(){
+    public boolean isUseYuiJavascriptCompressor() {
         return useYuiJavascriptCompressor;
     }
 

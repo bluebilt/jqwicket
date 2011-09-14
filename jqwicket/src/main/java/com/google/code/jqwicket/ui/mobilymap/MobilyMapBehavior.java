@@ -1,12 +1,12 @@
 package com.google.code.jqwicket.ui.mobilymap;
 
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
-public class MobilyMapBehavior extends JQComponentBehaivor<MobilyMapOptions>
+public class MobilyMapBehavior extends JQComponentBehavior<MobilyMapOptions>
 		implements IMobilyMap {
 
 	private static final long serialVersionUID = 1L;

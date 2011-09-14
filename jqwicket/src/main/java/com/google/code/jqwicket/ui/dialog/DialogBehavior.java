@@ -16,18 +16,17 @@
  */
 package com.google.code.jqwicket.ui.dialog;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
+import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.JQLiteral;
-import com.google.code.jqwicket.Utils;
-import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
+import com.google.code.jqwicket.ui.JQUIComponentBehavior;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina
  * 
  */
-public class DialogBehavior extends JQUIComponentBehaivor<DialogOptions>
+public class DialogBehavior extends JQUIComponentBehavior<DialogOptions>
 		implements IDialog {
 
 	private static final long serialVersionUID = 1L;

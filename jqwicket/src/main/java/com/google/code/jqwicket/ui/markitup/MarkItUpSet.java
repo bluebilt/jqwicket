@@ -16,71 +16,70 @@
  */
 package com.google.code.jqwicket.ui.markitup;
 
-import java.io.Serializable;
+import org.apache.wicket.request.resource.CssResourceReference;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
-import org.apache.wicket.ResourceReference;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
+import java.io.Serializable;
 
 /**
  * @author mkalina
- * 
  */
 public class MarkItUpSet implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public static final MarkItUpSet DEFAULT = new MarkItUpSet("mySettings",
-			new JavascriptResourceReference(MarkItUpSet.class,
-					"sets/default/set.js"), new ResourceReference(
-					MarkItUpSet.class, "sets/default/style.css"));
+    public static final MarkItUpSet DEFAULT = new MarkItUpSet("mySettings",
+            new JavaScriptResourceReference(MarkItUpSet.class,
+                    "sets/default/set.js"), new CssResourceReference(
+            MarkItUpSet.class, "sets/default/style.css"));
 
-	public static final MarkItUpSet HTML = new MarkItUpSet("mySettings",
-			new JavascriptResourceReference(MarkItUpSet.class,
-					"sets/html/set.js"), new ResourceReference(
-					MarkItUpSet.class, "sets/html/style.css"));
+    public static final MarkItUpSet HTML = new MarkItUpSet("mySettings",
+            new JavaScriptResourceReference(MarkItUpSet.class,
+                    "sets/html/set.js"), new CssResourceReference(
+            MarkItUpSet.class, "sets/html/style.css"));
 
-	public static final MarkItUpSet BBCODE = new MarkItUpSet("mySettings",
-			new JavascriptResourceReference(MarkItUpSet.class,
-					"sets/bbcode/set.js"), new ResourceReference(
-					MarkItUpSet.class, "sets/bbcode/style.css"));
+    public static final MarkItUpSet BBCODE = new MarkItUpSet("mySettings",
+            new JavaScriptResourceReference(MarkItUpSet.class,
+                    "sets/bbcode/set.js"), new CssResourceReference(
+            MarkItUpSet.class, "sets/bbcode/style.css"));
 
-	public static final MarkItUpSet WIKI = new MarkItUpSet("mySettings",
-			new JavascriptResourceReference(MarkItUpSet.class,
-					"sets/wiki/set.js"), new ResourceReference(
-					MarkItUpSet.class, "sets/wiki/style.css"));
+    public static final MarkItUpSet WIKI = new MarkItUpSet("mySettings",
+            new JavaScriptResourceReference(MarkItUpSet.class,
+                    "sets/wiki/set.js"), new CssResourceReference(
+            MarkItUpSet.class, "sets/wiki/style.css"));
 
-	private String name;
+    private String name;
 
-	private JavascriptResourceReference jsResource;
+    private JavaScriptResourceReference jsResource;
 
-	private ResourceReference cssResource;
+    private CssResourceReference cssResource;
 
-	public MarkItUpSet(String name, JavascriptResourceReference jsResource,
-			ResourceReference cssResource) {
-		this.name = name;
-		this.jsResource = jsResource;
-		this.cssResource = cssResource;
-	}
+    public MarkItUpSet(String name, JavaScriptResourceReference jsResource,
+                       CssResourceReference cssResource) {
+        this.name = name;
+        this.jsResource = jsResource;
+        this.cssResource = cssResource;
+    }
 
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
-	}
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
 
-	/**
-	 * @return the jsResource
-	 */
-	public JavascriptResourceReference getJsResource() {
-		return jsResource;
-	}
+    /**
+     * @return the jsResource
+     */
+    public JavaScriptResourceReference getJsResource() {
+        return jsResource;
+    }
 
-	/**
-	 * @return the cssResource
-	 */
-	public ResourceReference getCssResource() {
-		return cssResource;
-	}
+    /**
+     * @return the cssResource
+     */
+    public CssResourceReference getCssResource() {
+        return cssResource;
+    }
 
 }

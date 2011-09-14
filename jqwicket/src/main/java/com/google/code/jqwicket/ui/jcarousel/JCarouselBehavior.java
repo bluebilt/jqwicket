@@ -16,13 +16,13 @@
  */
 package com.google.code.jqwicket.ui.jcarousel;
 
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
-public class JCarouselBehavior extends JQComponentBehaivor<JCarouselOptions>
+public class JCarouselBehavior extends JQComponentBehavior<JCarouselOptions>
 		implements IJCarousel {
 
 	private static final long serialVersionUID = 1L;

@@ -16,89 +16,69 @@
  */
 package com.google.code.jqwicket;
 
+import org.apache.wicket.Component;
+import org.apache.wicket.application.IComponentOnBeforeRenderListener;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
-
-import org.apache.wicket.Component;
-import org.apache.wicket.application.IComponentOnBeforeRenderListener;
-import org.apache.wicket.behavior.HeaderContributor;
-import org.apache.wicket.behavior.IBehavior;
 
 /**
- * Wicket's {@link IComponentOnBeforeRenderListener} implementation responsible
- * for adding header contributor with appropriate jquery resources to the
- * component before it will be rendered.
- * 
+ * Wicket's {@link IComponentOnBeforeRenderListener} implementation responsible for adding header contributor with
+ * appropriate jquery resources to the component before it will be rendered.
+ *
  * @author mkalina
- * 
  */
 public class JQComponentOnBeforeRenderListener implements
-		IComponentOnBeforeRenderListener {
+        IComponentOnBeforeRenderListener {
 
-	public JQComponentOnBeforeRenderListener() {
-		this(new JQContributionConfig());
-	}
+    public JQComponentOnBeforeRenderListener() {
+        this(new JQContributionConfig());
+    }
 
-	public JQComponentOnBeforeRenderListener(JQContributionConfig config) {
-		JQContributionConfig.set(config);
-	}
+    public JQComponentOnBeforeRenderListener(JQContributionConfig config) {
+        JQContributionConfig.set(config);
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see org.apache.wicket.application.IComponentOnBeforeRenderListener#onBeforeRender(org.apache.wicket.Component)
-	 */
-	public void onBeforeRender(Component component) {
-		if (component == null)
-			return;
+    /**
+     * {@inheritDoc}
+     *
+     * @see org.apache.wicket.application.IComponentOnBeforeRenderListener#onBeforeRender(org.apache.wicket.Component)
+     */
+    public void onBeforeRender(Component component) {
+        if (component == null)
+            return;
 
-		if (IJQHeaderContributor.class.isAssignableFrom(component.getClass())) {
-			addJQueryHeaderContributor(component,
-					(IJQHeaderContributor) component);
-		}
+        if (IJQHeaderContributor.class.isAssignableFrom(component.getClass())) {
+            addJQueryHeaderContributor(component,
+                    (IJQHeaderContributor) component);
+        }
 
-		addJQueryHeaderContributor(component, findJQueryBehaviors(component));
-	}
+        addJQueryHeaderContributor(component, findJQueryBehaviors(component));
+    }
 
-	private Collection<JQBehavior> findJQueryBehaviors(Component component) {
+    private Collection<JQBehavior> findJQueryBehaviors(Component component) {
+        return new LinkedHashSet<JQBehavior>(component.getBehaviors(JQBehavior.class));
+    }
 
-		List<IBehavior> behaviors = component.getBehaviors();
+    private void addJQueryHeaderContributor(Component component,
+                                            IJQHeaderContributor... contributor) {
 
-		if (Utils.isEmpty(behaviors))
-			return null;
+        if (Utils.isEmpty(contributor))
+            return;
 
-		Set<JQBehavior> jqbehaviors = new LinkedHashSet<JQBehavior>();
-		for (IBehavior behavior : behaviors) {
-			if (behavior != null
-					&& JQBehavior.class.isAssignableFrom(behavior.getClass()))
-				jqbehaviors.add((JQBehavior) behavior);
-		}
+        addJQueryHeaderContributor(component, Arrays.asList(contributor));
+    }
 
-		return jqbehaviors;
-	}
+    private void addJQueryHeaderContributor(Component component,
+                                            Collection<? extends IJQHeaderContributor> contributors) {
 
-	private void addJQueryHeaderContributor(Component component,
-			IJQHeaderContributor... contributor) {
+        if (Utils.isEmpty(contributors))
+            return;
 
-		if (Utils.isEmpty(contributor))
-			return;
-
-		addJQueryHeaderContributor(component, Arrays.asList(contributor));
-	}
-
-	private void addJQueryHeaderContributor(Component component,
-			Collection<? extends IJQHeaderContributor> contributors) {
-
-		if (Utils.isEmpty(contributors))
-			return;
-		JQContributionRenderer renderer = JQContributionRenderer.get();
-		for (IJQHeaderContributor c : contributors) {
-			renderer.addContributor(c);
-		}
-		component.add(new HeaderContributor(renderer));
-	}
+        JQContributionRenderer renderer = JQContributionRenderer.get();
+        renderer.addContributors(contributors);
+        component.add(renderer);
+    }
 
 }

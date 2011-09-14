@@ -16,18 +16,17 @@
  */
 package com.google.code.jqwicket.api;
 
-import static com.google.code.jqwicket.Utils.isEmpty;
-import static com.google.code.jqwicket.Utils.join;
-import static com.google.code.jqwicket.api.JQLiteral._;
+import com.google.code.jqwicket.JQContributionConfig;
+import com.google.code.jqwicket.Utils;
+import org.apache.wicket.Component;
+import org.apache.wicket.behavior.AbstractAjaxBehavior;
 
 import java.util.Collection;
 import java.util.Map;
 
-import org.apache.wicket.Component;
-import org.apache.wicket.behavior.AbstractAjaxBehavior;
-
-import com.google.code.jqwicket.JQContributionConfig;
-import com.google.code.jqwicket.Utils;
+import static com.google.code.jqwicket.Utils.isEmpty;
+import static com.google.code.jqwicket.Utils.join;
+import static com.google.code.jqwicket.api.JQLiteral._;
 
 /**
  * Collection of static methods to interoperate with the JQuery API.

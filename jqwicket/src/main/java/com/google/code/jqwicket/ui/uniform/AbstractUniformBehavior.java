@@ -16,14 +16,14 @@
  */
 package com.google.code.jqwicket.ui.uniform;
 
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 
 /**
  * @author mkalina
  * 
  */
 public abstract class AbstractUniformBehavior extends
-		JQComponentBehaivor<UniformOptions> implements IUniform {
+        JQComponentBehavior<UniformOptions> implements IUniform {
 
 	private static final long serialVersionUID = 1L;
 

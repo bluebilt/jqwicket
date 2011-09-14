@@ -16,39 +16,37 @@
  */
 package com.google.code.jqwicket.ui.markitup;
 
-import java.io.Serializable;
+import org.apache.wicket.request.resource.CssResourceReference;
 
-import org.apache.wicket.ResourceReference;
+import java.io.Serializable;
 
 /**
  * @author mkalina
- * 
  */
 public class MarkItUpSkin implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public static final MarkItUpSkin MARKITUP = new MarkItUpSkin(
-			new ResourceReference(MarkItUpSkin.class,
-					"skins/markitup/style.css"));
+    public static final MarkItUpSkin MARKITUP = new MarkItUpSkin(
+            new CssResourceReference(MarkItUpSkin.class, "skins/markitup/style.css"));
 
-	public static final MarkItUpSkin SIMPLE = new MarkItUpSkin(
-			new ResourceReference(MarkItUpSkin.class, "skins/simple/style.css"));
+    public static final MarkItUpSkin SIMPLE = new MarkItUpSkin(
+            new CssResourceReference(MarkItUpSkin.class, "skins/simple/style.css"));
 
-	public static final MarkItUpSkin MACOSX = new MarkItUpSkin(
-			new ResourceReference(MarkItUpSkin.class, "skins/macosx/style.css"));
+    public static final MarkItUpSkin MACOSX = new MarkItUpSkin(
+            new CssResourceReference(MarkItUpSkin.class, "skins/macosx/style.css"));
 
-	private ResourceReference cssResource;
+    private CssResourceReference cssResource;
 
-	public MarkItUpSkin(ResourceReference cssResource) {
-		this.cssResource = cssResource;
-	}
+    public MarkItUpSkin(CssResourceReference cssResource) {
+        this.cssResource = cssResource;
+    }
 
-	/**
-	 * @return the cssResource
-	 */
-	public ResourceReference getCssResource() {
-		return cssResource;
-	}
+    /**
+     * @return the cssResource
+     */
+    public CssResourceReference getCssResource() {
+        return cssResource;
+    }
 
 }

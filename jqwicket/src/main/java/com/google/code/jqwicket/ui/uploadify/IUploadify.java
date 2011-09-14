@@ -17,11 +17,10 @@
 package com.google.code.jqwicket.ui.uploadify;
 
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.IJQWidget;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQOptions;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * Implementation of Uploadify jquery plugin: <a

@@ -16,8 +16,6 @@
  */
 package com.google.code.jqwicket;
 
-import static com.google.code.jqwicket.api.JQuery.$f;
-
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQStatement;
 import com.google.code.jqwicket.event.JQEventBehavior;
@@ -34,6 +32,8 @@ import com.google.code.jqwicket.ui.selectable.SelectableBehavior;
 import com.google.code.jqwicket.ui.selectable.SelectableOptions;
 import com.google.code.jqwicket.ui.sortable.SortableBehavior;
 import com.google.code.jqwicket.ui.sortable.SortableOptions;
+
+import static com.google.code.jqwicket.api.JQuery.$f;
 
 /**
  * "Collection" of typical jquery behaviors that can be simply instantiated by

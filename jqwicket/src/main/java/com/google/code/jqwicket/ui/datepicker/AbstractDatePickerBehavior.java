@@ -16,21 +16,20 @@
  */
 package com.google.code.jqwicket.ui.datepicker;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.ui.JQUIComponentBehavior;
+import com.google.code.jqwicket.ui.XYPosition;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.api.IJQFunction;
-import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
-import com.google.code.jqwicket.ui.XYPosition;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author mkalina
  * 
  */
 public abstract class AbstractDatePickerBehavior<T extends AbstractDatePickerOptions<T>>
-		extends JQUIComponentBehaivor<T> implements IGenericDatePicker<T> {
+		extends JQUIComponentBehavior<T> implements IGenericDatePicker<T> {
 
 	private static final long serialVersionUID = 1L;
 

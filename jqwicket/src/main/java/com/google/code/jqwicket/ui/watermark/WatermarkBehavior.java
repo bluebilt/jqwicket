@@ -16,21 +16,20 @@
  */
 package com.google.code.jqwicket.ui.watermark;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-import static com.google.code.jqwicket.api.JQuery.$f;
-
+import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 import org.apache.wicket.Page;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 
-import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.api.IJQFunction;
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import static com.google.code.jqwicket.api.JQuery.$;
+import static com.google.code.jqwicket.api.JQuery.$f;
 
 /**
  * @author mkalina
  * 
  */
-public class WatermarkBehavior extends JQComponentBehaivor<WatermarkOptions>
+public class WatermarkBehavior extends JQComponentBehavior<WatermarkOptions>
 		implements IWatermark {
 
 	private static final long serialVersionUID = 1L;
@@ -55,7 +54,7 @@ public class WatermarkBehavior extends JQComponentBehaivor<WatermarkOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.ui.JQComponentBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {

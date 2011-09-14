@@ -1,17 +1,16 @@
 package com.google.code.jqwicket.ui.markitup;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-
+import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 import org.apache.wicket.Page;
 
-import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 /**
  * 
  * @author mkalina
  */
-public class MarkItUpBehavior extends JQComponentBehaivor<MarkItUpOptions>
+public class MarkItUpBehavior extends JQComponentBehavior<MarkItUpOptions>
 		implements IMarkItUp {
 
 	private static final long serialVersionUID = 1L;
@@ -36,7 +35,7 @@ public class MarkItUpBehavior extends JQComponentBehaivor<MarkItUpOptions>
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.ui.JQComponentBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {

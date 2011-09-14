@@ -17,10 +17,9 @@
 package com.google.code.jqwicket.ui.slider;
 
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.IJQUIWidget;
 import com.google.code.jqwicket.api.IJQFunction;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina

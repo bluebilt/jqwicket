@@ -16,131 +16,127 @@
  */
 package com.google.code.jqwicket.ui.validationengine;
 
-import static com.google.code.jqwicket.Utils.isNotBlank;
-import static com.google.code.jqwicket.Utils.quote;
+import com.google.code.jqwicket.Utils;
+import org.apache.wicket.behavior.AbstractAjaxBehavior;
+import org.apache.wicket.request.cycle.RequestCycle;
+import org.apache.wicket.request.handler.TextRequestHandler;
+import org.apache.wicket.request.http.WebRequest;
 
 import java.io.Serializable;
 
-
-import org.apache.wicket.RequestCycle;
-import org.apache.wicket.behavior.AbstractAjaxBehavior;
-import org.apache.wicket.protocol.http.WebRequest;
-import org.apache.wicket.request.target.basic.StringRequestTarget;
-
-import com.google.code.jqwicket.Utils;
+import static com.google.code.jqwicket.Utils.isNotBlank;
+import static com.google.code.jqwicket.Utils.quote;
 
 /**
- * Validation rule implementation defining ajax callback method to execute on
- * field validation.
- * 
+ * Validation rule implementation defining ajax callback method to execute on field validation.
+ *
  * @author mkalina
- * 
  */
 public abstract class AjaxValidationRule extends
-		ValidationRule<AjaxValidationRule> {
+        ValidationRule<AjaxValidationRule> {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private AbstractAjaxBehavior ajaxBehavior;
+    private AbstractAjaxBehavior ajaxBehavior;
 
-	private CharSequence alertTextOk;
+    private CharSequence alertTextOk;
 
-	private CharSequence alertTextLoad;
+    private CharSequence alertTextLoad;
 
-	public AjaxValidationRule(CharSequence name, CharSequence alertTextOk,
-			CharSequence alertTextLoad, CharSequence... alertTextErrors) {
-		super(name, alertTextErrors);
-		this.alertTextOk = alertTextOk;
-		this.alertTextLoad = alertTextLoad;
-	}
+    public AjaxValidationRule(CharSequence name, CharSequence alertTextOk,
+                              CharSequence alertTextLoad, CharSequence... alertTextErrors) {
+        super(name, alertTextErrors);
+        this.alertTextOk = alertTextOk;
+        this.alertTextLoad = alertTextLoad;
+    }
 
-	public static class ExecutionContext implements Serializable {
+    public static class ExecutionContext implements Serializable {
 
-		private static final long serialVersionUID = 1L;
-		private String validationRuleName;
-		private String componentId;
-		private String value;
-		private String extraData;
+        private static final long serialVersionUID = 1L;
+        private String validationRuleName;
+        private String componentId;
+        private String value;
+        private String extraData;
 
-		public ExecutionContext(String validationRuleName, String componentId,
-				String value, String extraData) {
-			this.validationRuleName = validationRuleName;
-			this.componentId = componentId;
-			this.value = value;
-			this.extraData = extraData;
-		}
+        public ExecutionContext(String validationRuleName, String componentId,
+                                String value, String extraData) {
+            this.validationRuleName = validationRuleName;
+            this.componentId = componentId;
+            this.value = value;
+            this.extraData = extraData;
+        }
 
-		public String getValidationRuleName() {
-			return validationRuleName;
-		}
+        public String getValidationRuleName() {
+            return validationRuleName;
+        }
 
-		public String getComponentId() {
-			return componentId;
-		}
+        public String getComponentId() {
+            return componentId;
+        }
 
-		public String getValue() {
-			return value;
-		}
+        public String getValue() {
+            return value;
+        }
 
-		public String getExtraData() {
-			return extraData;
-		}
+        public String getExtraData() {
+            return extraData;
+        }
 
-	}
+    }
 
-	protected abstract boolean execute(ExecutionContext ctx);
+    protected abstract boolean execute(ExecutionContext ctx);
 
-	protected AbstractAjaxBehavior newAjaxBehavior() {
-		return new AbstractAjaxBehavior() {
+    protected AbstractAjaxBehavior newAjaxBehavior() {
+        return new AbstractAjaxBehavior() {
 
-			private static final long serialVersionUID = 1L;
+            private static final long serialVersionUID = 1L;
 
-			public void onRequest() {
-				WebRequest req = (WebRequest) RequestCycle.get().getRequest();
-				String validateError = req.getParameter("validateError");
-				String validateId = req.getParameter("validateId");
+            public void onRequest() {
+                WebRequest req = (WebRequest) RequestCycle.get().getRequest();
+                String validateError = req.getRequestParameters().getParameterValue("validateError").toString();
+                String validateId = req.getRequestParameters().getParameterValue("validateId").toString();
 
-				boolean result = execute(new ExecutionContext(validateError,
-						validateId, req.getParameter("validateValue"),
-						req.getParameter("extraData")));
+                boolean result = execute(new ExecutionContext(validateError,
+                        validateId, req.getRequestParameters().getParameterValue("validateValue").toString(),
+                        req.getRequestParameters().getParameterValue("extraData").toString()));
 
-				StringBuffer buf = new StringBuffer("{'jsonValidateReturn':");
-				buf.append("[").append(Utils.quote(validateId));
-				buf.append(",").append(Utils.quote(validateError));
-				buf.append(",").append(Utils.quote(String.valueOf(result)));
-				buf.append("]}");
-				RequestCycle.get().setRequestTarget(
-						new StringRequestTarget(buf.toString()));
-			}
-		};
-	}
+                StringBuffer buf = new StringBuffer("{'jsonValidateReturn':");
+                buf.append("[").append(Utils.quote(validateId));
+                buf.append(",").append(Utils.quote(validateError));
+                buf.append(",").append(Utils.quote(String.valueOf(result)));
+                buf.append("]}");
+                RequestCycle.get().scheduleRequestHandlerAfterCurrent(
+                        new TextRequestHandler(buf.toString()));
+            }
+        };
+    }
 
-	public AbstractAjaxBehavior getAjaxBehavior() {
-		if (this.ajaxBehavior == null) {
-			this.ajaxBehavior = this.newAjaxBehavior();
-		}
-		return ajaxBehavior;
-	}
+    public AbstractAjaxBehavior getAjaxBehavior() {
+        if (this.ajaxBehavior == null) {
+            this.ajaxBehavior = this.newAjaxBehavior();
+        }
+        return ajaxBehavior;
+    }
 
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.validationengine.ValidationRule#customPayloadToJson()
-	 */
-	@Override
-	protected CharSequence customPayloadToJson() {
-		StringBuffer buf = new StringBuffer();
-		buf.append(quote("file")).append(":")
-				.append(quote(this.getAjaxBehavior().getCallbackUrl()));
-		if (isNotBlank(this.alertTextOk)) {
-			buf.append(",").append(quote("alertTextOk")).append(":")
-					.append(quote(this.alertTextOk));
-		}
-		if (isNotBlank(this.alertTextLoad)) {
-			buf.append(",").append(quote("alertTextLoad")).append(":")
-					.append(quote(this.alertTextLoad));
-		}
-		return buf;
-	}
-	
+    /**
+     * {@inheritDoc}
+     *
+     * @see com.google.code.jqwicket.ui.validationengine.ValidationRule#customPayloadToJson()
+     */
+    @Override
+    protected CharSequence customPayloadToJson() {
+        StringBuffer buf = new StringBuffer();
+        buf.append(quote("file")).append(":")
+                .append(quote(this.getAjaxBehavior().getCallbackUrl()));
+        if (isNotBlank(this.alertTextOk)) {
+            buf.append(",").append(quote("alertTextOk")).append(":")
+                    .append(quote(this.alertTextOk));
+        }
+        if (isNotBlank(this.alertTextLoad)) {
+            buf.append(",").append(quote("alertTextLoad")).append(":")
+                    .append(quote(this.alertTextLoad));
+        }
+        return buf;
+    }
+
 }

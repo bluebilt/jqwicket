@@ -1,9 +1,9 @@
 package com.google.code.jqwicket.ui.markitup;
 
-import static com.google.code.jqwicket.api.JQuery.$;
-
 import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.ui.GenericJQComponentBehaivor;
+import com.google.code.jqwicket.ui.GenericJQComponentBehavior;
+
+import static com.google.code.jqwicket.api.JQuery.$;
 
 /**
  * Generic, selector based MarkItUp behavior.
@@ -11,7 +11,7 @@ import com.google.code.jqwicket.ui.GenericJQComponentBehaivor;
  * @author mkalina
  */
 public class GenericMarkItUpBehavior extends
-		GenericJQComponentBehaivor<MarkItUpOptions> implements IMarkItUp {
+        GenericJQComponentBehavior<MarkItUpOptions> implements IMarkItUp {
 
 	private static final long serialVersionUID = 1L;
 
@@ -36,7 +36,7 @@ public class GenericMarkItUpBehavior extends
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.ui.JQComponentBehaivor#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
+	 * @see com.google.code.jqwicket.ui.JQComponentBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
 	@Override
 	protected void contributeInternal(JQHeaderContributionTarget target) {

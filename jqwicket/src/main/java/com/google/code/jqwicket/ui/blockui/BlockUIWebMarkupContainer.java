@@ -17,12 +17,11 @@
 package com.google.code.jqwicket.ui.blockui;
 
 
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.ui.JQWebMarkupContainer;
 import org.apache.wicket.Component;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.model.IModel;
-
-import com.google.code.jqwicket.api.IJQFunction;
-import com.google.code.jqwicket.ui.JQWebMarkupContainer;
 
 /**
  * @author mkalina

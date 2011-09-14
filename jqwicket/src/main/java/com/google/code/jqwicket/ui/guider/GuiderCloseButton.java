@@ -18,16 +18,15 @@ package com.google.code.jqwicket.ui.guider;
 
 /**
  * Button to close all open {@link GuiderItem}.
- * 
+ *
  * @author mkalina
- * 
  */
 public class GuiderCloseButton extends GuiderButton {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public GuiderCloseButton(CharSequence name) {
-		this.name(name).onclick("guider.hideAll");
-	}
+    public GuiderCloseButton(CharSequence name) {
+        this.name(name).onclick(IGuider.JQ_COMPONENT_NAME + ".hideAll");
+    }
 
 }

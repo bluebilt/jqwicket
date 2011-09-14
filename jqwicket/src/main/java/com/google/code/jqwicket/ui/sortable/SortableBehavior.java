@@ -17,17 +17,16 @@
 package com.google.code.jqwicket.ui.sortable;
 
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQOptions;
-import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
+import com.google.code.jqwicket.ui.JQUIComponentBehavior;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina
  * 
  */
-public class SortableBehavior extends JQUIComponentBehaivor<SortableOptions>
+public class SortableBehavior extends JQUIComponentBehavior<SortableOptions>
 		implements ISortable {
 
 	private static final long serialVersionUID = 1L;

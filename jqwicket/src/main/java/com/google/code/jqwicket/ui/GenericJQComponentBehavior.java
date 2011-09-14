@@ -14,56 +14,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.google.code.jqwicket.ui.button;
+package com.google.code.jqwicket.ui;
 
+import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.api.IJQOptions;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
-import com.google.code.jqwicket.api.IJQFunction;
-import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
+import static com.google.code.jqwicket.api.JQuery.$;
 
 /**
+ * Generic, selector based abstract component behavior for JQuery components.
+ * 
  * @author mkalina
- *
+ * 
+ * @param <T>
  */
-public class ButtonBehaivor extends JQUIComponentBehaivor<ButtonOptions>
-		implements IButton {
+public abstract class GenericJQComponentBehavior<T extends IJQOptions<T>>
+		extends JQComponentBehavior<T> {
 
 	private static final long serialVersionUID = 1L;
 
-	public ButtonBehaivor() {
-		this(new ButtonOptions());
-	}
+	private CharSequence selector;
 
-	public ButtonBehaivor(ButtonOptions options) {
+	public GenericJQComponentBehavior(CharSequence selector, T options) {
 		super(options);
+		this.selector = selector;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.google.code.jqwicket.IJQUIWidget#getName()
+	 * @see JQComponentBehavior#contributeInternal(com.google.code.jqwicket.JQHeaderContributionTarget)
 	 */
-	public CharSequence getName() {
-		return JQ_COMPONENT_NAME;
+	@Override
+	protected void contributeInternal(JQHeaderContributionTarget target) {
+		target.addJQStatements($(this.selector).chain(this.getName(),
+				this.options));
 	}
 
 	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.button.IButton#refresh()
+	 * @return the selector
 	 */
-	public IJQFunction refresh() {
-		return chain("refresh");
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * 
-	 * @see com.google.code.jqwicket.ui.button.IButton#refresh(org.apache.wicket.ajax.AjaxRequestTarget)
-	 */
-	public void refresh(AjaxRequestTarget ajaxRequestTarget) {
-		chain(ajaxRequestTarget, this.refresh());
+	public CharSequence getSelector() {
+		return selector;
 	}
 
 }

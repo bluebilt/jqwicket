@@ -16,10 +16,9 @@
  */
 package com.google.code.jqwicket.ui.prettypopin;
 
+import com.google.code.jqwicket.ui.JQComponentBehavior;
 import org.apache.wicket.Component;
 import org.apache.wicket.markup.ComponentTag;
-
-import com.google.code.jqwicket.ui.JQComponentBehaivor;
 
 
 /**
@@ -27,7 +26,7 @@ import com.google.code.jqwicket.ui.JQComponentBehaivor;
  * 
  */
 public class PrettyPopinBehavior extends
-		JQComponentBehaivor<PrettyPopinOptions> implements IPrettyPopin {
+        JQComponentBehavior<PrettyPopinOptions> implements IPrettyPopin {
 
 	private static final long serialVersionUID = 1L;
 

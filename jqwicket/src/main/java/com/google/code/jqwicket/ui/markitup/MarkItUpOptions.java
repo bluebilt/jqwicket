@@ -17,58 +17,56 @@
 package com.google.code.jqwicket.ui.markitup;
 
 
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 import com.google.code.jqwicket.api.AbstractJQOptions;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 /**
  * @author mkalina
- * 
  */
 public class MarkItUpOptions extends AbstractJQOptions<MarkItUpOptions> {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private static final JavascriptResourceReference JS_RESOURCE = new JavascriptResourceReference(
-			MarkItUpOptions.class, "jquery.markitup.js");
+    private static final JavaScriptResourceReference JS_RESOURCE = new JavaScriptResourceReference(
+            MarkItUpOptions.class, "jquery.markitup.js");
 
-	private MarkItUpSet set;
+    private MarkItUpSet set;
 
-	private MarkItUpSkin skin;
+    private MarkItUpSkin skin;
 
-	public MarkItUpOptions() {
-		this(MarkItUpSet.DEFAULT, MarkItUpSkin.MARKITUP);
-	}
+    public MarkItUpOptions() {
+        this(MarkItUpSet.DEFAULT, MarkItUpSkin.MARKITUP);
+    }
 
-	public MarkItUpOptions(MarkItUpSet set) {
-		this(set, MarkItUpSkin.MARKITUP);
-	}
+    public MarkItUpOptions(MarkItUpSet set) {
+        this(set, MarkItUpSkin.MARKITUP);
+    }
 
-	public MarkItUpOptions(MarkItUpSkin skin) {
-		this(MarkItUpSet.DEFAULT, skin);
-	}
+    public MarkItUpOptions(MarkItUpSkin skin) {
+        this(MarkItUpSet.DEFAULT, skin);
+    }
 
-	public MarkItUpOptions(MarkItUpSet set, MarkItUpSkin skin) {
-		this.set = set;
-		this.skin = skin;
-		setJsResourceReferences(JS_RESOURCE, set.getJsResource());
-		setCssResourceReferences(set.getCssResource(), skin.getCssResource());
-	}
+    public MarkItUpOptions(MarkItUpSet set, MarkItUpSkin skin) {
+        this.set = set;
+        this.skin = skin;
+        setJsResourceReferences(JS_RESOURCE, set.getJsResource());
+        setCssResourceReferences(set.getCssResource(), skin.getCssResource());
+    }
 
-	public MarkItUpSet getSet() {
-		return set;
-	}
+    public MarkItUpSet getSet() {
+        return set;
+    }
 
-	public MarkItUpSkin getSkin() {
-		return skin;
-	}
+    public MarkItUpSkin getSkin() {
+        return skin;
+    }
 
-	public boolean hasSet() {
-		return this.set != null;
-	}
+    public boolean hasSet() {
+        return this.set != null;
+    }
 
-	public boolean hasSkin() {
-		return this.skin != null;
-	}
+    public boolean hasSkin() {
+        return this.skin != null;
+    }
 
 }

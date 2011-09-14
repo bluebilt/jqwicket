@@ -16,9 +16,9 @@
  */
 package com.google.code.jqwicket.api;
 
-import java.io.Serializable;
-
 import com.google.code.jqwicket.Utils;
+
+import java.io.Serializable;
 
 /**
  * This class represents a single javascript literal. By setting the

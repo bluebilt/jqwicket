@@ -16,12 +16,12 @@
  */
 package com.google.code.jqwicket.ui.selectable;
 
-import static com.google.code.jqwicket.api.JQuery.$f;
-import static com.google.code.jqwicket.api.JQuery.js;
-
 import com.google.code.jqwicket.api.AbstractJQOptions;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQStatement;
+
+import static com.google.code.jqwicket.api.JQuery.$f;
+import static com.google.code.jqwicket.api.JQuery.js;
 
 /**
  * @author mkalina

@@ -16,91 +16,89 @@
  */
 package com.google.code.jqwicket.ui.lwrte;
 
-import org.apache.wicket.ResourceReference;
-import org.apache.wicket.markup.html.resources.JavascriptResourceReference;
-
 import com.google.code.jqwicket.Utils;
 import com.google.code.jqwicket.api.AbstractJQOptions;
 import com.google.code.jqwicket.api.JQLiteral;
+import org.apache.wicket.request.resource.CssResourceReference;
+import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
 /**
  * @author mkalina
- * 
  */
 public class LWRTEOptions extends AbstractJQOptions<LWRTEOptions> {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private static final JavascriptResourceReference jsResource = new JavascriptResourceReference(
-			LWRTEOptions.class, "jquery.rte.js");
+    private static final JavaScriptResourceReference jsResource = new JavaScriptResourceReference(
+            LWRTEOptions.class, "jquery.rte.js");
 
-	private static final JavascriptResourceReference jsDefaultToolbarResouce = new JavascriptResourceReference(
-			LWRTEOptions.class, "jquery.rte.tb.js");
+    private static final JavaScriptResourceReference jsDefaultToolbarResouce = new JavaScriptResourceReference(
+            LWRTEOptions.class, "jquery.rte.tb.js");
 
-	private static final ResourceReference cssDefaultResouce = new ResourceReference(
-			LWRTEOptions.class, "jquery.rte.css");
+    private static final CssResourceReference cssDefaultResouce = new CssResourceReference(
+            LWRTEOptions.class, "jquery.rte.css");
 
-	public LWRTEOptions() {
-		this(jsDefaultToolbarResouce, cssDefaultResouce);
-		this.css("default.css").controlsRte("rte_toolbar")
-				.controlsHtml("html_toolbar");
-	}
+    public LWRTEOptions() {
+        this(jsDefaultToolbarResouce, cssDefaultResouce);
+        this.css("default.css").controlsRte("rte_toolbar")
+                .controlsHtml("html_toolbar");
+    }
 
-	public LWRTEOptions(JavascriptResourceReference jsToolbarResource) {
-		this(jsToolbarResource, cssDefaultResouce);
-		this.css("default.css");
-	}
+    public LWRTEOptions(JavaScriptResourceReference jsToolbarResource) {
+        this(jsToolbarResource, cssDefaultResouce);
+        this.css("default.css");
+    }
 
-	public LWRTEOptions(ResourceReference cssResouce) {
-		this(jsDefaultToolbarResouce, cssResouce);
-		this.css("default.css").controlsRte("rte_toolbar")
-				.controlsHtml("html_toolbar");
-	}
+    public LWRTEOptions(CssResourceReference cssResouce) {
+        this(jsDefaultToolbarResouce, cssResouce);
+        this.css("default.css").controlsRte("rte_toolbar")
+                .controlsHtml("html_toolbar");
+    }
 
-	public LWRTEOptions(JavascriptResourceReference jsToolbarResource,
-			ResourceReference cssResouce) {
-		this.setJsResourceReferences(jsResource, jsToolbarResource);
-		this.setCssResourceReferences(cssResouce);
-	}
+    public LWRTEOptions(JavaScriptResourceReference jsToolbarResource,
+                        CssResourceReference cssResouce) {
+        this.setJsResourceReferences(jsResource, jsToolbarResource);
+        this.setCssResourceReferences(cssResouce);
+    }
 
-	public LWRTEOptions css(CharSequence... css) {
-		return super.put("css",
-				Utils.walk(css, new Utils.IArrayWalkCallback<CharSequence>() {
-					public CharSequence onElement(int index, CharSequence obj) {
-						return JQLiteral._(obj);
-					}
-				}));
-	}
+    public LWRTEOptions css(CharSequence... css) {
+        return super.put("css",
+                Utils.walk(css, new Utils.IArrayWalkCallback<CharSequence>() {
+                    public CharSequence onElement(int index, CharSequence obj) {
+                        return JQLiteral._(obj);
+                    }
+                }));
+    }
 
-	public LWRTEOptions frameClass(CharSequence frameClass) {
-		return super.put("frame_class", frameClass);
-	}
+    public LWRTEOptions frameClass(CharSequence frameClass) {
+        return super.put("frame_class", frameClass);
+    }
 
-	public LWRTEOptions baseUrl(CharSequence baseUrl) {
-		return super.put("base_url", baseUrl);
-	}
+    public LWRTEOptions baseUrl(CharSequence baseUrl) {
+        return super.put("base_url", baseUrl);
+    }
 
-	public LWRTEOptions width(int width) {
-		return super.put("width", width);
-	}
+    public LWRTEOptions width(int width) {
+        return super.put("width", width);
+    }
 
-	public LWRTEOptions width(CharSequence width) {
-		return super.put("width", width);
-	}
+    public LWRTEOptions width(CharSequence width) {
+        return super.put("width", width);
+    }
 
-	public LWRTEOptions height(int height) {
-		return super.put("height", height);
-	}
+    public LWRTEOptions height(int height) {
+        return super.put("height", height);
+    }
 
-	public LWRTEOptions height(CharSequence height) {
-		return super.put("height", height);
-	}
+    public LWRTEOptions height(CharSequence height) {
+        return super.put("height", height);
+    }
 
-	public LWRTEOptions controlsRte(CharSequence controlsRte) {
-		return super.put("controls_rte", JQLiteral._raw(controlsRte));
-	}
+    public LWRTEOptions controlsRte(CharSequence controlsRte) {
+        return super.put("controls_rte", JQLiteral._raw(controlsRte));
+    }
 
-	public LWRTEOptions controlsHtml(CharSequence controlsHtml) {
-		return super.put("controls_html", JQLiteral._raw(controlsHtml));
-	}
+    public LWRTEOptions controlsHtml(CharSequence controlsHtml) {
+        return super.put("controls_html", JQLiteral._raw(controlsHtml));
+    }
 }

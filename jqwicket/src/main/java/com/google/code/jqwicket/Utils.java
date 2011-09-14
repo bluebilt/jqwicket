@@ -19,6 +19,7 @@ package com.google.code.jqwicket;
 import com.google.code.jqwicket.api.JQLiteral;
 import org.apache.wicket.Application;
 import org.apache.wicket.Component;
+import org.apache.wicket.RuntimeConfigurationType;
 import org.apache.wicket.model.Model;
 
 import java.lang.reflect.Array;
@@ -30,8 +31,7 @@ import java.util.Map;
  *
  * @author mkalina
  *         <p/>
- *         Parts of the source code are taken from Apache's commons-lang
- *         project.
+ *         Parts of the source code are taken from Apache's commons-lang project.
  */
 public class Utils {
 
@@ -44,7 +44,7 @@ public class Utils {
      * @return true, if wicket runs in development mode. Otherwise returns false.
      */
     public static boolean isDevelopmentMode() {
-        return Application.DEVELOPMENT.equalsIgnoreCase(Application.get()
+        return RuntimeConfigurationType.DEVELOPMENT.equals(Application.get()
                 .getConfigurationType());
     }
 
@@ -54,7 +54,7 @@ public class Utils {
      * @return true, if wicket runs in deployment mode. Otherwise returns false.
      */
     public static boolean isDeploymentMode() {
-        return Application.DEPLOYMENT.equalsIgnoreCase(Application.get()
+        return RuntimeConfigurationType.DEPLOYMENT.equals(Application.get()
                 .getConfigurationType());
     }
 
@@ -370,15 +370,8 @@ public class Utils {
     // -----------------------------------------------------------------------
 
     /**
-     * <p>
-     * Gets the String that is nested in between two instances of the same
-     * String.
-     * </p>
-     * <p/>
-     * <p>
-     * A <code>null</code> input String returns <code>null</code>. A
-     * <code>null</code> tag returns <code>null</code>.
-     * </p>
+     * <p> Gets the String that is nested in between two instances of the same String. </p> <p/> <p> A <code>null</code>
+     * input String returns <code>null</code>. A <code>null</code> tag returns <code>null</code>. </p>
      * <p/>
      * <pre>
      * StringUtils.substringBetween(null, *)            = null
@@ -399,16 +392,9 @@ public class Utils {
     }
 
     /**
-     * <p>
-     * Gets the String that is nested in between two Strings. Only the first
-     * match is returned.
-     * </p>
-     * <p/>
-     * <p>
-     * A <code>null</code> input String returns <code>null</code>. A
-     * <code>null</code> open/close returns <code>null</code> (no match). An
-     * empty ("") open and close returns an empty string.
-     * </p>
+     * <p> Gets the String that is nested in between two Strings. Only the first match is returned. </p> <p/> <p> A
+     * <code>null</code> input String returns <code>null</code>. A <code>null</code> open/close returns
+     * <code>null</code> (no match). An empty ("") open and close returns an empty string. </p>
      * <p/>
      * <pre>
      * StringUtils.substringBetween("wx[b]yz", "[", "]") = "b"

@@ -17,9 +17,8 @@
 package com.google.code.jqwicket.ui.droppable;
 
 
-import org.apache.wicket.model.IModel;
-
 import com.google.code.jqwicket.ui.JQUIWebMarkupContainer;
+import org.apache.wicket.model.IModel;
 
 /**
  * @author mkalina

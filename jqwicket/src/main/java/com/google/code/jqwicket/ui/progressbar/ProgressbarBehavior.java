@@ -16,18 +16,17 @@
  */
 package com.google.code.jqwicket.ui.progressbar;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.JQLiteral;
-import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
+import com.google.code.jqwicket.ui.JQUIComponentBehavior;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina
  * 
  */
 public class ProgressbarBehavior extends
-		JQUIComponentBehaivor<ProgressbarOptions> implements IProgressbar {
+        JQUIComponentBehavior<ProgressbarOptions> implements IProgressbar {
 
 	private static final long serialVersionUID = 1L;
 

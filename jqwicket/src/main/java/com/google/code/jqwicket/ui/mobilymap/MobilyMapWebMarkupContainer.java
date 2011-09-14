@@ -1,8 +1,7 @@
 package com.google.code.jqwicket.ui.mobilymap;
 
-import org.apache.wicket.model.IModel;
-
 import com.google.code.jqwicket.ui.JQWebMarkupContainer;
+import org.apache.wicket.model.IModel;
 
 /**
  * @author mkalina

@@ -16,13 +16,13 @@
  */
 package com.google.code.jqwicket.ui.draggable;
 
-import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
+import com.google.code.jqwicket.ui.JQUIComponentBehavior;
 
 /**
  * @author mkalina
  *
  */
-public class DraggableBehavior extends JQUIComponentBehaivor<DraggableOptions>
+public class DraggableBehavior extends JQUIComponentBehavior<DraggableOptions>
 		implements IDraggable {
 
 	private static final long serialVersionUID = 1L;

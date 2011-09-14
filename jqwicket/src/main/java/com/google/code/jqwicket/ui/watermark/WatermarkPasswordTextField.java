@@ -16,11 +16,10 @@
  */
 package com.google.code.jqwicket.ui.watermark;
 
+import com.google.code.jqwicket.api.IJQFunction;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.PasswordTextField;
 import org.apache.wicket.model.IModel;
-
-import com.google.code.jqwicket.api.IJQFunction;
 
 /**
  * @author mkalina

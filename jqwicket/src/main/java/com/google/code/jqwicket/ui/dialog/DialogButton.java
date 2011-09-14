@@ -16,11 +16,11 @@
  */
 package com.google.code.jqwicket.ui.dialog;
 
-import java.io.Serializable;
-
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQOptions;
 import com.google.code.jqwicket.api.JQOptions;
+
+import java.io.Serializable;
 
 /**
  * @author mkalina

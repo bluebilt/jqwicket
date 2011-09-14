@@ -16,18 +16,17 @@
  */
 package com.google.code.jqwicket.ui.notifier;
 
-import org.apache.wicket.ajax.AjaxRequestTarget;
-
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQOptions;
 import com.google.code.jqwicket.api.JQOptions;
-import com.google.code.jqwicket.ui.JQUIComponentBehaivor;
+import com.google.code.jqwicket.ui.JQUIComponentBehavior;
+import org.apache.wicket.ajax.AjaxRequestTarget;
 
 /**
  * @author mkalina
  * 
  */
-public class NotifierBehavior extends JQUIComponentBehaivor<NotifierOptions>
+public class NotifierBehavior extends JQUIComponentBehavior<NotifierOptions>
 		implements INotifier {
 
 	private static final long serialVersionUID = 1L;

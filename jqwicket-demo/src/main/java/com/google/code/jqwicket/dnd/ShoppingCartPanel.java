@@ -16,55 +16,51 @@
  */
 package com.google.code.jqwicket.dnd;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 
-import com.google.code.jqwicket.dnd.DraggablePanel;
-import com.google.code.jqwicket.dnd.DroppablePanel;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author mkalina
- * 
  */
 public class ShoppingCartPanel extends DroppablePanel {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private List<Product> selectedProducts = new ArrayList<Product>();
+    private List<Product> selectedProducts = new ArrayList<Product>();
 
-	private WebMarkupContainer selectedProductsContainer;
+    private WebMarkupContainer selectedProductsContainer;
 
-	public ShoppingCartPanel(String id) {
-		super(id);
+    public ShoppingCartPanel(String id) {
+        super(id);
 
-		selectedProductsContainer = new WebMarkupContainer(
-				"selectedProductsContainer");
-		selectedProductsContainer.setOutputMarkupId(true);
+        selectedProductsContainer = new WebMarkupContainer(
+                "selectedProductsContainer");
+        selectedProductsContainer.setOutputMarkupId(true);
 
-		selectedProductsContainer.add(new ListView<Product>(
-				"selectedProductsView", selectedProducts) {
+        selectedProductsContainer.add(new ListView<Product>(
+                "selectedProductsView", selectedProducts) {
 
-			private static final long serialVersionUID = 1L;
+            private static final long serialVersionUID = 1L;
 
-			@Override
-			protected void populateItem(ListItem<Product> item) {
-				item.add(new Label("name", item.getModelObject().name));
-			}
-		});
+            @Override
+            protected void populateItem(ListItem<Product> item) {
+                item.add(new Label("name", item.getModelObject().name));
+            }
+        });
 
-		add(selectedProductsContainer);
-	}
+        add(selectedProductsContainer);
+    }
 
-	@Override
-	public void onDrop(AjaxRequestTarget target, DraggablePanel draggable) {
-		selectedProducts.add((Product) draggable.getDefaultModelObject());
-		target.addComponent(selectedProductsContainer);
-	}
+    @Override
+    public void onDrop(AjaxRequestTarget target, DraggablePanel draggable) {
+        selectedProducts.add((Product) draggable.getDefaultModelObject());
+        target.add(selectedProductsContainer);
+    }
 
 }

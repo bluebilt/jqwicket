@@ -16,46 +16,45 @@
  */
 package com.google.code.jqwicket.ui.guider;
 
-import java.io.Serializable;
-
 import com.google.code.jqwicket.api.IJQStatement;
 import com.google.code.jqwicket.api.JQuery;
 
+import java.io.Serializable;
+
 /**
  * @author mkalina
- * 
  */
 public class GuiderItem implements Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private boolean showOnStartup = false;
+    private boolean showOnStartup = false;
 
-	private GuiderOptions options;
+    private GuiderOptions options;
 
-	public GuiderItem(GuiderOptions options) {
-		this(options, false);
-	}
+    public GuiderItem(GuiderOptions options) {
+        this(options, false);
+    }
 
-	public GuiderItem(GuiderOptions options, boolean showOnStartup) {
-		this.options = options;
-		this.showOnStartup = showOnStartup;
-	}
+    public GuiderItem(GuiderOptions options, boolean showOnStartup) {
+        this.options = options;
+        this.showOnStartup = showOnStartup;
+    }
 
-	public boolean isShowOnStartup() {
-		return showOnStartup;
-	}
+    public boolean isShowOnStartup() {
+        return showOnStartup;
+    }
 
-	public GuiderOptions getOptions() {
-		return options;
-	}
+    public GuiderOptions getOptions() {
+        return options;
+    }
 
-	public IJQStatement toJQStatement() {
-		IJQStatement stmt = JQuery.js("guider").chain("createGuider",
-				this.options);
-		if (showOnStartup)
-			stmt.show();
-		return stmt;
-	}
+    public IJQStatement toJQStatement() {
+        IJQStatement stmt = JQuery.js(IGuider.JQ_COMPONENT_NAME).chain("createGuider",
+                this.options);
+        if (showOnStartup)
+            stmt.show();
+        return stmt;
+    }
 
 }

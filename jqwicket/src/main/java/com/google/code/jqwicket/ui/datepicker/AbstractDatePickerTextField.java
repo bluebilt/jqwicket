@@ -17,14 +17,13 @@
 package com.google.code.jqwicket.ui.datepicker;
 
 
+import com.google.code.jqwicket.JQHeaderContributionTarget;
+import com.google.code.jqwicket.api.IJQFunction;
+import com.google.code.jqwicket.api.IJQOptions;
+import com.google.code.jqwicket.ui.XYPosition;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.model.IModel;
-
-import com.google.code.jqwicket.api.IJQFunction;
-import com.google.code.jqwicket.api.IJQOptions;
-import com.google.code.jqwicket.JQHeaderContributionTarget;
-import com.google.code.jqwicket.ui.XYPosition;
 
 /**
  * @author mkalina

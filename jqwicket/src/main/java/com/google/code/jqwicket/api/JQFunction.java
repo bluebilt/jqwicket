@@ -16,12 +16,12 @@
  */
 package com.google.code.jqwicket.api;
 
-import static com.google.code.jqwicket.Utils.isNotEmpty;
-import static com.google.code.jqwicket.Utils.semicolon;
+import com.google.code.jqwicket.Utils;
 
 import java.io.Serializable;
 
-import com.google.code.jqwicket.Utils;
+import static com.google.code.jqwicket.Utils.isNotEmpty;
+import static com.google.code.jqwicket.Utils.semicolon;
 
 /**
  * See {@link IJQFunction}.
