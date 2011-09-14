@@ -20,8 +20,8 @@ import com.google.code.jqwicket.api.IJQStatement;
 import com.google.code.jqwicket.api.JQuery;
 import org.apache.wicket.Component;
 import org.apache.wicket.behavior.Behavior;
+import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
-import org.apache.wicket.request.resource.ResourceReference;
 
 import java.util.Arrays;
 import java.util.LinkedHashSet;
@@ -40,7 +40,7 @@ public class JQBehavior extends Behavior implements IJQHeaderContributor {
 
     private Set<JavaScriptResourceReference> jsResourceReferences;
 
-    private Set<ResourceReference> cssResourceReferences;
+    private Set<CssResourceReference> cssResourceReferences;
 
     private Set<CharSequence> jsResourceUrls;
 
@@ -106,12 +106,12 @@ public class JQBehavior extends Behavior implements IJQHeaderContributor {
         return this;
     }
 
-    public JQBehavior addCssResourceReferences(ResourceReference... refs) {
+    public JQBehavior addCssResourceReferences(CssResourceReference... refs) {
         if (Utils.isEmpty(refs))
             return this;
 
         if (this.cssResourceReferences == null)
-            this.cssResourceReferences = new LinkedHashSet<ResourceReference>();
+            this.cssResourceReferences = new LinkedHashSet<CssResourceReference>();
 
         this.cssResourceReferences.addAll(Arrays.asList(refs));
         return this;

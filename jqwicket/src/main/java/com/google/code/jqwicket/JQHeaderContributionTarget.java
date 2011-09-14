@@ -17,8 +17,8 @@
 package com.google.code.jqwicket;
 
 import com.google.code.jqwicket.api.IJQStatement;
+import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
-import org.apache.wicket.request.resource.ResourceReference;
 
 import java.io.Serializable;
 import java.util.*;
@@ -37,7 +37,7 @@ public class JQHeaderContributionTarget implements Serializable {
 
     private Set<CharSequence> jsResourceUrls;
 
-    private Set<ResourceReference> cssResourceReferences;
+    private Set<CssResourceReference> cssResourceReferences;
 
     private Set<CharSequence> cssResourceUrls;
 
@@ -45,8 +45,13 @@ public class JQHeaderContributionTarget implements Serializable {
 
     private Set<IJQStatement> jqStatementsOutsideDocumentReady;
 
-    public JQHeaderContributionTarget addJavascriptResourceReferences(
-            Collection<JavaScriptResourceReference> refs) {
+    /**
+     * Adds collection of javascript resource references to this contribution target.
+     *
+     * @param refs is a collection of javascript resource references
+     * @return this contribution target
+     */
+    public JQHeaderContributionTarget addJavascriptResourceReferences(Collection<JavaScriptResourceReference> refs) {
         if (isEmpty(refs))
             return this;
 
@@ -57,15 +62,25 @@ public class JQHeaderContributionTarget implements Serializable {
         return this;
     }
 
-    public JQHeaderContributionTarget addJavascriptResourceReferences(
-            JavaScriptResourceReference... refs) {
+    /**
+     * Adds an array of javascript resource references to this contribution target.
+     *
+     * @param refs is an array  of javascript resource references
+     * @return this contribution target
+     */
+    public JQHeaderContributionTarget addJavascriptResourceReferences(JavaScriptResourceReference... refs) {
         if (isEmpty(refs))
             return this;
         return this.addJavascriptResourceReferences(Arrays.asList(refs));
     }
 
-    public JQHeaderContributionTarget addJavascriptResourceUrls(
-            Collection<CharSequence> urls) {
+    /**
+     * Adds collection of javascript resource urls to this contribution target.
+     *
+     * @param urls is a collection of javascript resource urls
+     * @return this contribution target
+     */
+    public JQHeaderContributionTarget addJavascriptResourceUrls(Collection<CharSequence> urls) {
         if (isEmpty(urls))
             return this;
 
@@ -76,34 +91,54 @@ public class JQHeaderContributionTarget implements Serializable {
         return this;
     }
 
-    public JQHeaderContributionTarget addJavascriptResourceUrls(
-            CharSequence... urls) {
+    /**
+     * Adds an array of javascript resource urls to this contribution target.
+     *
+     * @param urls is an array of javascript resource urls
+     * @return this contribution target
+     */
+    public JQHeaderContributionTarget addJavascriptResourceUrls(CharSequence... urls) {
         if (isEmpty(urls))
             return this;
         return this.addJavascriptResourceUrls(Arrays.asList(urls));
     }
 
-    public JQHeaderContributionTarget addCssResourceReferences(
-            Collection<ResourceReference> refs) {
+    /**
+     * Adds collection of css resource references to this contribution target.
+     *
+     * @param refs is a collection of css resource references
+     * @return this contribution target
+     */
+    public JQHeaderContributionTarget addCssResourceReferences(Collection<CssResourceReference> refs) {
         if (isEmpty(refs))
             return this;
 
         if (this.cssResourceReferences == null)
-            this.cssResourceReferences = new LinkedHashSet<ResourceReference>();
+            this.cssResourceReferences = new LinkedHashSet<CssResourceReference>();
 
         this.cssResourceReferences.addAll(refs);
         return this;
     }
 
-    public JQHeaderContributionTarget addCssResourceReferences(
-            ResourceReference... refs) {
+    /**
+     * Adds an array of css resource references to this contribution target.
+     *
+     * @param refs is an array of css resource references
+     * @return this contribution target
+     */
+    public JQHeaderContributionTarget addCssResourceReferences(CssResourceReference... refs) {
         if (isEmpty(refs))
             return this;
         return this.addCssResourceReferences(Arrays.asList(refs));
     }
 
-    public JQHeaderContributionTarget addCssResourceUrls(
-            Collection<CharSequence> urls) {
+    /**
+     * Adds collection of css resource urls to this contribution target.
+     *
+     * @param urls is a collection of css resource urls
+     * @return this contribution target
+     */
+    public JQHeaderContributionTarget addCssResourceUrls(Collection<CharSequence> urls) {
         if (isEmpty(urls))
             return this;
 
@@ -114,6 +149,12 @@ public class JQHeaderContributionTarget implements Serializable {
         return this;
     }
 
+    /**
+     * Adds an array of css resource urls to this contribution target.
+     *
+     * @param urls is an array of css resource urls
+     * @return this contribution target
+     */
     public JQHeaderContributionTarget addCssResourceUrls(CharSequence... urls) {
         if (isEmpty(urls))
             return this;
@@ -124,10 +165,9 @@ public class JQHeaderContributionTarget implements Serializable {
      * Adds statements that will be rendered inside the "document.ready" block
      *
      * @param statements
-     * @return
+     * @return this contribution target
      */
-    public JQHeaderContributionTarget addJQStatements(
-            Collection<IJQStatement> statements) {
+    public JQHeaderContributionTarget addJQStatements(Collection<IJQStatement> statements) {
         return addJQStatements(statements, true);
     }
 
@@ -135,10 +175,9 @@ public class JQHeaderContributionTarget implements Serializable {
      * Adds statements that will be rendered inside the "document.ready" block
      *
      * @param statements
-     * @return
+     * @return this contribution target
      */
-    public JQHeaderContributionTarget addJQStatements(
-            IJQStatement... statements) {
+    public JQHeaderContributionTarget addJQStatements(IJQStatement... statements) {
         if (isEmpty(statements))
             return this;
         return this.addJQStatements(Arrays.asList(statements), true);
@@ -149,10 +188,9 @@ public class JQHeaderContributionTarget implements Serializable {
      *
      * @param statements
      * @param renderInsideDocumentReady
-     * @return
+     * @return this contribution target
      */
-    public JQHeaderContributionTarget addJQStatements(
-            IJQStatement[] statements, boolean renderInsideDocumentReady) {
+    public JQHeaderContributionTarget addJQStatements(IJQStatement[] statements, boolean renderInsideDocumentReady) {
         if (isEmpty(statements))
             return this;
         return this.addJQStatements(Arrays.asList(statements),
@@ -162,13 +200,13 @@ public class JQHeaderContributionTarget implements Serializable {
     /**
      * Adds statements that will be rendered inside or outside the "document.ready" block
      *
-     * @param statements
-     * @param renderInsideDocumentReady
-     * @return
+     * @param statements                is a collection of {@link IJQStatement}-s
+     * @param renderInsideDocumentReady flag indicating whether the statement should be rendered inside or outside the
+     *                                  "document.ready" block
+     * @return this target
      */
-    public JQHeaderContributionTarget addJQStatements(
-            Collection<IJQStatement> statements,
-            boolean renderInsideDocumentReady) {
+    public JQHeaderContributionTarget addJQStatements(Collection<IJQStatement> statements,
+                                                      boolean renderInsideDocumentReady) {
 
         if (isEmpty(statements))
             return this;
@@ -192,10 +230,10 @@ public class JQHeaderContributionTarget implements Serializable {
     }
 
     /**
-     * Returns true, if at least one resource (url, resource reference, statement..) was added to the contribution target
-     * and should be rendered. Otherwise returns false.
+     * Returns true, if at least one resource (url, resource reference, statement..) was added to the contribution
+     * target and should be rendered. Otherwise returns false.
      *
-     * @return
+     * @return true, if there is at least one resource to render. otherwise returns false.
      */
     public boolean hasResourcesToRender() {
         return isNotEmpty(this.jsResourceReferences)
@@ -210,7 +248,7 @@ public class JQHeaderContributionTarget implements Serializable {
      * Returns unmodifiable collection of available javascript resource references. <br> This method will never return
      * null.
      *
-     * @return
+     * @return unmodifiable collection of available javascript resource references
      */
     public Collection<JavaScriptResourceReference> getJsResourceReferences() {
         return this.jsResourceReferences != null ? Collections
@@ -221,7 +259,7 @@ public class JQHeaderContributionTarget implements Serializable {
     /**
      * Returns unmodifiable collection of available javascript resource urls. <br> This method will never return null.
      *
-     * @return
+     * @return unmodifiable collection of available javascript resource urls
      */
     public Collection<CharSequence> getJsResourceUrls() {
         return this.jsResourceUrls != null ? Collections
@@ -232,18 +270,18 @@ public class JQHeaderContributionTarget implements Serializable {
     /**
      * Returns unmodifiable collection of available css resource references. <br> This method will never return null.
      *
-     * @return
+     * @return unmodifiable collection of available css resource references
      */
-    public Collection<ResourceReference> getCssResourceReferences() {
+    public Collection<CssResourceReference> getCssResourceReferences() {
         return this.cssResourceReferences != null ? Collections
                 .unmodifiableSet(this.cssResourceReferences) : Collections
-                .<ResourceReference>emptySet();
+                .<CssResourceReference>emptySet();
     }
 
     /**
      * Returns unmodifiable collection of available css resource urls. <br> This method will never return null.
      *
-     * @return
+     * @return unmodifiable collection of available css resource urls
      */
     public Collection<CharSequence> getCssResourceUrls() {
         return this.cssResourceUrls != null ? Collections
@@ -252,10 +290,11 @@ public class JQHeaderContributionTarget implements Serializable {
     }
 
     /**
-     * Returns unmodifiable collection of available {@link IJQStatement}-s that will be rendered inside "document.ready"
-     * block. <br> This method will never return null.
+     * Returns unmodifiable collection of available {@link IJQStatement}-s that will be rendered inside the "document
+     * .ready" block. <br> This method will never return null.
      *
-     * @return
+     * @return unmodifiable collection of available {@link IJQStatement}-s   that will be rendered inside the "document
+     *         .ready" block.
      */
     public Collection<IJQStatement> getJQStatementsInsideDocumentReady() {
         return this.jqStatementsInsideDocumentReady != null ? Collections
@@ -264,10 +303,11 @@ public class JQHeaderContributionTarget implements Serializable {
     }
 
     /**
-     * Returns unmodifiable collection of available {@link IJQStatement}-s that will be rendered outside "document.ready"
-     * block. <br> This method will never return null.
+     * Returns unmodifiable collection of available {@link IJQStatement}-s that will be rendered outside  the
+     * "document.ready" block. <br> This method will never return null.
      *
-     * @return
+     * @return nmodifiable collection of available {@link IJQStatement}-s that will be rendered outside "document.ready"
+     *         block
      */
     public Collection<IJQStatement> getJQStatementsOutsideDocumentReady() {
         return this.jqStatementsOutsideDocumentReady != null ? Collections

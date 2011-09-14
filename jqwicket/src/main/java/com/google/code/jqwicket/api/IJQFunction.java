@@ -20,48 +20,51 @@ import java.io.Serializable;
 
 /**
  * Interface representing anonymous javascript function.
- * 
+ *
  * @author mkalina
- * 
  */
 public interface IJQFunction extends Serializable, CharSequence {
 
-	/**
-	 * Defines the name of the javascript function to render.
-	 * 
-	 * @param name
-	 * @return
-	 */
-	IJQFunction withName(CharSequence name);
+    /**
+     * Defines the name of the javascript function to render.
+     *
+     * @param name
+     * @return
+     */
+    IJQFunction withName(CharSequence name);
 
-	/**
-	 * Defines the parameters of the javascript function to render.
-	 * 
-	 * @param args
-	 * @return
-	 */
-	IJQFunction withParams(CharSequence... args);
+    /**
+     * Defines the parameters of the javascript function to render.
+     *
+     * @param args
+     * @return
+     */
+    IJQFunction withParams(CharSequence... args);
 
-	/**
-	 * Returns the name of the function.
-	 * 
-	 * @return
-	 */
-	CharSequence getName();
+    /**
+     * Returns the name of the function.
+     *
+     * @return
+     */
+    CharSequence getName();
 
-	/**
-	 * Returns the arrray of parameters.
-	 * 
-	 * @return
-	 */
-	CharSequence[] getParams();
+    /**
+     * Returns the arrray of parameters.
+     *
+     * @return
+     */
+    CharSequence[] getParams();
 
-	/**
-	 * 
-	 * @param renderFunctionBodyOnly
-	 * @return
-	 */
-	String toString(boolean renderFunctionBodyOnly);
+    /**
+     * @param renderFunctionBodyOnly
+     * @return
+     */
+    String toString(boolean renderFunctionBodyOnly);
 
-	IJQStatement toStatement();
+    /**
+     * Returns function body only as {@link IJQStatement}.
+     *
+     * @return function body only
+     */
+    IJQStatement toStatement();
 }

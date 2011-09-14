@@ -42,16 +42,13 @@ public class JQComponentOnBeforeRenderListener implements
 
     /**
      * {@inheritDoc}
-     *
-     * @see org.apache.wicket.application.IComponentOnBeforeRenderListener#onBeforeRender(org.apache.wicket.Component)
      */
     public void onBeforeRender(Component component) {
         if (component == null)
             return;
 
         if (IJQHeaderContributor.class.isAssignableFrom(component.getClass())) {
-            addJQueryHeaderContributor(component,
-                    (IJQHeaderContributor) component);
+            addJQueryHeaderContributor(component, (IJQHeaderContributor) component);
         }
 
         addJQueryHeaderContributor(component, findJQueryBehaviors(component));
@@ -61,8 +58,7 @@ public class JQComponentOnBeforeRenderListener implements
         return new LinkedHashSet<JQBehavior>(component.getBehaviors(JQBehavior.class));
     }
 
-    private void addJQueryHeaderContributor(Component component,
-                                            IJQHeaderContributor... contributor) {
+    private void addJQueryHeaderContributor(Component component, IJQHeaderContributor... contributor) {
 
         if (Utils.isEmpty(contributor))
             return;

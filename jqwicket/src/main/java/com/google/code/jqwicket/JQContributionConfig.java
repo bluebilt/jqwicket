@@ -18,8 +18,8 @@ package com.google.code.jqwicket;
 
 import org.apache.wicket.Application;
 import org.apache.wicket.MetaDataKey;
+import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
-import org.apache.wicket.request.resource.ResourceReference;
 
 import java.io.Serializable;
 
@@ -58,7 +58,7 @@ public class JQContributionConfig implements Serializable {
 
     private CharSequence nonConflictAlias;
 
-    private ResourceReference jqueryUiCssResourceReference;
+    private CssResourceReference jqueryUiCssResourceReference;
 
     private boolean useYuiJavascriptCompressor = false;
 
@@ -117,7 +117,7 @@ public class JQContributionConfig implements Serializable {
         return this;
     }
 
-    public JQContributionConfig withJQueryUiCss(ResourceReference ref) {
+    public JQContributionConfig withJQueryUiCss(CssResourceReference ref) {
         this.jqueryUiCssUrl = null;
         this.jqueryUiCssResourceReference = ref;
         return this;
@@ -162,7 +162,7 @@ public class JQContributionConfig implements Serializable {
         return jqueryUiCssUrl;
     }
 
-    public ResourceReference getJqueryUiCssResourceReference() {
+    public CssResourceReference getJqueryUiCssResourceReference() {
         return jqueryUiCssResourceReference;
     }
 

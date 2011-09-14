@@ -27,7 +27,7 @@ import java.util.Collection;
 import java.util.Map;
 
 /**
- * Collection of utility methodes
+ * Collection of utility methods
  *
  * @author mkalina
  *         <p/>

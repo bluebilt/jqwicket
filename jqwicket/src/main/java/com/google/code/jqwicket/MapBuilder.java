@@ -20,34 +20,35 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * Small helper class to build {@link Map}-s using "fluent interface".
+ *
  * @author mkalina
  * @version $Id: $
- * 
  */
 public class MapBuilder<K, V> {
 
-	private Map<K, V> params;
+    private Map<K, V> params;
 
-	public MapBuilder() {
-		this.params = new HashMap<K, V>();
-	}
+    public MapBuilder() {
+        this.params = new HashMap<K, V>();
+    }
 
-	public MapBuilder(Map<K, V> map) {
-		this.params = new HashMap<K, V>(map);
-	}
+    public MapBuilder(Map<K, V> map) {
+        this.params = new HashMap<K, V>(map);
+    }
 
-	public MapBuilder<K, V> add(K key, V value) {
-		this.params.put(key, value);
-		return this;
-	}
+    public MapBuilder<K, V> add(K key, V value) {
+        this.params.put(key, value);
+        return this;
+    }
 
-	public MapBuilder<K, V> remove(K key) {
-		this.params.remove(key);
-		return this;
-	}
+    public MapBuilder<K, V> remove(K key) {
+        this.params.remove(key);
+        return this;
+    }
 
-	public Map<K, V> build() {
-		return this.params;
-	}
+    public Map<K, V> build() {
+        return this.params;
+    }
 
 }

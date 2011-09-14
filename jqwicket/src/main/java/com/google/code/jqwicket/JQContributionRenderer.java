@@ -27,8 +27,8 @@ import org.apache.wicket.javascript.IJavaScriptCompressor;
 import org.apache.wicket.markup.html.IHeaderContributor;
 import org.apache.wicket.markup.html.IHeaderResponse;
 import org.apache.wicket.request.cycle.RequestCycle;
+import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
-import org.apache.wicket.request.resource.ResourceReference;
 
 import java.util.Collection;
 import java.util.LinkedHashSet;
@@ -174,14 +174,14 @@ public class JQContributionRenderer extends Behavior {
     }
 
     private void renderCssResourcesRefs(IHeaderResponse response,
-                                        Collection<ResourceReference> resources) {
-        for (ResourceReference ref : resources) {
+                                        Collection<CssResourceReference> resources) {
+        for (CssResourceReference ref : resources) {
             renderCssResourcesRef(response, ref);
         }
     }
 
     private void renderCssResourcesRef(IHeaderResponse response,
-                                       ResourceReference ref) {
+                                       CssResourceReference ref) {
         if (ref != null)
             response.renderCSSReference(ref);
     }

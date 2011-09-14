@@ -62,8 +62,9 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement jquery();
 
     /**
-     * Adds one of the following expressions to this statement:<br> <ul> <li><tt>.add( selector )</tt></li> <li><tt>.add(
-     * elements )</tt></li> <li><tt>.add( html )</tt></li> <li><tt>.add( selector, context )</tt></li> </ul>
+     * Adds one of the following expressions to this statement:<br> <ul> <li><tt>.add( selector )</tt></li>
+     * <li><tt>.add( elements )</tt></li> <li><tt>.add( html )</tt></li> <li><tt>.add( selector, context )</tt></li>
+     * </ul>
      *
      * @param args
      * @return this statement
@@ -72,8 +73,9 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement add(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement:<br> <ul> <li><tt>.add( selector )</tt></li> <li><tt>.add(
-     * elements )</tt></li> <li><tt>.add( html )</tt></li> <li><tt>.add( selector, context )</tt></li> </ul>
+     * Adds one of the following expressions to this statement:<br> <ul> <li><tt>.add( selector )</tt></li>
+     * <li><tt>.add( elements )</tt></li> <li><tt>.add( html )</tt></li> <li><tt>.add( selector, context )</tt></li>
+     * </ul>
      *
      * @param component
      * @return this statement
@@ -100,8 +102,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement after(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>jQuery.ajax( url, [ settings ] )</tt></li>
-     * <li><tt>jQuery.ajax( settings )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>jQuery.ajax( url, [ settings ]
+     * )</tt></li> <li><tt>jQuery.ajax( settings )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/jQuery.ajax/">http://api.jquery.com/jQuery.ajax/</a>
@@ -204,8 +206,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement animate(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.append( content, [ content ] )</tt></li>
-     * <li><tt>.append( function(index, html) )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.append( content, [ content ]
+     * )</tt></li> <li><tt>.append( function(index, html) )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/append/">http://api.jquery.com/append/</a>
@@ -232,8 +234,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement attr(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.before( content, [ content ] )</tt></li>
-     * <li><tt>.before( function )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.before( content, [ content ]
+     * )</tt></li> <li><tt>.before( function )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/before/">http://api.jquery.com/before/</a>
@@ -268,8 +270,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement browser();
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.change( handler(eventObject) )</tt></li>
-     * <li><tt>.change( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.change()</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.change( handler(eventObject)
+     * )</tt></li> <li><tt>.change( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.change()</tt></li> </ul>
      *
      * @param args
      * @return this statement
@@ -279,7 +281,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement change(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.children( [ selector ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.children( [ selector ] )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/children/">http://api.jquery.com/children/</a>
@@ -287,7 +290,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement children(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.children( #component.id )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.children( #component.id )</tt></li>
+     * </ul>
      *
      * @param component
      * @return this statement
@@ -308,15 +312,15 @@ public interface IJQStatement extends Serializable, CharSequence {
      * Adds one of the following expressions to this statement<br> <ul> <li><tt>.click( handler(eventObject) )</tt></li>
      * <li><tt>.click( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.click()</tt></li> </ul>
      *
-     * @param handler
+     * @param args
      * @return this statement
      * @see <a href="http://api.jquery.com/click/">http://api.jquery.com/click/</a>
      */
     IJQStatement click(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.clone( [ withDataAndEvents ] )</tt></li>
-     * <li><tt>.clone( [ withDataAndEvents ], [ deepWithDataAndEvents ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.clone( [ withDataAndEvents ]
+     * )</tt></li> <li><tt>.clone( [ withDataAndEvents ], [ deepWithDataAndEvents ] )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/clone/">http://api.jquery.com/clone/</a>
@@ -379,8 +383,8 @@ public interface IJQStatement extends Serializable, CharSequence {
 
     /**
      * Adds one of the following expressions to this statement<br> <ul> <li><tt>.data( key, value )</tt></li>
-     * <li><tt>.data( obj )</tt></li> <li><tt>.data( key )</tt></li> <li><tt>.data()</tt></li> <li><tt>.data( element, key,
-     * value )</tt></li> <li><tt>.data( element, key )</tt></li> </ul>
+     * <li><tt>.data( obj )</tt></li> <li><tt>.data( key )</tt></li> <li><tt>.data()</tt></li> <li><tt>.data( element,
+     * key, value )</tt></li> <li><tt>.data( element, key )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/data/">http://api.jquery.com/data/</a>
@@ -388,8 +392,9 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement data(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.dblclick( handler(eventObject) )</tt></li>
-     * <li><tt>.dblclick( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.dblclick()</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.dblclick( handler(eventObject)
+     * )</tt></li> <li><tt>.dblclick( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.dblclick()</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/dblclick/">http://api.jquery.com/dblclick/</a>
@@ -397,7 +402,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement dblclick(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.always( alwaysCallbacks )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.always( alwaysCallbacks )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/deferred.always/">http://api.jquery.com/deferred.always/</a>
@@ -464,8 +470,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement deferredReject(CharSequence args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.rejectWith( context, [ args ] )</tt></li>
-     * </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.rejectWith( context, [ args ]
+     * )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/deferred.rejectWith/">http://api.jquery.com/deferred.rejectWith/</a>
@@ -481,8 +487,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement deferredResolve(CharSequence args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.resolveWith( context, [ args ] )</tt></li>
-     * </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.resolveWith( context, [ args ]
+     * )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/deferred.resolveWith/">http://api.jquery.com/deferred.resolveWith/</a>
@@ -500,8 +506,8 @@ public interface IJQStatement extends Serializable, CharSequence {
                               CharSequence failCallbacks);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.delay( duration, [ queueName ] )</tt></li>
-     * </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.delay( duration, [ queueName ]
+     * )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/delay/">http://api.jquery.com/delay/</a>
@@ -536,7 +542,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement detach(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.detach( #component.id )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.detach( #component.id )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/detach/">http://api.jquery.com/detach/</a>
@@ -544,8 +551,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement detach(Component component);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.die()</tt></li> <li><tt>.die( eventType, [
-     * handler ] )</tt></li> <li><tt>.die( eventTypes )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.die()</tt></li> <li><tt>.die(
+     * eventType, [ handler ] )</tt></li> <li><tt>.die( eventTypes )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/die/">http://api.jquery.com/die/</a>
@@ -553,8 +560,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement die(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.each( collection, callback(indexInArray,
-     * valueOfElement) )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.each( collection,
+     * callback(indexInArray, valueOfElement) )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/jQuery.each/">http://api.jquery.com/jQuery.each/</a>
@@ -562,8 +569,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement each(CharSequence collection, CharSequence callback);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.each( function(index, Element) )</tt></li>
-     * </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.each( function(index, Element)
+     * )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/each/">http://api.jquery.com/each/</a>
@@ -575,9 +582,9 @@ public interface IJQStatement extends Serializable, CharSequence {
      * [speed], [callback] )</tt></li> </ul> <br> - <b>effect</b>: The effect to be used. Possible values: 'blind',
      * 'bounce', 'clip', 'drop', 'explode', 'fold', 'highlight', 'puff', 'pulsate', 'scale', 'shake', 'size', 'slide',
      * 'transfer'.<br> - <b>options</b>: A object/hash including specific options for the effect. (optional)<br> -
-     * <b>speed</b>: A string representing one of the three predefined speeds ("slow", "normal", or "fast") or the number
-     * of milliseconds to run the animation (e.g. 1000). (optional)<br> - <b>callback</b>: A function that is called after
-     * the effect is completed. (optional)<br>
+     * <b>speed</b>: A string representing one of the three predefined speeds ("slow", "normal", or "fast") or the
+     * number of milliseconds to run the animation (e.g. 1000). (optional)<br> - <b>callback</b>: A function that is
+     * called after the effect is completed. (optional)<br>
      *
      * @param args
      * @return
@@ -618,8 +625,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement error(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.extend( target, [ object1 ], [ objectN ]
-     * )</tt></li> <li><tt>y.extend( [ deep ], target, object1, [ objectN ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.extend( target, [ object1 ], [ objectN
+     * ] )</tt></li> <li><tt>y.extend( [ deep ], target, object1, [ objectN ] )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/jQuery.extend/">http://api.jquery.com/jQuery.extend/</a>
@@ -674,7 +681,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement filter(CharSequence arg);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.filter( #component.id )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.filter( #component.id )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/filter/">http://api.jquery.com/filter/</a>
@@ -682,8 +690,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement filter(Component component);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.find( selector )</tt></li> <li><tt>.find(
-     * jQuery object )</tt></li> <li><tt>.find( element )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.find( selector )</tt></li>
+     * <li><tt>.find( jQuery object )</tt></li> <li><tt>.find( element )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/find/">http://api.jquery.com/find/</a>
@@ -717,8 +725,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement focus(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.focusin( handler(eventObject) )</tt></li>
-     * <li><tt>.focusin( [ eventData ], handler(eventObject) )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.focusin( handler(eventObject)
+     * )</tt></li> <li><tt>.focusin( [ eventData ], handler(eventObject) )</tt></li> </ul>
      *
      * @param args
      * @return this statement
@@ -727,8 +735,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement focusin(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.focusout( handler(eventObject) )</tt></li>
-     * <li><tt>.focusout( [ eventData ], handler(eventObject) )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.focusout( handler(eventObject)
+     * )</tt></li> <li><tt>.focusout( [ eventData ], handler(eventObject) )</tt></li> </ul>
      *
      * @param args
      * @return this statement
@@ -747,8 +755,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement get(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li> <tt>.getJSON( url, [ data ], [ success(data,
-     * textStatus, jqXHR) ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li> <tt>.getJSON( url, [ data ], [
+     * success(data, textStatus, jqXHR) ] )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/jQuery.getJSON/">http://api.jquery.com/jQuery.getJSON/</a>
@@ -824,8 +832,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement hasData(CharSequence element);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.height()</tt></li> <li><tt>.height( value
-     * )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.height()</tt></li> <li><tt>.height(
+     * value )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/height/">http://api.jquery.com/height/</a>
@@ -833,8 +841,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement height(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.hide()</tt></li> <li><tt>.hide( duration,
-     * [ callback ] )</tt></li> <li><tt>.hide( [ duration ], [ easing ], [ callback ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.hide()</tt></li> <li><tt>.hide(
+     * duration, [ callback ] )</tt></li> <li><tt>.hide( [ duration ], [ easing ], [ callback ] )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/hide/">http://api.jquery.com/hide/</a>
@@ -859,8 +867,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement hover(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.html()</tt></li> <li><tt>.html( htmlString
-     * )</tt></li> <li><tt>.html( function(index, oldhtml) )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.html()</tt></li> <li><tt>.html(
+     * htmlString )</tt></li> <li><tt>.html( function(index, oldhtml) )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/html/">http://api.jquery.com/html/</a>
@@ -868,7 +876,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement html(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.inArray( value, array )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.inArray( value, array )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/jQuery.inArray/">http://api.jquery.com/jQuery.inArray/</a>
@@ -876,8 +885,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement inArray(CharSequence value, CharSequence array);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.index()</tt></li> <li><tt>.index( selector
-     * )</tt></li> <li><tt>.index( element )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.index()</tt></li> <li><tt>.index(
+     * selector )</tt></li> <li><tt>.index( element )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/index/">http://api.jquery.com/index/</a>
@@ -968,7 +977,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement isArray(CharSequence obj);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.isEmptyObject( object )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.isEmptyObject( object )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/jQuery.isEmptyObject/">http://api.jquery.com/jQuery.isEmptyObject/</a>
@@ -984,7 +994,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement isFunction(CharSequence obj);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.isPlainObject( object )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.isPlainObject( object )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/jQuery.isPlainObject/">http://api.jquery.com/jQuery.isPlainObject/</a>
@@ -1008,8 +1019,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement isXMLDoc(CharSequence node);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.keydown( handler(eventObject) )</tt></li>
-     * <li><tt>.keydown( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.keydown()</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.keydown( handler(eventObject)
+     * )</tt></li> <li><tt>.keydown( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.keydown()</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/keydown/">http://api.jquery.com/keydown/</a>
@@ -1017,8 +1028,9 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement keydown(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.keypress( handler(eventObject) )</tt></li>
-     * <li><tt>.keypress( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.keypress()</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.keypress( handler(eventObject)
+     * )</tt></li> <li><tt>.keypress( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.keypress()</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/keypress/">http://api.jquery.com/keypress/</a>
@@ -1128,8 +1140,9 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement mousemove(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.mouseout( handler(eventObject) )</tt></li>
-     * <li><tt>.mouseout( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.mouseout()</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.mouseout( handler(eventObject)
+     * )</tt></li> <li><tt>.mouseout( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.mouseout()</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/mouseout/">http://api.jquery.com/mouseout/</a>
@@ -1147,8 +1160,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement mouseover(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.mouseup( handler(eventObject) )</tt></li>
-     * <li><tt>.mouseup( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.mouseup()</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.mouseup( handler(eventObject)
+     * )</tt></li> <li><tt>.mouseup( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.mouseup()</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/mouseup/">http://api.jquery.com/mouseup/</a>
@@ -1172,7 +1185,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement next(Component component);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.nextAll( [ selector ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.nextAll( [ selector ] )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/nextAll/">http://api.jquery.com/nextAll/</a>
@@ -1180,7 +1194,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement nextAll(CharSequence... selector);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.nextAll( #component.id )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.nextAll( #component.id )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/nextAll/">http://api.jquery.com/nextAll/</a>
@@ -1188,7 +1203,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement nextAll(Component component);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.nextUntil( [ selector ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.nextUntil( [ selector ] )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/nextUntil/">http://api.jquery.com/nextUntil/</a>
@@ -1273,8 +1289,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement one(CharSequence eventType, CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.outerHeight( [ includeMargin ] )</tt></li>
-     * </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.outerHeight( [ includeMargin ]
+     * )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/outerHeight/">http://api.jquery.com/outerHeight/</a>
@@ -1282,8 +1298,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement outerHeight(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.outerWidth( [ includeMargin ] )</tt></li>
-     * </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.outerWidth( [ includeMargin ]
+     * )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/outerWidth/">http://api.jquery.com/outerWidth/</a>
@@ -1308,7 +1324,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement parent(CharSequence... selector);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.parent( #component.id )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.parent( #component.id )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/parent/">http://api.jquery.com/parent/</a>
@@ -1316,7 +1333,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement parent(Component component);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.parents( [ selector ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.parents( [ selector ] )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/parents/">http://api.jquery.com/parents/</a>
@@ -1324,7 +1342,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement parents(CharSequence... selector);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.parents( #component.id )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.parents( #component.id )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/parents/">http://api.jquery.com/parents/</a>
@@ -1383,8 +1402,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement post(CharSequence url, CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.prepend( content, [ content ] )</tt></li>
-     * <li><tt>.prepend( function(index, html) )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.prepend( content, [ content ]
+     * )</tt></li> <li><tt>.prepend( function(index, html) )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/prepend/">http://api.jquery.com/prepend/</a>
@@ -1426,7 +1445,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement prev(Component component);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.prevAll( [ selector ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.prevAll( [ selector ] )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/prevAll/">http://api.jquery.com/prevAll/</a>
@@ -1434,7 +1454,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement prevAll(CharSequence... selector);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.prevAll( #component.id )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.prevAll( #component.id )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/prevAll/">http://api.jquery.com/prevAll/</a>
@@ -1442,7 +1463,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement prevAll(Component component);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.prevUntil( [ selector ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.prevUntil( [ selector ] )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/prevUntil/">http://api.jquery.com/prevUntil/</a>
@@ -1459,8 +1481,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement prevUntil(Component component);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.promise( [ type ], [ target ] )</tt></li>
-     * </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.promise( [ type ], [ target ]
+     * )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/promise/">http://api.jquery.com/promise/</a>
@@ -1524,7 +1546,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement remove(CharSequence... selector);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.remove( #component.id )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.remove( #component.id )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/remove/">http://api.jquery.com/remove/</a>
@@ -1596,8 +1619,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement replaceWith(CharSequence arg);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.resize( handler(eventObject) )</tt></li>
-     * <li><tt>.resize( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.resize()</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.resize( handler(eventObject)
+     * )</tt></li> <li><tt>.resize( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.resize()</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/resize/">http://api.jquery.com/resize/</a>
@@ -1605,8 +1628,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement resize(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.scroll( handler(eventObject) )</tt></li>
-     * <li><tt>.scroll( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.scroll()</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.scroll( handler(eventObject)
+     * )</tt></li> <li><tt>.scroll( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.scroll()</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/scroll/">http://api.jquery.com/scroll/</a>
@@ -1632,8 +1655,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement scrollTop(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.select( handler(eventObject) )</tt></li>
-     * <li><tt>.select( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.select()</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.select( handler(eventObject)
+     * )</tt></li> <li><tt>.select( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.select()</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/select/">http://api.jquery.com/select/</a>
@@ -1657,8 +1680,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement serializeArray();
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.show()</tt></li> <li><tt>.show( duration,
-     * [ callback ] )</tt></li> <li><tt>.show( [ duration ], [ easing ], [ callback ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.show()</tt></li> <li><tt>.show(
+     * duration, [ callback ] )</tt></li> <li><tt>.show( [ duration ], [ easing ], [ callback ] )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/show/">http://api.jquery.com/show/</a>
@@ -1666,7 +1689,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement show(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.siblings( [ selector ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.siblings( [ selector ] )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/siblings/">http://api.jquery.com/siblings/</a>
@@ -1674,7 +1698,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement siblings(CharSequence... selector);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.siblings( #component.id )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.siblings( #component.id )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/siblings/">http://api.jquery.com/siblings/</a>
@@ -1690,7 +1715,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement size();
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.slice( start, [ end ] )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.slice( start, [ end ] )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/slice/">http://api.jquery.com/slice/</a>
@@ -1742,8 +1768,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement sub();
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.submit( handler(eventObject) )</tt></li>
-     * <li><tt>.submit( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.submit()</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.submit( handler(eventObject)
+     * )</tt></li> <li><tt>.submit( [ eventData ], handler(eventObject) )</tt></li> <li><tt>.submit()</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/submit/">http://api.jquery.com/submit/</a>
@@ -1751,8 +1777,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement submit(CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.text()</tt></li> <li><tt>.text( textString
-     * )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.text()</tt></li> <li><tt>.text(
+     * textString )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/text/">http://api.jquery.com/text/</a>
@@ -1797,8 +1823,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement trigger(CharSequence event, CharSequence... args);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.triggerHandler( eventType, extraParameters
-     * )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.triggerHandler( eventType,
+     * extraParameters )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/triggerHandler/">http://api.jquery.com/triggerHandler/</a>
@@ -1824,8 +1850,8 @@ public interface IJQStatement extends Serializable, CharSequence {
 
     /**
      * Adds one of the following expressions to this statement<br> <ul> <li><tt>.unbind( [ eventType ], [
-     * handler(eventObject) ] )</tt></li> <li><tt>.unbind( eventType, false )</tt></li> <li><tt>.unbind( event )</tt></li>
-     * </ul>
+     * handler(eventObject) ] )</tt></li> <li><tt>.unbind( eventType, false )</tt></li> <li><tt>.unbind( event
+     * )</tt></li> </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/unbind/">http://api.jquery.com/unbind/</a>
@@ -1876,7 +1902,8 @@ public interface IJQStatement extends Serializable, CharSequence {
     IJQStatement wrapAll(CharSequence wrappingElement);
 
     /**
-     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.wrapAll( #component.id )</tt></li> </ul>
+     * Adds one of the following expressions to this statement<br> <ul> <li><tt>.wrapAll( #component.id )</tt></li>
+     * </ul>
      *
      * @return this statement
      * @see <a href="http://api.jquery.com/wrapAll/">http://api.jquery.com/wrapAll/</a>
