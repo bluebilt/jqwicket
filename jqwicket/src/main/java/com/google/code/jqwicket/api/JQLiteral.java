@@ -21,104 +21,120 @@ import com.google.code.jqwicket.Utils;
 import java.io.Serializable;
 
 /**
- * This class represents a single javascript literal. By setting the
- * {@link #mode} property you can surround the wrapped character sequence with
- * quotes, double quotes or let it as it is. Default surrounding mode is
- * {@link Mode#DBLQUOTED}.
- * 
+ * This class represents a single javascript literal. By setting the {@link #mode} property you can surround the wrapped
+ * character sequence with quotes, double quotes or let it as it is. Default surrounding mode is {@link
+ * Mode#DBLQUOTED}.
+ *
  * @author mkalina
- * 
  */
 public class JQLiteral implements CharSequence, Serializable {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	public static enum Mode {
+    public static enum Mode {
 
-		QUOTED, DBLQUOTED, RAW;
-	}
+        QUOTED, DBLQUOTED, RAW;
+    }
 
-	private Mode mode = Mode.QUOTED;
+    private Mode mode = Mode.QUOTED;
 
-	protected CharSequence buf;
+    protected CharSequence buf;
 
-	private JQLiteral(CharSequence s, Mode mode) {
-		this.buf = s;
-		this.mode = mode;
-	}
+    private JQLiteral(CharSequence s, Mode mode) {
+        this.buf = s;
+        this.mode = mode;
+    }
 
-	public int length() {
-		return buf.length();
-	}
+    public int length() {
+        return buf.length();
+    }
 
-	public char charAt(int index) {
-		return buf.charAt(index);
-	}
+    public char charAt(int index) {
+        return buf.charAt(index);
+    }
 
-	@Override
-	public String toString() {
-		return buf.toString();
-	}
+    @Override
+    public String toString() {
+        return buf.toString();
+    }
 
-	public CharSequence subSequence(int start, int end) {
-		return buf.subSequence(start, end);
-	}
+    public CharSequence subSequence(int start, int end) {
+        return buf.subSequence(start, end);
+    }
 
-	public Mode getMode() {
-		return mode;
-	}
+    public Mode getMode() {
+        return mode;
+    }
 
-	/**
-	 * Builds new literal instance with default mode {@link Mode#DBLQUOTED}.
-	 * 
-	 * @param literal
-	 * @return
-	 */
-	public static final JQLiteral _(Object literal) {
-		return _dblquoted(literal);
-	}
+    /**
+     * Builds new literal instance with default mode {@link Mode#DBLQUOTED}.
+     *
+     * @param literal
+     * @return new JQLiteral instance
+     */
+    public static final JQLiteral _(Object literal) {
+        return _dblquoted(literal);
+    }
 
-	public static final JQLiteral _quoted(Object literal) {
-		return _(literal, Mode.QUOTED);
-	}
+    /**
+     * Builds new literal instance with   mode {@link Mode#QUOTED}.
+     *
+     * @param literal
+     * @return new JQLiteral instance
+     */
+    public static final JQLiteral _quoted(Object literal) {
+        return _(literal, Mode.QUOTED);
+    }
 
-	public static final JQLiteral _dblquoted(Object literal) {
-		return _(literal, Mode.DBLQUOTED);
-	}
+    /**
+     * Builds new literal instance with default mode {@link Mode#DBLQUOTED}.
+     *
+     * @param literal
+     * @return new JQLiteral instance
+     */
+    public static final JQLiteral _dblquoted(Object literal) {
+        return _(literal, Mode.DBLQUOTED);
+    }
 
-	public static final JQLiteral _raw(Object literal) {
-		return _(literal, Mode.RAW);
-	}
+    /**
+     * Builds new literal instance with   mode {@link Mode#RAW}.
+     *
+     * @param literal
+     * @return new JQLiteral instance
+     */
+    public static final JQLiteral _raw(Object literal) {
+        return _(literal, Mode.RAW);
+    }
 
-	public static final JQLiteral _(final Object literal, final Mode mode) {
+    public static final JQLiteral _(final Object literal, final Mode mode) {
 
-		if (literal == null)
-			return null;
+        if (literal == null)
+            return null;
 
-		if (literal instanceof JQLiteral)
-			return (JQLiteral) literal;
+        if (literal instanceof JQLiteral)
+            return (JQLiteral) literal;
 
-		if (literal instanceof IJQStatement) {
-			return new JQLiteral(((IJQStatement) literal).toString(), Mode.RAW);
-		}
+        if (literal instanceof IJQStatement) {
+            return new JQLiteral(((IJQStatement) literal).toString(), Mode.RAW);
+        }
 
-		if (literal instanceof IJQFunction) {
-			return new JQLiteral(((IJQFunction) literal).toString(), Mode.RAW);
-		}
+        if (literal instanceof IJQFunction) {
+            return new JQLiteral(((IJQFunction) literal).toString(), Mode.RAW);
+        }
 
-		if (literal instanceof IJQOptions<?>) {
-			return new JQLiteral(((IJQOptions<?>) literal).toString(), Mode.RAW);
-		}
+        if (literal instanceof IJQOptions<?>) {
+            return new JQLiteral(((IJQOptions<?>) literal).toString(), Mode.RAW);
+        }
 
-		CharSequence str = String.valueOf(literal);
+        CharSequence str = String.valueOf(literal);
 
-		if (mode == Mode.QUOTED)
-			return new JQLiteral(Utils.quote(str), mode);
+        if (mode == Mode.QUOTED)
+            return new JQLiteral(Utils.quote(str), mode);
 
-		if (mode == Mode.DBLQUOTED)
-			return new JQLiteral(Utils.dblquote(str), mode);
+        if (mode == Mode.DBLQUOTED)
+            return new JQLiteral(Utils.dblquote(str), mode);
 
-		return new JQLiteral(str, Mode.RAW);
-	}
+        return new JQLiteral(str, Mode.RAW);
+    }
 
 }
