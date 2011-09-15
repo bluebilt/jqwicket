@@ -8,29 +8,7 @@
     <version>0.7-SNAPSHOT</version>
     <name>jqwicket-demo</name>
     <description>jqwicket demo application</description>
-
-    <licenses>
-        <license>
-            <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-    <scm>
-        <connection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket-demo</connection>
-        <developerConnection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket-demo</developerConnection>
-    </scm>
-    <issueManagement>
-        <system>Google Code</system>
-        <url>http://code.google.com/p/${project.artifactId}/issues/list</url>
-    </issueManagement>
-
-    <repositories>
-        <repository>
-            <id>googlecode-jqwicket</id>
-            <url>http://jqwicket.googlecode.com/svn/m2-repo/releases/</url>
-        </repository>
-    </repositories>
+    <url>http://code.google.com/p/jqwicket</url>
 
     <properties>
         <wicket.version>1.5.0</wicket.version>
@@ -42,8 +20,33 @@
         <jqwicket.version>0.7-SNAPSHOT</jqwicket.version>
     </properties>
 
-    <dependencies>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
+    <scm>
+        <connection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket-demo</connection>
+        <developerConnection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket-demo</developerConnection>
+        <url>http://code.google.com/p/jqwicket/source/browse</url>
+    </scm>
+
+    <issueManagement>
+        <system>Google Code</system>
+        <url>http://code.google.com/p/${project.artifactId}/issues/list</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <id>mkalina</id>
+            <name>Maxim Kalina</name>
+        </developer>
+    </developers>
+
+    <dependencies>
         <dependency>
             <groupId>org.apache.wicket</groupId>
             <artifactId>wicket-core</artifactId>

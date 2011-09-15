@@ -21,14 +21,25 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
     <scm>
         <connection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket</connection>
         <developerConnection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket</developerConnection>
+        <url>http://code.google.com/p/jqwicket/source/browse</url>
     </scm>
+
     <issueManagement>
         <system>Google Code</system>
         <url>http://code.google.com/p/${project.artifactId}/issues/list</url>
     </issueManagement>
+
+    <developers>
+        <developer>
+            <id>mkalina</id>
+            <name>Maxim Kalina</name>
+        </developer>
+    </developers>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.wicket</groupId>
@@ -56,6 +67,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <build>
         <resources>
             <resource>
