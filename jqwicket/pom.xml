@@ -1,10 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.code.jqwicket</groupId>
     <artifactId>jqwicket</artifactId>
     <packaging>jar</packaging>
-    <version>0.7-SNAPSHOT</version>
+    <version>0.7</version>
     <name>jqwicket</name>
     <description>jqwicket: wicket/jquery integration</description>
     <url>http://code.google.com/p/${project.artifactId}/</url>
@@ -23,9 +22,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket</connection>
-        <developerConnection>scm:svn:https://jqwicket.googlecode.com/svn/trunk/jqwicket</developerConnection>
-        <url>http://code.google.com/p/jqwicket/source/browse</url>
+        <connection>scm:svn:https://jqwicket.googlecode.com/svn/tags/jqwicket-0.7</connection>
+        <developerConnection>scm:svn:https://jqwicket.googlecode.com/svn/tags/jqwicket-0.7</developerConnection>
+        <url>scm:svn:https://jqwicket.googlecode.com/svn/tags/jqwicket-0.7</url>
     </scm>
 
     <issueManagement>
