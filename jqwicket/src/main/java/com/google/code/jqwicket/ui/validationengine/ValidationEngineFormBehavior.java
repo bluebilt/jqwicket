@@ -140,7 +140,8 @@ public class ValidationEngineFormBehavior extends
 
         }
 
-        target.addJQStatements(JQuery.js(buf));
+        if (buf.length() > 0)
+            target.addJQStatements(JQuery.js(buf));
 
         super.contributeInternal(target);
     }
