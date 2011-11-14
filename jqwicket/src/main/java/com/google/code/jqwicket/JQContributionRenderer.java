@@ -132,9 +132,7 @@ public class JQContributionRenderer extends Behavior {
     }
 
     private void renderJsResourcesUrl(IHeaderResponse response, CharSequence url) {
-        if (Utils.isNotBlank(url))
-            response.renderJavaScriptReference(RequestCycle.get()
-                    .getUrlRenderer().renderContextRelativeUrl(String.valueOf(url)));
+        response.renderJavaScriptReference(determineResourcesUrl(url));
     }
 
     private void renderJsResourcesRefs(IHeaderResponse response, Collection<JavaScriptResourceReference> resources) {
@@ -155,9 +153,20 @@ public class JQContributionRenderer extends Behavior {
     }
 
     private void renderCssResourcesUrl(IHeaderResponse response, CharSequence url) {
-        if (Utils.isNotBlank(url))
-            response.renderCSSReference(RequestCycle.get()
-                    .getUrlRenderer().renderContextRelativeUrl(String.valueOf(url)));
+        response.renderCSSReference(determineResourcesUrl(url));
+    }
+
+
+    private String determineResourcesUrl(CharSequence url) {
+        if (Utils.isBlank(url))
+            throw new IllegalArgumentException("url cannot be empty or null");
+
+        String urlString = String.valueOf(url);
+        if (urlString.toLowerCase().startsWith("http://") || urlString.toLowerCase().startsWith("https://"))
+            return urlString;
+
+        RequestCycle rc = RequestCycle.get();
+        return rc.getUrlRenderer().renderContextRelativeUrl(urlString);
     }
 
     private void renderCssResourcesRefs(IHeaderResponse response, Collection<CssResourceReference> resources) {
