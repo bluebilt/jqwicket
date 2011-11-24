@@ -1,3 +1,4 @@
+http://code.google.com/p/jquery-ui-map/
 http://harvesthq.github.com/chosen/
 http://arborjs.org/
 http://www.jstat.org/
