@@ -25,17 +25,22 @@
     </p>
 
     <br/>
-    <div id="shakeContainer" style="border: 1px solid black; padding: 5px;">
+    
+    <div id="shakeContainer" style="border: 1px solid black; padding: 10px;">
+        <p style="font-weight: bold;">This example demonstrates "form shaking" on failed validation</p>
+        <br/>
         <form wicket:id="shakeForm">
             Value: <input type="text" wicket:id="shakeValue" />
             <input type="submit" />
+            <span wicket:id="feedbackPanel" />
         </form>
     </div>
     <br/>
     <br/>
 
     <br/>
-
+    <p style="font-weight: bold;">This example demonstrates some animation using JQWicket Selector API</p>
+    <br/>
     <div id="play"
          style="border: 1px solid black; width: 50px; height: 20px; float: left; padding: 3px; margin: 5px;">play
     </div>

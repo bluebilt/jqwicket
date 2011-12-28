@@ -23,6 +23,7 @@ import com.google.code.jqwicket.api.S;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.PropertyModel;
 
 /**
@@ -81,20 +82,18 @@ public class GenericJQBehaviorPage extends DemoPage {
 
         public ShakeForm(String id) {
             super(id);
-            TextField<String> f = new TextField<String>("shakeValue", new PropertyModel<String>(this, "value"));
-            f.setRequired(true);
-            add(f);
+            add(new TextField<String>("shakeValue", new PropertyModel<String>(this, "value")).setRequired(true));
+            add(new FeedbackPanel("feedbackPanel"));
         }
 
         @Override
         protected void onSubmit() {
-            System.out.println("Submitted: " + value);
+            // value submitted...
         }
 
 
         @Override
         protected void onError() {
-            System.out.println("Error!!!!");
             if (!shakeAlreadyAdded)  {
                 add(new JQBehavior(S.id("shakeContainer").to$().effect("shake", JQOptions.valueOf("times:2"),
                         JQLiteral._raw(70))));
