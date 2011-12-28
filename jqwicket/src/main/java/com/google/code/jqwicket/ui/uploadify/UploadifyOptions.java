@@ -131,7 +131,7 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
 
     /**
      * The displayData option determines what data is displayed in the file upload queue item during an upload. By
-     * default, the percentage complete is shown. You can set the value to “speed” to display the average upload speed
+     * default, the percentage complete is shown. You can set the value to "speed" to display the average upload speed
      * in KB/s.<br> Default:'percentage'<br> Required:optional
      *
      * @param displayData
@@ -307,9 +307,9 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
     }
 
     /**
-     * The scriptAccess option sets the scriptAccess property for the flash button file. Setting this option to “always”
+     * The scriptAccess option sets the scriptAccess property for the flash button file. Setting this option to "always"
      * can alleviate some issues during testing that involve communication problems between the flash file and the HTML
-     * page if they are in different domains. For security purposes, “sameDomain” shoudl be used in the production
+     * page if they are in different domains. For security purposes, "sameDomain" should be used in the production
      * environment.<br> Input Format:'sameDomain' / 'always'<br> Default:'sameDomain'<br> Required:optional
      *
      * @param scriptAccess

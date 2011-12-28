@@ -138,8 +138,8 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
     }
 
     /**
-     * Default: "No file selected"<br/> Sets the text written in the filename div of a file upload input when there is no
-     * file selected.
+     * Default: "No file selected"<br/> Sets the text written in the filename div of a file upload input when there is
+     * no file selected.
      * <p/>
      * <pre>
      * $(":file").uniform({fileDefaultText: 'Select a file please'});
@@ -261,8 +261,8 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 
     /**
      * Default: "uniform"<br/> If useID is set to true, this string is prefixed to element ID’s and attached to the
-     * container div of each uniformed element. If you have a checkbox with the ID of “remember-me” the container div would
-     * have the ID “uniform-remember-me”.
+     * container div of each uniformed element. If you have a checkbox with the ID of "remember-me" the container div
+     * would have the ID "uniform-remember-me".
      * <p/>
      * <pre>
      * $("select").uniform({idPrefix: 'container'});
@@ -278,8 +278,8 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 
     /**
      * Default: false<br/> This parameter allows you to use a jQuery-style selector to point to a "reset" button in your
-     * form if you have one. Use false if you have no "reset" button, or a selector string that points to the reset button
-     * if you have one.
+     * form if you have one. Use false if you have no "reset" button, or a selector string that points to the reset
+     * button if you have one.
      * <p/>
      * <pre>
      * $("select").uniform({resetSelector: 'input[type="reset"]'});
@@ -295,8 +295,8 @@ public class UniformOptions extends AbstractJQOptions<UniformOptions> {
 
     /**
      * Default: false<br/> This parameter allows you to use a jQuery-style selector to point to a "reset" button in your
-     * form if you have one. Use false if you have no "reset" button, or a selector string that points to the reset button
-     * if you have one.
+     * form if you have one. Use false if you have no "reset" button, or a selector string that points to the reset
+     * button if you have one.
      * <p/>
      * <pre>
      * $("select").uniform({resetSelector: 'input[type="reset"]'});
