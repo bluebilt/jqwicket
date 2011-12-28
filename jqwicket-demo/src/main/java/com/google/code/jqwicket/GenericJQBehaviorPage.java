@@ -21,6 +21,9 @@ import com.google.code.jqwicket.api.JQOptions;
 import com.google.code.jqwicket.api.JQuery;
 import com.google.code.jqwicket.api.S;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.form.TextField;
+import org.apache.wicket.model.PropertyModel;
 
 /**
  * @author mkalina
@@ -55,17 +58,51 @@ public class GenericJQBehaviorPage extends DemoPage {
 
         add(new JQBehavior(
                 S.id("play").to$().click(JQuery.$f(
-                    S.id("testDIV").to$().animate(JQOptions.valueOf("top:'300', left:'10', height:'toggle', " +
-                            "width:'toggle'"), JQLiteral._raw(1000))
+                        S.id("testDIV").to$().animate(JQOptions.valueOf("top:'300', left:'10', height:'toggle', " +
+                                "width:'toggle'"), JQLiteral._raw(1000))
                 )),
                 S.id("back").to$().click(JQuery.$f(
-                    S.id("testDIV").to$().animate(JQOptions.valueOf("top:'40', left:'300', height:'toggle', " +
-                            "width:'toggle'"), JQLiteral._raw(1000))
+                        S.id("testDIV").to$().animate(JQOptions.valueOf("top:'40', left:'300', height:'toggle', " +
+                                "width:'toggle'"), JQLiteral._raw(1000))
                 ))
 
         ));
 
+        add(new ShakeForm("shakeForm"));
+
     }
+
+
+    private static class ShakeForm extends Form<Void> {
+
+        private String value;
+
+        private boolean shakeAlreadyAdded = false;
+
+        public ShakeForm(String id) {
+            super(id);
+            TextField<String> f = new TextField<String>("shakeValue", new PropertyModel<String>(this, "value"));
+            f.setRequired(true);
+            add(f);
+        }
+
+        @Override
+        protected void onSubmit() {
+            System.out.println("Submitted: " + value);
+        }
+
+
+        @Override
+        protected void onError() {
+            System.out.println("Error!!!!");
+            if (!shakeAlreadyAdded)  {
+                add(new JQBehavior(S.id("shakeContainer").to$().effect("shake", JQOptions.valueOf("times:2"),
+                        JQLiteral._raw(70))));
+                shakeAlreadyAdded = true;
+            }
+        }
+    }
+
 
     /**
      * {@inheritDoc}
