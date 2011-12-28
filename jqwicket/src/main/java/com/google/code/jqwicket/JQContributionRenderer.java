@@ -21,7 +21,6 @@ import com.google.code.jqwicket.api.JQuery;
 import org.apache.wicket.Application;
 import org.apache.wicket.Component;
 import org.apache.wicket.MetaDataKey;
-import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.behavior.Behavior;
 import org.apache.wicket.javascript.IJavaScriptCompressor;
 import org.apache.wicket.markup.html.IHeaderResponse;
@@ -91,7 +90,7 @@ public class JQContributionRenderer extends Behavior {
     @Override
     public void renderHead(Component component, IHeaderResponse response) {
 
-        if (AjaxRequestTarget.get() != null || isEmpty(this.contributors))
+        if (isEmpty(this.contributors))
             return;
 
         JQContributionConfig config = JQContributionConfig.get();
@@ -208,7 +207,7 @@ public class JQContributionRenderer extends Behavior {
         script.append(compressJavaScript(JQuery.documentReady(statements)));
 
         if (Utils.isNotBlank(script))
-            response.renderJavaScript(script, UUID.randomUUID().toString());
+            response.renderOnDomReadyJavaScript(script.toString());
     }
 
     private CharSequence compressJavaScript(CharSequence script) {
