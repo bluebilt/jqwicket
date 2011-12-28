@@ -23,7 +23,7 @@ import org.apache.wicket.request.resource.JavaScriptResourceReference;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import static com.google.code.jqwicket.Utils.isNotBlank;
+import static com.google.code.jqwicket.Utils.isBlank;
 
 /**
  * Base abstract {@link IJQOptions} implementation. See {@link IJQOptions} for further details.
@@ -408,9 +408,14 @@ public abstract class AbstractJQOptions<T extends AbstractJQOptions<T>>
      * {@inheritDoc}
      */
     public T put(CharSequence key, CharSequence value) {
-        if (isNotBlank(value)) {
+        if (isBlank(value))
+            return (T) this;
+
+        if (value instanceof JQLiteral)
+            options.put(key, value);
+        else
             options.put(key, JQLiteral._(value));
-        }
+
         return (T) this;
     }
 

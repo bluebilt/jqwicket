@@ -19,6 +19,7 @@ package com.google.code.jqwicket.ui.uploadify;
 import com.google.code.jqwicket.api.AbstractJQOptions;
 import com.google.code.jqwicket.api.IJQFunction;
 import com.google.code.jqwicket.api.IJQStatement;
+import com.google.code.jqwicket.api.JQLiteral;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
@@ -330,7 +331,10 @@ public class UploadifyOptions extends AbstractJQOptions<UploadifyOptions> {
      * @return
      */
     public UploadifyOptions scriptData(CharSequence scriptData) {
-        super.put("scriptData", scriptData);
+        if (scriptData instanceof JQLiteral)
+            super.put("scriptData", scriptData);
+        else
+            super.put("scriptData", JQLiteral._raw(scriptData));
         return this;
     }
 
