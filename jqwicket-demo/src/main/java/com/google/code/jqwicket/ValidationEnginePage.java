@@ -56,6 +56,9 @@ public class ValidationEnginePage extends DemoPage {
                             "required,custom[onlyLetter],funcCall[func_validate2fields],length[0,100]")));
 
         }
+
+
+
     }
 
     private static class Validate2FieldsFuncRule extends FuncValidationRule {
