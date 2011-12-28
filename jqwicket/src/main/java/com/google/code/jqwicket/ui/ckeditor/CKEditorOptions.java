@@ -61,7 +61,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 0
 	 * 
 	 * @param autoGrow_maxHeight
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions autoGrow_maxHeight(int autoGrow_maxHeight) {
 		return super.put("autoGrow_maxHeight", autoGrow_maxHeight);
@@ -73,7 +73,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 200
 	 * 
 	 * @param autoGrow_minHeight
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions autoGrow_minHeight(int autoGrow_minHeight) {
 		return super.put("autoGrow_minHeight", autoGrow_minHeight);
@@ -85,7 +85,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param autoUpdateElement
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions autoUpdateElement(boolean autoUpdateElement) {
 		return super.put("autoUpdateElement", autoUpdateElement);
@@ -96,7 +96,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 10000
 	 * 
 	 * @param baseFloatZIndex
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions baseFloatZIndex(int baseFloatZIndex) {
 		return super.put("baseFloatZIndex", baseFloatZIndex);
@@ -108,7 +108,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty)
 	 * 
 	 * @param baseHref
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions baseHref(CharSequence baseHref) {
 		return super.put("baseHref", baseHref);
@@ -132,7 +132,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param blockedKeystrokes
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions blockedKeystrokes(CharSequence... blockedKeystrokes) {
 		return super.put("blockedKeystrokes", blockedKeystrokes);
@@ -147,7 +147,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty)
 	 * 
 	 * @param bodyClass
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions bodyClass(CharSequence bodyClass) {
 		return super.put("bodyClass", bodyClass);
@@ -163,7 +163,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty)
 	 * 
 	 * @param bodyId
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions bodyId(CharSequence bodyId) {
 		return super.put("bodyId", bodyId);
@@ -177,7 +177,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param browserContextMenuOnCtrl
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions browserContextMenuOnCtrl(
 			boolean browserContextMenuOnCtrl) {
@@ -200,7 +200,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param colorButton_backStyle
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions colorButton_backStyle(
 			CharSequence colorButton_backStyle) {
@@ -227,7 +227,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * 
 	 * 
 	 * @param colorButton_colors
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions colorButton_colors(CharSequence colorButton_colors) {
 		return super.put("colorButton_colors", colorButton_colors);
@@ -249,7 +249,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param colorButton_foreStyle
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions colorButton_foreStyle(
 			CharSequence colorButton_foreStyle) {
@@ -263,7 +263,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '<CKEditor folder>/contents.css'
 	 * 
 	 * @param contentsCss
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions contentsCss(CharSequence... contentsCss) {
 		return super.put("contentsCss", contentsCss);
@@ -282,7 +282,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'ui'
 	 * 
 	 * @param contentsLangDirection
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions contentsLangDirection(
 			CharSequence contentsLangDirection) {
@@ -295,7 +295,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: Same value with editor's UI language.
 	 * 
 	 * @param contentsLanguage
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions contentsLanguage(CharSequence contentsLanguage) {
 		return super.put("contentsLanguage", contentsLanguage);
@@ -309,7 +309,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * code of CKEditor (_source/core/config.js).
 	 * 
 	 * @param corePlugins
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions corePlugins(CharSequence corePlugins) {
 		return super.put("corePlugins", corePlugins);
@@ -325,7 +325,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param coreStyles_bold
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions coreStyles_bold(CharSequence coreStyles_bold) {
 		return super.put("coreStyles_bold", coreStyles_bold);
@@ -341,7 +341,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param coreStyles_italic
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions coreStyles_italic(CharSequence coreStyles_italic) {
 		return super.put("coreStyles_italic", coreStyles_italic);
@@ -357,7 +357,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param coreStyles_strike
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions coreStyles_strike(CharSequence coreStyles_strike) {
 		return super.put("coreStyles_strike", coreStyles_strike);
@@ -373,7 +373,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param coreStyles_subscript
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions coreStyles_subscript(
 			CharSequence coreStyles_subscript) {
@@ -390,7 +390,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param coreStyles_superscript
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions coreStyles_superscript(
 			CharSequence coreStyles_superscript) {
@@ -407,7 +407,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param coreStyles_underline
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions coreStyles_underline(
 			CharSequence coreStyles_underline) {
@@ -426,7 +426,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '<CKEditor folder>/config.js'
 	 * 
 	 * @param customConfig
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions customConfig(CharSequence customConfig) {
 		return super.put("customConfig", customConfig);
@@ -439,7 +439,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'en'
 	 * 
 	 * @param defaultLanguage
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions defaultLanguage(CharSequence defaultLanguage) {
 		return super.put("defaultLanguage", defaultLanguage);
@@ -451,7 +451,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'white'
 	 * 
 	 * @param dialog_backgroundCoverColor
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions dialog_backgroundCoverColor(
 			CharSequence dialog_backgroundCoverColor) {
@@ -466,7 +466,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 0.5
 	 * 
 	 * @param dialog_backgroundCoverOpacity
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions dialog_backgroundCoverOpacity(
 			float dialog_backgroundCoverOpacity) {
@@ -487,7 +487,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'OS'
 	 * 
 	 * @param dialog_buttonsOrder
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions dialog_buttonsOrder(CharSequence dialog_buttonsOrder) {
 		return super.put("dialog_buttonsOrder", dialog_buttonsOrder);
@@ -499,7 +499,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 20
 	 * 
 	 * @param dialog_magnetDistance
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions dialog_magnetDistance(int dialog_magnetDistance) {
 		return super.put("dialog_magnetDistance", dialog_magnetDistance);
@@ -511,7 +511,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: false
 	 * 
 	 * @param dialog_startupFocusTab
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions dialog_startupFocusTab(boolean dialog_startupFocusTab) {
 		return super.put("dialog_startupFocusTab", dialog_startupFocusTab);
@@ -531,7 +531,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param disableNativeSpellChecker
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions disableNativeSpellChecker(
 			boolean disableNativeSpellChecker) {
@@ -547,7 +547,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param disableNativeTableHandles
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions disableNativeTableHandles(
 			boolean disableNativeTableHandles) {
@@ -562,7 +562,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: false
 	 * 
 	 * @param disableObjectResizing
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions disableObjectResizing(boolean disableObjectResizing) {
 		return super.put("disableObjectResizing", disableObjectResizing);
@@ -575,7 +575,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: false
 	 * 
 	 * @param disableReadonlyStyling
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions disableReadonlyStyling(boolean disableReadonlyStyling) {
 		return super.put("disableReadonlyStyling", disableReadonlyStyling);
@@ -589,7 +589,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;'</code>
 	 * 
 	 * @param docType
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions docType(CharSequence docType) {
 		return super.put("docType", docType);
@@ -602,7 +602,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param editingBlock
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions editingBlock(boolean editingBlock) {
 		return super.put("editingBlock", editingBlock);
@@ -634,7 +634,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty string = disabled)
 	 * 
 	 * @param emailProtection
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions emailProtection(CharSequence emailProtection) {
 		return super.put("emailProtection", emailProtection);
@@ -654,7 +654,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param enableTabKeyTools
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions enableTabKeyTools(boolean enableTabKeyTools) {
 		return super.put("enableTabKeyTools", enableTabKeyTools);
@@ -674,7 +674,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * semantic value and correctness. The editor is optimized for this value.
 	 * 
 	 * @param enterMode
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions enterMode(int enterMode) {
 		return super.put("enterMode", enterMode);
@@ -694,7 +694,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * semantic value and correctness. The editor is optimized for this value.
 	 * 
 	 * @param enterMode
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions enterMode(EnterMode enterMode) {
 		return super.put("enterMode", JQLiteral._raw(enterMode.value));
@@ -707,7 +707,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param entities
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions entities(boolean entities) {
 		return super.put("entities", entities);
@@ -722,7 +722,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '#39' // The single quote (') character.
 	 * 
 	 * @param entities_additional
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions entities_additional(CharSequence entities_additional) {
 		return super.put("entities_additional", entities_additional);
@@ -737,7 +737,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param entities_greek
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions entities_greek(boolean entities_greek) {
 		return super.put("entities_greek", entities_greek);
@@ -752,7 +752,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param entities_latin
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions entities_latin(boolean entities_latin) {
 		return super.put("entities_latin", entities_latin);
@@ -770,7 +770,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param extraPlugins
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions extraPlugins(CharSequence extraPlugins) {
 		return super.put("extraPlugins", extraPlugins);
@@ -785,7 +785,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty string = disabled)
 	 * 
 	 * @param filebrowserBrowseUrl
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions filebrowserBrowseUrl(
 			CharSequence filebrowserBrowseUrl) {
@@ -801,7 +801,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty string = disabled)
 	 * 
 	 * @param filebrowserFlashBrowseUrl
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions filebrowserFlashBrowseUrl(
 			CharSequence filebrowserFlashBrowseUrl) {
@@ -817,7 +817,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty string = disabled)
 	 * 
 	 * @param filebrowserFlashUploadUrl
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions filebrowserFlashUploadUrl(
 			CharSequence filebrowserFlashUploadUrl) {
@@ -834,7 +834,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * efault Value: '' (empty string = disabled)
 	 * 
 	 * @param filebrowserImageBrowseLinkUrl
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions filebrowserImageBrowseLinkUrl(
 			CharSequence filebrowserImageBrowseLinkUrl) {
@@ -851,7 +851,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty string = disabled)
 	 * 
 	 * @param filebrowserImageBrowseUrl
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions filebrowserImageBrowseUrl(
 			CharSequence filebrowserImageBrowseUrl) {
@@ -866,7 +866,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty string = disabled)
 	 * 
 	 * @param filebrowserImageUploadUrl
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions filebrowserImageUploadUrl(
 			CharSequence filebrowserImageUploadUrl) {
@@ -882,7 +882,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty string = disabled)
 	 * 
 	 * @param filebrowserUploadUrl
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions filebrowserUploadUrl(
 			CharSequence filebrowserUploadUrl) {
@@ -900,7 +900,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * l b a r s = y e s '
 	 * 
 	 * @param filebrowserWindowFeatures
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions filebrowserWindowFeatures(
 			CharSequence filebrowserWindowFeatures) {
@@ -919,7 +919,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param fillEmptyBlocks
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions fillEmptyBlocks(boolean fillEmptyBlocks) {
 		return super.put("fillEmptyBlocks", fillEmptyBlocks);
@@ -947,7 +947,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param callback
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions fillEmptyBlocks(IJQFunction callback) {
 		return super.put("fillEmptyBlocks", callback);
@@ -969,7 +969,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param find_highlight
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions find_highlight(CharSequence find_highlight) {
 		return super.put("find_highlight", find_highlight);
@@ -988,7 +988,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param font_defaultLabel
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions font_defaultLabel(CharSequence font_defaultLabel) {
 		return super.put("font_defaultLabel", font_defaultLabel);
@@ -1011,7 +1011,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param font_names
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions font_names(CharSequence font_names) {
 		return super.put("font_names", font_names);
@@ -1034,7 +1034,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param font_style
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions font_style(CharSequence font_style) {
 		return super.put("font_style", font_style);
@@ -1053,7 +1053,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param fontSize_defaultLabel
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions fontSize_defaultLabel(
 			CharSequence fontSize_defaultLabel) {
@@ -1082,7 +1082,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * 8 / 4 8 p x ; 7 2 / 7 2 p x '
 	 * 
 	 * @param fontSize_sizes
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions fontSize_sizes(CharSequence fontSize_sizes) {
 		return super.put("fontSize_sizes", fontSize_sizes);
@@ -1106,7 +1106,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * 
 	 * 
 	 * @param fontSize_style
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions fontSize_style(CharSequence fontSize_style) {
 		return super.put("fontSize_style", fontSize_style);
@@ -1120,7 +1120,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: false
 	 * 
 	 * @param forceEnterMode
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions forceEnterMode(boolean forceEnterMode) {
 		return super.put("forceEnterMode", forceEnterMode);
@@ -1134,7 +1134,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: false
 	 * 
 	 * @param forcePasteAsPlainText
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions forcePasteAsPlainText(boolean forcePasteAsPlainText) {
 		return super.put("forcePasteAsPlainText", forcePasteAsPlainText);
@@ -1151,7 +1151,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: false
 	 * 
 	 * @param forceSimpleAmpersand
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions forceSimpleAmpersand(boolean forceSimpleAmpersand) {
 		return super.put("forceSimpleAmpersand", forceSimpleAmpersand);
@@ -1168,7 +1168,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param format_address
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions format_address(CharSequence format_address) {
 		return super.put("format_address", format_address);
@@ -1185,7 +1185,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param format_div
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions format_div(CharSequence format_div) {
 		return super.put("format_div", format_div);
@@ -1202,7 +1202,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param format_h1
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions format_h1(CharSequence format_h1) {
 		return super.put("format_h1", format_h1);
@@ -1219,7 +1219,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param format_h2
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions format_h2(CharSequence format_h2) {
 		return super.put("format_h2", format_h2);
@@ -1236,7 +1236,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param format_h3
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions format_h3(CharSequence format_h3) {
 		return super.put("format_h3", format_h3);
@@ -1253,7 +1253,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param format_h4
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions format_h4(CharSequence format_h4) {
 		return super.put("format_h4", format_h4);
@@ -1270,7 +1270,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param format_h5
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions format_h5(CharSequence format_h5) {
 		return super.put("format_h5", format_h5);
@@ -1287,7 +1287,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param format_h6
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions format_h6(CharSequence format_h6) {
 		return super.put("format_h6", format_h6);
@@ -1303,8 +1303,8 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * config.format_p = { element : 'p', attributes : { class : 'normalPara' } };
 	 * </pre>
 	 * 
-	 * @param format_h6
-	 * @return
+	 * @param format_p
+	 * @return options
 	 */
 	public CKEditorOptions format_p(CharSequence format_p) {
 		return super.put("format_p", format_p);
@@ -1321,7 +1321,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param format_pre
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions format_pre(CharSequence format_pre) {
 		return super.put("format_pre", format_pre);
@@ -1339,7 +1339,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * 
 	 * 
 	 * @param format_tags
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions format_tags(CharSequence format_tags) {
 		return super.put("format_tags", format_tags);
@@ -1354,7 +1354,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: false
 	 * 
 	 * @param fullPage
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions fullPage(boolean fullPage) {
 		return super.put("fullPage", fullPage);
@@ -1367,7 +1367,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '200'
 	 * 
 	 * @param height
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions height(int height) {
 		return super.put("height", height);
@@ -1380,7 +1380,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '200'
 	 * 
 	 * @param height
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions height(CharSequence height) {
 		return super.put("height", height);
@@ -1393,7 +1393,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: false
 	 * 
 	 * @param htmlEncodeOutput
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions htmlEncodeOutput(boolean htmlEncodeOutput) {
 		return super.put("htmlEncodeOutput", htmlEncodeOutput);
@@ -1407,7 +1407,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param ignoreEmptyParagraph
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions ignoreEmptyParagraph(boolean ignoreEmptyParagraph) {
 		return super.put("ignoreEmptyParagraph", ignoreEmptyParagraph);
@@ -1420,7 +1420,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: "Lorem ipsum dolor..." placehoder text.
 	 * 
 	 * @param image_previewText
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions image_previewText(CharSequence image_previewText) {
 		return super.put("image_previewText", image_previewText);
@@ -1433,7 +1433,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param image_removeLinkByEmptyURL
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions image_removeLinkByEmptyURL(
 			boolean image_removeLinkByEmptyURL) {
@@ -1454,7 +1454,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param indentClasses
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions indentClasses(CharSequence... indentClasses) {
 		return super.put("indentClasses", indentClasses);
@@ -1466,7 +1466,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 40
 	 * 
 	 * @param indentOffset
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions indentOffset(int indentOffset) {
 		return super.put("indentOffset", indentOffset);
@@ -1478,7 +1478,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'px'
 	 * 
 	 * @param indentUnit
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions indentUnit(CharSequence indentUnit) {
 		return super.put("indentUnit", indentUnit);
@@ -1512,7 +1512,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param keystrokes
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions keystrokes(CharSequence... keystrokes) {
 		return super.put("keystrokes", keystrokes);
@@ -1527,7 +1527,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty)
 	 * 
 	 * @param language
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions language(CharSequence language) {
 		return super.put("language", language);
@@ -1546,7 +1546,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * u t t o n , s e l e c t , t e x t a r e a '
 	 * 
 	 * @param menu_groups
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions menu_groups(CharSequence menu_groups) {
 		return super.put("menu_groups", menu_groups);
@@ -1569,7 +1569,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'default'
 	 * 
 	 * @param pasteFromWordCleanupFile
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions pasteFromWordCleanupFile(
 			CharSequence pasteFromWordCleanupFile) {
@@ -1583,7 +1583,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: false
 	 * 
 	 * @param pasteFromWordNumberedHeadingToList
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions pasteFromWordNumberedHeadingToList(
 			boolean pasteFromWordNumberedHeadingToList) {
@@ -1599,7 +1599,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: undefined
 	 * 
 	 * @param pasteFromWordPromptCleanup
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions pasteFromWordPromptCleanup(
 			boolean pasteFromWordPromptCleanup) {
@@ -1619,7 +1619,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param pasteFromWordRemoveFontStyles
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions pasteFromWordRemoveFontStyles(
 			boolean pasteFromWordRemoveFontStyles) {
@@ -1636,7 +1636,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param pasteFromWordRemoveStyles
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions pasteFromWordRemoveStyles(
 			boolean pasteFromWordRemoveStyles) {
@@ -1651,7 +1651,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * customizations.
 	 * 
 	 * @param plugins
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions plugins(CharSequence plugins) {
 		return super.put("plugins", plugins);
@@ -1674,7 +1674,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: [] (empty array)
 	 * 
 	 * @param protectedSource
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions protectedSource(CharSequence... protectedSource) {
 		return super.put("protectedSource", protectedSource);
@@ -1698,7 +1698,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: ''
 	 * 
 	 * @param removeDialogTabs
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions removeDialogTabs(CharSequence removeDialogTabs) {
 		return super.put("removeDialogTabs", removeDialogTabs);
@@ -1712,7 +1712,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'class,style,lang,width,height,align,hspace,valign'
 	 * 
 	 * @param removeFormatAttributes
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions removeFormatAttributes(
 			CharSequence removeFormatAttributes) {
@@ -1729,7 +1729,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * , s u p , t t , u , v a r '
 	 * 
 	 * @param removeFormatTags
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions removeFormatTags(CharSequence removeFormatTags) {
 		return super.put("removeFormatTags", removeFormatTags);
@@ -1748,7 +1748,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param removePlugins
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions removePlugins(CharSequence removePlugins) {
 		return super.put("removePlugins", removePlugins);
@@ -1762,7 +1762,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'both'
 	 * 
 	 * @param resize_dir
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions resize_dir(CharSequence resize_dir) {
 		return super.put("resize_dir", resize_dir);
@@ -1776,7 +1776,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param resize_enabled
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions resize_enabled(boolean resize_enabled) {
 		return super.put("resize_enabled", resize_enabled);
@@ -1789,7 +1789,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 3000
 	 * 
 	 * @param resize_maxHeight
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions resize_maxHeight(int resize_maxHeight) {
 		return super.put("resize_maxHeight", resize_maxHeight);
@@ -1802,7 +1802,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 3000
 	 * 
 	 * @param resize_maxWidth
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions resize_maxWidth(int resize_maxWidth) {
 		return super.put("resize_maxWidth", resize_maxWidth);
@@ -1816,7 +1816,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 750
 	 * 
 	 * @param resize_minWidth
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions resize_minWidth(int resize_minWidth) {
 		return super.put("resize_minWidth", resize_minWidth);
@@ -1830,7 +1830,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * 
 	 * 
 	 * @param scayt_autoStartup
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions scayt_autoStartup(boolean scayt_autoStartup) {
 		return super.put("scayt_autoStartup", scayt_autoStartup);
@@ -1851,7 +1851,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'all'
 	 * 
 	 * @param scayt_contextCommands
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions scayt_contextCommands(
 			CharSequence scayt_contextCommands) {
@@ -1871,7 +1871,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'suggest|moresuggest|control'
 	 * 
 	 * @param scayt_contextMenuItemsOrder
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions scayt_contextMenuItemsOrder(
 			CharSequence scayt_contextMenuItemsOrder) {
@@ -1888,7 +1888,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: ''
 	 * 
 	 * @param scayt_customDictionaryIds
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions scayt_customDictionaryIds(
 			CharSequence scayt_customDictionaryIds) {
@@ -1903,7 +1903,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: ''
 	 * 
 	 * @param scayt_customerid
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions scayt_customerid(CharSequence scayt_customerid) {
 		return super.put("scayt_customerid", scayt_customerid);
@@ -1925,7 +1925,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 5
 	 * 
 	 * @param scayt_maxSuggestions
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions scayt_maxSuggestions(int scayt_maxSuggestions) {
 		return super.put("scayt_maxSuggestions", scayt_maxSuggestions);
@@ -1938,7 +1938,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'on'
 	 * 
 	 * @param scayt_moreSuggestions
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions scayt_moreSuggestions(
 			CharSequence scayt_moreSuggestions) {
@@ -1952,7 +1952,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'en_US'
 	 * 
 	 * @param scayt_sLang
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions scayt_sLang(CharSequence scayt_sLang) {
 		return super.put("scayt_sLang", scayt_sLang);
@@ -1977,7 +1977,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: ''
 	 * 
 	 * @param scayt_srcUrl
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions scayt_srcUrl(CharSequence scayt_srcUrl) {
 		return super.put("scayt_srcUrl", scayt_srcUrl);
@@ -1993,7 +1993,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '1,1,1'
 	 * 
 	 * @param scayt_uiTabs
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions scayt_uiTabs(CharSequence scayt_uiTabs) {
 		return super.put("scayt_uiTabs", scayt_uiTabs);
@@ -2007,7 +2007,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: ''
 	 * 
 	 * @param scayt_userDictionaryName
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions scayt_userDictionaryName(
 			CharSequence scayt_userDictionaryName) {
@@ -2025,7 +2025,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </ul>
 	 * 
 	 * @param shiftEnterMode
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions shiftEnterMode(int shiftEnterMode) {
 		return super.put("shiftEnterMode", shiftEnterMode);
@@ -2042,7 +2042,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </ul>
 	 * 
 	 * @param shiftEnterMode
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions shiftEnterMode(CharSequence shiftEnterMode) {
 		return super.put("shiftEnterMode", shiftEnterMode);
@@ -2055,7 +2055,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'default'
 	 * 
 	 * @param skin
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions skin(CharSequence skin) {
 		return super.put("skin", skin);
@@ -2068,7 +2068,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 8
 	 * 
 	 * @param smiley_columns
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions smiley_columns(int smiley_columns) {
 		return super.put("smiley_columns", smiley_columns);
@@ -2093,7 +2093,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param smiley_descriptions
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions smiley_descriptions(
 			CharSequence... smiley_descriptions) {
@@ -2118,7 +2118,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param smiley_images
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions smiley_images(CharSequence... smiley_images) {
 		return super.put("smiley_images", smiley_images);
@@ -2131,7 +2131,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: + 'plugins/smiley/images/'
 	 * 
 	 * @param smiley_path
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions smiley_path(CharSequence smiley_path) {
 		return super.put("smiley_path", smiley_path);
@@ -2149,7 +2149,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param specialChars
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions specialChars(CharSequence... specialChars) {
 		return super.put("specialChars", specialChars);
@@ -2163,7 +2163,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'wysiwyg'
 	 * 
 	 * @param startupMode
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions startupMode(CharSequence startupMode) {
 		return super.put("startupMode", startupMode);
@@ -2177,7 +2177,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: false
 	 * 
 	 * @param startupOutlineBlocks
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions startupOutlineBlocks(boolean startupOutlineBlocks) {
 		return super.put("startupOutlineBlocks", startupOutlineBlocks);
@@ -2191,7 +2191,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param startupShowBorders
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions startupShowBorders(boolean startupShowBorders) {
 		return super.put("startupShowBorders", startupShowBorders);
@@ -2232,7 +2232,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'default'
 	 * 
 	 * @param stylesSet
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions stylesSet(CharSequence stylesSet) {
 		return super.put("stylesSet", stylesSet);
@@ -2273,7 +2273,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'default'
 	 * 
 	 * @param stylesSet
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions stylesSet(CharSequence... stylesSet) {
 		return super.put("stylesSet", stylesSet);
@@ -2284,7 +2284,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 0 (zero)
 	 * 
 	 * @param tabIndex
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions tabIndex(int tabIndex) {
 		return super.put("tabIndex", tabIndex);
@@ -2299,7 +2299,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 0
 	 * 
 	 * @param tabSpaces
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions tabSpaces(int tabSpaces) {
 		return super.put("tabSpaces", tabSpaces);
@@ -2323,7 +2323,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: [ 'plugins/templates/templates/default.js' ]
 	 * 
 	 * @param templates_files
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions templates_files(CharSequence... templates_files) {
 		return super.put("templates_files", templates_files);
@@ -2336,7 +2336,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param templates_replaceContent
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions templates_replaceContent(
 			boolean templates_replaceContent) {
@@ -2348,7 +2348,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'default'
 	 * 
 	 * @param theme
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions theme(CharSequence theme) {
 		return super.put("theme", theme);
@@ -2377,7 +2377,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'Full'
 	 * 
 	 * @param toolbar
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions toolbar(CharSequence toolbar) {
 		return super.put("toolbar", toolbar);
@@ -2406,7 +2406,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'Full'
 	 * 
 	 * @param toolbar
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions toolbar(CharSequence[][] toolbar) {
 		return super.put("toolbar", toolbar);
@@ -2434,7 +2434,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </pre>
 	 * 
 	 * @param toolbar_Basic
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions toolbar_Basic(CharSequence[][] toolbar_Basic) {
 		return super.put("toolbar_Basic", toolbar_Basic);
@@ -2469,7 +2469,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * </per>
 	 * 
 	 * @param toolbar_Full
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions toolbar_Full(CharSequence[][] toolbar_Full) {
 		return super.put("toolbar_Full", toolbar_Full);
@@ -2483,7 +2483,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param toolbarCanCollapse
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions toolbarCanCollapse(boolean toolbarCanCollapse) {
 		return super.put("toolbarCanCollapse", toolbarCanCollapse);
@@ -2497,7 +2497,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: 'top'
 	 * 
 	 * @param toolbarLocation
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions toolbarLocation(CharSequence toolbarLocation) {
 		return super.put("toolbarLocation", toolbarLocation);
@@ -2510,7 +2510,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param toolbarStartupExpanded
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions toolbarStartupExpanded(boolean toolbarStartupExpanded) {
 		return super.put("toolbarStartupExpanded", toolbarStartupExpanded);
@@ -2528,7 +2528,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: true
 	 * 
 	 * @param useComputedState
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions useComputedState(boolean useComputedState) {
 		return super.put("useComputedState", useComputedState);
@@ -2540,7 +2540,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty)
 	 * 
 	 * @param width
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions width(int width) {
 		return super.put("width", width);
@@ -2552,7 +2552,7 @@ public class CKEditorOptions extends AbstractJQOptions<CKEditorOptions> {
 	 * Default Value: '' (empty)
 	 * 
 	 * @param width
-	 * @return
+	 * @return options
 	 */
 	public CKEditorOptions width(CharSequence width) {
 		return super.put("width", width);

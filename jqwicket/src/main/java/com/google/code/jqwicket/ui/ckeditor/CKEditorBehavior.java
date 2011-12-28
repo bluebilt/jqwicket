@@ -48,12 +48,11 @@ public class CKEditorBehavior extends JQComponentBehavior<CKEditorOptions>
         CharSequence baseUrl = RequestCycle.get().urlFor(baseRef, null);
         target.addJQStatements(
                 new IJQStatement[]{
-                        js(String.format("var CKEDITOR_BASEPATH = '%s';\n",
-                                baseUrl)),
-                        js(String
-                                .format("function CKEDITOR_GETURL(resource){\n"
-                                        + " return resource.indexOf('%s') >= 0 ? resource : '%s/' + resource;\n"
-                                        + "}", baseUrl, baseUrl))}, false);
+                        js(String.format("var CKEDITOR_BASEPATH = '%s/';\n", baseUrl)),
+                        js("function CKEDITOR_GETURL(resource){\n"
+                                + "return resource.indexOf(CKEDITOR_BASEPATH) >= 0 ? resource : CKEDITOR_BASEPATH + resource;\n"
+                                + "}")
+                }, false);
     }
 
 }
