@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.google.code.jqwicket</groupId>
     <artifactId>jqwicket</artifactId>
-    <packaging>jar</packaging>
+    <packaging>bundle</packaging>
     <version>0.8-SNAPSHOT</version>
     <name>jqwicket</name>
     <description>jqwicket: wicket/jquery integration</description>
@@ -85,6 +85,12 @@
             </resource>
         </resources>
         <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.3.5</version>
+                <extensions>true</extensions>
+            </plugin>
             <plugin>
                 <inherited>true</inherited>
                 <groupId>org.apache.maven.plugins</groupId>
