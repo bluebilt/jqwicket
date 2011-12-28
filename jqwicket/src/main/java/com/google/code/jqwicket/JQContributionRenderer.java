@@ -28,10 +28,7 @@ import org.apache.wicket.request.cycle.RequestCycle;
 import org.apache.wicket.request.resource.CssResourceReference;
 import org.apache.wicket.request.resource.JavaScriptResourceReference;
 
-import java.util.Collection;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 import static com.google.code.jqwicket.Utils.isEmpty;
 
@@ -49,7 +46,7 @@ public class JQContributionRenderer extends Behavior {
         private static final long serialVersionUID = 1L;
     };
 
-    public static final JQContributionRenderer get() {
+    public static JQContributionRenderer get() {
         JQContributionRenderer target = RequestCycle.get().getMetaData(KEY);
         if (target == null) {
             target = new JQContributionRenderer();
@@ -106,53 +103,75 @@ public class JQContributionRenderer extends Behavior {
         this.renderJavaScriptOutsideDocumentReady(response, target.getJQStatementsOutsideDocumentReady());
 
         // 2. render resources from global config
-        this.renderJsResourcesUrl(response, config.getJqueryCoreJsUrl());
-        this.renderJsResourcesRef(response, config.getJqueryCoreJsResourceReference());
-        this.renderJsResourcesUrl(response, config.getJqueryUiJsUrl());
-        this.renderJsResourcesRef(response, config.getJqueryUiJsResourceReference());
-        this.renderCssResourcesUrl(response, config.getJqueryUiCssUrl());
-        this.renderCssResourcesRef(response, config.getJqueryUiCssResourceReference());
+        this.renderJsResources(response,
+                Arrays.asList(config.getJqueryCoreJsUrl()), Arrays.asList(config.getJqueryCoreJsResourceReference()));
+        this.renderJsResources(response,
+                Arrays.asList(config.getJqueryUiJsUrl()), Arrays.asList(config.getJqueryUiJsResourceReference()));
+        this.renderCssResources(response,
+                Arrays.asList(config.getJqueryUiCssUrl()), Arrays.asList(config.getJqueryUiCssResourceReference()));
+
 
         // 3. render resource explicitly added to the target
-        this.renderJsResourcesUrls(response, target.getJsResourceUrls());
-        this.renderJsResourcesRefs(response, target.getJsResourceReferences());
-        this.renderCssResourcesUrls(response, target.getCssResourceUrls());
-        this.renderCssResourcesRefs(response, target.getCssResourceReferences());
+        this.renderJsResources(response, target.getJsResourceUrls(), target.getJsResourceReferences());
+        this.renderCssResources(response, target.getCssResourceUrls(), target.getCssResourceReferences());
+
+        // 4. render "documentReady"-script
         this.renderJavaScriptInsideDocumentReady(response, target.getJQStatementsInsideDocumentReady());
 
         // clear contributors after rendering
         this.contributors.clear();
     }
 
-    private void renderJsResourcesUrls(IHeaderResponse response, Collection<CharSequence> resources) {
-        for (CharSequence url : resources) {
-            renderJsResourcesUrl(response, url);
+    private void renderJsResources(IHeaderResponse response, Collection<CharSequence> urls,
+                                   Collection<JavaScriptResourceReference> refs) {
+        JQContributionConfig config = JQContributionConfig.get();
+        if (config.isRenderJavascriptResourceRefsBeforeUrls()) {
+            this.renderJsResourcesRefs(response, refs);
+            this.renderJsResourcesUrls(response, urls);
+        } else {
+            this.renderJsResourcesUrls(response, urls);
+            this.renderJsResourcesRefs(response, refs);
         }
     }
 
-    private void renderJsResourcesUrl(IHeaderResponse response, CharSequence url) {
-        response.renderJavaScriptReference(determineResourcesUrl(url));
+    private void renderCssResources(IHeaderResponse response, Collection<CharSequence> urls,
+                                    Collection<CssResourceReference> refs) {
+        JQContributionConfig config = JQContributionConfig.get();
+        if (config.isRenderCssResourceRefsBeforeUrls()) {
+            this.renderCssResourcesRefs(response, refs);
+            this.renderCssResourcesUrls(response, urls);
+        } else {
+            this.renderCssResourcesUrls(response, urls);
+            this.renderCssResourcesRefs(response, refs);
+        }
+    }
+
+
+    private void renderJsResourcesUrls(IHeaderResponse response, Collection<CharSequence> resources) {
+        for (CharSequence url : resources) {
+            response.renderJavaScriptReference(determineResourcesUrl(url));
+        }
     }
 
     private void renderJsResourcesRefs(IHeaderResponse response, Collection<JavaScriptResourceReference> resources) {
         for (JavaScriptResourceReference ref : resources) {
-            renderJsResourcesRef(response, ref);
+            if (ref != null)
+                response.renderJavaScriptReference(ref);
         }
-    }
-
-    private void renderJsResourcesRef(IHeaderResponse response, JavaScriptResourceReference ref) {
-        if (ref != null)
-            response.renderJavaScriptReference(ref);
     }
 
     private void renderCssResourcesUrls(IHeaderResponse response, Collection<CharSequence> resources) {
         for (CharSequence url : resources) {
-            renderCssResourcesUrl(response, url);
+            response.renderCSSReference(determineResourcesUrl(url));
         }
     }
 
-    private void renderCssResourcesUrl(IHeaderResponse response, CharSequence url) {
-        response.renderCSSReference(determineResourcesUrl(url));
+
+    private void renderCssResourcesRefs(IHeaderResponse response, Collection<CssResourceReference> resources) {
+        for (CssResourceReference ref : resources) {
+            if (ref != null)
+                response.renderCSSReference(ref);
+        }
     }
 
 
@@ -168,16 +187,6 @@ public class JQContributionRenderer extends Behavior {
         return rc.getUrlRenderer().renderContextRelativeUrl(urlString);
     }
 
-    private void renderCssResourcesRefs(IHeaderResponse response, Collection<CssResourceReference> resources) {
-        for (CssResourceReference ref : resources) {
-            renderCssResourcesRef(response, ref);
-        }
-    }
-
-    private void renderCssResourcesRef(IHeaderResponse response, CssResourceReference ref) {
-        if (ref != null)
-            response.renderCSSReference(ref);
-    }
 
     private void renderJavaScriptOutsideDocumentReady(IHeaderResponse response, Collection<IJQStatement> statements) {
 

@@ -62,6 +62,10 @@ public class JQContributionConfig implements Serializable {
 
     private boolean useYuiJavascriptCompressor = false;
 
+    private boolean renderJavascriptResourceRefsBeforeUrls = false;
+
+    private boolean renderCssResourceRefsBeforeUrls = false;
+
     public static JQContributionConfig get() {
         return Application.get().getMetaData(configKey);
     }
@@ -142,6 +146,28 @@ public class JQContributionConfig implements Serializable {
         return this;
     }
 
+    /**
+     * Configure jqwicket always to render javascript resource references before javascript resource urls.<br/> Default
+     * settings is to render javascript resource urls before resource references.
+     *
+     * @return this contribution config
+     */
+    public JQContributionConfig renderJavascriptResourceRefsBeforeUrls() {
+        this.renderJavascriptResourceRefsBeforeUrls = true;
+        return this;
+    }
+
+    /**
+     * Configure jqwicket always to render css resource references before css resource urls.<br/> Default settings is to
+     * render css resource urls before resource references.
+     *
+     * @return this contribution config
+     */
+    public JQContributionConfig renderCssResourceRefsBeforeUrls() {
+        this.renderCssResourceRefsBeforeUrls = true;
+        return this;
+    }
+
     public CharSequence getJqueryCoreJsUrl() {
         return jqueryCoreJsUrl;
     }
@@ -174,4 +200,11 @@ public class JQContributionConfig implements Serializable {
         return useYuiJavascriptCompressor;
     }
 
+    public boolean isRenderJavascriptResourceRefsBeforeUrls() {
+        return renderJavascriptResourceRefsBeforeUrls;
+    }
+
+    public boolean isRenderCssResourceRefsBeforeUrls() {
+        return renderCssResourceRefsBeforeUrls;
+    }
 }
