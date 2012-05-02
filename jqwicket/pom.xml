@@ -3,7 +3,7 @@
     <groupId>com.google.code.jqwicket</groupId>
     <artifactId>jqwicket</artifactId>
     <packaging>bundle</packaging>
-    <version>0.8</version>
+    <version>0.8.1-SNAPSHOT</version>
     <name>jqwicket</name>
     <description>jqwicket: wicket/jquery integration</description>
     <url>http://code.google.com/p/${project.artifactId}/</url>
