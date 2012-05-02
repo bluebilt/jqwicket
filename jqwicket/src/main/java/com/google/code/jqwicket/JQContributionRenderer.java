@@ -149,7 +149,9 @@ public class JQContributionRenderer extends Behavior {
 
     private void renderJsResourcesUrls(IHeaderResponse response, Collection<CharSequence> resources) {
         for (CharSequence url : resources) {
-            response.renderJavaScriptReference(determineResourcesUrl(url));
+            if (!Utils.isBlank(url)){
+                response.renderJavaScriptReference(determineResourcesUrl(url));
+            }
         }
     }
 
@@ -162,7 +164,9 @@ public class JQContributionRenderer extends Behavior {
 
     private void renderCssResourcesUrls(IHeaderResponse response, Collection<CharSequence> resources) {
         for (CharSequence url : resources) {
-            response.renderCSSReference(determineResourcesUrl(url));
+            if (!Utils.isBlank(url)){
+                response.renderCSSReference(determineResourcesUrl(url));
+            }
         }
     }
 
