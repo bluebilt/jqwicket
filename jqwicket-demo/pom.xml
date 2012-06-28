@@ -59,7 +59,7 @@
         <dependency>
             <groupId>com.google.code.jqwicket</groupId>
             <artifactId>jqwicket</artifactId>
-            <version>0.8</version>
+            <version>${jqwicket.version}</version>
         </dependency>
         <dependency>
             <groupId>com.yahoo.platform.yui</groupId>
