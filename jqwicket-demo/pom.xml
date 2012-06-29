@@ -17,6 +17,7 @@
         <gae.version>1.7.0</gae.version>
         <yuicompressor.version>2.4.6</yuicompressor.version>
         <jqwicket.version>0.9-SNAPSHOT</jqwicket.version>
+        <wicketstuff.version>1.5.5</wicketstuff.version>
     </properties>
 
     <licenses>
@@ -56,6 +57,11 @@
             <artifactId>wicket-util</artifactId>
             <version>${wicket.version}</version>
         </dependency>
+		<dependency>
+		    <groupId>org.wicketstuff</groupId>
+		    <artifactId>wicketstuff-gae-initializer</artifactId>
+		    <version>${wicketstuff.version}</version>
+		</dependency>
         <dependency>
             <groupId>com.google.code.jqwicket</groupId>
             <artifactId>jqwicket</artifactId>
